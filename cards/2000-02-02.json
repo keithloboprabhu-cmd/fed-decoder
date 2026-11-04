@@ -7,17 +7,30 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 5.75%."
+    "summary": "The Federal Reserve raised its target federal funds rate by 25 basis points to 5.75 percent."
   },
-  "changes": [],
-  "tone_score": 1.74,
-  "tone_quotes": [
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee voted today to raise its target for the federal funds rate by 25 basis points to 5-3/4 percent.",
+      "explanation": "The Fed increased its benchmark short-term interest rate by a quarter percentage point."
+    },
+    {
+      "quote": "The Committee remains concerned that over time increases in demand will continue to exceed the growth in potential supply, even after taking account of the pronounced rise in productivity growth.",
+      "explanation": "Central bankers are worried that strong demand in the economy is outpacing supply capacity."
+    },
     {
       "quote": "Against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks are weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "explanation": "The Fed explicitly warned that risks remain tilted toward higher inflation, signaling potential future rate increases."
+    }
+  ],
+  "tone_score": 1.5,
+  "tone_quotes": [
+    {
+      "quote": "The Committee remains concerned that over time increases in demand will continue to exceed the growth in potential supply, even after taking account of the pronounced rise in productivity growth.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Federal Open Market Committee voted today to raise its target for the federal funds rate by 25 basis points to 5-3/4 percent.",
+      "quote": "Against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks are weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
       "direction": "hawkish"
     }
   ],
@@ -57,8 +70,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +3 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement indicates that inflation risks are tilted to the upside, signaling potential further rate hikes. This educational assessment suggests policymakers remain focused on curbing excess demand in upcoming meetings.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -66,45 +79,52 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "15.07% as of 1999-08-01"
+      "detail": "15.07%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "8.26% week of 2000-01-21"
+      "detail": "8.26%"
     },
     {
       "source": "DGS10",
-      "detail": "6.6% on 2000-02-02"
+      "detail": "6.6%"
     },
     {
       "source": "UNRATE",
-      "detail": "4% in December 1999"
+      "detail": "4%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 337k as of December 1999"
+      "detail": "337k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "2.7% year over year, December 1999"
+      "detail": "2.7%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "1.4% year over year, December 1999"
+      "detail": "1.4%"
     },
     {
       "source": "GDPC1",
-      "detail": "6.7% annualized, quarter starting 1999-10-01"
+      "detail": "6.7%"
     }
   ],
   "meeting_date": "2000-02-02",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 5.75,
+    "target_high": 5.75,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised its target federal funds rate by 25 basis points to 5.75 percent."
+  },
+  "latency_s": 13.94
 }
