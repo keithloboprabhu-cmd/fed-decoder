@@ -92,8 +92,10 @@
    "failures": []
   },
   "judge": {
-   "n": 3,
-   "supported_rate": 1.0
+   "n": 19,
+   "supported_rate": 0.9473684210526315,
+   "agreement_with_hand_labels": 1.0,
+   "n_hand_labels": 2
   }
  },
  "impact": {

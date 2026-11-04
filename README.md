@@ -160,7 +160,7 @@ tests/                     unit tests and fake-provider tests for the LLM paths
 ## Eval report
 
 <!-- EVAL-REPORT:START -->
-Generated 2026-11-04 13:49 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
+Generated 2026-11-04 14:33 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
 
 ### 1. Extraction vs ground truth
 
@@ -195,7 +195,7 @@ Vote and dissenter accuracy for the rules extractor is not independent: it uses 
 | llm | 227 | 100.0% | 100.0% |
 | rules | 0 | n/a | n/a |
 
-LLM judge (Groq judging Gemini claims): 100.0% of 3 sampled claims supported; hand-label validation pending (`evals/hand_labels_claims.csv`)
+LLM judge (Groq judging Gemini claims): 94.7% of 19 sampled claims supported; agreement with hand labels 100.0% (n=2)
 
 ### 5. Impact math
 
