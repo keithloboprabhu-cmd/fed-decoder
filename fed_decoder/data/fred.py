@@ -2,7 +2,7 @@
 
 With FRED_API_KEY set we use the official API; without it we use the public
 fredgraph CSV endpoint, which needs no key (verified 2026-11 for every series
-in config.FRED_SERIES). SEP medians are pulled as ALFRED vintages so the
+in config.FRED_SERIES). SEP medians (on FRED since the December 2015 SEP) are pulled as ALFRED vintages so the
 forecast only ever sees the projection that was public at each meeting.
 """
 from __future__ import annotations
@@ -20,8 +20,8 @@ _S = requests.Session()
 _S.headers["User-Agent"] = config.USER_AGENT
 
 
-def _csv(url: str, params: dict) -> pd.DataFrame:
-    for attempt in range(4):
+def _csv(url: str, params: dict, tries: int = 4) -> pd.DataFrame:
+    for attempt in range(tries):
         try:
             r = _S.get(url, params=params, timeout=60)
             if r.status_code == 200 and r.text.startswith("observation_date"):
@@ -68,6 +68,7 @@ def fetch_sep_vintage(asof: date) -> dict[int, float]:
     df = _csv(
         "https://alfred.stlouisfed.org/graph/alfredgraph.csv",
         {"id": "FEDTARMD", "vintage_date": asof.isoformat()},
+        tries=2,
     )
     col = [c for c in df.columns if c != "observation_date"][0]
     df = df.dropna(subset=[col])

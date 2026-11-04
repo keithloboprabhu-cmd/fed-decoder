@@ -105,37 +105,52 @@ def list_statement_links(today: date | None = None) -> list[StatementLink]:
 
 
 def extract_statement_text(html: str) -> str:
-    """Pull the statement body as clean paragraphs separated by blank lines."""
+    """Pull the statement body as clean paragraphs separated by blank lines.
+
+    Some pages put paragraphs in <p>, others leave text loose inside a <div>
+    (e.g. the voting paragraph in 2009), so we mark block boundaries and
+    split on them instead of collecting <p> tags.
+    """
+    from bs4 import NavigableString
+
     soup = BeautifulSoup(html, "lxml")
     for t in soup(["script", "style", "nav", "header", "footer", "noscript"]):
         t.decompose()
     root = soup.select_one("#article") or soup.select_one("#content") or soup.body or soup
-    blocks = root.find_all(["p", "td", "li"]) or [root]
+    for node in list(root.descendants):
+        if isinstance(node, NavigableString):
+            node.replace_with(re.sub(r"\s+", " ", str(node)))
+    for tag in root.find_all(["p", "div", "li", "td", "tr", "br", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "table"]):
+        tag.insert_before("\n\n")
+        tag.insert_after("\n\n")
+    raw = root.get_text("")
     paras: list[str] = []
     seen: set[str] = set()
-    for b in blocks:
-        # skip containers whose text is duplicated by nested <p>
-        if b.name != "p" and b.find("p"):
-            continue
-        txt = b.get_text(" ", strip=True).replace("\u00a0", " ").replace("\u2009", " ")
+    for chunk in raw.split("\n\n"):
+        txt = chunk.replace("\u00a0", " ").replace("\u2009", " ")
         txt = re.sub(r"\s+", " ", txt).strip()
         txt = txt.replace(" ,", ",").replace(" .", ".").replace(" ;", ";")
-        if not txt or txt in seen:
+        txt = re.sub(r"-{5,}.*$", "", txt).strip()  # page-template junk ("----- DO NOT REMOVE ...")
+        if not txt or txt in seen or txt.startswith("<"):
             continue
         if STOP.match(txt):
             break
-        if BOILERPLATE.match(txt) or len(txt) < 25:
+        if BOILERPLATE.match(txt) or len(txt) < 25 or re.fullmatch(r"[A-Z][a-z]+ \d{1,2}, \d{4}", txt):
             continue
         seen.add(txt)
         paras.append(txt)
-    if not paras:  # very old pages: plain text body
-        raw = root.get_text("\n", strip=True)
-        paras = [l for l in raw.split("\n") if len(l) > 40 and not BOILERPLATE.match(l)]
     return "\n\n".join(paras)
 
 
 def fetch_statement(link: StatementLink) -> dict:
-    html = _get(link.url)
+    """Fetch (or read from the local HTML cache) and extract one statement."""
+    cache = config.CACHE_DIR / "html" / f"{link.meeting_date.isoformat()}.html"
+    if cache.exists():
+        html = cache.read_text()
+    else:
+        html = _get(link.url)
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_text(html)
     return {
         "meeting_date": link.meeting_date,
         "statement_text": extract_statement_text(html),

@@ -16,15 +16,19 @@ from fed_decoder.data import fred
 SEP_PATH = config.DATA_DIR / "sep_vintages.parquet"
 
 
+SEP_FIRST = pd.Timestamp("2015-12-01")  # first FEDTARMD vintage on ALFRED
+
+
 def main() -> None:
     config.DATA_DIR.mkdir(exist_ok=True)
-    df = fred.fetch_all()
-    df.to_parquet(config.FRED_PATH, index=False)
-    print(f"saved {len(df)} rows -> {config.FRED_PATH}")
+    if "--sep-only" not in sys.argv:
+        df = fred.fetch_all()
+        df.to_parquet(config.FRED_PATH, index=False)
+        print(f"saved {len(df)} rows -> {config.FRED_PATH}")
 
-    # SEP vintages: one per meeting since the dot plot began (Jan 2012).
+    # SEP vintages: one per meeting since FRED began carrying the median.
     stm = pd.read_parquet(config.STATEMENTS_PATH)
-    dates = [d.date() for d in pd.to_datetime(stm["meeting_date"]) if d.year >= 2012]
+    dates = [d.date() for d in pd.to_datetime(stm["meeting_date"]) if d >= SEP_FIRST]
     have = pd.read_parquet(SEP_PATH) if SEP_PATH.exists() else pd.DataFrame(columns=["asof", "year", "median"])
     done = set(pd.to_datetime(have["asof"]).dt.date) if len(have) else set()
     rows = []
