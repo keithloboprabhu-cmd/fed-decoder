@@ -28,11 +28,11 @@ Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or
 
 | Piece | Free service | How we stay inside the limits |
 |---|---|---|
-| LLM, primary | Google Gemini API, Flash, free tier (AI Studio key, no card) | Rate limiter at 8 requests/min (configurable), backoff once on 429, then fall back |
-| LLM, fallback | Groq free tier, `openai/gpt-oss-120b` | Rate limiter at 25 requests/min |
+| LLM, primary | Google Gemini API, Flash models, free tier (AI Studio key, no card) | 8 requests/min limiter, rotation across Flash models on 503 or a spent daily quota, then fall back |
+| LLM, fallback | Groq free tier, `openai/gpt-oss-120b` | Token-per-minute budget under the 8,000 TPM cap |
 | LLM, last resort | Rules-based mode (regex, difflib, dictionary tone, templates) | No API, always available |
 | Decoder cards | Pre-generated once by `scripts/build_cards.py` (about 230 calls, resumable) | Viewing a meeting makes zero calls |
-| Chat | Live | Answer cache, 10 questions per session, a global daily counter that switches to cached and rules-based answers at 90% of `DAILY_LLM_BUDGET`, history kept to the last 4 turns |
+| Chat | Live | Answer cache, 10 questions per session, a global daily counter that switches to cached and rules-based answers at 90% of `DAILY_LLM_BUDGET` (default 80), history kept to the last 4 turns |
 | Data | federalreserve.gov and FRED (public CSV endpoint, no key needed) | Polite scraper (1 s delay, cached HTML) |
 | Refresh | GitHub Actions, scheduled after each meeting | Incremental fetch; at most 10 new cards per run |
 | Hosting | Streamlit Community Cloud | Keys in Streamlit secrets |
@@ -50,32 +50,35 @@ Never enable billing on either provider. Model IDs and rate settings live in `fe
 
 ## Status of the LLM parts
 
-This repository was built in an environment **without Gemini or Groq keys**. As a result:
+- **Cards:** all 227 meetings have a validated Gemini-written card. Most come from `gemini-3.5-flash-lite`, which had by far the largest free daily quota; a few come from `gemini-3.5-flash`, `gemini-3.6-flash`, `gemini-3-flash-preview` and `gemini-flash-lite-latest`. Each card records its model. The displayed decision numbers are always the code-computed ones.
+- **Live chat:** verified against the live Gemini API, including multi-turn function calling (Gemini 3 thought signatures are replayed).
+- **Groq:** verified live (strict JSON-schema output and tool calls), but its free tier caps `gpt-oss-120b` at 8,000 tokens per minute and **200,000 tokens per day**, about 30 decoder cards a day. Groq rows in the report are therefore partial; rerun `python evals/run.py` on a later day to fill them in (successful outputs are cached in `evals/runs/`, so nothing is spent twice).
+- **Hand labels pending:** fill `evals/hand_labels_tone.csv` (30 statements) and `evals/hand_labels_claims.csv` (20 claims), then rerun the evals.
+- **In-sample caveat:** the regex extractor and the chat scope check were fixed against the same meetings and questions they are scored on, so their 100% means "no known misses", not a generalization estimate. Rules-based vote and dissenter accuracy is also not independent of the answer key, because both use the same vote parser.
 
-- All 227 cards in `cards/` are currently **rules-based** cards, labeled "Automated summary (rules-based)" in the app. They are complete and validated, so every meeting works today.
-- The LLM code paths (provider layer, structured output, function calling, fallback, guardrail retry, chat tool loop) are covered by tests with scripted fake providers (`tests/test_llm_paths.py`). They have **not yet been run against the live APIs**. Verify the model IDs and free-tier limits in each console first.
-- Every eval section that needs an LLM is marked *not run* in the report below.
-- The rules-based numbers are **in-sample**. The regex extractor and the chat scope check were fixed against the same meetings and questions they are scored on, so treat 100% as "no known misses", not as a generalization estimate. Vote and dissenter accuracy for the rules extractor is also not independent of the answer key, because both use the same vote parser.
+### Free-tier limits we hit (checked November 2026)
 
-To fill these in:
+| Provider | Limit that binds | What the app does |
+|---|---|---|
+| Gemini | 20 requests per day **per model** for the Flash models (Flash-Lite allows far more); 503 "high demand" comes and goes | Tries `gemini-3.5-flash`, then `3.6-flash`, `3-flash-preview`, `3.5-flash-lite`, `flash-lite-latest`; a model out of daily quota is skipped until midnight Pacific |
+| Groq `gpt-oss-120b` | 8,000 tokens/min, 200,000 tokens/day, 1,000 requests/day | Sliding token-per-minute budget, low reasoning effort |
+| Both | | App-wide daily chat budget (`DAILY_LLM_BUDGET`, default 80 calls) before switching to cached and rules-based answers |
+
+`gemini-2.5-flash` is closed to new API users, so it is no longer the default.
+
+To rebuild cards with your own keys:
 
 ```bash
 cp .env.example .env
 ```
 
-Add free-tier keys to `.env`, then build the LLM cards:
+Add free-tier keys to `.env`, then:
 
 ```bash
 python scripts/build_cards.py
 ```
 
-That is about 230 calls at 8 per minute, roughly 30 minutes. If a daily cap is hit it stops; run it again the next day and it resumes. Then rerun the evals:
-
-```bash
-python evals/run.py --n-llm 20
-```
-
-This also fills in the hand-label sections once you complete `evals/hand_labels_tone.csv` (30 statements) and `evals/hand_labels_claims.csv` (20 claims).
+It stops when every provider is out of quota and resumes on the next run.
 
 ## Data
 
