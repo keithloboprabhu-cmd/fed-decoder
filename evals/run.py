@@ -647,8 +647,23 @@ def main() -> None:
     print("before/after…"); r["before_after"] = eval_before_after(args.n_llm, off)
     r["usage"] = provider_usage()
     (EVAL_DIR / "results.json").write_text(json.dumps(r, indent=1, default=str))
-    (EVAL_DIR / "report.md").write_text(render(r))
-    print((EVAL_DIR / "report.md").read_text())
+    report = render(r)
+    (EVAL_DIR / "report.md").write_text(report)
+    update_readme(report)
+    print(report)
+
+
+def update_readme(report: str) -> None:
+    """Copy the report into README.md between the EVAL-REPORT markers."""
+    p = ROOT / "README.md"
+    if not p.exists():
+        return
+    s = p.read_text()
+    a, b = "<!-- EVAL-REPORT:START -->", "<!-- EVAL-REPORT:END -->"
+    if a in s and b in s:
+        body = report.replace("# Fed Decoder eval report\n", "").replace("\n## ", "\n### ")
+        s = s[: s.index(a) + len(a)] + "\n" + body.strip() + "\n" + s[s.index(b):]
+        p.write_text(s)
 
 
 if __name__ == "__main__":

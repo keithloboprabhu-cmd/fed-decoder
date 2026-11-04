@@ -1,6 +1,6 @@
 # Fed Decoder eval report
 
-Generated 2026-11-04 00:31 UTC. Keys available: Gemini=no, Groq=no. Cards in `cards/`: {'rules': 227}.
+Generated 2026-11-04 00:34 UTC. Keys available: Gemini=no, Groq=no. Cards in `cards/`: {'rules': 227}.
 
 > **No LLM keys were available for this run.** Every section that needs Gemini or Groq is marked *not run*. Add free-tier keys to `.env`, run `python scripts/build_cards.py` and then `python evals/run.py` to fill them in.
 
@@ -67,6 +67,9 @@ The model beats the baseline. On meetings where the Fed actually moved, the mode
 | gemini | not run | | | | | | | |
 | groq | not run | | | | | | | |
 | rules | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.00s | 0.0% |
+
+Logged LLM calls this far: 0 ok ({}), fallback share n/a, 0 rate-limit events, 0 guardrail failures.
+
 
 ## Before / after
 

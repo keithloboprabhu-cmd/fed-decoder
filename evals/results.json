@@ -117,7 +117,7 @@
    "accuracy": 1.0,
    "n_adversarial": 10,
    "adversarial_pass": 1.0,
-   "mean_latency_s": 0.08311867713928223,
+   "mean_latency_s": 0.07588019371032714,
    "share_rules_fallback": 1.0
   }
  },
@@ -133,7 +133,7 @@
     "dissenters": 1.0
    },
    "grounding_pass": 1.0,
-   "mean_latency_s": 0.0010103106498718262,
+   "mean_latency_s": 0.0008323311805725098,
    "share_fell_back": 0.0,
    "n": 20
   }
@@ -175,5 +175,11 @@
   },
   "card_inputs": null
  },
- "usage": {}
+ "usage": {
+  "calls_ok": 0,
+  "by_provider": {},
+  "share_fallback": null,
+  "rate_limited_events": 0,
+  "guardrail_failures": 0
+ }
 }
