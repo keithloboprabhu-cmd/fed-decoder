@@ -369,7 +369,15 @@ def eval_chat(offline: bool) -> dict:
                     a = agent.answer(q["question"], providers=prov, use_cache=False)
                 rows.append({"id": q["id"], "text": a.text, "provider": a.provider, "latency_s": time.time() - t0})
             return rows
-        rows = _run() if mode == "rules" else cached_run(f"chat_{mode}", _run)
+        if mode == "rules":
+            rows = _run()
+        else:
+            cp = RUNS / f"chat_{mode}.json"
+            rows = json.loads(cp.read_text()) if cp.exists() else _run()
+            # Don't cache a run where most answers fell back (quota exhausted): rerun it later.
+            if not cp.exists() and np.mean([r["provider"] == "rules" for r in rows]) < 0.5:
+                RUNS.mkdir(parents=True, exist_ok=True)
+                cp.write_text(json.dumps(rows, default=str, indent=1))
         out[mode] = score_chat(qs, rows)
     return out
 
