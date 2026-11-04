@@ -7,43 +7,35 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 6.5%."
+    "summary": "The Federal Reserve decided to hold its target federal funds rate unchanged at 6-1/2 percent."
   },
   "changes": [
     {
       "quote": "Recent data have indicated that the expansion of aggregate demand has moderated to a pace closer to the enhanced rate of growth of the economy's potential to produce.",
-      "explanation": "Reworded from the previous statement: “Recent data have indicated that the expansion of aggregate demand is moderating toward a pace closer to the rate of growth of the economy's potential to produce…”"
-    },
-    {
-      "quote": "The more rapid advances in productivity also continue to help contain costs and hold down underlying price pressures.",
-      "explanation": "Reworded from the previous statement: “The data also have indicated that more rapid advances in productivity have been raising that potential growth rate as well as containing costs and holding down …”"
-    },
-    {
-      "quote": "However, the utilization of the pool of available workers remains at an unusually high level.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee remains concerned about the risk of a continuing gap between the growth of demand and potential supply at a time when the utilization…”"
+      "explanation": "The Fed noted that economic demand growth is slowing down toward a pace aligned with the economy's productive capacity."
     },
     {
       "quote": "Moreover, the increase in energy prices, though having limited effect on core measures of prices to date, poses a risk of raising inflation expectations.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The subdued behavior of those expectations so far has contributed importantly to maintaining an environment conducive to maximum sustainable growth.",
-      "explanation": "New language added in this statement."
+      "explanation": "Policymakers added a specific warning that higher energy costs could push up future inflation expectations."
     },
     {
       "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the future.",
-      "explanation": "Reworded from the previous statement: “Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee belie…”"
+      "explanation": "The statement maintained its view that future inflation risks remain the Fed's primary concern."
     }
   ],
-  "tone_score": 1.06,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the future.",
+      "quote": "However, the utilization of the pool of available workers remains at an unusually high level.",
       "direction": "hawkish"
     },
     {
-      "quote": "Recent data have indicated that the expansion of aggregate demand has moderated to a pace closer to the enhanced rate of growth of the economy's potential to produce.",
-      "direction": "dovish"
+      "quote": "Moreover, the increase in energy prices, though having limited effect on core measures of prices to date, poses a risk of raising inflation expectations.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the future.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -53,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.87% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.9% would rise by about $8.34 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate; the 10-year was 5.87% and moved +4 bp on the day, meaning the payment on a new $300,000 30-year loan at 7.9% would rise by about $8.34 a month."
     },
     {
       "topic": "Savers",
@@ -67,7 +59,7 @@
   "for_country": [
     {
       "topic": "Inflation",
-      "text": "CPI inflation was 3.4% over the past year (August 2000); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+      "text": "CPI inflation was 3.4% over the past year (August 2000), while core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
     },
     {
       "topic": "Jobs",
@@ -82,8 +74,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed remains focused on potential inflation risks despite moderating economic demand. As an educational forecast, interest rates are expected to stay on hold at upcoming meetings unless inflation pressures escalate.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -91,45 +83,52 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "15.6% as of 2000-05-01"
+      "detail": "15.6%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "7.9% week of 2000-09-22"
+      "detail": "7.9%"
     },
     {
       "source": "DGS10",
-      "detail": "5.87% on 2000-10-03"
+      "detail": "5.87%"
     },
     {
       "source": "UNRATE",
-      "detail": "4.1% in August 2000"
+      "detail": "4.1%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 43k as of August 2000"
+      "detail": "43k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "3.4% year over year, August 2000"
+      "detail": "3.4%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "1.9% year over year, August 2000"
+      "detail": "1.9%"
     },
     {
       "source": "GDPC1",
-      "detail": "7.5% annualized, quarter starting 2000-04-01"
+      "detail": "7.5%"
     }
   ],
   "meeting_date": "2000-10-03",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 6.5,
+    "target_high": 6.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to hold its target federal funds rate unchanged at 6-1/2 percent."
+  },
+  "latency_s": 14.67
 }
