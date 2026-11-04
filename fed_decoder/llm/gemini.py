@@ -23,6 +23,18 @@ from fed_decoder.llm.base import (
 
 _LIMITER = RateLimiter(config.GEMINI_RPM)
 
+# The free tier caps requests per day *per model* (20/day each, Nov 2026).
+# When a model's daily quota is spent we skip it until the date changes.
+_EXHAUSTED: dict[str, str] = {}
+
+
+def _today() -> str:
+    return time.strftime("%Y-%m-%d", time.gmtime(time.time() - 8 * 3600))  # quota resets at midnight Pacific
+
+
+def _is_daily_quota(err: Exception) -> bool:
+    return "PerDay" in str(err)
+
 
 def _retry_after(err: Exception) -> float | None:
     m = re.search(r"retry in ([\d.]+)s|retryDelay['\"]?: ?['\"]?(\d+)", str(err))
@@ -112,6 +124,9 @@ class GeminiProvider(Provider):
         # the model that produced it (thought signatures are model-specific).
         pinned = next((m.get("gemini_model") for m in messages if m.get("gemini_model")), None)
         models = [pinned] if pinned else [self.model] + [m for m in config.GEMINI_FALLBACK_MODELS if m != self.model]
+        models = [m for m in models if _EXHAUSTED.get(m) != _today()]
+        if not models:
+            raise RateLimited("every Gemini model's free daily quota is used up", None)
         resp, used, last_err = None, None, None
         for model in models:
             _LIMITER.wait()
@@ -122,6 +137,10 @@ class GeminiProvider(Provider):
                 break
             except errors.ClientError as e:
                 if e.code == 429 or "RESOURCE_EXHAUSTED" in str(e):
+                    if _is_daily_quota(e) and not pinned:
+                        _EXHAUSTED[model] = _today()  # this model is done for today: try the next
+                        last_err = e
+                        continue
                     raise RateLimited(str(e), _retry_after(e)) from e
                 if e.code == 404:  # model retired for this account: try the next one
                     last_err = e
@@ -134,6 +153,8 @@ class GeminiProvider(Provider):
                 last_err = e
                 continue
         if resp is None:
+            if last_err is not None and _is_daily_quota(last_err):
+                raise RateLimited(f"all Gemini models out of daily quota: {last_err}", None)
             raise ProviderUnavailable(f"all Gemini models failed: {last_err}")
         latency = time.time() - t0
         calls = [ToolCall(id=uuid.uuid4().hex[:8], name=fc.name, args=dict(fc.args or {})) for fc in (resp.function_calls or [])]

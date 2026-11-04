@@ -51,7 +51,7 @@ def _secret(name: str) -> str | None:
 # gemini-2.5-flash is closed to new users (Nov 2026); 3.7/3.8-flash were returning 503 "high demand".
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 # Tried in order when a model answers 503 "high demand" (free-tier overload comes and goes).
-GEMINI_FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-3.6-flash,gemini-3-flash-preview,gemini-3.5-flash-lite").split(",") if m]
+GEMINI_FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-3.6-flash,gemini-3-flash-preview,gemini-3.5-flash-lite,gemini-flash-lite-latest").split(",") if m]
 GEMINI_TIMEOUT_S = int(os.environ.get("GEMINI_TIMEOUT_S", "60"))
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
@@ -59,7 +59,9 @@ GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 GEMINI_RPM = int(os.environ.get("GEMINI_RPM", "8"))
 GROQ_RPM = int(os.environ.get("GROQ_RPM", "25"))
 # Daily budget we allow the deployed app to spend on live chat (all users).
-DAILY_LLM_BUDGET = int(os.environ.get("DAILY_LLM_BUDGET", "200"))
+# Gemini's free tier allows 20 requests/day per model (checked Nov 2026), so
+# 5 models give ~100/day; a chat answer takes 2-3 calls. Groq adds more.
+DAILY_LLM_BUDGET = int(os.environ.get("DAILY_LLM_BUDGET", "80"))
 SESSION_QUESTION_LIMIT = 10
 CHAT_HISTORY_TURNS = 4
 
