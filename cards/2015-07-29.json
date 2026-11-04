@@ -7,47 +7,39 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve voted to keep the benchmark interest rate unchanged at the 0 to 1/4 percent target range."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in June indicates that economic activity has been expanding moderately in recent months.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in April suggests that economic activity has been expanding moderately after having changed lit…”"
+      "explanation": "The Fed updated its timeline to reflect that moderate economic expansion continued since its June meeting."
     },
     {
       "quote": "Growth in household spending has been moderate and the housing sector has shown additional improvement; however, business fixed investment and net exports stayed soft.",
-      "explanation": "Reworded from the previous statement: “Growth in household spending has been moderate and the housing sector has shown some improvement; however, business fixed investment and net exports stayed soft…”"
+      "explanation": "The housing sector showed further progress, while business investment and net exports remained weak."
     },
     {
       "quote": "The labor market continued to improve, with solid job gains and declining unemployment.",
-      "explanation": "New language added in this statement."
+      "explanation": "This added sentence highlights steady improvement in the job market."
     },
     {
       "quote": "On balance, a range of labor market indicators suggests that underutilization of labor resources has diminished since early this year.",
-      "explanation": "Reworded from the previous statement: “On balance, a range of labor market indicators suggests that underutilization of labor resources diminished somewhat.”"
+      "explanation": "The Fed noted that labor resource underutilization has shrunk since the beginning of the year."
     },
     {
       "quote": "Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy imports.",
-      "explanation": "Reworded from the previous statement: “Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy i…”"
-    },
-    {
-      "quote": "The pace of job gains picked up while the unemployment rate remained steady.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The committee removed the phrase about energy prices stabilizing, leaving the focus on inflation remaining below target due to past drops in energy and import costs."
     }
   ],
-  "tone_score": 0.09,
+  "tone_score": 0.0,
   "tone_quotes": [
+    {
+      "quote": "The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace, with labor market indicators continuing to move toward levels the Committee judges consistent with its dual mandate.",
+      "direction": "dovish"
+    },
     {
       "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen some further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
       "direction": "hawkish"
-    },
-    {
-      "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.29% and moved +3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.09% would rise by about $5.22 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.29% and moved +3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.09% would rise by about $5.22 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.08% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 84%, cut 8%, hike 8%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve is awaiting further labor market improvements and confidence in rising inflation before raising interest rates. Educational forecast models suggest a hold probability of 79% for the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2015-07-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve voted to keep the benchmark interest rate unchanged at the 0 to 1/4 percent target range."
+  },
+  "latency_s": 4.17
 }

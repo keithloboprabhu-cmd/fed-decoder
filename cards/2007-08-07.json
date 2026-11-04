@@ -7,46 +7,34 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 10-0."
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
-      "quote": "Economic growth was moderate during the first half of the year.",
-      "explanation": "Reworded from the previous statement: “Economic growth appears to have been moderate during the first half of this year, despite the ongoing adjustment in the housing sector.”"
+      "quote": "Financial markets have been volatile in recent weeks, credit conditions have become tighter for some households and businesses, and the housing correction is ongoing.",
+      "explanation": "The Fed added this language to acknowledge rising market turmoil and tighter borrowing standards."
     },
     {
-      "quote": "Financial markets have been volatile in recent weeks, credit conditions have become tighter for some households and businesses, and the housing correction is ongoing.",
-      "explanation": "New language added in this statement."
+      "quote": "Although the downside risks to growth have increased somewhat, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.",
+      "explanation": "The Fed noted that economic risks are growing, but inflation remains its primary worry."
     },
     {
       "quote": "Nevertheless, the economy seems likely to continue to expand at a moderate pace over coming quarters, supported by solid growth in employment and incomes and a robust global economy.",
-      "explanation": "Reworded from the previous statement: “The economy seems likely to continue to expand at a moderate pace over coming quarters.”"
-    },
-    {
-      "quote": "Although the downside risks to growth have increased somewhat, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.",
-      "explanation": "Reworded from the previous statement: “In these circumstances, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.”"
-    },
-    {
-      "quote": "Future policy adjustments will depend on the outlook for both inflation and economic growth, as implied by incoming information.",
-      "explanation": "Reworded from the previous statement: “Future policy adjustments will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.”"
-    },
-    {
-      "quote": "Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Thomas M. Hoenig; Donald L. Kohn; Randall S. Kroszner; Frederic S. Mishkin; Michael H. Moskow; William Poole; Eric Rosengren; and Kevin M. Warsh.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Thomas M. Hoenig; Donald L. Kohn; Randall S. Kro…”"
+      "explanation": "The Fed updated its view on future expansion to highlight the support from jobs, incomes, and global growth."
     }
   ],
-  "tone_score": 0.47,
+  "tone_score": 1.0,
   "tone_quotes": [
-    {
-      "quote": "Although the downside risks to growth have increased somewhat, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.",
-      "direction": "dovish"
-    },
     {
       "quote": "However, a sustained moderation in inflation pressures has yet to be convincingly demonstrated.",
       "direction": "hawkish"
     },
     {
-      "quote": "Nevertheless, the economy seems likely to continue to expand at a moderate pace over coming quarters, supported by solid growth in employment and incomes and a robust global economy.",
+      "quote": "Moreover, the high level of resource utilization has the potential to sustain those pressures.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Although the downside risks to growth have increased somewhat, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.",
       "direction": "hawkish"
     }
   ],
@@ -90,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved 0.22% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 69%, cut 10%, hike 22%.",
-  "confidence": "medium",
+  "whats_next": "Future policy adjustments will depend on incoming economic data regarding inflation and growth. Our educational forecast model indicates a 65% chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +119,20 @@
     }
   ],
   "meeting_date": "2007-08-07",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 3.77
 }

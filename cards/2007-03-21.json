@@ -7,38 +7,34 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 10-0."
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators have been mixed and the adjustment in the housing sector is ongoing.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Nevertheless, the economy seems likely to continue to expand at a moderate pace over coming quarters.",
-      "explanation": "Reworded from the previous statement: “Overall, the economy seems likely to expand at a moderate pace over coming quarters.”"
+      "explanation": "The Fed added this language to acknowledge that recent data is mixed and housing adjustments continue."
     },
     {
       "quote": "Recent readings on core inflation have been somewhat elevated.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Although inflation pressures seem likely to moderate over time, the high level of resource utilization has the potential to sustain those pressures.",
-      "explanation": "Reworded from the previous statement: “However, the high level of resource utilization has the potential to sustain inflation pressures.”"
+      "explanation": "This new sentence highlights that core inflation readings have stayed somewhat elevated."
     },
     {
       "quote": "In these circumstances, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.",
-      "explanation": "New language added in this statement."
+      "explanation": "This added text explicitly notes that inflation remaining high is the primary concern for policy."
     },
     {
       "quote": "Future policy adjustments will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
-      "explanation": "Reworded from the previous statement: “The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and eco…”"
+      "explanation": "The Fed changed its forward-looking sentence to focus on incoming information for any future policy adjustments."
     }
   ],
-  "tone_score": 0.74,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "Although inflation pressures seem likely to moderate over time, the high level of resource utilization has the potential to sustain those pressures.",
+      "quote": "Recent readings on core inflation have been somewhat elevated.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "In these circumstances, the Committee's predominant policy concern remains the risk that inflation will fail to moderate as expected.",
       "direction": "hawkish"
     }
   ],
@@ -82,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved -0.18% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 62%, cut 3%, hike 35%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future policy decisions will depend entirely on incoming data regarding inflation and economic growth. According to the educational forecast model, the next meeting has a 38% probability of a hold, 3% probability of a cut, and 59% probability of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +119,20 @@
     }
   ],
   "meeting_date": "2007-03-21",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 3.22
 }

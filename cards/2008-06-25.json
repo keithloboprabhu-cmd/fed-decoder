@@ -9,43 +9,35 @@
     "dissenters": [
       "Richard W. Fisher"
     ],
-    "summary": "The Fed held its policy rate at 2%. The vote was 9-1. Dissenting: Richard W. Fisher."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 2 percent.”"
+      "explanation": "The Fed paused its interest rate cuts, leaving the target at 2 percent after lowering it previously."
     },
     {
       "quote": "Recent information indicates that overall economic activity continues to expand, partly reflecting some firming in household spending.",
-      "explanation": "Reworded from the previous statement: “Recent information indicates that economic activity remains weak.”"
+      "explanation": "The Fed noted that economic activity is expanding slightly due to some firming in consumer spending."
     },
     {
       "quote": "However, labor markets have softened further and financial markets remain under considerable stress.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Tight credit conditions, the ongoing housing contraction, and the rise in energy prices are likely to weigh on economic growth over the next few quarters.",
-      "explanation": "Reworded from the previous statement: “Financial markets remain under considerable stress, and tight credit conditions and the deepening housing contraction are likely to weigh on economic growth ove…”"
+      "explanation": "Employment conditions continue to weaken and financial stress remains high."
     },
     {
       "quote": "The Committee expects inflation to moderate later this year and next year.",
-      "explanation": "New language added in this statement."
+      "explanation": "Officials anticipate that price pressures will ease over the course of this year and next year."
     },
     {
-      "quote": "However, in light of the continued increases in the prices of energy and some other commodities and the elevated state of some indicators of inflation expectations, uncertainty about the inflation outlook remains high.",
-      "explanation": "New language added in this statement."
+      "quote": "Although downside risks to growth remain, they appear to have diminished somewhat, and the upside risks to inflation and inflation expectations have increased.",
+      "explanation": "The risks of high inflation have risen while risks to economic growth have eased slightly."
     }
   ],
-  "tone_score": -0.14,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "Tight credit conditions, the ongoing housing contraction, and the rise in energy prices are likely to weigh on economic growth over the next few quarters.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee will continue to monitor economic and financial developments and will act as needed to promote sustainable economic growth and price stability.",
-      "direction": "dovish"
+      "quote": "Although downside risks to growth remain, they appear to have diminished somewhat, and the upside risks to inflation and inflation expectations have increased.",
+      "direction": "hawkish"
     },
     {
       "quote": "However, labor markets have softened further and financial markets remain under considerable stress.",
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.12% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.32% would rise by about $3.92 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.12% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.32% would rise by about $3.92 a month."
     },
     {
       "topic": "Savers",
@@ -92,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved 0.1% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 76%, cut 7%, hike 17%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will continue to monitor economic and financial developments and will act as needed to promote sustainable economic growth and price stability. According to the educational forecast model, the next meeting has a hold probability of 91%, a cut probability of 7%, and a hike probability of 2%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2008-06-25",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 2.0,
+    "target_high": 2.0,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Richard W. Fisher"
+    ],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
+  },
+  "latency_s": 3.78
 }

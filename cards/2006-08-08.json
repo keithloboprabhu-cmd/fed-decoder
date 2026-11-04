@@ -9,47 +9,39 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 9-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5-1/4 percent.”"
+      "explanation": "The Fed paused its rate-hiking campaign after a long sequence of consecutive increases."
     },
     {
       "quote": "Economic growth has moderated from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic growth is moderating from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing ma…”"
+      "explanation": "Economic expansion is slowing down due to past interest rate increases and a cooling housing market."
     },
     {
       "quote": "Readings on core inflation have been elevated in recent months, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
-      "explanation": "Reworded from the previous statement: “However, the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.”"
+      "explanation": "Underlying inflation measures remain high, supported by expensive energy and heavy use of economic resources."
     },
     {
       "quote": "However, inflation pressures seem likely to moderate over time, reflecting contained inflation expectations and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee expects past rate hikes to eventually cool down price increases."
     },
     {
-      "quote": "Nonetheless, the Committee judges that some inflation risks remain.",
-      "explanation": "Reworded from the previous statement: “Although the moderation in the growth of aggregate demand should help to limit inflation pressures over time, the Committee judges that some inflation risks rem…”"
-    },
-    {
-      "quote": "Readings on core inflation have been elevated in recent months.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "Voting against was Jeffrey M. Lacker, who preferred an increase of 25 basis points in the federal funds rate target at this meeting.",
+      "explanation": "One official dissented because he wanted a 25 basis point rate increase instead of a pause."
     }
   ],
-  "tone_score": 1.21,
+  "tone_score": 0.5,
   "tone_quotes": [
-    {
-      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Readings on core inflation have been elevated in recent months, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
       "direction": "hawkish"
     },
     {
       "quote": "However, inflation pressures seem likely to moderate over time, reflecting contained inflation expectations and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
-      "direction": "hawkish"
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.93% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.72% would not change."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.93% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.72% would not change."
     },
     {
       "topic": "Savers",
@@ -92,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved 0.15% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 34%, cut 1%, hike 65%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future meetings depend on incoming data regarding inflation and economic growth. Educational forecast model data indicates the next meeting holds a 79% probability of a hold, 1% probability of a cut, and 20% probability of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2006-08-08",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 4.18
 }

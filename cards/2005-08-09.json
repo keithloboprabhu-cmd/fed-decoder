@@ -7,43 +7,39 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 3.5%. The vote was 10-0."
+    "summary": "The Federal Open Market Committee raised the target for the federal funds rate by 25 basis points to 3-1/2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-1/4 percent.”"
+      "explanation": "The Fed increased its benchmark interest rate by 0.25 percentage points, raising it to 3-1/2 percent."
     },
     {
       "quote": "Aggregate spending, despite high energy prices, appears to have strengthened since late winter, and labor market conditions continue to improve gradually.",
-      "explanation": "Reworded from the previous statement: “Although energy prices have risen further, the expansion remains firm and labor market conditions continue to improve gradually.”"
+      "explanation": "The statement notes that overall consumer and business spending has picked up since earlier in the year despite expensive energy."
     },
     {
       "quote": "Core inflation has been relatively low in recent months and longer-term inflation expectations remain well contained, but pressures on inflation have stayed elevated.",
-      "explanation": "Reworded from the previous statement: “Pressures on inflation have stayed elevated, but longer-term inflation expectations remain well contained.”"
+      "explanation": "While underlying price increases have been modest recently, broader inflation pressures remain a concern for officials."
     },
     {
       "quote": "Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Roger W. Ferguson, Jr.; Richard W. Fisher; Donald L. Kohn; Michael H. Moskow; Mark W. Olson; Anthony M. Santomero; and Gary H. Stern.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Roger W. Ferguson, Jr.; Richard W.…”"
+      "explanation": "The roster of voters reflects a change in membership compared to the previous meeting."
     },
     {
       "quote": "In a related action, the Board of Governors unanimously approved a 25-basis-point increase in the discount rate to 4-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors unanimously approved a 25-basis-point increase in the discount rate to 4-1/4 percent.”"
+      "explanation": "The separate rate that the Fed charges banks for direct loans was also increased by 0.25 percentage points to 4-1/2 percent."
     }
   ],
-  "tone_score": 0.38,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-1/2 percent.",
+      "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stability should be kept roughly equal.",
-      "direction": "dovish"
+      "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -53,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.41% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.77% would fall by about $1.91 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.41% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.77% would fall by about $1.91 a month."
     },
     {
       "topic": "Savers",
@@ -82,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 19%, cut 1%, hike 79%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee intends to continue removing monetary policy accommodation at a measured pace. The educational forecast model indicates a 79% probability of another rate hike at upcoming meetings.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +119,20 @@
     }
   ],
   "meeting_date": "2005-08-09",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 3.5,
+    "target_high": 3.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee raised the target for the federal funds rate by 25 basis points to 3-1/2 percent."
+  },
+  "latency_s": 3.66
 }

@@ -7,46 +7,34 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve voted to keep its benchmark interest rate unchanged at a range of 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in January suggests that economic growth has moderated somewhat.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in December suggests that economic activity has been expanding at a solid pace.”"
+      "explanation": "The Fed adjusted its view of the economy from solid growth to a moderate slowdown."
     },
     {
-      "quote": "A range of labor market indicators suggests that underutilization of labor resources continues to diminish.",
-      "explanation": "Reworded from the previous statement: “On balance, a range of labor market indicators suggests that underutilization of labor resources continues to diminish.”"
+      "quote": "Consistent with its previous statement, the Committee judges that an increase in the target range for the federal funds rate remains unlikely at the April FOMC meeting.",
+      "explanation": "The Fed explicitly stated it will not raise rates at the next meeting in April."
     },
-    {
-      "quote": "Household spending is rising moderately; declines in energy prices have boosted household purchasing power.",
-      "explanation": "Reworded from the previous statement: “Household spending is rising moderately; recent declines in energy prices have boosted household purchasing power.”"
-    },
-    {
-      "quote": "Business fixed investment is advancing, while the recovery in the housing sector remains slow and export growth has weakened.",
-      "explanation": "Reworded from the previous statement: “Business fixed investment is advancing, while the recovery in the housing sector remains slow.”"
-    },
-    {
-      "quote": "Inflation has declined further below the Committee's longer-run objective, largely reflecting declines in energy prices.",
-      "explanation": "Reworded from the previous statement: “Inflation has declined further below the Committee’s longer-run objective, largely reflecting declines in energy prices.”"
-    },
-    {
-      "quote": "Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation have declined substantially in recent months; survey-based measures of longer-term inflation expectations have r…”"
-    }
-  ],
-  "tone_score": -0.18,
-  "tone_quotes": [
     {
       "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
-      "direction": "hawkish"
+      "explanation": "The Fed removed the word 'patient' and replaced it with a condition to see further job market progress and confidence in reaching 2 percent inflation before hiking."
     },
+    {
+      "quote": "This change in the forward guidance does not indicate that the Committee has decided on the timing of the initial increase in the target range.",
+      "explanation": "The Fed clarified that changing its statement wording does not mean a rate hike has been scheduled for a specific date."
+    }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
     {
       "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
       "direction": "dovish"
     },
     {
-      "quote": "Inflation has declined further below the Committee's longer-run objective, largely reflecting declines in energy prices.",
+      "quote": "Consistent with its previous statement, the Committee judges that an increase in the target range for the federal funds rate remains unlikely at the April FOMC meeting.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.93% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.75% would fall by about $22.04 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.93% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.75% would fall by about $22.04 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved -0.16% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 86%, cut 4%, hike 10%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will evaluate incoming data meeting by meeting without a fixed timetable for rate hikes. Educational forecast models suggest the next meeting has an 86 percent chance of a hold, a 4 percent chance of a cut, and a 10 percent chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +119,20 @@
     }
   ],
   "meeting_date": "2015-03-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve voted to keep its benchmark interest rate unchanged at a range of 0 to 1/4 percent."
+  },
+  "latency_s": 4.08
 }

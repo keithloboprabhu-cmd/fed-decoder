@@ -7,34 +7,30 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 1 percent."
   },
   "changes": [
     {
       "quote": "The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid pace.",
-      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period confirms that output is expanding briskly.”"
+      "explanation": "The Fed adjusted its description of economic output to reflect solid rather than brisk expansion."
     },
     {
       "quote": "Although job losses have slowed, new hiring has lagged.",
-      "explanation": "New language added in this statement."
+      "explanation": "This new sentence highlights that while layoffs have eased, companies are still hesitant to hire new workers."
     },
     {
       "quote": "Although new hiring remains subdued, other indicators suggest an improvement in the labor market.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed this previous reference to general labor market improvements."
     },
     {
       "quote": "The Committee perceives the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
-      "explanation": "Reworded from the previous statement: “The Committee perceives that the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.”"
+      "explanation": "The Fed updated its phrasing regarding growth risks for the upcoming quarters."
     }
   ],
-  "tone_score": -0.22,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
       "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee perceives the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
       "direction": "dovish"
     },
     {
@@ -49,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.7% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.59% would fall by about $15.10 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.7% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.59% would fall by about $15.10 a month."
     },
     {
       "topic": "Savers",
@@ -78,8 +74,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -5 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to remain patient before changing interest rates. Upcoming meetings will likely depend on whether hiring picks up and inflation stays low.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +115,20 @@
     }
   ],
   "meeting_date": "2004-03-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.0,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 1 percent."
+  },
+  "latency_s": 3.22
 }

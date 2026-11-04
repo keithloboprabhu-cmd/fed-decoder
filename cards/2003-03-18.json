@@ -7,38 +7,38 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1.25%. The vote was 12-0."
+    "summary": "The Federal Reserve kept its target for the federal funds rate unchanged at 1-1/4 percent."
   },
   "changes": [
     {
       "quote": "While incoming economic data since the January meeting have been mixed, recent labor market indicators have proven disappointing.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee noted that while economic reports are mixed, jobs data have turned weaker."
     },
     {
       "quote": "However, the hesitancy of the economic expansion appears to owe importantly to oil price premiums and other aspects of geopolitical uncertainties.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to economic activity sufficient to engender an improving economic climate over time.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed highlighted oil prices and geopolitical risks as main drivers holding back growth."
     },
     {
       "quote": "In light of the unusually large uncertainties clouding the geopolitical situation in the short run and their apparent effects on economic decisionmaking, the Committee does not believe it can usefully characterize the current balance of risks with respect to the prospects for its long-run goals of price stability and sustainable economic growth.",
-      "explanation": "New language added in this statement."
+      "explanation": "Due to high uncertainty, the Fed decided it cannot accurately assess the balance of risks right now."
     },
     {
       "quote": "Rather, the Committee decided to refrain from making that determination until some of those uncertainties abate.",
-      "explanation": "New language added in this statement."
+      "explanation": "The central bank will wait until global uncertainties lift before determining the outlook."
     },
     {
       "quote": "In the current circumstances, heightened surveillance is particularly informative.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed is watching economic conditions especially closely during this uncertain period."
     }
   ],
-  "tone_score": -0.07,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
       "quote": "The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to economic activity sufficient to engender an improving economic climate over time.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In light of the unusually large uncertainties clouding the geopolitical situation in the short run and their apparent effects on economic decisionmaking, the Committee does not believe it can usefully characterize the current balance of risks with respect to the prospects for its long-run goals of price stability and sustainable economic growth.",
       "direction": "dovish"
     }
   ],
@@ -49,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.91% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.67% would rise by about $17.12 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.91% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.67% would rise by about $17.12 a month."
     },
     {
       "topic": "Savers",
@@ -78,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +9 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future policy decisions will depend heavily on how geopolitical and oil market uncertainties evolve. The central bank intends to maintain heightened surveillance until these risks abate.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +119,20 @@
     }
   ],
   "meeting_date": "2003-03-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its target for the federal funds rate unchanged at 1-1/4 percent."
+  },
+  "latency_s": 3.52
 }

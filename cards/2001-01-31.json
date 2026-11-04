@@ -7,46 +7,38 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 5.5%."
+    "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 5-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent.”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 5 percent.",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors approved a 25-basis-point decrease in the discount rate to 5-3/4 percent, the level requested by seven Reserve Banks…”"
+      "explanation": "The Fed reduced its benchmark interest rate by a larger-than-usual 50 basis points to support the slowing economy."
     },
     {
       "quote": "Consumer and business confidence has eroded further, exacerbated by rising energy costs that continue to drain consumer purchasing power and press on business profit margins.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that falling confidence and high energy costs are hurting consumers and businesses."
     },
     {
       "quote": "Partly as a consequence, retail sales and business spending on capital equipment have weakened appreciably.",
-      "explanation": "New language added in this statement."
+      "explanation": "Weaker confidence has led to a slowdown in retail sales and business investments."
     },
     {
       "quote": "In response, manufacturing production has been cut back sharply, with new technologies appearing to have accelerated the response of production and demand to potential excesses in the stock of inventories and capital equipment.",
-      "explanation": "New language added in this statement."
+      "explanation": "Manufacturers reduced production rapidly to prevent a buildup of unsold goods."
     },
     {
       "quote": "Taken together, and with inflation contained, these circumstances have called for a rapid and forceful response of monetary policy.",
-      "explanation": "New language added in this statement."
+      "explanation": "Because inflation is under control, the Fed felt justified in taking swift action to protect the economy."
     }
   ],
-  "tone_score": -1.15,
+  "tone_score": -1.5,
   "tone_quotes": [
     {
+      "quote": "Consumer and business confidence has eroded further, exacerbated by rising energy costs that continue to drain consumer purchasing power and press on business profit margins.",
+      "direction": "dovish"
+    },
+    {
       "quote": "Nonetheless, the Committee continues to believe that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 5-1/2 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "In response, manufacturing production has been cut back sharply, with new technologies appearing to have accelerated the response of production and demand to potential excesses in the stock of inventories and capital equipment.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.19% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.02% would fall by about $10.07 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.19% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.02% would fall by about $10.07 a month."
     },
     {
       "topic": "Savers",
@@ -80,14 +72,10 @@
     {
       "topic": "Growth",
       "text": "Real GDP grew at a 2.4% annualized pace in the latest reported quarter."
-    },
-    {
-      "topic": "Markets",
-      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -8 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve remains highly focused on economic weakness and is prepared to adjust policy further if conditions warrant. Upcoming meetings will likely continue to evaluate whether additional rate cuts are needed to stabilize growth.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +115,20 @@
     }
   ],
   "meeting_date": "2001-01-31",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 5.5,
+    "target_high": 5.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 5-1/2 percent."
+  },
+  "latency_s": 3.74
 }

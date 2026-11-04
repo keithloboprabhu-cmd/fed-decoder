@@ -7,42 +7,38 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve decided to hold the federal funds rate at 0 to 1/4 percent and continue its asset purchase program."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in December confirms that the economic recovery is continuing, though at a rate that has been insufficient to bring about a significant improvement in labor market conditions.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to note that while the economy continues to grow, it is still not creating enough jobs to fix the labor market."
     },
     {
       "quote": "Growth in household spending picked up late last year, but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.",
-      "explanation": "Reworded from the previous statement: “Household spending is increasing at a moderate pace, but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.”"
+      "explanation": "The Committee updated this sentence to acknowledge that consumer spending increased late last year despite ongoing economic hurdles."
     },
     {
       "quote": "Business spending on equipment and software is rising, while investment in nonresidential structures is still weak.",
-      "explanation": "Reworded from the previous statement: “Business spending on equipment and software is rising, though less rapidly than earlier in the year, while investment in nonresidential structures continues to …”"
-    },
-    {
-      "quote": "Information received since the Federal Open Market Committee met in November confirms that the economic recovery is continuing, though at a rate that has been insufficient to bring down unemployment.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed the phrase saying business investment was rising less rapidly than earlier in the year."
     },
     {
       "quote": "Although commodity prices have risen, longer-term inflation expectations have remained stable, and measures of underlying inflation have been trending downward.",
-      "explanation": "Reworded from the previous statement: “Longer-term inflation expectations have remained stable, but measures of underlying inflation have continued to trend downward.”"
+      "explanation": "This change highlights that rising commodity prices have not dislodged stable long-term inflation expectations even as underlying inflation drifts lower."
     },
     {
       "quote": "In particular, the Committee is maintaining its existing policy of reinvesting principal payments from its securities holdings and intends to purchase $600 billion of longer-term Treasury securities by the end of the second quarter of 2011.",
-      "explanation": "Reworded from the previous statement: “In addition, the Committee intends to purchase $600 billion of longer-term Treasury securities by the end of the second quarter of 2011, a pace of about $75 bil…”"
+      "explanation": "The Fed streamlined the description of its asset purchase program and removed the specific monthly pacing figure."
     }
   ],
-  "tone_score": -1.1,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels for the federal funds rate for an extended period.",
+      "quote": "Currently, the unemployment rate is elevated, and measures of underlying inflation are somewhat low, relative to levels that the Committee judges to be consistent, over the longer run, with its dual mandate.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee will regularly review the pace of its securities purchases and the overall size of the asset-purchase program in light of incoming information and will adjust the program as needed to best foster maximum employment and price stability.",
+      "quote": "Although the Committee anticipates a gradual return to higher levels of resource utilization in a context of price stability, progress toward its objectives has been disappointingly slow.",
       "direction": "dovish"
     }
   ],
@@ -53,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.45% and moved +10 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.71% would rise by about $18.09 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.45% and moved +10 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.71% would rise by about $18.09 a month."
     },
     {
       "topic": "Savers",
@@ -86,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved -0.24% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 66%, cut 34%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to keep its benchmark interest rate exceptionally low for an extended period while finishing its $600 billion asset purchase program. As an educational note, the forecast model gave the next meeting probability as: hold 66%, cut 33%, hike 1%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels f"
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -127,13 +123,20 @@
     }
   ],
   "meeting_date": "2011-01-26",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to hold the federal funds rate at 0 to 1/4 percent and continue its asset purchase program."
+  },
+  "latency_s": 4.38
 }

@@ -7,38 +7,30 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1.25%. The vote was 10-0."
+    "summary": "The Federal Reserve decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 1 1/4 percent.”"
-    },
-    {
-      "quote": "The Committee continues to believe that this accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, is providing important ongoing support to economic activity.",
-      "explanation": "Reworded from the previous statement: “The Committee continues to believe that an accommodative stance of monetary policy, coupled with still-robust underlying growth in productivity, is providing im…”"
+      "explanation": "The Fed opted to hold interest rates steady rather than lowering them as they did in the previous meeting."
     },
     {
       "quote": "The limited number of incoming economic indicators since the November meeting, taken together, are not inconsistent with the economy working its way through its current soft spot.",
-      "explanation": "Reworded from the previous statement: “In these circumstances, the Committee believes that today's additional monetary easing should prove helpful as the economy works its way through this current so…”"
+      "explanation": "Instead of focusing on heightened geopolitical uncertainty holding back spending, the Fed noted that recent data suggest the economy is managing its current soft spot."
     },
     {
       "quote": "In these circumstances, the Committee believes that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are balanced with respect to the prospects for both goals for the foreseeable future.",
-      "explanation": "Reworded from the previous statement: “With this action, the Committee believes that, against the background of its long-run goals of price stability and sustainable economic growth and of the inform…”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 3/4 percent.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "However, incoming economic data have tended to confirm that greater uncertainty, in part attributable to heightened geopolitical risks, is currently inhibiting spending, production, and employment.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Committee updated its assessment to state that risks to its long-run goals are balanced, dropping the mention of previous monetary easing."
     }
   ],
-  "tone_score": -0.07,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee continues to believe that this accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In these circumstances, the Committee believes that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are balanced with respect to the prospects for both goals for the foreseeable future.",
       "direction": "dovish"
     }
   ],
@@ -49,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.06% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.13% would not change."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.06% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.13% would not change."
     },
     {
       "topic": "Savers",
@@ -78,8 +70,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve is currently comfortable holding rates steady as the economy works through its soft spot. Future decisions will depend on incoming economic indicators regarding growth, employment, and inflation.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -87,45 +79,52 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "13.36% as of 2002-08-01"
+      "detail": "13.36%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "6.13% week of 2002-11-29"
+      "detail": "6.13%"
     },
     {
       "source": "DGS10",
-      "detail": "4.06% on 2002-12-10"
+      "detail": "4.06%"
     },
     {
       "source": "UNRATE",
-      "detail": "5.9% in November 2002"
+      "detail": "5.9%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 12k as of November 2002"
+      "detail": "12k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "2.3% year over year, November 2002"
+      "detail": "2.3%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "1.7% year over year, November 2002"
+      "detail": "1.7%"
     },
     {
       "source": "GDPC1",
-      "detail": "1.6% annualized, quarter starting 2002-07-01"
+      "detail": "1.6%"
     }
   ],
   "meeting_date": "2002-12-10",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+  },
+  "latency_s": 3.27
 }

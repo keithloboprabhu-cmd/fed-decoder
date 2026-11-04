@@ -7,36 +7,41 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25%."
+    "summary": "The Federal Reserve kept its target for the federal funds rate at 5-1/4 percent while providing liquidity to support financial markets."
   },
   "changes": [
     {
-      "quote": "FOMC statement: The Federal Reserve is providing liquidity to facilitate the orderly functioning of financial markets",
-      "explanation": "New language added in this statement."
-    },
-    {
       "quote": "The Federal Reserve is providing liquidity to facilitate the orderly functioning of financial markets.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this statement to show it is actively supplying cash to help financial markets run normally during times of stress."
     },
     {
       "quote": "The Federal Reserve will provide reserves as necessary through open market operations to promote trading in the federal funds market at rates close to the Federal Open Market Committee's target rate of 5-1/4 percent.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed emphasized its commitment to keeping short-term borrowing costs near the target rate."
     },
     {
       "quote": "In current circumstances, depository institutions may experience unusual funding needs because of dislocations in money and credit markets.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed acknowledged that banks are facing unusual difficulties and cash needs due to market turmoil."
     },
     {
       "quote": "As always, the discount window is available as a source of funding.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed reminded banks that they can borrow directly from the central bank's discount window if they need emergency funds."
     },
     {
-      "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "Economic growth was moderate during the first half of the year.",
+      "explanation": "This phrasing was removed from the statement, shifting the entire focus toward market liquidity and banking sector funding needs."
     }
   ],
-  "tone_score": 0.38,
-  "tone_quotes": [],
+  "tone_score": 0.0,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Reserve is providing liquidity to facilitate the orderly functioning of financial markets.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In current circumstances, depository institutions may experience unusual funding needs because of dislocations in money and credit markets.",
+      "direction": "dovish"
+    }
+  ],
   "for_you": [
     {
       "topic": "Borrowers",
@@ -77,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved 0.09% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 71%, cut 11%, hike 19%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will continue to monitor market strains and step in with liquidity if conditions demand it. Educational forecast models project a 68 percent chance of a hold at the next meeting, with a 10 percent chance of a cut and a 21 percent chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Federal Reserve will provide reserves as necessary through open market operations to promote trading in the federal funds market at rates close to the Federal Open Market Committee's target rate of 5-1/4 percent."
+      "detail": "The Federal Reserve is providing liquidity to facilitate the orderly functioning of financial markets"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -118,13 +123,20 @@
     }
   ],
   "meeting_date": "2007-08-10",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its target for the federal funds rate at 5-1/4 percent while providing liquidity to support financial markets."
+  },
+  "latency_s": 3.77
 }

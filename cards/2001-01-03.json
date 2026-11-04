@@ -7,47 +7,35 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 6%."
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee at its meeting today decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate…”"
+      "explanation": "The Fed lowered borrowing costs by 50 basis points to 6 percent to support economic growth."
     },
     {
       "quote": "In a related action, the Board of Governors approved a 25-basis-point decrease in the discount rate to 5-3/4 percent, the level requested by seven Reserve Banks.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Board also indicated that it stands ready to approve a further reduction of 25 basis points in the discount rate to 5-1/2 percent on the requests of Federal Reserve Banks.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Board also lowered the discount rate charged on direct bank loans by 25 basis points to 5-3/4 percent."
     },
     {
       "quote": "These actions were taken in light of further weakening of sales and production, and in the context of lower consumer confidence, tight conditions in some segments of financial markets, and high energy prices sapping household and business purchasing power.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed pointed to softening sales, lower confidence, tight financial conditions, and high energy prices as reasons for the rate cut."
     },
     {
       "quote": "Moreover, inflation pressures remain contained.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Nonetheless, to date there is little evidence to suggest that longer-term advances in technology and associated gains in productivity are abating.",
-      "explanation": "New language added in this statement."
+      "explanation": "The central bank noted that inflation is not currently a major concern."
     }
   ],
-  "tone_score": -0.68,
+  "tone_score": -1.5,
   "tone_quotes": [
-    {
-      "quote": "The Committee continues to believe that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
-      "direction": "dovish"
-    },
     {
       "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent.",
       "direction": "dovish"
     },
     {
-      "quote": "Moreover, inflation pressures remain contained.",
-      "direction": "hawkish"
+      "quote": "These actions were taken in light of further weakening of sales and production, and in the context of lower consumer confidence, tight conditions in some segments of financial markets, and high energy prices sapping household and business purchasing power.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.14% and moved +22 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.17% would rise by about $44.82 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.14% and moved +22 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.17% would rise by about $44.82 a month."
     },
     {
       "topic": "Savers",
@@ -80,14 +68,10 @@
     {
       "topic": "Growth",
       "text": "Real GDP grew at a 0.4% annualized pace in the latest reported quarter."
-    },
-    {
-      "topic": "Markets",
-      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +5 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve is closely watching weakening sales and production to determine if further rate cuts are needed. Upcoming meetings will likely evaluate incoming economic data to see if additional easing is warranted.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +111,20 @@
     }
   ],
   "meeting_date": "2001-01-03",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 6.0,
+    "target_high": 6.0,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent."
+  },
+  "latency_s": 3.7
 }

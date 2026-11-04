@@ -7,47 +7,35 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 1.25%. The vote was 12-0."
+    "summary": "The Federal Reserve raised its benchmark interest rate by 25 basis points to 1-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to keep its target for the federal funds rate at 1 percent.”"
-    },
-    {
-      "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
-      "explanation": "Reworded from the previous statement: “The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing importan…”"
-    },
-    {
-      "quote": "The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid pace and labor market conditions have improved.",
-      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid rate and hiring appears to have picked up.”"
+      "explanation": "The Fed officially started its rate-hiking cycle by increasing the federal funds rate target to 1-1/4 percent."
     },
     {
       "quote": "Although incoming inflation data are somewhat elevated, a portion of the increase in recent months appears to have been due to transitory factors.",
-      "explanation": "Reworded from the previous statement: “Although incoming inflation data have moved somewhat higher, long-term inflation expectations appear to have remained well contained.”"
-    },
-    {
-      "quote": "The Committee perceives the upside and downside risks to the attainment of both sustainable growth and price stability for the next few quarters are roughly equal.",
-      "explanation": "Reworded from the previous statement: “The Committee perceives the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.”"
+      "explanation": "The Committee acknowledged higher recent inflation but downplayed part of it as temporary."
     },
     {
       "quote": "With underlying inflation still expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
-      "explanation": "Reworded from the previous statement: “At this juncture, with inflation low and resource use slack, the Committee believes that policy accommodation can be removed at a pace that is likely to be meas…”"
+      "explanation": "The Fed signaled that future rate increases will likely be done in a gradual, measured way."
+    },
+    {
+      "quote": "In a related action, the Board of Governors approved a 25 basis point increase in the discount rate to 2-1/4 percent.",
+      "explanation": "Along with the fed funds rate, the direct lending rate for banks was also raised to 2-1/4 percent."
     }
   ],
-  "tone_score": 0.52,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/4 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee perceives the upside and downside risks to the attainment of both sustainable growth and price stability for the next few quarters are roughly equal.",
-      "direction": "dovish"
+      "quote": "Nonetheless, the Committee will respond to changes in economic prospects as needed to fulfill its obligation to maintain price stability.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.62% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.32% would fall by about $15.63 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.62% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.32% would fall by about $15.63 a month."
     },
     {
       "topic": "Savers",
@@ -80,14 +68,10 @@
     {
       "topic": "Growth",
       "text": "Real GDP grew at a 2.3% annualized pace in the latest reported quarter."
-    },
-    {
-      "topic": "Markets",
-      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -13 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to continue removing monetary policy accommodation at a measured pace. Future rate decisions will depend on how economic data evolves regarding inflation and growth.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +111,20 @@
     }
   ],
   "meeting_date": "2004-06-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised its benchmark interest rate by 25 basis points to 1-1/4 percent."
+  },
+  "latency_s": 3.83
 }

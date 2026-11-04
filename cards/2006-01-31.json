@@ -7,40 +7,24 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 4.5%. The vote was 10-0."
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent.”"
+      "explanation": "The Fed increased the federal funds rate by 25 basis points, bringing the target range up to 4-1/2 percent."
     },
     {
       "quote": "Although recent economic data have been uneven, the expansion in economic activity appears solid.",
-      "explanation": "Reworded from the previous statement: “Despite elevated energy prices and hurricane-related disruptions, the expansion in economic activity appears solid.”"
+      "explanation": "The Fed noted that economic data has been uneven, but overall growth remains solid."
     },
     {
       "quote": "The Committee judges that some further policy firming may be needed to keep the risks to the attainment of both sustainable economic growth and price stability roughly in balance.",
-      "explanation": "Reworded from the previous statement: “The Committee judges that some further measured policy firming is likely to be needed to keep the risks to the attainment of both sustainable economic growth an…”"
-    },
-    {
-      "quote": "Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Roger W. Ferguson, Jr.; Jack Guynn; Donald L. Kohn; Jeffrey M. Lacker; Mark W. Olson; Sandra Pianalto; and Janet L. Yellen.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Roger W. Ferguson, Jr.; Richard W.…”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors unanimously approved a 25-basis-point increase in the discount rate to 5-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors unanimously approved a 25-basis point increase in the discount rate to 5-1/4 percent.”"
-    },
-    {
-      "quote": "In taking this action, the Board approved the requests submitted by the Boards of Directors of the Federal Reserve Banks of Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Kansas City, Dallas, and San Francisco.",
-      "explanation": "Reworded from the previous statement: “In taking this action, the Board approved the requests submitted by the Boards of Directors of the Federal Reserve Banks of Boston, New York, Philadelphia, Clev…”"
+      "explanation": "The Fed dropped the word 'measured' and stated that some further policy firming 'may' be needed, signaling slightly more flexibility on future rate hikes."
     }
   ],
-  "tone_score": 1.74,
+  "tone_score": 1.0,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/2 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee judges that some further policy firming may be needed to keep the risks to the attainment of both sustainable economic growth and price stability roughly in balance.",
       "direction": "hawkish"
@@ -57,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.53% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.1% would fall by about $1.94 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.53% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.1% would fall by about $1.94 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +74,8 @@
       "text": "The broad trade-weighted dollar moved -0.28% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 8%, cut 0%, hike 92%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed remains open to additional rate increases if inflation pressures persist. Educational forecasts indicate a high probability of another rate hike at upcoming meetings.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +115,20 @@
     }
   ],
   "meeting_date": "2006-01-31",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.5,
+    "target_high": 4.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to 4-1/2 percent."
+  },
+  "latency_s": 3.82
 }

@@ -130,7 +130,15 @@ class GroqProvider(Provider):
             resp = self._call(**kw)
         except groq.BadRequestError as e:
             if schema is not None and self._strict_ok and not tools:
-                self._strict_ok = False  # model lacks strict schema support: JSON mode + validation
+                msg = str(e).lower()
+                if "json_validate_failed" in msg or "failed to generate" in msg:
+                    # One output broke the schema: retry this call in JSON mode + pydantic validation.
+                    self._strict_ok = False
+                    try:
+                        return self.generate(messages, schema=schema, tools=tools, temperature=temperature)
+                    finally:
+                        self._strict_ok = True
+                self._strict_ok = False  # strict json_schema unsupported for this model: JSON mode from now on
                 return self.generate(messages, schema=schema, tools=tools, temperature=temperature)
             raise ProviderUnavailable(str(e)) from e
         latency = time.time() - t0

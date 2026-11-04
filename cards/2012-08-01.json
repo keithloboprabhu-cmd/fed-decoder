@@ -9,46 +9,42 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady at 0 to 1/4 percent and maintain its supportive monetary policy stance."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in June suggests that economic activity decelerated somewhat over the first half of this year.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in April suggests that the economy has been expanding moderately this year.”"
+      "explanation": "The Fed noted that economic growth slowed down during the first half of the year compared to its earlier view."
     },
     {
       "quote": "Growth in employment has been slow in recent months, and the unemployment rate remains elevated.",
-      "explanation": "Reworded from the previous statement: “However, growth in employment has slowed in recent months, and the unemployment rate remains elevated.”"
-    },
-    {
-      "quote": "Household spending has been rising at a somewhat slower pace than earlier in the year.",
-      "explanation": "Reworded from the previous statement: “Household spending appears to be rising at a somewhat slower pace than earlier in the year.”"
-    },
-    {
-      "quote": "Despite some further signs of improvement, the housing sector remains depressed.",
-      "explanation": "Reworded from the previous statement: “Despite some signs of improvement, the housing sector remains depressed.”"
+      "explanation": "The language on job creation was downgraded to show that hiring has been slow recently."
     },
     {
       "quote": "Inflation has declined since earlier this year, mainly reflecting lower prices of crude oil and gasoline, and longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Inflation has declined, mainly reflecting lower prices of crude oil and gasoline, and longer-term inflation expectations have remained stable.”"
+      "explanation": "The Fed acknowledged that inflation dropped due to cheaper oil and gas prices."
     },
     {
       "quote": "The Committee also decided to continue through the end of the year its program to extend the average maturity of its holdings of securities as announced in June, and it is maintaining its existing policy of reinvesting principal payments from its holdings of agency debt and agency mortgage-backed securities in agency mortgage-backed securities.",
-      "explanation": "Reworded from the previous statement: “The Committee is maintaining its existing policy of reinvesting principal payments from its holdings of agency debt and agency mortgage-backed securities in age…”"
+      "explanation": "The Fed formally integrated its decision to continue its maturity extension program through the end of the year."
+    },
+    {
+      "quote": "The Committee will closely monitor incoming information on economic and financial developments and will provide additional accommodation as needed to promote a stronger economic recovery and sustained improvement in labor market conditions in a context of price stability.",
+      "explanation": "The Fed shifted its wording to emphasize that it is ready to provide more support if the economy and labor market need it."
     }
   ],
-  "tone_score": -1.15,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels for the federal funds rate at least through late 2014.",
+      "quote": "Information received since the Federal Open Market Committee met in June suggests that economic activity decelerated somewhat over the first half of this year.",
       "direction": "dovish"
     },
     {
-      "quote": "Furthermore, strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+      "quote": "Growth in employment has been slow in recent months, and the unemployment rate remains elevated.",
       "direction": "dovish"
     },
     {
-      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee expects to maintain a highly accommodative stance for monetary policy.",
+      "quote": "The Committee will closely monitor incoming information on economic and financial developments and will provide additional accommodation as needed to promote a stronger economic recovery and sustained improvement in labor market conditions in a context of price stability.",
       "direction": "dovish"
     }
   ],
@@ -59,7 +55,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.56% and moved +5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.53% would rise by about $8.40 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.56% and moved +5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.53% would rise by about $8.40 a month."
     },
     {
       "topic": "Savers",
@@ -92,12 +88,12 @@
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 74%, cut 25%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will likely maintain its exceptionally low interest rate target at least through late 2014. Additionally, an educational forecast model gives a 73% probability that the Fed will hold rates again at its next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptiona"
+      "detail": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels for the federal funds rate at least through late 2014."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +129,22 @@
     }
   ],
   "meeting_date": "2012-08-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady at 0 to 1/4 percent and maintain its supportive monetary policy stance."
+  },
+  "latency_s": 3.86
 }

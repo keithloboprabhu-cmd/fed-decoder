@@ -7,46 +7,42 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 1.5%. The vote was 12-0."
+    "summary": "The Federal Open Market Committee raised its target for the federal funds rate by 25 basis points to 1-1/2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/4 percent.”"
+      "explanation": "The Fed lifted its benchmark rate by 25 basis points to a target of 1-1/2 percent."
     },
     {
       "quote": "In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that economic growth and job creation have slowed down lately."
     },
     {
       "quote": "This softness likely owes importantly to the substantial rise in energy prices.",
-      "explanation": "New language added in this statement."
+      "explanation": "Higher energy costs are cited as a main reason for the recent economic slowdown."
     },
     {
       "quote": "The economy nevertheless appears poised to resume a stronger pace of expansion going forward.",
-      "explanation": "New language added in this statement."
+      "explanation": "Despite the current slowdown, the Fed expects growth to bounce back soon."
     },
     {
-      "quote": "Inflation has been somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors.",
-      "explanation": "Reworded from the previous statement: “Although incoming inflation data are somewhat elevated, a portion of the increase in recent months appears to have been due to transitory factors.”"
-    },
-    {
-      "quote": "The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid pace and labor market conditions have improved.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "In a related action, the Board of Governors unanimously approved a 25 basis point increase in the discount rate to 2-1/2 percent.",
+      "explanation": "The Board also unanimously raised the discount rate, which is the interest rate charged on commercial bank loans, to 2-1/2 percent."
     }
   ],
-  "tone_score": 0.14,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/2 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee perceives the upside and downside risks to the attainment of both sustainable growth and price stability for the next few quarters are roughly equal.",
+      "quote": "Inflation has been somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "With underlying inflation still expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
       "direction": "dovish"
     }
   ],
@@ -86,8 +82,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +10 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to continue raising interest rates gradually as long as the economy keeps growing. Upcoming meetings will likely feature further measured hikes if economic data continues to align with their forecasts.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +123,20 @@
     }
   ],
   "meeting_date": "2004-08-10",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 1.5,
+    "target_high": 1.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee raised its target for the federal funds rate by 25 basis points to 1-1/2 percent."
+  },
+  "latency_s": 18.11
 }

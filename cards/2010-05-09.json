@@ -7,42 +7,30 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%."
+    "summary": "The Federal Reserve and other central banks announced the reestablishment of temporary U.S. dollar liquidity swap facilities to address funding strains in Europe."
   },
   "changes": [
     {
-      "quote": "FOMC statement: Federal Reserve, European Central Bank, Bank of Canada, Bank of England, and Swiss National Bank announce reestablishment of temporary U.S. dollar liquidity swap facilities",
-      "explanation": "New language added in this statement."
-    },
-    {
       "quote": "In response to the reemergence of strains in U.S. dollar short-term funding markets in Europe, the Bank of Canada, the Bank of England, the European Central Bank, the Federal Reserve, and the Swiss National Bank are announcing the reestablishment of temporary U.S. dollar liquidity swap facilities.",
-      "explanation": "New language added in this statement."
+      "explanation": "Global central banks are stepping in to provide U.S. dollar funding to help ease financial strains originating in Europe."
     },
     {
-      "quote": "These facilities are designed to help improve liquidity conditions in U.S. dollar funding markets and to prevent the spread of strains to other markets and financial centers.",
-      "explanation": "New language added in this statement."
+      "quote": "The arrangement with the Bank of Canada would support drawings of up to $30 billion, as was the case previously.",
+      "explanation": "The swap line with the Bank of Canada is set to support up to $30 billion, maintaining previous arrangements."
     },
     {
-      "quote": "The Bank of Japan will be considering similar measures soon.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Central banks will continue to work together closely as needed to address pressures in funding markets.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Federal Open Market Committee has authorized temporary reciprocal currency arrangements (swap lines) with the Bank of Canada, the Bank of England, the European Central Bank (ECB), and the Swiss National Bank.",
-      "explanation": "New language added in this statement."
+      "quote": "These swap arrangements have been authorized through January 2011.",
+      "explanation": "The temporary swap facilities are authorized to remain in place through January 2011."
     }
   ],
-  "tone_score": -0.06,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "In response to the reemergence of strains in U.S. dollar short-term funding markets in Europe, the Bank of Canada, the Bank of England, the European Central Bank, the Federal Reserve, and the Swiss National Bank are announcing the reestablishment of temporary U.S. dollar liquidity swap facilities.",
+      "quote": "These facilities are designed to help improve liquidity conditions in U.S. dollar funding markets and to prevent the spread of strains to other markets and financial centers.",
       "direction": "dovish"
     },
     {
-      "quote": "These facilities are designed to help improve liquidity conditions in U.S. dollar funding markets and to prevent the spread of strains to other markets and financial centers.",
+      "quote": "Central banks will continue to work together closely as needed to address pressures in funding markets.",
       "direction": "dovish"
     }
   ],
@@ -53,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.45% and moved +12 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.06% would rise by about $22.14 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.45% and moved +12 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.06% would rise by about $22.14 a month."
     },
     {
       "topic": "Savers",
@@ -86,12 +74,12 @@
       "text": "The broad trade-weighted dollar moved -1.03% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 85%, cut 5%, hike 11%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that central banks are ready to cooperate and provide liquidity to stabilize global funding markets as needed. An educational forecast model estimates an 87% chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": ""
+      "detail": "FOMC statement: Federal Reserve, European Central Bank, Bank of Canada, Bank of England, and Swiss National Bank announce reestablishment of temporary U.S. dollar liquidity swap facilities"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -127,14 +115,20 @@
     }
   ],
   "meeting_date": "2010-05-09",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)",
-    "Statement does not state a target; showing the prevailing target from FRED."
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve and other central banks announced the reestablishment of temporary U.S. dollar liquidity swap facilities to address funding strains in Europe."
+  },
+  "latency_s": 4.3
 }

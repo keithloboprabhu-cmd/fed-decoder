@@ -7,47 +7,31 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 2.25%. The vote was 12-0."
+    "summary": "The Federal Reserve raised its target interest rate by 25 basis points to 2-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2 percent.”"
+      "explanation": "The Fed increased the federal funds rate target to 2-1/4 percent."
     },
     {
       "quote": "Output appears to be growing at a moderate pace despite the earlier rise in energy prices, and labor market conditions continue to improve gradually.",
-      "explanation": "Reworded from the previous statement: “Output appears to be growing at a moderate pace despite the rise in energy prices, and labor market conditions have improved.”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors unanimously approved a 25 basis point",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors unanimously approved a 25 basis point increase in the discount rate to 3 percent.”"
-    },
-    {
-      "quote": "increase in the discount rate to 3-1/4 percent.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "In taking this action, the Board approved the requests submitted by the Boards of Directors of the Federal Reserve Banks of Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Kansas City, Dallas, and San Francisco.",
-      "explanation": "Reworded from the previous statement: “In taking this action, the Board approved the requests submitted by the Boards of Directors of the Federal Reserve Banks of Boston, New York, Philadelphia, Clev…”"
+      "explanation": "The Committee noted that economic growth remains moderate despite prior increases in energy prices and that the job market is slowly getting better."
     },
     {
       "quote": "In addition, the Committee unanimously decided to expedite the release of its minutes.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed decided to speed up the release timeline for meeting minutes so the public gets them faster."
     }
   ],
-  "tone_score": 0.38,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/4 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee perceives the upside and downside risks to the attainment of both sustainable growth and price stability for the next few quarters to be roughly equal.",
-      "direction": "dovish"
+      "quote": "With underlying inflation expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -80,14 +64,10 @@
     {
       "topic": "Growth",
       "text": "Real GDP grew at a 3.8% annualized pace in the latest reported quarter."
-    },
-    {
-      "topic": "Markets",
-      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +1 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 15%, cut 0%, hike 85%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will likely continue removing monetary accommodation at a measured pace. The forecast model assigns an 85% probability of another rate hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +107,20 @@
     }
   ],
   "meeting_date": "2004-12-14",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 2.25,
+    "target_high": 2.25,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised its target interest rate by 25 basis points to 2-1/4 percent."
+  },
+  "latency_s": 13.32
 }

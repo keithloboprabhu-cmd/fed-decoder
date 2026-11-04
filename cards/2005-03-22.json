@@ -7,47 +7,39 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 2.75%. The vote was 12-0."
+    "summary": "The Federal Reserve raised its benchmark interest rate by 25 basis points to a range of 2-3/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-3/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/2 percent.”"
+      "explanation": "The Fed lifted its target rate by 25 basis points to 2-3/4 percent."
     },
     {
       "quote": "Output evidently continues to grow at a solid pace despite the rise in energy prices, and labor market conditions continue to improve gradually.",
-      "explanation": "Reworded from the previous statement: “Output appears to be growing at a moderate pace despite the rise in energy prices, and labor market conditions continue to improve gradually.”"
+      "explanation": "Economic output is now described as growing at a solid pace instead of a moderate pace."
     },
     {
       "quote": "Though longer-term inflation expectations remain well contained, pressures on inflation have picked up in recent months and pricing power is more evident.",
-      "explanation": "Reworded from the previous statement: “Inflation and longer-term inflation expectations remain well contained.”"
+      "explanation": "The Fed noted that inflation pressures have picked up and businesses have more pricing power."
     },
     {
       "quote": "The rise in energy prices, however, has not notably fed through to core consumer prices.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stability should be kept roughly equal.",
-      "explanation": "Reworded from the previous statement: “The Committee perceives the upside and downside risks to the attainment of both sustainable growth and price stability for the next few quarters to be roughly e…”"
+      "explanation": "A new sentence was added noting that higher energy prices have not significantly impacted core consumer prices."
     },
     {
       "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
-      "explanation": "Reworded from the previous statement: “With underlying inflation expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured…”"
+      "explanation": "The Fed updated its description of underlying inflation from relatively low to contained."
     }
   ],
-  "tone_score": 0.52,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-3/4 percent.",
+      "quote": "Though longer-term inflation expectations remain well contained, pressures on inflation have picked up in recent months and pricing power is more evident.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stability should be kept roughly equal.",
-      "direction": "dovish"
+      "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.63% and moved +10 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.85% would rise by about $19.20 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.63% and moved +10 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.85% would rise by about $19.20 a month."
     },
     {
       "topic": "Savers",
@@ -86,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +14 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 11%, cut 0%, hike 88%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve intends to keep raising interest rates at a measured pace. The educational forecast model assigns an 88% probability of another rate hike at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2005-03-22",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 2.75,
+    "target_high": 2.75,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised its benchmark interest rate by 25 basis points to a range of 2-3/4 percent."
+  },
+  "latency_s": 3.66
 }

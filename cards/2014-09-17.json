@@ -12,46 +12,38 @@
       "Statement Regarding Purchases",
       "Agency Mortgage-Backed Securities"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 8-4. Dissenting: Richard W. Fisher, Charles I. Plosser, Statement Regarding Purchases, Agency Mortgage-Backed Securities."
+    "summary": "The Federal Reserve kept interest rates steady at 0 to 1/4 percent while reducing its monthly asset purchases."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in July suggests that economic activity is expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June indicates that growth in economic activity rebounded in the second quarter.”"
-    },
-    {
-      "quote": "On balance, labor market conditions improved somewhat further; however, the unemployment rate is little changed and a range of labor market indicators suggests that there remains significant underutilization of labor resources.",
-      "explanation": "Reworded from the previous statement: “However, a range of labor market indicators suggests that there remains significant underutilization of labor resources.”"
-    },
-    {
-      "quote": "Labor market conditions improved, with the unemployment rate declining further.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Inflation has been running below the Committee's longer-run objective.",
-      "explanation": "Reworded from the previous statement: “Inflation has moved somewhat closer to the Committee's longer-run objective.”"
-    },
-    {
-      "quote": "The Committee sees the risks to the outlook for economic activity and the labor market as nearly balanced and judges that the likelihood of inflation running persistently below 2 percent has diminished somewhat since early this year.",
-      "explanation": "Reworded from the previous statement: “The Committee sees the risks to the outlook for economic activity and the labor market as nearly balanced and judges that the likelihood of inflation running pe…”"
+      "explanation": "The Fed adjusted its overall view of economic growth to reflect a moderate expansion."
     },
     {
       "quote": "Beginning in October, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $5 billion per month rather than $10 billion per month, and will add to its holdings of longer-term Treasury securities at a pace of $10 billion per month rather than $15 billion per month.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed scaled back its bond purchases again, continuing to wind down its quantitative easing program."
+    },
+    {
+      "quote": "If incoming information broadly supports the Committee's expectation of ongoing improvement in labor market conditions and inflation moving back toward its longer-run objective, the Committee will end its current program of asset purchases at its next meeting.",
+      "explanation": "The Fed signaled it could completely stop its bond purchases at the following meeting if the economy continues to improve."
+    },
+    {
+      "quote": "On balance, labor market conditions improved somewhat further; however, the unemployment rate is little changed and a range of labor market indicators suggests that there remains significant underutilization of labor resources.",
+      "explanation": "The Fed noted ongoing progress in the job market, though significant slack remains."
+    },
+    {
+      "quote": "Inflation has been running below the Committee's longer-run objective.",
+      "explanation": "The Fed updated its description of inflation, noting it remains under the target level."
     }
   ],
-  "tone_score": -1.19,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
-      "direction": "dovish"
+      "quote": "The Committee currently judges that there is sufficient underlying strength in the broader economy to support ongoing improvement in labor market conditions.",
+      "direction": "hawkish"
     },
     {
-      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions since the inception of the current asset purchase program, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
+      "quote": "Inflation has been running below the Committee's longer-run objective.",
       "direction": "dovish"
     }
   ],
@@ -62,7 +54,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.62% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.1% would rise by about $3.48 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.62% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.1% would rise by about $3.48 a month."
     },
     {
       "topic": "Savers",
@@ -95,12 +87,12 @@
       "text": "The broad trade-weighted dollar moved 0.06% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 86%, cut 13%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will likely end its asset purchase program at the next meeting if the economy stays on track. An educational forecast model suggests an 86% probability of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation."
+      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -136,13 +128,25 @@
     }
   ],
   "meeting_date": "2014-09-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 8,
+    "votes_against": 4,
+    "dissenters": [
+      "Richard W. Fisher",
+      "Charles I. Plosser",
+      "Statement Regarding Purchases",
+      "Agency Mortgage-Backed Securities"
+    ],
+    "summary": "The Federal Reserve kept interest rates steady at 0 to 1/4 percent while reducing its monthly asset purchases."
+  },
+  "latency_s": 3.96
 }

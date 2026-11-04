@@ -9,46 +9,38 @@
     "dissenters": [
       "Charles L. Evans"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Charles L. Evans."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in November suggests that the economy has been expanding moderately, notwithstanding some apparent slowing in global growth.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that the domestic economy continues to grow at a moderate pace despite a slowdown in global growth."
     },
     {
       "quote": "While indicators point to some improvement in overall labor market conditions, the unemployment rate remains elevated.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, recent indicators point to continuing weakness in overall labor market conditions, and the unemployment rate remains elevated.”"
+      "explanation": "Job market conditions have shown some signs of improvement, though unemployment remains high."
     },
     {
       "quote": "Household spending has continued to advance, but business fixed investment appears to be increasing less rapidly and the housing sector remains depressed.",
-      "explanation": "Reworded from the previous statement: “Business investment in equipment and software has continued to expand, but investment in nonresidential structures is still weak, and the housing sector remains…”"
+      "explanation": "Consumers keep spending, but businesses are investing more slowly and housing remains weak."
     },
     {
       "quote": "Inflation has moderated since earlier in the year, and longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Longer-term inflation expectations have remained stable.”"
+      "explanation": "Inflation has cooled down compared to earlier in the year while long-term price expectations stay steady."
     },
     {
-      "quote": "Information received since the Federal Open Market Committee met in September indicates that economic growth strengthened somewhat in the third quarter, reflecting in part a reversal of the temporary factors that had weighed on growth earlier in the year.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Household spending has increased at a somewhat faster pace in recent months.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+      "explanation": "Global financial troubles continue to threaten the economic outlook."
     }
   ],
-  "tone_score": -1.02,
+  "tone_score": -1.0,
   "tone_quotes": [
-    {
-      "quote": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels for the federal funds rate at least through mid-2013.",
-      "direction": "dovish"
-    },
     {
       "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
       "direction": "dovish"
     },
     {
-      "quote": "Inflation has moderated since earlier in the year, and longer-term inflation expectations have remained stable.",
+      "quote": "The Committee also anticipates that inflation will settle, over coming quarters, at levels at or below those consistent with the Committee’s dual mandate.",
       "direction": "dovish"
     }
   ],
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.96% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4% would fall by about $12.08 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.96% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4% would fall by about $12.08 a month."
     },
     {
       "topic": "Savers",
@@ -92,12 +84,12 @@
       "text": "The broad trade-weighted dollar moved 0.23% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 74%, cut 24%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to keep rates exceptionally low at least through mid-2013. For educational purposes, an educational forecast model gave the next meeting a 74 percent chance of a hold, 24 percent chance of a cut, and 2 percent chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels f"
+      "detail": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2011-12-13",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Charles L. Evans"
+    ],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.64
 }

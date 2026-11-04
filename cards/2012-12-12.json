@@ -9,46 +9,42 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve kept its benchmark interest rate at 0 to 1/4 percent and continued its ongoing asset purchase programs."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in October suggests that economic activity and employment have continued to expand at a moderate pace in recent months, apart from weather-related disruptions.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September suggests that economic activity has continued to expand at a moderate pace in rece…”"
+      "explanation": "The Fed noted that economic activity and employment continued to grow moderately, while acknowledging temporary disruptions from weather."
     },
     {
       "quote": "Although the unemployment rate has declined somewhat since the summer, it remains elevated.",
-      "explanation": "Reworded from the previous statement: “Growth in employment has been slow, and the unemployment rate remains elevated.”"
+      "explanation": "The Committee recognized that joblessness fell slightly since the summer, though it is still too high."
     },
     {
       "quote": "Household spending has continued to advance, and the housing sector has shown further signs of improvement, but growth in business fixed investment has slowed.",
-      "explanation": "Reworded from the previous statement: “Household spending has advanced a bit more quickly, but growth in business fixed investment has slowed.”"
+      "explanation": "Consumer spending and housing continued to improve, but businesses slowed down their investments."
     },
     {
-      "quote": "Inflation has been running somewhat below the Committee’s longer-run objective, apart from temporary variations that largely reflect fluctuations in energy prices.",
-      "explanation": "New language added in this statement."
+      "quote": "The Committee also will purchase longer-term Treasury securities after its program to extend the average maturity of its holdings of Treasury securities is completed at the end of the year, initially at a pace of $45 billion per month.",
+      "explanation": "The Fed announced it will start buying $45 billion of longer-term Treasuries per month once its maturity extension program ends."
     },
     {
-      "quote": "The housing sector has shown some further signs of improvement, albeit from a depressed level.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Inflation recently picked up somewhat, reflecting higher energy prices.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "To support continued progress toward maximum employment and price stability, the Committee expects that a highly accommodative stance of monetary policy will remain appropriate for a considerable time after the asset purchase program ends and the economic recovery strengthens.",
+      "explanation": "The Fed tied its promise of exceptionally low interest rates to specific numerical thresholds for unemployment and inflation rather than just a calendar date."
     }
   ],
-  "tone_score": -1.15,
+  "tone_score": -1.0,
   "tone_quotes": [
+    {
+      "quote": "The Committee remains concerned that, without sufficient policy accommodation, economic growth might not be strong enough to generate sustained improvement in labor market conditions.",
+      "direction": "dovish"
+    },
     {
       "quote": "Furthermore, strains in global financial markets continue to pose significant downside risks to the economic outlook.",
       "direction": "dovish"
     },
     {
-      "quote": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee’s 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee also will purchase longer-term Treasury securities after its program to extend the average maturity of its holdings of Treasury securities is completed at the end of the year, initially at a pace of $45 billion per month.",
+      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee will continue purchasing additional agency mortgage-backed securities at a pace of $40 billion per month.",
       "direction": "dovish"
     }
   ],
@@ -59,7 +55,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.72% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.32% would rise by about $9.95 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.72% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.32% would rise by about $9.95 a month."
     },
     {
       "topic": "Savers",
@@ -92,12 +88,12 @@
       "text": "The broad trade-weighted dollar moved -0.08% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 86%, cut 11%, hike 3%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed plans to keep interest rates exceptionally low as long as the unemployment rate stays above 6-1/2 percent and inflation projections remain tame. An educational forecast model suggests an 86 percent chance that the Fed will hold rates steady at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation bet"
+      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +129,22 @@
     }
   ],
   "meeting_date": "2012-12-12",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve kept its benchmark interest rate at 0 to 1/4 percent and continued its ongoing asset purchase programs."
+  },
+  "latency_s": 4.0
 }

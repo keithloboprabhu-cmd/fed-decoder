@@ -7,35 +7,31 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to keep the federal funds rate at 0 to 1/4 percent and continue its asset purchase program."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in March indicates that the economic recovery is proceeding at a moderate pace and overall conditions in the labor market are improving gradually.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January suggests that the economic recovery is on a firmer footing, and overall conditions i…”"
-    },
-    {
-      "quote": "Commodity prices have risen significantly since last summer, and concerns about global supplies of crude oil have contributed to a further increase in oil prices since the Committee met in March.",
-      "explanation": "Reworded from the previous statement: “Commodity prices have risen significantly since the summer, and concerns about global supplies of crude oil have contributed to a sharp run-up in oil prices in …”"
+      "explanation": "The Fed adjusted its assessment to note the recovery is proceeding at a moderate pace compared to previous descriptions."
     },
     {
       "quote": "Inflation has picked up in recent months, but longer-term inflation expectations have remained stable and measures of underlying inflation are still subdued.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, longer-term inflation expectations have remained stable, and measures of underlying inflation have been subdued.”"
+      "explanation": "Language was updated to acknowledge that inflation has picked up recently while underlying measures remain subdued."
     },
     {
       "quote": "The unemployment rate remains elevated, and measures of underlying inflation continue to be somewhat low, relative to levels that the Committee judges to be consistent, over the longer run, with its dual mandate.",
-      "explanation": "New language added in this statement."
+      "explanation": "This phrasing was moved to emphasize the ongoing challenges of elevated unemployment and low underlying inflation relative to the Fed's long-run goals."
     },
     {
       "quote": "Increases in the prices of energy and other commodities have pushed up inflation in recent months.",
-      "explanation": "Reworded from the previous statement: “The recent increases in the prices of energy and other commodities are currently putting upward pressure on inflation.”"
+      "explanation": "The Committee clarified that higher energy and commodity prices have directly pushed up recent inflation figures."
     },
     {
-      "quote": "Currently, the unemployment rate remains elevated, and measures of underlying inflation continue to be somewhat low, relative to levels that the Committee judges to be consistent, over the longer run, with its dual mandate.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "In particular, the Committee is maintaining its existing policy of reinvesting principal payments from its securities holdings and will complete purchases of $600 billion of longer-term Treasury securities by the end of the current quarter.",
+      "explanation": "The Fed updated the timeline to state it will finish its $600 billion Treasury purchase program by the end of the current quarter."
     }
   ],
-  "tone_score": -0.53,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
       "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels for the federal funds rate for an extended period.",
@@ -53,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.39% and moved +5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.91% would rise by about $9.13 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.39% and moved +5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.91% would rise by about $9.13 a month."
     },
     {
       "topic": "Savers",
@@ -86,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved -0.01% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 87%, cut 11%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to hold interest rates exceptionally low for an extended period while it completes its current asset purchase program. According to the educational forecast model, the probability of holding rates steady at the next meeting is 87 percent.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels f"
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -127,13 +123,20 @@
     }
   ],
   "meeting_date": "2011-04-27",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the federal funds rate at 0 to 1/4 percent and continue its asset purchase program."
+  },
+  "latency_s": 4.07
 }

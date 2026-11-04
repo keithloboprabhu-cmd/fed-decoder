@@ -9,43 +9,39 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 10-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "The moderation in economic growth appears to be continuing, partly reflecting a cooling of the housing market.",
-      "explanation": "New language added in this statement."
+      "explanation": "This phrasing highlights that economic growth continues to slow down as the housing market cools."
     },
     {
       "quote": "Readings on core inflation have been elevated, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
-      "explanation": "Reworded from the previous statement: “Readings on core inflation have been elevated in recent months, and the high levels of resource utilization and of the prices of energy and other commodities ha…”"
+      "explanation": "The Committee removed the reference to recent months while keeping the warning that elevated core inflation and high energy and commodity prices could sustain price pressures."
     },
     {
       "quote": "However, inflation pressures seem likely to moderate over time, reflecting reduced impetus from energy prices, contained inflation expectations, and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
-      "explanation": "Reworded from the previous statement: “However, inflation pressures seem likely to moderate over time, reflecting contained inflation expectations and the cumulative effects of monetary policy action…”"
+      "explanation": "Energy prices were added as a specific factor expected to reduce inflation pressures over time."
     },
     {
       "quote": "Economic growth has moderated from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "This older description of past economic growth and the effects of rate and energy price increases was removed."
     },
     {
       "quote": "Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Jack Guynn; Donald L. Kohn; Randall S. Kroszner; Frederic S. Mishkin; Sandra Pianalto; Kevin M. Warsh; and Janet L. Yellen.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Jack Guynn; Donald L. Kohn; Randa…”"
+      "explanation": "Frederic S. Mishkin was added to the list of members voting in favor of the policy action."
     }
   ],
-  "tone_score": 1.36,
+  "tone_score": 0.5,
   "tone_quotes": [
-    {
-      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Readings on core inflation have been elevated, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
       "direction": "hawkish"
     },
     {
       "quote": "However, inflation pressures seem likely to moderate over time, reflecting reduced impetus from energy prices, contained inflation expectations, and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
-      "direction": "hawkish"
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -55,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.73% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.47% would fall by about $1.97 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.73% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.47% would fall by about $1.97 a month."
     },
     {
       "topic": "Savers",
@@ -88,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved -0.01% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 33%, cut 0%, hike 67%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future meetings will depend on incoming information regarding inflation and economic growth. The educational forecast model gives the next meeting a 91% probability of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -129,13 +125,22 @@
     }
   ],
   "meeting_date": "2006-09-20",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 4.0
 }

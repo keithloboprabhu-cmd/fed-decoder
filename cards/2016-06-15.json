@@ -7,46 +7,38 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0.25% to 0.5%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in April indicates that the pace of improvement in the labor market has slowed while growth in economic activity appears to have picked up.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed notes that job market progress has slowed down, even though overall economic activity picked up."
     },
     {
       "quote": "Although the unemployment rate has declined, job gains have diminished.",
-      "explanation": "New language added in this statement."
+      "explanation": "While the jobless rate dropped, the number of new jobs being added has gotten smaller."
     },
     {
       "quote": "Growth in household spending has strengthened.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Since the beginning of the year, the housing sector has continued to improve and the drag from net exports appears to have lessened, but business fixed investment has been soft.",
-      "explanation": "Reworded from the previous statement: “Since the beginning of the year, the housing sector has improved further but business fixed investment and net exports have been soft.”"
-    },
-    {
-      "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and in prices of non-energy imports.",
-      "explanation": "Reworded from the previous statement: “Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and falling prices of n…”"
+      "explanation": "Consumers are spending more strongly than before."
     },
     {
       "quote": "Market-based measures of inflation compensation declined; most survey-based measures of longer-term inflation expectations are little changed, on balance, in recent months.",
-      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations are little changed, on balance, in recen…”"
+      "explanation": "Market measures showing expected inflation have dropped recently."
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were: Janet L. Yellen, Chair; William C. Dudley, Vice Chairman; Lael Brainard; James Bullard; Stanley Fischer; Esther L. George; Loretta J. Mester; Jerome H. Powell; Eric Rosengren; and Daniel K. Tarullo.",
+      "explanation": "Esther L. George joined the voting roster for this meeting."
     }
   ],
-  "tone_score": -0.02,
+  "tone_score": -0.5,
   "tone_quotes": [
     {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting further improvement in labor market conditions and a return to 2 percent inflation.",
+      "quote": "Information received since the Federal Open Market Committee met in April indicates that the pace of improvement in the labor market has slowed while growth in economic activity appears to have picked up.",
       "direction": "dovish"
     },
     {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and in prices of non-energy imports.",
+      "quote": "Although the unemployment rate has declined, job gains have diminished.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.6% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.66% would fall by about $3.38 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.6% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.66% would fall by about $3.38 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.19% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 97%, cut 0%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate increases will be gradual as the Committee monitors inflation and job growth. For educational purposes, our forecast model gives the next meeting a 95% probability of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2016-06-15",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.25,
+    "target_high": 0.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
+  },
+  "latency_s": 3.96
 }

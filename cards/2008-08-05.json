@@ -9,46 +9,42 @@
     "dissenters": [
       "Richard W. Fisher"
     ],
-    "summary": "The Fed held its policy rate at 2%. The vote was 10-1. Dissenting: Richard W. Fisher."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
   },
   "changes": [
     {
       "quote": "Economic activity expanded in the second quarter, partly reflecting growth in consumer spending and exports.",
-      "explanation": "Reworded from the previous statement: “Recent information indicates that overall economic activity continues to expand, partly reflecting some firming in household spending.”"
+      "explanation": "This updates the language on economic growth to show that output expanded in the second quarter due to consumer spending and exports."
     },
     {
       "quote": "Tight credit conditions, the ongoing housing contraction, and elevated energy prices are likely to weigh on economic growth over the next few quarters.",
-      "explanation": "Reworded from the previous statement: “Tight credit conditions, the ongoing housing contraction, and the rise in energy prices are likely to weigh on economic growth over the next few quarters.”"
-    },
-    {
-      "quote": "Over time, the substantial easing of monetary policy, combined with ongoing measures to foster market liquidity, should help to promote moderate economic growth.",
-      "explanation": "Reworded from the previous statement: “The substantial easing of monetary policy to date, combined with ongoing measures to foster market liquidity, should help to promote moderate growth over time.”"
+      "explanation": "The Committee replaced the word \"rise\" with \"elevated\" regarding energy prices, acknowledging that high costs continue to pressure the economy."
     },
     {
       "quote": "Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities, and some indicators of inflation expectations have been elevated.",
-      "explanation": "Reworded from the previous statement: “However, in light of the continued increases in the prices of energy and some other commodities and the elevated state of some indicators of inflation expectati…”"
+      "explanation": "The Fed sharpened its description of inflation, noting that it has been high due to prior energy and commodity price increases."
     },
     {
       "quote": "The Committee expects inflation to moderate later this year and next year, but the inflation outlook remains highly uncertain.",
-      "explanation": "Reworded from the previous statement: “The Committee expects inflation to moderate later this year and next year.”"
+      "explanation": "The statement adds that despite expected moderation, the overall outlook for inflation remains highly uncertain."
     },
     {
       "quote": "Although downside risks to growth remain, the upside risks to inflation are also of significant concern to the Committee.",
-      "explanation": "Reworded from the previous statement: “Although downside risks to growth remain, they appear to have diminished somewhat, and the upside risks to inflation and inflation expectations have increased.”"
+      "explanation": "The Fed adjusted its risk assessment, stating that upside risks to inflation are now a significant concern alongside downside growth risks."
     }
   ],
-  "tone_score": -0.14,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
+      "quote": "Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities, and some indicators of inflation expectations have been elevated.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Although downside risks to growth remain, the upside risks to inflation are also of significant concern to the Committee.",
+      "direction": "hawkish"
+    },
+    {
       "quote": "Tight credit conditions, the ongoing housing contraction, and elevated energy prices are likely to weigh on economic growth over the next few quarters.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee will continue to monitor economic and financial developments and will act as needed to promote sustainable economic growth and price stability.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "However, labor markets have softened further and financial markets remain under considerable stress.",
       "direction": "dovish"
     }
   ],
@@ -59,7 +55,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.04% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.63% would rise by about $11.92 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.04% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.63% would rise by about $11.92 a month."
     },
     {
       "topic": "Savers",
@@ -92,8 +88,8 @@
       "text": "The broad trade-weighted dollar moved 0.31% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 71%, cut 5%, hike 24%.",
-  "confidence": "medium",
+  "whats_next": "The forecast model suggests the next meeting has a 92 percent probability of a hold, with a 5 percent chance of a cut and a 2 percent chance of a hike. These educational projections indicate the Fed is expected to maintain its current stance unless economic data shifts significantly.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -101,45 +97,54 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "11.88% as of 2008-05-01"
+      "detail": "11.88%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "6.63% week of 2008-07-24"
+      "detail": "6.63%"
     },
     {
       "source": "DGS10",
-      "detail": "4.04% on 2008-08-05"
+      "detail": "4.04%"
     },
     {
       "source": "UNRATE",
-      "detail": "5.8% in July 2008"
+      "detail": "5.8%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change -181k as of July 2008"
+      "detail": "-181k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "5.5% year over year, July 2008"
+      "detail": "5.5%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "2.2% year over year, July 2008"
+      "detail": "2.2%"
     },
     {
       "source": "GDPC1",
-      "detail": "2.4% annualized, quarter starting 2008-04-01"
+      "detail": "2.4%"
     }
   ],
   "meeting_date": "2008-08-05",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 2.0,
+    "target_high": 2.0,
+    "votes_for": 10,
+    "votes_against": 1,
+    "dissenters": [
+      "Richard W. Fisher"
+    ],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
+  },
+  "latency_s": 3.62
 }

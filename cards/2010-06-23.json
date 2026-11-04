@@ -9,42 +9,34 @@
     "dissenters": [
       "Thomas M. Hoenig"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Thomas M. Hoenig."
+    "summary": "The Federal Reserve voted to keep its benchmark interest rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in April suggests that the economic recovery is proceeding and that the labor market is improving gradually.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that economic recovery is ongoing and the job market is slowly getting better."
     },
     {
       "quote": "Household spending is increasing but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Business spending on equipment and software has risen significantly; however, investment in nonresidential structures continues to be weak and employers remain reluctant to add to payrolls.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Housing starts remain at a depressed level.",
-      "explanation": "New language added in this statement."
+      "explanation": "Consumers are spending more, but high joblessness and strict borrowing rules continue to hold them back."
     },
     {
       "quote": "Financial conditions have become less supportive of economic growth on balance, largely reflecting developments abroad.",
-      "explanation": "New language added in this statement."
+      "explanation": "Troubles overseas have made financial markets less helpful for U.S. economic growth."
     },
     {
-      "quote": "Bank lending has continued to contract in recent months.",
-      "explanation": "New language added in this statement."
+      "quote": "Prices of energy and other commodities have declined somewhat in recent months, and underlying inflation has trended lower.",
+      "explanation": "Falling commodity prices and lower underlying inflation point to subdued price pressures."
     }
   ],
-  "tone_score": -0.98,
+  "tone_score": -0.5,
   "tone_quotes": [
     {
-      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
+      "quote": "Financial conditions have become less supportive of economic growth on balance, largely reflecting developments abroad.",
       "direction": "dovish"
     },
     {
-      "quote": "With substantial resource slack continuing to restrain cost pressures and longer-term inflation expectations stable, inflation is likely to be subdued for some time.",
+      "quote": "Bank lending has continued to contract in recent months.",
       "direction": "dovish"
     }
   ],
@@ -55,7 +47,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.13% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.72% would fall by about $9.01 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.13% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.72% would fall by about $9.01 a month."
     },
     {
       "topic": "Savers",
@@ -88,12 +80,12 @@
       "text": "The broad trade-weighted dollar moved 0.39% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 48%, cut 51%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed plans to keep rates exceptionally low for an extended period because the economic recovery remains moderate and resource utilization is low. The educational forecast model assigns a 47% chance to a hold and a 53% chance to a cut at upcoming meetings.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels o"
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels of the federal funds rate for an extended period."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -129,13 +121,22 @@
     }
   ],
   "meeting_date": "2010-06-23",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Thomas M. Hoenig"
+    ],
+    "summary": "The Federal Reserve voted to keep its benchmark interest rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.77
 }

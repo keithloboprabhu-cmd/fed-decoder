@@ -7,42 +7,34 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1.25%. The vote was 12-0."
+    "summary": "The Federal Reserve kept its target interest rate steady at 1-1/4 percent."
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee decided to keep its target for the federal funds rate unchanged at 1-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent.”"
-    },
-    {
       "quote": "Recent readings on production and employment, though mostly reflecting decisions made before the conclusion of hostilities, have proven disappointing.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that recent data on factory output and jobs have been weak, even though much of it reflects the period before fighting ended."
     },
     {
       "quote": "However, the ebbing of geopolitical tensions has rolled back oil prices, bolstered consumer confidence, and strengthened debt and equity markets.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "These developments, along with the accommodative stance of monetary policy and ongoing growth in productivity, should foster an improving economic climate over time.",
-      "explanation": "Reworded from the previous statement: “The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in pr…”"
+      "explanation": "The Fed pointed out that lower global tensions have helped push oil prices down, lift consumer morale, and support financial markets."
     },
     {
       "quote": "Although the timing and extent of that improvement remain uncertain, the Committee perceives that over the next few quarters the upside and downside risks to the attainment of sustainable growth are roughly equal.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed believes the risks to economic growth are balanced for the coming quarters."
     },
     {
       "quote": "In contrast, over the same period, the probability of an unwelcome substantial fall in inflation, though minor, exceeds that of a pickup in inflation from its already low level.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -0.48,
-  "tone_quotes": [
-    {
-      "quote": "These developments, along with the accommodative stance of monetary policy and ongoing growth in productivity, should foster an improving economic climate over time.",
-      "direction": "dovish"
+      "explanation": "The Fed highlighted a slight risk that inflation could fall too much rather than rise from its currently low level."
     },
     {
-      "quote": "Although the timing and extent of that improvement remain uncertain, the Committee perceives that over the next few quarters the upside and downside risks to the attainment of sustainable growth are roughly equal.",
+      "quote": "The Committee believes that, taken together, the balance of risks to achieving its goals is weighted toward weakness over the foreseeable future.",
+      "explanation": "The Fed concluded that the overall balance of risks leans toward economic weakness in the near future."
+    }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+    {
+      "quote": "Recent readings on production and employment, though mostly reflecting decisions made before the conclusion of hostilities, have proven disappointing.",
       "direction": "dovish"
     },
     {
@@ -86,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -10 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to keep monetary policy accommodative until economic growth and employment show clear, sustained improvement. Officials will continue to monitor incoming data to judge whether economic weakness persists.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2003-05-06",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its target interest rate steady at 1-1/4 percent."
+  },
+  "latency_s": 3.58
 }

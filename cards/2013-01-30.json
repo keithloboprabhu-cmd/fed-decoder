@@ -9,46 +9,34 @@
     "dissenters": [
       "Esther L. George"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-1. Dissenting: Esther L. George."
+    "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and continued its ongoing asset purchase programs."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in December suggests that growth in economic activity paused in recent months, in large part because of weather-related disruptions and other transitory factors.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that economic growth temporarily paused recently, largely due to weather and other short-term factors."
     },
     {
       "quote": "Employment has continued to expand at a moderate pace but the unemployment rate remains elevated.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed observed that job gains continue at a moderate pace, but total unemployment is still high."
     },
     {
       "quote": "Household spending and business fixed investment advanced, and the housing sector has shown further improvement.",
-      "explanation": "Reworded from the previous statement: “Household spending has continued to advance, and the housing sector has shown further signs of improvement, but growth in business fixed investment has slowed.”"
+      "explanation": "Consumer spending, business investment, and the housing market all showed continued signs of improvement."
     },
-    {
-      "quote": "Information received since the Federal Open Market Committee met in October suggests that economic activity and employment have continued to expand at a moderate pace in recent months, apart from weather-related disruptions.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Although the unemployment rate has declined somewhat since the summer, it remains elevated.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The Committee expects that, with appropriate policy accommodation, economic growth will proceed at a moderate pace and the unemployment rate will gradually decline toward levels the Committee judges consistent with its dual mandate.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -1.12,
-  "tone_quotes": [
     {
       "quote": "Although strains in global financial markets have eased somewhat, the Committee continues to see downside risks to the economic outlook.",
+      "explanation": "Even though global market stress has reduced, the Fed still sees risks that could slow down the economy."
+    }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December suggests that growth in economic activity paused in recent months, in large part because of weather-related disruptions and other transitory factors.",
       "direction": "dovish"
     },
     {
-      "quote": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee’s 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Taken together, these actions should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative.",
+      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee will continue purchasing additional agency mortgage-backed securities at a pace of $40 billion per month and longer-term Treasury securities at a pace of $45 billion per month.",
       "direction": "dovish"
     }
   ],
@@ -92,12 +80,12 @@
       "text": "The broad trade-weighted dollar moved -0.06% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 86%, cut 12%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its ultra-low interest rates and continue buying assets until the labor market improves substantially. According to the educational forecast model, there is an 87 percent chance of a hold at the next meeting, an 11 percent chance of a cut, and a 2 percent chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation bet"
+      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +121,22 @@
     }
   ],
   "meeting_date": "2013-01-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Esther L. George"
+    ],
+    "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and continued its ongoing asset purchase programs."
+  },
+  "latency_s": 3.66
 }

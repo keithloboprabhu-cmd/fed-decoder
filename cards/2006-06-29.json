@@ -7,42 +7,34 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 5.25%. The vote was 10-0."
+    "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent.”"
+      "explanation": "The Fed raised its benchmark interest rate by a quarter percentage point."
     },
     {
       "quote": "Recent indicators suggest that economic growth is moderating from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that economic growth is slowing down due to higher interest rates and a cooler housing market."
     },
     {
       "quote": "Readings on core inflation have been elevated in recent months.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Ongoing productivity gains have held down the rise in unit labor costs, and inflation expectations remain contained.",
-      "explanation": "Reworded from the previous statement: “As yet, the run-up in the prices of energy and other commodities appears to have had only a modest effect on core inflation, ongoing productivity gains have hel…”"
+      "explanation": "The Committee pointed out that underlying inflation measures have stayed high recently."
     },
     {
       "quote": "However, the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
-      "explanation": "Reworded from the previous statement: “Still, possible increases in resource utilization, in combination with the elevated prices of energy and other commodities, have the potential to add to inflati…”"
+      "explanation": "High energy prices and strong resource use could keep inflation pressures alive."
     },
     {
       "quote": "Although the moderation in the growth of aggregate demand should help to limit inflation pressures over time, the Committee judges that some inflation risks remain.",
-      "explanation": "New language added in this statement."
+      "explanation": "Slowing demand may eventually reduce inflation, but risks still remain on the table."
     }
   ],
-  "tone_score": 1.83,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5-1/4 percent.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
+      "quote": "Readings on core inflation have been elevated in recent months.",
       "direction": "hawkish"
     },
     {
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.22% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.71% would fall by about $5.97 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.22% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.71% would fall by about $5.97 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.18% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 10%, cut 0%, hike 90%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and economic growth. An educational forecast model suggests the next meeting has an 89% chance of a hike and an 11% chance of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2006-06-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5-1/4 percent."
+  },
+  "latency_s": 3.64
 }

@@ -7,46 +7,38 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 4%. The vote was 10-0."
+    "summary": "The Federal Reserve raised its benchmark interest rate by 25 basis points to 4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-3/4 percent.”"
+      "explanation": "The Fed lifted its target interest rate to 4 percent as part of its ongoing tightening campaign."
     },
     {
       "quote": "Elevated energy prices and hurricane-related disruptions in economic activity have temporarily depressed output and employment.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that high energy costs and recent hurricanes temporarily slowed down production and jobs."
     },
     {
       "quote": "However, monetary policy accommodation, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity that will likely be augmented by planned rebuilding in the hurricane-affected areas.",
-      "explanation": "Reworded from the previous statement: “Rather, monetary policy accommodation, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.”"
+      "explanation": "Rebuilding efforts in regions hit by hurricanes are expected to give a boost to economic activity."
     },
     {
       "quote": "The cumulative rise in energy and other costs has the potential to add to inflation pressures; however, core inflation has been relatively low in recent months and longer-term inflation expectations remain contained.",
-      "explanation": "Reworded from the previous statement: “However, core inflation has been relatively low in recent months and longer-term inflation expectations remain contained.”"
+      "explanation": "While rising energy costs create inflation risks, underlying inflation measures remain relatively low and controlled."
     },
     {
-      "quote": "Output appeared poised to continue growing at a good pace before the tragic toll of Hurricane Katrina.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The widespread devastation in the Gulf region, the associated dislocation of economic activity, and the boost to energy prices imply that spending, production, and employment will be set back in the near term.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "In a related action, the Board of Governors unanimously approved a 25-basis point increase in the discount rate to 5 percent.",
+      "explanation": "The separate discount rate that the Fed charges banks for direct loans was also increased by 25 basis points to 5 percent."
     }
   ],
-  "tone_score": 0.77,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4 percent.",
+      "quote": "The cumulative rise in energy and other costs has the potential to add to inflation pressures; however, core inflation has been relatively low in recent months and longer-term inflation expectations remain contained.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stability should be kept roughly equal.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The cumulative rise in energy and other costs has the potential to add to inflation pressures; however, core inflation has been relatively low in recent months and longer-term inflation expectations remain contained.",
+      "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
       "direction": "hawkish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.58% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.1% would rise by about $1.94 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.58% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.1% would rise by about $1.94 a month."
     },
     {
       "topic": "Savers",
@@ -86,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 14%, cut 0%, hike 85%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to continue removing policy accommodation at a measured pace. Educational forecast models suggest an 84% probability of another rate hike at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2005-11-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.0,
+    "target_high": 4.0,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised its benchmark interest rate by 25 basis points to 4 percent."
+  },
+  "latency_s": 3.68
 }

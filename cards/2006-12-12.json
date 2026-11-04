@@ -9,31 +9,31 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 10-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "Economic growth has slowed over the course of the year, partly reflecting a substantial cooling of the housing market.",
-      "explanation": "Reworded from the previous statement: “Economic growth has slowed over the course of the year, partly reflecting a cooling of the housing market.”"
+      "explanation": "The Fed added the word substantial to describe the slowdown in the housing market, showing increased concern about property sector weakness."
     },
     {
       "quote": "Although recent indicators have been mixed, the economy seems likely to expand at a moderate pace on balance over coming quarters.",
-      "explanation": "Reworded from the previous statement: “Going forward, the economy seems likely to expand at a moderate pace.”"
+      "explanation": "The Fed acknowledged that recent economic indicators are mixed while maintaining its view that growth will continue at a moderate pace."
     }
   ],
-  "tone_score": 1.11,
+  "tone_score": 0.5,
   "tone_quotes": [
-    {
-      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.",
       "direction": "hawkish"
     },
     {
-      "quote": "However, inflation pressures seem likely to moderate over time, reflecting reduced impetus from energy prices, contained inflation expectations, and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
+      "quote": "Nonetheless, the Committee judges that some inflation risks remain.",
       "direction": "hawkish"
+    },
+    {
+      "quote": "However, inflation pressures seem likely to moderate over time, reflecting reduced impetus from energy prices, contained inflation expectations, and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -76,8 +76,8 @@
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 53%, cut 2%, hike 45%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and economic growth. The educational forecast model gives the next meeting a 97 percent chance of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -117,13 +117,22 @@
     }
   ],
   "meeting_date": "2006-12-12",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 3.92
 }

@@ -7,46 +7,38 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 75 basis points, to 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve lowered the federal funds rate by 75 basis points to a new target range of 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to establish a target range for the federal funds rate of 0 to 1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 50 basis points to 1 percent.”"
+      "explanation": "The Fed lowered rates into a target range of 0 to 1/4 percent, moving away from a single target number."
     },
     {
       "quote": "Since the Committee's last meeting, labor market conditions have deteriorated, and the available data indicate that consumer spending, business investment, and industrial production have declined.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Financial markets remain quite strained and credit conditions tight.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Overall, the outlook for economic activity has weakened further.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed highlighted broad economic weakness, noting that jobs, spending, business investment, and production are all falling."
     },
     {
       "quote": "Meanwhile, inflationary pressures have diminished appreciably.",
-      "explanation": "New language added in this statement."
+      "explanation": "Falling commodity prices and weak economic activity have significantly reduced inflation pressures."
     },
     {
-      "quote": "In light of the declines in the prices of energy and other commodities and the weaker prospects for economic activity, the Committee expects inflation to moderate further in coming quarters.",
-      "explanation": "Reworded from the previous statement: “In light of the declines in the prices of energy and other commodities and the weaker prospects for economic activity, the Committee expects inflation to modera…”"
+      "quote": "In particular, the Committee anticipates that weak economic conditions are likely to warrant exceptionally low levels of the federal funds rate for some time.",
+      "explanation": "The Fed signaled that interest rates will likely stay exceptionally low for a prolonged period to support the economy."
+    },
+    {
+      "quote": "The focus of the Committee's policy going forward will be to support the functioning of financial markets and stimulate the economy through open market operations and other measures that sustain the size of the Federal Reserve's balance sheet at a high level.",
+      "explanation": "With interest rates near zero, the Fed is shifting its focus to unconventional tools, including massive asset purchases, to support credit and financial markets."
     }
   ],
-  "tone_score": -0.68,
+  "tone_score": -2.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to establish a target range for the federal funds rate of 0 to 1/4 percent.",
+      "quote": "Since the Committee's last meeting, labor market conditions have deteriorated, and the available data indicate that consumer spending, business investment, and industrial production have declined.",
       "direction": "dovish"
     },
     {
       "quote": "In particular, the Committee anticipates that weak economic conditions are likely to warrant exceptionally low levels of the federal funds rate for some time.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Since the Committee's last meeting, labor market conditions have deteriorated, and the available data indicate that consumer spending, business investment, and industrial production have declined.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.37% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.53% would fall by about $30.04 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.37% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.53% would fall by about $30.04 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.63% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 60%, cut 34%, hike 6%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to keep borrowing costs exceptionally low for an extended period while relying on balance sheet expansion to heal credit markets. Educational forecast models suggest the next meeting has a 52% chance of a hold, a 39% chance of a cut, and a 9% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2008-12-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -75,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve lowered the federal funds rate by 75 basis points to a new target range of 0 to 1/4 percent."
+  },
+  "latency_s": 3.86
 }

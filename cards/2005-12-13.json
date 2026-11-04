@@ -7,38 +7,34 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 4.25%. The vote was 10-0."
+    "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4 percent.”"
+      "explanation": "The Fed raised its benchmark interest rate by 25 basis points, bringing the target to 4-1/4 percent."
     },
     {
       "quote": "Despite elevated energy prices and hurricane-related disruptions, the expansion in economic activity appears solid.",
-      "explanation": "Reworded from the previous statement: “Elevated energy prices and hurricane-related disruptions in economic activity have temporarily depressed output and employment.”"
-    },
-    {
-      "quote": "Core inflation has stayed relatively low in recent months and longer-term inflation expectations remain contained.",
-      "explanation": "Reworded from the previous statement: “The cumulative rise in energy and other costs has the potential to add to inflation pressures; however, core inflation has been relatively low in recent months …”"
+      "explanation": "The statement now views the broader economy as solid despite earlier storm damage and high energy costs."
     },
     {
       "quote": "Nevertheless, possible increases in resource utilization as well as elevated energy prices have the potential to add to inflation pressures.",
-      "explanation": "New language added in this statement."
+      "explanation": "A new sentence added caution about rising resource utilization and energy costs driving up inflation pressures."
     },
     {
       "quote": "The Committee judges that some further measured policy firming is likely to be needed to keep the risks to the attainment of both sustainable economic growth and price stability roughly in balance.",
-      "explanation": "Reworded from the previous statement: “The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stab…”"
+      "explanation": "The Fed signaled that more rate increases may be needed to balance growth and price stability."
     },
     {
-      "quote": "In any event, the Committee will respond to changes in economic prospects as needed to foster these objectives.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee will respond to changes in economic prospects as needed to fulfill its obligation to maintain price stability.”"
+      "quote": "In a related action, the Board of Governors unanimously approved a 25-basis point increase in the discount rate to 5-1/4 percent.",
+      "explanation": "The discount rate charged to banks was raised by 25 basis points to 5-1/4 percent."
     }
   ],
-  "tone_score": 1.4,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent.",
+      "quote": "The Committee judges that some further measured policy firming is likely to be needed to keep the risks to the attainment of both sustainable economic growth and price stability roughly in balance.",
       "direction": "hawkish"
     },
     {
@@ -53,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.54% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.26% would fall by about $3.90 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.54% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.26% would fall by about $3.90 a month."
     },
     {
       "topic": "Savers",
@@ -82,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 8%, cut 0%, hike 92%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that policymakers are prepared to keep raising interest rates at upcoming meetings to control inflation. An educational forecast model suggests the probability of a hold at the next meeting is 9%, a cut is 0%, and a hike is 91%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +119,20 @@
     }
   ],
   "meeting_date": "2005-12-13",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.25,
+    "target_high": 4.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent."
+  },
+  "latency_s": 3.92
 }

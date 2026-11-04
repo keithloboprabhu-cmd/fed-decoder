@@ -9,47 +9,31 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in March suggests that the economy has been expanding moderately.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January suggests that the economy has been expanding moderately.”"
-    },
-    {
-      "quote": "Labor market conditions have improved in recent months; the unemployment rate has declined but remains elevated.",
-      "explanation": "Reworded from the previous statement: “Labor market conditions have improved further; the unemployment rate has declined notably in recent months but remains elevated.”"
-    },
-    {
       "quote": "Despite some signs of improvement, the housing sector remains depressed.",
-      "explanation": "Reworded from the previous statement: “The housing sector remains depressed.”"
+      "explanation": "The Fed added language noting that while there are signs of improvement, the housing market is still depressed."
     },
     {
       "quote": "Inflation has picked up somewhat, mainly reflecting higher prices of crude oil and gasoline.",
-      "explanation": "Reworded from the previous statement: “Inflation has been subdued in recent months, although prices of crude oil and gasoline have increased lately.”"
-    },
-    {
-      "quote": "However, longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Longer-term inflation expectations have remained stable.”"
-    },
-    {
-      "quote": "The Committee expects economic growth to remain moderate over coming quarters and then to pick up gradually.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -0.64,
-  "tone_quotes": [
-    {
-      "quote": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels for the federal funds rate at least through late 2014.",
-      "direction": "dovish"
+      "explanation": "The Fed acknowledged that inflation increased slightly due to higher crude oil and gasoline prices."
     },
     {
       "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+      "explanation": "The Fed dropped the note that global financial market strains had eased, keeping the focus on downside risks."
+    }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in March suggests that the economy has been expanding moderately.",
       "direction": "dovish"
     },
     {
-      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee expects to maintain a highly accommodative stance for monetary policy.",
-      "direction": "dovish"
+      "quote": "The Committee expects economic growth to remain moderate over coming quarters and then to pick up gradually.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -92,12 +76,12 @@
       "text": "The broad trade-weighted dollar moved -0.07% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 81%, cut 9%, hike 10%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve intends to keep interest rates exceptionally low at least through late 2014 to support the economic recovery. Educational forecast models suggest an 80% chance of another hold at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptiona"
+      "detail": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +117,22 @@
     }
   ],
   "meeting_date": "2012-04-25",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.68
 }

@@ -7,35 +7,31 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1.75%. The vote was 10-0."
+    "summary": "The Federal Reserve decided today to keep its target for the federal funds rate unchanged at 1 3/4 percent."
   },
   "changes": [
     {
       "quote": "The information that has become available since the last meeting of the Committee confirms that economic activity is continuing to increase.",
-      "explanation": "Reworded from the previous statement: “The information that has become available since the last meeting of the Committee confirms that economic activity has been receiving considerable upward impetus…”"
+      "explanation": "The Fed acknowledges that the economy keeps growing, simplifying its previous description of inventory swings."
     },
     {
       "quote": "However, both the upward impetus from the swing in inventory investment and the growth in final demand appear to have moderated.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed notes that the initial fast pace of inventory rebuilding and overall demand growth have slowed down."
     },
     {
       "quote": "The Committee expects the rate of increase of final demand to pick up over coming quarters, supported in part by robust underlying growth in productivity, but the degree of the strengthening remains uncertain.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Nonetheless, the degree of the strengthening in final demand over coming quarters, an essential element in sustained economic expansion, is still uncertain.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed expects demand to accelerate later due to productivity, though it remains unsure how strong that rebound will be."
     }
   ],
-  "tone_score": -0.14,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
       "quote": "In these circumstances, although the stance of monetary policy is currently accommodative, the Committee believes that, for the foreseeable future, against the background of its long run goals of price stability and sustainable economic growth and of the information currently available, the risks are balanced with respect to the prospects for both goals.",
       "direction": "dovish"
     },
     {
-      "quote": "However, both the upward impetus from the swing in inventory investment and the growth in final demand appear to have moderated.",
-      "direction": "dovish"
+      "quote": "The Committee expects the rate of increase of final demand to pick up over coming quarters, supported in part by robust underlying growth in productivity, but the degree of the strengthening remains uncertain.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -45,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.75% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.71% would fall by about $25.81 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.75% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.71% would fall by about $25.81 a month."
     },
     {
       "topic": "Savers",
@@ -74,8 +70,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -15 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to maintain its current policy stance until economic indicators show a clearer trend. Future decisions will depend heavily on incoming data regarding productivity and final demand.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -115,13 +111,20 @@
     }
   ],
   "meeting_date": "2002-06-26",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.75,
+    "target_high": 1.75,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided today to keep its target for the federal funds rate unchanged at 1 3/4 percent."
+  },
+  "latency_s": 3.64
 }

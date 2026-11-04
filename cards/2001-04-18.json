@@ -7,46 +7,38 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 4.5%."
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 5 percent.”"
+      "explanation": "The Fed lowered the federal funds rate to 4-1/2 percent to help support the economy."
     },
     {
       "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 4 percent.",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 4-1/2 percent.”"
-    },
-    {
-      "quote": "The FOMC has reviewed prospects for the economy in light of the information that has become available since its March meeting.",
-      "explanation": "New language added in this statement."
+      "explanation": "The discount rate was reduced to 4 percent to make direct loans to banks cheaper."
     },
     {
       "quote": "A significant reduction in excess inventories seems well advanced.",
-      "explanation": "New language added in this statement."
+      "explanation": "Businesses have made good progress in clearing out unsold goods."
     },
     {
-      "quote": "Consumption and housing expenditures have held up reasonably well, though activity in these areas has flattened recently.",
-      "explanation": "New language added in this statement."
+      "quote": "Nonetheless, capital investment has continued to soften and the persistent erosion in current and expected profitability, in combination with rising uncertainty about the business outlook, seems poised to dampen capital spending going forward.",
+      "explanation": "Falling profits and business uncertainty continue to hold back company spending on new projects and equipment."
     },
     {
-      "quote": "Although measured productivity probably weakened in the first quarter, the impressive underlying rate of increase that developed in recent years appears to be largely intact.",
-      "explanation": "New language added in this statement."
+      "quote": "This potential restraint, together with the possible effects of earlier reductions in equity wealth on consumption and the risk of slower growth abroad, threatens to keep the pace of economic activity unacceptably weak.",
+      "explanation": "Weaker stock market wealth, softer overseas growth, and slower business spending threaten to keep overall economic growth too weak."
     }
   ],
-  "tone_score": -1.06,
+  "tone_score": -1.5,
   "tone_quotes": [
     {
+      "quote": "This potential restraint, together with the possible effects of earlier reductions in equity wealth on consumption and the risk of slower growth abroad, threatens to keep the pace of economic activity unacceptably weak.",
+      "direction": "dovish"
+    },
+    {
       "quote": "The Committee continues to believe that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Although measured productivity probably weakened in the first quarter, the impressive underlying rate of increase that developed in recent years appears to be largely intact.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.14% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.01% would fall by about $14.09 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.14% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.01% would fall by about $14.09 a month."
     },
     {
       "topic": "Savers",
@@ -80,14 +72,10 @@
     {
       "topic": "Growth",
       "text": "Real GDP grew at a -1.3% annualized pace in the latest reported quarter."
-    },
-    {
-      "topic": "Markets",
-      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -15 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed remains heavily concerned about economic weakness and may continue to adjust monetary policy during upcoming intermeeting periods. This educational forecast suggests the Committee will keep watching growth indicators closely to decide if further rate cuts are needed.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +115,20 @@
     }
   ],
   "meeting_date": "2001-04-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 4.5,
+    "target_high": 4.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent."
+  },
+  "latency_s": 3.74
 }

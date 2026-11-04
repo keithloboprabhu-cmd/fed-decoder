@@ -7,47 +7,39 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 3%. The vote was 11-0."
+    "summary": "The Federal Reserve raised its target for the federal funds rate by 25 basis points to 3 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-3/4 percent.”"
+      "explanation": "The target rate was raised from 2-3/4 percent to 3 percent."
     },
     {
       "quote": "Recent data suggest that the solid pace of spending growth has slowed somewhat, partly in response to the earlier increases in energy prices.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this new note to acknowledge that higher energy prices have slowed consumer spending growth slightly."
     },
     {
       "quote": "Labor market conditions, however, apparently continue to improve gradually.",
-      "explanation": "New language added in this statement."
+      "explanation": "This new addition highlights steady, gradual improvements in the labor market."
     },
     {
       "quote": "Pressures on inflation have picked up in recent months and pricing power is more evident.",
-      "explanation": "Reworded from the previous statement: “Though longer-term inflation expectations remain well contained, pressures on inflation have picked up in recent months and pricing power is more evident.”"
+      "explanation": "The Fed highlighted that inflation pressures have increased and businesses have more pricing power."
     },
     {
-      "quote": "Longer-term inflation expectations remain well contained.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Output evidently continues to grow at a solid pace despite the rise in energy prices, and labor market conditions continue to improve gradually.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "In a related action, the Board of Governors unanimously approved a 25-basis-point increase in the discount rate to 4 percent.",
+      "explanation": "The discount rate was raised by 25 basis points from 3-3/4 percent to 4 percent."
     }
   ],
-  "tone_score": 0.5,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3 percent.",
+      "quote": "Pressures on inflation have picked up in recent months and pricing power is more evident.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stability should be kept roughly equal.",
-      "direction": "dovish"
+      "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -86,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +4 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 10%, cut 0%, hike 90%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to continue removing policy accommodation at a measured pace. Educational forecast models suggest a 90% probability of another hike at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2005-05-03",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 3.0,
+    "target_high": 3.0,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised its target for the federal funds rate by 25 basis points to 3 percent."
+  },
+  "latency_s": 3.3
 }

@@ -11,47 +11,39 @@
       "Narayana Kocherlakota",
       "Charles I. Plosser"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 7-3. Dissenting: Richard W. Fisher, Narayana Kocherlakota, Charles I. Plosser."
+    "summary": "The Federal Reserve decided to keep its benchmark interest rate at 0 to 1/4 percent, judging that it can be patient in beginning to normalize monetary policy."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in October suggests that economic activity is expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September suggests that economic activity is expanding at a moderate pace.”"
+      "explanation": "The Fed updated the reference meeting date from September to October while keeping the economic growth assessment at a moderate pace."
     },
     {
       "quote": "Labor market conditions improved further, with solid job gains and a lower unemployment rate.",
-      "explanation": "Reworded from the previous statement: “Labor market conditions improved somewhat further, with solid job gains and a lower unemployment rate.”"
-    },
-    {
-      "quote": "On balance, a range of labor market indicators suggests that underutilization of labor resources continues to diminish.",
-      "explanation": "Reworded from the previous statement: “On balance, a range of labor market indicators suggests that underutilization of labor resources is gradually diminishing.”"
+      "explanation": "The Fed dropped the word 'somewhat' regarding labor market improvement, showing increasing confidence in job growth."
     },
     {
       "quote": "Inflation has continued to run below the Committee's longer-run objective, partly reflecting declines in energy prices.",
-      "explanation": "Reworded from the previous statement: “Inflation has continued to run below the Committee's longer-run objective.”"
+      "explanation": "The statement now explicitly notes that falling energy prices are contributing to inflation running below the Fed's target."
     },
     {
-      "quote": "Market-based measures of inflation compensation have declined somewhat further; survey-based measures of longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation have declined somewhat; survey-based measures of longer-term inflation expectations have remained stable.”"
+      "quote": "The Committee expects inflation to rise gradually toward 2 percent as the labor market improves further and the transitory effects of lower energy prices and other factors dissipate.",
+      "explanation": "A new sentence was added to explain how lower energy prices are temporary and inflation should eventually return to the 2 percent goal."
     },
     {
-      "quote": "The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace, with labor market indicators moving toward levels the Committee judges consistent with its dual mandate.",
-      "explanation": "Reworded from the previous statement: “The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace, with labor market indicators and inflation …”"
+      "quote": "The Committee continues to monitor inflation developments closely.",
+      "explanation": "This added sentence emphasizes that the Fed is keeping a close watch on ongoing price changes."
     }
   ],
-  "tone_score": -0.94,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee sees this guidance as consistent with its previous statement that it likely will be appropriate to maintain the 0 to 1/4 percent target range for the federal funds rate for a considerable time following the end of its asset purchase program in October, especially if projected inflation continues to run below the Committee's 2 percent longer-run goal, and provided that longer-term inflation expectations remain well anchored.",
+      "quote": "Based on its current assessment, the Committee judges that it can be patient in beginning to normalize the stance of monetary policy.",
       "direction": "dovish"
     },
     {
-      "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
+      "quote": "However, if incoming information indicates faster progress toward the Committee's employment and inflation objectives than the Committee now expects, then increases in the target range for the federal funds rate are likely to occur sooner than currently anticipated.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -94,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved 0.03% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 88%, cut 9%, hike 3%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on realized and expected progress toward maximum employment and 2 percent inflation. Educational forecast models give an 88% chance of another hold at the next meeting, with 9% for a cut and 3% for a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -135,13 +127,24 @@
     }
   ],
   "meeting_date": "2014-12-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 7,
+    "votes_against": 3,
+    "dissenters": [
+      "Richard W. Fisher",
+      "Narayana Kocherlakota",
+      "Charles I. Plosser"
+    ],
+    "summary": "The Federal Reserve decided to keep its benchmark interest rate at 0 to 1/4 percent, judging that it can be patient in beginning to normalize monetary policy."
+  },
+  "latency_s": 5.55
 }

@@ -7,46 +7,42 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 2%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
   },
   "changes": [
     {
       "quote": "Strains in financial markets have increased significantly and labor markets have weakened further.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee added this point to highlight that financial distress has worsened and jobs are getting harder to find."
     },
     {
       "quote": "Economic growth appears to have slowed recently, partly reflecting a softening of household spending.",
-      "explanation": "Reworded from the previous statement: “Economic activity expanded in the second quarter, partly reflecting growth in consumer spending and exports.”"
+      "explanation": "This change updates the view on growth from positive second-quarter expansion to a recent slowdown driven by weaker consumer spending."
     },
     {
       "quote": "Tight credit conditions, the ongoing housing contraction, and some slowing in export growth are likely to weigh on economic growth over the next few quarters.",
-      "explanation": "Reworded from the previous statement: “Tight credit conditions, the ongoing housing contraction, and elevated energy prices are likely to weigh on economic growth over the next few quarters.”"
-    },
-    {
-      "quote": "However, labor markets have softened further and financial markets remain under considerable stress.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed added slowing exports to the existing list of economic headwinds like tight credit and housing."
     },
     {
       "quote": "Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities.",
-      "explanation": "Reworded from the previous statement: “Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities, and some indicators of inflation expectations have…”"
+      "explanation": "The Fed removed language about elevated inflation expectations while keeping the core observation that past energy and commodity price hikes drove inflation up."
     },
     {
       "quote": "The downside risks to growth and the upside risks to inflation are both of significant concern to the Committee.",
-      "explanation": "Reworded from the previous statement: “Although downside risks to growth remain, the upside risks to inflation are also of significant concern to the Committee.”"
+      "explanation": "This rephrasing places equal weight on risks to economic growth and risks to inflation."
     }
   ],
-  "tone_score": -0.49,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "Tight credit conditions, the ongoing housing contraction, and some slowing in export growth are likely to weigh on economic growth over the next few quarters.",
-      "direction": "dovish"
-    },
     {
       "quote": "Strains in financial markets have increased significantly and labor markets have weakened further.",
       "direction": "dovish"
     },
     {
-      "quote": "Economic growth appears to have slowed recently, partly reflecting a softening of household spending.",
+      "quote": "Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The downside risks to growth and the upside risks to inflation are both of significant concern to the Committee.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +53,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.48% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.35% would rise by about $1.96 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.48% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.35% would rise by about $1.96 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved 0.33% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 80%, cut 14%, hike 6%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will monitor economic and financial developments carefully and will act as needed to promote sustainable economic growth and price stability. Educational forecast models suggest the next meeting has a 73% chance of a hold, 15% chance of a cut, and 12% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2008-09-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 2.0,
+    "target_high": 2.0,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
+  },
+  "latency_s": 3.84
 }

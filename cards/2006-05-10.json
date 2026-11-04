@@ -7,40 +7,24 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 5%. The vote was 11-0."
+    "summary": "The Federal Open Market Committee raised the target for the federal funds rate by 25 basis points to 5 percent."
   },
   "changes": [
     {
-      "quote": "FOMC statement and Board approval of discount rate requests of the Federal Reserve Banks of Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Dallas, and San Francisco",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-3/4 percent.”"
-    },
-    {
       "quote": "Economic growth has been quite strong so far this year.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to note that economic activity has started the year on a solid footing."
     },
     {
       "quote": "The Committee sees growth as likely to moderate to a more sustainable pace, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
-      "explanation": "New language added in this statement."
+      "explanation": "This new sentence highlights how higher borrowing costs and energy prices are expected to cool down the housing market and overall economic growth."
     },
     {
-      "quote": "The slowing of the growth of real GDP in the fourth quarter of 2005 seems largely to have reflected temporary or special factors.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Economic growth has rebounded strongly in the current quarter but appears likely to moderate to a more sustainable pace.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "The Committee judges that some further policy firming may yet be needed to address inflation risks but emphasizes that the extent and timing of any such firming will depend importantly on the evolution of the economic outlook as implied by incoming information.",
+      "explanation": "The Fed updated its guidance on future interest rate hikes, emphasizing that future decisions will depend entirely on incoming economic data."
     }
   ],
-  "tone_score": 1.74,
+  "tone_score": 1.0,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee judges that some further policy firming may yet be needed to address inflation risks but emphasizes that the extent and timing of any such firming will depend importantly on the evolution of the economic outlook as implied by incoming information.",
       "direction": "hawkish"
@@ -57,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.13% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.58% would not change."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.13% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.58% would not change."
     },
     {
       "topic": "Savers",
@@ -90,12 +74,12 @@
       "text": "The broad trade-weighted dollar moved -0.33% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 9%, cut 0%, hike 91%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate increases depend closely on incoming economic data. According to the educational forecast model, the next meeting has a 91 percent probability of a rate hike and a 9 percent probability of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "Louis, Minneapolis, Dallas, and San Francisco The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent."
+      "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +115,20 @@
     }
   ],
   "meeting_date": "2006-05-10",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 5.0,
+    "target_high": 5.0,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee raised the target for the federal funds rate by 25 basis points to 5 percent."
+  },
+  "latency_s": 3.49
 }

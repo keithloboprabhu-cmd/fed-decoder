@@ -7,47 +7,39 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1%. The vote was 11-0."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 1 percent."
   },
   "changes": [
     {
       "quote": "The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid rate and hiring appears to have picked up.",
-      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid pace.”"
+      "explanation": "The Fed added that hiring has picked up, signaling more confidence in the labor market."
     },
     {
       "quote": "Although incoming inflation data have moved somewhat higher, long-term inflation expectations appear to have remained well contained.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Although job losses have slowed, new hiring has lagged.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Increases in core consumer prices are muted and expected to remain low.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed noted that inflation data moved higher, but long-term expectations remain contained."
     },
     {
       "quote": "Similarly, the risks to the goal of price stability have moved into balance.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee sees risks to price stability as balanced."
     },
     {
       "quote": "At this juncture, with inflation low and resource use slack, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
-      "explanation": "Reworded from the previous statement: “With inflation quite low and resource use slack, the Committee believes that it can be patient in removing its policy accommodation.”"
+      "explanation": "The Fed updated its guidance, stating that policy accommodation can be removed at a measured pace."
+    },
+    {
+      "quote": "Although job losses have slowed, new hiring has lagged.",
+      "explanation": "This old sentence regarding lagging hiring was removed as the job market improved."
     }
   ],
-  "tone_score": -0.22,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee perceives the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
-      "direction": "dovish"
+      "quote": "The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid rate and hiring appears to have picked up.",
+      "direction": "hawkish"
     },
     {
       "quote": "At this juncture, with inflation low and resource use slack, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
-      "direction": "dovish"
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -86,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed is moving closer to raising interest rates at upcoming meetings. This educational forecast suggests policy accommodation will be removed at a measured pace.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2004-05-04",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.0,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 1 percent."
+  },
+  "latency_s": 3.38
 }

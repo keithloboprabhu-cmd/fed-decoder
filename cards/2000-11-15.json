@@ -7,47 +7,35 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 6.5%."
+    "summary": "The Federal Open Market Committee decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate at 6-1/2 percent."
   },
   "changes": [
     {
       "quote": "The utilization of the pool of available workers remains at an unusually high level, and the increase in energy prices, though having limited effect on core measures of prices to date, still harbors the possibility of raising inflation expectations.",
-      "explanation": "Reworded from the previous statement: “Moreover, the increase in energy prices, though having limited effect on core measures of prices to date, poses a risk of raising inflation expectations.”"
+      "explanation": "The Fed is concerned that a tight labor market and high energy costs could lead to higher inflation."
     },
     {
       "quote": "The Committee, accordingly, continues to see a risk of heightened inflation pressures.",
-      "explanation": "New language added in this statement."
+      "explanation": "This addition explicitly states that the central bank remains worried about rising prices."
     },
     {
       "quote": "However, softening in business and household demand and tightening conditions in financial markets over recent months suggest that the economy could expand for a time at a pace below the productivity-enhanced rate of growth of its potential to produce.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed notes that slowing demand and tighter markets might lead to slower economic growth for a while."
     },
     {
       "quote": "Nonetheless, to date the easing of demand pressures has not been sufficient to warrant a change in the Committee's judgment that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
-      "explanation": "Reworded from the previous statement: “Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee belie…”"
-    },
-    {
-      "quote": "Recent data have indicated that the expansion of aggregate demand has moderated to a pace closer to the enhanced rate of growth of the economy's potential to produce.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The more rapid advances in productivity also continue to help contain costs and hold down underlying price pressures.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "Despite some slowing, the Fed still believes the primary risk to the economy is inflation."
     }
   ],
-  "tone_score": 1.34,
+  "tone_score": 1.0,
   "tone_quotes": [
-    {
-      "quote": "Nonetheless, to date the easing of demand pressures has not been sufficient to warrant a change in the Committee's judgment that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee, accordingly, continues to see a risk of heightened inflation pressures.",
       "direction": "hawkish"
     },
     {
-      "quote": "However, softening in business and household demand and tightening conditions in financial markets over recent months suggest that the economy could expand for a time at a pace below the productivity-enhanced rate of growth of its potential to produce.",
-      "direction": "dovish"
+      "quote": "Nonetheless, to date the easing of demand pressures has not been sufficient to warrant a change in the Committee's judgment that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -86,8 +74,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee remains focused on inflation risks despite signs of slowing demand. This educational forecast suggests that the Fed is unlikely to lower rates until demand pressures ease further.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -95,45 +83,52 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "15.98% as of 2000-08-01"
+      "detail": "15.98%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "7.73% week of 2000-11-03"
+      "detail": "7.73%"
     },
     {
       "source": "DGS10",
-      "detail": "5.72% on 2000-11-15"
+      "detail": "5.72%"
     },
     {
       "source": "UNRATE",
-      "detail": "3.9% in October 2000"
+      "detail": "3.9%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 41k as of October 2000"
+      "detail": "41k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "3.5% year over year, October 2000"
+      "detail": "3.5%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "1.8% year over year, October 2000"
+      "detail": "1.8%"
     },
     {
       "source": "GDPC1",
-      "detail": "0.4% annualized, quarter starting 2000-07-01"
+      "detail": "0.4%"
     }
   ],
   "meeting_date": "2000-11-15",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 6.5,
+    "target_high": 6.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate at 6-1/2 percent."
+  },
+  "latency_s": 40.93
 }

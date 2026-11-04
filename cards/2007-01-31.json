@@ -7,42 +7,26 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 11-0."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators have suggested somewhat firmer economic growth, and some tentative signs of stabilization have appeared in the housing market.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Overall, the economy seems likely to expand at a moderate pace over coming quarters.",
-      "explanation": "Reworded from the previous statement: “Although recent indicators have been mixed, the economy seems likely to expand at a moderate pace on balance over coming quarters.”"
+      "explanation": "The Fed added this language to note that economic growth is looking firmer and the housing market is showing early signs of stabilizing."
     },
     {
       "quote": "Readings on core inflation have improved modestly in recent months, and inflation pressures seem likely to moderate over time.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "However, the high level of resource utilization has the potential to sustain inflation pressures.",
-      "explanation": "Reworded from the previous statement: “Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.”"
-    },
-    {
-      "quote": "The Committee judges that some inflation risks remain.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee judges that some inflation risks remain.”"
+      "explanation": "This new addition highlights that core inflation has shown modest improvement recently."
     },
     {
       "quote": "Economic growth has slowed over the course of the year, partly reflecting a substantial cooling of the housing market.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed this older assessment about slowing growth and a cooling housing market, replacing it with a more optimistic tone."
     }
   ],
-  "tone_score": 1.36,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "Readings on core inflation have improved modestly in recent months, and inflation pressures seem likely to moderate over time.",
+      "quote": "Recent indicators have suggested somewhat firmer economic growth, and some tentative signs of stabilization have appeared in the housing market.",
       "direction": "hawkish"
     },
     {
@@ -57,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.83% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.23% would fall by about $9.74 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.83% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.23% would fall by about $9.74 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +74,8 @@
       "text": "The broad trade-weighted dollar moved -0.19% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 38%, cut 0%, hike 62%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming information regarding inflation and economic growth. According to the educational forecast model, the next meeting has a 30% chance of a hold, 0% chance of a cut, and 70% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +115,20 @@
     }
   ],
   "meeting_date": "2007-01-31",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 3.76
 }

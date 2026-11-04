@@ -7,36 +7,41 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 3%."
+    "summary": "The Federal Reserve held its target interest rate at 3.0 percent while launching major coordinated international liquidity measures."
   },
   "changes": [
     {
       "quote": "FOMC statement: Federal Reserve and other central banks announce specific measures designed to address liquidity pressures in funding markets",
-      "explanation": "New language added in this statement."
+      "explanation": "The Federal Reserve and global central banks issued a special statement to address severe liquidity pressures in financial markets."
     },
     {
       "quote": "Since the coordinated actions taken in December 2007, the G-10 central banks have continued to work together closely and to consult regularly on liquidity pressures in funding markets.",
-      "explanation": "New language added in this statement."
+      "explanation": "Major central banks have maintained close coordination since December 2007 to monitor ongoing stresses."
     },
     {
       "quote": "Pressures in some of these markets have recently increased again.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that financial market strains have worsened recently, prompting new interventions."
+    },
+    {
+      "quote": "Under this new Term Securities Lending Facility (TSLF), the Federal Reserve will lend up to $200 billion of Treasury securities to primary dealers secured for a term of 28 days (rather than overnight, as in the existing program) by a pledge of other securities, including federal agency debt, federal agency residential-mortgage-backed securities (MBS), and non-agency AAA/Aaa-rated private-label residential MBS.",
+      "explanation": "The Fed created a $200 billion lending facility allowing dealers to swap riskier mortgage-backed securities for safer Treasury bonds for 28 days."
+    },
+    {
+      "quote": "In addition, the Federal Open Market Committee has authorized increases in its existing temporary reciprocal currency arrangements (swap lines) with the European Central Bank (ECB) and the Swiss National Bank (SNB).",
+      "explanation": "The Fed expanded emergency dollar swap lines with international central banks to ease global funding pressures."
+    }
+  ],
+  "tone_score": -1.5,
+  "tone_quotes": [
+    {
+      "quote": "Pressures in some of these markets have recently increased again.",
+      "direction": "dovish"
     },
     {
       "quote": "We all continue to work together and will take appropriate steps to address those liquidity pressures.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "To that end, today the Bank of Canada, the Bank of England, the European Central Bank, the Federal Reserve, and the Swiss National Bank are announcing specific measures.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Federal Reserve announced today an expansion of its securities lending program.",
-      "explanation": "New language added in this statement."
+      "direction": "dovish"
     }
   ],
-  "tone_score": 0.38,
-  "tone_quotes": [],
   "for_you": [
     {
       "topic": "Borrowers",
@@ -77,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved 0.04% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 21%, cut 0%, hike 79%.",
-  "confidence": "medium",
+  "whats_next": "This emergency statement signals that the Committee is prioritizing financial stability and liquidity backstops over normal interest rate adjustments. Educational forecast models suggest a 38 percent chance of a hold and a 62 percent chance of a hike at upcoming meetings.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": ""
+      "detail": "FOMC statement: Federal Reserve and other central banks announce specific measures designed to address liquidity pressures in funding markets"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -118,14 +123,20 @@
     }
   ],
   "meeting_date": "2008-03-11",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)",
-    "Statement does not state a target; showing the prevailing target from FRED."
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.0,
+    "target_high": 3.0,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve held its target interest rate at 3.0 percent while launching major coordinated international liquidity measures."
+  },
+  "latency_s": 4.67
 }

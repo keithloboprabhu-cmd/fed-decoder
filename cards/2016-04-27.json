@@ -9,46 +9,42 @@
     "dissenters": [
       "Esther L. George"
     ],
-    "summary": "The Fed held its policy rate at 0.25% to 0.5%. The vote was 9-1. Dissenting: Esther L. George."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 1/4 to 1/2 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in March indicates that labor market conditions have improved further even as growth in economic activity appears to have slowed.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January suggests that economic activity has been expanding at a moderate pace despite the gl…”"
+      "explanation": "The Fed noted that job conditions are getting better even though overall economic growth seems to have slowed down."
     },
     {
       "quote": "Growth in household spending has moderated, although households' real income has risen at a solid rate and consumer sentiment remains high.",
-      "explanation": "New language added in this statement."
+      "explanation": "Consumer spending slowed down a bit, but people's real income is growing solidly and confidence remains high."
     },
     {
       "quote": "Since the beginning of the year, the housing sector has improved further but business fixed investment and net exports have been soft.",
-      "explanation": "Reworded from the previous statement: “Household spending has been increasing at a moderate rate, and the housing sector has improved further; however, business fixed investment and net exports have …”"
+      "explanation": "Housing continues to improve, but business investment and international trade remain weak."
     },
     {
       "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and falling prices of non-energy imports.",
-      "explanation": "Reworded from the previous statement: “Inflation picked up in recent months; however, it continued to run below the Committee's 2 percent longer-run objective, partly reflecting declines in energy pr…”"
-    },
-    {
-      "quote": "However, global economic and financial developments continue to pose risks.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "Inflation remains below the Fed's 2 percent goal largely due to past drops in energy and import prices."
     },
     {
       "quote": "The Committee continues to closely monitor inflation indicators and global economic and financial developments.",
-      "explanation": "Reworded from the previous statement: “The Committee continues to monitor inflation developments closely.”"
+      "explanation": "The Fed removed concerns about global risks posing a threat, but is still watching inflation and global developments closely."
     }
   ],
-  "tone_score": -0.06,
+  "tone_score": 0.0,
   "tone_quotes": [
+    {
+      "quote": "Consistent with its statutory mandate, the Committee seeks to foster maximum employment and price stability.",
+      "direction": "hawkish"
+    },
     {
       "quote": "The stance of monetary policy remains accommodative, thereby supporting further improvement in labor market conditions and a return to 2 percent inflation.",
       "direction": "dovish"
     },
     {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and falling prices of non-energy imports.",
+      "quote": "The federal funds rate is likely to remain, for some time, below levels that are expected to prevail in the longer run.",
       "direction": "dovish"
     }
   ],
@@ -92,8 +88,8 @@
       "text": "The broad trade-weighted dollar moved 0.09% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 98%, cut 0%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate increases will be gradual and depend on incoming economic data. According to the educational forecast model, the next meeting has a 99% probability of a hold and a 1% probability of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +129,22 @@
     }
   ],
   "meeting_date": "2016-04-27",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.25,
+    "target_high": 0.5,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Esther L. George"
+    ],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 1/4 to 1/2 percent."
+  },
+  "latency_s": 4.12
 }

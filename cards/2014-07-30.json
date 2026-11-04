@@ -9,46 +9,38 @@
     "dissenters": [
       "Charles I. Plosser"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Charles I. Plosser."
+    "summary": "The Federal Reserve decided to hold the federal funds rate target at 0 to 1/4 percent while continuing to trim its asset purchases."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in June indicates that growth in economic activity rebounded in the second quarter.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in April indicates that growth in economic activity has rebounded in recent months.”"
+      "explanation": "The Fed noted that economic growth bounced back during the second quarter following earlier weakness."
     },
     {
       "quote": "Labor market conditions improved, with the unemployment rate declining further.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee acknowledged further drops in the unemployment rate alongside general job market improvements."
     },
     {
       "quote": "However, a range of labor market indicators suggests that there remains significant underutilization of labor resources.",
-      "explanation": "New language added in this statement."
+      "explanation": "Even with progress, officials believe workers are still not fully utilized across the wider economy."
     },
     {
-      "quote": "Household spending appears to be rising moderately and business fixed investment is advancing, while the recovery in the housing sector remains slow.",
-      "explanation": "Reworded from the previous statement: “Household spending appears to be rising moderately and business fixed investment resumed its advance, while the recovery in the housing sector remained slow.”"
+      "quote": "Inflation has moved somewhat closer to the Committee's longer-run objective.",
+      "explanation": "Inflation figures have edged nearer to the Fed's long-term goal of 2 percent."
     },
     {
-      "quote": "Labor market indicators generally showed further improvement.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The unemployment rate, though lower, remains elevated.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "Beginning in August, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $10 billion per month rather than $15 billion per month, and will add to its holdings of longer-term Treasury securities at a pace of $15 billion per month rather than $20 billion per month.",
+      "explanation": "The central bank scaled back its monthly bond purchases by another $10 billion total, continuing to wind down its quantitative easing program."
     }
   ],
-  "tone_score": -1.11,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
-      "direction": "dovish"
+      "quote": "The Committee currently judges that there is sufficient underlying strength in the broader economy to support ongoing improvement in labor market conditions.",
+      "direction": "hawkish"
     },
     {
-      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions since the inception of the current asset purchase program, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
+      "quote": "The Committee continues to anticipate, based on its assessment of these factors, that it likely will be appropriate to maintain the current target range for the federal funds rate for a considerable time after the asset purchase program ends, especially if projected inflation continues to run below the Committee's 2 percent longer-run goal, and provided that longer-term inflation expectations remain well anchored.",
       "direction": "dovish"
     }
   ],
@@ -92,12 +84,12 @@
       "text": "The broad trade-weighted dollar moved 0.32% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 88%, cut 10%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will likely continue reducing its bond purchases in measured steps at upcoming meetings if economic data stays on track. An educational forecast model suggests an 88% probability of a continued hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation."
+      "detail": "The Committee decided to make a further measured reduction in the pace of its asset purchases."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2014-07-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Charles I. Plosser"
+    ],
+    "summary": "The Federal Reserve decided to hold the federal funds rate target at 0 to 1/4 percent while continuing to trim its asset purchases."
+  },
+  "latency_s": 4.04
 }

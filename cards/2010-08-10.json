@@ -9,46 +9,30 @@
     "dissenters": [
       "Thomas M. Hoenig"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Thomas M. Hoenig."
+    "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and decided to reinvest proceeds from maturing securities into longer-term Treasury bonds to support the economy."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in June indicates that the pace of recovery in output and employment has slowed in recent months.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in April suggests that the economic recovery is proceeding and that the labor market is improvi…”"
+      "explanation": "The Fed noted that the economic recovery lost momentum compared to its previous assessment."
     },
     {
-      "quote": "Household spending is increasing gradually, but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.",
-      "explanation": "Reworded from the previous statement: “Household spending is increasing but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.”"
-    },
-    {
-      "quote": "Business spending on equipment and software is rising; however, investment in nonresidential structures continues to be weak and employers remain reluctant to add to payrolls.",
-      "explanation": "Reworded from the previous statement: “Business spending on equipment and software has risen significantly; however, investment in nonresidential structures continues to be weak and employers remain …”"
-    },
-    {
-      "quote": "Bank lending has continued to contract.",
-      "explanation": "Reworded from the previous statement: “Bank lending has continued to contract in recent months.”"
-    },
-    {
-      "quote": "Nonetheless, the Committee anticipates a gradual return to higher levels of resource utilization in a context of price stability, although the pace of economic recovery is likely to be more modest in the near term than had been anticipated.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee anticipates a gradual return to higher levels of resource utilization in a context of price stability, although the pace of economic …”"
+      "quote": "To help support the economic recovery in a context of price stability, the Committee will keep constant the Federal Reserve's holdings of securities at their current level by reinvesting principal payments from agency debt and agency mortgage-backed securities in longer-term Treasury securities.1 The Committee will continue to roll over the Federal Reserve's holdings of Treasury securities as they mature.",
+      "explanation": "The Fed introduced a new policy to reinvest cash from maturing mortgage securities into Treasury bonds, preventing its total asset holdings from shrinking."
     },
     {
       "quote": "Measures of underlying inflation have trended lower in recent quarters and, with substantial resource slack continuing to restrain cost pressures and longer-term inflation expectations stable, inflation is likely to be subdued for some time.",
-      "explanation": "Reworded from the previous statement: “With substantial resource slack continuing to restrain cost pressures and longer-term inflation expectations stable, inflation is likely to be subdued for some …”"
+      "explanation": "The Fed highlighted that underlying inflation measures have drifted down, suggesting inflation will remain low due to high unemployment and idle economic capacity."
     }
   ],
   "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Measures of underlying inflation have trended lower in recent quarters and, with substantial resource slack continuing to restrain cost pressures and longer-term inflation expectations stable, inflation is likely to be subdued for some time.",
-      "direction": "dovish"
-    },
-    {
       "quote": "Information received since the Federal Open Market Committee met in June indicates that the pace of recovery in output and employment has slowed in recent months.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
       "direction": "dovish"
     }
   ],
@@ -92,12 +76,12 @@
       "text": "The broad trade-weighted dollar moved 0.59% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 49%, cut 51%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed remains ready to provide more support if the recovery continues to falter. An educational forecast model sees a 47% chance of a hold and a 52% chance of a cut at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels o"
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +117,22 @@
     }
   ],
   "meeting_date": "2010-08-10",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Thomas M. Hoenig"
+    ],
+    "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and decided to reinvest proceeds from maturing securities into longer-term Treasury bonds to support the economy."
+  },
+  "latency_s": 3.7
 }

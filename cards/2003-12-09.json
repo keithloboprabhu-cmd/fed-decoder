@@ -7,35 +7,31 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1%. The vote was 12-0."
+    "summary": "The Federal Reserve kept its target for the federal funds rate at 1 percent."
   },
   "changes": [
     {
       "quote": "The evidence accumulated over the intermeeting period confirms that output is expanding briskly, and the labor market appears to be improving modestly.",
-      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period confirms that spending is firming, and the labor market appears to be stabilizing.”"
+      "explanation": "The Committee updated its language to show stronger economic output and modest improvement in the job market."
     },
     {
       "quote": "Increases in core consumer prices are muted and expected to remain low.",
-      "explanation": "Reworded from the previous statement: “Business pricing power and increases in core consumer prices remain muted.”"
+      "explanation": "This simplifies how the Fed describes inflation by removing business pricing power from the text."
     },
     {
       "quote": "The probability of an unwelcome fall in inflation has diminished in recent months and now appears almost equal to that of a rise in inflation.",
-      "explanation": "Reworded from the previous statement: “In contrast, the probability, though minor, of an unwelcome fall in inflation exceeds that of a rise in inflation from its already low level.”"
+      "explanation": "The Fed is less worried about falling prices than it was previously."
     },
     {
       "quote": "However, with inflation quite low and resource use slack, the Committee believes that policy accommodation can be maintained for a considerable period.",
-      "explanation": "Reworded from the previous statement: “In these circumstances, the Committee believes that policy accommodation can be maintained for a considerable period.”"
-    },
-    {
-      "quote": "Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Ben S. Bernanke; Susan S. Bies; J. Alfred Broaddus, Jr.; Roger W. Ferguson, Jr.; Edward M. Gramlich; Jack Guynn; Donald L. Kohn; Michael H. Moskow; Mark W. Olson; and Robert T. Parry.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Ben S. Bernanke; Susan S. Bies; J. Alfred Broaddus, Jr.; Roger W. Ferguson, Jr.; Edwa…”"
+      "explanation": "The Fed added that low inflation and unused economic resources allow it to keep low interest rates for a while."
     },
     {
       "quote": "The Committee judges that, on balance, the risk of inflation becoming undesirably low remains the predominant concern for the foreseeable future.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed its previous warning that inflation becoming too low was its primary concern."
     }
   ],
-  "tone_score": -0.47,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
       "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
@@ -43,11 +39,7 @@
     },
     {
       "quote": "The Committee perceives that the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "However, with inflation quite low and resource use slack, the Committee believes that policy accommodation can be maintained for a considerable period.",
-      "direction": "dovish"
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.32% and moved +3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.89% would rise by about $5.76 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.32% and moved +3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.89% would rise by about $5.76 a month."
     },
     {
       "topic": "Savers",
@@ -86,8 +78,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +3 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to keep its current policy stance unchanged for a considerable period. Future meetings will likely depend on how inflation and resource slack continue to evolve.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2003-12-09",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.0,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its target for the federal funds rate at 1 percent."
+  },
+  "latency_s": 3.51
 }

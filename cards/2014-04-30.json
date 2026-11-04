@@ -7,47 +7,39 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and reduced its monthly bond purchases."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in March indicates that growth in economic activity has picked up recently, after having slowed sharply during the winter in part because of adverse weather conditions.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January indicates that growth in economic activity slowed during the winter months, in part …”"
+      "explanation": "The Fed noted that the economy bounced back after winter weather slowed activity."
     },
     {
       "quote": "Household spending appears to be rising more quickly.",
-      "explanation": "New language added in this statement."
+      "explanation": "Consumer spending showed signs of picking up pace."
     },
     {
       "quote": "Business fixed investment edged down, while the recovery in the housing sector remained slow.",
-      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment continued to advance, while the recovery in the housing sector remained slow.”"
+      "explanation": "Business spending dropped slightly and housing continued a slow recovery."
     },
     {
       "quote": "Beginning in May, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $20 billion per month rather than $25 billion per month, and will add to its holdings of longer-term Treasury securities at a pace of $25 billion per month rather than $30 billion per month.",
-      "explanation": "Reworded from the previous statement: “Beginning in April, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $25 billion per month rather than $30 billion per m…”"
+      "explanation": "The Fed continued to scale back its economic stimulus by reducing bond purchases by $10 billion total."
     },
     {
       "quote": "Voting for the FOMC monetary policy action were: Janet L. Yellen, Chair; William C. Dudley, Vice Chairman; Richard W. Fisher; Narayana Kocherlakota; Sandra Pianalto; Charles I. Plosser; Jerome H. Powell; Jeremy C. Stein; and Daniel K. Tarullo.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Janet L. Yellen, Chair; William C. Dudley, Vice Chairman; Richard W. Fisher; Sandra Pianalto; Charles I. Plosse…”"
-    },
-    {
-      "quote": "With the unemployment rate nearing 6-1/2 percent, the Committee has updated its forward guidance.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The policy decision was unanimous with no opposing votes."
     }
   ],
-  "tone_score": -1.22,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
+      "quote": "The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace and labor market conditions will continue to improve gradually, moving toward those the Committee judges consistent with its dual mandate.",
       "direction": "dovish"
     },
     {
       "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions since the inception of the current asset purchase program, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
-      "direction": "dovish"
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -90,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved -0.15% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 83%, cut 16%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will likely continue reducing its bond purchases in measured steps if economic data remains on track. Educational models forecast an 83 percent chance that the Fed will hold rates steady at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation."
+      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2014-04-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and reduced its monthly bond purchases."
+  },
+  "latency_s": 4.01
 }

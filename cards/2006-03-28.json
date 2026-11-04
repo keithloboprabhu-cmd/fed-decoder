@@ -7,40 +7,32 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 4.75%. The vote was 11-0."
+    "summary": "The Federal Reserve raised the target for the federal funds rate by 25 basis points to 4-3/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-3/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/2 percent.”"
+      "explanation": "The Fed increased the benchmark interest rate by a quarter percentage point to 4-3/4 percent."
     },
     {
       "quote": "The slowing of the growth of real GDP in the fourth quarter of 2005 seems largely to have reflected temporary or special factors.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed downplayed the previous quarter's economic slowdown as temporary."
     },
     {
       "quote": "Economic growth has rebounded strongly in the current quarter but appears likely to moderate to a more sustainable pace.",
-      "explanation": "New language added in this statement."
+      "explanation": "Growth bounced back in the current quarter but is expected to level off."
     },
     {
       "quote": "As yet, the run-up in the prices of energy and other commodities appears to have had only a modest effect on core inflation, ongoing productivity gains have helped to hold the growth of unit labor costs in check, and inflation expectations remain contained.",
-      "explanation": "New language added in this statement."
+      "explanation": "Higher energy costs have not severely boosted core inflation so far."
     },
     {
       "quote": "Still, possible increases in resource utilization, in combination with the elevated prices of energy and other commodities, have the potential to add to inflation pressures.",
-      "explanation": "Reworded from the previous statement: “Nevertheless, possible increases in resource utilization as well as elevated energy prices have the potential to add to inflation pressures.”"
-    },
-    {
-      "quote": "Although recent economic data have been uneven, the expansion in economic activity appears solid.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed remains cautious that high energy and commodity prices could stoke inflation."
     }
   ],
-  "tone_score": 1.46,
+  "tone_score": 1.0,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-3/4 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee judges that some further policy firming may be needed to keep the risks to the attainment of both sustainable economic growth and price stability roughly in balance.",
       "direction": "hawkish"
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.79% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.34% would rise by about $17.67 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.79% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.34% would rise by about $17.67 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.04% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 21%, cut 0%, hike 78%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that additional rate hikes might be necessary to keep growth sustainable and inflation in check. Educational forecast models suggest a 78% probability of another hike at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2006-03-28",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.75,
+    "target_high": 4.75,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the target for the federal funds rate by 25 basis points to 4-3/4 percent."
+  },
+  "latency_s": 4.08
 }

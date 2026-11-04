@@ -7,47 +7,39 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 1.5%. The vote was 10-0."
+    "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 1-1/2 percent."
   },
   "changes": [
     {
       "quote": "FOMC statement: Federal Reserve and other central banks announce reductions in policy interest rates",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Joint Statement by Central Banks",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Throughout the current financial crisis, central banks have engaged in continuous close consultation and have cooperated in unprecedented joint actions such as the provision of liquidity to reduce strains in financial markets.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Federal Reserve coordinated with other global central banks to lower interest rates in an unprecedented joint action during the financial crisis."
     },
     {
       "quote": "Inflationary pressures have started to moderate in a number of countries, partly reflecting a marked decline in energy and other commodity prices.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Inflation expectations are diminishing and remain anchored to price stability.",
-      "explanation": "New language added in this statement."
+      "explanation": "Falling energy and commodity prices helped cool down inflation globally, giving central banks room to cut rates."
     },
     {
       "quote": "The recent intensification of the financial crisis has augmented the downside risks to growth and thus has diminished further the upside risks to price stability.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -0.29,
-  "tone_quotes": [
+      "explanation": "The worsening financial crisis increased the threat to economic growth while reducing concerns about runaway inflation."
+    },
+    {
+      "quote": "Some easing of global monetary conditions is therefore warranted.",
+      "explanation": "Central banks agreed that lowering borrowing costs was necessary to support the struggling global economy."
+    },
     {
       "quote": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 50 basis points to 1-1/2 percent.",
-      "direction": "dovish"
-    },
+      "explanation": "The Fed actively cut its benchmark interest rate by 0.50 percentage points to help stimulate economic activity."
+    }
+  ],
+  "tone_score": -1.5,
+  "tone_quotes": [
     {
       "quote": "The recent intensification of the financial crisis has augmented the downside risks to growth and thus has diminished further the upside risks to price stability.",
       "direction": "dovish"
     },
     {
-      "quote": "Inflationary pressures have started to moderate in a number of countries, partly reflecting a marked decline in energy and other commodity prices.",
-      "direction": "hawkish"
+      "quote": "Incoming economic data suggest that the pace of economic activity has slowed markedly in recent months.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved 1.55% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 79%, cut 15%, hike 6%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will continue monitoring economic and financial developments to act as needed. Educational forecast models suggest the next meeting has a 73% probability of a hold, 17% for a cut, and 10% for a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2008-10-08",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 1.5,
+    "target_high": 1.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 1-1/2 percent."
+  },
+  "latency_s": 4.02
 }

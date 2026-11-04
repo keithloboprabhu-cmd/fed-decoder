@@ -9,47 +9,39 @@
     "dissenters": [
       "Esther L. George"
     ],
-    "summary": "The Fed held its policy rate at 0.25% to 0.5%. The vote was 9-1. Dissenting: Esther L. George."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in January suggests that economic activity has been expanding at a moderate pace despite the global economic and financial developments of recent months.",
-      "explanation": "New language added in this statement."
-    },
-    {
       "quote": "Household spending has been increasing at a moderate rate, and the housing sector has improved further; however, business fixed investment and net exports have been soft.",
-      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment have been increasing at moderate rates in recent months, and the housing sector has improved further; however, …”"
+      "explanation": "The Fed removed business fixed investment from the growing category, now noting it has been soft alongside net exports."
     },
     {
       "quote": "A range of recent indicators, including strong job gains, points to additional strengthening of the labor market.",
-      "explanation": "Reworded from the previous statement: “A range of recent labor market indicators, including strong job gains, points to some additional decline in underutilization of labor resources.”"
+      "explanation": "The Fed updated its labor market language to focus on additional strengthening rather than just a decline in underutilization."
     },
     {
       "quote": "Inflation picked up in recent months; however, it continued to run below the Committee's 2 percent longer-run objective, partly reflecting declines in energy prices and in prices of non-energy imports.",
-      "explanation": "Reworded from the previous statement: “Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting declines in energy prices and in prices of non-energy imp…”"
+      "explanation": "The statement now acknowledges that inflation has picked up recently while still remaining below the 2 percent objective."
     },
     {
-      "quote": "Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations are little changed, on balance, in recent months.",
-      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation declined further; survey-based measures of longer-term inflation expectations are little changed, on balance, in…”"
+      "quote": "However, global economic and financial developments continue to pose risks.",
+      "explanation": "This added sentence highlights ongoing concerns regarding international economic and financial conditions."
     },
     {
-      "quote": "Information received since the Federal Open Market Committee met in December suggests that labor market conditions improved further even as economic growth slowed late last year.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "The Committee continues to monitor inflation developments closely.",
+      "explanation": "The Fed added this phrase to emphasize its watchful stance on incoming inflation data."
     }
   ],
-  "tone_score": 0.2,
+  "tone_score": -0.5,
   "tone_quotes": [
     {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting further improvement in labor market conditions and a return to 2 percent inflation.",
+      "quote": "However, global economic and financial developments continue to pose risks.",
       "direction": "dovish"
     },
     {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "quote": "Inflation is expected to remain low in the near term, in part because of earlier declines in energy prices, but to rise to 2 percent over the medium term as the transitory effects of declines in energy and import prices dissipate and the labor market strengthens further.",
       "direction": "dovish"
-    },
-    {
-      "quote": "This assessment will take into account a wide range of information, including measures of labor market conditions, indicators of inflation pressures and inflation expectations, and readings on financial and international developments.",
-      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -92,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved 0.2% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 94%, cut 0%, hike 6%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will proceed cautiously with only gradual increases in the federal funds rate based on incoming data. The forecast model gave the next meeting: hold 98%, cut 0%, hike 1%, which is educational.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2016-03-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.25,
+    "target_high": 0.5,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Esther L. George"
+    ],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
+  },
+  "latency_s": 4.11
 }

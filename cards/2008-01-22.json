@@ -9,46 +9,42 @@
     "dissenters": [
       "William Poole"
     ],
-    "summary": "The Fed cut its policy rate by 75 basis points, to 3.5%. The vote was 8-1. Dissenting: William Poole."
+    "summary": "The Federal Reserve lowered its target interest rate by 75 basis points to 3-1/2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 75 basis points to 3-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 4-1/4 percent.”"
+      "explanation": "The Fed made an aggressive rate cut between scheduled meetings to support the economy amid worsening conditions."
     },
     {
       "quote": "The Committee took this action in view of a weakening of the economic outlook and increasing downside risks to growth.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "While strains in short-term funding markets have eased somewhat, broader financial market conditions have continued to deteriorate and credit has tightened further for some businesses and households.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed explicitly noted that growth risks are increasing and the overall economic outlook is deteriorating."
     },
     {
       "quote": "Moreover, incoming information indicates a deepening of the housing contraction as well as some softening in labor markets.",
-      "explanation": "Reworded from the previous statement: “Incoming information suggests that economic growth is slowing, reflecting the intensification of the housing correction and some softening in business and consu…”"
-    },
-    {
-      "quote": "The Committee expects inflation to moderate in coming quarters, but it will be necessary to continue to monitor inflation developments carefully.",
-      "explanation": "Reworded from the previous statement: “In this context, the Committee judges that some inflation risks remain, and it will continue to monitor inflation developments carefully.”"
+      "explanation": "The housing slump is getting deeper and the job market is beginning to show weakness."
     },
     {
       "quote": "Appreciable downside risks to growth remain.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed sees significant threats that the economy could slow down further."
+    },
+    {
+      "quote": "Voting against was William Poole, who did not believe that current conditions justified policy action before the regularly scheduled meeting next week.",
+      "explanation": "One member dissented because they felt this emergency action was unnecessary ahead of the next regular meeting."
     }
   ],
-  "tone_score": -1.29,
+  "tone_score": -1.5,
   "tone_quotes": [
-    {
-      "quote": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 75 basis points to 3-1/2 percent.",
-      "direction": "dovish"
-    },
     {
       "quote": "The Committee took this action in view of a weakening of the economic outlook and increasing downside risks to growth.",
       "direction": "dovish"
     },
     {
-      "quote": "While strains in short-term funding markets have eased somewhat, broader financial market conditions have continued to deteriorate and credit has tightened further for some businesses and households.",
+      "quote": "Moreover, incoming information indicates a deepening of the housing contraction as well as some softening in labor markets.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Appreciable downside risks to growth remain.",
       "direction": "dovish"
     }
   ],
@@ -92,8 +88,8 @@
       "text": "The broad trade-weighted dollar moved -0.1% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 23%, cut 77%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed remains highly focused on economic risks and stands ready to take further action as needed. Educational forecasts suggest a 78% probability of a rate cut at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +129,22 @@
     }
   ],
   "meeting_date": "2008-01-22",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -75,
+    "target_low": 3.5,
+    "target_high": 3.5,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "William Poole"
+    ],
+    "summary": "The Federal Reserve lowered its target interest rate by 75 basis points to 3-1/2 percent."
+  },
+  "latency_s": 3.69
 }

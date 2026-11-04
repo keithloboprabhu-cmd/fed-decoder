@@ -7,46 +7,42 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve voted to keep its benchmark interest rate at 0 to 1/4 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in April suggests that the pace of economic contraction is slowing.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March indicates that the economy has continued to contract, though the pace of contraction a…”"
-    },
-    {
       "quote": "Conditions in financial markets have generally improved in recent months.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Household spending has shown further signs of stabilizing but remains constrained by ongoing job losses, lower housing wealth, and tight credit.",
-      "explanation": "Reworded from the previous statement: “Household spending has shown signs of stabilizing but remains constrained by ongoing job losses, lower housing wealth, and tight credit.”"
+      "explanation": "The Fed added this note to acknowledge that parts of the financial system are healing compared to earlier months."
     },
     {
       "quote": "Businesses are cutting back on fixed investment and staffing but appear to be making progress in bringing inventory stocks into better alignment with sales.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Although economic activity is likely to remain weak for a time, the Committee continues to anticipate that policy actions to stabilize financial markets and institutions, fiscal and monetary stimulus, and market forces will contribute to a gradual resumption of sustainable economic growth in a context of price stability.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee continues to anticipate that policy actions to stabilize financial markets and institutions, fiscal and monetary stimulus, and market…”"
+      "explanation": "This new line shows that while firms are still trimming staff and spending, they are successfully clearing out unsold goods."
     },
     {
       "quote": "The prices of energy and other commodities have risen of late.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee noted that certain commodity prices are starting to creep back up."
+    },
+    {
+      "quote": "However, substantial resource slack is likely to dampen cost pressures, and the Committee expects that inflation will remain subdued for some time.",
+      "explanation": "Despite rising commodity prices, widespread economic slack keeps overall inflation pressures low."
+    },
+    {
+      "quote": "The Federal Reserve is monitoring the size and composition of its balance sheet and will make adjustments to its credit and liquidity programs as warranted.",
+      "explanation": "The Fed added a reminder that it watches its massive asset holdings and emergency programs closely as conditions change."
     }
   ],
-  "tone_score": -1.09,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
-      "direction": "dovish"
-    },
     {
       "quote": "Information received since the Federal Open Market Committee met in April suggests that the pace of economic contraction is slowing.",
       "direction": "dovish"
     },
     {
-      "quote": "However, substantial resource slack is likely to dampen cost pressures, and the Committee expects that inflation will remain subdued for some time.",
+      "quote": "Although economic activity is likely to remain weak for a time, the Committee continues to anticipate that policy actions to stabilize financial markets and institutions, fiscal and monetary stimulus, and market forces will contribute to a gradual resumption of sustainable economic growth in a context of price stability.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +53,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.72% and moved +7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.59% would rise by about $13.26 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.72% and moved +7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.59% would rise by about $13.26 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved -0.29% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 32%, cut 67%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to keep borrowing costs exceptionally low for an extended period to support the recovery. For educational purposes, an econometric forecast estimates the next meeting has a 35% chance of a hold and a 65% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2009-06-24",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve voted to keep its benchmark interest rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.7
 }

@@ -7,47 +7,39 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve kept its benchmark interest rate at 0 to 1/4 percent and trimmed its monthly bond purchases."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in April indicates that growth in economic activity has rebounded in recent months.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March indicates that growth in economic activity has picked up recently, after having slowed…”"
+      "explanation": "The Fed noted that the economy bounced back after weather-related slowness earlier in the year."
     },
     {
       "quote": "Labor market indicators generally showed further improvement.",
-      "explanation": "Reworded from the previous statement: “Labor market indicators were mixed but on balance showed further improvement.”"
-    },
-    {
-      "quote": "The unemployment rate, though lower, remains elevated.",
-      "explanation": "Reworded from the previous statement: “The unemployment rate, however, remains elevated.”"
+      "explanation": "Employment conditions continue to get better overall."
     },
     {
       "quote": "Household spending appears to be rising moderately and business fixed investment resumed its advance, while the recovery in the housing sector remained slow.",
-      "explanation": "Reworded from the previous statement: “Business fixed investment edged down, while the recovery in the housing sector remained slow.”"
-    },
-    {
-      "quote": "Household spending appears to be rising more quickly.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "Consumer spending and business investment are picking back up, even though housing is still recovering slowly."
     },
     {
       "quote": "Beginning in July, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $15 billion per month rather than $20 billion per month, and will add to its holdings of longer-term Treasury securities at a pace of $20 billion per month rather than $25 billion per month.",
-      "explanation": "Reworded from the previous statement: “Beginning in May, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $20 billion per month rather than $25 billion per mon…”"
+      "explanation": "The Fed slowed down its economic stimulus by reducing monthly bond purchases."
     }
   ],
-  "tone_score": -1.19,
+  "tone_score": -0.5,
   "tone_quotes": [
     {
-      "quote": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
+      "quote": "The unemployment rate, though lower, remains elevated.",
       "direction": "dovish"
     },
     {
-      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions since the inception of the current asset purchase program, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
+      "quote": "Inflation has been running below the Committee's longer-run objective, but longer-term inflation expectations have remained stable.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
-      "direction": "dovish"
+      "quote": "Information received since the Federal Open Market Committee met in April indicates that growth in economic activity has rebounded in recent months.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.61% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.14% would fall by about $8.71 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.61% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.14% would fall by about $8.71 a month."
     },
     {
       "topic": "Savers",
@@ -90,54 +82,61 @@
       "text": "The broad trade-weighted dollar moved -0.03% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 85%, cut 14%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will likely continue reducing its bond purchases in measured steps if economic data keeps improving. Educationally, forecast models estimate an 85% probability that the Fed will hold rates at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation."
+      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate"
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "11.83% as of 2014-02-01"
-    },
-    {
-      "source": "MORTGAGE30US",
-      "detail": "4.14% week of 2014-06-05"
+      "detail": "11.83%"
     },
     {
       "source": "DGS10",
-      "detail": "2.61% on 2014-06-18"
+      "detail": "2.61%"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.14%"
     },
     {
       "source": "UNRATE",
-      "detail": "6.3% in May 2014"
+      "detail": "6.3%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 267k as of May 2014"
+      "detail": "267k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "2.2% year over year, May 2014"
+      "detail": "2.2%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "1.6% year over year, May 2014"
+      "detail": "1.6%"
     },
     {
       "source": "GDPC1",
-      "detail": "-1.4% annualized, quarter starting 2014-01-01"
+      "detail": "-1.4%"
     }
   ],
   "meeting_date": "2014-06-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its benchmark interest rate at 0 to 1/4 percent and trimmed its monthly bond purchases."
+  },
+  "latency_s": 3.45
 }

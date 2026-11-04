@@ -9,46 +9,34 @@
     "dissenters": [
       "Eric S. Rosengren"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Eric S. Rosengren."
+    "summary": "The Federal Reserve decided to hold the target range for the federal funds rate at 0 to 1/4 percent while modestly slowing its asset purchases."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in October indicates that economic activity is expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September generally suggests that economic activity has continued to expand at a moderate pa…”"
-    },
-    {
-      "quote": "Labor market conditions have shown further improvement; the unemployment rate has declined but remains elevated.",
-      "explanation": "Reworded from the previous statement: “Indicators of labor market conditions have shown some further improvement, but the unemployment rate remains elevated.”"
-    },
-    {
-      "quote": "Household spending and business fixed investment advanced, while the recovery in the housing sector slowed somewhat in recent months.",
-      "explanation": "Reworded from the previous statement: “Available data suggest that household spending and business fixed investment advanced, while the recovery in the housing sector slowed somewhat in recent months…”"
-    },
-    {
       "quote": "Fiscal policy is restraining economic growth, although the extent of restraint may be diminishing.",
-      "explanation": "Reworded from the previous statement: “Fiscal policy is restraining economic growth.”"
-    },
-    {
-      "quote": "Inflation has been running below the Committee's longer-run objective, but longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Apart from fluctuations due to changes in energy prices, inflation has been running below the Committee's longer-run objective, but longer-term inflation expect…”"
+      "explanation": "The Committee noted that while government spending and tax policy are still holding back growth, that drag might be shrinking."
     },
     {
       "quote": "The Committee sees the risks to the outlook for the economy and the labor market as having become more nearly balanced.",
-      "explanation": "Reworded from the previous statement: “The Committee sees the downside risks to the outlook for the economy and the labor market as having diminished, on net, since last fall.”"
-    }
-  ],
-  "tone_score": -1.21,
-  "tone_quotes": [
-    {
-      "quote": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee's 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
-      "direction": "dovish"
+      "explanation": "The Fed feels the economic outlook has become more stable, shifting away from earlier downside risks."
     },
     {
       "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions, the Committee decided to modestly reduce the pace of its asset purchases.",
-      "direction": "dovish"
+      "explanation": "Because the job market has improved over time, the Fed decided to scale back its monthly bond buying."
     },
     {
-      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
+      "quote": "Beginning in January, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $35 billion per month rather than $40 billion per month, and will add to its holdings of longer-term Treasury securities at a pace of $40 billion per month rather than $45 billion per month.",
+      "explanation": "The Fed set specific lower amounts for its monthly purchases of both mortgage-backed securities and Treasuries starting in January."
+    }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+    {
+      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions, the Committee decided to modestly reduce the pace of its asset purchases.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee recognizes that inflation persistently below its 2 percent objective could pose risks to economic performance, and it is monitoring inflation developments carefully for evidence that inflation will move back toward its objective over the medium term.",
       "direction": "dovish"
     }
   ],
@@ -92,12 +80,12 @@
       "text": "The broad trade-weighted dollar moved 0.13% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 84%, cut 15%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that if the economy continues to improve, the Fed will likely reduce asset purchases in further measured steps at future meetings. For educational purposes, an educational forecast model gave the probability of a hold at 84%, a cut at 15%, and a hike at 1% for the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more"
+      "detail": "The Committee decided to modestly reduce the pace of its asset purchases."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +121,22 @@
     }
   ],
   "meeting_date": "2013-12-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Eric S. Rosengren"
+    ],
+    "summary": "The Federal Reserve decided to hold the target range for the federal funds rate at 0 to 1/4 percent while modestly slowing its asset purchases."
+  },
+  "latency_s": 3.92
 }

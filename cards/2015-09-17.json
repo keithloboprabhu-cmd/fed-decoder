@@ -9,46 +9,34 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve decided to keep the federal funds rate target range at 0 to 1/4 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in July suggests that economic activity is expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June indicates that economic activity has been expanding moderately in recent months.”"
-    },
-    {
-      "quote": "Household spending and business fixed investment have been increasing moderately, and the housing sector has improved further; however, net exports have been soft.",
-      "explanation": "Reworded from the previous statement: “Growth in household spending has been moderate and the housing sector has shown additional improvement; however, business fixed investment and net exports staye…”"
-    },
-    {
-      "quote": "On balance, labor market indicators show that underutilization of labor resources has diminished since early this year.",
-      "explanation": "Reworded from the previous statement: “On balance, a range of labor market indicators suggests that underutilization of labor resources has diminished since early this year.”"
-    },
-    {
-      "quote": "Inflation has continued to run below the Committee's longer-run objective, partly reflecting declines in energy prices and in prices of non-energy imports.",
-      "explanation": "Reworded from the previous statement: “Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy i…”"
+      "quote": "Recent global economic and financial developments may restrain economic activity somewhat and are likely to put further downward pressure on inflation in the near term.",
+      "explanation": "The Fed added this language to note that troubles overseas could slow down the U.S. economy and keep inflation low."
     },
     {
       "quote": "Market-based measures of inflation compensation moved lower; survey-based measures of longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations have remained stable.”"
+      "explanation": "Market measures showing expected future inflation dropped, while surveyed consumer expectations stayed steady."
     },
     {
-      "quote": "Recent global economic and financial developments may restrain economic activity somewhat and are likely to put further downward pressure on inflation in the near term.",
-      "explanation": "New language added in this statement."
+      "quote": "The Committee continues to see the risks to the outlook for economic activity and the labor market as nearly balanced but is monitoring developments abroad.",
+      "explanation": "The Fed added a note that it is actively watching international events alongside its standard economic outlook."
+    },
+    {
+      "quote": "Voting against the action was Jeffrey M. Lacker, who preferred to raise the target range for the federal funds rate by 25 basis points at this meeting.",
+      "explanation": "One official dissented from the majority, preferring a rate increase."
     }
   ],
-  "tone_score": 0.09,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen some further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
+      "quote": "Recent global economic and financial developments may restrain economic activity somewhat and are likely to put further downward pressure on inflation in the near term.",
       "direction": "dovish"
     },
     {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "quote": "Inflation has continued to run below the Committee's longer-run objective, partly reflecting declines in energy prices and in prices of non-energy imports.",
       "direction": "dovish"
     }
   ],
@@ -92,8 +80,8 @@
       "text": "The broad trade-weighted dollar moved 0.02% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 84%, cut 10%, hike 5%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate hikes depend on further job market improvements and increased confidence that inflation will return to 2 percent. Educational forecasting models suggest an 89% chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +121,22 @@
     }
   ],
   "meeting_date": "2015-09-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve decided to keep the federal funds rate target range at 0 to 1/4 percent."
+  },
+  "latency_s": 4.26
 }

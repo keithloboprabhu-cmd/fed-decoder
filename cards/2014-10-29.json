@@ -9,47 +9,43 @@
     "dissenters": [
       "Narayana Kocherlakota"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Narayana Kocherlakota."
+    "summary": "The Federal Reserve decided to keep the federal funds rate unchanged at 0 to 1/4 percent while formally concluding its asset purchase program."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in September suggests that economic activity is expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in July suggests that economic activity is expanding at a moderate pace.”"
-    },
-    {
       "quote": "Labor market conditions improved somewhat further, with solid job gains and a lower unemployment rate.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "On balance, a range of labor market indicators suggests that underutilization of labor resources is gradually diminishing.",
-      "explanation": "Reworded from the previous statement: “On balance, labor market conditions improved somewhat further; however, the unemployment rate is little changed and a range of labor market indicators suggests …”"
-    },
-    {
-      "quote": "Household spending is rising moderately and business fixed investment is advancing, while the recovery in the housing sector remains slow.",
-      "explanation": "Reworded from the previous statement: “Household spending appears to be rising moderately and business fixed investment is advancing, while the recovery in the housing sector remains slow.”"
-    },
-    {
-      "quote": "Inflation has continued to run below the Committee's longer-run objective.",
-      "explanation": "Reworded from the previous statement: “Inflation has been running below the Committee's longer-run objective.”"
+      "explanation": "The Committee noted that employment metrics have continued to strengthen with robust job creation."
     },
     {
       "quote": "Market-based measures of inflation compensation have declined somewhat; survey-based measures of longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Longer-term inflation expectations have remained stable.”"
+      "explanation": "Market indicators showed lower near-term inflation compensation while long-term expectations remained steady."
+    },
+    {
+      "quote": "Although inflation in the near term will likely be held down by lower energy prices and other factors, the Committee judges that the likelihood of inflation running persistently below 2 percent has diminished somewhat since early this year.",
+      "explanation": "Temporary energy price drops are weighing on inflation, but the fear of prolonged low inflation has eased."
+    },
+    {
+      "quote": "The Committee judges that there has been a substantial improvement in the outlook for the labor market since the inception of its current asset purchase program.",
+      "explanation": "The job market has improved enough to meet the goals set when the bond-buying program began."
+    },
+    {
+      "quote": "Accordingly, the Committee decided to conclude its asset purchase program this month.",
+      "explanation": "The Fed ended its quantitative easing asset purchases because of the substantial economic progress achieved."
     }
   ],
-  "tone_score": -0.94,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "The Committee anticipates, based on its current assessment, that it likely will be appropriate to maintain the 0 to 1/4 percent target range for the federal funds rate for a considerable time following the end of its asset purchase program this month, especially if projected inflation continues to run below the Committee's 2 percent longer-run goal, and provided that longer-term inflation expectations remain well anchored.",
+      "quote": "Labor market conditions improved somewhat further, with solid job gains and a lower unemployment rate.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Inflation has continued to run below the Committee's longer-run objective.",
       "direction": "dovish"
     },
     {
-      "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
+      "quote": "Accordingly, the Committee decided to conclude its asset purchase program this month.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -92,8 +88,8 @@
       "text": "The broad trade-weighted dollar moved -0.21% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 89%, cut 7%, hike 5%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee plans to keep interest rates low for a considerable time following the end of its asset purchase program. As an educational note, our forecast model calculates an 88% probability that the Fed will hold rates at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +129,22 @@
     }
   ],
   "meeting_date": "2014-10-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Narayana Kocherlakota"
+    ],
+    "summary": "The Federal Reserve decided to keep the federal funds rate unchanged at 0 to 1/4 percent while formally concluding its asset purchase program."
+  },
+  "latency_s": 3.91
 }

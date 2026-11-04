@@ -7,47 +7,39 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve decided to hold interest rates steady at 0 to 1/4 percent while continuing to reduce its bond purchases."
   },
   "changes": [
     {
+      "quote": "Beginning in February, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $30 billion per month rather than $35 billion per month, and will add to its holdings of longer-term Treasury securities at a pace of $35 billion per month rather than $40 billion per month.",
+      "explanation": "The Fed lowered its monthly asset purchases by another $10 billion total, continuing to wind down its quantitative easing program as economic strength improves."
+    },
+    {
       "quote": "Information received since the Federal Open Market Committee met in December indicates that growth in economic activity picked up in recent quarters.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in October indicates that economic activity is expanding at a moderate pace.”"
-    },
-    {
-      "quote": "Labor market indicators were mixed but on balance showed further improvement.",
-      "explanation": "Reworded from the previous statement: “Labor market conditions have shown further improvement; the unemployment rate has declined but remains elevated.”"
-    },
-    {
-      "quote": "The unemployment rate declined but remains elevated.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that broader economic growth has improved compared to its previous assessment."
     },
     {
       "quote": "Household spending and business fixed investment advanced more quickly in recent months, while the recovery in the housing sector slowed somewhat.",
-      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment advanced, while the recovery in the housing sector slowed somewhat in recent months.”"
+      "explanation": "While consumer and business spending sped up, the housing sector recovery faced a slight slowdown."
     },
     {
       "quote": "Fiscal policy is restraining economic growth, although the extent of restraint is diminishing.",
-      "explanation": "Reworded from the previous statement: “Fiscal policy is restraining economic growth, although the extent of restraint may be diminishing.”"
+      "explanation": "Government spending cuts and tax changes continue to weigh on the economy, but less than before."
     },
     {
-      "quote": "The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace and the unemployment rate will gradually decline toward levels the Committee judges consistent with its dual mandate.",
-      "explanation": "New language added in this statement."
+      "quote": "The Committee continues to anticipate, based on its assessment of these factors, that it likely will be appropriate to maintain the current target range for the federal funds rate well past the time that the unemployment rate declines below 6-1/2 percent, especially if projected inflation continues to run below the Committee's 2 percent longer-run goal.",
+      "explanation": "The Fed reaffirmed its patient stance on raising interest rates, emphasizing that low rates will persist even after unemployment drops below 6-1/2 percent."
     }
   ],
-  "tone_score": -1.21,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee's 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
+      "quote": "Consistent with its statutory mandate, the Committee seeks to foster maximum employment and price stability.",
       "direction": "dovish"
     },
     {
-      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
-      "direction": "dovish"
+      "quote": "The Committee sees the risks to the outlook for the economy and the labor market as having become more nearly balanced.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.69% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.41% would fall by about $14.15 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.69% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.41% would fall by about $14.15 a month."
     },
     {
       "topic": "Savers",
@@ -90,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved -0.02% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 85%, cut 14%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that if incoming data continues to support improvement in the labor market and inflation, the Fed will likely make further measured reductions in asset purchases at future meetings. Educational forecast models suggest an 85 percent chance of another hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more"
+      "detail": "Beginning in February, the Committee will add to its holdings of agency mortgage-backed securities at a pace of $30 billion per month rather than $35 billion per month"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2014-01-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to hold interest rates steady at 0 to 1/4 percent while continuing to reduce its bond purchases."
+  },
+  "latency_s": 3.78
 }

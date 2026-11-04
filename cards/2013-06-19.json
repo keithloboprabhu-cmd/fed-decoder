@@ -10,46 +10,34 @@
       "James Bullard",
       "Esther L. George"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-2. Dissenting: James Bullard, Esther L. George."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent and continue its asset purchase program."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in May suggests that economic activity has been expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March suggests that economic activity has been expanding at a moderate pace.”"
-    },
-    {
       "quote": "Labor market conditions have shown further improvement in recent months, on balance, but the unemployment rate remains elevated.",
-      "explanation": "Reworded from the previous statement: “Labor market conditions have shown some improvement in recent months, on balance, but the unemployment rate remains elevated.”"
+      "explanation": "The Committee updated its assessment to note further improvement in the labor market since the May meeting."
     },
     {
       "quote": "Partly reflecting transitory influences, inflation has been running below the Committee's longer-run objective, but longer-term inflation expectations have remained stable.",
-      "explanation": "Reworded from the previous statement: “Inflation has been running somewhat below the Committee's longer-run objective, apart from temporary variations that largely reflect fluctuations in energy pric…”"
-    },
-    {
-      "quote": "Longer-term inflation expectations have remained stable.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed highlighted that low inflation is partly driven by temporary factors, while longer-term inflation expectations stay stable."
     },
     {
       "quote": "The Committee sees the downside risks to the outlook for the economy and the labor market as having diminished since the fall.",
-      "explanation": "Reworded from the previous statement: “The Committee continues to see downside risks to the economic outlook.”"
+      "explanation": "Policymakers removed their earlier language about ongoing downside risks, noting improvement since the fall."
     },
     {
-      "quote": "Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; William C. Dudley, Vice Chairman; Elizabeth A. Duke; Charles L. Evans; Jerome H. Powell; Sarah Bloom Raskin; Eric S. Rosengren; Jeremy C. Stein; Daniel K. Tarullo; and Janet L. Yellen.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; William C. Dudley, Vice Chairman; James Bullard; Elizabeth A. Duke; Charles L. Evans…”"
+      "quote": "Voting against the action was James Bullard, who believed that the Committee should signal more strongly its willingness to defend its inflation goal in light of recent low inflation readings, and Esther L. George, who was concerned that the continued high level of monetary accommodation increased the risks of future economic and financial imbalances and, over time, could cause an increase in long-term inflation expectations.",
+      "explanation": "Two members dissented for opposite reasons: James Bullard wanted a stronger defense against low inflation, while Esther L. George was worried about potential financial imbalances from ongoing monetary easing."
     }
   ],
-  "tone_score": -1.17,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee's 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
+      "quote": "Consistent with its statutory mandate, the Committee seeks to foster maximum employment and price stability.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee sees the downside risks to the outlook for the economy and the labor market as having diminished since the fall.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Taken together, these actions should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative.",
+      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee decided to continue purchasing additional agency mortgage-backed securities at a pace of $40 billion per month and longer-term Treasury securities at a pace of $45 billion per month.",
       "direction": "dovish"
     }
   ],
@@ -60,7 +48,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.33% and moved +13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.91% would rise by about $22.45 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.33% and moved +13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.91% would rise by about $22.45 a month."
     },
     {
       "topic": "Savers",
@@ -93,12 +81,12 @@
       "text": "The broad trade-weighted dollar moved -0.07% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 80%, cut 19%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its current pace of asset purchases and low interest rates until the labor market improves substantially. As an educational note, the forecast model indicates an 80% chance of a hold at the next meeting, with a 19% chance of a cut and a 1% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation bet"
+      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -134,13 +122,23 @@
     }
   ],
   "meeting_date": "2013-06-19",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 2,
+    "dissenters": [
+      "James Bullard",
+      "Esther L. George"
+    ],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent and continue its asset purchase program."
+  },
+  "latency_s": 3.92
 }

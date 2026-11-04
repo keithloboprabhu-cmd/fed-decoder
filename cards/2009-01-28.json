@@ -9,46 +9,38 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 8-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve kept its target interest rate at a range of 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to keep its target range for the federal funds rate at 0 to 1/4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to establish a target range for the federal funds rate of 0 to 1/4 percent.”"
+      "explanation": "The Fed updated its language from establishing a target range to keeping it steady."
     },
     {
       "quote": "The Committee continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for some time.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added that low interest rates will likely remain in place for an extended period."
     },
     {
       "quote": "Information received since the Committee met in December suggests that the economy has weakened further.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed noted that incoming economic data points to a worsening economic slowdown."
     },
     {
       "quote": "Industrial production, housing starts, and employment have continued to decline steeply, as consumers and businesses have cut back spending.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed highlighted sharp drops across manufacturing, construction, and jobs."
     },
     {
       "quote": "Furthermore, global demand appears to be slowing significantly.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Conditions in some financial markets have improved, in part reflecting government efforts to provide liquidity and strengthen financial institutions; nevertheless, credit conditions for households and firms remain extremely tight.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed acknowledged that international economic conditions are also weakening."
     }
   ],
-  "tone_score": -1.03,
+  "tone_score": -1.5,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to keep its target range for the federal funds rate at 0 to 1/4 percent.",
+      "quote": "Information received since the Committee met in December suggests that the economy has weakened further.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for some time.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Industrial production, housing starts, and employment have continued to decline steeply, as consumers and businesses have cut back spending.",
+      "quote": "Moreover, the Committee sees some risk that inflation could persist for a time below rates that best foster economic growth and price stability in the longer term.",
       "direction": "dovish"
     }
   ],
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.71% and moved +12 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.96% would rise by about $22.03 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.71% and moved +12 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.96% would rise by about $22.03 a month."
     },
     {
       "topic": "Savers",
@@ -92,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved -0.62% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 25%, cut 75%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to keep borrowing costs exceptionally low while using alternative credit programs to support the economy. An educational forecast model suggests a 76% chance of a rate cut at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2009-01-28",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve kept its target interest rate at a range of 0 to 1/4 percent."
+  },
+  "latency_s": 3.46
 }

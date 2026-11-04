@@ -7,46 +7,42 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 4%."
+    "summary": "The Fed cut interest rates by 0.50 percentage points to 4 percent to support an economy facing declining business investment."
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 4 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent.”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 3-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 4 percent.”"
-    },
-    {
-      "quote": "The FOMC has reviewed prospects for the economy in light of the information that has become available since its March meeting.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
       "quote": "Investment in capital equipment, however, has continued to decline.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed is highlighting that businesses are spending less on machinery and technology, which is a major drag on the economy."
+    },
+    {
+      "quote": "With pressures on labor and product markets easing, inflation is expected to remain contained.",
+      "explanation": "The Fed believes that a cooling economy and job market will keep price increases under control."
+    },
+    {
+      "quote": "Although measured productivity growth stalled in the first quarter, the impressive underlying rate of increase that developed in recent years appears to be largely intact, supporting longer-term prospects.",
+      "explanation": "While efficiency gains paused recently, the Fed still believes the long-term trend of productivity remains strong."
     },
     {
       "quote": "The erosion in current and prospective profitability, in combination with considerable uncertainty about the business outlook, seems likely to hold down capital spending going forward.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, capital investment has continued to soften and the persistent erosion in current and expected profitability, in combination with rising uncertainty…”"
+      "explanation": "Falling profits and business uncertainty are expected to keep corporate spending low for the foreseeable future."
     },
     {
       "quote": "This potential restraint, together with the possible effects of earlier reductions in equity wealth on consumption and the risk of slower growth abroad, continues to weigh on the economy.",
-      "explanation": "Reworded from the previous statement: “This potential restraint, together with the possible effects of earlier reductions in equity wealth on consumption and the risk of slower growth abroad, threate…”"
+      "explanation": "Lower stock market values and weak global growth are still putting pressure on U.S. economic activity."
     }
   ],
-  "tone_score": -0.96,
+  "tone_score": -1.5,
   "tone_quotes": [
     {
-      "quote": "The Committee continues to believe that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
+      "quote": "the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
       "direction": "dovish"
     },
     {
-      "quote": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 4 percent.",
+      "quote": "Investment in capital equipment, however, has continued to decline.",
       "direction": "dovish"
     },
     {
-      "quote": "This potential restraint, together with the possible effects of earlier reductions in equity wealth on consumption and the risk of slower growth abroad, continues to weigh on the economy.",
+      "quote": "The erosion in current and prospective profitability, in combination with considerable uncertainty about the business outlook, seems likely to hold down capital spending going forward.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +53,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.5% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.14% would rise by about $8.11 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.5% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.14% would rise by about $8.11 a month."
     },
     {
       "topic": "Savers",
@@ -71,7 +67,7 @@
   "for_country": [
     {
       "topic": "Inflation",
-      "text": "CPI inflation was 3.2% over the past year (April 2001); core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+      "text": "CPI inflation was 3.2% over the past year, while core PCE inflation was 2%."
     },
     {
       "topic": "Jobs",
@@ -86,8 +82,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -1 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The Fed signals that risks are weighted toward economic weakness, which suggests more rate cuts could be coming. This outlook is educational and based on the observation that business investment continues to decline.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -95,45 +91,48 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "15.63% as of 2001-02-01"
-    },
-    {
-      "source": "MORTGAGE30US",
-      "detail": "7.14% week of 2001-05-04"
+      "detail": "15.63%"
     },
     {
       "source": "DGS10",
-      "detail": "5.5% on 2001-05-15"
+      "detail": "5.5%"
     },
     {
       "source": "UNRATE",
-      "detail": "4.4% in April 2001"
+      "detail": "4.4%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change -82k as of April 2001"
+      "detail": "-82k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "3.2% year over year, April 2001"
+      "detail": "3.2%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "2% year over year, April 2001"
+      "detail": "2%"
     },
     {
       "source": "GDPC1",
-      "detail": "-1.3% annualized, quarter starting 2001-01-01"
+      "detail": "-1.3%"
     }
   ],
   "meeting_date": "2001-05-15",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 4.0,
+    "target_high": 4.0,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed cut interest rates by 0.50 percentage points to 4 percent to support an economy facing declining business investment."
+  },
+  "latency_s": 22.01
 }

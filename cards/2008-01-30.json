@@ -9,46 +9,34 @@
     "dissenters": [
       "Richard W. Fisher"
     ],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 3%. The vote was 9-1. Dissenting: Richard W. Fisher."
+    "summary": "The Federal Reserve lowered its target interest rate by 50 basis points to a range of 3 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 50 basis points to 3 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee has decided to lower its target for the federal funds rate 75 basis points to 3-1/2 percent.”"
+      "explanation": "The Fed reduced the size of its rate cut to 50 basis points compared to the larger 75 basis point cut made previously."
     },
     {
       "quote": "Financial markets remain under considerable stress, and credit has tightened further for some businesses and households.",
-      "explanation": "Reworded from the previous statement: “While strains in short-term funding markets have eased somewhat, broader financial market conditions have continued to deteriorate and credit has tightened furt…”"
-    },
-    {
-      "quote": "Moreover, recent information indicates a deepening of the housing contraction as well as some softening in labor markets.",
-      "explanation": "Reworded from the previous statement: “Moreover, incoming information indicates a deepening of the housing contraction as well as some softening in labor markets.”"
-    },
-    {
-      "quote": "The Committee took this action in view of a weakening of the economic outlook and increasing downside risks to growth.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The language was updated to note that financial markets remain stressed, dropping mention of easing short-term funding markets."
     },
     {
       "quote": "Today’s policy action, combined with those taken earlier, should help to promote moderate growth over time and to mitigate the risks to economic activity.",
-      "explanation": "New language added in this statement."
+      "explanation": "A new phrase was added to emphasize that current and past rate cuts are intended to support growth and protect the economy."
     },
     {
-      "quote": "However, downside risks to growth remain.",
-      "explanation": "Reworded from the previous statement: “Appreciable downside risks to growth remain.”"
+      "quote": "In a related action, the Board of Governors unanimously approved a 50-basis-point decrease in the discount rate to 3-1/2 percent.",
+      "explanation": "The emergency lending rate charged to banks was also lowered by 50 basis points, mirroring the main policy rate reduction."
     }
   ],
-  "tone_score": -0.97,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 50 basis points to 3 percent.",
+      "quote": "Financial markets remain under considerable stress, and credit has tightened further for some businesses and households.",
       "direction": "dovish"
     },
     {
       "quote": "Moreover, recent information indicates a deepening of the housing contraction as well as some softening in labor markets.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "However, downside risks to growth remain.",
       "direction": "dovish"
     }
   ],
@@ -92,8 +80,8 @@
       "text": "The broad trade-weighted dollar moved -0.1% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 59%, cut 35%, hike 5%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will continue to monitor financial developments and act in a timely manner as needed to address downside risks to growth. According to educational forecast models, the next meeting has a 61% probability of a hold and a 39% probability of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +121,22 @@
     }
   ],
   "meeting_date": "2008-01-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 3.0,
+    "target_high": 3.0,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Richard W. Fisher"
+    ],
+    "summary": "The Federal Reserve lowered its target interest rate by 50 basis points to a range of 3 percent."
+  },
+  "latency_s": 3.83
 }

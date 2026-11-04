@@ -10,46 +10,38 @@
       "Richard W. Fisher",
       "Charles I. Plosser"
     ],
-    "summary": "The Fed cut its policy rate by 75 basis points, to 2.25%. The vote was 8-2. Dissenting: Richard W. Fisher, Charles I. Plosser."
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 75 basis points to 2-1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 75 basis points to 2-1/4 percent.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed aggressively reduced the benchmark interest rate to support a weakening economy."
     },
     {
       "quote": "Recent information indicates that the outlook for economic activity has weakened further.",
-      "explanation": "New language added in this statement."
+      "explanation": "Officials noted that the economic situation has deteriorated more than previously expected."
     },
     {
       "quote": "Growth in consumer spending has slowed and labor markets have softened.",
-      "explanation": "New language added in this statement."
+      "explanation": "Americans are spending less money and job conditions are becoming weaker."
     },
     {
       "quote": "Financial markets remain under considerable stress, and the tightening of credit conditions and the deepening of the housing contraction are likely to weigh on economic growth over the next few quarters.",
-      "explanation": "New language added in this statement."
+      "explanation": "Severe credit and housing problems continue to put heavy pressure on overall economic growth."
     },
     {
       "quote": "Inflation has been elevated, and some indicators of inflation expectations have risen.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee expects inflation to moderate in coming quarters, reflecting a projected leveling-out of energy and other commodity prices and an easing of pressures on resource utilization.",
-      "explanation": "New language added in this statement."
+      "explanation": "Price pressures remain high, causing concerns that inflation could persist."
     }
   ],
-  "tone_score": -1.06,
+  "tone_score": -1.5,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 75 basis points to 2-1/4 percent.",
+      "quote": "Recent information indicates that the outlook for economic activity has weakened further.",
       "direction": "dovish"
     },
     {
       "quote": "Growth in consumer spending has slowed and labor markets have softened.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "However, downside risks to growth remain.",
       "direction": "dovish"
     }
   ],
@@ -93,8 +85,8 @@
       "text": "The broad trade-weighted dollar moved -0.26% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 61%, cut 35%, hike 4%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will continue monitoring economic data closely and act in a timely manner as needed. The educational forecast model gives the next meeting a 74% probability of a hold and a 25% probability of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -134,13 +126,23 @@
     }
   ],
   "meeting_date": "2008-03-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-flash-lite-latest",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -75,
+    "target_low": 2.25,
+    "target_high": 2.25,
+    "votes_for": 8,
+    "votes_against": 2,
+    "dissenters": [
+      "Richard W. Fisher",
+      "Charles I. Plosser"
+    ],
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 75 basis points to 2-1/4 percent."
+  },
+  "latency_s": 3.95
 }

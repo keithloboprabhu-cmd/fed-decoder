@@ -10,46 +10,38 @@
       "Richard W. Fisher",
       "Charles I. Plosser"
     ],
-    "summary": "The Fed cut its policy rate by 25 basis points, to 2%. The vote was 8-2. Dissenting: Richard W. Fisher, Charles I. Plosser."
+    "summary": "The Federal Reserve lowered its target for the federal funds rate by 25 basis points to 2 percent."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 75 basis points to 2-1/4 percent.”"
+      "explanation": "The Fed lowered the benchmark interest rate by a smaller increment than its previous 75 basis point cut, bringing the rate down to 2 percent."
     },
     {
       "quote": "Recent information indicates that economic activity remains weak.",
-      "explanation": "Reworded from the previous statement: “Recent information indicates that the outlook for economic activity has weakened further.”"
+      "explanation": "This simplifies the description of the economy from previous statements, acknowledging ongoing weakness."
     },
     {
       "quote": "Household and business spending has been subdued and labor markets have softened further.",
-      "explanation": "Reworded from the previous statement: “Growth in consumer spending has slowed and labor markets have softened.”"
-    },
-    {
-      "quote": "Financial markets remain under considerable stress, and tight credit conditions and the deepening housing contraction are likely to weigh on economic growth over the next few quarters.",
-      "explanation": "Reworded from the previous statement: “Financial markets remain under considerable stress, and the tightening of credit conditions and the deepening of the housing contraction are likely to weigh on …”"
+      "explanation": "Consumer and business spending remains weak while job market conditions have deteriorated more."
     },
     {
       "quote": "Although readings on core inflation have improved somewhat, energy and other commodity prices have increased, and some indicators of inflation expectations have risen in recent months.",
-      "explanation": "Reworded from the previous statement: “Inflation has been elevated, and some indicators of inflation expectations have risen.”"
+      "explanation": "The Fed noted that while core inflation improved, rising energy and commodity prices and climbing inflation expectations remain a concern."
     },
     {
-      "quote": "Still, uncertainty about the inflation outlook remains high.",
-      "explanation": "Reworded from the previous statement: “Still, uncertainty about the inflation outlook has increased.”"
+      "quote": "Voting against were Richard W. Fisher and Charles I. Plosser, who preferred no change in the target for the federal funds rate at this meeting.",
+      "explanation": "Two members dissented because they wanted to keep the interest rate unchanged instead of cutting it."
     }
   ],
-  "tone_score": -0.81,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 2 percent.",
+      "quote": "Recent information indicates that economic activity remains weak.",
       "direction": "dovish"
     },
     {
-      "quote": "Financial markets remain under considerable stress, and tight credit conditions and the deepening housing contraction are likely to weigh on economic growth over the next few quarters.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee will continue to monitor economic and financial developments and will act as needed to promote sustainable economic growth and price stability.",
+      "quote": "Household and business spending has been subdued and labor markets have softened further.",
       "direction": "dovish"
     }
   ],
@@ -60,7 +52,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.77% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.88% would fall by about $15.31 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.77% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.88% would fall by about $15.31 a month."
     },
     {
       "topic": "Savers",
@@ -93,8 +85,8 @@
       "text": "The broad trade-weighted dollar moved 0.02% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 63%, cut 32%, hike 5%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will continue to monitor economic and financial developments to decide future actions. Educational forecast models suggest a 66% chance of a hold and a 34% chance of a cut at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -134,13 +126,23 @@
     }
   ],
   "meeting_date": "2008-04-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 2.0,
+    "target_high": 2.0,
+    "votes_for": 8,
+    "votes_against": 2,
+    "dissenters": [
+      "Richard W. Fisher",
+      "Charles I. Plosser"
+    ],
+    "summary": "The Federal Reserve lowered its target for the federal funds rate by 25 basis points to 2 percent."
+  },
+  "latency_s": 3.79
 }

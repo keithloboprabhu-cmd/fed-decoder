@@ -7,47 +7,39 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve voted to keep the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in April suggests that economic activity has been expanding moderately after having changed little during the first quarter.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March suggests that economic growth slowed during the winter months, in part reflecting tran…”"
+      "explanation": "The Fed noted that economic activity picked up after a slow start during the first quarter."
     },
     {
       "quote": "The pace of job gains picked up while the unemployment rate remained steady.",
-      "explanation": "Reworded from the previous statement: “The pace of job gains moderated, and the unemployment rate remained steady.”"
+      "explanation": "Job growth improved while the jobless rate held steady."
     },
     {
       "quote": "On balance, a range of labor market indicators suggests that underutilization of labor resources diminished somewhat.",
-      "explanation": "Reworded from the previous statement: “A range of labor market indicators suggests that underutilization of labor resources was little changed.”"
+      "explanation": "Labor market slack decreased slightly."
     },
     {
       "quote": "Growth in household spending has been moderate and the housing sector has shown some improvement; however, business fixed investment and net exports stayed soft.",
-      "explanation": "New language added in this statement."
+      "explanation": "Consumer spending and housing improved, but business investment and exports remained weak."
     },
     {
-      "quote": "Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy imports; energy prices appear to have stabilized.",
-      "explanation": "Reworded from the previous statement: “Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy i…”"
-    },
-    {
-      "quote": "Growth in household spending declined; households' real incomes rose strongly, partly reflecting earlier declines in energy prices, and consumer sentiment remains high.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "energy prices appear to have stabilized.",
+      "explanation": "The Fed acknowledged that falling energy prices have started to steady."
     }
   ],
-  "tone_score": 0.09,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
-      "direction": "hawkish"
-    },
     {
       "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
       "direction": "dovish"
     },
     {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
+      "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -90,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved 0.01% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 85%, cut 7%, hike 8%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will wait for further improvements in the labor market and more confidence in inflation before raising rates. As an educational note, the forecast model gave the next meeting a probability of 81 percent for a hold, 7 percent for a cut, and 12 percent for a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate."
+      "detail": "The Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2015-06-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve voted to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.64
 }

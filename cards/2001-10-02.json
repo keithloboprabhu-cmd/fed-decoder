@@ -7,42 +7,34 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 2.5%."
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 2-1/2 percent."
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 2-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 3 percent.”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 2 percent.",
-      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 2-1/2 percent.”"
-    },
-    {
       "quote": "The terrorist attacks have significantly heightened uncertainty in an economy that was already weak.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to explicitly highlight that the attacks heightened uncertainty in an already weak economy."
     },
     {
       "quote": "Business and household spending as a consequence are being further damped.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee notes that spending by both businesses and households is being further damped as a consequence."
     },
-    {
-      "quote": "The Federal Reserve will continue to supply unusually large volumes of liquidity to the financial markets, as needed, until more normal market functioning is restored.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "As a consequence, the FOMC recognizes that the actual federal funds rate may be below its target on occasion in these unusual circumstances.",
-      "explanation": "Language from the previous statement that was dropped."
-    }
-  ],
-  "tone_score": -0.96,
-  "tone_quotes": [
     {
       "quote": "The Committee continues to believe that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
+      "explanation": "The risk assessment stresses that future conditions are weighted toward economic weakness."
+    }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+    {
+      "quote": "The terrorist attacks have significantly heightened uncertainty in an economy that was already weak.",
       "direction": "dovish"
     },
     {
-      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 2-1/2 percent.",
+      "quote": "Business and household spending as a consequence are being further damped.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee continues to believe that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
       "direction": "dovish"
     }
   ],
@@ -53,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.53% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.8% would fall by about $4.00 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate, and the 10-year was 4.53% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.8% would fall by about $4.00 a month."
     },
     {
       "topic": "Savers",
@@ -82,8 +74,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -5 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee sees risks weighted mainly toward economic weakness in the foreseeable future. The Federal Reserve will monitor incoming information regarding the unusual forces restraining demand.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +115,20 @@
     }
   ],
   "meeting_date": "2001-10-02",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 2.5,
+    "target_high": 2.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 2-1/2 percent."
+  },
+  "latency_s": 3.49
 }

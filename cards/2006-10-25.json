@@ -9,39 +9,39 @@
     "dissenters": [
       "Jeffrey M. Lacker"
     ],
-    "summary": "The Fed held its policy rate at 5.25%. The vote was 10-1. Dissenting: Jeffrey M. Lacker."
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "Economic growth has slowed over the course of the year, partly reflecting a cooling of the housing market.",
-      "explanation": "Reworded from the previous statement: “The moderation in economic growth appears to be continuing, partly reflecting a cooling of the housing market.”"
+      "explanation": "This phrasing replaces the previous mention of ongoing moderation, noting that growth has slowed over the year due to the cooling housing market."
     },
     {
       "quote": "Going forward, the economy seems likely to expand at a moderate pace.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this sentence to signal its expectation for moderate future economic expansion."
     },
     {
       "quote": "Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.",
-      "explanation": "Reworded from the previous statement: “Readings on core inflation have been elevated, and the high levels of resource utilization and of the prices of energy and other commodities have the potential …”"
+      "explanation": "The Committee removed references to energy and other commodity prices while keeping concerns about high resource utilization and elevated core inflation."
     },
     {
       "quote": "Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Donald L. Kohn; Randall S. Kroszner; Frederic S. Mishkin; Sandra Pianalto; William Poole; Kevin M. Warsh; and Janet L. Yellen.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Jack Guynn; Donald L. Kohn; Randa…”"
+      "explanation": "William Poole replaced Jack Guynn on the list of voting members."
     }
   ],
-  "tone_score": 1.11,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
+      "quote": "Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.",
       "direction": "hawkish"
     },
     {
-      "quote": "Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.",
+      "quote": "Nonetheless, the Committee judges that some inflation risks remain.",
       "direction": "hawkish"
     },
     {
       "quote": "However, inflation pressures seem likely to moderate over time, reflecting reduced impetus from energy prices, contained inflation expectations, and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
-      "direction": "hawkish"
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -51,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.78% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.37% would fall by about $9.80 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.78% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.37% would fall by about $9.80 a month."
     },
     {
       "topic": "Savers",
@@ -84,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved -0.15% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 53%, cut 1%, hike 46%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming information regarding both inflation and economic growth. Educational forecast models indicate a hold is very likely at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -125,13 +125,22 @@
     }
   ],
   "meeting_date": "2006-10-25",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 5-1/4 percent."
+  },
+  "latency_s": 3.7
 }
