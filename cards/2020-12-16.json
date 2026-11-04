@@ -7,38 +7,30 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve kept its benchmark interest rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "In addition, the Federal Reserve will continue to increase its holdings of Treasury securities by at least $80 billion per month and of agency mortgage-backed securities by at least $40 billion per month until substantial further progress has been made toward the Committee's maximum employment and price stability goals.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added specific monthly dollar amounts for bond purchases and tied the duration of the program to making substantial further progress on its goals."
     },
     {
       "quote": "These asset purchases help foster smooth market functioning and accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",
-      "explanation": "Reworded from the previous statement: “In addition, over coming months the Federal Reserve will increase its holdings of Treasury securities and agency mortgage-backed securities at least at the curr…”"
+      "explanation": "This simplifies how bond buying helps keep financial conditions supportive for borrowers."
     },
     {
       "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; Richard H. Clarida; Patrick Harker; Robert S. Kaplan; Neel Kashkari; Loretta J. Mester; and Randal K. Quarles.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; Richard H. Clarida; Mary C.…”"
-    },
-    {
-      "quote": "Ms. Daly voted as an alternate member at this meeting.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "Neel Kashkari participated as a voting member in this statement's roll call."
     }
   ],
-  "tone_score": -1.03,
+  "tone_score": -0.5,
   "tone_quotes": [
     {
-      "quote": "These asset purchases help foster smooth market functioning and accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",
+      "quote": "The COVID-19 pandemic is causing tremendous human and economic hardship across the United States and around the world.",
       "direction": "dovish"
     },
     {
-      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen to 2 percent and is on track to moderately exceed 2 percent for some time.",
+      "quote": "The ongoing public health crisis will continue to weigh on economic activity, employment, and inflation in the near term, and poses considerable risks to the economic outlook over the medium term.",
       "direction": "dovish"
     }
   ],
@@ -82,12 +74,12 @@
       "text": "The broad trade-weighted dollar moved -0.13% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 64%, cut 36%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed plans to keep its current policy stance until economic recovery is much further along. A forecast model indicates that upcoming meetings have a 64% chance of a hold and a 36% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen t"
+      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -123,13 +115,20 @@
     }
   ],
   "meeting_date": "2020-12-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its benchmark interest rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.74
 }

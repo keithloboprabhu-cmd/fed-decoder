@@ -7,46 +7,38 @@
     "votes_for": 9,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0.75% to 1%. The vote was 9-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 3/4 to 1 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in March indicates that the labor market has continued to strengthen even as growth in economic activity slowed.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in February indicates that the labor market has continued to strengthen and that economic activ…”"
+      "explanation": "The Fed noted that economic growth slowed down even though the labor market kept getting stronger."
     },
     {
       "quote": "Job gains were solid, on average, in recent months, and the unemployment rate declined.",
-      "explanation": "Reworded from the previous statement: “Job gains remained solid and the unemployment rate was little changed in recent months.”"
+      "explanation": "Job growth remained solid and the unemployment rate went down."
     },
     {
       "quote": "Household spending rose only modestly, but the fundamentals underpinning the continued growth of consumption remained solid.",
-      "explanation": "New language added in this statement."
+      "explanation": "Consumer spending increased only a little, but the underlying conditions for future spending are still strong."
     },
     {
       "quote": "Business fixed investment firmed.",
-      "explanation": "New language added in this statement."
+      "explanation": "Businesses increased their investments and spending."
     },
     {
-      "quote": "Inflation measured on a 12-month basis recently has been running close to the Committee's 2 percent longer-run objective.",
-      "explanation": "Reworded from the previous statement: “Inflation has increased in recent quarters, moving close to the Committee's 2 percent longer-run objective; excluding energy and food prices, inflation was litt…”"
-    },
-    {
-      "quote": "Excluding energy and food, consumer prices declined in March and inflation continued to run somewhat below 2 percent.",
-      "explanation": "New language added in this statement."
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 3/4 to 1 percent.",
+      "explanation": "The Fed kept interest rates steady after considering current and expected job market conditions and inflation."
     }
   ],
-  "tone_score": -0.1,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a sustained return to 2 percent inflation.",
+      "quote": "The Committee views the slowing in growth during the first quarter as likely to be transitory and continues to expect that, with gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pace, labor market conditions will strengthen somewhat further, and inflation will stabilize around 2 percent over the medium term.",
       "direction": "dovish"
     },
     {
-      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Excluding energy and food, consumer prices declined in March and inflation continued to run somewhat below 2 percent.",
+      "quote": "Near-term risks to the economic outlook appear roughly balanced.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.33% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.97% would rise by about $6.91 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.33% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.97% would rise by about $6.91 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.01% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 94%, cut 0%, hike 6%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed views recent economic slowdowns as temporary and anticipates continuing gradual rate increases over time. The educational forecast model indicates a 92% chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2017-05-03",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.75,
+    "target_high": 1.0,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 3/4 to 1 percent."
+  },
+  "latency_s": 4.04
 }

@@ -11,30 +11,26 @@
       "Neel Kashkari",
       "Lorie K. Logan"
     ],
-    "summary": "The Fed held its policy rate at 3.5% to 3.75%. The vote was 9-3. Dissenting: Beth M. Hammack, Neel Kashkari, Lorie K. Logan."
+    "summary": "The Federal Reserve decided to keep its target interest rate steady at a range of 3-1/2 to 3-3/4 percent, with three members dissenting in favor of a rate hike."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote:",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”"
+      "explanation": "The vote count changed from a unanimous decision to a split vote with three dissents."
     },
     {
       "quote": "The Committee is continuing its policy of maintaining ample reserves in the banking system.",
-      "explanation": "Reworded from the previous statement: “The Committee reaffirmed its policy of maintaining ample reserves in the banking system.”"
+      "explanation": "The Committee slightly reworded its description of how it keeps reserves in the banking system."
     },
     {
       "quote": "Voting against the monetary policy action were Beth M. Hammack, Neel Kashkari, and Lorie K. Logan, who preferred to raise the target range for the federal funds rate by 1/4 percentage point at this meeting.",
-      "explanation": "New language added in this statement."
+      "explanation": "Three officials dissented because they wanted to raise interest rates by 1/4 percentage point."
     }
   ],
-  "tone_score": 1.23,
+  "tone_score": 1.5,
   "tone_quotes": [
     {
       "quote": "Inflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The Committee will deliver price stability.",
       "direction": "hawkish"
     },
     {
@@ -49,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.67% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.55% would rise by about $11.88 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.67% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.55% would rise by about $11.88 a month."
     },
     {
       "topic": "Savers",
@@ -82,12 +78,12 @@
       "text": "The broad trade-weighted dollar moved 0.14% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 89%, cut 10%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve remains watchful of elevated inflation and solid economic activity before adjusting rates. According to educational forecast models, the next meeting currently carries a 94 percent chance of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate."
+      "detail": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -123,13 +119,24 @@
     }
   ],
   "meeting_date": "2026-07-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 9,
+    "votes_against": 3,
+    "dissenters": [
+      "Beth M. Hammack",
+      "Neel Kashkari",
+      "Lorie K. Logan"
+    ],
+    "summary": "The Federal Reserve decided to keep its target interest rate steady at a range of 3-1/2 to 3-3/4 percent, with three members dissenting in favor of a rate hike."
+  },
+  "latency_s": 3.6
 }

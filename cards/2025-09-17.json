@@ -9,47 +9,35 @@
     "dissenters": [
       "Stephen I. Miran"
     ],
-    "summary": "The Fed cut its policy rate by 25 basis points, to 4% to 4.25%. The vote was 11-1. Dissenting: Stephen I. Miran."
+    "summary": "The Fed lowered the federal funds rate by 25 basis points to a range of 4 to 4-1/4 percent."
   },
   "changes": [
     {
-      "quote": "Recent indicators suggest that growth of economic activity moderated in the first half of the year.",
-      "explanation": "Reworded from the previous statement: “Although swings in net exports continue to affect the data, recent indicators suggest that growth of economic activity moderated in the first half of the year.”"
-    },
-    {
       "quote": "Job gains have slowed, and the unemployment rate has edged up but remains low.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to acknowledge cooling in the labor market."
     },
     {
       "quote": "Inflation has moved up and remains somewhat elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation remains somewhat elevated.”"
-    },
-    {
-      "quote": "The unemployment rate remains low, and labor market conditions remain solid.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed updated its description of inflation to note it has ticked upward."
     },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment have risen.",
-      "explanation": "Reworded from the previous statement: “The Committee is attentive to the risks to both sides of its dual mandate.”"
+      "explanation": "The Fed noted that threats to maximum employment have increased relative to inflation."
     },
     {
       "quote": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent.”"
+      "explanation": "The Fed officially reduced its benchmark interest rate due to the changing economic balance."
     }
   ],
-  "tone_score": -0.1,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4 to 4-1/4 percent.",
+      "quote": "Job gains have slowed, and the unemployment rate has edged up but remains low.",
       "direction": "dovish"
     },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment have risen.",
       "direction": "dovish"
-    },
-    {
-      "quote": "Inflation has moved up and remains somewhat elevated.",
-      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -59,7 +47,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.06% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.5% would rise by about $3.95 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.06% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.5% would rise by about $3.95 a month."
     },
     {
       "topic": "Savers",
@@ -92,8 +80,8 @@
       "text": "The broad trade-weighted dollar moved 0.02% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 23%, cut 77%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that policymakers will continue reviewing incoming data and economic conditions before making further changes to interest rates. An educational forecast model suggests an 86 percent chance of a cut and a 14 percent chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +121,22 @@
     }
   ],
   "meeting_date": "2025-09-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 4.0,
+    "target_high": 4.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Stephen I. Miran"
+    ],
+    "summary": "The Fed lowered the federal funds rate by 25 basis points to a range of 4 to 4-1/4 percent."
+  },
+  "latency_s": 3.69
 }

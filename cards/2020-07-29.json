@@ -7,38 +7,26 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "Following sharp declines, economic activity and employment have picked up somewhat in recent months but remain well below their levels at the beginning of the year.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The virus and the measures taken to protect public health have induced sharp declines in economic activity and a surge in job losses.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Overall financial conditions have improved in recent months, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
-      "explanation": "Reworded from the previous statement: “Financial conditions have improved, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.”"
+      "explanation": "The Fed acknowledges that the economy has rebounded slightly from its initial steep drop, but activity and jobs are still far below where they started the year."
     },
     {
       "quote": "The path of the economy will depend significantly on the course of the virus.",
-      "explanation": "New language added in this statement."
+      "explanation": "This new addition emphasizes that future economic recovery is directly tied to how the coronavirus pandemic unfolds."
     }
   ],
-  "tone_score": -0.38,
+  "tone_score": -1.5,
   "tone_quotes": [
     {
-      "quote": "In light of these developments, the Committee decided to maintain the target range for the federal funds rate at 0 to 1/4 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "To support the flow of credit to households and businesses, over coming months the Federal Reserve will increase its holdings of Treasury securities and agency residential and commercial mortgage-backed securities at least at the current pace to sustain smooth market functioning, thereby fostering effective transmission of monetary policy to broader financial conditions.",
-      "direction": "dovish"
-    },
-    {
       "quote": "The coronavirus outbreak is causing tremendous human and economic hardship across the United States and around the world.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The ongoing public health crisis will weigh heavily on economic activity, employment, and inflation in the near term, and poses considerable risks to the economic outlook over the medium term.",
       "direction": "dovish"
     }
   ],
@@ -49,7 +37,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 0.58% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 2.98% would fall by about $1.62 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 0.58% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 2.98% would fall by about $1.62 a month."
     },
     {
       "topic": "Savers",
@@ -82,8 +70,8 @@
       "text": "The broad trade-weighted dollar moved -0.09% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 22%, cut 78%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its current loose monetary policy stance until it is confident the economy has weathered recent events. As an educational note, the forecast model gave the next meeting probabilities as hold 23%, cut 77%, and hike 0%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +111,20 @@
     }
   ],
   "meeting_date": "2020-07-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.23
 }

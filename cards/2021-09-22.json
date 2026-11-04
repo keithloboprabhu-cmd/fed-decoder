@@ -7,39 +7,31 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve kept interest rates steady at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "The sectors most adversely affected by the pandemic have improved in recent months, but the rise in COVID-19 cases has slowed their recovery.",
-      "explanation": "Reworded from the previous statement: “The sectors most adversely affected by the pandemic have shown improvement but have not fully recovered.”"
+      "explanation": "The Fed noted that rising virus cases have slowed down the recovery in hard-hit sectors."
     },
     {
       "quote": "Inflation is elevated, largely reflecting transitory factors.",
-      "explanation": "Reworded from the previous statement: “Inflation has risen, largely reflecting transitory factors.”"
-    },
-    {
-      "quote": "Since then, the economy has made progress toward these goals.",
-      "explanation": "Reworded from the previous statement: “Since then, the economy has made progress toward these goals, and the Committee will continue to assess progress in coming meetings.”"
+      "explanation": "Language was updated to state inflation is elevated rather than has risen."
     },
     {
       "quote": "If progress continues broadly as expected, the Committee judges that a moderation in the pace of asset purchases may soon be warranted.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed signaled it might soon start slowing down its bond-buying program if the economy keeps improving."
     }
   ],
-  "tone_score": -0.83,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "These asset purchases help foster smooth market functioning and accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",
-      "direction": "dovish"
+      "quote": "Inflation is elevated, largely reflecting transitory factors.",
+      "direction": "hawkish"
     },
     {
-      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen to 2 percent and is on track to moderately exceed 2 percent for some time.",
-      "direction": "dovish"
+      "quote": "If progress continues broadly as expected, the Committee judges that a moderation in the pace of asset purchases may soon be warranted.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -49,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.32% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 2.88% would fall by about $1.60 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.32% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 2.88% would fall by about $1.60 a month."
     },
     {
       "topic": "Savers",
@@ -82,12 +74,12 @@
       "text": "The broad trade-weighted dollar moved -0.17% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 80%, cut 2%, hike 17%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed is preparing to taper its asset purchases soon if the economy keeps progressing. Educational forecast models suggest a hold is most likely at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen t"
+      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -123,13 +115,20 @@
     }
   ],
   "meeting_date": "2021-09-22",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept interest rates steady at 0 to 1/4 percent."
+  },
+  "latency_s": 3.58
 }

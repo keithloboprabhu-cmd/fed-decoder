@@ -10,46 +10,34 @@
       "Charles L. Evans",
       "Neel Kashkari"
     ],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 1.25% to 1.5%. The vote was 7-2. Dissenting: Charles L. Evans, Neel Kashkari."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 1-1/4 to 1-1/2 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in November indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September indicates that the labor market has continued to strengthen and that economic acti…”"
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1-1/4 to 1-1/2 percent.",
+      "explanation": "The Fed officially raised interest rates by 25 basis points due to continued economic and job market strength."
     },
     {
       "quote": "Averaging through hurricane-related fluctuations, job gains have been solid, and the unemployment rate declined further.",
-      "explanation": "Reworded from the previous statement: “Although the hurricanes caused a drop in payroll employment in September, the unemployment rate declined further.”"
+      "explanation": "The language was updated to reflect that storm disruptions have faded and job growth remains steady."
     },
     {
       "quote": "On a 12-month basis, both overall inflation and inflation for items other than food and energy have declined this year and are running below 2 percent.",
-      "explanation": "Reworded from the previous statement: “On a 12-month basis, both inflation measures have declined this year and are running below 2 percent.”"
+      "explanation": "Policymakers noted explicitly that both headline and core inflation metrics remain below the 2 percent target."
     },
     {
-      "quote": "Gasoline prices rose in the aftermath of the hurricanes, boosting overall inflation in September; however, inflation for items other than food and energy remained soft.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Hurricane-related disruptions and rebuilding have affected economic activity, employment, and inflation in recent months but have not materially altered the outlook for the national economy.",
-      "explanation": "Reworded from the previous statement: “Hurricane-related disruptions and rebuilding will continue to affect economic activity, employment, and inflation in the near term, but past experience suggests…”"
-    },
-    {
-      "quote": "Consequently, the Committee continues to expect that, with gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pace and labor market conditions will remain strong.",
-      "explanation": "Reworded from the previous statement: “Consequently, the Committee continues to expect that, with gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pac…”"
+      "quote": "Voting against the action were Charles L. Evans and Neel Kashkari, who preferred at this meeting to maintain the existing target range for the federal funds rate.",
+      "explanation": "Two members dissented from the decision, preferring to leave the interest rate target unchanged."
     }
   ],
-  "tone_score": 0.72,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1-1/4 to 1-1/2 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Information received since the Federal Open Market Committee met in November indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
       "direction": "hawkish"
     },
     {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting strong labor market conditions and a sustained return to 2 percent inflation.",
+      "quote": "On a 12-month basis, both overall inflation and inflation for items other than food and energy have declined this year and are running below 2 percent.",
       "direction": "dovish"
     }
   ],
@@ -60,7 +48,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.36% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.9% would fall by about $6.87 a month."
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; if that move passed through, the payment on a new $300,000 30-year loan at 3.9% would fall by about $6.87 a month."
     },
     {
       "topic": "Savers",
@@ -93,8 +81,8 @@
       "text": "The broad trade-weighted dollar moved -0.22% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 67%, cut 0%, hike 33%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed expects to continue gradually increasing interest rates as long as economic growth and employment stay resilient. Educational forecast models suggest a split outlook with a hold at 50% and a hike at 50% for the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -134,13 +122,23 @@
     }
   ],
   "meeting_date": "2017-12-13",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 1.25,
+    "target_high": 1.5,
+    "votes_for": 7,
+    "votes_against": 2,
+    "dissenters": [
+      "Charles L. Evans",
+      "Neel Kashkari"
+    ],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 1-1/4 to 1-1/2 percent."
+  },
+  "latency_s": 3.63
 }

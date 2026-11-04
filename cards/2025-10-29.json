@@ -10,40 +10,32 @@
       "Stephen I. Miran",
       "Jeffrey R. Schmid"
     ],
-    "summary": "The Fed cut its policy rate by 25 basis points, to 3.75% to 4%. The vote was 10-2. Dissenting: Stephen I. Miran, Jeffrey R. Schmid."
+    "summary": "The Federal Reserve lowered the federal funds rate by 1/4 percentage point to a target range of 3-3/4 to 4 percent."
   },
   "changes": [
     {
-      "quote": "Available indicators suggest that economic activity has been expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that growth of economic activity moderated in the first half of the year.”"
-    },
-    {
-      "quote": "Job gains have slowed this year, and the unemployment rate has edged up but remained low through August; more recent indicators are consistent with these developments.",
-      "explanation": "Reworded from the previous statement: “Job gains have slowed, and the unemployment rate has edged up but remains low.”"
-    },
-    {
-      "quote": "Inflation has moved up since earlier in the year and remains somewhat elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation has moved up and remains somewhat elevated.”"
-    },
-    {
-      "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment rose in recent months.",
-      "explanation": "Reworded from the previous statement: “The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment have risen.”"
-    },
-    {
       "quote": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 per…”"
+      "explanation": "The Fed adjusted its key interest rate downward to support the economy as employment risks increased."
     },
     {
       "quote": "The Committee decided to conclude the reduction of its aggregate securities holdings on December 1.",
-      "explanation": "New language added in this statement."
+      "explanation": "The central bank announced a specific end date for scaling back its bond holdings."
+    },
+    {
+      "quote": "Available indicators suggest that economic activity has been expanding at a moderate pace.",
+      "explanation": "The description of economic growth was updated to reflect current incoming data."
+    },
+    {
+      "quote": "Job gains have slowed this year, and the unemployment rate has edged up but remained low through August; more recent indicators are consistent with these developments.",
+      "explanation": "Language was added to acknowledge slowing job gains and a slightly higher unemployment rate."
+    },
+    {
+      "quote": "Voting against this action were Stephen I. Miran, who preferred to lower the target range for the federal funds rate by 1/2 percentage point at this meeting, and Jeffrey R. Schmid, who preferred no change to the target range for the federal funds rate at this meeting.",
+      "explanation": "Two members dissented, with one preferring a larger cut and the other preferring no change at all."
     }
   ],
-  "tone_score": -0.25,
+  "tone_score": -1.0,
   "tone_quotes": [
-    {
-      "quote": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent.",
-      "direction": "dovish"
-    },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment rose in recent months.",
       "direction": "dovish"
@@ -60,7 +52,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.08% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.27% would rise by about $17.61 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.08% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.27% would rise by about $17.61 a month."
     },
     {
       "topic": "Savers",
@@ -93,8 +85,8 @@
       "text": "The broad trade-weighted dollar moved -0.09% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 35%, cut 65%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and labor market conditions. Educational forecast models suggest a 63% chance of another cut and a 37% chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -134,13 +126,23 @@
     }
   ],
   "meeting_date": "2025-10-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 3.75,
+    "target_high": 4.0,
+    "votes_for": 10,
+    "votes_against": 2,
+    "dissenters": [
+      "Stephen I. Miran",
+      "Jeffrey R. Schmid"
+    ],
+    "summary": "The Federal Reserve lowered the federal funds rate by 1/4 percentage point to a target range of 3-3/4 to 4 percent."
+  },
+  "latency_s": 4.28
 }

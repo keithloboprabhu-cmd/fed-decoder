@@ -7,34 +7,34 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 5.25% to 5.5%. The vote was 11-0."
+    "summary": "The Federal Reserve raised the benchmark interest rate by 25 basis points to a target range of 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators suggest that economic activity has been expanding at a moderate pace.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic activity has continued to expand at a modest pace.”"
+      "explanation": "The Fed upgraded its description of economic growth from a modest pace to a moderate pace."
     },
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 5-1/4 to 5-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 5 to 5-1/4 percent.”"
+      "explanation": "After pausing at the previous meeting, the Committee chose to resume raising interest rates."
     },
     {
       "quote": "The Committee will continue to assess additional information and its implications for monetary policy.",
-      "explanation": "Reworded from the previous statement: “Holding the target range steady at this meeting allows the Committee to assess additional information and its implications for monetary policy.”"
+      "explanation": "Removed the temporary reasoning for pausing, replacing it with an ongoing commitment to evaluate incoming data."
     }
   ],
-  "tone_score": 2.0,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 5-1/4 to 5-1/2 percent.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "In determining the extent of additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "direction": "hawkish"
-    },
-    {
       "quote": "Inflation remains elevated.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee remains highly attentive to inflation risks.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
       "direction": "hawkish"
     }
   ],
@@ -45,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.86% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.96% would fall by about $10.05 a month."
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year was 3.86% and moved -5 bp on the day, so if that move passed through, the payment on a new $300,000 30-year loan at 6.96% would fall by about $10.05 a month."
     },
     {
       "topic": "Savers",
@@ -78,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved -0.08% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 49%, cut 2%, hike 49%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend entirely on incoming data regarding inflation and labor markets. As an educational note, the forecast model gave the next meeting: hold 47%, cut 2%, hike 50%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +119,20 @@
     }
   ],
   "meeting_date": "2023-07-26",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the benchmark interest rate by 25 basis points to a target range of 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.58
 }

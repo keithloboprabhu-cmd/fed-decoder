@@ -10,47 +10,39 @@
       "Stephen I. Miran",
       "Christopher J. Waller"
     ],
-    "summary": "The Fed held its policy rate at 3.5% to 3.75%. The vote was 10-2. Dissenting: Stephen I. Miran, Christopher J. Waller."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
   },
   "changes": [
     {
       "quote": "Available indicators suggest that economic activity has been expanding at a solid pace.",
-      "explanation": "Reworded from the previous statement: “Available indicators suggest that economic activity has been expanding at a moderate pace.”"
+      "explanation": "The Fed upgraded its description of economic growth from moderate to solid, showing more confidence in the economy."
     },
     {
       "quote": "Job gains have remained low, and the unemployment rate has shown some signs of stabilization.",
-      "explanation": "Reworded from the previous statement: “Job gains have slowed this year, and the unemployment rate has edged up through September.”"
+      "explanation": "The language reflects that hiring is still sluggish, though joblessness has stopped rising rapidly."
     },
     {
       "quote": "Inflation remains somewhat elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation has moved up since earlier in the year and remains somewhat elevated.”"
-    },
-    {
-      "quote": "More recent indicators are consistent with these developments.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed the note that inflation had recently moved up, keeping focus on price pressures still being above target."
     },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate.",
-      "explanation": "Reworded from the previous statement: “The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment rose in recent months.”"
+      "explanation": "The Fed dropped explicit mention that downside risks to employment had recently risen, taking a more balanced view."
     },
     {
       "quote": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 per…”"
+      "explanation": "Instead of lowering rates like it did previously, the Fed opted to hold interest rates steady."
     }
   ],
-  "tone_score": 0.69,
+  "tone_score": 0.5,
   "tone_quotes": [
-    {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Available indicators suggest that economic activity has been expanding at a solid pace.",
       "direction": "hawkish"
     },
     {
-      "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
-      "direction": "dovish"
+      "quote": "Inflation remains somewhat elevated.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -60,7 +52,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.26% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.06% would rise by about $3.87 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.26% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.06% would rise by about $3.87 a month."
     },
     {
       "topic": "Savers",
@@ -93,8 +85,8 @@
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 97%, cut 3%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future choices will depend on incoming data and evolving risks. As an educational guide, the forecast model currently projects a 94 percent chance of another hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -134,13 +126,23 @@
     }
   ],
   "meeting_date": "2026-01-28",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 10,
+    "votes_against": 2,
+    "dissenters": [
+      "Stephen I. Miran",
+      "Christopher J. Waller"
+    ],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
+  },
+  "latency_s": 3.52
 }

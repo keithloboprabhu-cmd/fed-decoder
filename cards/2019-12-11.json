@@ -7,47 +7,35 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1.5% to 1.75%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in October indicates that the labor market remains strong and that economic activity has been rising at a moderate rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September indicates that the labor market remains strong and that economic activity has been…”"
-    },
-    {
       "quote": "The Committee decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent.",
-      "explanation": "Reworded from the previous statement: “In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the Committee decided to lower the target ran…”"
+      "explanation": "The Fed kept interest rates steady rather than cutting them as they did previously."
     },
     {
       "quote": "The Committee judges that the current stance of monetary policy is appropriate to support sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective.",
-      "explanation": "Reworded from the previous statement: “This action supports the Committee's view that sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symm…”"
+      "explanation": "Officials now view the current policy setting as appropriate to keep the economy growing and inflation near their goal."
     },
     {
       "quote": "The Committee will continue to monitor the implications of incoming information for the economic outlook, including global developments and muted inflation pressures, as it assesses the appropriate path of the target range for the federal funds rate.",
-      "explanation": "Reworded from the previous statement: “The Committee will continue to monitor the implications of incoming information for the economic outlook as it assesses the appropriate path of the target range…”"
+      "explanation": "The Fed added specific mentions of global developments and low inflation pressures to the list of items they are monitoring."
     },
     {
       "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; James Bullard; Richard H. Clarida; Charles L. Evans; Esther L. George; Randal K. Quarles; and Eric S. Rosengren.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; James Bullard; Richard H. C…”"
-    },
-    {
-      "quote": "Voting against this action were: Esther L. George and Eric S. Rosengren, who preferred at this meeting to maintain the target range at 1-3/4 percent to 2 percent.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The vote was unanimous, with all listed officials supporting the decision."
     }
   ],
-  "tone_score": 0.8,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy are running below 2 percent.",
+      "quote": "Information received since the Federal Open Market Committee met in October indicates that the labor market remains strong and that economic activity has been rising at a moderate rate.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee will continue to monitor the implications of incoming information for the economic outlook, including global developments and muted inflation pressures, as it assesses the appropriate path of the target range for the federal funds rate.",
-      "direction": "hawkish"
+      "quote": "The Committee decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -90,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved -0.09% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 92%, cut 8%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed plans to keep rates steady unless incoming data shows a significant change in the economic outlook. Educational forecast models suggest a 91% chance of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +119,20 @@
     }
   ],
   "meeting_date": "2019-12-11",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.5,
+    "target_high": 1.75,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent."
+  },
+  "latency_s": 3.83
 }

@@ -9,39 +9,31 @@
     "dissenters": [
       "Beth M. Hammack"
     ],
-    "summary": "The Fed cut its policy rate by 25 basis points, to 4.25% to 4.5%. The vote was 11-1. Dissenting: Beth M. Hammack."
+    "summary": "The Federal Reserve lowered the federal funds rate by 25 basis points to a target range of 4-1/4 to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/4 to 4-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/2 to 4-3/4 percent.”"
+      "explanation": "The Fed adjusted its benchmark interest rate lower to support ongoing economic goals."
     },
     {
       "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
-      "explanation": "Reworded from the previous statement: “In considering additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, a…”"
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Michelle W. Bowman; Lisa D. Cook; Mary C. Daly; Philip N. Jefferson; Adriana D. Kugler; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Michelle…”"
+      "explanation": "The Fed added language highlighting that it will carefully weigh the timing and size of any future rate moves."
     },
     {
       "quote": "Voting against the action was Beth M. Hammack, who preferred to maintain the target range for the federal funds rate at 4-1/2 to 4-3/4 percent.",
-      "explanation": "New language added in this statement."
+      "explanation": "One policymaker dissented from the decision, preferring to keep the interest rate unchanged at the higher range."
     }
   ],
-  "tone_score": 0.14,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/4 to 4-1/2 percent.",
-      "direction": "dovish"
+      "quote": "Recent indicators suggest that economic activity has continued to expand at a solid pace.",
+      "direction": "hawkish"
     },
     {
       "quote": "Since earlier in the year, labor market conditions have generally eased, and the unemployment rate has moved up but remains low.",
       "direction": "dovish"
-    },
-    {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
-      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -84,8 +76,8 @@
       "text": "The broad trade-weighted dollar moved 0.11% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 67%, cut 33%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate adjustments will depend on incoming economic data and the evolving outlook. Educational forecast models give the next meeting a 76% chance of a hold and a 24% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -125,13 +117,22 @@
     }
   ],
   "meeting_date": "2024-12-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Beth M. Hammack"
+    ],
+    "summary": "The Federal Reserve lowered the federal funds rate by 25 basis points to a target range of 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 3.63
 }

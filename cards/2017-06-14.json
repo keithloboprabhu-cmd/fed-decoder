@@ -9,47 +9,39 @@
     "dissenters": [
       "Neel Kashkari"
     ],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 1% to 1.25%. The vote was 8-1. Dissenting: Neel Kashkari."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 1 to 1-1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in May indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March indicates that the labor market has continued to strengthen even as growth in economic…”"
-    },
-    {
-      "quote": "Job gains have moderated but have been solid, on average, since the beginning of the year, and the unemployment rate has declined.",
-      "explanation": "Reworded from the previous statement: “Job gains were solid, on average, in recent months, and the unemployment rate declined.”"
+      "explanation": "The Fed noted that the economy has been rising moderately and the labor market continues to strengthen since its May meeting."
     },
     {
       "quote": "Household spending has picked up in recent months, and business fixed investment has continued to expand.",
-      "explanation": "New language added in this statement."
+      "explanation": "Consumer spending improved recently and business investment continued to grow."
     },
     {
       "quote": "On a 12-month basis, inflation has declined recently and, like the measure excluding food and energy prices, is running somewhat below 2 percent.",
-      "explanation": "New language added in this statement."
+      "explanation": "Annual inflation has dropped recently and remains below the Fed's 2 percent target."
     },
     {
-      "quote": "Household spending rose only modestly, but the fundamentals underpinning the continued growth of consumption remained solid.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "Near-term risks to the economic outlook appear roughly balanced, but the Committee is monitoring inflation developments closely.",
+      "explanation": "The Fed views economic risks as balanced while keeping a close watch on inflation."
     },
-    {
-      "quote": "Business fixed investment firmed.",
-      "explanation": "Language from the previous statement that was dropped."
-    }
-  ],
-  "tone_score": 0.36,
-  "tone_quotes": [
     {
       "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1 to 1-1/4 percent.",
+      "explanation": "Based on job market progress and inflation trends, the Fed lifted its benchmark interest rate."
+    }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in May indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
       "direction": "hawkish"
     },
     {
-      "quote": "On a 12-month basis, inflation has declined recently and, like the measure excluding food and energy prices, is running somewhat below 2 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a sustained return to 2 percent inflation.",
-      "direction": "dovish"
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1 to 1-1/4 percent.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.15% and moved -6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.94% would fall by about $10.32 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.15% and moved -6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.94% would fall by about $10.32 a month."
     },
     {
       "topic": "Savers",
@@ -92,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved -0.49% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 88%, cut 0%, hike 12%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate increases will likely be gradual if economic conditions evolve as expected. An educational forecast model estimates a 69% chance of a hold and a 31% chance of a hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2017-06-14",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 1.0,
+    "target_high": 1.25,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "Neel Kashkari"
+    ],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 1 to 1-1/4 percent."
+  },
+  "latency_s": 3.74
 }

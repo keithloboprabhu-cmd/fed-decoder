@@ -7,38 +7,30 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+    "summary": "The Federal Reserve voted to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators suggest that economic activity has been expanding at a solid pace.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic activity has been expanding at a moderate pace.”"
+      "explanation": "The Fed upgraded its assessment of economic growth from a moderate pace to a solid pace."
     },
     {
       "quote": "Job gains have slowed in recent months but remain strong, and the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Job gains have been robust in recent months, and the unemployment rate has remained low.”"
+      "explanation": "The Committee noted that hiring has decelerated while the labor market remains generally strong."
     },
     {
       "quote": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 5-1/4 to 5-1/2 percent.”"
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lisa D. Cook; Austan D. Goolsbee; Patrick Harker; Philip N. Jefferson; Neel Kashkari; Adriana D. Kugler; Lorie K. Logan; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lisa D. Cook; Austan D. G…”"
+      "explanation": "The Fed chose to pause rate hikes and keep its benchmark interest rate steady."
     }
   ],
-  "tone_score": 1.75,
+  "tone_score": 0.5,
   "tone_quotes": [
-    {
-      "quote": "In determining the extent of additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Inflation remains elevated.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "quote": "The Committee remains highly attentive to inflation risks.",
       "direction": "hawkish"
     }
   ],
@@ -82,8 +74,8 @@
       "text": "The broad trade-weighted dollar moved -0.16% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 74%, cut 6%, hike 20%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future meetings will depend on incoming economic data and ongoing risk assessments. Educational model forecasts for the next meeting indicate a hold probability of 73%, a hike probability of 21%, and a cut probability of 7%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +115,20 @@
     }
   ],
   "meeting_date": "2023-09-20",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve voted to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.3
 }

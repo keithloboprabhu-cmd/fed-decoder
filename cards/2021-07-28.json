@@ -7,46 +7,38 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve kept its benchmark interest rate unchanged at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "With progress on vaccinations and strong policy support, indicators of economic activity and employment have continued to strengthen.",
-      "explanation": "Reworded from the previous statement: “Amid this progress and strong policy support, indicators of economic activity and employment have strengthened.”"
+      "explanation": "The Fed updated its view on the economy to highlight that vaccinations and policy support are keeping economic activity and employment on an upward path."
     },
     {
       "quote": "The sectors most adversely affected by the pandemic have shown improvement but have not fully recovered.",
-      "explanation": "Reworded from the previous statement: “The sectors most adversely affected by the pandemic remain weak but have shown improvement.”"
+      "explanation": "Hard-hit industries are getting better, though they are still short of a full recovery."
     },
     {
       "quote": "Progress on vaccinations has reduced the spread of COVID-19 in the United States.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The path of the economy continues to depend on the course of the virus.",
-      "explanation": "Reworded from the previous statement: “The path of the economy will depend significantly on the course of the virus.”"
+      "explanation": "This specific reference to slowing the spread of the virus was removed from the statement."
     },
     {
       "quote": "Last December, the Committee indicated that it would continue to increase its holdings of Treasury securities by at least $80 billion per month and of agency mortgage-backed securities by at least $40 billion per month until substantial further progress has been made toward its maximum employment and price stability goals.",
-      "explanation": "Reworded from the previous statement: “In addition, the Federal Reserve will continue to increase its holdings of Treasury securities by at least $80 billion per month and of agency mortgage-backed s…”"
+      "explanation": "The Fed added historical context regarding its ongoing bond purchase program."
     },
     {
       "quote": "Since then, the economy has made progress toward these goals, and the Committee will continue to assess progress in coming meetings.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed acknowledged that the economy has advanced toward its goals and will keep evaluating that progress at upcoming meetings."
     }
   ],
-  "tone_score": -0.96,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "These asset purchases help foster smooth market functioning and accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",
+      "quote": "The Federal Reserve is committed to using its full range of tools to support the U.S. economy in this challenging time, thereby promoting its maximum employment and price stability goals.",
       "direction": "dovish"
     },
     {
-      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen to 2 percent and is on track to moderately exceed 2 percent for some time.",
+      "quote": "The Committee expects to maintain an accommodative stance of monetary policy until these outcomes are achieved.",
       "direction": "dovish"
     }
   ],
@@ -90,54 +82,61 @@
       "text": "The broad trade-weighted dollar moved -0.04% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 78%, cut 3%, hike 19%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will continue to evaluate incoming economic data and vaccination progress before altering its policy stance. As an educational note, the forecast model suggests the next meeting has a 75 percent probability of a hold, a 3 percent probability of a cut, and a 22 percent probability of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen t"
+      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "14.75% as of 2021-02-01"
+      "detail": "14.75%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "2.88% week of 2021-07-15"
+      "detail": "2.88%"
     },
     {
       "source": "DGS10",
-      "detail": "1.26% on 2021-07-28"
+      "detail": "1.26%"
     },
     {
       "source": "UNRATE",
-      "detail": "5.9% in June 2021"
+      "detail": "5.9%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 529k as of June 2021"
+      "detail": "529k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "5.3% year over year, June 2021"
+      "detail": "5.3%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "3.8% year over year, June 2021"
+      "detail": "3.8%"
     },
     {
       "source": "GDPC1",
-      "detail": "7.1% annualized, quarter starting 2021-04-01"
+      "detail": "7.1%"
     }
   ],
   "meeting_date": "2021-07-28",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept its benchmark interest rate unchanged at 0 to 1/4 percent."
+  },
+  "latency_s": 3.46
 }

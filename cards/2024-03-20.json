@@ -7,23 +7,19 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "Job gains have remained strong, and the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Job gains have moderated since early last year but remain strong, and the unemployment rate has remained low.”"
+      "explanation": "The Fed removed the phrase noting that job gains had moderated since early last year, reflecting confidence that the labor market has stabilized at a solid pace."
     }
   ],
-  "tone_score": 0.76,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
+      "quote": "The Committee judges that the risks to achieving its employment and inflation goals are moving into better balance.",
       "direction": "dovish"
-    },
-    {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
-      "direction": "hawkish"
     },
     {
       "quote": "The economic outlook is uncertain, and the Committee remains highly attentive to inflation risks.",
@@ -37,7 +33,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.27% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.88% would fall by about $6.01 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.27% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.88% would fall by about $6.01 a month."
     },
     {
       "topic": "Savers",
@@ -70,8 +66,8 @@
       "text": "The broad trade-weighted dollar moved -0% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 90%, cut 10%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will wait for clearer evidence of falling inflation before lowering interest rates. The educational forecast model gives the next meeting a 90% chance of a hold and a 10% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -111,13 +107,20 @@
     }
   ],
   "meeting_date": "2024-03-20",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.32
 }

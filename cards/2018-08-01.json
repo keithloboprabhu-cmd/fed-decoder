@@ -7,46 +7,38 @@
     "votes_for": 8,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1.75% to 2%. The vote was 8-0."
+    "summary": "The Federal Reserve decided to hold the target range for the federal funds rate at 1-3/4 to 2 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in May indicates that the labor market has continued to strengthen and that economic activity h…”"
+      "explanation": "The Fed upgraded its description of economic activity from a solid rate to a strong rate."
     },
     {
       "quote": "Job gains have been strong, on average, in recent months, and the unemployment rate has stayed low.",
-      "explanation": "Reworded from the previous statement: “Job gains have been strong, on average, in recent months, and the unemployment rate has declined.”"
+      "explanation": "The Committee noted that the unemployment rate has stayed low instead of explicitly stating it has declined."
     },
     {
       "quote": "Household spending and business fixed investment have grown strongly.",
-      "explanation": "Reworded from the previous statement: “Recent data suggest that growth of household spending has picked up, while business fixed investment has continued to grow strongly.”"
+      "explanation": "The phrasing on household spending was streamlined to emphasize strong growth alongside business investment."
     },
     {
       "quote": "On a 12-month basis, both overall inflation and inflation for items other than food and energy remain near 2 percent.",
-      "explanation": "Reworded from the previous statement: “On a 12-month basis, both overall inflation and inflation for items other than food and energy have moved close to 2 percent.”"
+      "explanation": "Inflation is described as remaining near 2 percent rather than having moved close to it."
     },
     {
       "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 to 2 percent.",
-      "explanation": "Reworded from the previous statement: “In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1-3/4 to 2…”"
-    },
-    {
-      "quote": "Voting for the FOMC monetary policy action were: Jerome H. Powell, Chairman; John C. Williams, Vice Chairman; Thomas I. Barkin; Raphael W. Bostic; Lael Brainard; Esther L. George; Loretta J. Mester; and Randal K. Quarles.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed shifted its decision from raising rates to maintaining them."
     }
   ],
-  "tone_score": 0.87,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
       "quote": "The Committee expects that further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective over the medium term.",
       "direction": "hawkish"
     },
     {
-      "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting strong labor market conditions and a sustained return to 2 percent inflation.",
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 to 2 percent.",
       "direction": "dovish"
     }
   ],
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved 0.14% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 62%, cut 0%, hike 38%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve plans to continue gradual rate increases as long as the economy remains strong and inflation stays near 2 percent. Educational forecasting models indicate a 58% chance of another hold and a 42% chance of a hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2018-08-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.75,
+    "target_high": 2.0,
+    "votes_for": 8,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to hold the target range for the federal funds rate at 1-3/4 to 2 percent."
+  },
+  "latency_s": 3.69
 }

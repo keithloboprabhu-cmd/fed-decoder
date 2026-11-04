@@ -10,47 +10,35 @@
       "Esther L. George",
       "Eric S. Rosengren"
     ],
-    "summary": "The Fed cut its policy rate by 25 basis points, to 2% to 2.25%. The vote was 8-2. Dissenting: Esther L. George, Eric S. Rosengren."
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 25 basis points to 2 to 2-1/4 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market remains strong and that economic activity has been rising at a moderate rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in May indicates that the labor market remains strong and that economic activity is rising at a…”"
+      "quote": "In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the Committee decided to lower the target range for the federal funds rate to 2 to 2-1/4 percent.",
+      "explanation": "The Fed lowered interest rates due to global economic uncertainty and low inflation."
+    },
+    {
+      "quote": "The Committee will conclude the reduction of its aggregate securities holdings in the System Open Market Account in August, two months earlier than previously indicated.",
+      "explanation": "The Fed stopped shrinking its bond portfolio two months earlier than planned."
     },
     {
       "quote": "Although growth of household spending has picked up from earlier in the year, growth of business fixed investment has been soft.",
-      "explanation": "Reworded from the previous statement: “Although growth of household spending appears to have picked up from earlier in the year, indicators of business fixed investment have been soft.”"
+      "explanation": "Consumer spending improved, but business investment weakened."
     },
     {
       "quote": "Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations are little changed.",
-      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation have declined; survey-based measures of longer-term inflation expectations are little changed.”"
-    },
-    {
-      "quote": "In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the Committee decided to lower the target range for the federal funds rate to 2 to 2-1/4 percent.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "This action supports the Committee's view that sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective are the most likely outcomes, but uncertainties about this outlook remain.",
-      "explanation": "Reworded from the previous statement: “The Committee continues to view sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent…”"
-    },
-    {
-      "quote": "As the Committee contemplates the future path of the target range for the federal funds rate, it will continue to monitor the implications of incoming information for the economic outlook and will act as appropriate to sustain the expansion, with a strong labor market and inflation near its symmetric 2 percent objective.",
-      "explanation": "Reworded from the previous statement: “In light of these uncertainties and muted inflation pressures, the Committee will closely monitor the implications of incoming information for the economic outl…”"
+      "explanation": "Market measures show inflation is still running below target."
     }
   ],
-  "tone_score": -0.0,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
       "quote": "In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the Committee decided to lower the target range for the federal funds rate to 2 to 2-1/4 percent.",
       "direction": "dovish"
     },
     {
-      "quote": "As the Committee contemplates the future path of the target range for the federal funds rate, it will continue to monitor the implications of incoming information for the economic outlook and will act as appropriate to sustain the expansion, with a strong labor market and inflation near its symmetric 2 percent objective.",
+      "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy are running below 2 percent.",
       "direction": "dovish"
-    },
-    {
-      "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
-      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -60,7 +48,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.02% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.81% would fall by about $6.83 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.02% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.81% would fall by about $6.83 a month."
     },
     {
       "topic": "Savers",
@@ -93,12 +81,12 @@
       "text": "The broad trade-weighted dollar moved -0.11% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 62%, cut 38%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will continue watching incoming economic data to decide on future rate changes. As an educational note, the forecast model suggests a hold is most likely at the next meeting with a 78% probability.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the Committee decided to lower the target range for the federal funds rate to 2 to 2-1/4 percent."
+      "detail": "the Committee decided to lower the target range for the federal funds rate to 2 to 2-1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -134,13 +122,23 @@
     }
   ],
   "meeting_date": "2019-07-31",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 2.0,
+    "target_high": 2.25,
+    "votes_for": 8,
+    "votes_against": 2,
+    "dissenters": [
+      "Esther L. George",
+      "Eric S. Rosengren"
+    ],
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 25 basis points to 2 to 2-1/4 percent."
+  },
+  "latency_s": 3.51
 }

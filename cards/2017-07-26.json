@@ -7,47 +7,43 @@
     "votes_for": 9,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1% to 1.25%. The vote was 9-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate unchanged at 1 to 1-1/4 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in May indicates that the labor market has continued to strengthen and that economic activity h…”"
-    },
-    {
       "quote": "Job gains have been solid, on average, since the beginning of the year, and the unemployment rate has declined.",
-      "explanation": "Reworded from the previous statement: “Job gains have moderated but have been solid, on average, since the beginning of the year, and the unemployment rate has declined.”"
+      "explanation": "The Fed removed the word moderated to reflect stronger momentum in job growth."
     },
     {
       "quote": "Household spending and business fixed investment have continued to expand.",
-      "explanation": "Reworded from the previous statement: “Household spending has picked up in recent months, and business fixed investment has continued to expand.”"
+      "explanation": "The statement now shows broader strength by noting that household spending has picked up alongside steady business investment."
     },
     {
       "quote": "On a 12-month basis, overall inflation and the measure excluding food and energy prices have declined and are running below 2 percent.",
-      "explanation": "Reworded from the previous statement: “On a 12-month basis, inflation has declined recently and, like the measure excluding food and energy prices, is running somewhat below 2 percent.”"
+      "explanation": "The language was updated to acknowledge that both headline and core inflation have recently softened further below the Fed's 2 percent goal."
     },
     {
       "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1 to 1-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1 to 1-1/4…”"
+      "explanation": "The Fed changed its action wording from raising rates to maintaining them at the current level."
     },
     {
-      "quote": "For the time being, the Committee is maintaining its existing policy of reinvesting principal payments from its holdings of agency debt and agency mortgage-backed securities in agency mortgage-backed securities and of rolling over maturing Treasury securities at auction.",
-      "explanation": "New language added in this statement."
+      "quote": "The Committee expects to begin implementing its balance sheet normalization program relatively soon, provided that the economy evolves broadly as anticipated; this program is described in the June 2017 Addendum to the Committee's Policy Normalization Principles and Plans.",
+      "explanation": "The Fed signaled that it will soon start reducing its massive bond holdings."
     }
   ],
-  "tone_score": 0.23,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a sustained return to 2 percent inflation.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Job gains have been solid, on average, since the beginning of the year, and the unemployment rate has declined.",
+      "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
       "direction": "hawkish"
     },
     {
       "quote": "On a 12-month basis, overall inflation and the measure excluding food and energy prices have declined and are running below 2 percent.",
       "direction": "dovish"
+    },
+    {
+      "quote": "The Committee expects that economic conditions will evolve in a manner that will warrant gradual increases in the federal funds rate; the federal funds rate is likely to remain, for some time, below levels that are expected to prevail in the longer run.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved 0.09% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 89%, cut 0%, hike 11%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed remains on track for gradual future rate increases despite recent soft inflation readings. Educational forecast models suggest an 88% probability of holding rates at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2017-07-26",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.25,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate unchanged at 1 to 1-1/4 percent."
+  },
+  "latency_s": 3.87
 }

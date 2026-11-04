@@ -7,46 +7,34 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 1% to 1.25%. The vote was 10-0."
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 1/2 percentage point to 1 to 1-1/4 percent."
   },
   "changes": [
     {
       "quote": "The fundamentals of the U.S. economy remain strong.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee added this note to emphasize that the broader economy was on solid footing before recent health risks emerged."
     },
     {
       "quote": "However, the coronavirus poses evolving risks to economic activity.",
-      "explanation": "New language added in this statement."
+      "explanation": "This newly added phrasing highlights the virus as an emerging threat that prompted the central bank to intervene."
     },
     {
       "quote": "In light of these risks and in support of achieving its maximum employment and price stability goals, the Federal Open Market Committee decided today to lower the target range for the federal funds rate by 1/2 percentage point, to 1 to 1-1/4 percent.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed cut interest rates by 50 basis points to protect the expansion from coronavirus-related risks."
     },
     {
       "quote": "The Committee is closely monitoring developments and their implications for the economic outlook and will use its tools and act as appropriate to support the economy.",
-      "explanation": "Reworded from the previous statement: “The Committee will continue to monitor the implications of incoming information for the economic outlook, including global developments and muted inflation pres…”"
-    },
-    {
-      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market remains strong and that economic activity has been rising at a moderate rate.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed replaced its standard monitoring language with a flexible pledge to take further action using all available tools as the situation develops."
     }
   ],
-  "tone_score": -0.7,
+  "tone_score": -2.0,
   "tone_quotes": [
-    {
-      "quote": "In light of these risks and in support of achieving its maximum employment and price stability goals, the Federal Open Market Committee decided today to lower the target range for the federal funds rate by 1/2 percentage point, to 1 to 1-1/4 percent.",
-      "direction": "dovish"
-    },
     {
       "quote": "However, the coronavirus poses evolving risks to economic activity.",
       "direction": "dovish"
     },
     {
-      "quote": "The Committee is closely monitoring developments and their implications for the economic outlook and will use its tools and act as appropriate to support the economy.",
+      "quote": "In light of these risks and in support of achieving its maximum employment and price stability goals, the Federal Open Market Committee decided today to lower the target range for the federal funds rate by 1/2 percentage point, to 1 to 1-1/4 percent.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.02% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.49% would fall by about $13.35 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.02% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.49% would fall by about $13.35 a month."
     },
     {
       "topic": "Savers",
@@ -90,12 +78,12 @@
       "text": "The broad trade-weighted dollar moved -0.27% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 23%, cut 77%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will continue monitoring health developments and use its tools to support the economy. An educational forecast model suggests an 81 percent chance of another rate cut at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In light of these risks and in support of achieving its maximum employment and price stability goals, the Federal Open Market Committee decided today to lower the target range for the federal funds rate by 1/2 percentage point, to 1 to 1-1/4 percent."
+      "detail": "the Federal Open Market Committee decided today to lower the target range for the federal funds rate by 1/2 percentage point, to 1 to 1-1/4 percent."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +119,20 @@
     }
   ],
   "meeting_date": "2020-03-03",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 1.0,
+    "target_high": 1.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 1/2 percentage point to 1 to 1-1/4 percent."
+  },
+  "latency_s": 3.99
 }

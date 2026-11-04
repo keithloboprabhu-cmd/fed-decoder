@@ -10,42 +10,34 @@
       "Michelle W. Bowman",
       "Christopher J. Waller"
     ],
-    "summary": "The Fed held its policy rate at 4.25% to 4.5%. The vote was 9-2. Dissenting: Michelle W. Bowman, Christopher J. Waller."
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady at 4-1/4 to 4-1/2 percent, with two members dissenting in favor of a rate cut."
   },
   "changes": [
     {
       "quote": "Although swings in net exports continue to affect the data, recent indicators suggest that growth of economic activity moderated in the first half of the year.",
-      "explanation": "Reworded from the previous statement: “Although swings in net exports have affected the data, recent indicators suggest that economic activity has continued to expand at a solid pace.”"
+      "explanation": "The Committee updated its view on the pace of economic growth, noting that activity moderated during the first half of the year compared to previous reports of a solid expansion."
     },
     {
       "quote": "Uncertainty about the economic outlook remains elevated.",
-      "explanation": "Reworded from the previous statement: “Uncertainty about the economic outlook has diminished but remains elevated.”"
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Susan M. Collins; Lisa D. Cook; Austan D. Goolsbee; Philip N. Jefferson; Alberto G. Musalem; and Jeffrey R. Schmid.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D.…”"
+      "explanation": "The Committee removed the phrase stating that uncertainty has diminished, showing that economic forecasting remains challenging."
     },
     {
       "quote": "Voting against this action were Michelle W. Bowman and Christopher J. Waller, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Absent and not voting was Adriana D. Kugler.",
-      "explanation": "New language added in this statement."
+      "explanation": "Two voters dissented from the majority decision because they preferred to lower interest rates at this meeting."
     }
   ],
-  "tone_score": 0.63,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
+      "quote": "The unemployment rate remains low, and labor market conditions remain solid.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
+      "quote": "Inflation remains somewhat elevated.",
       "direction": "hawkish"
     },
     {
-      "quote": "Although swings in net exports continue to affect the data, recent indicators suggest that growth of economic activity moderated in the first half of the year.",
+      "quote": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent.",
       "direction": "dovish"
     }
   ],
@@ -56,7 +48,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.38% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.75% would rise by about $7.98 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.38% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.75% would rise by about $7.98 a month."
     },
     {
       "topic": "Savers",
@@ -89,8 +81,8 @@
       "text": "The broad trade-weighted dollar moved 0.36% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 57%, cut 43%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future choices depend strictly on incoming data regarding inflation, labor conditions, and the global outlook. Educational forecast models suggest the next meeting currently leans toward a rate cut with a probability of 56% versus 44% for a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -130,13 +122,23 @@
     }
   ],
   "meeting_date": "2025-07-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 9,
+    "votes_against": 2,
+    "dissenters": [
+      "Michelle W. Bowman",
+      "Christopher J. Waller"
+    ],
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady at 4-1/4 to 4-1/2 percent, with two members dissenting in favor of a rate cut."
+  },
+  "latency_s": 3.63
 }

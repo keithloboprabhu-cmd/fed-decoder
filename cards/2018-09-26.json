@@ -7,38 +7,34 @@
     "votes_for": 9,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 2% to 2.25%. The vote was 9-0."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 2 to 2-1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in August indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity …”"
+      "explanation": "The Fed updated its meeting reference from June to August to reflect the most recent economic data."
     },
     {
       "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2 to 2-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 t…”"
+      "explanation": "The Fed increased borrowing costs by 0.25 percentage points due to a strong economy and labor market."
     },
     {
       "quote": "The stance of monetary policy remains accommodative, thereby supporting strong labor market conditions and a sustained return to 2 percent inflation.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed this sentence, signaling that policy is moving closer to a neutral stance rather than actively stimulating the economy."
     },
     {
       "quote": "Voting for the FOMC monetary policy action were: Jerome H. Powell, Chairman; John C. Williams, Vice Chairman; Thomas I. Barkin; Raphael W. Bostic; Lael Brainard; Richard H. Clarida; Esther L. George; Loretta J. Mester; and Randal K. Quarles.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Jerome H. Powell, Chairman; John C. Williams, Vice Chairman; Thomas I. Barkin; Raphael W. Bostic; Lael Brainard…”"
+      "explanation": "Richard H. Clarida was added to the list of voting members after taking office as Vice Chairman."
     }
   ],
-  "tone_score": 1.54,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2 to 2-1/4 percent.",
+      "quote": "Information received since the Federal Open Market Committee met in August indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
       "direction": "hawkish"
     },
     {
       "quote": "The Committee expects that further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective over the medium term.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "Information received since the Federal Open Market Committee met in August indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
       "direction": "hawkish"
     }
   ],
@@ -49,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.06% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.6% would fall by about $7.16 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.06% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.6% would fall by about $7.16 a month."
     },
     {
       "topic": "Savers",
@@ -82,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved -0.04% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 56%, cut 0%, hike 44%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that further gradual rate hikes remain likely if the economy continues on its current path. Educational forecast models suggest a 55% chance of a hold and a 45% chance of a hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +119,20 @@
     }
   ],
   "meeting_date": "2018-09-26",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 2.0,
+    "target_high": 2.25,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 2 to 2-1/4 percent."
+  },
+  "latency_s": 4.15
 }

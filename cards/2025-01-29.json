@@ -7,47 +7,31 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 4.25% to 4.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "The unemployment rate has stabilized at a low level in recent months, and labor market conditions remain solid.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee updated its view to state that the labor market has stabilized and remains solid."
     },
     {
       "quote": "Inflation remains somewhat elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation has made progress toward the Committee's 2 percent objective but remains somewhat elevated.”"
-    },
-    {
-      "quote": "Since earlier in the year, labor market conditions have generally eased, and the unemployment rate has moved up but remains low.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Committee shortened its description of inflation, removing the mention of prior progress."
     },
     {
       "quote": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/4 to 4-1/2 percent.”"
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D. Cook; Austan D. Goolsbee; Philip N. Jefferson; Adriana D. Kugler; Alberto G. Musalem; Jeffrey R. Schmid; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Michelle…”"
-    },
-    {
-      "quote": "Voting against the action was Beth M. Hammack, who preferred to maintain the target range for the federal funds rate at 4-1/2 to 4-3/4 percent.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed shifted its action from cutting rates to holding them steady."
     }
   ],
-  "tone_score": 0.89,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Recent indicators suggest that economic activity has continued to expand at a solid pace.",
       "direction": "hawkish"
+    },
+    {
+      "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +41,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.55% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.04% would not change."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.55% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.04% would not change."
     },
     {
       "topic": "Savers",
@@ -83,15 +67,15 @@
     },
     {
       "topic": "Markets",
-      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day, and the S&P 500 moved -0.47%."
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on day, and the S&P 500 moved -0.47%."
     },
     {
       "topic": "Dollar",
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 92%, cut 8%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will carefully assess incoming data and the evolving outlook before making any future adjustments. As an educational note, the forecast model gave the next meeting: hold 91%, cut 9%, hike 0%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +115,20 @@
     }
   ],
   "meeting_date": "2025-01-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 3.37
 }

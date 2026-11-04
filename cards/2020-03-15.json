@@ -9,46 +9,34 @@
     "dissenters": [
       "Loretta J. Mester"
     ],
-    "summary": "The Fed cut its policy rate by 100 basis points, to 0% to 0.25%. The vote was 9-1. Dissenting: Loretta J. Mester."
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 100 basis points to 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "The coronavirus outbreak has harmed communities and disrupted economic activity in many countries, including the United States.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Global financial conditions have also been significantly affected.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to explicitly acknowledge the sudden health and economic disruptions caused by the coronavirus pandemic globally and domestically."
     },
     {
       "quote": "Available economic data show that the U.S. economy came into this challenging period on a strong footing.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee noted that solid prior economic data provided a strong baseline before the pandemic shock took hold."
     },
     {
-      "quote": "Information received since the Federal Open Market Committee met in January indicates that the labor market remained strong through February and economic activity rose at a moderate rate.",
-      "explanation": "New language added in this statement."
+      "quote": "The effects of the coronavirus will weigh on economic activity in the near term and pose risks to the economic outlook.",
+      "explanation": "This points out that the coronavirus creates immediate downward pressure and uncertainty for future economic growth."
     },
-    {
-      "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Although household spending rose at a moderate pace, business fixed investment and exports remained weak.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -0.59,
-  "tone_quotes": [
     {
       "quote": "In light of these developments, the Committee decided to lower the target range for the federal funds rate to 0 to 1/4 percent.",
+      "explanation": "The Fed slashed interest rates drastically down to near zero to buffer the economy against the coronavirus shock."
+    }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+    {
+      "quote": "The coronavirus outbreak has harmed communities and disrupted economic activity in many countries, including the United States.",
       "direction": "dovish"
     },
     {
-      "quote": "The Federal Reserve is prepared to use its full range of tools to support the flow of credit to households and businesses and thereby promote its maximum employment and price stability goals.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "To support the smooth functioning of markets for Treasury securities and agency mortgage-backed securities that are central to the flow of credit to households and businesses, over coming months the Committee will increase its holdings of Treasury securities by at least $500 billion and its holdings of agency mortgage-backed securities by at least $200 billion.",
+      "quote": "The effects of the coronavirus will weigh on economic activity in the near term and pose risks to the economic outlook.",
       "direction": "dovish"
     }
   ],
@@ -92,8 +80,8 @@
       "text": "The broad trade-weighted dollar moved 0.41% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 61%, cut 8%, hike 31%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will maintain this target range until it is confident that the economy has weathered recent events and is on track to achieve its maximum employment and price stability goals. The forecast model gave the next meeting: hold 36%, cut 13%, hike 52% (educational purpose).",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +121,22 @@
     }
   ],
   "meeting_date": "2020-03-15",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -100,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Loretta J. Mester"
+    ],
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 100 basis points to 0 to 1/4 percent."
+  },
+  "latency_s": 4.26
 }

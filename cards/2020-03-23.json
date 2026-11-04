@@ -7,46 +7,38 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve held the federal funds rate in a target range of 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "The Federal Reserve is committed to use its full range of tools to support the U.S. economy in this challenging time and thereby promote its maximum employment and price stability goals.",
-      "explanation": "Reworded from the previous statement: “The Federal Reserve is prepared to use its full range of tools to support the flow of credit to households and businesses and thereby promote its maximum employ…”"
+      "explanation": "The Fed shifted its language from being prepared to act to being fully committed to using all tools to support the economy."
     },
     {
       "quote": "The Federal Open Market Committee is taking further actions to support the flow of credit to households and businesses by addressing strains in the markets for Treasury securities and agency mortgage-backed securities.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added steps to address severe market strains and keep credit flowing to households and businesses."
     },
     {
       "quote": "The Federal Reserve will continue to purchase Treasury securities and agency mortgage-backed securities in the amounts needed to support smooth market functioning and effective transmission of monetary policy to broader financial conditions.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed committed to open-ended purchases of government and mortgage bonds to keep financial markets functioning."
     },
     {
       "quote": "The Committee will include purchases of agency commercial mortgage-backed securities in its agency mortgage-backed security purchases.",
-      "explanation": "Reworded from the previous statement: “The Committee will also reinvest all principal payments from the Federal Reserve's holdings of agency debt and agency mortgage-backed securities in agency mortg…”"
-    },
-    {
-      "quote": "In addition, the Open Market Desk will continue to offer large-scale overnight and term repurchase agreement operations.",
-      "explanation": "Reworded from the previous statement: “In addition, the Open Market Desk has recently expanded its overnight and term repurchase agreement operations.”"
+      "explanation": "The Fed expanded its mortgage bond buying program to include commercial mortgage-backed securities."
     },
     {
       "quote": "The Committee will continue to closely monitor market conditions, and will assess the appropriate pace of its securities purchases at future meetings.",
-      "explanation": "Reworded from the previous statement: “The Committee will continue to closely monitor market conditions and is prepared to adjust its plans as appropriate.”"
+      "explanation": "The Fed signaled it will adjust the speed of its bond buying based on ongoing market conditions."
     }
   ],
-  "tone_score": -1.0,
+  "tone_score": -2.0,
   "tone_quotes": [
-    {
-      "quote": "\"Effective March 23, 2020, the Federal Open Market Committee directs the Desk to undertake open market operations as necessary to maintain the federal funds rate in a target range of 0 to 1/4 percent.",
-      "direction": "dovish"
-    },
     {
       "quote": "The Federal Reserve is committed to use its full range of tools to support the U.S. economy in this challenging time and thereby promote its maximum employment and price stability goals.",
       "direction": "dovish"
     },
     {
-      "quote": "The Federal Reserve will continue to purchase Treasury securities and agency mortgage-backed securities in the amounts needed to support smooth market functioning and effective transmission of monetary policy to broader financial conditions.",
+      "quote": "The Federal Open Market Committee is taking further actions to support the flow of credit to households and businesses by addressing strains in the markets for Treasury securities and agency mortgage-backed securities.",
       "direction": "dovish"
     }
   ],
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 0.76% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.36% would fall by about $26.40 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 0.76% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.36% would fall by about $26.40 a month."
     },
     {
       "topic": "Savers",
@@ -90,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved 0.95% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 84%, cut 5%, hike 12%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will continue aggressive market interventions and open-ended asset purchases until financial strains subside. As an educational note, the forecast model gave the next meeting probability as hold 84%, cut 5%, and hike 11%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In connection with these plans, the Committee voted unanimously to authorize and direct the Federal Reserve Bank of New York, until instructed otherwise, to execute transactions in the System Open Market Account in accordance with the following domestic policy directive: \"Effective March 23, 2020, t"
+      "detail": "Effective March 23, 2020, the Federal Open Market Committee directs the Desk to undertake open market operations as necessary to maintain the federal funds rate in a target range of 0 to 1/4 percent."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2020-03-23",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve held the federal funds rate in a target range of 0 to 1/4 percent."
+  },
+  "latency_s": 3.89
 }

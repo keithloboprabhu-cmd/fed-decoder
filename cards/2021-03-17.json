@@ -7,30 +7,22 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "Following a moderation in the pace of the recovery, indicators of economic activity and employment have turned up recently, although the sectors most adversely affected by the pandemic remain weak.",
-      "explanation": "Reworded from the previous statement: “The pace of the recovery in economic activity and employment has moderated in recent months, with weakness concentrated in the sectors most adversely affected b…”"
+      "explanation": "Economic activity and employment indicators have recently picked up after a period of slower recovery."
     },
     {
       "quote": "Inflation continues to run below 2 percent.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Weaker demand and earlier declines in oil prices have been holding down consumer price inflation.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed added this language to explicitly highlight that overall inflation remains under its 2 percent objective."
     }
   ],
-  "tone_score": -1.05,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "These asset purchases help foster smooth market functioning and accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
+      "quote": "The Committee expects to maintain an accommodative stance of monetary policy until these outcomes are achieved.",
       "direction": "dovish"
     },
     {
@@ -45,7 +37,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.63% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.02% would rise by about $1.62 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.63% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.02% would rise by about $1.62 a month."
     },
     {
       "topic": "Savers",
@@ -78,12 +70,12 @@
       "text": "The broad trade-weighted dollar moved 0.15% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 86%, cut 14%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its current accommodative monetary policy stance until substantial further progress is made toward its goals. Educational forecasting models indicate an 86 percent probability of another hold at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen t"
+      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -119,13 +111,20 @@
     }
   ],
   "meeting_date": "2021-03-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.32
 }

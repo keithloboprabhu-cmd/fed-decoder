@@ -7,47 +7,43 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 4.25% to 4.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to hold the federal funds rate at 4-1/4 to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "Although swings in net exports have affected the data, recent indicators suggest that economic activity has continued to expand at a solid pace.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic activity has continued to expand at a solid pace.”"
+      "explanation": "The Committee added a note that net exports caused data swings, while still viewing economic activity as solid."
     },
     {
       "quote": "Uncertainty about the economic outlook has increased further.",
-      "explanation": "Reworded from the previous statement: “Uncertainty around the economic outlook has increased.”"
+      "explanation": "The Fed stepped up its caution regarding where the economy is heading."
     },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that the risks of higher unemployment and higher inflation have risen.",
-      "explanation": "Reworded from the previous statement: “The Committee is attentive to the risks to both sides of its dual mandate.”"
+      "explanation": "Policymakers formally noted that the risks of both job losses and inflation have increased."
     },
     {
       "quote": "Beginning in April, the Committee will slow the pace of decline of its securities holdings by reducing the monthly redemption cap on Treasury securities from $25 billion to $5 billion.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed language detailing a previous plan to slow the reduction of its bond holdings."
     },
     {
-      "quote": "The Committee will maintain the monthly redemption cap on agency debt and agency mortgage-backed securities at $35 billion.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D. Cook; Austan D. Goolsbee; Philip N. Jefferson; Neel Kashkari; Adriana D. Kugler; Alberto G. Musalem; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D.…”"
+      "quote": "Voting against this action was Christopher J. Waller, who supported no change for the federal funds target range but preferred to continue the current pace of decline in securities holdings.",
+      "explanation": "The statement removed the record of a past dissent by Christopher J. Waller regarding balance sheet runoff."
     }
   ],
-  "tone_score": 0.89,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
+      "quote": "Uncertainty about the economic outlook has increased further.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Inflation remains somewhat elevated.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "Although swings in net exports have affected the data, recent indicators suggest that economic activity has continued to expand at a solid pace.",
-      "direction": "hawkish"
+      "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that the risks of higher unemployment and higher inflation have risen.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +53,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.26% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.81% would fall by about $7.99 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.26% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.81% would fall by about $7.99 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved 0.06% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 74%, cut 26%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future choices will depend heavily on incoming economic readings and risks. An educational forecast model suggests a 73% chance of a hold and a 27% chance of a cut at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -99,45 +95,52 @@
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "21.37% as of 2025-02-01"
+      "detail": "21.37%"
     },
     {
       "source": "MORTGAGE30US",
-      "detail": "6.81% week of 2025-04-24"
+      "detail": "6.81%"
     },
     {
       "source": "DGS10",
-      "detail": "4.26% on 2025-05-07"
+      "detail": "4.26%"
     },
     {
       "source": "UNRATE",
-      "detail": "4.2% in April 2025"
+      "detail": "4.2%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 72k as of April 2025"
+      "detail": "72k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "2.3% year over year, April 2025"
+      "detail": "2.3%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "2.7% year over year, April 2025"
+      "detail": "2.7%"
     },
     {
       "source": "GDPC1",
-      "detail": "0.1% annualized, quarter starting 2025-01-01"
+      "detail": "0.1%"
     }
   ],
   "meeting_date": "2025-05-07",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-flash-lite-latest",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to hold the federal funds rate at 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 3.71
 }

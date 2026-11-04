@@ -7,43 +7,39 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 2.25% to 2.5%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in March indicates that the labor market remains strong and that economic activity rose at a solid rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January indicates that the labor market remains strong but that growth of economic activity …”"
+      "explanation": "The Committee updated its assessment to reflect data received since the March meeting."
     },
     {
       "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Payroll employment was little changed in February, but job gains have been solid, on average, in recent months, and the unemployment rate has remained low.”"
+      "explanation": "The Committee removed a reference to a specific flat month for payroll employment."
     },
     {
       "quote": "Growth of household spending and business fixed investment slowed in the first quarter.",
-      "explanation": "Reworded from the previous statement: “Recent indicators point to slower growth of household spending and business fixed investment in the first quarter.”"
+      "explanation": "The wording on household spending and business investment was streamlined."
     },
     {
       "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy have declined and are running below 2 percent.",
-      "explanation": "Reworded from the previous statement: “On a 12-month basis, overall inflation has declined, largely as a result of lower energy prices; inflation for items other than food and energy remains near 2 p…”"
+      "explanation": "The Committee noted that both headline and core inflation have declined and run below the 2 percent target."
     },
     {
       "quote": "Voting for the FOMC monetary policy action were: Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; James Bullard; Richard H. Clarida; Charles L. Evans; Esther L. George; Randal K. Quarles; and Eric S. Rosengren.",
-      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Jerome H. Powell, Chairman; John C. Williams, Vice Chairman; Michelle W. Bowman; Lael Brainard; James Bullard; …”"
+      "explanation": "Titles for the Chair and Vice Chair were updated from Chairman and Vice Chairman to Chair and Vice Chair."
     }
   ],
-  "tone_score": 0.43,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy have declined and are running below 2 percent.",
+      "quote": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent.",
       "direction": "dovish"
     },
     {
-      "quote": "This assessment will take into account a wide range of information, including measures of labor market conditions, indicators of inflation pressures and inflation expectations, and readings on financial and international developments.",
-      "direction": "hawkish"
+      "quote": "In light of global economic and financial developments and muted inflation pressures, the Committee will be patient as it determines what future adjustments to the target range for the federal funds rate may be appropriate to support these outcomes.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -86,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.28% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 98%, cut 0%, hike 2%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will remain patient regarding future rate adjustments given muted inflation pressures. Educational forecast models give the next meeting a 98 percent chance of a hold.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +123,20 @@
     }
   ],
   "meeting_date": "2019-05-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 2.25,
+    "target_high": 2.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent."
+  },
+  "latency_s": 3.98
 }

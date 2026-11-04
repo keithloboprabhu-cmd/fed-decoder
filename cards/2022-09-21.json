@@ -7,34 +7,30 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 75 basis points, to 3% to 3.25%. The vote was 12-0."
+    "summary": "The Federal Reserve raised the benchmark interest rate by 75 basis points to a range of 3 to 3-1/4 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators point to modest growth in spending and production.",
-      "explanation": "Reworded from the previous statement: “Recent indicators of spending and production have softened.”"
+      "explanation": "The Fed replaced wording about softened indicators with language showing modest growth in spending and production."
     },
     {
       "quote": "Job gains have been robust in recent months, and the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Nonetheless, job gains have been robust in recent months, and the unemployment rate has remained low.”"
+      "explanation": "The Committee simplified its description of the job market by removing a transitional word while keeping the view that employment growth remains strong."
     },
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3 to 3-1/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 2-1/4 to 2-1/2 percent and anticipates that ongoing inc…”"
+      "explanation": "The Fed updated the target rate range to reflect the new higher borrowing costs decided at this meeting."
     }
   ],
-  "tone_score": 2.0,
+  "tone_score": 1.5,
   "tone_quotes": [
-    {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3 to 3-1/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "quote": "The Committee is highly attentive to inflation risks.",
       "direction": "hawkish"
     }
   ],
@@ -78,8 +74,8 @@
       "text": "The broad trade-weighted dollar moved 0.49% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 0%, cut 0%, hike 100%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee expects to keep raising rates until inflation is under control. The forecast model gave the next meeting: hold 0%, cut 0%, hike 100%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +115,20 @@
     }
   ],
   "meeting_date": "2022-09-21",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 75,
+    "target_low": 3.0,
+    "target_high": 3.25,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the benchmark interest rate by 75 basis points to a range of 3 to 3-1/4 percent."
+  },
+  "latency_s": 3.49
 }

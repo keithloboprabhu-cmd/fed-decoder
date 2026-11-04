@@ -11,40 +11,28 @@
       "Austan D. Goolsbee",
       "Jeffrey R. Schmid"
     ],
-    "summary": "The Fed cut its policy rate by 25 basis points, to 3.5% to 3.75%. The vote was 9-3. Dissenting: Stephen I. Miran, Austan D. Goolsbee, Jeffrey R. Schmid."
+    "summary": "The Federal Reserve lowered the federal funds rate by 1/4 percentage point to a range of 3-1/2 to 3-3/4 percent."
   },
   "changes": [
     {
-      "quote": "Job gains have slowed this year, and the unemployment rate has edged up through September.",
-      "explanation": "Reworded from the previous statement: “Job gains have slowed this year, and the unemployment rate has edged up but remained low through August; more recent indicators are consistent with these develo…”"
-    },
-    {
-      "quote": "More recent indicators are consistent with these developments.",
-      "explanation": "New language added in this statement."
-    },
-    {
       "quote": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 3-1/2 to 3-3/4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 per…”"
+      "explanation": "The Fed lowered its benchmark interest rate range down to 3-1/2 to 3-3/4 percent."
+    },
+    {
+      "quote": "Job gains have slowed this year, and the unemployment rate has edged up through September.",
+      "explanation": "The statement updates the employment picture to reflect data through September."
     },
     {
       "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
-      "explanation": "Reworded from the previous statement: “In considering additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, a…”"
-    },
-    {
-      "quote": "The Committee decided to conclude the reduction of its aggregate securities holdings on December 1.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed added language about considering the extent and timing of future rate moves."
     },
     {
       "quote": "The Committee judges that reserve balances have declined to ample levels and will initiate purchases of shorter-term Treasury securities as needed to maintain an ample supply of reserves on an ongoing basis.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed removed its previous announcement about ending securities reductions and stated it will start buying shorter-term Treasury securities to keep bank reserves ample."
     }
   ],
-  "tone_score": -0.25,
+  "tone_score": -1.0,
   "tone_quotes": [
-    {
-      "quote": "In support of its goals and in light of the shift in the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 3-1/2 to 3-3/4 percent.",
-      "direction": "dovish"
-    },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate and judges that downside risks to employment rose in recent months.",
       "direction": "dovish"
@@ -94,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.01% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 63%, cut 37%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future policy adjustments will depend heavily on incoming data, the evolving outlook, and the balance of risks. An educational forecast model estimates a 65% chance of a hold and a 35% chance of a cut at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -135,13 +123,24 @@
     }
   ],
   "meeting_date": "2025-12-10",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 9,
+    "votes_against": 3,
+    "dissenters": [
+      "Stephen I. Miran",
+      "Austan D. Goolsbee",
+      "Jeffrey R. Schmid"
+    ],
+    "summary": "The Federal Reserve lowered the federal funds rate by 1/4 percentage point to a range of 3-1/2 to 3-3/4 percent."
+  },
+  "latency_s": 3.73
 }

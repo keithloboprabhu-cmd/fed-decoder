@@ -7,46 +7,38 @@
     "votes_for": 9,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 50 basis points, to 0.75% to 1%. The vote was 9-0."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 50 basis points to 3/4 to 1 percent."
   },
   "changes": [
     {
       "quote": "Although overall economic activity edged down in the first quarter, household spending and business fixed investment remained strong.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Job gains have been robust in recent months, and the unemployment rate has declined substantially.",
-      "explanation": "Reworded from the previous statement: “Job gains have been strong in recent months, and the unemployment rate has declined substantially.”"
-    },
-    {
-      "quote": "Indicators of economic activity and employment have continued to strengthen.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed noted that overall first-quarter economic activity slowed down, but underlying consumer spending and business investments remained solid."
     },
     {
       "quote": "The implications for the U.S. economy are highly uncertain.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The invasion and related events are creating additional upward pressure on inflation and are likely to weigh on economic activity.",
-      "explanation": "Reworded from the previous statement: “The implications for the U.S. economy are highly uncertain, but in the near term the invasion and related events are likely to create additional upward pressure…”"
+      "explanation": "The Committee added a note of caution regarding how external global events might impact domestic economic health."
     },
     {
       "quote": "In addition, COVID-related lockdowns in China are likely to exacerbate supply chain disruptions.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": 2.0,
-  "tone_quotes": [
-    {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3/4 to 1 percent and anticipates that ongoing increases in the target range will be appropriate.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher energy prices, and broader price pressures.",
-      "direction": "hawkish"
+      "explanation": "Pandemic shutdowns abroad were explicitly cited as an added risk that could worsen existing supply shortages."
     },
     {
       "quote": "The Committee is highly attentive to inflation risks.",
+      "explanation": "A direct acknowledgment was inserted to highlight the Fed's heightened focus on controlling rising price levels."
+    },
+    {
+      "quote": "In addition, the Committee decided to begin reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities on June 1, as described in the Plans for Reducing the Size of the Federal Reserve's Balance Sheet that were issued in conjunction with this statement.",
+      "explanation": "The Fed set a firm start date of June 1 to begin shrinking its massive asset holdings."
+    }
+  ],
+  "tone_score": 1.5,
+  "tone_quotes": [
+    {
+      "quote": "The Committee is highly attentive to inflation risks.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3/4 to 1 percent and anticipates that ongoing increases in the target range will be appropriate.",
       "direction": "hawkish"
     }
   ],
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.12% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 0%, cut 0%, hike 100%.",
-  "confidence": "medium",
+  "whats_next": "The statement strongly signals that ongoing rate increases will be appropriate at upcoming meetings. As an educational note, the forecast model currently projects a 100% probability of another rate hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2022-05-04",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 50,
+    "target_low": 0.75,
+    "target_high": 1.0,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 50 basis points to 3/4 to 1 percent."
+  },
+  "latency_s": 3.78
 }

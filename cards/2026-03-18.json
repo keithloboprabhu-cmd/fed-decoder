@@ -9,38 +9,34 @@
     "dissenters": [
       "Stephen I. Miran"
     ],
-    "summary": "The Fed held its policy rate at 3.5% to 3.75%. The vote was 11-1. Dissenting: Stephen I. Miran."
+    "summary": "The Federal Reserve voted to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
   },
   "changes": [
     {
       "quote": "Job gains have remained low, and the unemployment rate has been little changed in recent months.",
-      "explanation": "Reworded from the previous statement: “Job gains have remained low, and the unemployment rate has shown some signs of stabilization.”"
+      "explanation": "This phrasing replaces previous language about stabilization, indicating that job market improvements remain subdued."
     },
     {
       "quote": "The implications of developments in the Middle East for the U.S. economy are uncertain.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee added a new mention of geopolitical events in the Middle East as an added source of economic uncertainty."
     },
     {
       "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lisa D. Cook; Beth M. Hammack; Philip N. Jefferson; Neel Kashkari; Lorie K. Logan; Anna Paulson; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lisa D. Cook; Beth M. Ham…”"
+      "explanation": "Christopher J. Waller shifted his vote back to supporting the majority decision to hold rates."
     },
     {
       "quote": "Voting against this action was Stephen I. Miran, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting.",
-      "explanation": "Reworded from the previous statement: “Voting against this action were Stephen I. Miran and Christopher J. Waller, who preferred to lower the target range for the federal funds rate by 1/4 percentage…”"
+      "explanation": "Stephen I. Miran stood alone in dissenting by preferring a rate cut."
     }
   ],
-  "tone_score": 0.69,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
-      "direction": "hawkish"
-    },
     {
       "quote": "Available indicators suggest that economic activity has been expanding at a solid pace.",
       "direction": "hawkish"
     },
     {
-      "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
+      "quote": "Job gains have remained low, and the unemployment rate has been little changed in recent months.",
       "direction": "dovish"
     }
   ],
@@ -84,8 +80,8 @@
       "text": "The broad trade-weighted dollar moved 0.08% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 95%, cut 5%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will carefully assess incoming data and the evolving outlook before making any further policy adjustments. As an educational note, the forecast model currently assigns an 89% probability of another hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -125,13 +121,22 @@
     }
   ],
   "meeting_date": "2026-03-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Stephen I. Miran"
+    ],
+    "summary": "The Federal Reserve voted to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
+  },
+  "latency_s": 3.43
 }

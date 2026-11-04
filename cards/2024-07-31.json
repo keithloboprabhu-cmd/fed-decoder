@@ -7,47 +7,43 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "Job gains have moderated, and the unemployment rate has moved up but remains low.",
-      "explanation": "Reworded from the previous statement: “Job gains have remained strong, and the unemployment rate has remained low.”"
+      "explanation": "The Fed acknowledges that the job market is cooling down slightly compared to earlier periods."
     },
     {
       "quote": "Inflation has eased over the past year but remains somewhat elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation has eased over the past year but remains elevated.”"
+      "explanation": "The Fed removed the word 'elevated' and added 'somewhat', showing slightly more comfort with recent inflation trends."
     },
     {
       "quote": "In recent months, there has been some further progress toward the Committee's 2 percent inflation objective.",
-      "explanation": "Reworded from the previous statement: “In recent months, there has been modest further progress toward the Committee's 2 percent inflation objective.”"
+      "explanation": "Replacing 'modest' with 'some' indicates slightly improved confidence in price stabilization."
     },
     {
       "quote": "The Committee judges that the risks to achieving its employment and inflation goals continue to move into better balance.",
-      "explanation": "Reworded from the previous statement: “The Committee judges that the risks to achieving its employment and inflation goals have moved toward better balance over the past year.”"
+      "explanation": "The Fed sees the risks of high inflation and weak employment becoming more equal in weight."
     },
     {
       "quote": "The economic outlook is uncertain, and the Committee is attentive to the risks to both sides of its dual mandate.",
-      "explanation": "Reworded from the previous statement: “The economic outlook is uncertain, and the Committee remains highly attentive to inflation risks.”"
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Michelle W. Bowman; Lisa D. Cook; Mary C. Daly; Austan D. Goolsbee; Philip N. Jefferson; Adriana D. Kugler; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Michelle…”"
+      "explanation": "The Fed is now paying equal attention to both sides of its dual mandate of stable prices and maximum employment."
     }
   ],
-  "tone_score": 0.24,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "Job gains have moderated, and the unemployment rate has moved up but remains low.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "quote": "Recent indicators suggest that economic activity has continued to expand at a solid pace.",
       "direction": "hawkish"
+    },
+    {
+      "quote": "Inflation has eased over the past year but remains somewhat elevated.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In recent months, there has been some further progress toward the Committee's 2 percent inflation objective.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +53,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.09% and moved -6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.77% would fall by about $11.96 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.09% and moved -6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.77% would fall by about $11.96 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved -0.52% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 92%, cut 7%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed is waiting for even more evidence before making any changes. Educational forecast data suggests upcoming meetings have a 92% chance of a hold and a 7% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2024-07-31",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.74
 }

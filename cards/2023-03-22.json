@@ -7,47 +7,39 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 4.75% to 5%. The vote was 11-0."
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to a target range of 4-3/4 to 5 percent."
   },
   "changes": [
     {
-      "quote": "Job gains have picked up in recent months and are running at a robust pace; the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Job gains have been robust in recent months, and the unemployment rate has remained low.”"
-    },
-    {
-      "quote": "Inflation remains elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation has eased somewhat but remains elevated.”"
-    },
-    {
       "quote": "The U.S. banking system is sound and resilient.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this new sentence to reassure the public that banks remain stable following recent financial sector stress."
     },
     {
       "quote": "Recent developments are likely to result in tighter credit conditions for households and businesses and to weigh on economic activity, hiring, and inflation.",
-      "explanation": "New language added in this statement."
+      "explanation": "Policymakers acknowledge that banking stress will likely make loans harder to get, which could slow down the economy and cool inflation."
     },
-    {
-      "quote": "The extent of these effects is uncertain.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee remains highly attentive to inflation risks.",
-      "explanation": "Reworded from the previous statement: “The Committee is highly attentive to inflation risks.”"
-    }
-  ],
-  "tone_score": 2.0,
-  "tone_quotes": [
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-3/4 to 5 percent.",
-      "direction": "hawkish"
+      "explanation": "The Fed updated its benchmark rate target to reflect the latest 25 basis point increase."
     },
     {
       "quote": "The Committee anticipates that some additional policy firming may be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
-      "direction": "hawkish"
-    },
+      "explanation": "The Fed softened its language from expecting ongoing increases to suggesting that only some additional firming may be appropriate."
+    }
+  ],
+  "tone_score": 0.5,
+  "tone_quotes": [
     {
       "quote": "Inflation remains elevated.",
       "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee remains highly attentive to inflation risks.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Recent developments are likely to result in tighter credit conditions for households and businesses and to weigh on economic activity, hiring, and inflation.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.48% and moved -11 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.73% would fall by about $21.87 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.48% and moved -11 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.73% would fall by about $21.87 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.23% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 21%, cut 1%, hike 78%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend heavily on incoming economic data and banking sector developments. The forecast model gave the next meeting: hold 19%, cut 1%, hike 80% for educational reference.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2023-03-22",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.75,
+    "target_high": 5.0,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to a target range of 4-3/4 to 5 percent."
+  },
+  "latency_s": 3.73
 }

@@ -7,35 +7,31 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 3.75% to 4%. The vote was 12-0."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent."
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote:”"
-    },
-    {
       "quote": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
-      "explanation": "Reworded from the previous statement: “The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.”"
-    },
-    {
-      "quote": "Economic activity is expanding at a solid pace.",
-      "explanation": "Reworded from the previous statement: “Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East.”"
+      "explanation": "The Fed shifted from holding rates steady to raising them by 1/4 percentage point."
     },
     {
       "quote": "While uncertainty remains elevated owing, in part, to geopolitical developments, domestic spending has been resilient.",
-      "explanation": "New language added in this statement."
+      "explanation": "The committee noted that consumer spending remains strong despite ongoing global uncertainties."
     },
     {
       "quote": "Productivity growth is strong, and capital investment is robust.",
-      "explanation": "Reworded from the previous statement: “Productivity growth and capital investment are strong.”"
+      "explanation": "Business investments and worker productivity continue to perform well."
     },
     {
       "quote": "Inflation remains elevated.",
-      "explanation": "New language added in this statement."
+      "explanation": "The statement highlights that inflation is still higher than the central bank's preferred target."
+    },
+    {
+      "quote": "Today's policy action will support a timelier return to the Committee's 2 percent goal.",
+      "explanation": "This rate hike is intended to help bring inflation back down to the 2 percent target more quickly."
     }
   ],
-  "tone_score": 1.67,
+  "tone_score": 1.5,
   "tone_quotes": [
     {
       "quote": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
@@ -46,7 +42,7 @@
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee will deliver price stability.",
+      "quote": "Today's policy action will support a timelier return to the Committee's 2 percent goal.",
       "direction": "hawkish"
     }
   ],
@@ -90,12 +86,12 @@
       "text": "The broad trade-weighted dollar moved 0.03% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 57%, cut 0%, hike 42%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future policy choices will depend on incoming economic data regarding growth and price stability. As an educational note, the forecast model gave the next meeting a hold probability of 57% and a hike probability of 42%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote: The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
+      "detail": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2026-09-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 3.75,
+    "target_high": 4.0,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent."
+  },
+  "latency_s": 3.82
 }

@@ -7,47 +7,39 @@
     "votes_for": 9,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 1% to 1.25%. The vote was 9-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1 to 1-1/4 percent."
   },
   "changes": [
     {
       "quote": "Information received since the Federal Open Market Committee met in September indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate despite hurricane-related disruptions.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed updated its assessment to reflect that the economy continues to grow at a solid pace even after recent storms."
     },
     {
       "quote": "Although the hurricanes caused a drop in payroll employment in September, the unemployment rate declined further.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Information received since the Federal Open Market Committee met in July indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Job gains have remained solid in recent months, and the unemployment rate has stayed low.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Committee noted that storms caused a temporary drop in job additions while unemployment still fell."
     },
     {
       "quote": "Gasoline prices rose in the aftermath of the hurricanes, boosting overall inflation in September; however, inflation for items other than food and energy remained soft.",
-      "explanation": "New language added in this statement."
+      "explanation": "Higher gas prices from storm disruptions pushed up headline inflation temporarily, but core inflation stayed weak."
     },
     {
-      "quote": "On a 12-month basis, both inflation measures have declined this year and are running below 2 percent.",
-      "explanation": "Reworded from the previous statement: “On a 12-month basis, overall inflation and the measure excluding food and energy prices have declined this year and are running below 2 percent.”"
+      "quote": "The balance sheet normalization program initiated in October 2017 is proceeding.",
+      "explanation": "The Fed added an update confirming that its plan to gradually reduce its bond holdings is underway."
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were: Janet L. Yellen, Chair; William C. Dudley, Vice Chairman; Lael Brainard; Charles L. Evans; Patrick Harker; Robert S. Kaplan; Neel Kashkari; Jerome H. Powell; and Randal K. Quarles.",
+      "explanation": "Randal K. Quarles joined the voting members in this statement."
     }
   ],
-  "tone_score": 0.23,
+  "tone_score": 0.0,
   "tone_quotes": [
-    {
-      "quote": "Information received since the Federal Open Market Committee met in September indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate despite hurricane-related disruptions.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a sustained return to 2 percent inflation.",
       "direction": "dovish"
     },
     {
-      "quote": "On a 12-month basis, both inflation measures have declined this year and are running below 2 percent.",
-      "direction": "dovish"
+      "quote": "The Committee expects that economic conditions will evolve in a manner that will warrant gradual increases in the federal funds rate; the federal funds rate is likely to remain, for some time, below levels that are expected to prevail in the longer run.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.37% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.88% would fall by about $1.72 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.37% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.88% would fall by about $1.72 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.01% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 84%, cut 0%, hike 16%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee expects to make gradual increases in the federal funds rate going forward as the economy continues to expand. Educational forecast models suggest an 83% probability of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2017-11-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.25,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 1 to 1-1/4 percent."
+  },
+  "latency_s": 3.87
 }

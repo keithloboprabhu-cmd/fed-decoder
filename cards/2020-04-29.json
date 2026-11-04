@@ -7,46 +7,42 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
-      "quote": "The Federal Reserve is committed to using its full range of tools to support the U.S. economy in this challenging time, thereby promoting its maximum employment and price stability goals.",
-      "explanation": "Reworded from the previous statement: “The Federal Reserve is committed to use its full range of tools to support the U.S. economy in this challenging time and thereby promote its maximum employment …”"
-    },
-    {
       "quote": "The coronavirus outbreak is causing tremendous human and economic hardship across the United States and around the world.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to explicitly acknowledge the severe human and global economic toll of the pandemic."
     },
     {
       "quote": "The virus and the measures taken to protect public health are inducing sharp declines in economic activity and a surge in job losses.",
-      "explanation": "New language added in this statement."
+      "explanation": "This new sentence highlights the immediate negative impact of lockdowns and health measures on employment and activity."
     },
     {
       "quote": "Weaker demand and significantly lower oil prices are holding down consumer price inflation.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The disruptions to economic activity here and abroad have significantly affected financial conditions and have impaired the flow of credit to U.S. households and businesses.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Committee noted that falling demand and cheap oil are actively suppressing price pressures."
     },
     {
       "quote": "The ongoing public health crisis will weigh heavily on economic activity, employment, and inflation in the near term, and poses considerable risks to the economic outlook over the medium term.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -0.3,
-  "tone_quotes": [
+      "explanation": "This addition underscores that economic pain will persist in the short term with notable risks ahead."
+    },
     {
       "quote": "In light of these developments, the Committee decided to maintain the target range for the federal funds rate at 0 to 1/4 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "To support the flow of credit to households and businesses, the Federal Reserve will continue to purchase Treasury securities and agency residential and commercial mortgage-backed securities in the amounts needed to support smooth market functioning, thereby fostering effective transmission of monetary policy to broader financial conditions.",
-      "direction": "dovish"
-    },
+      "explanation": "The Fed formally stated its decision to keep interest rates near zero to address the crisis."
+    }
+  ],
+  "tone_score": -1.5,
+  "tone_quotes": [
     {
       "quote": "The coronavirus outbreak is causing tremendous human and economic hardship across the United States and around the world.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The virus and the measures taken to protect public health are inducing sharp declines in economic activity and a surge in job losses.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The ongoing public health crisis will weigh heavily on economic activity, employment, and inflation in the near term, and poses considerable risks to the economic outlook over the medium term.",
       "direction": "dovish"
     }
   ],
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved -0.48% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 94%, cut 0%, hike 5%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve will keep interest rates near zero until it is confident that the economy has weathered recent events. Educational forecast data suggests a 95% probability of holding rates at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2020-04-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.96
 }

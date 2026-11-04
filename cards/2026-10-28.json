@@ -10,42 +10,38 @@
       "Lisa D. Cook",
       "Beth M. Hammack"
     ],
-    "summary": "The Fed held its policy rate at 3.75% to 4%. The vote was 10-2. Dissenting: Lisa D. Cook, Beth M. Hammack."
+    "summary": "The Fed held its policy rate at 3.75% to 4%."
   },
   "changes": [
     {
       "quote": "The Federal Open Market Committee approved the following statement for release by a 10 – 2 vote:",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”"
+      "explanation": "The vote count changed from a unanimous decision to a split vote with two members dissenting."
     },
     {
       "quote": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
-      "explanation": "Reworded from the previous statement: “The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's du…”"
+      "explanation": "The Fed stopped raising interest rates and chose to keep them steady at this meeting."
     },
     {
       "quote": "Economic activity is expanding at a strong pace.",
-      "explanation": "Reworded from the previous statement: “Economic activity is expanding at a solid pace.”"
+      "explanation": "The description of economic growth was upgraded from solid to strong."
     },
     {
       "quote": "The accumulation of more information will help the Committee determine the policy stance appropriate to ensure a timely return of inflation to the Committee's 2 percent goal.",
-      "explanation": "Reworded from the previous statement: “Today's policy action will support a timelier return to the Committee's 2 percent goal.”"
+      "explanation": "Instead of focusing on an immediate policy action, the Fed will wait for more data before making future moves."
     },
     {
       "quote": "Voting against the monetary policy action were Lisa D. Cook and Beth M. Hammack, who preferred to raise the target range for the federal funds rate by 1/4 percentage point at this meeting.",
-      "explanation": "New language added in this statement."
+      "explanation": "Two members dissented because they wanted to raise interest rates by 1/4 percentage point."
     }
   ],
-  "tone_score": 1.23,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "Inflation remains elevated.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The Committee will deliver price stability.",
-      "direction": "hawkish"
-    },
-    {
       "quote": "Economic activity is expanding at a strong pace.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Inflation remains elevated.",
       "direction": "hawkish"
     }
   ],
@@ -89,12 +85,12 @@
       "text": "The broad trade-weighted dollar moved 0.15% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 69%, cut 2%, hike 29%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Federal Reserve is pausing to gather more data before deciding on future rate changes. Educational forecasting models suggest a 71% chance of another hold, a 28% chance of a hike, and a 1% chance of a cut at the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Federal Open Market Committee approved the following statement for release by a 10 – 2 vote: The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
+      "detail": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -130,13 +126,23 @@
     }
   ],
   "meeting_date": "2026-10-28",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.75,
+    "target_high": 4.0,
+    "votes_for": 10,
+    "votes_against": 2,
+    "dissenters": [
+      "Lisa D. Cook",
+      "Beth M. Hammack"
+    ],
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady at 3-3/4 to 4 percent with a 10 to 2 vote."
+  },
+  "latency_s": 3.99
 }

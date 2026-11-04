@@ -7,46 +7,38 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 3.5% to 3.75%. The vote was 12-0."
+    "summary": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate."
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:",
-      "explanation": "New language added in this statement."
+      "quote": "Job gains have kept pace with the workforce, and the unemployment rate has changed little.",
+      "explanation": "This phrasing updates how the Fed describes the labor market, noting that job gains are keeping pace with the workforce instead of remaining low."
     },
     {
-      "quote": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.",
-      "explanation": "Reworded from the previous statement: “In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent.”"
+      "quote": "Inflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy.",
+      "explanation": "The Fed points out that inflation stays high because of supply shocks and energy price increases in certain sectors."
+    },
+    {
+      "quote": "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East.",
+      "explanation": "This explicitly notes that uncertainty is partly driven by the conflict in the Middle East even though the economy continues to expand."
     },
     {
       "quote": "The Committee reaffirmed its policy of maintaining ample reserves in the banking system.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Productivity growth and capital investment are strong.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Job gains have kept pace with the workforce, and the unemployment rate has changed little.",
-      "explanation": "Reworded from the previous statement: “Job gains have remained low, on average, and the unemployment rate has been little changed in recent months.”"
-    }
-  ],
-  "tone_score": 1.23,
-  "tone_quotes": [
-    {
-      "quote": "Inflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy.",
-      "direction": "hawkish"
+      "explanation": "The Fed added this reassurance about keeping ample reserves in the banking system."
     },
     {
       "quote": "The Committee will deliver price stability.",
-      "direction": "hawkish"
+      "explanation": "A new concluding sentence emphasizing the Committee's commitment to delivering price stability."
+    }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+    {
+      "quote": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate.",
+      "direction": "dovish"
     },
     {
-      "quote": "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East.",
+      "quote": "Inflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy.",
       "direction": "hawkish"
     }
   ],
@@ -90,12 +82,12 @@
       "text": "The broad trade-weighted dollar moved 0.11% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 93%, cut 6%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed is pausing and keeping its policy rate steady for now. Educational forecast models give a hold probability of 93% for the upcoming meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote: The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate."
+      "detail": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate."
     },
     {
       "source": "TERMCBCCALLNS",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2026-06-17",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent, in support of the Federal Reserve's dual mandate."
+  },
+  "latency_s": 3.91
 }

@@ -12,46 +12,42 @@
       "Neel Kashkari",
       "Lorie K. Logan"
     ],
-    "summary": "The Fed held its policy rate at 3.5% to 3.75%. The vote was 8-4. Dissenting: Stephen I. Miran, Beth M. Hammack, Neel Kashkari, Lorie K. Logan."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators suggest that economic activity has been expanding at a solid pace.",
-      "explanation": "Reworded from the previous statement: “Available indicators suggest that economic activity has been expanding at a solid pace.”"
+      "explanation": "The Committee updated its language regarding incoming data to note that growth remains solid."
     },
     {
       "quote": "Job gains have remained low, on average, and the unemployment rate has been little changed in recent months.",
-      "explanation": "Reworded from the previous statement: “Job gains have remained low, and the unemployment rate has been little changed in recent months.”"
+      "explanation": "The description of employment trends was refined to emphasize that job gains have been low on average."
     },
     {
       "quote": "Inflation is elevated, in part reflecting the recent increase in global energy prices.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Inflation remains somewhat elevated.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "A new sentence was added to explicitly link elevated inflation to recent increases in global energy prices."
     },
     {
       "quote": "Developments in the Middle East are contributing to a high level of uncertainty about the economic outlook.",
-      "explanation": "Reworded from the previous statement: “The implications of developments in the Middle East for the U.S. economy are uncertain.”"
+      "explanation": "The language on geopolitical uncertainty was strengthened to highlight developments in the Middle East."
     },
     {
-      "quote": "Uncertainty about the economic outlook remains elevated.",
-      "explanation": "Language from the previous statement that was dropped."
+      "quote": "Voting against this action were Stephen I. Miran, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting; and Beth M. Hammack, Neel Kashkari, and Lorie K. Logan, who supported maintaining the target range for the federal funds rate but did not support inclusion of an easing bias in the statement at this time.",
+      "explanation": "The vote tally reflected multiple dissents from members wanting different policy adjustments."
     }
   ],
-  "tone_score": 1.0,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
       "quote": "Inflation is elevated, in part reflecting the recent increase in global energy prices.",
       "direction": "hawkish"
     },
     {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
+      "quote": "Developments in the Middle East are contributing to a high level of uncertainty about the economic outlook.",
       "direction": "hawkish"
     },
     {
-      "quote": "Recent indicators suggest that economic activity has been expanding at a solid pace.",
+      "quote": "The Committee is strongly committed to supporting maximum employment and returning inflation to its 2 percent objective.",
       "direction": "hawkish"
     }
   ],
@@ -62,7 +58,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.42% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.3% would rise by about $11.75 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.42% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.3% would rise by about $11.75 a month."
     },
     {
       "topic": "Savers",
@@ -95,8 +91,8 @@
       "text": "The broad trade-weighted dollar moved 0.27% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 94%, cut 6%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that policymakers will continue to carefully assess incoming data and the evolving economic outlook before making any adjustments. As an educational note, the forecast model gave the next meeting an 89% probability of a hold, a 10% probability of a cut, and a 0% probability of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -136,13 +132,25 @@
     }
   ],
   "meeting_date": "2026-04-29",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 8,
+    "votes_against": 4,
+    "dissenters": [
+      "Stephen I. Miran",
+      "Beth M. Hammack",
+      "Neel Kashkari",
+      "Lorie K. Logan"
+    ],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
+  },
+  "latency_s": 3.74
 }

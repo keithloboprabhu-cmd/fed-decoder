@@ -7,46 +7,26 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
-      "quote": "Recent indicators suggest that economic activity has continued to expand at a solid pace.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic activity has been expanding at a solid pace.”"
-    },
-    {
       "quote": "In recent months, there has been a lack of further progress toward the Committee's 2 percent inflation objective.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee judges that the risks to achieving its employment and inflation goals have moved toward better balance over the past year.",
-      "explanation": "Reworded from the previous statement: “The Committee judges that the risks to achieving its employment and inflation goals are moving into better balance.”"
-    },
-    {
-      "quote": "In addition, the Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
-      "explanation": "Reworded from the previous statement: “In addition, the Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities, as described in its…”"
+      "explanation": "The Fed added this line to highlight that inflation progress has stalled recently."
     },
     {
       "quote": "Beginning in June, the Committee will slow the pace of decline of its securities holdings by reducing the monthly redemption cap on Treasury securities from $60 billion to $25 billion.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee will maintain the monthly redemption cap on agency debt and agency mortgage-backed securities at $35 billion and will reinvest any principal payments in excess of this cap into Treasury securities.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed plans to reduce the amount of bonds it lets roll off its balance sheet each month, easing monetary contraction in that area."
     }
   ],
-  "tone_score": 0.76,
+  "tone_score": 0.5,
   "tone_quotes": [
     {
-      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "quote": "In recent months, there has been a lack of further progress toward the Committee's 2 percent inflation objective.",
       "direction": "hawkish"
     },
     {
-      "quote": "The economic outlook is uncertain, and the Committee remains highly attentive to inflation risks.",
+      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
       "direction": "hawkish"
     }
   ],
@@ -90,8 +70,8 @@
       "text": "The broad trade-weighted dollar moved 0.03% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 95%, cut 4%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will wait for clearer evidence of falling inflation before considering any rate cuts. An educational forecast model estimates a 95% probability of a hold at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +111,20 @@
     }
   ],
   "meeting_date": "2024-05-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.32
 }

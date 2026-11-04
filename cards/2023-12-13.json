@@ -7,31 +7,23 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators suggest that growth of economic activity has slowed from its strong pace in the third quarter.",
-      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic activity expanded at a strong pace in the third quarter.”"
+      "explanation": "The Fed acknowledges that economic growth has cooled off compared to the very strong third quarter."
     },
     {
       "quote": "Inflation has eased over the past year but remains elevated.",
-      "explanation": "Reworded from the previous statement: “Inflation remains elevated.”"
-    },
-    {
-      "quote": "In determining the extent of any additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "explanation": "Reworded from the previous statement: “In determining the extent of additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account …”"
+      "explanation": "The Committee recognizes that price pressures have improved over the last year, though inflation is still higher than their target."
     }
   ],
-  "tone_score": 1.31,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "In determining the extent of any additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
-      "direction": "hawkish"
+      "quote": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent.",
+      "direction": "dovish"
     },
     {
       "quote": "The Committee remains highly attentive to inflation risks.",
@@ -78,8 +70,8 @@
       "text": "The broad trade-weighted dollar moved 0.39% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 73%, cut 26%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will continue watching incoming economic data to determine if any further policy changes are needed. An educational forecast model suggests the next meeting has a 70% chance of a hold, a 29% chance of a cut, and a 1% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +111,20 @@
     }
   ],
   "meeting_date": "2023-12-13",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.36
 }

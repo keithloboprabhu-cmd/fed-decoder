@@ -10,42 +10,34 @@
       "Robert S. Kaplan",
       "Neel Kashkari"
     ],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 8-2. Dissenting: Robert S. Kaplan, Neel Kashkari."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
       "quote": "The COVID-19 pandemic is causing tremendous human and economic hardship across the United States and around the world.",
-      "explanation": "Reworded from the previous statement: “The coronavirus outbreak is causing tremendous human and economic hardship across the United States and around the world.”"
+      "explanation": "The reference to the virus was updated from coronavirus outbreak to COVID-19 pandemic."
     },
     {
       "quote": "Economic activity and employment have picked up in recent months but remain well below their levels at the beginning of the year.",
-      "explanation": "Reworded from the previous statement: “Following sharp declines, economic activity and employment have picked up somewhat in recent months but remain well below their levels at the beginning of the y…”"
+      "explanation": "The text removed the word somewhat regarding how much activity and employment have picked up."
     },
     {
       "quote": "The ongoing public health crisis will continue to weigh on economic activity, employment, and inflation in the near term, and poses considerable risks to the economic outlook over the medium term.",
-      "explanation": "Reworded from the previous statement: “The ongoing public health crisis will weigh heavily on economic activity, employment, and inflation in the near term, and poses considerable risks to the econom…”"
+      "explanation": "The Committee added the word continue to describe the health crisis weighing on the economy."
     },
     {
       "quote": "The Committee seeks to achieve maximum employment and inflation at the rate of 2 percent over the longer run.",
-      "explanation": "New language added in this statement."
+      "explanation": "New language was added to explicitly state the Committee's long-run goals for employment and inflation."
     },
     {
       "quote": "With inflation running persistently below this longer-run goal, the Committee will aim to achieve inflation moderately above 2 percent for some time so that inflation averages 2 percent over time and longer-term inflation expectations remain well anchored at 2 percent.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee expects to maintain an accommodative stance of monetary policy until these outcomes are achieved.",
-      "explanation": "New language added in this statement."
+      "explanation": "The statement adds new details about aiming for inflation moderately above 2 percent to average 2 percent over time."
     }
   ],
-  "tone_score": -0.74,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "In addition, over coming months the Federal Reserve will increase its holdings of Treasury securities and agency mortgage-backed securities at least at the current pace to sustain smooth market functioning and help foster accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen to 2 percent and is on track to moderately exceed 2 percent for some time.",
+      "quote": "The ongoing public health crisis will continue to weigh on economic activity, employment, and inflation in the near term, and poses considerable risks to the economic outlook over the medium term.",
       "direction": "dovish"
     },
     {
@@ -60,7 +52,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 0.69% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 2.93% would rise by about $1.61 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 0.69% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 2.93% would rise by about $1.61 a month."
     },
     {
       "topic": "Savers",
@@ -93,12 +85,12 @@
       "text": "The broad trade-weighted dollar moved -0.21% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 21%, cut 79%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed intends to maintain low rates until maximum employment is reached and inflation rises to 2 percent and is on track to moderately exceed 2 percent. An educational forecast model suggests the next meeting has a 22 percent chance of a hold and a 78 percent chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen t"
+      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -134,13 +126,23 @@
     }
   ],
   "meeting_date": "2020-09-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 8,
+    "votes_against": 2,
+    "dissenters": [
+      "Robert S. Kaplan",
+      "Neel Kashkari"
+    ],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.7
 }

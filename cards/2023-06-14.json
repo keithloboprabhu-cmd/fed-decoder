@@ -7,34 +7,34 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5% to 5.25%. The vote was 11-0."
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady between 5 and 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "Recent indicators suggest that economic activity has continued to expand at a modest pace.",
-      "explanation": "Reworded from the previous statement: “Economic activity expanded at a modest pace in the first quarter.”"
+      "explanation": "The Fed updated its description of economic growth, replacing specific first-quarter language with a broad statement on recent indicators."
     },
     {
       "quote": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 5 to 5-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 5 to 5-1/4 percent.”"
+      "explanation": "Instead of raising rates as it did previously, the Fed chose to keep the target range unchanged."
     },
     {
       "quote": "Holding the target range steady at this meeting allows the Committee to assess additional information and its implications for monetary policy.",
-      "explanation": "Reworded from the previous statement: “The Committee will closely monitor incoming information and assess the implications for monetary policy.”"
+      "explanation": "Pausing rate hikes gives officials more time to study how past policy actions are impacting the economy."
     },
     {
       "quote": "In determining the extent of additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "explanation": "Reworded from the previous statement: “In determining the extent to which additional policy firming may be appropriate to return inflation to 2 percent over time, the Committee will take into account…”"
+      "explanation": "The Fed adjusted its phrasing slightly regarding future policy firming to better capture how past rate increases take time to work through the economy."
     }
   ],
-  "tone_score": 1.92,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "In determining the extent of additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+      "quote": "Inflation remains elevated.",
       "direction": "hawkish"
     },
     {
-      "quote": "Inflation remains elevated.",
+      "quote": "The Committee remains highly attentive to inflation risks.",
       "direction": "hawkish"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.83% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.79% would fall by about $2.00 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.83% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.79% would fall by about $2.00 a month."
     },
     {
       "topic": "Savers",
@@ -82,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.35% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 24%, cut 1%, hike 76%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future decisions will depend on incoming data regarding labor markets, inflation pressures, and financial developments. Educational forecast models suggest the next meeting has a 23% chance of a hold, a 1% chance of a cut, and a 77% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -123,13 +123,20 @@
     }
   ],
   "meeting_date": "2023-06-14",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.0,
+    "target_high": 5.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to hold the federal funds rate steady between 5 and 5-1/4 percent."
+  },
+  "latency_s": 4.41
 }

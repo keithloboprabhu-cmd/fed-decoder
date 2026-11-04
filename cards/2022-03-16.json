@@ -9,46 +9,38 @@
     "dissenters": [
       "James Bullard"
     ],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 0.25% to 0.5%. The vote was 8-1. Dissenting: James Bullard."
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to a target range of 1/4 to 1/2 percent."
   },
   "changes": [
     {
       "quote": "Job gains have been strong in recent months, and the unemployment rate has declined substantially.",
-      "explanation": "Reworded from the previous statement: “Job gains have been solid in recent months, and the unemployment rate has declined substantially.”"
+      "explanation": "The Committee updated its description of job growth from solid to strong, reflecting continued improvement in the labor market."
     },
     {
       "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher energy prices, and broader price pressures.",
-      "explanation": "New language added in this statement."
+      "explanation": "A new sentence was added to explicitly detail the core drivers keeping inflation high, including pandemic imbalances and energy costs."
     },
     {
       "quote": "The invasion of Ukraine by Russia is causing tremendous human and economic hardship.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added a direct acknowledgment of the geopolitical conflict in Ukraine and its broad impacts."
     },
     {
       "quote": "The implications for the U.S. economy are highly uncertain, but in the near term the invasion and related events are likely to create additional upward pressure on inflation and weigh on economic activity.",
-      "explanation": "New language added in this statement."
+      "explanation": "This new passage highlights that the war in Ukraine introduces fresh uncertainty, threatening to increase inflation and slow growth."
     },
-    {
-      "quote": "The sectors most adversely affected by the pandemic have improved in recent months but are being affected by the recent sharp rise in COVID-19 cases.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Supply and demand imbalances related to the pandemic and the reopening of the economy have continued to contribute to elevated levels of inflation.",
-      "explanation": "Language from the previous statement that was dropped."
-    }
-  ],
-  "tone_score": 1.99,
-  "tone_quotes": [
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent and anticipates that ongoing increases in the target range will be appropriate.",
-      "direction": "hawkish"
-    },
+      "explanation": "The Fed officially shifted from holding rates near zero to raising them and signaled that further hikes are coming."
+    }
+  ],
+  "tone_score": 1.5,
+  "tone_quotes": [
     {
       "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher energy prices, and broader price pressures.",
       "direction": "hawkish"
     },
     {
-      "quote": "Job gains have been strong in recent months, and the unemployment rate has declined substantially.",
+      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent and anticipates that ongoing increases in the target range will be appropriate.",
       "direction": "hawkish"
     }
   ],
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.19% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.76% would rise by about $6.82 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.19% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.76% would rise by about $6.82 a month."
     },
     {
       "topic": "Savers",
@@ -92,12 +84,12 @@
       "text": "The broad trade-weighted dollar moved -0.37% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 0%, cut 0%, hike 100%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that ongoing increases in borrowing costs will be appropriate at future gatherings. The educational forecast model indicates a 100% probability of another rate hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent and anticipates that ongoing increases in the target range will be appropriate."
+      "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent"
     },
     {
       "source": "TERMCBCCALLNS",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2022-03-16",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 0.25,
+    "target_high": 0.5,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "James Bullard"
+    ],
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to a target range of 1/4 to 1/2 percent."
+  },
+  "latency_s": 3.89
 }

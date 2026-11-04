@@ -9,46 +9,30 @@
     "dissenters": [
       "Christopher J. Waller"
     ],
-    "summary": "The Fed held its policy rate at 4.25% to 4.5%. The vote was 11-1. Dissenting: Christopher J. Waller."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "Uncertainty around the economic outlook has increased.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "The Committee is attentive to the risks to both sides of its dual mandate.",
-      "explanation": "Reworded from the previous statement: “The economic outlook is uncertain, and the Committee is attentive to the risks to both sides of its dual mandate.”"
-    },
-    {
-      "quote": "The Committee judges that the risks to achieving its employment and inflation goals are roughly in balance.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed added this language to signal that it sees a cloudier economic picture moving forward."
     },
     {
       "quote": "Beginning in April, the Committee will slow the pace of decline of its securities holdings by reducing the monthly redemption cap on Treasury securities from $25 billion to $5 billion.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed decided to taper off how fast it is shrinking its bond portfolio by letting fewer Treasuries roll off each month."
     },
     {
-      "quote": "The Committee will maintain the monthly redemption cap on agency debt and agency mortgage-backed securities at $35 billion.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D. Cook; Austan D. Goolsbee; Philip N. Jefferson; Adriana D. Kugler; Alberto G. Musalem; and Jeffrey R. Schmid.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D.…”"
+      "quote": "Voting against this action was Christopher J. Waller, who supported no change for the federal funds target range but preferred to continue the current pace of decline in securities holdings.",
+      "explanation": "One official dissented because he wanted to keep reducing the Fed's bond holdings at the faster pace."
     }
   ],
-  "tone_score": 0.89,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
-      "direction": "hawkish"
-    },
-    {
       "quote": "Recent indicators suggest that economic activity has continued to expand at a solid pace.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Uncertainty around the economic outlook has increased.",
       "direction": "hawkish"
     }
   ],
@@ -92,8 +76,8 @@
       "text": "The broad trade-weighted dollar moved 0.25% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 85%, cut 15%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future choices depend entirely on incoming data and evolving risks. Educational forecast models give the next meeting an 84% chance of a hold and a 16% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +117,22 @@
     }
   ],
   "meeting_date": "2025-03-19",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Christopher J. Waller"
+    ],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 3.38
 }

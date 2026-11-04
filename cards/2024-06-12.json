@@ -7,34 +7,22 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+    "summary": "The Federal Reserve voted to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
   },
   "changes": [
     {
       "quote": "In recent months, there has been modest further progress toward the Committee's 2 percent inflation objective.",
-      "explanation": "Reworded from the previous statement: “In recent months, there has been a lack of further progress toward the Committee's 2 percent inflation objective.”"
-    },
-    {
-      "quote": "Beginning in June, the Committee will slow the pace of decline of its securities holdings by reducing the monthly redemption cap on Treasury securities from $60 billion to $25 billion.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The Committee will maintain the monthly redemption cap on agency debt and agency mortgage-backed securities at $35 billion and will reinvest any principal payments in excess of this cap into Treasury securities.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed updated its assessment of inflation to acknowledge small improvements after previously noting a lack of progress."
     }
   ],
-  "tone_score": 0.76,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "quote": "The economic outlook is uncertain, and the Committee remains highly attentive to inflation risks.",
       "direction": "hawkish"
     },
     {
-      "quote": "The economic outlook is uncertain, and the Committee remains highly attentive to inflation risks.",
+      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
       "direction": "hawkish"
     }
   ],
@@ -45,7 +33,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.31% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.03% would fall by about $16.11 a month."
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; if that move passed through, the payment on a new $300,000 30-year loan at 7.03% would fall by about $16.11 a month."
     },
     {
       "topic": "Savers",
@@ -78,8 +66,8 @@
       "text": "The broad trade-weighted dollar moved -0.17% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 96%, cut 3%, hike 1%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that policymakers will keep rates steady until they see more definitive proof of cooling prices. The forecast model gave the next meeting: hold 96%, cut 3%, hike 1%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +107,20 @@
     }
   ],
   "meeting_date": "2024-06-12",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve voted to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+  },
+  "latency_s": 3.05
 }

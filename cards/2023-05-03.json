@@ -7,46 +7,42 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 5% to 5.25%. The vote was 11-0."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 5 to 5-1/4 percent."
   },
   "changes": [
     {
       "quote": "Economic activity expanded at a modest pace in the first quarter.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this language to note that economic activity grew at a modest pace in the first quarter of the year."
     },
     {
       "quote": "Job gains have been robust in recent months, and the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Job gains have picked up in recent months and are running at a robust pace; the unemployment rate has remained low.”"
-    },
-    {
-      "quote": "Recent indicators point to modest growth in spending and production.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The language was streamlined to confirm that job gains remain robust and unemployment is still low."
     },
     {
       "quote": "Tighter credit conditions for households and businesses are likely to weigh on economic activity, hiring, and inflation.",
-      "explanation": "Reworded from the previous statement: “Recent developments are likely to result in tighter credit conditions for households and businesses and to weigh on economic activity, hiring, and inflation.”"
-    },
-    {
-      "quote": "The extent of these effects remains uncertain.",
-      "explanation": "Reworded from the previous statement: “The extent of these effects is uncertain.”"
+      "explanation": "The Fed removed the reference to recent banking developments, directly noting that tighter credit conditions are expected to weigh on the economy."
     },
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 5 to 5-1/4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-3/4 to 5 percent.”"
+      "explanation": "This updates the target range to reflect the new 25 basis point rate increase."
+    },
+    {
+      "quote": "In determining the extent to which additional policy firming may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy...",
+      "explanation": "The phrase changed from future increases to additional policy firming, signaling a potential shift in how future rate decisions are evaluated."
     }
   ],
-  "tone_score": 2.0,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 5 to 5-1/4 percent.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "In determining the extent to which additional policy firming may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "direction": "hawkish"
-    },
-    {
       "quote": "Inflation remains elevated.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee remains highly attentive to inflation risks.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
       "direction": "hawkish"
     }
   ],
@@ -90,8 +86,8 @@
       "text": "The broad trade-weighted dollar moved -0.41% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 29%, cut 1%, hike 70%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future policy decisions will depend on cumulative tightening and economic data rather than a preset path. An educational forecast model suggests the next meeting has a 27% chance of a hold, a 1% chance of a cut, and a 72% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +127,20 @@
     }
   ],
   "meeting_date": "2023-05-03",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 5.0,
+    "target_high": 5.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 5 to 5-1/4 percent."
+  },
+  "latency_s": 3.86
 }

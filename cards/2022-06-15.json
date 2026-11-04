@@ -9,42 +9,38 @@
     "dissenters": [
       "Esther L. George"
     ],
-    "summary": "The Fed raised its policy rate by 75 basis points, to 1.5% to 1.75%. The vote was 10-1. Dissenting: Esther L. George."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 75 basis points to 1-1/2 to 1-3/4 percent."
   },
   "changes": [
     {
       "quote": "Overall economic activity appears to have picked up after edging down in the first quarter.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Job gains have been robust in recent months, and the unemployment rate has remained low.",
-      "explanation": "Reworded from the previous statement: “Job gains have been robust in recent months, and the unemployment rate has declined substantially.”"
-    },
-    {
-      "quote": "Although overall economic activity edged down in the first quarter, household spending and business fixed investment remained strong.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The invasion and related events are creating additional upward pressure on inflation and are weighing on global economic activity.",
-      "explanation": "Reworded from the previous statement: “The invasion and related events are creating additional upward pressure on inflation and are likely to weigh on economic activity.”"
-    },
-    {
-      "quote": "The implications for the U.S. economy are highly uncertain.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "This recognizes that growth rebounded following a weak start to the year."
     },
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3/4 to 1 percent and anticipates that ongoing increases…”"
+      "explanation": "The Fed increased interest rates significantly to fight high inflation."
+    },
+    {
+      "quote": "In addition, the Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities, as described in the Plans for Reducing the Size of the Federal Reserve's Balance Sheet that were issued in May.",
+      "explanation": "The central bank is actively shrinking its bond portfolio."
+    },
+    {
+      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "explanation": "This added sentence emphasizes the Fed's primary focus on price stability."
+    },
+    {
+      "quote": "Voting against this action was Esther L. George, who preferred at this meeting to raise the target range for the federal funds rate by 0.5 percentage point to 1-1/4 percent to 1-1/2 percent.",
+      "explanation": "One official dissented because she preferred a smaller rate increase of 50 basis points."
     }
   ],
-  "tone_score": 2.0,
+  "tone_score": 1.5,
   "tone_quotes": [
     {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
+      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher energy prices, and broader price pressures.",
       "direction": "hawkish"
     },
     {
-      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher energy prices, and broader price pressures.",
+      "quote": "The Committee is highly attentive to inflation risks.",
       "direction": "hawkish"
     },
     {
@@ -92,8 +88,8 @@
       "text": "The broad trade-weighted dollar moved -0.02% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 0%, cut 0%, hike 100%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that policymakers expect ongoing increases in the target range will be appropriate to address high inflation. Educational forecast models show a 100% probability of another rate hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +129,22 @@
     }
   ],
   "meeting_date": "2022-06-15",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 75,
+    "target_low": 1.5,
+    "target_high": 1.75,
+    "votes_for": 10,
+    "votes_against": 1,
+    "dissenters": [
+      "Esther L. George"
+    ],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 75 basis points to 1-1/2 to 1-3/4 percent."
+  },
+  "latency_s": 3.83
 }

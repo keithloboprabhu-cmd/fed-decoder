@@ -7,42 +7,34 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 4.25% to 4.5%. The vote was 12-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "The unemployment rate remains low, and labor market conditions remain solid.",
-      "explanation": "Reworded from the previous statement: “The unemployment rate has stabilized at a low level in recent months, and labor market conditions remain solid.”"
+      "explanation": "The Committee updated its assessment of the labor market to state that unemployment remains low and conditions are solid."
     },
     {
       "quote": "Uncertainty about the economic outlook has diminished but remains elevated.",
-      "explanation": "Reworded from the previous statement: “Uncertainty about the economic outlook has increased further.”"
+      "explanation": "This change shows that the Committee believes overall uncertainty has decreased, though it is still at an elevated level."
     },
     {
       "quote": "The Committee is attentive to the risks to both sides of its dual mandate.",
-      "explanation": "Reworded from the previous statement: “The Committee is attentive to the risks to both sides of its dual mandate and judges that the risks of higher unemployment and higher inflation have risen.”"
-    },
-    {
-      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D. Cook; Austan D. Goolsbee; Philip N. Jefferson; Adriana D. Kugler; Alberto G. Musalem; Jeffrey R. Schmid; and Christopher J. Waller.",
-      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D.…”"
-    },
-    {
-      "quote": "Neel Kashkari voted as an alternate member at this meeting.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Fed removed specific language about risks of higher unemployment and higher inflation having risen, returning to a balanced view."
     }
   ],
-  "tone_score": 0.89,
+  "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
-      "direction": "hawkish"
-    },
-    {
       "quote": "Although swings in net exports have affected the data, recent indicators suggest that economic activity has continued to expand at a solid pace.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Inflation remains somewhat elevated.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee is strongly committed to supporting maximum employment and returning inflation to its 2 percent objective.",
       "direction": "hawkish"
     }
   ],
@@ -53,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.38% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.85% would fall by about $2.00 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.38% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.85% would fall by about $2.00 a month."
     },
     {
       "topic": "Savers",
@@ -86,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved 0.19% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 65%, cut 35%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Committee will carefully assess incoming data and the evolving outlook at upcoming meetings. As an educational note, the forecast model gives the next meeting a 63% chance of a hold and a 37% chance of a cut.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -127,13 +119,20 @@
     }
   ],
   "meeting_date": "2025-06-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 3.2
 }

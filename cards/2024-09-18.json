@@ -9,47 +9,39 @@
     "dissenters": [
       "Michelle W. Bowman"
     ],
-    "summary": "The Fed cut its policy rate by 50 basis points, to 4.75% to 5%. The vote was 11-1. Dissenting: Michelle W. Bowman."
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 1/2 percentage point to 4-3/4 to 5 percent."
   },
   "changes": [
     {
       "quote": "Job gains have slowed, and the unemployment rate has moved up but remains low.",
-      "explanation": "Reworded from the previous statement: “Job gains have moderated, and the unemployment rate has moved up but remains low.”"
+      "explanation": "The Fed updated its assessment of the labor market to reflect that job growth has slowed down recently."
     },
     {
       "quote": "Inflation has made further progress toward the Committee's 2 percent objective but remains somewhat elevated.",
-      "explanation": "Reworded from the previous statement: “In recent months, there has been some further progress toward the Committee's 2 percent inflation objective.”"
-    },
-    {
-      "quote": "Inflation has eased over the past year but remains somewhat elevated.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Committee acknowledged further positive progress on inflation while noting it is still somewhat elevated."
     },
     {
       "quote": "The Committee has gained greater confidence that inflation is moving sustainably toward 2 percent, and judges that the risks to achieving its employment and inflation goals are roughly in balance.",
-      "explanation": "Reworded from the previous statement: “The Committee judges that the risks to achieving its employment and inflation goals continue to move into better balance.”"
+      "explanation": "The Fed expressed increased confidence in the inflation path and stated that risks to its dual goals are now balanced."
     },
     {
       "quote": "In light of the progress on inflation and the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/2 percentage point to 4-3/4 to 5 percent.",
-      "explanation": "Reworded from the previous statement: “In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent.”"
+      "explanation": "The central rationale for lowering interest rates by 50 basis points was the continued progress on inflation and balanced risks."
     },
     {
-      "quote": "In considering additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
-      "explanation": "Reworded from the previous statement: “In considering any adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the …”"
+      "quote": "Voting against this action was Michelle W. Bowman, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting.",
+      "explanation": "One policymaker dissented from the larger 50 basis point cut, preferring a smaller 25 basis point reduction instead."
     }
   ],
-  "tone_score": 0.04,
+  "tone_score": -1.0,
   "tone_quotes": [
+    {
+      "quote": "The Committee has gained greater confidence that inflation is moving sustainably toward 2 percent, and judges that the risks to achieving its employment and inflation goals are roughly in balance.",
+      "direction": "dovish"
+    },
     {
       "quote": "In light of the progress on inflation and the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/2 percentage point to 4-3/4 to 5 percent.",
       "direction": "dovish"
-    },
-    {
-      "quote": "Job gains have slowed, and the unemployment rate has moved up but remains low.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
-      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -59,7 +51,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.7% and moved +5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.35% would rise by about $9.81 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.7% and moved +5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.35% would rise by about $9.81 a month."
     },
     {
       "topic": "Savers",
@@ -92,8 +84,8 @@
       "text": "The broad trade-weighted dollar moved -0.03% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 46%, cut 54%, hike 0%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future policy choices will depend on incoming data, the evolving economic outlook, and the balance of risks. For educational purposes, an educational forecast model gave the next meeting probabilities as: hold 39%, cut 61%, hike 0%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -133,13 +125,22 @@
     }
   ],
   "meeting_date": "2024-09-18",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 4.75,
+    "target_high": 5.0,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Michelle W. Bowman"
+    ],
+    "summary": "The Federal Reserve lowered the target range for the federal funds rate by 1/2 percentage point to 4-3/4 to 5 percent."
+  },
+  "latency_s": 3.85
 }

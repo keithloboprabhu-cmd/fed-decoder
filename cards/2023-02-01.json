@@ -7,40 +7,32 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 25 basis points, to 4.5% to 4.75%. The vote was 12-0."
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to a target range of 4-1/2 to 4-3/4 percent."
   },
   "changes": [
     {
       "quote": "Inflation has eased somewhat but remains elevated.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Russia's war against Ukraine is causing tremendous human and economic hardship and is contributing to elevated global uncertainty.",
-      "explanation": "Reworded from the previous statement: “Russia's war against Ukraine is causing tremendous human and economic hardship.”"
-    },
-    {
-      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "The war and related events are contributing to upward pressure on inflation and are weighing on global economic activity.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The Committee acknowledged that while inflation has slowed down, it is still too high."
     },
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/2 to 4-3/4 percent.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/4 to 4-1/2 percent.”"
+      "explanation": "The Fed increased its benchmark rate by 25 basis points."
     },
     {
       "quote": "In determining the extent of future increases in the target range, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
-      "explanation": "New language added in this statement."
+      "explanation": "The wording changed from pace to extent, signaling that the Fed is weighing how much higher rates need to go rather than how fast to raise them."
+    },
+    {
+      "quote": "Russia's war against Ukraine is causing tremendous human and economic hardship and is contributing to elevated global uncertainty.",
+      "explanation": "The description of the war's global economic fallout was updated to emphasize elevated uncertainty."
+    },
+    {
+      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lael Brainard; Lisa D. Cook; Austan D. Goolsbee; Patrick Harker; Philip N. Jefferson; Neel Kashkari; Lorie K. Logan; and Christopher J. Waller.",
+      "explanation": "The list of voters reflects new members participating in the FOMC vote."
     }
   ],
-  "tone_score": 1.92,
+  "tone_score": 1.0,
   "tone_quotes": [
-    {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/2 to 4-3/4 percent.",
-      "direction": "hawkish"
-    },
     {
       "quote": "The Committee anticipates that ongoing increases in the target range will be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
       "direction": "hawkish"
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.39% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.15% would fall by about $25.17 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.39% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.15% would fall by about $25.17 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.3% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 11%, cut 0%, hike 88%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming economic data and the cumulative impact of past hikes. As an educational note, an econometric forecast model assigns the next meeting a 10% probability of a hold, 0% for a cut, and 90% for a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2023-02-01",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.5,
+    "target_high": 4.75,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to a target range of 4-1/2 to 4-3/4 percent."
+  },
+  "latency_s": 4.31
 }

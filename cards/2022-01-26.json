@@ -7,47 +7,39 @@
     "votes_for": 9,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-0."
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
   },
   "changes": [
     {
-      "quote": "Indicators of economic activity and employment have continued to strengthen.",
-      "explanation": "Reworded from the previous statement: “With progress on vaccinations and strong policy support, indicators of economic activity and employment have continued to strengthen.”"
-    },
-    {
-      "quote": "The sectors most adversely affected by the pandemic have improved in recent months but are being affected by the recent sharp rise in COVID-19 cases.",
-      "explanation": "Reworded from the previous statement: “The sectors most adversely affected by the pandemic have improved in recent months but continue to be affected by COVID-19.”"
-    },
-    {
-      "quote": "The Federal Reserve is committed to using its full range of tools to support the U.S. economy in this challenging time, thereby promoting its maximum employment and price stability goals.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
       "quote": "With inflation well above 2 percent and a strong labor market, the Committee expects it will soon be appropriate to raise the target range for the federal funds rate.",
-      "explanation": "Reworded from the previous statement: “With inflation having exceeded 2 percent for some time, the Committee expects it will be appropriate to maintain this target range until labor market conditions…”"
+      "explanation": "The Fed removed language about waiting for labor market conditions to reach maximum levels, signaling that rate hikes are likely coming soon because inflation is high and the job market is strong."
     },
     {
       "quote": "The Committee decided to continue to reduce the monthly pace of its net asset purchases, bringing them to an end in early March.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed is officially putting a firm end date on its pandemic-era bond buying stimulus program."
     },
     {
       "quote": "Beginning in February, the Committee will increase its holdings of Treasury securities by at least $20 billion per month and of agency mortgage-backed securities by at least $10 billion per month.",
-      "explanation": "Reworded from the previous statement: “Beginning in January, the Committee will increase its holdings of Treasury securities by at least $40 billion per month and of agency mortgage-backed securities…”"
+      "explanation": "The Fed halved the amount of new bonds it buys each month compared to the previous pace, stepping down its market support."
+    },
+    {
+      "quote": "Indicators of economic activity and employment have continued to strengthen.",
+      "explanation": "The Fed streamlined its assessment by removing an older reference to prior policy support."
+    },
+    {
+      "quote": "The sectors most adversely affected by the pandemic have improved in recent months but are being affected by the recent sharp rise in COVID-19 cases.",
+      "explanation": "Pandemic-sensitive sectors face renewed headwinds from the recent surge in virus cases."
     }
   ],
-  "tone_score": -0.08,
+  "tone_score": 1.5,
   "tone_quotes": [
     {
       "quote": "With inflation well above 2 percent and a strong labor market, the Committee expects it will soon be appropriate to raise the target range for the federal funds rate.",
       "direction": "hawkish"
     },
     {
-      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "In support of these goals, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent.",
-      "direction": "dovish"
+      "quote": "The Committee decided to continue to reduce the monthly pace of its net asset purchases, bringing them to an end in early March.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -57,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.85% and moved +7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.45% would rise by about $11.71 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.85% and moved +7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.45% would rise by about $11.71 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved -0.06% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 16%, cut 0%, hike 84%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed is preparing to start raising interest rates at upcoming meetings. As an educational note, the forecast model gave the next meeting odds as: hold 15%, cut 0%, hike 85%.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2022-01-26",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.83
 }

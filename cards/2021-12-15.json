@@ -7,47 +7,39 @@
     "votes_for": 11,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+    "summary": "The Federal Reserve kept the federal funds rate at 0 to 1/4 percent while speeding up the reduction of its bond purchases."
   },
   "changes": [
     {
-      "quote": "The sectors most adversely affected by the pandemic have improved in recent months but continue to be affected by COVID-19.",
-      "explanation": "Reworded from the previous statement: “The sectors most adversely affected by the pandemic have improved in recent months, but the summer's rise in COVID-19 cases has slowed their recovery.”"
-    },
-    {
       "quote": "Job gains have been solid in recent months, and the unemployment rate has declined substantially.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added this point to highlight that the job market has made strong progress."
     },
     {
       "quote": "Supply and demand imbalances related to the pandemic and the reopening of the economy have continued to contribute to elevated levels of inflation.",
-      "explanation": "Reworded from the previous statement: “Supply and demand imbalances related to the pandemic and the reopening of the economy have contributed to sizable price increases in some sectors.”"
-    },
-    {
-      "quote": "Inflation is elevated, largely reflecting factors that are expected to be transitory.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "Risks to the economic outlook remain, including from new variants of the virus.",
-      "explanation": "Reworded from the previous statement: “Risks to the economic outlook remain.”"
-    },
-    {
-      "quote": "In support of these goals, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent.",
-      "explanation": "New language added in this statement."
-    }
-  ],
-  "tone_score": -0.66,
-  "tone_quotes": [
-    {
-      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
-      "direction": "dovish"
-    },
-    {
-      "quote": "In support of these goals, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent.",
-      "direction": "dovish"
+      "explanation": "The Fed updated its language to show that high inflation is continuing due to pandemic supply and demand mismatches."
     },
     {
       "quote": "In light of inflation developments and the further improvement in the labor market, the Committee decided to reduce the monthly pace of its net asset purchases by $20 billion for Treasury securities and $10 billion for agency mortgage-backed securities.",
-      "direction": "dovish"
+      "explanation": "The Fed accelerated the tapering of its bond-buying program in response to strong employment and high inflation."
+    },
+    {
+      "quote": "Beginning in January, the Committee will increase its holdings of Treasury securities by at least $40 billion per month and of agency mortgage-backed securities by at least $20 billion per month.",
+      "explanation": "This specifies the exact lower monthly amount of new bonds the Fed will buy starting in January."
+    },
+    {
+      "quote": "Risks to the economic outlook remain, including from new variants of the virus.",
+      "explanation": "The Fed explicitly noted that new variants of the virus continue to pose risks to the economy."
+    }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+    {
+      "quote": "Job gains have been solid in recent months, and the unemployment rate has declined substantially.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "With inflation having exceeded 2 percent for some time, the Committee expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment.",
+      "direction": "hawkish"
     }
   ],
   "for_you": [
@@ -90,8 +82,8 @@
       "text": "The broad trade-weighted dollar moved 0.16% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 18%, cut 0%, hike 82%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed is moving faster to wrap up its bond purchases in response to high inflation and stronger employment. Educational forecast models suggest an 83% chance of a rate hike at upcoming meetings.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +123,20 @@
     }
   ],
   "meeting_date": "2021-12-15",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept the federal funds rate at 0 to 1/4 percent while speeding up the reduction of its bond purchases."
+  },
+  "latency_s": 3.9
 }

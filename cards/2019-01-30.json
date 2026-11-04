@@ -7,47 +7,35 @@
     "votes_for": 10,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 2.25% to 2.5%. The vote was 10-0."
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent."
   },
   "changes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
-      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in November indicates that the labor market has continued to strengthen and that economic activ…”"
-    },
-    {
-      "quote": "Household spending has continued to grow strongly, while growth of business fixed investment has moderated from its rapid pace earlier last year.",
-      "explanation": "Reworded from the previous statement: “Household spending has continued to grow strongly, while growth of business fixed investment has moderated from its rapid pace earlier in the year.”"
-    },
-    {
-      "quote": "Although market-based measures of inflation compensation have moved lower in recent months, survey-based measures of longer-term inflation expectations are little changed.",
-      "explanation": "Reworded from the previous statement: “Indicators of longer-term inflation expectations are little changed, on balance.”"
-    },
-    {
       "quote": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2-1/4 to 2…”"
+      "explanation": "The Fed shifted from raising rates to keeping them steady."
     },
     {
       "quote": "The Committee continues to view sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective as the most likely outcomes.",
-      "explanation": "Reworded from the previous statement: “The Committee judges that some further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic …”"
+      "explanation": "This replaces the previous language about gradual rate increases, signalling a pause in rate hikes."
     },
     {
       "quote": "In light of global economic and financial developments and muted inflation pressures, the Committee will be patient as it determines what future adjustments to the target range for the federal funds rate may be appropriate to support these outcomes.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed added a commitment to being patient regarding future rate adjustments due to muted inflation pressures and global developments."
+    },
+    {
+      "quote": "Although market-based measures of inflation compensation have moved lower in recent months, survey-based measures of longer-term inflation expectations are little changed.",
+      "explanation": "The Fed noted that market indicators of inflation dropped slightly, while survey measures remained stable."
     }
   ],
-  "tone_score": 0.7,
+  "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
-      "direction": "hawkish"
+      "quote": "In light of global economic and financial developments and muted inflation pressures, the Committee will be patient as it determines what future adjustments to the target range for the federal funds rate may be appropriate to support these outcomes.",
+      "direction": "dovish"
     },
     {
-      "quote": "Job gains have been strong, on average, in recent months, and the unemployment rate has remained low.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "This assessment will take into account a wide range of information, including measures of labor market conditions, indicators of inflation pressures and inflation expectations, and readings on financial and international developments.",
-      "direction": "hawkish"
+      "quote": "The Committee continues to view sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective as the most likely outcomes.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -57,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.7% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.45% would fall by about $3.55 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.7% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.45% would fall by about $3.55 a month."
     },
     {
       "topic": "Savers",
@@ -90,8 +78,8 @@
       "text": "The broad trade-weighted dollar moved 0.04% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 76%, cut 1%, hike 23%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that the Fed will remain patient and pause further rate increases while monitoring upcoming economic data. Educational forecast models suggest the next meeting has a 71% chance of a hold, a 1% chance of a cut, and a 28% chance of a hike.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -131,13 +119,20 @@
     }
   ],
   "meeting_date": "2019-01-30",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 2.25,
+    "target_high": 2.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent."
+  },
+  "latency_s": 3.92
 }

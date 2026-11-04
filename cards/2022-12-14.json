@@ -7,30 +7,26 @@
     "votes_for": 12,
     "votes_against": 0,
     "dissenters": [],
-    "summary": "The Fed raised its policy rate by 50 basis points, to 4.25% to 4.5%. The vote was 12-0."
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 50 basis points to 4-1/4 to 4-1/2 percent."
   },
   "changes": [
     {
       "quote": "The war and related events are contributing to upward pressure on inflation and are weighing on global economic activity.",
-      "explanation": "Reworded from the previous statement: “The war and related events are creating additional upward pressure on inflation and are weighing on global economic activity.”"
+      "explanation": "The Fed slightly softened its phrasing on how international conflicts add to inflation pressures."
     },
     {
       "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/4 to 4-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3-3/4 to 4 percent.”"
+      "explanation": "The target range for borrowing costs was adjusted upward to reflect the new policy rate."
     }
   ],
-  "tone_score": 2.0,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/4 to 4-1/2 percent.",
+      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures.",
       "direction": "hawkish"
     },
     {
       "quote": "The Committee anticipates that ongoing increases in the target range will be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
-      "direction": "hawkish"
-    },
-    {
-      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures.",
       "direction": "hawkish"
     }
   ],
@@ -74,8 +70,8 @@
       "text": "The broad trade-weighted dollar moved -0.02% on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 4%, cut 0%, hike 96%.",
-  "confidence": "medium",
+  "whats_next": "The statement signals that policymakers expect further rate increases will be needed to bring inflation back down to 2 percent. An educational forecast model assigned a 96% probability to a hike at the next meeting.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -115,13 +111,20 @@
     }
   ],
   "meeting_date": "2022-12-14",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hike",
+    "change_bps": 50,
+    "target_low": 4.25,
+    "target_high": 4.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Federal Reserve raised the target range for the federal funds rate by 50 basis points to 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 3.53
 }
