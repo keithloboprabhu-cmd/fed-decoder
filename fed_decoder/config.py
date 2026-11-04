@@ -1,0 +1,98 @@
+"""Central configuration. Model names and limits live here, not in code paths.
+
+Free-tier limits change. Verify them in each console before deploying:
+  - Gemini: https://aistudio.google.com  (Rate limits page)
+  - Groq:   https://console.groq.com/settings/limits
+"""
+from __future__ import annotations
+
+import os
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data"
+CARDS_DIR = ROOT / "cards"
+CACHE_DIR = ROOT / ".cache"
+
+STATEMENTS_PATH = DATA_DIR / "statements.parquet"
+GROUND_TRUTH_PATH = DATA_DIR / "ground_truth.parquet"
+FRED_PATH = DATA_DIR / "fred.parquet"
+FEATURES_PATH = DATA_DIR / "meeting_features.parquet"
+
+FED_BASE = "https://www.federalreserve.gov"
+USER_AGENT = "fed-decoder/1.0 (educational project; polite scraper)"
+SCRAPE_DELAY_S = 1.0
+START_YEAR = 2000
+
+
+def _secret(name: str) -> str | None:
+    """Read a key from the environment, .env, or Streamlit secrets."""
+    val = os.environ.get(name)
+    if val:
+        return val
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv(ROOT / ".env")
+        val = os.environ.get(name)
+        if val:
+            return val
+    except Exception:
+        pass
+    try:
+        import streamlit as st
+
+        return st.secrets.get(name)  # type: ignore[no-any-return]
+    except Exception:
+        return None
+
+
+# ---- LLM providers (free tiers only; never enable billing) -----------------
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
+
+# Requests per minute we allow ourselves: kept below the published free caps.
+GEMINI_RPM = int(os.environ.get("GEMINI_RPM", "8"))
+GROQ_RPM = int(os.environ.get("GROQ_RPM", "25"))
+# Daily budget we allow the deployed app to spend on live chat (all users).
+DAILY_LLM_BUDGET = int(os.environ.get("DAILY_LLM_BUDGET", "200"))
+SESSION_QUESTION_LIMIT = 10
+CHAT_HISTORY_TURNS = 4
+
+
+def gemini_key() -> str | None:
+    return _secret("GEMINI_API_KEY")
+
+
+def groq_key() -> str | None:
+    return _secret("GROQ_API_KEY")
+
+
+def fred_key() -> str | None:
+    return _secret("FRED_API_KEY")
+
+
+# ---- FRED series (each ID verified on first run by scripts/fetch_fred.py) --
+FRED_SERIES = {
+    "DFEDTARU": "Fed funds target range, upper bound",
+    "DFEDTARL": "Fed funds target range, lower bound",
+    "DFEDTAR": "Fed funds target rate (pre-Dec 2008)",
+    "DFF": "Effective federal funds rate",
+    "CPIAUCSL": "CPI, all urban consumers (index)",
+    "PCEPILFE": "Core PCE price index",
+    "UNRATE": "Unemployment rate",
+    "PAYEMS": "Nonfarm payrolls (thousands)",
+    "DGS2": "2-year Treasury yield",
+    "DGS10": "10-year Treasury yield",
+    "MORTGAGE30US": "30-year fixed mortgage rate",
+    "TERMCBCCALLNS": "Credit card interest rate (all accounts)",
+    "RIFLPBCIANM60NM": "New car loan rate, 60 months (commercial banks)",
+    "FEDTARMD": "SEP median projection, fed funds (current year)",
+    "GDPPOT": "Real potential GDP",
+    "GDPC1": "Real GDP",
+    "DTWEXBGS": "Trade-weighted US dollar index (broad)",
+    "SP500": "S&P 500 index",
+}
+
+FOOTER = "Not financial advice. Data: Federal Reserve, FRED. AI: Gemini / Groq free tiers."
+PRIVACY_NOTICE = "Don't enter personal information. Questions are sent to free-tier AI providers that may use them to improve their models."
