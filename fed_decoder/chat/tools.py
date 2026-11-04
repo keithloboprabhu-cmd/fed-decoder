@@ -44,8 +44,10 @@ def resolve_meeting(date_str: str) -> pd.Timestamp | None:
     # Prefer a meeting in the named month; else nearest.
     same = stm[(stm["meeting_date"].dt.year == d.year) & (stm["meeting_date"].dt.month == d.month)]
     if len(same) and not re.search(r"\d{4}-\d{1,2}-\d{1,2}", date_str or ""):
-        sched = same.iloc[-1]["meeting_date"]
-        return sched
+        # Several statements in one month (e.g. March 2020): prefer the last one that moved rates.
+        gt = store.ground_truth().set_index("meeting_date")
+        moved = [d for d in same["meeting_date"] if gt.loc[d, "change_bps"] != 0]
+        return moved[-1] if moved else same.iloc[-1]["meeting_date"]
     return store.nearest_meeting(d)
 
 

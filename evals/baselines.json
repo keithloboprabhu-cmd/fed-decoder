@@ -1,0 +1,13 @@
+{
+ "rules_extractor_v1": {
+  "commit": "e670b22",
+  "note": "original regex extractor before action-sentence selection, spaced fractions and range-change inference",
+  "n": 227,
+  "n_with_votes": 202,
+  "direction": 0.986784140969163,
+  "change_bps": 0.9779735682819384,
+  "range": 0.8546255506607929,
+  "votes": 1.0,
+  "dissenters": 1.0
+ }
+}

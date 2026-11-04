@@ -35,8 +35,9 @@ ADVICE = re.compile(
 )
 ON_TOPIC = re.compile(
     r"\b(fed|fomc|federal reserve|rate|rates|inflation|cpi|pce|unemployment|jobs?|payrolls?|labor|mortgage|loan|credit card|savings?|"
-    r"treasury|yield|powell|yellen|bernanke|greenspan|dissent|vote|statement|hawk|dove|hike|cut|hold|monetary|economy|recession|"
-    r"dollar|qe|quantitative|balance sheet|taylor|dot plot|sep|basis points?|bps|borrow|apr|heloc|forecast|next meeting|gdp|growth|prices?)\b",
+    r"treasury|yield|powell|yellen|bernanke|greenspan|warsh|dissent\w*|vot\w*|statement|hawk\w*|dov\w*|hik\w*|cut\w*|hold|monetary|econom\w*|recession|"
+    r"dollar|qe|quantitative|balance sheet|taylor|dot plot|sep|basis points?|bps|bp|borrow\w*|apr|heloc|forecast|next meeting|gdp|growth|prices?|"
+    r"car loan|auto loan|interest|decision|decid\\w*|meeting|tighten\w*|eas\w*|tariff\w*|wages?|employment)\b",
     re.I,
 )
 INJECTION = re.compile(r"(ignore (all |the )?(previous|prior|above) instructions|you are now|system prompt|disregard (your|the) rules|reveal your)", re.I)
@@ -135,6 +136,28 @@ def rules_answer(q: str) -> ChatAnswer:
                    f"hike {round(f['p_hike'] * 100)}% ({f['confidence']} confidence). In backtests it {beat} a no-change baseline "
                    f"({round((bt.get('model_hit_rate') or 0) * 100)}% vs {round((bt.get('baseline_hit_rate') or 0) * 100)}%). Educational, not financial advice.")
             return ChatAnswer(txt, "rules", "Automated answer (rules-based)", calls)
+        series_kw = [("UNRATE", r"unemployment rate|jobless"), ("DGS10", r"10[- ]year"), ("DGS2", r"2[- ]year"),
+                     ("MORTGAGE30US", r"mortgage rate"), ("CPIAUCSL", r"\bcpi\b|inflation rate|inflation")]
+        sid = next((k for k, rx in series_kw if re.search(rx, ql)), None)
+        when = T.parse_date(q)
+        if sid and when is not None and re.search(r"\b(what was|level|in|during)\b", ql) and not re.search(r"\b(why|decid|cut|hike|raise)\b", ql):
+            import pandas as pd
+
+            from fed_decoder.data import store as _store
+
+            month_end = (when + pd.offsets.MonthEnd(0))
+            if sid == "CPIAUCSL":
+                s_ = _store.series(sid)
+                s_ = s_[s_.index <= month_end]
+                val, at = round((s_.iloc[-1] / s_.iloc[-13] - 1) * 100, 1), s_.index[-1]
+                desc = "CPI inflation (12-month)"
+            else:
+                s_ = _store.series(sid)
+                s_ = s_[s_.index <= month_end]
+                val, at = round(float(s_.iloc[-1]), 2), s_.index[-1]
+                desc = config.FRED_SERIES[sid]
+            calls.append({"name": "get_series", "args": {"id": sid}})
+            return ChatAnswer(f"{desc} was {val:g}% as of {at:%B %Y} (FRED {sid}).", "rules", "Automated answer (rules-based)", calls)
         loan = next((k for k, v in {"mortgage_30y": "mortgage", "credit_card": "credit card", "auto_60m": "car|auto", "heloc": "heloc|home equity"}.items() if re.search(v, ql)), None)
         if loan:
             bal = {"mortgage_30y": 300000, "credit_card": 5000, "auto_60m": 30000, "heloc": 50000}[loan]
@@ -160,10 +183,11 @@ def rules_answer(q: str) -> ChatAnswer:
                 lo, hi = m["target_range_percent"]
                 rng = f"{hi:g}%" if lo == hi else f"{lo:g}% to {hi:g}%"
                 txt = f"On {m['meeting_date']} the Fed {verb} rates"
-                txt += f" by {abs(m['change_bps'])} basis points" if m["change_bps"] else ""
-                txt += f", to {rng}."
+                txt += f" by {abs(m['change_bps'])} basis points, to {rng}." if m["change_bps"] else f" at {rng}."
                 if m.get("votes_for") is not None:
                     txt += f" The vote was {m['votes_for']}-{m['votes_against']}."
+                    if m["dissenters"]:
+                        txt += " Dissenting: " + ", ".join(m["dissenters"]) + "."
                 if m.get("tone_quotes"):
                     txt += f" Key line: “{m['tone_quotes'][0]}”"
                 return ChatAnswer(txt, "rules", "Automated answer (rules-based)", calls)

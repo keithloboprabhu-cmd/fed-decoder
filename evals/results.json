@@ -1,0 +1,179 @@
+{
+ "keys": {
+  "gemini": false,
+  "groq": false
+ },
+ "cards": {
+  "rules": 227
+ },
+ "extraction": {
+  "rules": {
+   "n": 227,
+   "n_with_votes": 202,
+   "direction": 1.0,
+   "change_bps": 1.0,
+   "range": 0.986784140969163,
+   "votes": 1.0,
+   "dissenters": 1.0
+  },
+  "llm_cards": null
+ },
+ "tone": {
+  "dictionary_vs_next_change": {
+   "pearson": 0.4455981827909146,
+   "spearman": 0.42241519432448177,
+   "n": 226
+  },
+  "llm_vs_next_change": {
+   "pearson": null,
+   "spearman": null,
+   "n": 0
+  },
+  "llm_vs_dictionary": {
+   "pearson": null,
+   "spearman": null,
+   "n": 0
+  },
+  "hand_labels": null,
+  "gemini_vs_groq": null
+ },
+ "consistency": {
+  "dictionary": {
+   "n": 20,
+   "mean_spread": 0.0
+  },
+  "llm": null
+ },
+ "grounding": {
+  "llm": {
+   "n": 0,
+   "number_check_pass": null,
+   "quote_check_pass": null,
+   "failures": []
+  },
+  "rules": {
+   "n": 227,
+   "number_check_pass": 0.43612334801762115,
+   "quote_check_pass": 1.0,
+   "failures": [
+    {
+     "date": "2005-11-01",
+     "numbers": [
+      "14",
+      "85"
+     ],
+     "quotes": []
+    },
+    {
+     "date": "2005-12-13",
+     "numbers": [
+      "92"
+     ],
+     "quotes": []
+    },
+    {
+     "date": "2006-03-28",
+     "numbers": [
+      "21"
+     ],
+     "quotes": []
+    },
+    {
+     "date": "2006-06-29",
+     "numbers": [
+      "90"
+     ],
+     "quotes": []
+    },
+    {
+     "date": "2006-08-08",
+     "numbers": [
+      "34",
+      "65"
+     ],
+     "quotes": []
+    }
+   ]
+  },
+  "judge": null
+ },
+ "impact": {
+  "n_cases": 400,
+  "max_abs_error_usd": 0.0,
+  "exact_to_the_cent": true
+ },
+ "forecast": {
+  "n": 186,
+  "model_hit_rate": 0.753,
+  "baseline_hit_rate": 0.699,
+  "beats_baseline": true,
+  "model_hit_rate_on_moves": 0.643,
+  "start": "2004-09-21",
+  "end": "2026-09-16"
+ },
+ "chat": {
+  "rules": {
+   "n": 30,
+   "accuracy": 1.0,
+   "n_adversarial": 10,
+   "adversarial_pass": 1.0,
+   "mean_latency_s": 0.08207720518112183,
+   "share_rules_fallback": 1.0
+  }
+ },
+ "providers": {
+  "rules": {
+   "extraction": {
+    "n": 20,
+    "n_with_votes": 18,
+    "direction": 1.0,
+    "change_bps": 1.0,
+    "range": 1.0,
+    "votes": 1.0,
+    "dissenters": 1.0
+   },
+   "grounding_pass": 1.0,
+   "mean_latency_s": 0.000985419750213623,
+   "share_fell_back": 0.0,
+   "n": 20
+  }
+ },
+ "before_after": {
+  "tone_dictionary": {
+   "before": {
+    "pearson": 0.46244123712195484,
+    "spearman": 0.4375194144099125,
+    "n": 226
+   },
+   "after": {
+    "pearson": 0.45257175199496774,
+    "spearman": 0.42304262483310606,
+    "n": 226
+   }
+  },
+  "rules_extractor": {
+   "before": {
+    "commit": "e670b22",
+    "note": "original regex extractor before action-sentence selection, spaced fractions and range-change inference",
+    "n": 227,
+    "n_with_votes": 202,
+    "direction": 0.986784140969163,
+    "change_bps": 0.9779735682819384,
+    "range": 0.8546255506607929,
+    "votes": 1.0,
+    "dissenters": 1.0
+   },
+   "after": {
+    "n": 227,
+    "n_with_votes": 202,
+    "direction": 1.0,
+    "change_bps": 1.0,
+    "range": 0.986784140969163,
+    "votes": 1.0,
+    "dissenters": 1.0
+   }
+  },
+  "card_inputs": null
+ },
+ "usage": {}
+}

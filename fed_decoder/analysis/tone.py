@@ -110,9 +110,18 @@ def policy_text(text: str) -> str:
 
 
 def raw_score(text: str) -> tuple[float, list[dict]]:
+    return _raw(policy_text(text))
+
+
+def raw_score_unfiltered(text: str) -> tuple[float, list[dict]]:
+    """Earlier version that also scored the voting paragraph (kept for the before/after eval)."""
+    return _raw(text)
+
+
+def _raw(text: str) -> tuple[float, list[dict]]:
     matches: list[dict] = []
     hawk = dove = 0.0
-    for sent in sentences(policy_text(text)):
+    for sent in sentences(text):
         for rx, w, _ in _COMPILED:
             for m in rx.finditer(sent):
                 matches.append({"phrase": m.group(0), "weight": w, "quote": sent})
