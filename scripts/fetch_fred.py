@@ -25,6 +25,14 @@ def main() -> None:
         df = fred.fetch_all()
         df.to_parquet(config.FRED_PATH, index=False)
         print(f"saved {len(df)} rows -> {config.FRED_PATH}")
+        # State unemployment rates for the personal "For you" panel.
+        frames = []
+        for code in config.STATES:
+            s_ = fred.fetch_series(f"{code}UR", start="2000-01-01")
+            frames.append(pd.DataFrame({"date": s_.index, "state": code, "value": s_.values}))
+        st = pd.concat(frames, ignore_index=True)
+        st.to_parquet(config.STATE_UR_PATH, index=False)
+        print(f"saved {len(st)} state unemployment rows -> {config.STATE_UR_PATH}")
 
     # SEP vintages: one per meeting since FRED began carrying the median.
     stm = pd.read_parquet(config.STATEMENTS_PATH)

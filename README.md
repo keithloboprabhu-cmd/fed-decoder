@@ -13,6 +13,7 @@ Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or
   - *What changed:* a word-level redline against the previous statement. Deletions are struck, additions highlighted, and hovering a change shows what it means.
   - *Tone:* a dial from dove (−2) to hawk (+2), with the sentences that drive it.
   - *For you:* one sentence and one computed number each for borrowers, mortgages, savers and workers. The mortgage card says that mortgages track the 10-year Treasury, not fed funds.
+  - *Make it about you (optional):* enter your housing situation, balances, savings, income range and state to see what the decision changes for you each month, as a share of income, plus your local unemployment rate. Computed in code only: the answers stay in your browser tab and are never stored, logged or sent to an AI provider. No login. Gender isn't asked because no effect computed here depends on it.
   - *For the country:* inflation, jobs, growth, markets and the dollar, from FRED.
   - *What's next:* model probabilities for hold, cut or hike, shown next to the backtest against a "no change" baseline.
 - **Ask.** Chat with tools over the corpus and the data: `get_meeting`, `search_statements` (TF-IDF), `diff_statements`, `get_series`, `payment_impact` and `forecast_next`. Every number in an answer is checked against the tool results.

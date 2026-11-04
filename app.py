@@ -6,6 +6,7 @@ import streamlit as st
 
 from fed_decoder import config
 from fed_decoder.analysis import forecast as forecast_mod
+from fed_decoder.analysis import personal
 from fed_decoder.analysis import tone as tone_mod
 from fed_decoder.cards.builder import build_llm_card
 from fed_decoder.cards.context import build_context, build_context_pasted
@@ -123,6 +124,7 @@ def render_card(card, ctx, is_latest: bool) -> None:
     st.markdown('<hr class="rule"><h3>For you</h3>', unsafe_allow_html=True)
     st.markdown(ui.cards_html(for_you_items(card, ctx)), unsafe_allow_html=True)
     st.markdown('<div class="small" style="margin-top:8px">Example balances: $5,000 card, $300,000 30-year mortgage, $10,000 savings. Amortization computed in code.</div>', unsafe_allow_html=True)
+    render_personal(ctx, card.decision.change_bps)
 
     # For the country
     st.markdown('<hr class="rule"><h3>For the country</h3>', unsafe_allow_html=True)
@@ -162,6 +164,59 @@ def render_card(card, ctx, is_latest: bool) -> None:
         st.markdown(f'<div class="redline">{"".join(f"<p>{ui.E(p)}</p>" for p in ctx["statement"].split(chr(10) + chr(10)))}</div>', unsafe_allow_html=True)
         for c in card.citations:
             st.markdown(f'<div class="small"><span class="mono">{ui.E(c.source)}</span> · {ui.E(c.detail)}</div>', unsafe_allow_html=True)
+
+
+def render_personal(ctx, change_bps: int) -> None:
+    """Optional personal panel. Inputs stay in this browser session only: they are
+    never sent to an AI provider, stored, logged or cached."""
+    with st.expander("Make it about you (optional)", expanded=bool(ss.get("profile"))):
+        st.markdown('<div class="small">Your answers stay in this browser tab only. They are not saved, not logged, '
+                    'and never sent to an AI provider; everything here is computed in code. No login needed. Leave anything blank.</div>',
+                    unsafe_allow_html=True)
+        prof = ss.get("profile") or personal.Profile()
+        with st.form("profile_form", border=False):
+            c1, c2 = st.columns(2)
+            housing = c1.selectbox("Housing", list(personal.HOUSING), index=list(personal.HOUSING).index(prof.housing),
+                                   format_func=personal.HOUSING.get)
+            mort = c2.number_input("Mortgage balance, or planned loan if buying ($)", min_value=0, step=10_000, value=int(prof.mortgage_balance))
+            card = c1.number_input("Credit card balance you carry ($)", min_value=0, step=500, value=int(prof.card_balance))
+            heloc = c2.number_input("Home equity line balance ($)", min_value=0, step=5_000, value=int(prof.heloc_balance))
+            car_opts = {"none": "No car loan", "have_fixed": "I have a fixed-rate car loan", "shopping": "I'm shopping for a car loan"}
+            car = c1.selectbox("Car loan", list(car_opts), index=list(car_opts).index(prof.car_loan), format_func=car_opts.get)
+            car_amt = c2.number_input("Car loan amount if shopping ($)", min_value=0, step=1_000, value=int(prof.car_amount))
+            stud = c1.number_input("Private variable-rate student loans ($)", min_value=0, step=1_000, value=int(prof.private_student_variable))
+            sav = c2.number_input("Savings ($)", min_value=0, step=1_000, value=int(prof.savings))
+            sav_kind = c1.selectbox("Where your savings are", list(personal.SAVINGS_KIND), index=list(personal.SAVINGS_KIND).index(prof.savings_kind),
+                                    format_func=personal.SAVINGS_KIND.get)
+            income = c2.selectbox("Household income", list(personal.INCOME), index=list(personal.INCOME).index(prof.income))
+            states = [None] + list(config.STATES)
+            state = c1.selectbox("State (for local jobs data)", states, index=states.index(prof.state),
+                                 format_func=lambda k: "Prefer not to say" if k is None else config.STATES[k])
+            go_ = st.form_submit_button("Show my numbers")
+        if go_:
+            ss.profile = personal.Profile(housing=housing, mortgage_balance=float(mort), heloc_balance=float(heloc),
+                                          card_balance=float(card), car_loan=car, car_amount=float(car_amt),
+                                          private_student_variable=float(stud), savings=float(sav), savings_kind=sav_kind,
+                                          income=income, state=state)
+        if ss.get("profile"):
+            ten = ((ctx["impacts"].get("numbers") or {}).get("mortgage_30y") or {}).get("rate_change_bps")
+            when = pd.Timestamp.today() if ctx["meeting_date"] == "pasted" else ctx["meeting_date"]
+            r = personal.personal_impact(ss.profile, change_bps, ten, when)
+            if change_bps == 0:
+                head = "This decision held rates, so nothing tied to the Fed changes for you right now."
+            else:
+                verb = "saves you" if r.monthly_total < 0 else "costs you"
+                head = f"Altogether this decision {verb} about ${abs(r.monthly_total):,.2f} a month"
+                head += f" (about {abs(r.share_of_income):.2f}% of monthly income)." if r.share_of_income is not None else "."
+            st.markdown(f"<p><strong>{ui.E(head)}</strong></p>", unsafe_allow_html=True)
+            st.markdown(ui.cards_html(r.items), unsafe_allow_html=True)
+            if r.per_25bp_monthly:
+                st.markdown(f'<div class="small" style="margin-top:8px">Rule of thumb for you: each 0.25-point Fed move changes your monthly costs by about '
+                            f'<span class="mono">${abs(r.per_25bp_monthly):,.2f}</span>. Estimates use average rates from FRED, not your actual loan terms. '
+                            'Not financial advice.</div>', unsafe_allow_html=True)
+            if st.button("Clear my answers"):
+                ss.pop("profile", None)
+                st.rerun()
 
 
 def page_decode() -> None:

@@ -1,0 +1,4 @@
+{
+ "supported": true,
+ "reason": "The claim exactly matches the provided household and economy facts: it states that mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year yield was 2.14% and moved +7 basis points; and a $300,000 30-year loan at 3.89% would see a payment increase of about $12.05 per month. All these details are present in the context."
+}
