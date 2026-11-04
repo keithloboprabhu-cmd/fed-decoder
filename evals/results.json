@@ -43,7 +43,20 @@
    "n": 227,
    "sign_agreement": 0.6343612334801763
   },
-  "hand_labels": null,
+  "hand_labels": {
+   "n": 30,
+   "dictionary": {
+    "pearson": 0.591932660604091,
+    "spearman": 0.538823281229401,
+    "n": 30
+   },
+   "llm": {
+    "pearson": 0.6239181323861148,
+    "spearman": 0.6446273709540375,
+    "n": 30
+   },
+   "dictionary_within_0.5": 0.26666666666666666
+  },
   "gemini_vs_groq": {
    "pearson": 0.9665953493282831,
    "spearman": 0.8528028654224418,

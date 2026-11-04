@@ -153,7 +153,7 @@ tests/                     unit tests and fake-provider tests for the LLM paths
 ## Eval report
 
 <!-- EVAL-REPORT:START -->
-Generated 2026-11-04 09:34 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
+Generated 2026-11-04 13:49 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
 
 ### 1. Extraction vs ground truth
 
@@ -172,7 +172,7 @@ Vote and dissenter accuracy for the rules extractor is not independent: it uses 
 |---|---|
 | Dictionary tone vs next meeting's rate change | Pearson 0.45, Spearman 0.42 (n=226) |
 | LLM card tone vs next meeting's rate change | Pearson 0.59, Spearman 0.58 (n=226) |
-| Agreement with hand labels (30 statements) | pending: fill `evals/hand_labels_tone.csv` |
+| Agreement with hand labels (30 statements) | dictionary Spearman 0.54, LLM Spearman 0.64 (n=30) |
 | Gemini vs Groq | Pearson 0.97, mean abs diff 0.58, within 0.5: 66.7% (n=6) |
 | LLM vs dictionary model | Pearson 0.70, sign agreement 63.4% (n=227) |
 
