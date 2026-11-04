@@ -230,7 +230,11 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
                 break
             if not resp.tool_calls:
                 break
-            messages.append({"role": "assistant", "content": resp.text or "", "tool_calls": [{"id": c.id, "name": c.name, "args": c.args} for c in resp.tool_calls]})
+            msg = {"role": "assistant", "content": resp.text or "", "tool_calls": [{"id": c.id, "name": c.name, "args": c.args} for c in resp.tool_calls]}
+            if resp.provider == "gemini" and getattr(resp, "provider_content", None) is not None:
+                msg["gemini_content"] = resp.provider_content
+                msg["gemini_model"] = resp.model
+            messages.append(msg)
             for c in resp.tool_calls:
                 out = T.run_tool(c.name, c.args)
                 evidence.append(out)

@@ -48,7 +48,11 @@ def _secret(name: str) -> str | None:
 
 
 # ---- LLM providers (free tiers only; never enable billing) -----------------
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+# gemini-2.5-flash is closed to new users (Nov 2026); 3.7/3.8-flash were returning 503 "high demand".
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
+# Tried in order when a model answers 503 "high demand" (free-tier overload comes and goes).
+GEMINI_FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-3.6-flash,gemini-3-flash-preview,gemini-3.5-flash-lite").split(",") if m]
+GEMINI_TIMEOUT_S = int(os.environ.get("GEMINI_TIMEOUT_S", "60"))
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 
 # Requests per minute we allow ourselves: kept below the published free caps.

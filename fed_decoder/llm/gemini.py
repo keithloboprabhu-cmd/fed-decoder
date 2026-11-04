@@ -47,8 +47,14 @@ class GeminiProvider(Provider):
             if not self._key:
                 raise ProviderUnavailable("GEMINI_API_KEY not set")
             from google import genai
+            from google.genai import types
 
-            self._client = genai.Client(api_key=self._key)
+            # Bounded timeout and no hidden SDK retries: an overloaded model
+            # should fail fast so the router can fall back to Groq.
+            self._client = genai.Client(
+                api_key=self._key,
+                http_options=types.HttpOptions(timeout=config.GEMINI_TIMEOUT_S * 1000, retry_options=types.HttpRetryOptions(attempts=1)),
+            )
         return self._client
 
     @staticmethod
@@ -63,6 +69,10 @@ class GeminiProvider(Provider):
                 continue
             if role == "user":
                 contents.append(types.Content(role="user", parts=[types.Part(text=m["content"])]))
+            elif role == "assistant" and m.get("gemini_content") is not None:
+                # Replay Gemini's own content so thought signatures survive (required
+                # by Gemini 3 for multi-turn function calling).
+                contents.append(m["gemini_content"])
             elif role == "assistant":
                 parts = []
                 if m.get("content"):
@@ -98,18 +108,33 @@ class GeminiProvider(Provider):
         elif schema is not None:
             cfg["response_mime_type"] = "application/json"
             cfg["response_json_schema"] = schema.model_json_schema()
-        _LIMITER.wait()
-        t0 = time.time()
-        try:
-            resp = client.models.generate_content(model=self.model, contents=contents, config=types.GenerateContentConfig(**cfg))
-        except errors.ClientError as e:
-            if e.code == 429 or "RESOURCE_EXHAUSTED" in str(e):
-                raise RateLimited(str(e), _retry_after(e)) from e
-            raise ProviderUnavailable(str(e)) from e
-        except errors.ServerError as e:
-            raise ProviderUnavailable(str(e)) from e
-        except Exception as e:  # network etc.
-            raise ProviderUnavailable(str(e)) from e
+        # A conversation that already holds Gemini tool-call content must stay on
+        # the model that produced it (thought signatures are model-specific).
+        pinned = next((m.get("gemini_model") for m in messages if m.get("gemini_model")), None)
+        models = [pinned] if pinned else [self.model] + [m for m in config.GEMINI_FALLBACK_MODELS if m != self.model]
+        resp, used, last_err = None, None, None
+        for model in models:
+            _LIMITER.wait()
+            t0 = time.time()
+            try:
+                resp = client.models.generate_content(model=model, contents=contents, config=types.GenerateContentConfig(**cfg))
+                used = model
+                break
+            except errors.ClientError as e:
+                if e.code == 429 or "RESOURCE_EXHAUSTED" in str(e):
+                    raise RateLimited(str(e), _retry_after(e)) from e
+                if e.code == 404:  # model retired for this account: try the next one
+                    last_err = e
+                    continue
+                raise ProviderUnavailable(str(e)) from e
+            except errors.ServerError as e:  # 503 overload: try the next model
+                last_err = e
+                continue
+            except Exception as e:  # network, timeout
+                last_err = e
+                continue
+        if resp is None:
+            raise ProviderUnavailable(f"all Gemini models failed: {last_err}")
         latency = time.time() - t0
         calls = [ToolCall(id=uuid.uuid4().hex[:8], name=fc.name, args=dict(fc.args or {})) for fc in (resp.function_calls or [])]
         text = ""
@@ -120,4 +145,9 @@ class GeminiProvider(Provider):
         parsed = None
         if schema is not None and not calls:
             parsed = parse_json_into(schema, text)
-        return LLMResponse(text=text, provider=self.name, model=self.model, latency_s=latency, parsed=parsed, tool_calls=calls, raw=resp)
+        out = LLMResponse(text=text, provider=self.name, model=used, latency_s=latency, parsed=parsed, tool_calls=calls, raw=resp)
+        try:
+            out.provider_content = resp.candidates[0].content  # type: ignore[attr-defined]
+        except Exception:
+            out.provider_content = None  # type: ignore[attr-defined]
+        return out
