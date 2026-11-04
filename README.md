@@ -10,7 +10,7 @@ Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or
 
 Fed Decoder opens with one question: which decision do you want to understand? Type a month, a date or "latest", or paste a statement, and it walks you through that meeting one step at a time: the decision in plain English, what changed in the statement, how the Fed sounded, what it means for you (with an optional, private calculator), what it means for the economy, and what might happen next. Unfamiliar terms can be tapped for a short definition, and every step can be expanded at once for people who want everything.
 
-The design is deliberately quiet: warm ivory and white, charcoal text, forest green for dovish and terracotta for hawkish (always paired with a word, never color alone), Newsreader for headlines, Inter for reading, and IBM Plex Mono only for the figures people compare.
+The design is deliberately quiet: warm ivory, charcoal text, forest green for dovish and terracotta for hawkish (always paired with a word, never color alone). Newsreader carries the headlines and the Fed's own words; Inter carries everything else; IBM Plex Mono appears only in the money columns. There are almost no boxes: structure comes from type, whitespace, an occasional rule, and a green bar that marks a computed answer. The only bordered shapes are things you can press.
 
 ## What it does
 

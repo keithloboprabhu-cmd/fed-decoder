@@ -88,9 +88,8 @@ def why_it_matters(direction: str) -> str:
 def facts_html(d) -> str:
     move = "No change" if d.change_bps == 0 else f"{'+' if d.change_bps > 0 else '−'}{abs(d.change_bps)} basis points"
     vote = f"{d.votes_for} to {d.votes_against}" if d.votes_for is not None else "Not reported"
-    cells = [("Change", move, True), ("Target range", fmt_range(d.target_low, d.target_high), True), ("Vote", vote, d.votes_for is not None)]
-    return '<div class="facts">' + "".join(
-        f'<div><div class="k">{k}</div><div class="v{" fig" if mono else ""}">{E(v)}</div></div>' for k, v, mono in cells) + "</div>"
+    cells = [("Target range", fmt_range(d.target_low, d.target_high)), ("Change", move), ("Vote", vote)]
+    return '<dl class="facts">' + "".join(f'<div><dt>{k}</dt><dd>{E(v)}</dd></div>' for k, v in cells) + "</dl>"
 
 
 # ---------------------------------------------------------------- redline
@@ -107,9 +106,15 @@ def redline_html(old: str | None, new: str, changes) -> tuple[str, list[dict]]:
     explanations work on touch screens and with keyboards, not just on hover."""
     if not old:
         return '<div class="redline">' + "".join(f"<p>{E(p)}</p>" for p in new.split("\n\n")) + "</div>", []
-    a, b = sentences(old), sentences(new)
+    a = sentences(old)
+    # keep the new statement's own paragraph breaks
+    b, b_par = [], []
+    for k, para in enumerate(new.split("\n\n")):
+        for sent in sentences(para):
+            b.append(sent)
+            b_par.append(k)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
-    pieces: list[str] = []
+    pieces: list[tuple[int, str]] = []
     notes: list[dict] = []
 
     def note(text: str, inner: str, was: str = "") -> str:
@@ -121,10 +126,12 @@ def redline_html(old: str | None, new: str, changes) -> tuple[str, list[dict]]:
 
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == "equal":
-            pieces += [E(s) for s in b[j1:j2]]
+            pieces += [(b_par[j], E(b[j])) for j in range(j1, j2)]
             continue
         olds, news, used = list(a[i1:i2]), list(b[j1:j2]), set()
-        for n in news:
+        par = b_par[j1] if j1 < len(b_par) else (b_par[-1] if b_par else 0)
+        for jj, n in enumerate(news):
+            par = b_par[j1 + jj]
             best, br = None, 0.0
             for k, o in enumerate(olds):
                 if k not in used:
@@ -135,13 +142,22 @@ def redline_html(old: str | None, new: str, changes) -> tuple[str, list[dict]]:
                 used.add(best)
                 inner = "".join(E(op.text) if op.op == "equal" else f"<del>{E(op.text)}</del>" if op.op == "delete" else f"<ins>{E(op.text)}</ins>"
                                 for op in redline(olds[best], n))
-                pieces.append(note(_explain_for(n, olds[best], changes), inner))
+                pieces.append((par, note(_explain_for(n, olds[best], changes), inner)))
             else:
-                pieces.append(note(_explain_for(n, "", changes), f"<ins>{E(n)}</ins>"))
+                pieces.append((par, note(_explain_for(n, "", changes), f"<ins>{E(n)}</ins>")))
         for k, o in enumerate(olds):
             if k not in used:
-                pieces.append(note(_explain_for("", o, changes), f"<del>{E(o)}</del>"))
-    paras = ["<p>" + " ".join(pieces[i:i + 4]) + "</p>" for i in range(0, len(pieces), 4)]
+                pieces.append((par, note(_explain_for("", o, changes), f"<del>{E(o)}</del>")))
+    paras, cur, buf = [], None, []
+    for par, html_ in pieces + [(-1, "")]:
+        if par != cur and buf:
+            text = " ".join(buf)
+            roster = re.sub(r"<[^>]+>", "", text).lstrip().startswith(("Voting", "Absent"))
+            paras.append(f'<p class="roster">{text}</p>' if roster else f"<p>{text}</p>")
+            buf = []
+        cur = par
+        if html_:
+            buf.append(html_)
     return '<div class="redline">' + "".join(paras) + "</div>", notes
 
 
@@ -170,27 +186,37 @@ def tone_scale_html(score: float) -> str:
     left = (s + 2) / 4 * 100
     word, cls = tone_words(s)
     shown = f"{s:+.1f}".replace("-", "−")
+    ticks = "".join(f'<i style="left:{p}%"></i>' for p in (0, 25, 50, 75, 100))
     return (f'<div class="scale" role="img" aria-label="Tone {s:+.1f} on a scale from minus 2, dovish, to plus 2, hawkish">'
-            f'<div class="read"><strong class="{cls}">{word}</strong> <span class="muted">· <span class="fig">{shown}</span> on a scale from −2 to +2</span></div>'
-            f'<div class="track"><div class="pin" style="left:{left:.1f}%"></div></div>'
-            '<div class="ends"><span>Dovish: leaning toward lower rates</span><span>Hawkish: leaning toward higher rates</span></div></div>')
+            f'<div class="read"><span class="{cls}">{word}</span><span class="score">{shown}</span></div>'
+            f'<div class="track">{ticks}<b class="pin {cls}" style="left:{left:.1f}%"></b></div>'
+            '<div class="ends"><span class="dove">Dovish</span><span>Balanced</span><span class="hawk">Hawkish</span></div></div>')
 
 
 def quotes_html(tone_quotes) -> str:
-    out = []
+    groups = {"hawkish": [], "dovish": [], "other": []}
     for q in tone_quotes:
-        cls = "hawk" if q.direction == "hawkish" else "dove" if q.direction == "dovish" else ""
-        word = {"hawkish": "Pushes toward hawkish", "dovish": "Pushes toward dovish"}.get(q.direction, "Neutral")
-        out.append(f'<div class="quote"><p>“{E(q.quote)}”</p><span class="why"><span class="mark {cls}">{word}</span></span></div>')
+        groups[q.direction if q.direction in groups else "other"].append(q)
+    heads = {"dovish": ("Pointing toward lower rates", "dove"), "hawkish": ("Pointing toward higher rates", "hawk"), "other": ("Neutral", "")}
+    out = []
+    for key in ("dovish", "hawkish", "other"):
+        if groups[key]:
+            h, cls = heads[key]
+            out.append(f'<div class="quotes"><div class="qh {cls}">{h}</div>' + "".join(f"<p>“{E(q.quote)}”</p>" for q in groups[key]) + "</div>")
     return "".join(out)
 
 
 # ---------------------------------------------------------------- rows (impacts, economy)
 def rows_html(items: list[dict]) -> str:
-    """items: {topic, text, number}"""
+    """Money rows: the figure leads, the explanation follows. items: {topic, text, number}"""
     return '<div class="rows">' + "".join(
-        f'<div class="row"><div class="t">{E(i["topic"])}</div><div class="s">{E(i["text"])}</div><div class="n fig">{E(i.get("number") or "")}</div></div>'
+        f'<div class="row"><div class="n">{E(i.get("number") or "")}</div><div><div class="t">{E(i["topic"])}</div><div class="s">{E(i["text"])}</div></div></div>'
         for i in items) + "</div>"
+
+
+def briefing_html(items: list[dict]) -> str:
+    """The economy as a short briefing: a run-in topic, then the sentence."""
+    return '<div class="briefing">' + "".join(f'<p><strong>{E(i["topic"])}.</strong> {E(i["text"])}</p>' for i in items) + "</div>"
 
 
 def odds_html(p: dict) -> str:

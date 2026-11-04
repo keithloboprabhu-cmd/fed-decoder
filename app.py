@@ -186,7 +186,7 @@ def for_you_items(card, ctx) -> list[dict]:
 def section_decision(card, ctx) -> None:
     d = card.decision
     when = "Your pasted statement" if ctx["meeting_date"] == "pasted" else long_date(ctx["meeting_date"])
-    st.markdown(f'<div class="step"><div class="muted" style="font-size:15px;margin-bottom:8px">{when}</div>'
+    st.markdown(f'<div class="step first"><div class="dateline">{when}</div>'
                 f'<h1>{ui.E(ui.headline(d.direction, d.change_bps))}</h1>{ui.facts_html(d)}</div>', unsafe_allow_html=True)
     if d.direction == "hold":
         p1 = f"The FOMC left the federal funds rate where it was, with the target range at {ui.fmt_range(d.target_low, d.target_high)}."
@@ -196,9 +196,9 @@ def section_decision(card, ctx) -> None:
     p1 += " " + ui.vote_sentence(d) if ui.vote_sentence(d) else ""
     body = f"<p>{ui.define(ui.E(p1), ['FOMC', 'federal funds rate', 'basis points', 'target range', 'dissented'])}</p>"
     if card.tone_quotes:
-        body += f'<p class="muted" style="margin-bottom:0">In the statement’s own words:</p><div class="say">“{ui.E(card.tone_quotes[0].quote)}”</div>'
+        body += f'<div class="say">“{ui.E(card.tone_quotes[0].quote)}”</div>'
     st.markdown(f'<div class="prose">{body}</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="why"><div class="q">Why it matters</div><p style="margin:0">{ui.define(ui.E(ui.why_it_matters(d.direction)), ["10-year Treasury"])}</p></div>',
+    st.markdown(f'<div class="aside"><div class="aside-h">Why it matters</div><p>{ui.define(ui.E(ui.why_it_matters(d.direction)), ["10-year Treasury"])}</p></div>',
                 unsafe_allow_html=True)
 
 
@@ -209,14 +209,11 @@ def section_changed(card, ctx) -> None:
         return
     ref = "the most similar past statement, from " + long_date(ctx["prev_meeting_date"]) if ctx["meeting_date"] == "pasted" else "the previous statement, from " + long_date(ctx["prev_meeting_date"])
     pct = round((ctx.get("changed_fraction") or 0) * 100)
-    st.markdown(f'<div class="prose"><p>Compared with {ref}, about {pct}% of the wording changed. '
-                'Fed statements are edited word by word, so even small changes are deliberate.</p></div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="prose"><p>Compared with {ref}, about {pct}% of the wording changed. Fed statements are edited word by word, '
+                'so even small changes are deliberate. <del class="key">Struck</del> words were removed, <ins class="key">shaded</ins> ones added, '
+                'and the numbers point to what each change means.</p></div>', unsafe_allow_html=True)
     red, notes = ui.redline_html(ctx.get("prev_statement"), ctx["statement"], card.changes)
-    st.markdown('<div class="legend"><span><del>Struck through</del> was removed</span><span><ins>Highlighted</ins> was added</span>'
-                '<span>Small numbers link to what each change means</span></div>', unsafe_allow_html=True)
-    st.markdown(red, unsafe_allow_html=True)
-    if notes:
-        st.markdown('<h3 class="gap">What the changes mean</h3>' + ui.notes_html(notes), unsafe_allow_html=True)
+    st.markdown(f'<div class="margin-notes">{red}{ui.notes_html(notes)}</div>', unsafe_allow_html=True)
 
 
 def section_tone(card, ctx) -> None:
@@ -226,7 +223,7 @@ def section_tone(card, ctx) -> None:
                 + " language points toward lower ones.</p></div>", unsafe_allow_html=True)
     st.markdown(ui.tone_scale_html(card.tone_score), unsafe_allow_html=True)
     if card.tone_quotes:
-        st.markdown('<h3 class="gap">The lines behind this reading</h3>' + ui.quotes_html(card.tone_quotes[:3]), unsafe_allow_html=True)
+        st.markdown(ui.quotes_html(card.tone_quotes[:3]), unsafe_allow_html=True)
     with st.expander("How the tone score works"):
         tr = tone_mod.score(ctx["statement"])
         st.markdown(f'<p class="note">The score comes from the decoder card, which reads the whole statement. As a cross-check, a simple word-list model '
@@ -310,7 +307,7 @@ def render_personal_result(r, change_bps: int) -> None:
         big = f"{'−' if total < 0 else '+'}${abs(total):,.2f} a month"
         expl = f"{'Less' if total < 0 else 'More'} going out each month across the products below"
         expl += f", about {abs(r.share_of_income):.2f}% of your monthly income." if r.share_of_income is not None else "."
-    html = f'<div class="result reveal"><div class="muted" style="font-size:15px">Your estimated monthly impact</div><div class="big fig">{ui.E(big)}</div><p style="margin:0">{ui.E(expl)}</p>'
+    html = f'<div class="result reveal"><div class="muted" style="font-size:15px">Your estimated monthly impact</div><div class="big">{ui.E(big)}</div><p style="margin:0">{ui.E(expl)}</p>'
     if affected:
         html += "<h4>Changes with this decision</h4>" + ui.rows_html(affected)
     if unaffected:
@@ -319,7 +316,7 @@ def render_personal_result(r, change_bps: int) -> None:
         html += "<h4>Where you live</h4>" + ui.rows_html(local)
     if r.per_25bp_monthly:
         html += (f'<p class="note" style="margin-top:14px">Rule of thumb for you: every quarter-point Fed move shifts your monthly costs by about '
-                 f'<span class="fig">${abs(r.per_25bp_monthly):,.2f}</span>.</p>')
+                 f'<span class="tab">${abs(r.per_25bp_monthly):,.2f}</span>.</p>')
     html += '<p class="note" style="margin-top:6px">Estimates use national average rates, not your actual loan terms. Not financial advice.</p></div>'
     st.markdown(html, unsafe_allow_html=True)
 
@@ -340,7 +337,7 @@ def section_economy(card, ctx) -> None:
     for b in ctx["impacts"]["for_country"]:
         llm = next((x.text for x in card.for_country if x.topic.lower() == b["topic"].lower()), None)
         rows.append({"topic": b["topic"], "number": b["number"], "text": llm if (llm and card.provider != "rules") else b["text"]})
-    st.markdown(ui.rows_html(rows), unsafe_allow_html=True)
+    st.markdown(ui.briefing_html(rows), unsafe_allow_html=True)
 
 
 def section_next(card, ctx, is_latest: bool) -> None:
@@ -395,11 +392,11 @@ def decoder(card, ctx, is_latest: bool) -> None:
         renders[key]()
     st.markdown('<div style="height:18px"></div>', unsafe_allow_html=True)
     if last < len(STEPS) - 1:
-        c1, c2 = st.columns([1.4, 1], vertical_alignment="center")
-        if c1.button(NEXT_LABEL[STEPS[last + 1]], type="primary", key=f"cont_{last}"):
+        c1, c2 = st.columns([0.62, 1], vertical_alignment="center", gap="small")
+        if c1.button(NEXT_LABEL[STEPS[last + 1]], type="primary", key=f"cont_{last}", use_container_width=True):
             ss.step = last + 1
             st.rerun()
-        if c2.button("Show the whole explanation", type="tertiary"):
+        if c2.button("or show the whole explanation", type="tertiary"):
             ss.show_all = True
             st.rerun()
     else:
@@ -407,20 +404,19 @@ def decoder(card, ctx, is_latest: bool) -> None:
         if ctx["meeting_date"] != "pasted":
             all_d = dates()
             i = all_d.index(ctx["meeting_date"])
-            c1, c2, c3 = st.columns(3)
-            if i > 0 and c1.button(f"Previous meeting, {pd.Timestamp(all_d[i - 1]):%b %Y}", type="tertiary"):
-                open_meeting(all_d[i - 1]); st.rerun()
-            if i + 1 < len(all_d) and c2.button(f"Next meeting, {pd.Timestamp(all_d[i + 1]):%b %Y}", type="tertiary"):
-                open_meeting(all_d[i + 1]); st.rerun()
-            if c3.button("Decode a different meeting", type="tertiary"):
-                open_meeting(None); st.rerun()
+            with st.container(key="pager"):
+                c1, c2 = st.columns(2)
+                if i > 0 and c1.button(f"← {long_date(all_d[i - 1])}", type="tertiary", key="pg_prev"):
+                    open_meeting(all_d[i - 1]); st.rerun()
+                if i + 1 < len(all_d) and c2.button(f"{long_date(all_d[i + 1])} →", type="tertiary", key="pg_next"):
+                    open_meeting(all_d[i + 1]); st.rerun()
 
 
 def page_decode() -> None:
     if not ss.meeting:
         page_home()
         return
-    if st.button("Decode a different meeting", type="tertiary", key="restart_top"):
+    if st.button("← Choose another meeting", type="tertiary", key="restart_top"):
         open_meeting(None)
         st.rerun()
     if ss.meeting == "pasted":
