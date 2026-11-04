@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 2.0,
+   "target_high": 2.25,
+   "votes_for": 9,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 2 to 2-1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Job gains have been strong, on average, in recent months, and the unemployment rate has declined.",
+    "explanation": "The Committee updated its assessment to state that the unemployment rate has declined compared to staying low previously."
+   },
+   {
+    "quote": "Household spending has continued to grow strongly, while growth of business fixed investment has moderated from its rapid pace earlier in the year.",
+    "explanation": "The Fed noted that while consumer spending remains robust, business investment has slowed down from its earlier fast pace."
+   },
+   {
+    "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 2 to 2-1/4 percent.",
+    "explanation": "The Fed explicitly changed its action from raising rates to holding them steady at this meeting."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in September indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee expects that further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective over the medium term.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 14.38% APR costs about $59.92 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.24% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.83% would rise by about $3.63 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.8%, and employers added an average of 169k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.5% over the past year (October 2018); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.8%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.5% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day, and the S&P 500 moved -0.25%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.34% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Federal Reserve plans to continue gradual rate increases as long as economic growth and employment remain strong. An educational forecast model assigned a 70% probability of a rate hike and a 30% probability of a hold at the next meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 2 to 2-1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.38% as of 2018-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4.83% week of 2018-11-01"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.24% on 2018-11-08"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.8% in October 2018"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 169k as of October 2018"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.5% year over year, October 2018"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.9% year over year, October 2018"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.5% annualized, quarter starting 2018-07-01"
+   }
+  ],
+  "meeting_date": "2018-11-08",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 2.0,
+   "target_high": 2.25,
+   "votes_for": 9,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to maintain the target range for the federal funds rate at 2 to 2-1/4 percent."
+  },
+  "latency_s": 3.89
+ },
+ "latency_s": 3.8952691555023193,
+ "failures": []
+}

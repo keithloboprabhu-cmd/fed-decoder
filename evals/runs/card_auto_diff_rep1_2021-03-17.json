@@ -1,0 +1,135 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Following a moderation in the pace of the recovery, indicators of economic activity and employment have turned up recently, although the sectors most adversely affected by the pandemic remain weak.",
+    "explanation": "The Fed noted that economic and job indicators have picked up recently, showing improvement despite ongoing weakness in hard-hit sectors."
+   },
+   {
+    "quote": "Inflation continues to run below 2 percent.",
+    "explanation": "This added sentence clarifies that overall inflation remains under the central bank's longer-run target."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "The Federal Reserve is committed to using its full range of tools to support the U.S. economy in this challenging time, thereby promoting its maximum employment and price stability goals.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee expects to maintain an accommodative stance of monetary policy until these outcomes are achieved.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 14.65% APR costs about $61.04 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.63% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.02% would rise by about $1.62 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 6.2%, and employers added an average of 216k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 1.7% over the past year (February 2021); core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 6.2%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 4.6% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day, and the S&P 500 moved 0.29%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.15% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed plans to keep borrowing costs low until the labor market reaches maximum employment and inflation rises to 2 percent. Based on historical patterns, our educational forecast model estimates an 86% probability of a hold at the next meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.65% as of 2020-11-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.02% week of 2021-03-04"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.63% on 2021-03-17"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "6.2% in February 2021"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 216k as of February 2021"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "1.7% year over year, February 2021"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.6% year over year, February 2021"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "4.6% annualized, quarter starting 2020-10-01"
+   }
+  ],
+  "meeting_date": "2021-03-17",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.73
+ },
+ "latency_s": 3.8161797523498535,
+ "failures": []
+}

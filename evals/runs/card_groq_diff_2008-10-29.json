@@ -1,0 +1,152 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 1.0,
+   "target_high": 1.0,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee cut the federal funds rate by 50 basis points to a target range of 1 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 50 basis points to 1 percent.",
+    "explanation": "The new wording makes the rate cut explicit and adds the exact target of 1 percent."
+   },
+   {
+    "quote": "The pace of economic activity appears to have slowed markedly, owing importantly to a decline in consumer expenditures.",
+    "explanation": "Adds a clear statement that growth has slowed, justifying the easing action."
+   },
+   {
+    "quote": "Business equipment spending and industrial production have weakened in recent months, and slowing economic activity in many foreign economies is damping the prospects for U.S. exports.",
+    "explanation": "Highlights weaker investment and export outlook, reinforcing concerns about growth."
+   },
+   {
+    "quote": "FOMC statement: Federal Reserve and other central banks announce reductions in policy interest rates",
+    "explanation": "Removed a reference to a joint announcement, narrowing the focus to the Fed\u2019s own action."
+   },
+   {
+    "quote": "Joint Statement by Central Banks",
+    "explanation": "Removed the heading that previously emphasized coordination with other central banks."
+   }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+   {
+    "quote": "The pace of economic activity appears to have slowed markedly, owing importantly to a decline in consumer expenditures.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "In light of the declines in the prices of energy and other commodities and the weaker prospects for economic activity, the Committee expects inflation to moderate in coming quarters to levels consistent with price stability.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "A 50\u2011basis\u2011point cut reduces the monthly interest on a $5,000 balance at 11.88% APR by about $2.08."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "The 10\u2011year Treasury yield was 3.93% and rose 4\u202fbp, so a new $300,000 30\u2011year loan at 6.46% would cost about $7.88 more per month."
+   },
+   {
+    "topic": "Savers",
+    "text": "On $10,000, a lower high\u2011yield savings rate means roughly $30.00 less interest per year."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 6.1% and employers added an average of -313k jobs a month over the prior three months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 5% year over year in September 2008, while core PCE inflation was 2%, matching the Fed\u2019s 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 6.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP contracted at a -2.1% annualized rate in the latest quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield fell -7\u202fbp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar declined -2.27% on the day."
+   }
+  ],
+  "whats_next": "The Committee\u2019s language suggests it will likely keep rates steady at the next meeting while monitoring the economy. Educational forecast models show a 55% chance of another cut, 43% chance of holding, and only 1% chance of a hike.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 50 basis points to 1 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "11.88%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.46%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.93%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "6.1%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "-313k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "5%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-2.1%"
+   }
+  ],
+  "meeting_date": "2008-10-29",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 1.0,
+   "target_high": 1.0,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee cut the federal funds rate by 50 basis points to a target range of 1 percent."
+  },
+  "latency_s": 9.66
+ },
+ "latency_s": 23.1699640750885,
+ "failures": [
+  [
+   "groq",
+   "GuardrailError"
+  ]
+ ]
+}

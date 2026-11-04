@@ -1,0 +1,153 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.25,
+   "target_high": 0.5,
+   "votes_for": 8,
+   "votes_against": 2,
+   "dissenters": [
+    "Esther L. George",
+    "Loretta J. Mester"
+   ],
+   "summary": "The Federal Reserve voted to keep the target range for the federal funds rate at 1/4 to 1/2 percent."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in September indicates that the labor market has continued to strengthen and growth of economic activity has picked up from the modest pace seen in the first half of this year.",
+    "explanation": "The Fed noted that economic growth has improved compared to the sluggish pace earlier in the year."
+   },
+   {
+    "quote": "Household spending has been rising moderately but business fixed investment has remained soft.",
+    "explanation": "Consumer spending is growing at a moderate pace, but businesses continue to hold back on investments."
+   },
+   {
+    "quote": "Inflation has increased somewhat since earlier this year but is still below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and in prices of non-energy imports.",
+    "explanation": "Inflation is ticking up slightly but remains under the Fed's 2 percent target."
+   },
+   {
+    "quote": "Market-based measures of inflation compensation have moved up but remain low; most survey-based measures of longer-term inflation expectations are little changed, on balance, in recent months.",
+    "explanation": "Market indicators show inflation expectations rising a bit, though overall long-term expectations remain stable."
+   },
+   {
+    "quote": "The Committee judges that the case for an increase in the federal funds rate has continued to strengthen but decided, for the time being, to wait for some further evidence of continued progress toward its objectives.",
+    "explanation": "The arguments for a rate hike are growing stronger, but officials chose to wait for more supporting economic data before acting."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee judges that the case for an increase in the federal funds rate has continued to strengthen but decided, for the time being, to wait for some further evidence of continued progress toward its objectives.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Against this backdrop, the Committee decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 12.16% APR costs about $50.67 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.81% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.52% would fall by about $3.35 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5%, and employers added an average of 273k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 1.5% over the past year (September 2016); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.9% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.06% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Federal Reserve is waiting for additional economic data before making its next move. Educational forecast models suggest a hold is heavily favored for the upcoming meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "Against this backdrop, the Committee decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.16% as of 2016-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.52% week of 2016-10-20"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.81% on 2016-11-02"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5% in September 2016"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 273k as of September 2016"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "1.5% year over year, September 2016"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.7% year over year, September 2016"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.9% annualized, quarter starting 2016-07-01"
+   }
+  ],
+  "meeting_date": "2016-11-02",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.25,
+   "target_high": 0.5,
+   "votes_for": 8,
+   "votes_against": 2,
+   "dissenters": [
+    "Esther L. George",
+    "Loretta J. Mester"
+   ],
+   "summary": "The Federal Reserve voted to keep the target range for the federal funds rate at 1/4 to 1/2 percent."
+  },
+  "latency_s": 4.42
+ },
+ "latency_s": 4.422759771347046,
+ "failures": []
+}

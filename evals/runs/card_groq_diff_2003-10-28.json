@@ -1,0 +1,127 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.0,
+   "target_high": 1.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Fed kept the target federal funds rate at 1 percent."
+  },
+  "changes": [
+   {
+    "quote": "The evidence accumulated over the intermeeting period confirms that spending is firming, and the labor market appears to be stabilizing.",
+    "explanation": "The Committee now says the labor market is stabilizing rather than weakening, indicating a more positive view of employment."
+   }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee judges that, on balance, the risk of inflation becoming undesirably low remains the predominant concern for the foreseeable future.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "A $5,000 balance at about 12.12% APR costs about $50.50 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year was 4.23% and moved -7\u202fbp, so a new $300,000 30\u2011year loan at 6.05% would see its payment fall by about $13.51 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 6.1%, and employers added an average of 22k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.4% over the past year, while core PCE inflation was 1.5% against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 6.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 6.8% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield moved -12\u202fbp on the day."
+   }
+  ],
+  "whats_next": "The Committee signals that it expects to keep policy accommodation for a considerable period, so future meetings are likely to result in no change to the target rate. Educationally, this suggests the Fed will monitor inflation risks before considering any hikes.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 1 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.12% as of 2003-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.05% week of 2003-10-17"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.23% on 2003-10-28"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "6.1% in September 2003"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 22k as of September 2003"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.4% year over year, September 2003"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.5% year over year, September 2003"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "6.8% annualized, quarter starting 2003-07-01"
+   }
+  ],
+  "meeting_date": "2003-10-28",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.0,
+   "target_high": 1.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Fed kept the target federal funds rate at 1 percent."
+  },
+  "latency_s": 42.01
+ },
+ "latency_s": 42.00881886482239,
+ "failures": []
+}

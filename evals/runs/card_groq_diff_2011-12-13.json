@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Charles L. Evans"
+   ],
+   "summary": "The Committee kept the federal funds rate target range at 0 to 0.25 percent, with no change."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in November suggests that the economy has been expanding moderately, notwithstanding some apparent slowing in global growth.",
+    "explanation": "The Committee added a note that the economy is growing moderately but global growth may be slowing, signaling a cautious outlook."
+   },
+   {
+    "quote": "While indicators point to some improvement in overall labor market conditions, the unemployment rate remains elevated.",
+    "explanation": "The language shifts from \u201ccontinuing weakness\u201d to \u201csome improvement,\u201d indicating a modestly better view of jobs while still noting high unemployment."
+   },
+   {
+    "quote": "Household spending has continued to advance, but business fixed investment appears to be increasing less rapidly and the housing sector remains depressed.",
+    "explanation": "Spending is strong, but slower business investment and a weak housing market suggest uneven recovery."
+   },
+   {
+    "quote": "Inflation has moderated since earlier in the year, and longer-term inflation expectations have remained stable.",
+    "explanation": "Lower inflation eases pressure on the Committee, supporting the decision to hold rates."
+   },
+   {
+    "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+    "explanation": "Ongoing global market stress is highlighted as a downside risk, reinforcing a dovish stance."
+   }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+   {
+    "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee also anticipates that inflation will settle, over coming quarters, at levels at or below those consistent with the Committee\u2019s dual mandate.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 12.28% APR costs about $51.17 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.96% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4% would fall by about $12.08 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 8.6%, and employers added an average of 188k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.5% over the past year, while core PCE inflation was 1.8% against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 8.6%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP contracted at a -0.1% annualized pace in the latest quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield was unchanged on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar rose 0.23% on the day."
+   }
+  ],
+  "whats_next": "Educational forecast shows a 74% chance the Committee will hold rates at the next meeting, a 24% chance of a cut, and a 2% chance of a hike. This suggests the Fed expects conditions to remain similar, with little pressure to change policy soon.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.28%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.96%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "8.6%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "188k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.5%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.8%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-0.1%"
+   }
+  ],
+  "meeting_date": "2011-12-13",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Charles L. Evans"
+   ],
+   "summary": "The Committee kept the federal funds rate target range at 0 to 0.25 percent, with no change."
+  },
+  "latency_s": 36.61
+ },
+ "latency_s": 51.05890130996704,
+ "failures": []
+}

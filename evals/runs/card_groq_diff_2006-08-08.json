@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 5.25,
+   "target_high": 5.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Jeffrey M. Lacker"
+   ],
+   "summary": "The Committee kept the federal funds rate unchanged at 5.25%."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent.",
+    "explanation": "The Fed chose not to raise rates, signaling a pause in tightening."
+   },
+   {
+    "quote": "Economic growth has moderated from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
+    "explanation": "Growth is slowing as housing cools and higher rates and energy costs take effect."
+   },
+   {
+    "quote": "Readings on core inflation have been elevated in recent months, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
+    "explanation": "Core inflation remains high, keeping some inflation pressure alive."
+   },
+   {
+    "quote": "However, inflation pressures seem likely to moderate over time, reflecting contained inflation expectations and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
+    "explanation": "The Committee expects inflation to ease as expectations stay contained and demand weakens."
+   },
+   {
+    "quote": "Voting against was Jeffrey M. Lacker, who preferred an increase of 25 basis points in the federal funds rate target at this meeting.",
+    "explanation": "One member pushed for a rate hike, showing dissent within the Committee."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee judges that some inflation risks remain.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Borrowers won\u2019t see a rate change; a $5,000 balance at about 13.16% APR costs about $54.83 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; with the 10-year at 4.93% and unchanged, a new $300,000 30\u2011year loan at 6.72% would have the same payment."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.7%, and employers added an average of 106k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 4.1% over the past year, while core PCE inflation was 2.5% against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.7%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 1% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield moved down 5 basis points on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar rose 0.15% on the day."
+   }
+  ],
+  "whats_next": "The Committee\u2019s language and the forecast suggest it is more likely to raise rates at the next meeting, with a 65% chance of a hike versus a 34% chance of holding. If inflation continues to moderate, a smaller increase or a hold remains possible.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.16%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.72%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.93%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.7%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "106k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "4.1%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.5%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "1%"
+   }
+  ],
+  "meeting_date": "2006-08-08",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 5.25,
+   "target_high": 5.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Jeffrey M. Lacker"
+   ],
+   "summary": "The Committee kept the federal funds rate unchanged at 5.25%."
+  },
+  "latency_s": 7.07
+ },
+ "latency_s": 21.946721076965332,
+ "failures": []
+}

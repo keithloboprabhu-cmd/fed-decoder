@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 4.25,
+   "target_high": 4.5,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+  },
+  "changes": [
+   {
+    "quote": "The unemployment rate has stabilized at a low level in recent months, and labor market conditions remain solid.",
+    "explanation": "The Fed added this language to note that the job market is steady and healthy."
+   },
+   {
+    "quote": "Inflation remains somewhat elevated.",
+    "explanation": "The Fed streamlined its inflation description by removing the mention of prior progress."
+   },
+   {
+    "quote": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent.",
+    "explanation": "The Fed changed its policy action from lowering rates to holding them steady."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee judges that the risks to achieving its employment and inflation goals are roughly in balance.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 21.76% APR costs about $90.67 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.55% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.04% would not change."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.1%, and employers added an average of 135k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.9% over the past year (December 2024); core PCE inflation, the Fed's preferred gauge, was 2.9%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.4% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day, and the S&P 500 moved -0.47%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.05% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that future rate decisions will depend on incoming economic data and the evolving outlook. Educational forecast models suggest a 92% chance of another hold at the upcoming meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "21.76%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "7.04%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.55%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.1%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "135k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.9%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.9%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.4%"
+   }
+  ],
+  "meeting_date": "2025-01-29",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 4.25,
+   "target_high": 4.5,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to keep the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+  },
+  "latency_s": 4.05
+ },
+ "latency_s": 4.053598165512085,
+ "failures": []
+}

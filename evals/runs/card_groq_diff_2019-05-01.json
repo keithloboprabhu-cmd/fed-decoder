@@ -1,0 +1,143 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 2.25,
+   "target_high": 2.5,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate unchanged at a range of 2.25% to 2.5%."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in March indicates that the labor market remains strong and that economic activity rose at a solid rate.",
+    "explanation": "The update shifts the reference month to March and adds that activity actually rose, signaling a slightly more upbeat view of growth."
+   },
+   {
+    "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
+    "explanation": "The sentence removes the earlier mention of February payrolls, focusing on recent solid job gains and low unemployment."
+   },
+   {
+    "quote": "Growth of household spending and business fixed investment slowed in the first quarter.",
+    "explanation": "It highlights a slowdown in spending and investment, pointing to weaker demand in the near term."
+   },
+   {
+    "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy have declined and are running below 2 percent.",
+    "explanation": "The change emphasizes that both headline and core inflation are now below the 2% target, reinforcing a dovish tilt."
+   },
+   {
+    "quote": "Voting for the FOMC monetary policy action were: Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; James Bullard; Richard H. Clarida; Charles L. Evans; Esther L. George; Randal K. Quarles; and Eric S. Rosengren.",
+    "explanation": "The titles of the Chair and Vice Chair were updated, but the vote count remains unanimous."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "In light of global economic and financial developments and muted inflation pressures, the Committee will be patient as it determines what future adjustments to the target range for the federal funds rate may be appropriate to support these outcomes.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee continues to view sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective as the most likely outcomes.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "A $5,000 balance at about 14.73% APR costs about $61.38 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year was 2.52% and a $300,000 30\u2011year loan at 4.17% would see payments rise about $1.75 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.8%, and employers added an average of 162k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Overall inflation was 1.9% and core PCE inflation 1.6%, both below the 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.8%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.5% annualized pace in the latest quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield rose 4 basis points and the S&P 500 fell 0.75%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar slipped 0.28% on the day."
+   }
+  ],
+  "whats_next": "The Committee\u2019s language and the forecast suggest it will likely hold rates at the next meeting as well. Educationally, the model predicts a 98% chance of another hold, with only a small chance of a hike.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.73% APR"
+   },
+   {
+    "source": "DGS10",
+    "detail": "2.52% on 2019-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4.17% week of 2019-04-18"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.8% in March 2019"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "1.9% year over year, March 2019"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.6% year over year, March 2019"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.5% annualized, quarter starting 2019-01-01"
+   }
+  ],
+  "meeting_date": "2019-05-01",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 2.25,
+   "target_high": 2.5,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate unchanged at a range of 2.25% to 2.5%."
+  },
+  "latency_s": 44.17
+ },
+ "latency_s": 44.17225694656372,
+ "failures": []
+}

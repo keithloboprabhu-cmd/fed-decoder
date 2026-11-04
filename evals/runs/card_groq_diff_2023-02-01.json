@@ -1,0 +1,123 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 4.5,
+   "target_high": 4.75,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee raised the target range for the federal funds rate by 25 basis points to 4.5%\u20114.75%."
+  },
+  "changes": [
+   {
+    "quote": "Inflation has eased somewhat but remains elevated.",
+    "explanation": "Shows inflation is still high, reinforcing the need for tighter policy."
+   },
+   {
+    "quote": "Russia's war against Ukraine is causing tremendous human and economic hardship and is contributing to elevated global uncertainty.",
+    "explanation": "Adds global uncertainty to the risk picture, supporting a cautious stance."
+   },
+   {
+    "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/2 to 4-3/4 percent.",
+    "explanation": "Specifies the 25\u2011bp hike to the 4.5%\u20114.75% range."
+   },
+   {
+    "quote": "In determining the extent of future increases in the target range, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+    "explanation": "Signals that more rate hikes may be coming as the Committee evaluates ongoing impacts."
+   },
+   {
+    "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lael Brainard; Lisa D. Cook; Austan D. Goolsbee; Patrick Harker; Philip N. Jefferson; Neel Kashkari; Lorie K. Logan; and Christopher J. Waller.",
+    "explanation": "Shows unanimous support with no dissenters, underscoring consensus on tightening."
+   }
+  ],
+  "tone_score": 2.0,
+  "tone_quotes": [
+   {
+    "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/2 to 4-3/4 percent.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee anticipates that ongoing increases in the target range will be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee is highly attentive to inflation risks.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 16.27% APR, a 25\u2011bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10\u2011year Treasury yield, not the fed funds rate; the 10\u2011year was 3.39% and moved -13\u202fbp, so a new $300,000 30\u2011year loan at 6.15% would see its payment fall by about $25.17 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High\u2011yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.5%, and employers added an average of 253\u202fk jobs a month over the prior three months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 6.4% over the past year, while core PCE inflation was 5.1% versus the 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.7% annualized pace in the latest quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield moved -12\u202fbp and the S&P\u202f500 rose 1.05%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar fell 0.3% on the day."
+   }
+  ],
+  "whats_next": "Educational forecast shows the next meeting is expected to result in a hike with 87% probability, a hold 12%, and a cut 1%. This suggests the Committee is likely to keep tightening at the upcoming meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/2 to 4-3/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "16.27%"
+   }
+  ],
+  "meeting_date": "2023-02-01",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 4.5,
+   "target_high": 4.75,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee raised the target range for the federal funds rate by 25 basis points to 4.5%\u20114.75%."
+  },
+  "latency_s": 11.79
+ },
+ "latency_s": 15.938880443572998,
+ "failures": []
+}

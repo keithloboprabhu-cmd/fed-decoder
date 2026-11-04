@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 5.0,
+   "target_high": 5.0,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent.",
+    "explanation": "The Fed increased the key interest rate by 25 basis points to 5 percent."
+   },
+   {
+    "quote": "Economic growth has been quite strong so far this year.",
+    "explanation": "The Committee noted that economic growth has been robust this year."
+   },
+   {
+    "quote": "The Committee sees growth as likely to moderate to a more sustainable pace, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
+    "explanation": "Growth is expected to slow down due to a cooling housing market and higher past interest rates and energy prices."
+   },
+   {
+    "quote": "The Committee judges that some further policy firming may yet be needed to address inflation risks but emphasizes that the extent and timing of any such firming will depend importantly on the evolution of the economic outlook as implied by incoming information.",
+    "explanation": "More rate hikes might happen if inflation risks continue, depending on future economic data."
+   },
+   {
+    "quote": "In a related action, the Board of Governors unanimously approved a 25-basis-point increase in the discount rate to 6 percent.",
+    "explanation": "The discount rate was also raised by 25 basis points to 6 percent."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee judges that some further policy firming may yet be needed to address inflation risks but emphasizes that the extent and timing of any such firming will depend importantly on the evolution of the economic outlook as implied by incoming information.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Still, possible increases in resource utilization, in combination with the elevated prices of energy and other commodities, have the potential to add to inflation pressures.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 13.3% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.13% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.58% would not change."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.7%, and employers added an average of 261k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.6% over the past year (April 2006); core PCE inflation, the Fed's preferred gauge, was 2.4%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.7%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 5.5% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +4 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.33% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that future meetings could involve more rate hikes if inflation pressures persist. As an educational forecast, the model indicates a 91% chance of a hike and a 9% chance of a hold at the next meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.3% as of 2006-02-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.58% week of 2006-04-27"
+   },
+   {
+    "source": "DGS10",
+    "detail": "5.13% on 2006-05-10"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.7% in April 2006"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 261k as of April 2006"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.6% year over year, April 2006"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.4% year over year, April 2006"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "5.5% annualized, quarter starting 2006-01-01"
+   }
+  ],
+  "meeting_date": "2006-05-10",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 5.0,
+   "target_high": 5.0,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5 percent."
+  },
+  "latency_s": 3.79
+ },
+ "latency_s": 3.7981159687042236,
+ "failures": []
+}

@@ -1,0 +1,143 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 5.0,
+   "target_high": 5.0,
+   "votes_for": null,
+   "votes_against": null,
+   "dissenters": [],
+   "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 5 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 5 percent.",
+    "explanation": "The Fed reduced the benchmark federal funds rate by 50 basis points, bringing it down to 5 percent."
+   },
+   {
+    "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 4-1/2 percent.",
+    "explanation": "The secondary interest rate charged to commercial banks was also lowered by 50 basis points to 4-1/2 percent."
+   },
+   {
+    "quote": "Persistent pressures on profit margins are restraining investment spending and, through declines in equity wealth, consumption.",
+    "explanation": "The Committee noted that company profit pressures are slowing business investments and lower stock market wealth is reducing consumer spending."
+   },
+   {
+    "quote": "The possibility that this excess could continue for some time and the potential for weakness in global economic conditions suggest substantial risks that demand and production could remain soft.",
+    "explanation": "Global weaknesses and excess capacity create ongoing risks that overall economic demand and manufacturing production might stay soft."
+   },
+   {
+    "quote": "The Committee continues to believe that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
+    "explanation": "The central view remains that future risks lean toward economic weakness rather than inflation."
+   }
+  ],
+  "tone_score": -1.5,
+  "tone_quotes": [
+   {
+    "quote": "The possibility that this excess could continue for some time and the potential for weakness in global economic conditions suggest substantial risks that demand and production could remain soft.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee continues to believe that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 15.99% APR, a 50 bp cut lowers monthly interest by about $2.08."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year was 4.78% and moved -4 bp on the day, so if that move passed through, the payment on a new $300,000 30-year loan at 6.97% would fall by about $8.04 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $30.00 a year less in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.2%, and employers added an average of 77k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.5% over the past year while core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.2%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.4% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -8 bp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Federal Reserve remains concerned about economic softness and downside risks ahead. It highlights the need to monitor developments closely as conditions evolve.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 5 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "15.99% as of 2000-11-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.97% week of 2001-03-09"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.78% on 2001-03-20"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.2% in February 2001"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 77k as of February 2001"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.5% year over year, February 2001"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2% year over year, February 2001"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.4% annualized, quarter starting 2000-10-01"
+   }
+  ],
+  "meeting_date": "2001-03-20",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 5.0,
+   "target_high": 5.0,
+   "votes_for": null,
+   "votes_against": null,
+   "dissenters": [],
+   "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 5 percent."
+  },
+  "latency_s": 7.77
+ },
+ "latency_s": 7.773298263549805,
+ "failures": []
+}

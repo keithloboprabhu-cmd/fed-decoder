@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Charles L. Evans"
+   ],
+   "summary": "The Federal Reserve decided to keep its key interest rate at 0 to 1/4 percent and continue its maturity extension program."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in November suggests that the economy has been expanding moderately, notwithstanding some apparent slowing in global growth.",
+    "explanation": "The Fed added this language to note that the economy is growing moderately despite a global slowdown."
+   },
+   {
+    "quote": "While indicators point to some improvement in overall labor market conditions, the unemployment rate remains elevated.",
+    "explanation": "The Fed softened its view on labor markets, noting slight improvement while acknowledging high unemployment."
+   },
+   {
+    "quote": "Household spending has continued to advance, but business fixed investment appears to be increasing less rapidly and the housing sector remains depressed.",
+    "explanation": "The Fed noted that business investment is slowing down while consumer spending continues to grow."
+   },
+   {
+    "quote": "Inflation has moderated since earlier in the year, and longer-term inflation expectations have remained stable.",
+    "explanation": "The Fed pointed out that inflation has cooled down compared to earlier months."
+   },
+   {
+    "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+    "explanation": "The Fed emphasizes that international financial stress is still a major risk for the U.S. economy."
+   }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+   {
+    "quote": "Strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee also anticipates that inflation will settle, over coming quarters, at levels at or below those consistent with the Committee\u2019s dual mandate.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 12.28% APR costs about $51.17 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 1.96% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4% would fall by about $12.08 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 8.6%, and employers added an average of 188k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.5% over the past year (November 2011); core PCE inflation, the Fed's preferred gauge, was 1.8%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 8.6%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a -0.1% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.23% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed plans to keep rates exceptionally low at least through mid-2013. Educational forecast models suggest a 74% chance of holding rates at the next meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.28% as of 2011-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4% week of 2011-12-01"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.96% on 2011-12-13"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "8.6% in November 2011"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 188k as of November 2011"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.5% year over year, November 2011"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.8% year over year, November 2011"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-0.1% annualized, quarter starting 2011-07-01"
+   }
+  ],
+  "meeting_date": "2011-12-13",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Charles L. Evans"
+   ],
+   "summary": "The Federal Reserve decided to keep its key interest rate at 0 to 1/4 percent and continue its maturity extension program."
+  },
+  "latency_s": 3.99
+ },
+ "latency_s": 3.998570680618286,
+ "failures": []
+}

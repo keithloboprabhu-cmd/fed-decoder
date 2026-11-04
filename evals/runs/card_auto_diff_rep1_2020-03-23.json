@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and announced open-ended asset purchases to support the flow of credit."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee is taking further actions to support the flow of credit to households and businesses by addressing strains in the markets for Treasury securities and agency mortgage-backed securities.",
+    "explanation": "The Fed added this to show it is actively intervening to fix disruptions in key financial markets."
+   },
+   {
+    "quote": "The Federal Reserve will continue to purchase Treasury securities and agency mortgage-backed securities in the amounts needed to support smooth market functioning and effective transmission of monetary policy to broader financial conditions.",
+    "explanation": "This signals that bond purchases will happen in whatever quantities are required rather than under a fixed schedule."
+   },
+   {
+    "quote": "The Committee will include purchases of agency commercial mortgage-backed securities in its agency mortgage-backed security purchases.",
+    "explanation": "Commercial real estate debt was added to the buying program to relieve specific liquidity pressures."
+   },
+   {
+    "quote": "The Committee will continue to closely monitor market conditions, and will assess the appropriate pace of its securities purchases at future meetings.",
+    "explanation": "The Fed replaced a general statement of preparedness with a specific commitment to review the speed of its ongoing asset purchases."
+   },
+   {
+    "quote": "The coronavirus outbreak has harmed communities and disrupted economic activity in many countries, including the United States.",
+    "explanation": "This specific language addressing the pandemic was removed in this update."
+   }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+   {
+    "quote": "The Federal Reserve is committed to use its full range of tools to support the U.S. economy in this challenging time and thereby promote its maximum employment and price stability goals.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Federal Open Market Committee is taking further actions to support the flow of credit to households and businesses by addressing strains in the markets for Treasury securities and agency mortgage-backed securities.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 14.87% APR costs about $61.96 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 0.76% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.36% would fall by about $26.40 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.5%, and employers added an average of 209k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.3% over the past year (February 2020); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.8% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -9 bp on the day, and the S&P 500 moved -2.93%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.95% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Federal Reserve will maintain emergency support until market functioning normalizes. An educational forecast model indicates that future meetings have an 84% probability of a hold, a 4% probability of a cut, and a 12% probability of a hike.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "Effective March 23, 2020, the Federal Open Market Committee directs the Desk to undertake open market operations as necessary to maintain the federal funds rate in a target range of 0 to 1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.87% as of 2019-11-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.36% week of 2020-03-12"
+   },
+   {
+    "source": "DGS10",
+    "detail": "0.76% on 2020-03-23"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.5% in February 2020"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 209k as of February 2020"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.3% year over year, February 2020"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.7% year over year, February 2020"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.8% annualized, quarter starting 2019-10-01"
+   }
+  ],
+  "meeting_date": "2020-03-23",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its target interest rate at 0 to 1/4 percent and announced open-ended asset purchases to support the flow of credit."
+  },
+  "latency_s": 3.91
+ },
+ "latency_s": 7.438551187515259,
+ "failures": []
+}

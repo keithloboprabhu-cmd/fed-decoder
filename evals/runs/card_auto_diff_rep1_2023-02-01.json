@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 4.5,
+   "target_high": 4.75,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 4-1/2 to 4-3/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Inflation has eased somewhat but remains elevated.",
+    "explanation": "The Committee acknowledged that while price pressures have slowed, they are still higher than the Fed's target."
+   },
+   {
+    "quote": "Russia's war against Ukraine is causing tremendous human and economic hardship and is contributing to elevated global uncertainty.",
+    "explanation": "The Fed added text noting that the war is creating heightened global uncertainty."
+   },
+   {
+    "quote": "In determining the extent of future increases in the target range, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+    "explanation": "This phrasing highlights that future rate decisions will weigh how past rate hikes and their delayed impacts are affecting the economy."
+   },
+   {
+    "quote": "In addition, the Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities, as described in its previously announced plans.",
+    "explanation": "The Fed updated the reference regarding its balance sheet reduction plans to describe them as previously announced."
+   },
+   {
+    "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lael Brainard; Lisa D. Cook; Austan D. Goolsbee; Patrick Harker; Philip N. Jefferson; Neel Kashkari; Lorie K. Logan; and Christopher J. Waller.",
+    "explanation": "The list of voters was updated to reflect current committee members."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee anticipates that ongoing increases in the target range will be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 16.27% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.39% and moved -13 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.15% would fall by about $25.17 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.5%, and employers added an average of 253k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 6.4% over the past year (December 2022); core PCE inflation, the Fed's preferred gauge, was 5.1%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.7% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -12 bp on the day, and the S&P 500 moved 1.05%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.3% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that future policy decisions will depend on incoming economic data and the cumulative impact of past tightening. An educational forecast model suggests a high probability of further tightening or holds at upcoming meetings.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 4-1/2 to 4-3/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "16.27% as of 2022-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.15% week of 2023-01-19"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.39% on 2023-02-01"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.5% in December 2022"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 253k as of December 2022"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "6.4% year over year, December 2022"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "5.1% year over year, December 2022"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.7% annualized, quarter starting 2022-10-01"
+   }
+  ],
+  "meeting_date": "2023-02-01",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 4.5,
+   "target_high": 4.75,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised the target range for the federal funds rate by 25 basis points to 4-1/2 to 4-3/4 percent."
+  },
+  "latency_s": 4.15
+ },
+ "latency_s": 4.229306697845459,
+ "failures": []
+}

@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Thomas M. Hoenig"
+   ],
+   "summary": "The Federal Reserve decided to keep the federal funds rate target at 0 to 1/4 percent and continue its asset purchase program."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in November confirms that the economic recovery is continuing, though at a rate that has been insufficient to bring down unemployment.",
+    "explanation": "The Fed acknowledges the recovery is ongoing but notes that it is still not fast enough to lower unemployment."
+   },
+   {
+    "quote": "Household spending is increasing at a moderate pace, but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.",
+    "explanation": "Consumer spending has picked up slightly to a moderate pace, but people remain held back by joblessness, low income growth, and tight lending."
+   },
+   {
+    "quote": "The housing sector continues to be depressed.",
+    "explanation": "The statement simplifies the description of housing by referring broadly to the whole sector remaining depressed rather than just housing starts."
+   },
+   {
+    "quote": "Longer-term inflation expectations have remained stable, but measures of underlying inflation have continued to trend downward.",
+    "explanation": "Underlying inflation measures are drifting downward, which keeps the central bank focused on supporting price stability."
+   },
+   {
+    "quote": "In addition, the Committee intends to purchase $600 billion of longer-term Treasury securities by the end of the second quarter of 2011, a pace of about $75 billion per month.",
+    "explanation": "The Fed reaffirmed its ongoing commitment to purchase $600 billion of longer-term Treasuries through mid-2011 to stimulate the economy."
+   }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+   {
+    "quote": "Currently, the unemployment rate is elevated, and measures of underlying inflation are somewhat low, relative to levels that the Committee judges to be consistent, over the longer run, with its dual mandate.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "Although the Committee anticipates a gradual return to higher levels of resource utilization in a context of price stability, progress toward its objectives has been disappointingly slow.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 13.59% APR costs about $56.62 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.49% and moved +20 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.46% would rise by about $35.77 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 9.8%, and employers added an average of 111k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 1.1% over the past year (November 2010); core PCE inflation, the Fed's preferred gauge, was 1.1%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 9.8%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 3.1% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +5 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.13% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed will likely maintain its current easy-money stance and asset purchase plan until the labor market shows more substantial improvement. For educational purposes, an econometric forecast model assigns a 63% probability that the Fed will hold rates at the next meeting, with a 36% chance of a cut and a 1% chance of a hike.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.59% as of 2010-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4.46% week of 2010-12-02"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.49% on 2010-12-14"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "9.8% in November 2010"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 111k as of November 2010"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "1.1% year over year, November 2010"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.1% year over year, November 2010"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "3.1% annualized, quarter starting 2010-07-01"
+   }
+  ],
+  "meeting_date": "2010-12-14",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Thomas M. Hoenig"
+   ],
+   "summary": "The Federal Reserve decided to keep the federal funds rate target at 0 to 1/4 percent and continue its asset purchase program."
+  },
+  "latency_s": 3.81
+ },
+ "latency_s": 7.863016128540039,
+ "failures": []
+}

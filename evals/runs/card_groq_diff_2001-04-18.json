@@ -1,0 +1,148 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 4.5,
+   "target_high": 4.5,
+   "votes_for": null,
+   "votes_against": null,
+   "dissenters": [],
+   "summary": "The Fed lowered the federal funds rate target by 50 basis points to 4.5%."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent.",
+    "explanation": "The target rate was cut from 5% to 4.5%, signaling a more accommodative monetary stance."
+   },
+   {
+    "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 4 percent.",
+    "explanation": "The discount rate was also lowered, reinforcing the overall easing effort."
+   },
+   {
+    "quote": "The FOMC has reviewed prospects for the economy in light of the information that has become available since its March meeting.",
+    "explanation": "The Committee signals that it is reassessing the economic outlook before the next meeting."
+   },
+   {
+    "quote": "A significant reduction in excess inventories seems well advanced.",
+    "explanation": "Improving inventory conditions suggest some relief on the supply side of the economy."
+   },
+   {
+    "quote": "Nonetheless, capital investment has continued to soften and the persistent erosion in current and expected profitability, in combination with rising uncertainty about the business outlook, seems poised to dampen capital spending going forward.",
+    "explanation": "The statement highlights worries about weaker future investment and profitability."
+   }
+  ],
+  "tone_score": -2.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee continues to believe that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "As a consequence, the Committee agreed that an adjustment in the stance of policy is warranted during this extended intermeeting period.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "A 50\u2011basis\u2011point cut reduces the monthly interest on a $5,000 balance at about 15.99% APR by roughly $2.08."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10\u2011year Treasury yield, not the fed funds rate; the 10\u2011year was 5.14% and fell 7\u202fbp, so a new $300,000 30\u2011year loan at 7.01% would cost about $14.09 less per month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High\u2011yield savings rates follow the Fed, so on $10,000 you\u2019d earn about $30 less a year after the cut."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.3% and employers added an average of 12\u202fk jobs a month over the prior three months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3% over the past year, while core PCE inflation was 1.9%, a touch below the 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.3%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP contracted at a 1.3% annualized rate in the latest quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield, the most Fed\u2011sensitive market rate, moved -15\u202fbp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Committee expects to keep policy accommodative and may consider further cuts if weakness persists. Educationally, the forecast suggests future meetings could focus on additional easing to support growth.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 4-1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "15.99% APR"
+   },
+   {
+    "source": "DGS10",
+    "detail": "5.14% 10\u2011year Treasury yield"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "7.01% 30\u2011year mortgage rate"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.3% unemployment rate"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "12k jobs added per month"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3% CPI inflation"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.9% core PCE inflation"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-1.3% annualized real GDP growth"
+   }
+  ],
+  "meeting_date": "2001-04-18",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 4.5,
+   "target_high": 4.5,
+   "votes_for": null,
+   "votes_against": null,
+   "dissenters": [],
+   "summary": "The Fed lowered the federal funds rate target by 50 basis points to 4.5%."
+  },
+  "latency_s": 4.84
+ },
+ "latency_s": 19.95730757713318,
+ "failures": [
+  [
+   "groq",
+   "GuardrailError"
+  ]
+ ]
+}

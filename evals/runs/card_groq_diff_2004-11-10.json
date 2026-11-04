@@ -1,0 +1,152 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 2.0,
+   "target_high": 2.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee raised the target federal funds rate by 25 basis points to 2 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2 percent.",
+    "explanation": "The target rate moved up to 2\u202f%, tightening monetary policy."
+   },
+   {
+    "quote": "Output appears to be growing at a moderate pace despite the rise in energy prices, and labor market conditions have improved.",
+    "explanation": "The Committee signals that growth is steady and jobs are getting better, supporting the rate hike."
+   },
+   {
+    "quote": "Inflation and longer-term inflation expectations remain well contained.",
+    "explanation": "By saying inflation is well contained, the Committee shows confidence that price pressures are low."
+   },
+   {
+    "quote": "In a related action, the Board of Governors unanimously approved a 25 basis point increase in the discount rate to 3 percent.",
+    "explanation": "The discount rate also rose, extending the tightening beyond the federal funds rate."
+   },
+   {
+    "quote": "In taking this action, the Board approved the requests submitted by the Boards of Directors of the Federal Reserve Banks of Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, and Kansas City.",
+    "explanation": "The list of participating Reserve Banks was shortened, a procedural adjustment with no direct economic impact."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2 percent.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "With underlying inflation expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 13.02% APR, a 25\u2011bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10\u2011year Treasury yield, not the fed funds rate; the 10\u2011year was 4.25% and moved +3\u202fbp, so a new $300,000 30\u2011year loan at 5.64% would cost about $5.69 more each month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High\u2011yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.5%, and employers added an average of 192k jobs a month over the prior three months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.2% over the past year, while core PCE inflation was 2%, matching the Fed\u2019s 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 3.8% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield moved +2\u202fbp on the day."
+   }
+  ],
+  "whats_next": "The Committee\u2019s language and the 82% forecast for a hike suggest it may keep raising rates at the next meeting if conditions stay the same. However, the 18% chance of a hold shows it is ready to pause if inflation or growth shifts.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.02%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.25%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.64%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.5%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "192k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.2%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "3.8%"
+   }
+  ],
+  "meeting_date": "2004-11-10",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 2.0,
+   "target_high": 2.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee raised the target federal funds rate by 25 basis points to 2 percent."
+  },
+  "latency_s": 32.5
+ },
+ "latency_s": 54.8071072101593,
+ "failures": [
+  [
+   "groq",
+   "GuardrailError"
+  ]
+ ]
+}

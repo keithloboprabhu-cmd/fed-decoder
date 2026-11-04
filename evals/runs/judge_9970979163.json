@@ -1,0 +1,4 @@
+{
+ "supported": true,
+ "reason": "The statement is directly present in the provided context under the Markets fact: \"The 2-year Treasury yield, the most Fed-sensitive market rate, moved -4 bp on the day.\""
+}

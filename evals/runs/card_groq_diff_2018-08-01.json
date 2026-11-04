@@ -1,0 +1,156 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.75,
+   "target_high": 2.0,
+   "votes_for": 8,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate target range at 1.75% to 2.0%."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
+    "explanation": "The description of economic activity was upgraded from \"solid\" to \"strong,\" signaling a more upbeat view of growth."
+   },
+   {
+    "quote": "Job gains have been strong, on average, in recent months, and the unemployment rate has stayed low.",
+    "explanation": "The unemployment rate language changed from \"declined\" to \"stayed low,\" emphasizing that joblessness remains low."
+   },
+   {
+    "quote": "Household spending and business fixed investment have grown strongly.",
+    "explanation": "The phrasing was shortened, but still highlights robust consumer and business spending."
+   },
+   {
+    "quote": "On a 12-month basis, both overall inflation and inflation for items other than food and energy remain near 2 percent.",
+    "explanation": "Inflation language shifted from \"moved close to\" to \"remain near,\" underscoring that price pressures are steady around the target."
+   },
+   {
+    "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 to 2 percent.",
+    "explanation": "The Committee reversed a prior plan to raise rates and instead kept the range unchanged, reflecting a cautious stance."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "On a 12-month basis, both overall inflation and inflation for items other than food and energy remain near 2 percent.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 to 2 percent.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "A $5,000 balance at about 13.63% APR costs roughly $56.79 in interest each month."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; with the 10-year at 3% and a mortgage rate of 4.52%, a new $300,000 30\u2011year loan would see its payment rise by about $7.15 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4% and employers added an average of 227k jobs a month over the prior three months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Overall CPI inflation was 2.8% and core PCE inflation 1.9%, both near the 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.1% annualized pace in the latest quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield was unchanged and the S&P 500 slipped 0.1%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar rose 0.14% on the day."
+   }
+  ],
+  "whats_next": "The Committee\u2019s language suggests it is likely to hold rates at the next meeting, with a 62% chance of another hold and a 38% chance of a hike. The educational forecast indicates no cuts are expected at the upcoming meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 to 2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.63% as of 2018-02-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4.52% week of 2018-07-19"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3% on 2018-08-01"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4% in June 2018"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 227k as of June 2018"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.8% year over year, June 2018"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.9% year over year, June 2018"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.1% annualized, quarter starting 2018-04-01"
+   }
+  ],
+  "meeting_date": "2018-08-01",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.75,
+   "target_high": 2.0,
+   "votes_for": 8,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate target range at 1.75% to 2.0%."
+  },
+  "latency_s": 8.64
+ },
+ "latency_s": 42.54630088806152,
+ "failures": [
+  [
+   "groq",
+   "GuardrailError"
+  ]
+ ]
+}

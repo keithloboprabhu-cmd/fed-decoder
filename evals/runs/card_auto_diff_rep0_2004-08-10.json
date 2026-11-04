@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 1.5,
+   "target_high": 1.5,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/2 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/2 percent.",
+    "explanation": "The Fed raised its benchmark interest rate by 25 basis points, bringing the target to 1-1/2 percent."
+   },
+   {
+    "quote": "In recent months, output growth has moderated and the pace of improvement in labor market conditions has slowed.",
+    "explanation": "The Fed noted that economic growth and job market improvements have slowed down recently."
+   },
+   {
+    "quote": "This softness likely owes importantly to the substantial rise in energy prices.",
+    "explanation": "Higher energy prices are identified as a major reason for the recent economic slowdown."
+   },
+   {
+    "quote": "The economy nevertheless appears poised to resume a stronger pace of expansion going forward.",
+    "explanation": "Despite recent softness, the Fed expects economic growth to pick back up soon."
+   },
+   {
+    "quote": "Inflation has been somewhat elevated this year, though a portion of the rise in prices seems to reflect transitory factors.",
+    "explanation": "Inflation has been high this year, but the Fed views part of it as temporary."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "With underlying inflation still expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 12.69% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.32% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.08% would rise by about $7.75 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.5%, and employers added an average of 147k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.9% over the past year (July 2004); core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 3.1% annualized pace in the latest reported quarter."
+   }
+  ],
+  "whats_next": "The statement signals that future rate hikes will likely continue at a measured pace as the economy grows. Upcoming meetings will depend on how economic conditions and inflation evolve.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.69% as of 2004-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.08% week of 2004-07-29"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.32% on 2004-08-10"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.5% in July 2004"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 147k as of July 2004"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.9% year over year, July 2004"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2% year over year, July 2004"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "3.1% annualized, quarter starting 2004-04-01"
+   }
+  ],
+  "meeting_date": "2004-08-10",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 1.5,
+   "target_high": 1.5,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 1-1/2 percent."
+  },
+  "latency_s": 3.57
+ },
+ "latency_s": 3.568542003631592,
+ "failures": []
+}
