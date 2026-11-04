@@ -1,0 +1,135 @@
+{
+  "decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 2.0,
+    "target_high": 2.25,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed raised its policy rate by 25 basis points, to 2% to 2.25%. The vote was 9-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in August indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity …”"
+    },
+    {
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2 to 2-1/4 percent.",
+      "explanation": "Reworded from the previous statement: “In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-3/4 t…”"
+    },
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting strong labor market conditions and a sustained return to 2 percent inflation.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were: Jerome H. Powell, Chairman; John C. Williams, Vice Chairman; Thomas I. Barkin; Raphael W. Bostic; Lael Brainard; Richard H. Clarida; Esther L. George; Loretta J. Mester; and Randal K. Quarles.",
+      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Jerome H. Powell, Chairman; John C. Williams, Vice Chairman; Thomas I. Barkin; Raphael W. Bostic; Lael Brainard…”"
+    }
+  ],
+  "tone_score": 1.54,
+  "tone_quotes": [
+    {
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2 to 2-1/4 percent.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee expects that further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective over the medium term.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Information received since the Federal Open Market Committee met in August indicates that the labor market has continued to strengthen and that economic activity has been rising at a strong rate.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 14.14% APR, a 25 bp increase raises monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.06% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.6% would fall by about $7.16 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.8%, and employers added an average of 178k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.6% over the past year (August 2018); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.8%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.1% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day, and the S&P 500 moved -0.33%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.04% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 56%, cut 0%, hike 44%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2 to 2-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "14.14% as of 2018-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.6% week of 2018-09-13"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.06% on 2018-09-26"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.8% in August 2018"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 178k as of August 2018"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.6% year over year, August 2018"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.9% year over year, August 2018"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.1% annualized, quarter starting 2018-04-01"
+    }
+  ],
+  "meeting_date": "2018-09-26",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

@@ -127,10 +127,14 @@ def extract_statement_text(html: str) -> str:
     paras: list[str] = []
     seen: set[str] = set()
     for chunk in raw.split("\n\n"):
-        txt = chunk.replace("\u00a0", " ").replace("\u2009", " ")
+        # typographic normalization only: nbsp/thin space -> space, non-breaking hyphen -> hyphen
+        txt = chunk.replace("\u00a0", " ").replace("\u2009", " ").replace("\u2011", "-").replace("\u2010", "-")
         txt = re.sub(r"\s+", " ", txt).strip()
         txt = txt.replace(" ,", ",").replace(" .", ".").replace(" ;", ";")
-        txt = re.sub(r"-{5,}.*$", "", txt).strip()  # page-template junk ("----- DO NOT REMOVE ...")
+        # malformed HTML comments in 2001-2002 pages leak as text: "<!----- DO NOT REMOVE: Wireless Generation ----->"
+        txt = re.sub(r"<?!?-{5,}[^-]*?-{5,}>?", " ", txt)
+        txt = re.sub(r"<?!?-{5,}>?", " ", txt)
+        txt = re.sub(r"\s+", " ", txt).strip()
         if not txt or txt in seen or txt.startswith("<"):
             continue
         if STOP.match(txt):

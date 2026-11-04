@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Eric S. Rosengren"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Eric S. Rosengren."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in October indicates that economic activity is expanding at a moderate pace.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September generally suggests that economic activity has continued to expand at a moderate pa…”"
+    },
+    {
+      "quote": "Labor market conditions have shown further improvement; the unemployment rate has declined but remains elevated.",
+      "explanation": "Reworded from the previous statement: “Indicators of labor market conditions have shown some further improvement, but the unemployment rate remains elevated.”"
+    },
+    {
+      "quote": "Household spending and business fixed investment advanced, while the recovery in the housing sector slowed somewhat in recent months.",
+      "explanation": "Reworded from the previous statement: “Available data suggest that household spending and business fixed investment advanced, while the recovery in the housing sector slowed somewhat in recent months…”"
+    },
+    {
+      "quote": "Fiscal policy is restraining economic growth, although the extent of restraint may be diminishing.",
+      "explanation": "Reworded from the previous statement: “Fiscal policy is restraining economic growth.”"
+    },
+    {
+      "quote": "Inflation has been running below the Committee's longer-run objective, but longer-term inflation expectations have remained stable.",
+      "explanation": "Reworded from the previous statement: “Apart from fluctuations due to changes in energy prices, inflation has been running below the Committee's longer-run objective, but longer-term inflation expect…”"
+    },
+    {
+      "quote": "The Committee sees the risks to the outlook for the economy and the labor market as having become more nearly balanced.",
+      "explanation": "Reworded from the previous statement: “The Committee sees the downside risks to the outlook for the economy and the labor market as having diminished, on net, since last fall.”"
+    }
+  ],
+  "tone_score": -1.21,
+  "tone_quotes": [
+    {
+      "quote": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee's 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions, the Committee decided to modestly reduce the pace of its asset purchases.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.88% APR costs about $49.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.89% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.46% would rise by about $7.12 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6.9%, and employers added an average of 224k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.2% over the past year (November 2013); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.4% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.13% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 84%, cut 15%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.88% as of 2013-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.46% week of 2013-12-05"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.89% on 2013-12-18"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6.9% in November 2013"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 224k as of November 2013"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.2% year over year, November 2013"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, November 2013"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.4% annualized, quarter starting 2013-07-01"
+    }
+  ],
+  "meeting_date": "2013-12-18",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 1.5,
+    "target_high": 1.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed cut its policy rate by 50 basis points, to 1.5%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "FOMC statement: Federal Reserve and other central banks announce reductions in policy interest rates",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Joint Statement by Central Banks",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Throughout the current financial crisis, central banks have engaged in continuous close consultation and have cooperated in unprecedented joint actions such as the provision of liquidity to reduce strains in financial markets.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Inflationary pressures have started to moderate in a number of countries, partly reflecting a marked decline in energy and other commodity prices.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Inflation expectations are diminishing and remain anchored to price stability.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The recent intensification of the financial crisis has augmented the downside risks to growth and thus has diminished further the upside risks to price stability.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.29,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 50 basis points to 1-1/2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The recent intensification of the financial crisis has augmented the downside risks to growth and thus has diminished further the upside risks to price stability.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Inflationary pressures have started to moderate in a number of countries, partly reflecting a marked decline in energy and other commodity prices.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 11.88% APR, a 50 bp cut lowers monthly interest by about $2.08."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.72% and moved +22 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.09% would rise by about $42.83 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $30.00 a year less in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6.1%, and employers added an average of -313k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 5% over the past year (September 2008); core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a -2.1% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +18 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 1.55% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 79%, cut 15%, hike 6%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 50 basis points to 1-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.88% as of 2008-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.09% week of 2008-09-25"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.72% on 2008-10-08"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6.1% in September 2008"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -313k as of September 2008"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "5% year over year, September 2008"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2% year over year, September 2008"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "-2.1% annualized, quarter starting 2008-07-01"
+    }
+  ],
+  "meeting_date": "2008-10-08",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

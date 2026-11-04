@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+  },
+  "changes": [
+    {
+      "quote": "The sectors most adversely affected by the pandemic have improved in recent months, but the summer's rise in COVID-19 cases has slowed their recovery.",
+      "explanation": "Reworded from the previous statement: “The sectors most adversely affected by the pandemic have improved in recent months, but the rise in COVID-19 cases has slowed their recovery.”"
+    },
+    {
+      "quote": "Inflation is elevated, largely reflecting factors that are expected to be transitory.",
+      "explanation": "Reworded from the previous statement: “Inflation is elevated, largely reflecting transitory factors.”"
+    },
+    {
+      "quote": "Supply and demand imbalances related to the pandemic and the reopening of the economy have contributed to sizable price increases in some sectors.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Progress on vaccinations and an easing of supply constraints are expected to support continued gains in economic activity and employment as well as a reduction in inflation.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Risks to the economic outlook remain.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Progress on vaccinations will likely continue to reduce the effects of the public health crisis on the economy, but risks to the economic outlook remain.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": -0.96,
+  "tone_quotes": [
+    {
+      "quote": "Overall financial conditions remain accommodative, in part reflecting policy measures to support the economy and the flow of credit to U.S. households and businesses.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen to 2 percent and is on track to moderately exceed 2 percent for some time.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Inflation is elevated, largely reflecting factors that are expected to be transitory.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 14.61% APR costs about $60.88 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.6% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.09% would rise by about $6.52 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.7%, and employers added an average of 650k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 5.4% over the past year (September 2021); core PCE inflation, the Fed's preferred gauge, was 3.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +1 bp on the day, and the S&P 500 moved 0.65%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.07% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 79%, cut 3%, hike 18%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and expects it will be appropriate to maintain this target range until labor market conditions have reached levels consistent with the Committee's assessments of maximum employment and inflation has risen t"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "14.61% as of 2021-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.09% week of 2021-10-21"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.6% on 2021-11-03"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.7% in September 2021"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 650k as of September 2021"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "5.4% year over year, September 2021"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "3.9% year over year, September 2021"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.2% annualized, quarter starting 2021-07-01"
+    }
+  ],
+  "meeting_date": "2021-11-03",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

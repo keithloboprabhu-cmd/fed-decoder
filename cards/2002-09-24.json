@@ -1,0 +1,138 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.75,
+    "target_high": 1.75,
+    "votes_for": 10,
+    "votes_against": 2,
+    "dissenters": [
+      "Edward M. Gramlich",
+      "Robert D. McTeer, Jr."
+    ],
+    "summary": "The Fed held its policy rate at 1.75%. The vote was 10-2. Dissenting: Edward M. Gramlich, Robert D. McTeer, Jr.."
+  },
+  "changes": [
+    {
+      "quote": "The information that has become available since the last meeting of the Committee suggests that aggregate demand is growing at a moderate pace.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Over time, the current accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, should be sufficient to foster an improving business climate.",
+      "explanation": "Reworded from the previous statement: “The current accommodative stance of monetary policy, coupled with still-robust underlying growth in productivity, should be sufficient to foster an improving bu…”"
+    },
+    {
+      "quote": "However, considerable uncertainty persists about the extent and timing of the expected pickup in production and employment owing in part to the emergence of heightened geopolitical risks.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Consequently, the Committee believes that, for the foreseeable future, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness.",
+      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee recognizes that, for the foreseeable future, against the background of its long run goals of price stability and sustainable economic…”"
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; William J. McDonough, Vice Chairman; Ben S. Bernanke; Susan S. Bies; Roger W. Ferguson, Jr.; Jerry L. Jordan; Donald L. Kohn; Mark W. Olson; Anthony M. Santomero, and Gary H. Stern.",
+      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were Alan Greenspan, Chairman; William J. McDonough, Vice Chairman; Ben S. Bernanke, Susan S. Bies; Roger W. Ferguson…”"
+    },
+    {
+      "quote": "Voting against the action were: Edward M. Gramlich and Robert D. McTeer, Jr.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.64,
+  "tone_quotes": [
+    {
+      "quote": "Consequently, the Committee believes that, for the foreseeable future, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Over time, the current accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, should be sufficient to foster an improving business climate.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.53% APR costs about $56.38 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.69% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.18% would fall by about $1.94 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.7%, and employers added an average of -17k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.7% over the past year (August 2002); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1 3/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.53% as of 2002-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.18% week of 2002-09-13"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.69% on 2002-09-24"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.7% in August 2002"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -17k as of August 2002"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.7% year over year, August 2002"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, August 2002"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.5% annualized, quarter starting 2002-04-01"
+    }
+  ],
+  "meeting_date": "2002-09-24",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

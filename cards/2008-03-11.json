@@ -1,0 +1,130 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": null,
+    "target_high": null,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at an unstated level."
+  },
+  "changes": [
+    {
+      "quote": "FOMC statement: Federal Reserve and other central banks announce specific measures designed to address liquidity pressures in funding markets",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Since the coordinated actions taken in December 2007, the G-10 central banks have continued to work together closely and to consult regularly on liquidity pressures in funding markets.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Pressures in some of these markets have recently increased again.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "We all continue to work together and will take appropriate steps to address those liquidity pressures.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "To that end, today the Bank of Canada, the Bank of England, the European Central Bank, the Federal Reserve, and the Swiss National Bank are announcing specific measures.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Federal Reserve announced today an expansion of its securities lending program.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": 0.38,
+  "tone_quotes": [],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.75% APR costs about $53.12 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.6% and moved +14 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.24% would rise by about $27.39 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.9%, and employers added an average of 13k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 4.1% over the past year (February 2008); core PCE inflation, the Fed's preferred gauge, was 2.1%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +27 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.04% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 21%, cut 0%, hike 79%.",
+  "confidence": "low",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": ""
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.75% as of 2007-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.24% week of 2008-02-28"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.6% on 2008-03-11"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.9% in February 2008"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 13k as of February 2008"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "4.1% year over year, February 2008"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.1% year over year, February 2008"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.5% annualized, quarter starting 2007-10-01"
+    }
+  ],
+  "meeting_date": "2008-03-11",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

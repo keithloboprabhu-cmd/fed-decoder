@@ -1,0 +1,127 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.0,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "explanation": "Reworded from the previous statement: “The Committee continues to believe that an accommodative stance of monetary policy, coupled with still-robust underlying growth in productivity, is providing im…”"
+    },
+    {
+      "quote": "The evidence accumulated over the intermeeting period confirms that spending is firming, although the labor market has been weakening.",
+      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period shows that spending is firming, although labor market indicators are mixed.”"
+    },
+    {
+      "quote": "The Committee judges that, on balance, the risk of inflation becoming undesirably low remains the predominant concern for the foreseeable future.",
+      "explanation": "Reworded from the previous statement: “The Committee judges that, on balance, the risk of inflation becoming undesirably low is likely to be the predominant concern for the foreseeable future.”"
+    }
+  ],
+  "tone_score": -0.5,
+  "tone_quotes": [
+    {
+      "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee perceives that the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The evidence accumulated over the intermeeting period confirms that spending is firming, although the labor market has been weakening.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.12% APR costs about $50.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.29% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.44% would rise by about $1.97 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6.1%, and employers added an average of -15k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.2% over the past year (August 2003); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 1 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.12% as of 2003-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.44% week of 2003-09-05"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.29% on 2003-09-16"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6.1% in August 2003"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -15k as of August 2003"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.2% year over year, August 2003"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, August 2003"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.6% annualized, quarter starting 2003-04-01"
+    }
+  ],
+  "meeting_date": "2003-09-16",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

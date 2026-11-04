@@ -1,0 +1,139 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 6.5,
+    "target_high": 6.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 6.5%."
+  },
+  "changes": [
+    {
+      "quote": "The utilization of the pool of available workers remains at an unusually high level, and the increase in energy prices, though having limited effect on core measures of prices to date, still harbors the possibility of raising inflation expectations.",
+      "explanation": "Reworded from the previous statement: “Moreover, the increase in energy prices, though having limited effect on core measures of prices to date, poses a risk of raising inflation expectations.”"
+    },
+    {
+      "quote": "The Committee, accordingly, continues to see a risk of heightened inflation pressures.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "However, softening in business and household demand and tightening conditions in financial markets over recent months suggest that the economy could expand for a time at a pace below the productivity-enhanced rate of growth of its potential to produce.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Nonetheless, to date the easing of demand pressures has not been sufficient to warrant a change in the Committee's judgment that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "explanation": "Reworded from the previous statement: “Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee belie…”"
+    },
+    {
+      "quote": "Recent data have indicated that the expansion of aggregate demand has moderated to a pace closer to the enhanced rate of growth of the economy's potential to produce.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "The more rapid advances in productivity also continue to help contain costs and hold down underlying price pressures.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 1.34,
+  "tone_quotes": [
+    {
+      "quote": "Nonetheless, to date the easing of demand pressures has not been sufficient to warrant a change in the Committee's judgment that against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee, accordingly, continues to see a risk of heightened inflation pressures.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "However, softening in business and household demand and tightening conditions in financial markets over recent months suggest that the economy could expand for a time at a pace below the productivity-enhanced rate of growth of its potential to produce.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 15.98% APR costs about $66.58 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.72% and moved -4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.73% would fall by about $8.28 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.9%, and employers added an average of 41k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.5% over the past year (October 2000); core PCE inflation, the Fed's preferred gauge, was 1.8%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.4% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee at its meeting today decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate at 6-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "15.98% as of 2000-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "7.73% week of 2000-11-03"
+    },
+    {
+      "source": "DGS10",
+      "detail": "5.72% on 2000-11-15"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.9% in October 2000"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 41k as of October 2000"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.5% year over year, October 2000"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.8% year over year, October 2000"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.4% annualized, quarter starting 2000-07-01"
+    }
+  ],
+  "meeting_date": "2000-11-15",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

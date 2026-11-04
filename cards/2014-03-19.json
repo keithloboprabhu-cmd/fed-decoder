@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "Narayana Kocherlakota"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 8-1. Dissenting: Narayana Kocherlakota."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in January indicates that growth in economic activity slowed during the winter months, in part reflecting adverse weather conditions.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in December indicates that growth in economic activity picked up in recent quarters.”"
+    },
+    {
+      "quote": "The unemployment rate, however, remains elevated.",
+      "explanation": "Reworded from the previous statement: “The unemployment rate declined but remains elevated.”"
+    },
+    {
+      "quote": "Household spending and business fixed investment continued to advance, while the recovery in the housing sector remained slow.",
+      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment advanced more quickly in recent months, while the recovery in the housing sector slowed somewhat.”"
+    },
+    {
+      "quote": "The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace and labor market conditions will continue to improve gradually, moving toward those the Committee judges consistent with its dual mandate.",
+      "explanation": "Reworded from the previous statement: “The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace and the unemployment rate will gradually dec…”"
+    },
+    {
+      "quote": "The Committee sees the risks to the outlook for the economy and the labor market as nearly balanced.",
+      "explanation": "Reworded from the previous statement: “The Committee sees the risks to the outlook for the economy and the labor market as having become more nearly balanced.”"
+    },
+    {
+      "quote": "The Committee currently judges that there is sufficient underlying strength in the broader economy to support ongoing improvement in labor market conditions.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -1.22,
+  "tone_quotes": [
+    {
+      "quote": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions since the inception of the current asset purchase program, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.85% APR costs about $49.38 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.78% and moved +10 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.28% would rise by about $17.65 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6.7%, and employers added an average of 132k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.1% over the past year (February 2014); core PCE inflation, the Fed's preferred gauge, was 1.4%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +11 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.12% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 84%, cut 14%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In determining how long to maintain the current 0 to 1/4 percent target range for the federal funds rate, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.85% as of 2013-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.28% week of 2014-03-06"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.78% on 2014-03-19"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6.7% in February 2014"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 132k as of February 2014"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.1% year over year, February 2014"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.4% year over year, February 2014"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.5% annualized, quarter starting 2013-10-01"
+    }
+  ],
+  "meeting_date": "2014-03-19",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

@@ -1,0 +1,127 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1.25%. The vote was 11-0."
+  },
+  "changes": [
+    {
+      "quote": "Oil price premiums and other aspects of geopolitical risks have reportedly fostered continued restraint on spending and hiring by businesses.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "However, the Committee believes that as those risks lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to an improving economic climate over time.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Committee continues to believe that this accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "The limited number of incoming economic indicators since the November meeting, taken together, are not inconsistent with the economy working its way through its current soft spot.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were Alan Greenspan, Chairman; William J. McDonough, Vice Chairman; Ben S. Bernanke, Susan S. Bies; J. Alfred Broaddus, Jr.; Roger W. Ferguson, Jr.; Edward M. Gramlich; Jack Guynn; Donald L. Kohn; Michael H. Moskow; Mark W. Olson, and Robert T. Parry.",
+      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were Alan Greenspan, Chairman; William J. McDonough, Vice Chairman; Ben S. Bernanke, Susan S. Bies; Roger W. Ferguson…”"
+    }
+  ],
+  "tone_score": -0.07,
+  "tone_quotes": [
+    {
+      "quote": "However, the Committee believes that as those risks lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to an improving economic climate over time.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.36% APR costs about $55.67 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.06% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.97% would rise by about $11.57 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6%, and employers added an average of -12k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.5% over the past year (December 2002); core PCE inflation, the Fed's preferred gauge, was 1.8%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +7 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.36% as of 2002-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.97% week of 2003-01-17"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.06% on 2003-01-29"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6% in December 2002"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -12k as of December 2002"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.5% year over year, December 2002"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.8% year over year, December 2002"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.5% annualized, quarter starting 2002-10-01"
+    }
+  ],
+  "meeting_date": "2003-01-29",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

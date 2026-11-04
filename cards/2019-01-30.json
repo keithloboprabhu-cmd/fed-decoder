@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 2.25,
+    "target_high": 2.5,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 2.25% to 2.5%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in November indicates that the labor market has continued to strengthen and that economic activ…”"
+    },
+    {
+      "quote": "Household spending has continued to grow strongly, while growth of business fixed investment has moderated from its rapid pace earlier last year.",
+      "explanation": "Reworded from the previous statement: “Household spending has continued to grow strongly, while growth of business fixed investment has moderated from its rapid pace earlier in the year.”"
+    },
+    {
+      "quote": "Although market-based measures of inflation compensation have moved lower in recent months, survey-based measures of longer-term inflation expectations are little changed.",
+      "explanation": "Reworded from the previous statement: “Indicators of longer-term inflation expectations are little changed, on balance.”"
+    },
+    {
+      "quote": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent.",
+      "explanation": "Reworded from the previous statement: “In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 2-1/4 to 2…”"
+    },
+    {
+      "quote": "The Committee continues to view sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective as the most likely outcomes.",
+      "explanation": "Reworded from the previous statement: “The Committee judges that some further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic …”"
+    },
+    {
+      "quote": "In light of global economic and financial developments and muted inflation pressures, the Committee will be patient as it determines what future adjustments to the target range for the federal funds rate may be appropriate to support these outcomes.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": 0.7,
+  "tone_quotes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Job gains have been strong, on average, in recent months, and the unemployment rate has remained low.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "This assessment will take into account a wide range of information, including measures of labor market conditions, indicators of inflation pressures and inflation expectations, and readings on financial and international developments.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 14.38% APR costs about $59.92 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.7% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.45% would fall by about $3.55 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.9%, and employers added an average of 150k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2% over the past year (December 2018); core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -4 bp on the day, and the S&P 500 moved 1.55%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.04% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 76%, cut 1%, hike 23%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 2-1/4 to 2-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "14.38% as of 2018-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.45% week of 2019-01-17"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.7% on 2019-01-30"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.9% in December 2018"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 150k as of December 2018"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2% year over year, December 2018"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2% year over year, December 2018"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.6% annualized, quarter starting 2018-10-01"
+    }
+  ],
+  "meeting_date": "2019-01-30",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

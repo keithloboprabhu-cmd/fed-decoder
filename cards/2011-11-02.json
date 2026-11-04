@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Charles L. Evans"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Charles L. Evans."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in September indicates that economic growth strengthened somewhat in the third quarter, reflecting in part a reversal of the temporary factors that had weighed on growth earlier in the year.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Nonetheless, recent indicators point to continuing weakness in overall labor market conditions, and the unemployment rate remains elevated.",
+      "explanation": "Reworded from the previous statement: “Recent indicators point to continuing weakness in overall labor market conditions, and the unemployment rate remains elevated.”"
+    },
+    {
+      "quote": "Household spending has increased at a somewhat faster pace in recent months.",
+      "explanation": "Reworded from the previous statement: “Household spending has been increasing at only a modest pace in recent months despite some recovery in sales of motor vehicles as supply-chain disruptions eased…”"
+    },
+    {
+      "quote": "Business investment in equipment and software has continued to expand, but investment in nonresidential structures is still weak, and the housing sector remains depressed.",
+      "explanation": "Reworded from the previous statement: “Investment in nonresidential structures is still weak, and the housing sector remains depressed.”"
+    },
+    {
+      "quote": "Information received since the Federal Open Market Committee met in August indicates that economic growth remains slow.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "However, business investment in equipment and software continues to expand.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": -1.04,
+  "tone_quotes": [
+    {
+      "quote": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels for the federal funds rate at least through mid-2013.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Moreover, there are significant downside risks to the economic outlook, including strains in global financial markets.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Nonetheless, recent indicators point to continuing weakness in overall labor market conditions, and the unemployment rate remains elevated.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.89% APR costs about $53.71 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.03% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.11% would rise by about $3.48 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 9%, and employers added an average of 138k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.8% over the past year (September 2011); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a -0.1% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.54% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 67%, cut 32%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee also decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels f"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.89% as of 2011-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.11% week of 2011-10-20"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.03% on 2011-11-02"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "9% in September 2011"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 138k as of September 2011"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.8% year over year, September 2011"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.9% year over year, September 2011"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "-0.1% annualized, quarter starting 2011-07-01"
+    }
+  ],
+  "meeting_date": "2011-11-02",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

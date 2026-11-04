@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Thomas M. Hoenig"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Thomas M. Hoenig."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December suggests that economic activity has continued to strengthen and that the deterioration in the labor market is abating.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in November suggests that economic activity has continued to pick up and that the deterioration…”"
+    },
+    {
+      "quote": "Household spending is expanding at a moderate rate but remains constrained by a weak labor market, modest income growth, lower housing wealth, and tight credit.",
+      "explanation": "Reworded from the previous statement: “Household spending appears to be expanding at a moderate rate, though it remains constrained by a weak labor market, modest income growth, lower housing wealth,…”"
+    },
+    {
+      "quote": "Business spending on equipment and software appears to be picking up, but investment in structures is still contracting and employers remain reluctant to add to payrolls.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Firms have brought inventory stocks into better alignment with sales.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "While bank lending continues to contract, financial market conditions remain supportive of economic growth.",
+      "explanation": "Reworded from the previous statement: “Financial market conditions have become more supportive of economic growth.”"
+    },
+    {
+      "quote": "Although the pace of economic recovery is likely to be moderate for a time, the Committee anticipates a gradual return to higher levels of resource utilization in a context of price stability.",
+      "explanation": "Reworded from the previous statement: “Although economic activity is likely to remain weak for a time, the Committee anticipates that policy actions to stabilize financial markets and institutions, f…”"
+    }
+  ],
+  "tone_score": -1.09,
+  "tone_quotes": [
+    {
+      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December suggests that economic activity has continued to strengthen and that the deterioration in the labor market is abating.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "With substantial resource slack continuing to restrain cost pressures and with longer-term inflation expectations stable, inflation is likely to be subdued for some time.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.71% APR costs about $57.12 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.66% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.06% would rise by about $1.84 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 9.9%, and employers added an average of -146k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.8% over the past year (December 2009); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 9.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 4.4% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +3 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.05% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 52%, cut 48%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels o"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.71% as of 2009-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.06% week of 2010-01-14"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.66% on 2010-01-27"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "9.9% in December 2009"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -146k as of December 2009"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.8% year over year, December 2009"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, December 2009"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "4.4% annualized, quarter starting 2009-10-01"
+    }
+  ],
+  "meeting_date": "2010-01-27",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

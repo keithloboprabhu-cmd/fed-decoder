@@ -1,0 +1,146 @@
+{
+  "decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 2.0,
+    "target_high": 2.0,
+    "votes_for": 8,
+    "votes_against": 2,
+    "dissenters": [
+      "Richard W. Fisher",
+      "Charles I. Plosser"
+    ],
+    "summary": "The Fed cut its policy rate by 25 basis points, to 2%. The vote was 8-2. Dissenting: Richard W. Fisher, Charles I. Plosser."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 2 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 75 basis points to 2-1/4 percent.”"
+    },
+    {
+      "quote": "Recent information indicates that economic activity remains weak.",
+      "explanation": "Reworded from the previous statement: “Recent information indicates that the outlook for economic activity has weakened further.”"
+    },
+    {
+      "quote": "Household and business spending has been subdued and labor markets have softened further.",
+      "explanation": "Reworded from the previous statement: “Growth in consumer spending has slowed and labor markets have softened.”"
+    },
+    {
+      "quote": "Financial markets remain under considerable stress, and tight credit conditions and the deepening housing contraction are likely to weigh on economic growth over the next few quarters.",
+      "explanation": "Reworded from the previous statement: “Financial markets remain under considerable stress, and the tightening of credit conditions and the deepening of the housing contraction are likely to weigh on …”"
+    },
+    {
+      "quote": "Although readings on core inflation have improved somewhat, energy and other commodity prices have increased, and some indicators of inflation expectations have risen in recent months.",
+      "explanation": "Reworded from the previous statement: “Inflation has been elevated, and some indicators of inflation expectations have risen.”"
+    },
+    {
+      "quote": "Still, uncertainty about the inflation outlook remains high.",
+      "explanation": "Reworded from the previous statement: “Still, uncertainty about the inflation outlook has increased.”"
+    }
+  ],
+  "tone_score": -0.81,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Financial markets remain under considerable stress, and tight credit conditions and the deepening housing contraction are likely to weigh on economic growth over the next few quarters.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee will continue to monitor economic and financial developments and will act as needed to promote sustainable economic growth and price stability.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 12.75% APR, a 25 bp cut lowers monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.77% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.88% would fall by about $15.31 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year less in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.1%, and employers added an average of -45k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 4% over the past year (March 2008); core PCE inflation, the Fed's preferred gauge, was 2.2%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a -1.7% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -6 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.02% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 63%, cut 32%, hike 5%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.75% as of 2007-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.88% week of 2008-04-17"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.77% on 2008-04-30"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.1% in March 2008"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -45k as of March 2008"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "4% year over year, March 2008"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.2% year over year, March 2008"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "-1.7% annualized, quarter starting 2008-01-01"
+    }
+  ],
+  "meeting_date": "2008-04-30",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

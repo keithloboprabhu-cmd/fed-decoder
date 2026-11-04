@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hike",
+    "change_bps": 75,
+    "target_low": 2.25,
+    "target_high": 2.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed raised its policy rate by 75 basis points, to 2.25% to 2.5%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "Recent indicators of spending and production have softened.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Nonetheless, job gains have been robust in recent months, and the unemployment rate has remained low.",
+      "explanation": "Reworded from the previous statement: “Job gains have been robust in recent months, and the unemployment rate has remained low.”"
+    },
+    {
+      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures.",
+      "explanation": "Reworded from the previous statement: “Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher energy prices, and broader price pressures.”"
+    },
+    {
+      "quote": "Russia's war against Ukraine is causing tremendous human and economic hardship.",
+      "explanation": "Reworded from the previous statement: “The invasion of Ukraine by Russia is causing tremendous human and economic hardship.”"
+    },
+    {
+      "quote": "The war and related events are creating additional upward pressure on inflation and are weighing on global economic activity.",
+      "explanation": "Reworded from the previous statement: “The invasion and related events are creating additional upward pressure on inflation and are weighing on global economic activity.”"
+    },
+    {
+      "quote": "Overall economic activity appears to have picked up after edging down in the first quarter.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 2.0,
+  "tone_quotes": [
+    {
+      "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 2-1/4 to 2-1/2 percent and anticipates that ongoing increases in the target range will be appropriate.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 14.56% APR, a 75 bp increase raises monthly interest by about $3.12."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.78% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.51% would fall by about $5.65 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $45.00 a year more in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.6%, and employers added an average of 348k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 9% over the past year (June 2022); core PCE inflation, the Fed's preferred gauge, was 5.3%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.6%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -6 bp on the day, and the S&P 500 moved 2.62%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.05% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 0%, cut 0%, hike 100%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 2-1/4 to 2-1/2 percent and anticipates that ongoing increases in the target range will be appropriate."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "14.56% as of 2022-02-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.51% week of 2022-07-14"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.78% on 2022-07-27"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.6% in June 2022"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 348k as of June 2022"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "9% year over year, June 2022"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "5.3% year over year, June 2022"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.6% annualized, quarter starting 2022-04-01"
+    }
+  ],
+  "meeting_date": "2022-07-27",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

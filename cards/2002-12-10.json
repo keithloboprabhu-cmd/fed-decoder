@@ -1,0 +1,131 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1.25%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 1 1/4 percent.”"
+    },
+    {
+      "quote": "The Committee continues to believe that this accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "explanation": "Reworded from the previous statement: “The Committee continues to believe that an accommodative stance of monetary policy, coupled with still-robust underlying growth in productivity, is providing im…”"
+    },
+    {
+      "quote": "The limited number of incoming economic indicators since the November meeting, taken together, are not inconsistent with the economy working its way through its current soft spot.",
+      "explanation": "Reworded from the previous statement: “In these circumstances, the Committee believes that today's additional monetary easing should prove helpful as the economy works its way through this current so…”"
+    },
+    {
+      "quote": "In these circumstances, the Committee believes that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are balanced with respect to the prospects for both goals for the foreseeable future.",
+      "explanation": "Reworded from the previous statement: “With this action, the Committee believes that, against the background of its long-run goals of price stability and sustainable economic growth and of the inform…”"
+    },
+    {
+      "quote": "In a related action, the Board of Governors approved a 50 basis point reduction in the discount rate to 3/4 percent.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "However, incoming economic data have tended to confirm that greater uncertainty, in part attributable to heightened geopolitical risks, is currently inhibiting spending, production, and employment.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": -0.07,
+  "tone_quotes": [
+    {
+      "quote": "The Committee continues to believe that this accommodative stance of monetary policy, coupled with still robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.36% APR costs about $55.67 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.06% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.13% would not change."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.9%, and employers added an average of 12k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.3% over the past year (November 2002); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 1.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.36% as of 2002-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.13% week of 2002-11-29"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.06% on 2002-12-10"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.9% in November 2002"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 12k as of November 2002"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.3% year over year, November 2002"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, November 2002"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "1.6% annualized, quarter starting 2002-07-01"
+    }
+  ],
+  "meeting_date": "2002-12-10",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

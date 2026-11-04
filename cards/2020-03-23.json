@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Reserve is committed to use its full range of tools to support the U.S. economy in this challenging time and thereby promote its maximum employment and price stability goals.",
+      "explanation": "Reworded from the previous statement: “The Federal Reserve is prepared to use its full range of tools to support the flow of credit to households and businesses and thereby promote its maximum employ…”"
+    },
+    {
+      "quote": "The Federal Open Market Committee is taking further actions to support the flow of credit to households and businesses by addressing strains in the markets for Treasury securities and agency mortgage-backed securities.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Federal Reserve will continue to purchase Treasury securities and agency mortgage-backed securities in the amounts needed to support smooth market functioning and effective transmission of monetary policy to broader financial conditions.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Committee will include purchases of agency commercial mortgage-backed securities in its agency mortgage-backed security purchases.",
+      "explanation": "Reworded from the previous statement: “The Committee will also reinvest all principal payments from the Federal Reserve's holdings of agency debt and agency mortgage-backed securities in agency mortg…”"
+    },
+    {
+      "quote": "In addition, the Open Market Desk will continue to offer large-scale overnight and term repurchase agreement operations.",
+      "explanation": "Reworded from the previous statement: “In addition, the Open Market Desk has recently expanded its overnight and term repurchase agreement operations.”"
+    },
+    {
+      "quote": "The Committee will continue to closely monitor market conditions, and will assess the appropriate pace of its securities purchases at future meetings.",
+      "explanation": "Reworded from the previous statement: “The Committee will continue to closely monitor market conditions and is prepared to adjust its plans as appropriate.”"
+    }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+    {
+      "quote": "\"Effective March 23, 2020, the Federal Open Market Committee directs the Desk to undertake open market operations as necessary to maintain the federal funds rate in a target range of 0 to 1/4 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Federal Reserve is committed to use its full range of tools to support the U.S. economy in this challenging time and thereby promote its maximum employment and price stability goals.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Federal Reserve will continue to purchase Treasury securities and agency mortgage-backed securities in the amounts needed to support smooth market functioning and effective transmission of monetary policy to broader financial conditions.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 14.87% APR costs about $61.96 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 0.76% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.36% would fall by about $26.40 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.5%, and employers added an average of 209k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.3% over the past year (February 2020); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.5%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.8% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -9 bp on the day, and the S&P 500 moved -2.93%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.95% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 84%, cut 5%, hike 12%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In connection with these plans, the Committee voted unanimously to authorize and direct the Federal Reserve Bank of New York, until instructed otherwise, to execute transactions in the System Open Market Account in accordance with the following domestic policy directive: \"Effective March 23, 2020, t"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "14.87% as of 2019-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.36% week of 2020-03-12"
+    },
+    {
+      "source": "DGS10",
+      "detail": "0.76% on 2020-03-23"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.5% in February 2020"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 209k as of February 2020"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.3% year over year, February 2020"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, February 2020"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.8% annualized, quarter starting 2019-10-01"
+    }
+  ],
+  "meeting_date": "2020-03-23",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

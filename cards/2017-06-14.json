@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 1.0,
+    "target_high": 1.25,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "Neel Kashkari"
+    ],
+    "summary": "The Fed raised its policy rate by 25 basis points, to 1% to 1.25%. The vote was 8-1. Dissenting: Neel Kashkari."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in May indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March indicates that the labor market has continued to strengthen even as growth in economic…”"
+    },
+    {
+      "quote": "Job gains have moderated but have been solid, on average, since the beginning of the year, and the unemployment rate has declined.",
+      "explanation": "Reworded from the previous statement: “Job gains were solid, on average, in recent months, and the unemployment rate declined.”"
+    },
+    {
+      "quote": "Household spending has picked up in recent months, and business fixed investment has continued to expand.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "On a 12-month basis, inflation has declined recently and, like the measure excluding food and energy prices, is running somewhat below 2 percent.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Household spending rose only modestly, but the fundamentals underpinning the continued growth of consumption remained solid.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "Business fixed investment firmed.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 0.36,
+  "tone_quotes": [
+    {
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1 to 1-1/4 percent.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "On a 12-month basis, inflation has declined recently and, like the measure excluding food and energy prices, is running somewhat below 2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a sustained return to 2 percent inflation.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 12.54% APR, a 25 bp increase raises monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.15% and moved -6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.94% would fall by about $10.32 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.4%, and employers added an average of 178k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.9% over the past year (May 2017); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.4%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day, and the S&P 500 moved -0.1%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.49% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 88%, cut 0%, hike 12%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1 to 1-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.54% as of 2017-02-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.94% week of 2017-06-01"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.15% on 2017-06-14"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.4% in May 2017"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 178k as of May 2017"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.9% year over year, May 2017"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, May 2017"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2% annualized, quarter starting 2017-01-01"
+    }
+  ],
+  "meeting_date": "2017-06-14",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

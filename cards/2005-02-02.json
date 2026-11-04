@@ -1,0 +1,139 @@
+{
+  "decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 2.5,
+    "target_high": 2.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed raised its policy rate by 25 basis points, to 2.5%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/2 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/4 percent.”"
+    },
+    {
+      "quote": "Output appears to be growing at a moderate pace despite the rise in energy prices, and labor market conditions continue to improve gradually.",
+      "explanation": "Reworded from the previous statement: “Output appears to be growing at a moderate pace despite the earlier rise in energy prices, and labor market conditions continue to improve gradually.”"
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Ben S. Bernanke; Susan S. Bies; Roger W. Ferguson, Jr.; Edward M. Gramlich; Jack Guynn; Donald L. Kohn; Michael H. Moskow; Mark W. Olson; Anthony M. Santomero; and Gary H. Stern.",
+      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Alan Greenspan, Chairman; Timothy F. Geithner, Vice Chairman; Ben S. Bernanke; Susan S. Bies; Roger W. Ferguson…”"
+    },
+    {
+      "quote": "In a related action, the Board of Governors unanimously approved a 25-basis-point increase in the discount rate to 3-1/2 percent.",
+      "explanation": "Reworded from the previous statement: “In a related action, the Board of Governors unanimously approved a 25 basis point”"
+    },
+    {
+      "quote": "increase in the discount rate to 3-1/4 percent.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "In addition, the Committee unanimously decided to expedite the release of its minutes.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 0.38,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/2 percent.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee perceives the upside and downside risks to the attainment of both sustainable growth and price stability for the next few quarters to be roughly equal.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 13.02% APR, a 25 bp increase raises monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.15% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.67% would not change."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.4%, and employers added an average of 180k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.3% over the past year (December 2004); core PCE inflation, the Fed's preferred gauge, was 2.1%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.4%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 4.1% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +3 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 14%, cut 0%, hike 86%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.02% as of 2004-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.67% week of 2005-01-20"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.15% on 2005-02-02"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.4% in December 2004"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 180k as of December 2004"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.3% year over year, December 2004"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.1% year over year, December 2004"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "4.1% annualized, quarter starting 2004-10-01"
+    }
+  ],
+  "meeting_date": "2005-02-02",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

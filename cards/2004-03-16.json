@@ -1,0 +1,131 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.0,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "The evidence accumulated over the intermeeting period indicates that output is continuing to expand at a solid pace.",
+      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period confirms that output is expanding briskly.”"
+    },
+    {
+      "quote": "Although job losses have slowed, new hiring has lagged.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Although new hiring remains subdued, other indicators suggest an improvement in the labor market.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "The Committee perceives the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
+      "explanation": "Reworded from the previous statement: “The Committee perceives that the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.”"
+    }
+  ],
+  "tone_score": -0.22,
+  "tone_quotes": [
+    {
+      "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee perceives the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "With inflation quite low and resource use slack, the Committee believes that it can be patient in removing its policy accommodation.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.35% APR costs about $51.46 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.7% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.59% would fall by about $15.10 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.6%, and employers added an average of 114k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.7% over the past year (February 2004); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.6%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 4.7% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -5 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 1 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.35% as of 2003-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.59% week of 2004-03-04"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.7% on 2004-03-16"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.6% in February 2004"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 114k as of February 2004"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.7% year over year, February 2004"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.9% year over year, February 2004"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "4.7% annualized, quarter starting 2003-10-01"
+    }
+  ],
+  "meeting_date": "2004-03-16",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

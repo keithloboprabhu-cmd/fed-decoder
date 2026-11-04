@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 4.5,
+    "target_high": 4.75,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed cut its policy rate by 25 basis points, to 4.5% to 4.75%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "Since earlier in the year, labor market conditions have generally eased, and the unemployment rate has moved up but remains low.",
+      "explanation": "Reworded from the previous statement: “Job gains have slowed, and the unemployment rate has moved up but remains low.”"
+    },
+    {
+      "quote": "Inflation has made progress toward the Committee's 2 percent objective but remains somewhat elevated.",
+      "explanation": "Reworded from the previous statement: “Inflation has made further progress toward the Committee's 2 percent objective but remains somewhat elevated.”"
+    },
+    {
+      "quote": "The Committee judges that the risks to achieving its employment and inflation goals are roughly in balance.",
+      "explanation": "Reworded from the previous statement: “The Committee has gained greater confidence that inflation is moving sustainably toward 2 percent, and judges that the risks to achieving its employment and inf…”"
+    },
+    {
+      "quote": "In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/2 to 4-3/4 percent.",
+      "explanation": "Reworded from the previous statement: “In light of the progress on inflation and the balance of risks, the Committee decided to lower the target range for the federal funds rate by 1/2 percentage poi…”"
+    },
+    {
+      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Michelle W. Bowman; Lisa D. Cook; Mary C. Daly; Beth M. Hammack; Philip N. Jefferson; Adriana D. Kugler; and Christopher J. Waller.",
+      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Thomas I. Barkin; Michael S. Barr; Raphael W. Bostic; Lisa D. …”"
+    },
+    {
+      "quote": "Voting against this action was Michelle W. Bowman, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 0.14,
+  "tone_quotes": [
+    {
+      "quote": "In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/2 to 4-3/4 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Since earlier in the year, labor market conditions have generally eased, and the unemployment rate has moved up but remains low.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee will continue reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 21.76% APR, a 25 bp cut lowers monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.31% and moved -11 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.72% would fall by about $21.86 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year less in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.1%, and employers added an average of 66k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.6% over the past year (October 2024); core PCE inflation, the Fed's preferred gauge, was 2.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -6 bp on the day, and the S&P 500 moved 0.74%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.74% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 49%, cut 51%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In support of its goals, the Committee decided to lower the target range for the federal funds rate by 1/4 percentage point to 4-1/2 to 4-3/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "21.76% as of 2024-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.72% week of 2024-10-31"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.31% on 2024-11-07"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.1% in October 2024"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 66k as of October 2024"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.6% year over year, October 2024"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.9% year over year, October 2024"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.2% annualized, quarter starting 2024-07-01"
+    }
+  ],
+  "meeting_date": "2024-11-07",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

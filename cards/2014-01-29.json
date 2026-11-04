@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December indicates that growth in economic activity picked up in recent quarters.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in October indicates that economic activity is expanding at a moderate pace.”"
+    },
+    {
+      "quote": "Labor market indicators were mixed but on balance showed further improvement.",
+      "explanation": "Reworded from the previous statement: “Labor market conditions have shown further improvement; the unemployment rate has declined but remains elevated.”"
+    },
+    {
+      "quote": "The unemployment rate declined but remains elevated.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Household spending and business fixed investment advanced more quickly in recent months, while the recovery in the housing sector slowed somewhat.",
+      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment advanced, while the recovery in the housing sector slowed somewhat in recent months.”"
+    },
+    {
+      "quote": "Fiscal policy is restraining economic growth, although the extent of restraint is diminishing.",
+      "explanation": "Reworded from the previous statement: “Fiscal policy is restraining economic growth, although the extent of restraint may be diminishing.”"
+    },
+    {
+      "quote": "The Committee expects that, with appropriate policy accommodation, economic activity will expand at a moderate pace and the unemployment rate will gradually decline toward levels the Committee judges consistent with its dual mandate.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -1.21,
+  "tone_quotes": [
+    {
+      "quote": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee's 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In light of the cumulative progress toward maximum employment and the improvement in the outlook for labor market conditions, the Committee decided to make a further measured reduction in the pace of its asset purchases.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee's sizable and still-increasing holdings of longer-term securities should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative, which in turn should promote a stronger economic recovery and help to ensure that inflation, over time, is at the rate most consistent with the Committee's dual mandate.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.88% APR costs about $49.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.69% and moved -8 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.41% would fall by about $14.15 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6.7%, and employers added an average of 184k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.5% over the past year (December 2013); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.02% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 85%, cut 14%, hike 2%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee also reaffirmed its expectation that the current exceptionally low target range for the federal funds rate of 0 to 1/4 percent will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.88% as of 2013-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.41% week of 2014-01-16"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.69% on 2014-01-29"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6.7% in December 2013"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 184k as of December 2013"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.5% year over year, December 2013"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, December 2013"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.5% annualized, quarter starting 2013-10-01"
+    }
+  ],
+  "meeting_date": "2014-01-29",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

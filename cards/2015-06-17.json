@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in April suggests that economic activity has been expanding moderately after having changed little during the first quarter.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in March suggests that economic growth slowed during the winter months, in part reflecting tran…”"
+    },
+    {
+      "quote": "The pace of job gains picked up while the unemployment rate remained steady.",
+      "explanation": "Reworded from the previous statement: “The pace of job gains moderated, and the unemployment rate remained steady.”"
+    },
+    {
+      "quote": "On balance, a range of labor market indicators suggests that underutilization of labor resources diminished somewhat.",
+      "explanation": "Reworded from the previous statement: “A range of labor market indicators suggests that underutilization of labor resources was little changed.”"
+    },
+    {
+      "quote": "Growth in household spending has been moderate and the housing sector has shown some improvement; however, business fixed investment and net exports stayed soft.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy imports; energy prices appear to have stabilized.",
+      "explanation": "Reworded from the previous statement: “Inflation continued to run below the Committee's longer-run objective, partly reflecting earlier declines in energy prices and decreasing prices of non-energy i…”"
+    },
+    {
+      "quote": "Growth in household spending declined; households' real incomes rose strongly, partly reflecting earlier declines in energy prices, and consumer sentiment remains high.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 0.09,
+  "tone_quotes": [
+    {
+      "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.98% APR costs about $49.92 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.32% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.87% would not change."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.6%, and employers added an average of 237k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 0% over the past year (May 2015); core PCE inflation, the Fed's preferred gauge, was 1.2%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.6%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.7% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -4 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.01% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 85%, cut 7%, hike 8%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.98% as of 2015-02-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.87% week of 2015-06-04"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.32% on 2015-06-17"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.6% in May 2015"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 237k as of May 2015"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "0% year over year, May 2015"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.2% year over year, May 2015"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.7% annualized, quarter starting 2015-01-01"
+    }
+  ],
+  "meeting_date": "2015-06-17",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

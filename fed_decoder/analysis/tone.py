@@ -97,10 +97,22 @@ class ToneResult:
     matches: list[dict]  # {"phrase", "weight", "quote"}
 
 
+def policy_text(text: str) -> str:
+    """Drop the voting paragraph (dissent reasons are not the Committee's
+    tone) and discount-rate boilerplate."""
+    keep = []
+    for para in text.split("\n\n"):
+        p = para.strip()
+        if re.match(r"(Voting|Absent and not voting|In a related action|In taking the discount rate action|In taking this action)", p):
+            continue
+        keep.append(p)
+    return "\n\n".join(keep)
+
+
 def raw_score(text: str) -> tuple[float, list[dict]]:
     matches: list[dict] = []
     hawk = dove = 0.0
-    for sent in sentences(text):
+    for sent in sentences(policy_text(text)):
         for rx, w, _ in _COMPILED:
             for m in rx.finditer(sent):
                 matches.append({"phrase": m.group(0), "weight": w, "quote": sent})

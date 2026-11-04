@@ -1,0 +1,141 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Thomas M. Hoenig"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Thomas M. Hoenig."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in March suggests that economic activity has continued to strengthen and that the labor market is beginning to improve.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January suggests that economic activity has continued to strengthen and that the labor marke…”"
+    },
+    {
+      "quote": "Growth in household spending has picked up recently but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.",
+      "explanation": "Reworded from the previous statement: “Household spending is expanding at a moderate rate but remains constrained by high unemployment, modest income growth, lower housing wealth, and tight credit.”"
+    },
+    {
+      "quote": "Business spending on equipment and software has risen significantly; however, investment in nonresidential structures is declining and employers remain reluctant to add to payrolls.",
+      "explanation": "Reworded from the previous statement: “However, investment in nonresidential structures is declining, housing starts have been flat at a depressed level, and employers remain reluctant to add to payr…”"
+    },
+    {
+      "quote": "Housing starts have edged up but remain at a depressed level.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Business spending on equipment and software has risen significantly.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "To provide support to mortgage lending and housing markets and to improve overall conditions in private credit markets, the Federal Reserve has been purchasing $1.25 trillion of agency mortgage-backed securities and about $175 billion of agency debt; those purchases are nearing completion, and the remaining transactions will be executed by the end of this month.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": -0.98,
+  "tone_quotes": [
+    {
+      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "With substantial resource slack continuing to restrain cost pressures and longer-term inflation expectations stable, inflation is likely to be subdued for some time.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.6% APR costs about $56.67 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.8% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.07% would rise by about $16.60 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 9.9%, and employers added an average of 19k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.3% over the past year (March 2010); core PCE inflation, the Fed's preferred gauge, was 1.8%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 9.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.42% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 63%, cut 36%, hike 2%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions, including low rates of resource utilization, subdued inflation trends, and stable inflation expectations, are likely to warrant exceptionally low levels o"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.6% as of 2009-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.07% week of 2010-04-15"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.8% on 2010-04-28"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "9.9% in March 2010"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 19k as of March 2010"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.3% year over year, March 2010"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.8% year over year, March 2010"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2% annualized, quarter starting 2010-01-01"
+    }
+  ],
+  "meeting_date": "2010-04-28",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

@@ -59,3 +59,7 @@ class Card(CardLLM):
     validated: bool
     validation_notes: list[str] = []
     inputs_version: str = "v2-with-diff"
+    # What the model itself extracted, kept for the extraction eval. The
+    # displayed `decision` numbers are always the code-computed ones.
+    llm_decision: Decision | None = None
+    latency_s: float | None = None

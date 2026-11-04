@@ -1,0 +1,139 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": null,
+    "target_high": null,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at an unstated level."
+  },
+  "changes": [
+    {
+      "quote": "FOMC statement: Federal Reserve, European Central Bank, Bank of Canada, Bank of England, and Swiss National Bank announce reestablishment of temporary U.S. dollar liquidity swap facilities",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "In response to the reemergence of strains in U.S. dollar short-term funding markets in Europe, the Bank of Canada, the Bank of England, the European Central Bank, the Federal Reserve, and the Swiss National Bank are announcing the reestablishment of temporary U.S. dollar liquidity swap facilities.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "These facilities are designed to help improve liquidity conditions in U.S. dollar funding markets and to prevent the spread of strains to other markets and financial centers.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Bank of Japan will be considering similar measures soon.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Central banks will continue to work together closely as needed to address pressures in funding markets.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Federal Open Market Committee has authorized temporary reciprocal currency arrangements (swap lines) with the Bank of Canada, the Bank of England, the European Central Bank (ECB), and the Swiss National Bank.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.06,
+  "tone_quotes": [
+    {
+      "quote": "In response to the reemergence of strains in U.S. dollar short-term funding markets in Europe, the Bank of Canada, the Bank of England, the European Central Bank, the Federal Reserve, and the Swiss National Bank are announcing the reestablishment of temporary U.S. dollar liquidity swap facilities.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "These facilities are designed to help improve liquidity conditions in U.S. dollar funding markets and to prevent the spread of strains to other markets and financial centers.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 14.26% APR costs about $59.42 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.45% and moved +12 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.06% would rise by about $22.14 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 9.9%, and employers added an average of 106k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.2% over the past year (April 2010); core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 9.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +4 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -1.03% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 85%, cut 5%, hike 11%.",
+  "confidence": "low",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": ""
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "14.26% as of 2010-02-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.06% week of 2010-04-29"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.45% on 2010-05-07"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "9.9% in April 2010"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 106k as of April 2010"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.2% year over year, April 2010"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.6% year over year, April 2010"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2% annualized, quarter starting 2010-01-01"
+    }
+  ],
+  "meeting_date": "2010-05-09",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Esther L. George"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-1. Dissenting: Esther L. George."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in January suggests a return to moderate economic growth following a pause late last year.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in December suggests that growth in economic activity paused in recent months, in large part be…”"
+    },
+    {
+      "quote": "Labor market conditions have shown signs of improvement in recent months but the unemployment rate remains elevated.",
+      "explanation": "Reworded from the previous statement: “Employment has continued to expand at a moderate pace but the unemployment rate remains elevated.”"
+    },
+    {
+      "quote": "Household spending and business fixed investment advanced, and the housing sector has strengthened further, but fiscal policy has become somewhat more restrictive.",
+      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment advanced, and the housing sector has shown further improvement.”"
+    },
+    {
+      "quote": "Inflation has been running somewhat below the Committee's longer-run objective, apart from temporary variations that largely reflect fluctuations in energy prices.",
+      "explanation": "Reworded from the previous statement: “Inflation has been running somewhat below the Committee’s longer-run objective, apart from temporary variations that largely reflect fluctuations in energy pric…”"
+    },
+    {
+      "quote": "The Committee continues to see downside risks to the economic outlook.",
+      "explanation": "Reworded from the previous statement: “Although strains in global financial markets have eased somewhat, the Committee continues to see downside risks to the economic outlook.”"
+    },
+    {
+      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee decided to continue purchasing additional agency mortgage-backed securities at a pace of $40 billion per month and longer-term Treasury securities at a pace of $45 billion per month.",
+      "explanation": "Reworded from the previous statement: “To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee will c…”"
+    }
+  ],
+  "tone_score": -1.15,
+  "tone_quotes": [
+    {
+      "quote": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee's 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee continues to see downside risks to the economic outlook.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Taken together, these actions should maintain downward pressure on longer-term interest rates, support mortgage markets, and help to make broader financial conditions more accommodative.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.88% APR costs about $49.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.96% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.52% would rise by about $6.72 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 7.7%, and employers added an average of 240k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2% over the past year (February 2013); core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 7.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.12% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 83%, cut 16%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation bet"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.88% as of 2012-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.52% week of 2013-03-07"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.96% on 2013-03-20"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "7.7% in February 2013"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 240k as of February 2013"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2% year over year, February 2013"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.6% year over year, February 2013"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.5% annualized, quarter starting 2012-10-01"
+    }
+  ],
+  "meeting_date": "2013-03-20",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

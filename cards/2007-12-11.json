@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "cut",
+    "change_bps": -25,
+    "target_low": 4.25,
+    "target_high": 4.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Eric S. Rosengren"
+    ],
+    "summary": "The Fed cut its policy rate by 25 basis points, to 4.25%. The vote was 9-1. Dissenting: Eric S. Rosengren."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 4-1/4 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 4-1/2 percent.”"
+    },
+    {
+      "quote": "Incoming information suggests that economic growth is slowing, reflecting the intensification of the housing correction and some softening in business and consumer spending.",
+      "explanation": "Reworded from the previous statement: “However, the pace of economic expansion will likely slow in the near term, partly reflecting the intensification of the housing correction.”"
+    },
+    {
+      "quote": "Moreover, strains in financial markets have increased in recent weeks.",
+      "explanation": "Reworded from the previous statement: “Economic growth was solid in the third quarter, and strains in financial markets have eased somewhat on balance.”"
+    },
+    {
+      "quote": "Today’s action, combined with the policy actions taken earlier, should help promote moderate growth over time.",
+      "explanation": "Reworded from the previous statement: “Today’s action, combined with the policy action taken in September, should help forestall some of the adverse effects on the broader economy that might otherwis…”"
+    },
+    {
+      "quote": "Readings on core inflation have improved modestly this year, but elevated energy and commodity prices, among other factors, may put upward pressure on inflation.",
+      "explanation": "Reworded from the previous statement: “Readings on core inflation have improved modestly this year, but recent increases in energy and commodity prices, among other factors, may put renewed upward pr…”"
+    },
+    {
+      "quote": "Recent developments, including the deterioration in financial market conditions, have increased the uncertainty surrounding the outlook for economic growth and inflation.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.89,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 4-1/4 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Incoming information suggests that economic growth is slowing, reflecting the intensification of the housing correction and some softening in business and consumer spending.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Recent developments, including the deterioration in financial market conditions, have increased the uncertainty surrounding the outlook for economic growth and inflation.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 13.59% APR, a 25 bp cut lowers monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.98% and moved -17 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.1% would fall by about $32.81 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year less in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.7%, and employers added an average of 92k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 4.4% over the past year (November 2007); core PCE inflation, the Fed's preferred gauge, was 2.3%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.3% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -23 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.04% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 31%, cut 69%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 4-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.59% as of 2007-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.1% week of 2007-11-29"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.98% on 2007-12-11"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.7% in November 2007"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 92k as of November 2007"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "4.4% year over year, November 2007"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.3% year over year, November 2007"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.3% annualized, quarter starting 2007-07-01"
+    }
+  ],
+  "meeting_date": "2007-12-11",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

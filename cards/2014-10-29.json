@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Narayana Kocherlakota"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 9-1. Dissenting: Narayana Kocherlakota."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in September suggests that economic activity is expanding at a moderate pace.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in July suggests that economic activity is expanding at a moderate pace.”"
+    },
+    {
+      "quote": "Labor market conditions improved somewhat further, with solid job gains and a lower unemployment rate.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "On balance, a range of labor market indicators suggests that underutilization of labor resources is gradually diminishing.",
+      "explanation": "Reworded from the previous statement: “On balance, labor market conditions improved somewhat further; however, the unemployment rate is little changed and a range of labor market indicators suggests …”"
+    },
+    {
+      "quote": "Household spending is rising moderately and business fixed investment is advancing, while the recovery in the housing sector remains slow.",
+      "explanation": "Reworded from the previous statement: “Household spending appears to be rising moderately and business fixed investment is advancing, while the recovery in the housing sector remains slow.”"
+    },
+    {
+      "quote": "Inflation has continued to run below the Committee's longer-run objective.",
+      "explanation": "Reworded from the previous statement: “Inflation has been running below the Committee's longer-run objective.”"
+    },
+    {
+      "quote": "Market-based measures of inflation compensation have declined somewhat; survey-based measures of longer-term inflation expectations have remained stable.",
+      "explanation": "Reworded from the previous statement: “Longer-term inflation expectations have remained stable.”"
+    }
+  ],
+  "tone_score": -0.94,
+  "tone_quotes": [
+    {
+      "quote": "The Committee anticipates, based on its current assessment, that it likely will be appropriate to maintain the 0 to 1/4 percent target range for the federal funds rate for a considerable time following the end of its asset purchase program this month, especially if projected inflation continues to run below the Committee's 2 percent longer-run goal, and provided that longer-term inflation expectations remain well anchored.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.83% APR costs about $49.29 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.34% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.97% would rise by about $6.91 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.9%, and employers added an average of 238k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.7% over the past year (September 2014); core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +6 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.21% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 89%, cut 7%, hike 5%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "To support continued progress toward maximum employment and price stability, the Committee today reaffirmed its view that the current 0 to 1/4 percent target range for the federal funds rate remains appropriate."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.83% as of 2014-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.97% week of 2014-10-16"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.34% on 2014-10-29"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.9% in September 2014"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 238k as of September 2014"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.7% year over year, September 2014"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.6% year over year, September 2014"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "5% annualized, quarter starting 2014-07-01"
+    }
+  ],
+  "meeting_date": "2014-10-29",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

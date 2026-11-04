@@ -1,0 +1,119 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.0,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "The evidence accumulated over the intermeeting period confirms that spending is firming, and the labor market appears to be stabilizing.",
+      "explanation": "Reworded from the previous statement: “The evidence accumulated over the intermeeting period confirms that spending is firming, although the labor market has been weakening.”"
+    }
+  ],
+  "tone_score": -0.38,
+  "tone_quotes": [
+    {
+      "quote": "The Committee continues to believe that an accommodative stance of monetary policy, coupled with robust underlying growth in productivity, is providing important ongoing support to economic activity.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee perceives that the upside and downside risks to the attainment of sustainable growth for the next few quarters are roughly equal.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In these circumstances, the Committee believes that policy accommodation can be maintained for a considerable period.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.12% APR costs about $50.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.23% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.05% would fall by about $13.51 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 6.1%, and employers added an average of 22k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.4% over the past year (September 2003); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 6.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 6.8% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -12 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 1 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.12% as of 2003-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.05% week of 2003-10-17"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.23% on 2003-10-28"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "6.1% in September 2003"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 22k as of September 2003"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.4% year over year, September 2003"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, September 2003"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "6.8% annualized, quarter starting 2003-07-01"
+    }
+  ],
+  "meeting_date": "2003-10-28",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

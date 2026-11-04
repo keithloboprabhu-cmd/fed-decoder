@@ -1,0 +1,139 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in June suggests that economic activity is leveling out.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in April suggests that the pace of economic contraction is slowing.”"
+    },
+    {
+      "quote": "Conditions in financial markets have improved further in recent weeks.",
+      "explanation": "Reworded from the previous statement: “Conditions in financial markets have generally improved in recent months.”"
+    },
+    {
+      "quote": "Household spending has continued to show signs of stabilizing but remains constrained by ongoing job losses, sluggish income growth, lower housing wealth, and tight credit.",
+      "explanation": "Reworded from the previous statement: “Household spending has shown further signs of stabilizing but remains constrained by ongoing job losses, lower housing wealth, and tight credit.”"
+    },
+    {
+      "quote": "Businesses are still cutting back on fixed investment and staffing but are making progress in bringing inventory stocks into better alignment with sales.",
+      "explanation": "Reworded from the previous statement: “Businesses are cutting back on fixed investment and staffing but appear to be making progress in bringing inventory stocks into better alignment with sales.”"
+    },
+    {
+      "quote": "In addition, the Federal Reserve is in the process of buying $300 billion of Treasury securities.",
+      "explanation": "Reworded from the previous statement: “In addition, the Federal Reserve will buy up to $300 billion of Treasury securities by autumn.”"
+    },
+    {
+      "quote": "To promote a smooth transition in markets as these purchases of Treasury securities are completed, the Committee has decided to gradually slow the pace of these transactions and anticipates that the full amount will be purchased by the end of October.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.98,
+  "tone_quotes": [
+    {
+      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "However, substantial resource slack is likely to dampen cost pressures, and the Committee expects that inflation will remain subdued for some time.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.32% APR costs about $55.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.72% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.25% would rise by about $1.86 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 9.5%, and employers added an average of -387k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was -2% over the past year (July 2009); core PCE inflation, the Fed's preferred gauge, was 0.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 9.5%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a -0.7% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.35% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 43%, cut 57%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.32% as of 2009-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.25% week of 2009-07-30"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.72% on 2009-08-12"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "9.5% in July 2009"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -387k as of July 2009"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "-2% year over year, July 2009"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "0.6% year over year, July 2009"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "-0.7% annualized, quarter starting 2009-04-01"
+    }
+  ],
+  "meeting_date": "2009-08-12",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

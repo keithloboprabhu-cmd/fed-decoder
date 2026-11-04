@@ -1,0 +1,139 @@
+{
+  "decision": {
+    "direction": "cut",
+    "change_bps": -50,
+    "target_low": 6.0,
+    "target_high": 6.0,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed cut its policy rate by 50 basis points, to 6%."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee at its meeting today decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate…”"
+    },
+    {
+      "quote": "In a related action, the Board of Governors approved a 25-basis-point decrease in the discount rate to 5-3/4 percent, the level requested by seven Reserve Banks.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Board also indicated that it stands ready to approve a further reduction of 25 basis points in the discount rate to 5-1/2 percent on the requests of Federal Reserve Banks.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "These actions were taken in light of further weakening of sales and production, and in the context of lower consumer confidence, tight conditions in some segments of financial markets, and high energy prices sapping household and business purchasing power.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Moreover, inflation pressures remain contained.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Nonetheless, to date there is little evidence to suggest that longer-term advances in technology and associated gains in productivity are abating.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.68,
+  "tone_quotes": [
+    {
+      "quote": "The Committee continues to believe that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness in the foreseeable future.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Moreover, inflation pressures remain contained.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 15.98% APR, a 50 bp cut lowers monthly interest by about $2.08."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.14% and moved +22 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.17% would rise by about $44.82 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $30.00 a year less in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.9%, and employers added an average of 107k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.4% over the past year (November 2000); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.4% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +5 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to lower its target for the federal funds rate by 50 basis points to 6 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "15.98% as of 2000-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "7.17% week of 2000-12-22"
+    },
+    {
+      "source": "DGS10",
+      "detail": "5.14% on 2001-01-03"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.9% in November 2000"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 107k as of November 2000"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.4% year over year, November 2000"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.9% year over year, November 2000"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.4% annualized, quarter starting 2000-07-01"
+    }
+  ],
+  "meeting_date": "2001-01-03",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

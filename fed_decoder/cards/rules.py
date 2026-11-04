@@ -11,7 +11,7 @@ from fed_decoder.data.ground_truth import parse_votes
 
 RULES_LABEL = "Automated summary (rules-based)"
 
-_FRAC = r"\d+(?:-\d+/\d+)?|\d+/\d+|\d+\.\d+"
+_FRAC = r"\d+(?:[- ]\d+/\d+)?|\d+/\d+|\d+\.\d+"
 _UP = r"rais\w*|increas\w*|tighten\w*|firm\w*"
 _DOWN = r"lower\w*|reduc\w*|decreas\w*|cut\w*|eas\w*"
 _HOLD = r"keep\w*|maintain\w*|leav\w*|hold\w*|decided today to keep|remain\w*"
@@ -19,7 +19,7 @@ _HOLD = r"keep\w*|maintain\w*|leav\w*|hold\w*|decided today to keep|remain\w*"
 
 def frac_to_float(s: str) -> float:
     s = s.strip()
-    m = re.fullmatch(r"(\d+)-(\d+)/(\d+)", s)
+    m = re.fullmatch(r"(\d+)[- ](\d+)/(\d+)", s)
     if m:
         return int(m.group(1)) + int(m.group(2)) / int(m.group(3))
     m = re.fullmatch(r"(\d+)/(\d+)", s)
@@ -29,19 +29,24 @@ def frac_to_float(s: str) -> float:
 
 
 def _policy_sentence(text: str) -> str:
-    t = re.sub(r"\s+", " ", text)
+    """The sentence that states the rate decision. Prefer sentences with an
+    action verb ("decided", "voted") over forward-guidance sentences."""
+    t = re.sub(r"\s+", " ", text).replace("\u2011", "-").replace("\u2010", "-")
+    cands = []
     for sent in re.split(r"(?<=\.)\s+(?=[A-Z])", t):
-        if re.search(r"target (?:range )?for the federal funds rate|federal funds rate target|target for the federal funds rate", sent, re.I):
-            if re.search(r"percent", sent):
-                return sent
-    return ""
+        if re.search(r"target (?:range )?for the federal funds rate|federal funds rate target|target rate|target range", sent, re.I) and "percent" in sent:
+            cands.append(sent)
+    for sent in cands:
+        if re.search(r"\b(decided|voted|agreed|establish|will maintain|reaffirmed|remains appropriate)\b", sent) and re.search(rf"(?:{_FRAC}) percent", sent):
+            return sent
+    return cands[0] if cands else ""
 
 
 def extract_range(text: str) -> tuple[float, float] | None:
     s = _policy_sentence(text)
     if not s:
         return None
-    m = re.search(rf"(?:at|to) ({_FRAC})(?: percent)? to ({_FRAC}) percent", s)
+    m = re.search(rf"\b({_FRAC})(?: percent)? to ({_FRAC}) percent", s)
     if m:
         return frac_to_float(m.group(1)), frac_to_float(m.group(2))
     m = re.search(rf"(?:at|to|of) ({_FRAC}) percent", s)
@@ -51,10 +56,12 @@ def extract_range(text: str) -> tuple[float, float] | None:
     return None
 
 
-def extract_decision(text: str, prev_text: str | None = None) -> dict:
+def extract_decision(text: str, prev_text: str | None = None, prev_range: tuple[float, float] | None = None) -> dict:
+    """`prev_range` (the last known range) lets us size moves the text doesn't
+    state; otherwise we parse it from `prev_text`."""
     s = _policy_sentence(text)
     rng = extract_range(text)
-    prev_rng = extract_range(prev_text) if prev_text else None
+    prev_rng = prev_range or (extract_range(prev_text) if prev_text else None)
     size = None
     m = re.search(r"by (\d+) basis points?|(\d+) basis points?|by (\d+(?:-\d+/\d+)?|\d+/\d+) percentage points?", s)
     if m:
@@ -66,6 +73,10 @@ def extract_decision(text: str, prev_text: str | None = None) -> dict:
         direction = "cut"
     else:
         direction = "hold"
+    # Wording like "decided to establish a target range" names no direction:
+    # infer it from the change in the stated range.
+    if direction == "hold" and rng and prev_rng and abs(rng[1] - prev_rng[1]) > 1e-9:
+        direction = "hike" if rng[1] > prev_rng[1] else "cut"
     if size is None and direction != "hold" and rng and prev_rng:
         size = round(abs(rng[1] - prev_rng[1]) * 100)
     if direction == "hold":

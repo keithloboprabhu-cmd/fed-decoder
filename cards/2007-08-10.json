@@ -1,0 +1,130 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 5.25%."
+  },
+  "changes": [
+    {
+      "quote": "FOMC statement: The Federal Reserve is providing liquidity to facilitate the orderly functioning of financial markets",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Federal Reserve is providing liquidity to facilitate the orderly functioning of financial markets.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Federal Reserve will provide reserves as necessary through open market operations to promote trading in the federal funds market at rates close to the Federal Open Market Committee's target rate of 5-1/4 percent.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "In current circumstances, depository institutions may experience unusual funding needs because of dislocations in money and credit markets.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "As always, the discount window is available as a source of funding.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 0.38,
+  "tone_quotes": [],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.46% APR costs about $56.08 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.81% and moved +2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.68% would rise by about $3.98 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.7%, and employers added an average of 66k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.3% over the past year (July 2007); core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.09% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 71%, cut 11%, hike 19%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Reserve will provide reserves as necessary through open market operations to promote trading in the federal funds market at rates close to the Federal Open Market Committee's target rate of 5-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.46% as of 2007-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.68% week of 2007-08-02"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.81% on 2007-08-10"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.7% in July 2007"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 66k as of July 2007"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.3% year over year, July 2007"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2% year over year, July 2007"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.5% annualized, quarter starting 2007-04-01"
+    }
+  ],
+  "meeting_date": "2007-08-10",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

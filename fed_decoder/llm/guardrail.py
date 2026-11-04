@@ -70,7 +70,7 @@ def ungrounded_numbers(output: str, context: str, allow: set[float] | None = Non
 
 def _norm_quote(s: str) -> str:
     s = unicodedata.normalize("NFKC", s)
-    s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"').replace("–", "-").replace("—", "-")
+    s = s.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"').replace("–", "-").replace("—", "-").replace("\u2011", "-").replace("\u2010", "-")
     s = re.sub(r"\s+", " ", s).strip().strip('"').strip()
     return s.lower().rstrip(".")
 

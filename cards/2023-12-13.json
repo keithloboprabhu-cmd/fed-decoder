@@ -1,0 +1,131 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "Recent indicators suggest that growth of economic activity has slowed from its strong pace in the third quarter.",
+      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic activity expanded at a strong pace in the third quarter.”"
+    },
+    {
+      "quote": "Inflation has eased over the past year but remains elevated.",
+      "explanation": "Reworded from the previous statement: “Inflation remains elevated.”"
+    },
+    {
+      "quote": "In determining the extent of any additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+      "explanation": "Reworded from the previous statement: “In determining the extent of additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account …”"
+    }
+  ],
+  "tone_score": 1.31,
+  "tone_quotes": [
+    {
+      "quote": "In determining the extent of any additional policy firming that may be appropriate to return inflation to 2 percent over time, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee remains highly attentive to inflation risks.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 21.19% APR costs about $88.29 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.04% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.22% would fall by about $32.42 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.7%, and employers added an average of 147k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.1% over the past year (November 2023); core PCE inflation, the Fed's preferred gauge, was 3.4%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 4.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -27 bp on the day, and the S&P 500 moved 1.37%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.39% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 73%, cut 26%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In support of these goals, the Committee decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "21.19% as of 2023-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "7.22% week of 2023-11-30"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.04% on 2023-12-13"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.7% in November 2023"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 147k as of November 2023"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.1% year over year, November 2023"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "3.4% year over year, November 2023"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "4.5% annualized, quarter starting 2023-07-01"
+    }
+  ],
+  "meeting_date": "2023-12-13",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

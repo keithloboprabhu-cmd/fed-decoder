@@ -1,0 +1,131 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.25,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1.25%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "While incoming economic data since the January meeting have been mixed, recent labor market indicators have proven disappointing.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "However, the hesitancy of the economic expansion appears to owe importantly to oil price premiums and other aspects of geopolitical uncertainties.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to economic activity sufficient to engender an improving economic climate over time.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "In light of the unusually large uncertainties clouding the geopolitical situation in the short run and their apparent effects on economic decisionmaking, the Committee does not believe it can usefully characterize the current balance of risks with respect to the prospects for its long-run goals of price stability and sustainable economic growth.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Rather, the Committee decided to refrain from making that determination until some of those uncertainties abate.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "In the current circumstances, heightened surveillance is particularly informative.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.07,
+  "tone_quotes": [
+    {
+      "quote": "The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to economic activity sufficient to engender an improving economic climate over time.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.11% APR costs about $54.62 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.91% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.67% would rise by about $17.12 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5.9%, and employers added an average of -58k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.1% over the past year (February 2003); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +9 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.11% as of 2002-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.67% week of 2003-03-07"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.91% on 2003-03-18"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5.9% in February 2003"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -58k as of February 2003"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.1% year over year, February 2003"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, February 2003"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.5% annualized, quarter starting 2002-10-01"
+    }
+  ],
+  "meeting_date": "2003-03-18",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

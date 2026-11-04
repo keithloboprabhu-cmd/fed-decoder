@@ -22,6 +22,8 @@ LOG_PATH = config.CACHE_DIR / "llm_log.jsonl"
 MAX_BACKOFF_S = 12.0
 
 _PROVIDERS: dict[str, Provider] = {}
+# Error types from the most recent generate() call, e.g. [("gemini", "RateLimited")].
+LAST_FAILURES: list[tuple[str, str]] = []
 
 
 def get_provider(name: str) -> Provider:
@@ -75,6 +77,7 @@ def generate(
     """
     order = providers or default_order()
     retried_guardrail = False
+    LAST_FAILURES.clear()
     for i, name in enumerate(order):
         p = get_provider(name)
         if not p.available():
@@ -84,12 +87,10 @@ def generate(
         for attempt in range(2):
             try:
                 resp = _call_with_backoff(p, msgs, schema, tools, temperature)
-            except (RateLimited, ProviderUnavailable, ValueError) as e:
+            except Exception as e:  # RateLimited, ProviderUnavailable, pydantic ValidationError, ...
+                LAST_FAILURES.append((name, type(e).__name__))
                 log_event(provider=name, event="failed", error=type(e).__name__, detail=str(e)[:300], purpose=purpose)
                 break  # next provider
-            except Exception as e:  # pydantic ValidationError, etc.
-                log_event(provider=name, event="failed", error=type(e).__name__, detail=str(e)[:300], purpose=purpose)
-                break
             if validate is None:
                 log_event(provider=name, event="ok", latency_s=round(resp.latency_s, 2), fallback=i > 0, purpose=purpose)
                 return resp
@@ -98,6 +99,7 @@ def generate(
                 log_event(provider=name, event="ok", latency_s=round(resp.latency_s, 2), fallback=i > 0, guardrail_retry=retried_guardrail, purpose=purpose)
                 return resp
             except GuardrailError as g:
+                LAST_FAILURES.append((name, "GuardrailError"))
                 log_event(provider=name, event="guardrail_fail", detail=str(g)[:300], purpose=purpose)
                 if retried_guardrail:
                     return None

@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.5,
+    "target_high": 1.75,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1.5% to 1.75%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in October indicates that the labor market remains strong and that economic activity has been rising at a moderate rate.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September indicates that the labor market remains strong and that economic activity has been…”"
+    },
+    {
+      "quote": "The Committee decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent.",
+      "explanation": "Reworded from the previous statement: “In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the Committee decided to lower the target ran…”"
+    },
+    {
+      "quote": "The Committee judges that the current stance of monetary policy is appropriate to support sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective.",
+      "explanation": "Reworded from the previous statement: “This action supports the Committee's view that sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symm…”"
+    },
+    {
+      "quote": "The Committee will continue to monitor the implications of incoming information for the economic outlook, including global developments and muted inflation pressures, as it assesses the appropriate path of the target range for the federal funds rate.",
+      "explanation": "Reworded from the previous statement: “The Committee will continue to monitor the implications of incoming information for the economic outlook as it assesses the appropriate path of the target range…”"
+    },
+    {
+      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; James Bullard; Richard H. Clarida; Charles L. Evans; Esther L. George; Randal K. Quarles; and Eric S. Rosengren.",
+      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michelle W. Bowman; Lael Brainard; James Bullard; Richard H. C…”"
+    },
+    {
+      "quote": "Voting against this action were: Esther L. George and Eric S. Rosengren, who preferred at this meeting to maintain the target range at 1-3/4 percent to 2 percent.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 0.8,
+  "tone_quotes": [
+    {
+      "quote": "Job gains have been solid, on average, in recent months, and the unemployment rate has remained low.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy are running below 2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee will continue to monitor the implications of incoming information for the economic outlook, including global developments and muted inflation pressures, as it assesses the appropriate path of the target range for the federal funds rate.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 15.1% APR costs about $62.92 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.79% and moved -6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.68% would fall by about $10.15 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.6%, and employers added an average of 166k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.1% over the past year (November 2019); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.6%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 4.8% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -4 bp on the day, and the S&P 500 moved 0.29%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.09% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 92%, cut 8%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "15.1% as of 2019-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.68% week of 2019-11-27"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.79% on 2019-12-11"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.6% in November 2019"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 166k as of November 2019"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.1% year over year, November 2019"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, November 2019"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "4.8% annualized, quarter starting 2019-07-01"
+    }
+  ],
+  "meeting_date": "2019-12-11",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

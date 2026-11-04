@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.25,
+    "target_high": 0.5,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Esther L. George"
+    ],
+    "summary": "The Fed held its policy rate at 0.25% to 0.5%. The vote was 9-1. Dissenting: Esther L. George."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in March indicates that labor market conditions have improved further even as growth in economic activity appears to have slowed.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in January suggests that economic activity has been expanding at a moderate pace despite the gl…”"
+    },
+    {
+      "quote": "Growth in household spending has moderated, although households' real income has risen at a solid rate and consumer sentiment remains high.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Since the beginning of the year, the housing sector has improved further but business fixed investment and net exports have been soft.",
+      "explanation": "Reworded from the previous statement: “Household spending has been increasing at a moderate rate, and the housing sector has improved further; however, business fixed investment and net exports have …”"
+    },
+    {
+      "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and falling prices of non-energy imports.",
+      "explanation": "Reworded from the previous statement: “Inflation picked up in recent months; however, it continued to run below the Committee's 2 percent longer-run objective, partly reflecting declines in energy pr…”"
+    },
+    {
+      "quote": "However, global economic and financial developments continue to pose risks.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "The Committee continues to closely monitor inflation indicators and global economic and financial developments.",
+      "explanation": "Reworded from the previous statement: “The Committee continues to monitor inflation developments closely.”"
+    }
+  ],
+  "tone_score": -0.06,
+  "tone_quotes": [
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting further improvement in labor market conditions and a return to 2 percent inflation.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and falling prices of non-energy imports.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.22% APR costs about $50.92 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.87% and moved -7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.58% would fall by about $11.76 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5%, and employers added an average of 195k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 0.9% over the past year (March 2016); core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.3% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.09% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 98%, cut 0%, hike 2%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "Against this backdrop, the Committee decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.22% as of 2015-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.58% week of 2016-04-14"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.87% on 2016-04-27"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5% in March 2016"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 195k as of March 2016"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "0.9% year over year, March 2016"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.5% year over year, March 2016"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.3% annualized, quarter starting 2016-01-01"
+    }
+  ],
+  "meeting_date": "2016-04-27",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

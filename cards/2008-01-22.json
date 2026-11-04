@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "cut",
+    "change_bps": -75,
+    "target_low": 3.5,
+    "target_high": 3.5,
+    "votes_for": 8,
+    "votes_against": 1,
+    "dissenters": [
+      "William Poole"
+    ],
+    "summary": "The Fed cut its policy rate by 75 basis points, to 3.5%. The vote was 8-1. Dissenting: William Poole."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 75 basis points to 3-1/2 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to lower its target for the federal funds rate 25 basis points to 4-1/4 percent.”"
+    },
+    {
+      "quote": "The Committee took this action in view of a weakening of the economic outlook and increasing downside risks to growth.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "While strains in short-term funding markets have eased somewhat, broader financial market conditions have continued to deteriorate and credit has tightened further for some businesses and households.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Moreover, incoming information indicates a deepening of the housing contraction as well as some softening in labor markets.",
+      "explanation": "Reworded from the previous statement: “Incoming information suggests that economic growth is slowing, reflecting the intensification of the housing correction and some softening in business and consu…”"
+    },
+    {
+      "quote": "The Committee expects inflation to moderate in coming quarters, but it will be necessary to continue to monitor inflation developments carefully.",
+      "explanation": "Reworded from the previous statement: “In this context, the Committee judges that some inflation risks remain, and it will continue to monitor inflation developments carefully.”"
+    },
+    {
+      "quote": "Appreciable downside risks to growth remain.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -1.29,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 75 basis points to 3-1/2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee took this action in view of a weakening of the economic outlook and increasing downside risks to growth.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "While strains in short-term funding markets have eased somewhat, broader financial market conditions have continued to deteriorate and credit has tightened further for some businesses and households.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 13.59% APR, a 75 bp cut lowers monthly interest by about $3.12."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.52% and moved -14 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.87% would fall by about $26.75 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $45.00 a year less in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5%, and employers added an average of 99k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 4.1% over the past year (December 2007); core PCE inflation, the Fed's preferred gauge, was 2.4%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -28 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.1% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 23%, cut 77%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee has decided to lower its target for the federal funds rate 75 basis points to 3-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.59% as of 2007-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.87% week of 2008-01-10"
+    },
+    {
+      "source": "DGS10",
+      "detail": "3.52% on 2008-01-22"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5% in December 2007"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 99k as of December 2007"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "4.1% year over year, December 2007"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.4% year over year, December 2007"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.5% annualized, quarter starting 2007-10-01"
+    }
+  ],
+  "meeting_date": "2008-01-22",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

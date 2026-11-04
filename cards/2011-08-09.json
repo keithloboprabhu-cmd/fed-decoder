@@ -1,0 +1,147 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 7,
+    "votes_against": 3,
+    "dissenters": [
+      "Richard W. Fisher",
+      "Narayana Kocherlakota",
+      "Charles I. Plosser"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 7-3. Dissenting: Richard W. Fisher, Narayana Kocherlakota, Charles I. Plosser."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in June indicates that economic growth so far this year has been considerably slower than the Committee had expected.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in April indicates that the economic recovery is continuing at a moderate pace, though somewhat…”"
+    },
+    {
+      "quote": "Indicators suggest a deterioration in overall labor market conditions in recent months, and the unemployment rate has moved up.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Household spending has flattened out, investment in nonresidential structures is still weak, and the housing sector remains depressed.",
+      "explanation": "Reworded from the previous statement: “However, investment in nonresidential structures is still weak, and the housing sector continues to be depressed.”"
+    },
+    {
+      "quote": "However, business investment in equipment and software continues to expand.",
+      "explanation": "Reworded from the previous statement: “Household spending and business investment in equipment and software continue to expand.”"
+    },
+    {
+      "quote": "Temporary factors, including the damping effect of higher food and energy prices on consumer purchasing power and spending as well as supply chain disruptions associated with the tragic events in Japan, appear to account for only some of the recent weakness in economic activity.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Inflation picked up earlier in the year, mainly reflecting higher prices for some commodities and imported goods, as well as the supply chain disruptions.",
+      "explanation": "Reworded from the previous statement: “Inflation has picked up in recent months, mainly reflecting higher prices for some commodities and imported goods, as well as the recent supply chain disruption…”"
+    }
+  ],
+  "tone_score": -0.94,
+  "tone_quotes": [
+    {
+      "quote": "Indicators suggest a deterioration in overall labor market conditions in recent months, and the unemployment rate has moved up.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "To promote the ongoing economic recovery and to help ensure that inflation, over time, is at levels consistent with its mandate, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee currently anticipates that economic conditions--including low rates of resource utilization and a subdued outlook for inflation over the medium run--are likely to warrant exceptionally low levels for the federal funds rate at least through mid-2013.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.89% APR costs about $53.71 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.2% and moved -20 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.55% would fall by about $35.55 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 9%, and employers added an average of 132k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.6% over the past year (July 2011); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.7% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -8 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.23% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 62%, cut 37%, hike 1%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "To promote the ongoing economic recovery and to help ensure that inflation, over time, is at levels consistent with its mandate, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.89% as of 2011-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.55% week of 2011-07-28"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.2% on 2011-08-09"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "9% in July 2011"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 132k as of July 2011"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.6% year over year, July 2011"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, July 2011"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.7% annualized, quarter starting 2011-04-01"
+    }
+  ],
+  "meeting_date": "2011-08-09",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

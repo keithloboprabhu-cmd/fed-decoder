@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.25,
+    "target_high": 1.5,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1.25% to 1.5%. The vote was 9-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in November indicates that the labor market has continued to strengthen and that economic activ…”"
+    },
+    {
+      "quote": "Gains in employment, household spending, and business fixed investment have been solid, and the unemployment rate has stayed low.",
+      "explanation": "Reworded from the previous statement: “Household spending has been expanding at a moderate rate, and growth in business fixed investment has picked up in recent quarters.”"
+    },
+    {
+      "quote": "On a 12-month basis, both overall inflation and inflation for items other than food and energy have continued to run below 2 percent.",
+      "explanation": "Reworded from the previous statement: “On a 12-month basis, both overall inflation and inflation for items other than food and energy have declined this year and are running below 2 percent.”"
+    },
+    {
+      "quote": "Market-based measures of inflation compensation have increased in recent months but remain low; survey-based measures of longer-term inflation expectations are little changed, on balance.",
+      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations are little changed, on balance.”"
+    },
+    {
+      "quote": "Averaging through hurricane-related fluctuations, job gains have been solid, and the unemployment rate declined further.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "The Committee expects that, with further gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pace and labor market conditions will remain strong.",
+      "explanation": "Reworded from the previous statement: “Consequently, the Committee continues to expect that, with gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pac…”"
+    }
+  ],
+  "tone_score": 0.58,
+  "tone_quotes": [
+    {
+      "quote": "The Committee expects that economic conditions will evolve in a manner that will warrant further gradual increases in the federal funds rate; the federal funds rate is likely to remain, for some time, below levels that are expected to prevail in the longer run.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market has continued to strengthen and that economic activity has been rising at a solid rate.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting strong labor market conditions and a sustained return to 2 percent inflation.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.08% APR costs about $54.50 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.72% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.04% would fall by about $1.73 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.1%, and employers added an average of 172k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.1% over the past year (December 2017); core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 4.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +1 bp on the day, and the S&P 500 moved 0.05%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.31% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 64%, cut 0%, hike 36%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1-1/4 to 1-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.08% as of 2017-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.04% week of 2018-01-18"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.72% on 2018-01-31"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.1% in December 2017"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 172k as of December 2017"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.1% year over year, December 2017"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.6% year over year, December 2017"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "4.6% annualized, quarter starting 2017-10-01"
+    }
+  ],
+  "meeting_date": "2018-01-31",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

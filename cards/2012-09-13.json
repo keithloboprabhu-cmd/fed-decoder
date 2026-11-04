@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-1. Dissenting: Jeffrey M. Lacker."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in August suggests that economic activity has continued to expand at a moderate pace in recent months.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June suggests that economic activity decelerated somewhat over the first half of this year.”"
+    },
+    {
+      "quote": "Growth in employment has been slow, and the unemployment rate remains elevated.",
+      "explanation": "Reworded from the previous statement: “Growth in employment has been slow in recent months, and the unemployment rate remains elevated.”"
+    },
+    {
+      "quote": "Household spending has continued to advance, but growth in business fixed investment appears to have slowed.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The housing sector has shown some further signs of improvement, albeit from a depressed level.",
+      "explanation": "Reworded from the previous statement: “Despite some further signs of improvement, the housing sector remains depressed.”"
+    },
+    {
+      "quote": "Inflation has been subdued, although the prices of some key commodities have increased recently.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Longer-term inflation expectations have remained stable.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -1.54,
+  "tone_quotes": [
+    {
+      "quote": "In particular, the Committee also decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that exceptionally low levels for the federal funds rate are likely to be warranted at least through mid-2015.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Furthermore, strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee agreed today to increase policy accommodation by purchasing additional agency mortgage-backed securities at a pace of $40 billion per month.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.06% APR costs about $50.25 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.75% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.55% would fall by about $3.36 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 8.1%, and employers added an average of 136k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.7% over the past year (August 2012); core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 8.1%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 1.8% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -1 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.09% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 59%, cut 40%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In particular, the Committee also decided today to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that exceptionally low levels for the federal funds rate are likely to be warranted at least through mid-2015."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.06% as of 2012-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.55% week of 2012-09-06"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.75% on 2012-09-13"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "8.1% in August 2012"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 136k as of August 2012"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.7% year over year, August 2012"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.6% year over year, August 2012"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "1.8% annualized, quarter starting 2012-04-01"
+    }
+  ],
+  "meeting_date": "2012-09-13",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

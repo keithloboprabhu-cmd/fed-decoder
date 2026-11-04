@@ -1,0 +1,137 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.5,
+    "target_high": 3.75,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Stephen I. Miran"
+    ],
+    "summary": "The Fed held its policy rate at 3.5% to 3.75%. The vote was 11-1. Dissenting: Stephen I. Miran."
+  },
+  "changes": [
+    {
+      "quote": "Job gains have remained low, and the unemployment rate has been little changed in recent months.",
+      "explanation": "Reworded from the previous statement: “Job gains have remained low, and the unemployment rate has shown some signs of stabilization.”"
+    },
+    {
+      "quote": "The implications of developments in the Middle East for the U.S. economy are uncertain.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lisa D. Cook; Beth M. Hammack; Philip N. Jefferson; Neel Kashkari; Lorie K. Logan; Anna Paulson; and Christopher J. Waller.",
+      "explanation": "Reworded from the previous statement: “Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Lisa D. Cook; Beth M. Ham…”"
+    },
+    {
+      "quote": "Voting against this action was Stephen I. Miran, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting.",
+      "explanation": "Reworded from the previous statement: “Voting against this action were Stephen I. Miran and Christopher J. Waller, who preferred to lower the target range for the federal funds rate by 1/4 percentage…”"
+    }
+  ],
+  "tone_score": 0.69,
+  "tone_quotes": [
+    {
+      "quote": "The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Available indicators suggest that economic activity has been expanding at a solid pace.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "In considering the extent and timing of additional adjustments to the target range for the federal funds rate, the Committee will carefully assess incoming data, the evolving outlook, and the balance of risks.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 20.97% APR costs about $87.38 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.26% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6% would rise by about $11.59 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.4%, and employers added an average of -4k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.7% over the past year (February 2026); core PCE inflation, the Fed's preferred gauge, was 3%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.4%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +8 bp on the day, and the S&P 500 moved -1.36%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.08% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 95%, cut 5%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 3-1/2 to 3-3/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "20.97% as of 2025-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6% week of 2026-03-05"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.26% on 2026-03-18"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.4% in February 2026"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -4k as of February 2026"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.7% year over year, February 2026"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "3% year over year, February 2026"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.2% annualized, quarter starting 2025-10-01"
+    }
+  ],
+  "meeting_date": "2026-03-18",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

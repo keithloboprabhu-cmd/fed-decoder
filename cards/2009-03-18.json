@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in January indicates that the economy continues to contract.",
+      "explanation": "Reworded from the previous statement: “Information received since the Committee met in December suggests that the economy has weakened further.”"
+    },
+    {
+      "quote": "Job losses, declining equity and housing wealth, and tight credit conditions have weighed on consumer sentiment and spending.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Weaker sales prospects and difficulties in obtaining credit have led businesses to cut back on inventories and fixed investment.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "U.S. exports have slumped as a number of major trading partners have also fallen into recession.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Although the near-term economic outlook is weak, the Committee anticipates that policy actions to stabilize financial markets and institutions, together with fiscal and monetary stimulus, will contribute to a gradual resumption of sustainable economic growth.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "In light of increasing economic slack here and abroad, the Committee expects that inflation will remain subdued.",
+      "explanation": "Reworded from the previous statement: “In light of the declines in the prices of energy and other commodities in recent months and the prospects for considerable economic slack, the Committee expects…”"
+    }
+  ],
+  "tone_score": -1.18,
+  "tone_quotes": [
+    {
+      "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and anticipates that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Weaker sales prospects and difficulties in obtaining credit have led businesses to cut back on inventories and fixed investment.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In light of increasing economic slack here and abroad, the Committee expects that inflation will remain subdued.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.03% APR costs about $50.12 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.51% and moved -51 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.15% would fall by about $92.97 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 8.3%, and employers added an average of -741k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 0% over the past year (February 2009); core PCE inflation, the Fed's preferred gauge, was 0.9%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 8.3%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a -8.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -23 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.22% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 21%, cut 79%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and anticipates that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.03% as of 2008-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "5.15% week of 2009-03-05"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.51% on 2009-03-18"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "8.3% in February 2009"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change -741k as of February 2009"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "0% year over year, February 2009"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "0.9% year over year, February 2009"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "-8.5% annualized, quarter starting 2008-10-01"
+    }
+  ],
+  "meeting_date": "2009-03-18",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

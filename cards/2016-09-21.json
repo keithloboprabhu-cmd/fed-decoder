@@ -1,0 +1,147 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.25,
+    "target_high": 0.5,
+    "votes_for": 7,
+    "votes_against": 3,
+    "dissenters": [
+      "Esther L. George",
+      "Loretta J. Mester",
+      "Eric Rosengren"
+    ],
+    "summary": "The Fed held its policy rate at 0.25% to 0.5%. The vote was 7-3. Dissenting: Esther L. George, Loretta J. Mester, Eric Rosengren."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in July indicates that the labor market has continued to strengthen and growth of economic activity has picked up from the modest pace seen in the first half of this year.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June indicates that the labor market strengthened and that economic activity has been expand…”"
+    },
+    {
+      "quote": "Although the unemployment rate is little changed in recent months, job gains have been solid, on average.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Household spending has been growing strongly but business fixed investment has remained soft.",
+      "explanation": "Reworded from the previous statement: “Household spending has been growing strongly but business fixed investment has been soft.”"
+    },
+    {
+      "quote": "Job gains were strong in June following weak growth in May.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "On balance, payrolls and other labor market indicators point to some increase in labor utilization in recent months.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "The Committee expects that, with gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pace and labor market conditions will strengthen somewhat further.",
+      "explanation": "Reworded from the previous statement: “The Committee currently expects that, with gradual adjustments in the stance of monetary policy, economic activity will expand at a moderate pace and labor mark…”"
+    }
+  ],
+  "tone_score": 0.21,
+  "tone_quotes": [
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting further improvement in labor market conditions and a return to 2 percent inflation.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and in prices of non-energy imports.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.16% APR costs about $50.67 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.66% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.44% would fall by about $5.00 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.9%, and employers added an average of 254k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.1% over the past year (August 2016); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 1.3% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.18% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 90%, cut 0%, hike 10%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "Against this backdrop, the Committee decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.16% as of 2016-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.44% week of 2016-09-08"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.66% on 2016-09-21"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.9% in August 2016"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 254k as of August 2016"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.1% year over year, August 2016"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, August 2016"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "1.3% annualized, quarter starting 2016-04-01"
+    }
+  ],
+  "meeting_date": "2016-09-21",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

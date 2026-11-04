@@ -1,0 +1,123 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.5,
+    "votes_for": 12,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 5.25% to 5.5%. The vote was 12-0."
+  },
+  "changes": [
+    {
+      "quote": "Job gains have remained strong, and the unemployment rate has remained low.",
+      "explanation": "Reworded from the previous statement: “Job gains have moderated since early last year but remain strong, and the unemployment rate has remained low.”"
+    }
+  ],
+  "tone_score": 0.76,
+  "tone_quotes": [
+    {
+      "quote": "The Committee does not expect it will be appropriate to reduce the target range until it has gained greater confidence that inflation is moving sustainably toward 2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The economic outlook is uncertain, and the Committee remains highly attentive to inflation risks.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 21.47% APR costs about $89.46 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.27% and moved -3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.88% would fall by about $6.01 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 3.9%, and employers added an average of 178k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.2% over the past year (February 2024); core PCE inflation, the Fed's preferred gauge, was 3.2%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 3.9%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -9 bp on the day, and the S&P 500 moved 0.89%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 90%, cut 10%, hike 0%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 5-1/4 to 5-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "21.47% as of 2023-11-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.88% week of 2024-03-07"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.27% on 2024-03-20"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "3.9% in February 2024"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 178k as of February 2024"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.2% year over year, February 2024"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "3.2% year over year, February 2024"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.6% annualized, quarter starting 2023-10-01"
+    }
+  ],
+  "meeting_date": "2024-03-20",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

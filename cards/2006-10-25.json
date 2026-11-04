@@ -1,0 +1,137 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 10,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Fed held its policy rate at 5.25%. The vote was 10-1. Dissenting: Jeffrey M. Lacker."
+  },
+  "changes": [
+    {
+      "quote": "Economic growth has slowed over the course of the year, partly reflecting a cooling of the housing market.",
+      "explanation": "Reworded from the previous statement: “The moderation in economic growth appears to be continuing, partly reflecting a cooling of the housing market.”"
+    },
+    {
+      "quote": "Going forward, the economy seems likely to expand at a moderate pace.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.",
+      "explanation": "Reworded from the previous statement: “Readings on core inflation have been elevated, and the high levels of resource utilization and of the prices of energy and other commodities have the potential …”"
+    },
+    {
+      "quote": "Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Donald L. Kohn; Randall S. Kroszner; Frederic S. Mishkin; Sandra Pianalto; William Poole; Kevin M. Warsh; and Janet L. Yellen.",
+      "explanation": "Reworded from the previous statement: “Voting for the FOMC monetary policy action were: Ben S. Bernanke, Chairman; Timothy F. Geithner, Vice Chairman; Susan S. Bies; Jack Guynn; Donald L. Kohn; Randa…”"
+    }
+  ],
+  "tone_score": 1.11,
+  "tone_quotes": [
+    {
+      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "However, inflation pressures seem likely to moderate over time, reflecting reduced impetus from energy prices, contained inflation expectations, and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.16% APR costs about $54.83 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.78% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.37% would fall by about $9.80 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.5%, and employers added an average of 163k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2% over the past year (September 2006); core PCE inflation, the Fed's preferred gauge, was 2.6%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.5%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.15% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 53%, cut 1%, hike 46%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.16% as of 2006-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.37% week of 2006-10-12"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.78% on 2006-10-25"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.5% in September 2006"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 163k as of September 2006"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2% year over year, September 2006"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.6% year over year, September 2006"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.6% annualized, quarter starting 2006-07-01"
+    }
+  ],
+  "meeting_date": "2006-10-25",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

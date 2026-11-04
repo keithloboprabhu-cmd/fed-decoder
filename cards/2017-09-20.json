@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 1.0,
+    "target_high": 1.25,
+    "votes_for": 9,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 1% to 1.25%. The vote was 9-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in July indicates that the labor market has continued to strengthen and that economic activity has been rising moderately so far this year.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in June indicates that the labor market has continued to strengthen and that economic activity …”"
+    },
+    {
+      "quote": "Job gains have remained solid in recent months, and the unemployment rate has stayed low.",
+      "explanation": "Reworded from the previous statement: “Job gains have been solid, on average, since the beginning of the year, and the unemployment rate has declined.”"
+    },
+    {
+      "quote": "Household spending has been expanding at a moderate rate, and growth in business fixed investment has picked up in recent quarters.",
+      "explanation": "Reworded from the previous statement: “Household spending and business fixed investment have continued to expand.”"
+    },
+    {
+      "quote": "On a 12-month basis, overall inflation and the measure excluding food and energy prices have declined this year and are running below 2 percent.",
+      "explanation": "Reworded from the previous statement: “On a 12-month basis, overall inflation and the measure excluding food and energy prices have declined and are running below 2 percent.”"
+    },
+    {
+      "quote": "Hurricanes Harvey, Irma, and Maria have devastated many communities, inflicting severe hardship.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Storm-related disruptions and rebuilding will affect economic activity in the near term, but past experience suggests that the storms are unlikely to materially alter the course of the national economy over the medium term.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": -0.01,
+  "tone_quotes": [
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a sustained return to 2 percent inflation.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "On a 12-month basis, overall inflation and the measure excluding food and energy prices have declined this year and are running below 2 percent.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "Higher prices for gasoline and some other items in the aftermath of the hurricanes will likely boost inflation temporarily; apart from that effect, inflation on a 12-month basis is expected to remain somewhat below 2 percent in the near term but to stabilize around the Committee's 2 percent objective over the medium term.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 12.77% APR costs about $53.21 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.28% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.78% would rise by about $6.83 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.4%, and employers added an average of 180k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.9% over the past year (August 2017); core PCE inflation, the Fed's preferred gauge, was 1.4%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.4%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.3% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +5 bp on the day, and the S&P 500 moved 0.06%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.17% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 95%, cut 0%, hike 5%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to maintain the target range for the federal funds rate at 1 to 1-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.77% as of 2017-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.78% week of 2017-09-07"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.28% on 2017-09-20"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.4% in August 2017"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 180k as of August 2017"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.9% year over year, August 2017"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.4% year over year, August 2017"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.3% annualized, quarter starting 2017-04-01"
+    }
+  ],
+  "meeting_date": "2017-09-20",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

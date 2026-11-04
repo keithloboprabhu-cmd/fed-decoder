@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 0.5,
+    "target_high": 0.75,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed raised its policy rate by 25 basis points, to 0.5% to 0.75%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in November indicates that the labor market has continued to strengthen and that economic activity has been expanding at a moderate pace since mid-year.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Job gains have been solid in recent months and the unemployment rate has declined.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Information received since the Federal Open Market Committee met in September indicates that the labor market has continued to strengthen and growth of economic activity has picked up from the modest pace seen in the first half of this year.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "Although the unemployment rate is little changed in recent months, job gains have been solid.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "Inflation has increased since earlier this year but is still below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and in prices of non-energy imports.",
+      "explanation": "Reworded from the previous statement: “Inflation has increased somewhat since earlier this year but is still below the Committee's 2 percent longer-run objective, partly reflecting earlier declines i…”"
+    },
+    {
+      "quote": "Market-based measures of inflation compensation have moved up considerably but still are low; most survey-based measures of longer-term inflation expectations are little changed, on balance, in recent months.",
+      "explanation": "Reworded from the previous statement: “Market-based measures of inflation compensation have moved up but remain low; most survey-based measures of longer-term inflation expectations are little change…”"
+    }
+  ],
+  "tone_score": 0.68,
+  "tone_quotes": [
+    {
+      "quote": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1/2 to 3/4 percent.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The stance of monetary policy remains accommodative, thereby supporting some further strengthening in labor market conditions and a return to 2 percent inflation.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "This policy, by keeping the Committee's holdings of longer-term securities at sizable levels, should help maintain accommodative financial conditions.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 12.51% APR, a 25 bp increase raises monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 2.54% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.08% would rise by about $10.45 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.7%, and employers added an average of 174k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.7% over the past year (November 2016); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 2.9% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +10 bp on the day, and the S&P 500 moved -0.81%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.06% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 55%, cut 0%, hike 45%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In view of realized and expected labor market conditions and inflation, the Committee decided to raise the target range for the federal funds rate to 1/2 to 3/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.51% as of 2016-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "4.08% week of 2016-12-01"
+    },
+    {
+      "source": "DGS10",
+      "detail": "2.54% on 2016-12-14"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.7% in November 2016"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 174k as of November 2016"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.7% year over year, November 2016"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.7% year over year, November 2016"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "2.9% annualized, quarter starting 2016-07-01"
+    }
+  ],
+  "meeting_date": "2016-12-14",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

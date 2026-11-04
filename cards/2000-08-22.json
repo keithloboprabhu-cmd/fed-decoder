@@ -1,0 +1,131 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 6.5,
+    "target_high": 6.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 6.5%."
+  },
+  "changes": [
+    {
+      "quote": "Recent data have indicated that the expansion of aggregate demand is moderating toward a pace closer to the rate of growth of the economy's potential to produce.",
+      "explanation": "Reworded from the previous statement: “Recent data suggest that the expansion of aggregate demand may be moderating toward a pace closer to the rate of growth of the economy's potential to produce.”"
+    },
+    {
+      "quote": "The data also have indicated that more rapid advances in productivity have been raising that potential growth rate as well as containing costs and holding down underlying price pressures.",
+      "explanation": "Reworded from the previous statement: “Although core measures of prices are rising slightly faster than a year ago, continuing rapid advances in productivity have been containing costs and holding do…”"
+    },
+    {
+      "quote": "Nonetheless, the Committee remains concerned about the risk of a continuing gap between the growth of demand and potential supply at a time when the utilization of the pool of available workers remains at an unusually high level.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Nonetheless, signs that growth in demand is moving to a sustainable pace are still tentative and preliminary, and the utilization of the pool of available workers remains at an unusually high level.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "In these circumstances, and against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 1.27,
+  "tone_quotes": [
+    {
+      "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 15.6% APR costs about $65.00 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.78% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 8.04% would fall by about $2.09 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4%, and employers added an average of 115k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.6% over the past year (July 2000); core PCE inflation, the Fed's preferred gauge, was 1.8%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 7.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -1 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee at its meeting today decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate at 6-1/2 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "15.6% as of 2000-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "8.04% week of 2000-08-11"
+    },
+    {
+      "source": "DGS10",
+      "detail": "5.78% on 2000-08-22"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4% in July 2000"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 115k as of July 2000"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.6% year over year, July 2000"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.8% year over year, July 2000"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "7.5% annualized, quarter starting 2000-04-01"
+    }
+  ],
+  "meeting_date": "2000-08-22",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

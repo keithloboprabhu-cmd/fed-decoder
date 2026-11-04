@@ -1,0 +1,142 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 3.75,
+    "target_high": 4.0,
+    "votes_for": 10,
+    "votes_against": 2,
+    "dissenters": [
+      "Lisa D. Cook",
+      "Beth M. Hammack"
+    ],
+    "summary": "The Fed held its policy rate at 3.75% to 4%. The vote was 10-2. Dissenting: Lisa D. Cook, Beth M. Hammack."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee approved the following statement for release by a 10 – 2 vote:",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee approved the following statement for release by a 12 – 0 vote:”"
+    },
+    {
+      "quote": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
+      "explanation": "Reworded from the previous statement: “The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's du…”"
+    },
+    {
+      "quote": "Economic activity is expanding at a strong pace.",
+      "explanation": "Reworded from the previous statement: “Economic activity is expanding at a solid pace.”"
+    },
+    {
+      "quote": "The accumulation of more information will help the Committee determine the policy stance appropriate to ensure a timely return of inflation to the Committee's 2 percent goal.",
+      "explanation": "Reworded from the previous statement: “Today's policy action will support a timelier return to the Committee's 2 percent goal.”"
+    },
+    {
+      "quote": "Voting against the monetary policy action were Lisa D. Cook and Beth M. Hammack, who preferred to raise the target range for the federal funds rate by 1/4 percentage point at this meeting.",
+      "explanation": "New language added in this statement."
+    }
+  ],
+  "tone_score": 1.23,
+  "tone_quotes": [
+    {
+      "quote": "Inflation remains elevated.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "The Committee will deliver price stability.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Economic activity is expanding at a strong pace.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 20.94% APR costs about $87.25 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.05% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.4% would rise by about $12.29 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.2%, and employers added an average of 51k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 4% over the past year (September 2026); core PCE inflation, the Fed's preferred gauge, was 3.1%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.2%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.4% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day, and the S&P 500 moved 0.28%."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.15% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 69%, cut 2%, hike 29%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee approved the following statement for release by a 10 – 2 vote: The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "20.94% as of 2026-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "7.4% week of 2026-10-15"
+    },
+    {
+      "source": "DGS10",
+      "detail": "5.05% on 2026-10-28"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.2% in September 2026"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 51k as of September 2026"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "4% year over year, September 2026"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "3.1% year over year, September 2026"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.4% annualized, quarter starting 2026-07-01"
+    }
+  ],
+  "meeting_date": "2026-10-28",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

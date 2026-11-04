@@ -6,7 +6,9 @@ import re
 from dataclasses import asdict, dataclass
 
 _TOKEN = re.compile(r"\s+|[^\s]+")
-_SENT = re.compile(r"(?<=[.;:])\s+(?=[A-Z])")
+# Sentence boundary: ., ? or ! then a capital, but not after an initial
+# ("Michelle W. Bowman"), "U.S.", "Jr." and similar abbreviations.
+_SENT = re.compile(r"(?<=[.?!])(?<!\s[A-Z]\.)(?<!U\.S\.)(?<!Jr\.)(?<!Mr\.)(?<!Ms\.)(?<!Dr\.)(?<!St\.)\s+(?=[A-Z\"\u201c])")
 
 
 @dataclass

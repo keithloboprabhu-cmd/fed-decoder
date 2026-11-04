@@ -1,0 +1,135 @@
+{
+  "decision": {
+    "direction": "hike",
+    "change_bps": 25,
+    "target_low": 4.25,
+    "target_high": 4.25,
+    "votes_for": 10,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed raised its policy rate by 25 basis points, to 4.25%. The vote was 10-0."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4 percent.”"
+    },
+    {
+      "quote": "Despite elevated energy prices and hurricane-related disruptions, the expansion in economic activity appears solid.",
+      "explanation": "Reworded from the previous statement: “Elevated energy prices and hurricane-related disruptions in economic activity have temporarily depressed output and employment.”"
+    },
+    {
+      "quote": "Core inflation has stayed relatively low in recent months and longer-term inflation expectations remain contained.",
+      "explanation": "Reworded from the previous statement: “The cumulative rise in energy and other costs has the potential to add to inflation pressures; however, core inflation has been relatively low in recent months …”"
+    },
+    {
+      "quote": "Nevertheless, possible increases in resource utilization as well as elevated energy prices have the potential to add to inflation pressures.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The Committee judges that some further measured policy firming is likely to be needed to keep the risks to the attainment of both sustainable economic growth and price stability roughly in balance.",
+      "explanation": "Reworded from the previous statement: “The Committee perceives that, with appropriate monetary policy action, the upside and downside risks to the attainment of both sustainable growth and price stab…”"
+    },
+    {
+      "quote": "In any event, the Committee will respond to changes in economic prospects as needed to foster these objectives.",
+      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee will respond to changes in economic prospects as needed to fulfill its obligation to maintain price stability.”"
+    }
+  ],
+  "tone_score": 1.4,
+  "tone_quotes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Nevertheless, possible increases in resource utilization as well as elevated energy prices have the potential to add to inflation pressures.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "On a $5,000 card balance at about 12.48% APR, a 25 bp increase raises monthly interest by about $1.04."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.54% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.26% would fall by about $3.90 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 5%, and employers added an average of 165k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 3.3% over the past year (November 2005); core PCE inflation, the Fed's preferred gauge, was 2.3%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 5%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.2% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 8%, cut 0%, hike 92%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 4-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "12.48% as of 2005-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.26% week of 2005-12-01"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.54% on 2005-12-13"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "5% in November 2005"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 165k as of November 2005"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "3.3% year over year, November 2005"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.3% year over year, November 2005"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.2% annualized, quarter starting 2005-07-01"
+    }
+  ],
+  "meeting_date": "2005-12-13",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

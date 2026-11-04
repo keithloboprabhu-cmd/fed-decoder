@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 0.0,
+    "target_high": 0.25,
+    "votes_for": 11,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Fed held its policy rate at 0% to 0.25%. The vote was 11-1. Dissenting: Jeffrey M. Lacker."
+  },
+  "changes": [
+    {
+      "quote": "Information received since the Federal Open Market Committee met in October suggests that economic activity and employment have continued to expand at a moderate pace in recent months, apart from weather-related disruptions.",
+      "explanation": "Reworded from the previous statement: “Information received since the Federal Open Market Committee met in September suggests that economic activity has continued to expand at a moderate pace in rece…”"
+    },
+    {
+      "quote": "Although the unemployment rate has declined somewhat since the summer, it remains elevated.",
+      "explanation": "Reworded from the previous statement: “Growth in employment has been slow, and the unemployment rate remains elevated.”"
+    },
+    {
+      "quote": "Household spending has continued to advance, and the housing sector has shown further signs of improvement, but growth in business fixed investment has slowed.",
+      "explanation": "Reworded from the previous statement: “Household spending has advanced a bit more quickly, but growth in business fixed investment has slowed.”"
+    },
+    {
+      "quote": "Inflation has been running somewhat below the Committee’s longer-run objective, apart from temporary variations that largely reflect fluctuations in energy prices.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "The housing sector has shown some further signs of improvement, albeit from a depressed level.",
+      "explanation": "Language from the previous statement that was dropped."
+    },
+    {
+      "quote": "Inflation recently picked up somewhat, reflecting higher energy prices.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": -1.15,
+  "tone_quotes": [
+    {
+      "quote": "Furthermore, strains in global financial markets continue to pose significant downside risks to the economic outlook.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation between one and two years ahead is projected to be no more than a half percentage point above the Committee’s 2 percent longer-run goal, and longer-term inflation expectations continue to be well anchored.",
+      "direction": "dovish"
+    },
+    {
+      "quote": "The Committee also will purchase longer-term Treasury securities after its program to extend the average maturity of its holdings of Treasury securities is completed at the end of the year, initially at a pace of $45 billion per month.",
+      "direction": "dovish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 11.95% APR costs about $49.79 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.72% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.32% would rise by about $9.95 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 7.7%, and employers added an average of 162k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 1.8% over the past year (November 2012); core PCE inflation, the Fed's preferred gauge, was 1.8%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 7.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 0.6% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +1 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.08% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is dovish (leaning toward lower rates). The forecast model gave the next meeting: hold 86%, cut 11%, hike 3%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "In particular, the Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent and currently anticipates that this exceptionally low range for the federal funds rate will be appropriate at least as long as the unemployment rate remains above 6-1/2 percent, inflation bet"
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "11.95% as of 2012-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "3.32% week of 2012-11-29"
+    },
+    {
+      "source": "DGS10",
+      "detail": "1.72% on 2012-12-12"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "7.7% in November 2012"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 162k as of November 2012"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "1.8% year over year, November 2012"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "1.8% year over year, November 2012"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "0.6% annualized, quarter starting 2012-07-01"
+    }
+  ],
+  "meeting_date": "2012-12-12",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

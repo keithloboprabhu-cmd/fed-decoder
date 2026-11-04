@@ -1,0 +1,143 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 11,
+    "votes_against": 0,
+    "dissenters": [],
+    "summary": "The Fed held its policy rate at 5.25%. The vote was 11-0."
+  },
+  "changes": [
+    {
+      "quote": "Recent indicators have suggested somewhat firmer economic growth, and some tentative signs of stabilization have appeared in the housing market.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Overall, the economy seems likely to expand at a moderate pace over coming quarters.",
+      "explanation": "Reworded from the previous statement: “Although recent indicators have been mixed, the economy seems likely to expand at a moderate pace on balance over coming quarters.”"
+    },
+    {
+      "quote": "Readings on core inflation have improved modestly in recent months, and inflation pressures seem likely to moderate over time.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "However, the high level of resource utilization has the potential to sustain inflation pressures.",
+      "explanation": "Reworded from the previous statement: “Readings on core inflation have been elevated, and the high level of resource utilization has the potential to sustain inflation pressures.”"
+    },
+    {
+      "quote": "The Committee judges that some inflation risks remain.",
+      "explanation": "Reworded from the previous statement: “Nonetheless, the Committee judges that some inflation risks remain.”"
+    },
+    {
+      "quote": "Economic growth has slowed over the course of the year, partly reflecting a substantial cooling of the housing market.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 1.36,
+  "tone_quotes": [
+    {
+      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Readings on core inflation have improved modestly in recent months, and inflation pressures seem likely to moderate over time.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "However, the high level of resource utilization has the potential to sustain inflation pressures.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.06% APR costs about $54.42 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.83% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.23% would fall by about $9.74 a month."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.4%, and employers added an average of 141k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 2.5% over the past year (December 2006); core PCE inflation, the Fed's preferred gauge, was 2.3%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.4%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 3.5% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -4 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved -0.19% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 38%, cut 0%, hike 62%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.06% as of 2006-08-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.23% week of 2007-01-18"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.83% on 2007-01-31"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.4% in December 2006"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 141k as of December 2006"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "2.5% year over year, December 2006"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.3% year over year, December 2006"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "3.5% annualized, quarter starting 2006-10-01"
+    }
+  ],
+  "meeting_date": "2007-01-31",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}

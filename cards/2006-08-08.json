@@ -1,0 +1,145 @@
+{
+  "decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 5.25,
+    "target_high": 5.25,
+    "votes_for": 9,
+    "votes_against": 1,
+    "dissenters": [
+      "Jeffrey M. Lacker"
+    ],
+    "summary": "The Fed held its policy rate at 5.25%. The vote was 9-1. Dissenting: Jeffrey M. Lacker."
+  },
+  "changes": [
+    {
+      "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent.",
+      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 5-1/4 percent.”"
+    },
+    {
+      "quote": "Economic growth has moderated from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing market and the lagged effects of increases in interest rates and energy prices.",
+      "explanation": "Reworded from the previous statement: “Recent indicators suggest that economic growth is moderating from its quite strong pace earlier this year, partly reflecting a gradual cooling of the housing ma…”"
+    },
+    {
+      "quote": "Readings on core inflation have been elevated in recent months, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
+      "explanation": "Reworded from the previous statement: “However, the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.”"
+    },
+    {
+      "quote": "However, inflation pressures seem likely to moderate over time, reflecting contained inflation expectations and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
+      "explanation": "New language added in this statement."
+    },
+    {
+      "quote": "Nonetheless, the Committee judges that some inflation risks remain.",
+      "explanation": "Reworded from the previous statement: “Although the moderation in the growth of aggregate demand should help to limit inflation pressures over time, the Committee judges that some inflation risks rem…”"
+    },
+    {
+      "quote": "Readings on core inflation have been elevated in recent months.",
+      "explanation": "Language from the previous statement that was dropped."
+    }
+  ],
+  "tone_score": 1.21,
+  "tone_quotes": [
+    {
+      "quote": "The extent and timing of any additional firming that may be needed to address these risks will depend on the evolution of the outlook for both inflation and economic growth, as implied by incoming information.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Readings on core inflation have been elevated in recent months, and the high levels of resource utilization and of the prices of energy and other commodities have the potential to sustain inflation pressures.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "However, inflation pressures seem likely to moderate over time, reflecting contained inflation expectations and the cumulative effects of monetary policy actions and other factors restraining aggregate demand.",
+      "direction": "hawkish"
+    }
+  ],
+  "for_you": [
+    {
+      "topic": "Borrowers",
+      "text": "Card rates should not move on this decision; a $5,000 balance at about 13.16% APR costs about $54.83 a month in interest."
+    },
+    {
+      "topic": "Mortgages",
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.93% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.72% would not change."
+    },
+    {
+      "topic": "Savers",
+      "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+    },
+    {
+      "topic": "Workers",
+      "text": "Unemployment was 4.7%, and employers added an average of 106k jobs a month over the prior 3 months."
+    }
+  ],
+  "for_country": [
+    {
+      "topic": "Inflation",
+      "text": "CPI inflation was 4.1% over the past year (July 2006); core PCE inflation, the Fed's preferred gauge, was 2.5%, against a 2% goal."
+    },
+    {
+      "topic": "Jobs",
+      "text": "The unemployment rate stood at 4.7%."
+    },
+    {
+      "topic": "Growth",
+      "text": "Real GDP grew at a 1% annualized pace in the latest reported quarter."
+    },
+    {
+      "topic": "Markets",
+      "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -5 bp on the day."
+    },
+    {
+      "topic": "Dollar",
+      "text": "The broad trade-weighted dollar moved 0.15% on the day."
+    }
+  ],
+  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). The forecast model gave the next meeting: hold 34%, cut 1%, hike 65%.",
+  "confidence": "medium",
+  "citations": [
+    {
+      "source": "statement",
+      "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 5-1/4 percent."
+    },
+    {
+      "source": "TERMCBCCALLNS",
+      "detail": "13.16% as of 2006-05-01"
+    },
+    {
+      "source": "MORTGAGE30US",
+      "detail": "6.72% week of 2006-07-27"
+    },
+    {
+      "source": "DGS10",
+      "detail": "4.93% on 2006-08-08"
+    },
+    {
+      "source": "UNRATE",
+      "detail": "4.7% in July 2006"
+    },
+    {
+      "source": "PAYEMS",
+      "detail": "3-month average change 106k as of July 2006"
+    },
+    {
+      "source": "CPIAUCSL",
+      "detail": "4.1% year over year, July 2006"
+    },
+    {
+      "source": "PCEPILFE",
+      "detail": "2.5% year over year, July 2006"
+    },
+    {
+      "source": "GDPC1",
+      "detail": "1% annualized, quarter starting 2006-04-01"
+    }
+  ],
+  "meeting_date": "2006-08-08",
+  "provider": "rules",
+  "model": "rules-v1",
+  "validated": true,
+  "validation_notes": [
+    "Automated summary (rules-based)"
+  ],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": null,
+  "latency_s": null
+}
