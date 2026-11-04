@@ -33,7 +33,7 @@ The design is deliberately quiet: warm ivory, charcoal text, forest green for do
   - *For you:* your housing situation, balances, savings, income range and state give your own monthly impact, the share of income, your local unemployment rate, and what the next move would mean. Computed in code; the answers stay in your browser tab and are never stored or logged. Amounts, income and state are never sent to an AI; the opt-in AI note sees only broad labels. No login. Gender isn't asked because no effect computed here depends on it.
   - *For the country:* inflation, jobs, growth, markets and the dollar, from FRED.
   - *What's next:* model probabilities for hold, cut or hike, shown next to the backtest against a "no change" baseline.
-- **Ask.** Chat with tools over the corpus and the data: `get_meeting`, `search_statements` (TF-IDF), `diff_statements`, `get_series`, `payment_impact` and `forecast_next`. Every number in an answer is checked against the tool results.
+- **Ask about a meeting.** Each meeting page has its own questions box, answered with tools over the corpus and the data: `get_meeting`, `search_statements` (TF-IDF), `diff_statements`, `get_series`, `payment_impact` and `forecast_next`. Every number in an answer is checked against the tool results.
 - **Timeline.** The fed funds target since 2000, with every meeting as a dot colored by tone. Click a dot to decode that meeting.
 
 ## Three findings
@@ -57,7 +57,7 @@ The design is deliberately quiet: warm ivory, charcoal text, forest green for do
 
 Never enable billing on either provider. Model IDs and rate settings live in `fed_decoder/config.py` and can be overridden with environment variables (`GEMINI_MODEL`, `GROQ_MODEL`, `GEMINI_RPM`, `GROQ_RPM`, `DAILY_LLM_BUDGET`). Free-tier limits change, so check them in each console before deploying.
 
-**Privacy.** Gemini's free tier may use inputs to improve Google's models, so the app sends only public text: Fed statements, data, and questions about the Fed. The Ask page and the paste box both say "Don't enter personal information."
+**Privacy.** Gemini's free tier may use inputs to improve Google's models, so the app sends only public text: Fed statements, data, and questions about the Fed. The question box and the paste box both say "Don't enter personal information."
 
 ## Design rules
 
@@ -154,7 +154,7 @@ The app works with no keys at all: every page then runs in rules-based mode.
 ## Layout
 
 ```
-app.py                     Streamlit app (Decode / Ask / Timeline)
+app.py                     Streamlit app (Decode / Timeline / About)
 fed_decoder/
   config.py                model names, limits, series IDs
   data/                    scraper, FRED client, ground truth, Parquet access

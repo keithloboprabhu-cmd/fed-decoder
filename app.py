@@ -28,14 +28,13 @@ from fed_decoder.ui.theme import CSS
 st.set_page_config(page_title="Fed Decoder", page_icon=None, layout="centered", initial_sidebar_state="collapsed")
 st.markdown(CSS, unsafe_allow_html=True)
 
-PAGES = ["Decode", "Timeline", "Ask", "About"]
+PAGES = ["Decode", "Timeline", "About"]
 ss = st.session_state
 ss.setdefault("nav", "Decode")
 ss.setdefault("nav_v", 0)
 ss.setdefault("meeting", None)       # "YYYY-MM-DD", "pasted", or None (home)
 ss.setdefault("step", 0)
 ss.setdefault("questions", 0)
-ss.setdefault("chat", [])
 
 
 # ---------------------------------------------------------------- cached data
@@ -447,6 +446,7 @@ def ask_block(card, ctx) -> None:
                               placeholder="Ask anything about this decision" if left > 0 else "Question limit reached for this visit",
                               disabled=left <= 0)
         sent = c2.form_submit_button("Ask", type="primary", use_container_width=True, disabled=left <= 0)
+    st.markdown('<p class="note" style="margin-top:-6px">Questions go to free AI services, so don’t include personal details.</p>', unsafe_allow_html=True)
     q = pending or (typed.strip() if sent and typed else None)
     if q and left > 0:
         ss.questions += 1
@@ -639,62 +639,20 @@ def page_timeline() -> None:
 
 
 # ---------------------------------------------------------------- ask
-def page_ask() -> None:
-    st.markdown('<div class="step" style="padding-top:28px"><h1>Ask about the Fed</h1></div>', unsafe_allow_html=True)
-    st.markdown('<p class="lede">Ask in your own words. Answers are looked up in the Fed’s statements and economic data, '
-                'and every number is checked before you see it.</p>', unsafe_allow_html=True)
-    st.markdown(f'<p class="note">Don’t enter personal information: questions go to free AI services that may use them to improve their models. '
-                f'You can ask {config.SESSION_QUESTION_LIMIT} questions per visit.</p>', unsafe_allow_html=True)
-    pending = None
-    if not ss.chat:
-        st.markdown('<p class="muted" style="margin:18px 0 2px">Not sure where to start?</p>', unsafe_allow_html=True)
-        for q in ("Why did the Fed cut rates in September 2024?", "What would a quarter-point hike mean for my mortgage?",
-                  "What is the Fed likely to do at its next meeting?"):
-            if st.button(q, type="tertiary", key=f"ex_{q}"):
-                pending = q
-    for msg in ss.chat:
-        with st.chat_message(msg["role"], avatar=None):
-            st.markdown(msg["content"])
-            if msg.get("label"):
-                st.markdown(f'<div class="prov">{ui.E(msg["label"])}</div>', unsafe_allow_html=True)
-    left = config.SESSION_QUESTION_LIMIT - ss.questions
-    q = st.chat_input("Ask a question about the Fed" if left > 0 else "You’ve reached the question limit for this visit", disabled=left <= 0)
-    q = q or pending
-    if q and left > 0:
-        ss.questions += 1
-        with st.chat_message("user", avatar=None):
-            st.markdown(q)
-        hist = [{"role": m["role"], "content": m["content"]} for m in ss.chat][-2 * config.CHAT_HISTORY_TURNS:]
-        with st.chat_message("assistant", avatar=None):
-            with st.spinner("Looking it up"):
-                try:
-                    reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
-                    ans = agent.answer(q, history=hist, reader=reader)
-                except Exception:
-                    ans = agent.rules_answer(q)
-            st.markdown(ans.text)
-            label = ans.label + (" · from an earlier answer" if ans.cached else "")
-            st.markdown(f'<div class="prov">{ui.E(label)}</div>', unsafe_allow_html=True)
-        ss.chat += [{"role": "user", "content": q}, {"role": "assistant", "content": ans.text, "label": label}]
-
-
-# ---------------------------------------------------------------- about
 def page_about() -> None:
     bt = forecast_mod.backtest_summary() if forecast_mod.BACKTEST_PATH.exists() else {}
-    n = len(dates())
-    st.markdown('<div class="step" style="padding-top:28px"><h1>About Fed Decoder</h1></div>', unsafe_allow_html=True)
-    st.markdown(f'''<div class="prose">
-<p class="lede">Fed Decoder explains what the Federal Reserve decided, why, and what it means for you, for every one of its {n} policy statements since February 2000.</p>
-<h3 class="gap">Where the numbers come from</h3>
-<p>Decisions, votes and statement text come from the Federal Reserve. Economic data such as inflation, unemployment, Treasury yields and loan rates come from FRED, the St. Louis Fed’s public database. Every number on the page is calculated in code from that data, including loan payments, which use the standard amortization formula.</p>
-<h3 class="gap">How the explanations are written</h3>
-<p>The plain-English explanations are drafted by AI models on free plans (Google Gemini, with Groq as a backup). Before anything is shown, it is checked: every number must appear in the underlying data, and every quote must match the statement word for word. If a check fails, the app shows a simpler automated explanation instead.</p>
-<h3 class="gap">Your privacy</h3>
-<p>There are no accounts. What you tell Fed Decoder about your situation stays in your browser tab and is never stored; your dollar amounts, income and state are never sent to an AI. If you turn on “Explain it for my situation with AI”, only broad categories such as “rents” or “carries a card balance” are shared. Questions you type are sent to free AI services, which may use them to improve their models, so please don’t include personal details.</p>
-<h3 class="gap">What it can’t do</h3>
-<p>Fed Decoder is for learning, not financial advice. Personal estimates use national averages, not your actual loan terms. The forecast is a simple statistical model{f": in tests on {bt['n']} past meetings it was right {bt['model_hit_rate'] * 100:.0f}% of the time, against {bt['baseline_hit_rate'] * 100:.0f}% for always guessing “no change”" if bt else ""}.</p>
-</div>''', unsafe_allow_html=True)
+    fc = f"The forecast was right {bt['model_hit_rate'] * 100:.0f}% of the time in tests, vs {bt['baseline_hit_rate'] * 100:.0f}% for guessing “no change”." if bt else ""
+    rows = [
+        ("What it is", f"Every Fed decision since 2000 ({len(dates())} statements), explained for your situation."),
+        ("The numbers", "From the Federal Reserve and FRED, calculated in code. Never written by AI."),
+        ("The AI", "Gemini (Groq as backup) drafts the explanations. Every number and quote is checked; if a check fails, you get a simpler automated version."),
+        ("Your privacy", "No accounts. Your situation stays in this tab and is never stored. Amounts never go to an AI; the optional AI note sees only labels like “rents”."),
+        ("Limits", "Learning, not financial advice. Estimates use national averages. " + fc),
+    ]
+    st.markdown('<div class="step" style="padding-top:28px"><h1>About</h1></div>'
+                + '<div class="short about">' + "".join(f'<div class="short-row"><div class="aside-h">{k}</div><p>{ui.E(v)}</p></div>' for k, v in rows)
+                + "</div>", unsafe_allow_html=True)
 
 
-{"Decode": page_decode, "Timeline": page_timeline, "Ask": page_ask, "About": page_about}[ss.nav]()
+{"Decode": page_decode, "Timeline": page_timeline, "About": page_about}[ss.nav]()
 st.markdown(ui.footer_html(config.FOOTER), unsafe_allow_html=True)

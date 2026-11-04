@@ -232,6 +232,8 @@ div[class*="st-key-you"] [data-testid="stColumn"]:last-child [data-testid="stEle
 .next-you p {{ margin: 0 !important; font-size: 16px !important; }}
 .bd-h {{ font-size: 14px; font-weight: 600; color: var(--muted); margin: 14px 0 0; }}
 .short {{ margin-top: 56px; max-width: 760px; }}
+.short.about {{ margin-top: 8px; }}
+.short.about .short-row {{ padding: 14px 0; }}
 .short h3 {{ margin-bottom: 14px !important; }}
 .short-row {{ display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px; padding: 12px 0; }}
 .short-row p {{ margin: 0 !important; font-size: 17px !important; }}
