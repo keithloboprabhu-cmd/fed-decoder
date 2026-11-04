@@ -245,7 +245,7 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
             {"role": "assistant", "content": resp.text},
             {"role": "user", "content": f"That answer failed a grounding check ({g}). Rewrite it using only numbers and quotes from the tool results."},
         ]
-        final = generate(retry_msgs, providers=[resp.provider], validate=_validate, purpose="chat_retry")
+        final = generate(retry_msgs, providers=[resp.provider], validate=_validate, purpose="chat_retry", guardrail_retries=0)
         if final is None:
             return rules_answer(q)
     ans = ChatAnswer(final.text.strip(), final.provider, f"Answered by {final.label}", tool_log)

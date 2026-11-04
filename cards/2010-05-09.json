@@ -2,12 +2,12 @@
   "decision": {
     "direction": "hold",
     "change_bps": 0,
-    "target_low": null,
-    "target_high": null,
+    "target_low": 0.0,
+    "target_high": 0.25,
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at an unstated level."
+    "summary": "The Fed held its policy rate at 0% to 0.25%."
   },
   "changes": [
     {
@@ -87,7 +87,7 @@
     }
   ],
   "whats_next": "The dictionary tone reading is balanced. The forecast model gave the next meeting: hold 85%, cut 5%, hike 11%.",
-  "confidence": "low",
+  "confidence": "medium",
   "citations": [
     {
       "source": "statement",
@@ -131,7 +131,8 @@
   "model": "rules-v1",
   "validated": true,
   "validation_notes": [
-    "Automated summary (rules-based)"
+    "Automated summary (rules-based)",
+    "Statement does not state a target; showing the prevailing target from FRED."
   ],
   "inputs_version": "v2-with-diff",
   "llm_decision": null,

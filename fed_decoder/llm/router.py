@@ -68,6 +68,7 @@ def generate(
     temperature: float = 0.2,
     providers: list[str] | None = None,
     purpose: str = "",
+    guardrail_retries: int = 1,
 ) -> LLMResponse | None:
     """Return the first valid response, or None if every provider failed.
 
@@ -76,7 +77,7 @@ def generate(
     retry also fails we return None and the caller shows rules-based text.
     """
     order = providers or default_order()
-    retried_guardrail = False
+    retried_guardrail = guardrail_retries <= 0
     LAST_FAILURES.clear()
     for i, name in enumerate(order):
         p = get_provider(name)

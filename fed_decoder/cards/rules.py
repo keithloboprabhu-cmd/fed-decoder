@@ -116,6 +116,11 @@ def build_rules_card(ctx: dict) -> Card:
     """Template-filled card from the code-computed context (see context.py)."""
     text = ctx["statement"]
     d = extract_decision(text, ctx.get("prev_statement"))
+    notes = [RULES_LABEL]
+    if d["target_high"] is None and ctx.get("ground_truth", {}).get("target_high") is not None:
+        # Statement states no range (e.g. a liquidity-only statement): show the prevailing one.
+        d["target_low"], d["target_high"] = ctx["ground_truth"]["target_low"], ctx["ground_truth"]["target_high"]
+        notes.append("Statement does not state a target; showing the prevailing target from FRED.")
     tr = tone_mod.score(text)
     quotes = tone_mod.top_quotes(tr, 3)
     impacts = ctx["impacts"]
@@ -159,5 +164,5 @@ def build_rules_card(ctx: dict) -> Card:
         provider="rules",
         model="rules-v1",
         validated=True,
-        validation_notes=[RULES_LABEL],
+        validation_notes=notes,
     )
