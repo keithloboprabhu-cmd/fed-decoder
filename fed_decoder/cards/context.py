@@ -196,3 +196,36 @@ def render_context(ctx: dict) -> str:
     if ctx.get("forecast_sentence"):
         parts.append("FORECAST (computed): " + ctx["forecast_sentence"])
     return "\n\n".join(parts)
+
+
+def build_context_pasted(text: str) -> dict:
+    """Context for a pasted statement: diff against the most similar past
+    statement, decision from the rules extractor, impacts at today's data."""
+    from fed_decoder.analysis.search import most_similar_statement
+    from fed_decoder.cards.rules import extract_decision
+
+    text = text.strip().replace("\r\n", "\n")
+    sim_date, sim = most_similar_statement(text)
+    stm = store.statements().set_index("meeting_date")
+    prev = stm.loc[sim_date, "statement_text"]
+    gt = store.ground_truth().set_index("meeting_date")
+    g_prev = gt.loc[sim_date]
+    d = extract_decision(text, prev_range=(float(g_prev["target_low"]), float(g_prev["target_high"])))
+    today = pd.Timestamp.today().normalize()
+    impacts, cites = impacts_for(today, int(d["change_bps"]), None)
+    changes = [c.to_dict() for c in diff_mod.sentence_changes(prev, text)]
+    return {
+        "meeting_date": "pasted",
+        "prev_meeting_date": str(sim_date.date()),
+        "similarity": round(sim, 3),
+        "statement": text,
+        "prev_statement": prev,
+        "changes": changes,
+        "changed_fraction": diff_mod.changed_fraction(prev, text),
+        "ground_truth": {k: d[k] for k in ("direction", "change_bps", "target_low", "target_high", "votes_for", "votes_against", "dissenters")},
+        "impacts": impacts,
+        "data_citations": cites,
+        "forecast": None,
+        "forecast_sentence": "",
+        "include_diff": True,
+    }
