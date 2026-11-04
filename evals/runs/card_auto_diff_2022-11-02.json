@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 75,
+   "target_low": 3.75,
+   "target_high": 4.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised the target range for the federal funds rate by 75 basis points to 3-3/4 to 4 percent."
+  },
+  "changes": [
+   {
+    "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3-3/4 to 4 percent.",
+    "explanation": "The Fed increased the benchmark interest rate target range to 3-3/4 to 4 percent."
+   },
+   {
+    "quote": "The Committee anticipates that ongoing increases in the target range will be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
+    "explanation": "The Fed added language stating it expects continued rate hikes to be necessary to slow the economy and bring inflation down to its 2 percent goal."
+   },
+   {
+    "quote": "In determining the pace of future increases in the target range, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+    "explanation": "The Fed signaled that future rate increases will factor in how much rates have already risen and the delay before those hikes impact the broader economy."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee anticipates that ongoing increases in the target range will be appropriate in order to attain a stance of monetary policy that is sufficiently restrictive to return inflation to 2 percent over time.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "In determining the pace of future increases in the target range, the Committee will take into account the cumulative tightening of monetary policy, the lags with which monetary policy affects economic activity and inflation, and economic and financial developments.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 15.13% APR, a 75 bp increase raises monthly interest by about $3.13."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.1% and moved +3 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.94% would rise by about $6.03 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $45.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.5%, and employers added an average of 408k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 8.2% over the past year (September 2022); core PCE inflation, the Fed's preferred gauge, was 5.6%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.7% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +7 bp on the day, and the S&P 500 moved -2.5%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.07% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that future rate decisions will consider the total amount of past tightening and the time it takes for policy changes to affect the economy. It suggests continued rate hikes may be needed until inflation returns to the 2 percent target.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 3-3/4 to 4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "15.13% as of 2022-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.94% week of 2022-10-20"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.1% on 2022-11-02"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.5% in September 2022"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 408k as of September 2022"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "8.2% year over year, September 2022"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "5.6% year over year, September 2022"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.7% annualized, quarter starting 2022-07-01"
+   }
+  ],
+  "meeting_date": "2022-11-02",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 75,
+   "target_low": 3.75,
+   "target_high": 4.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised the target range for the federal funds rate by 75 basis points to 3-3/4 to 4 percent."
+  },
+  "latency_s": 4.19
+ },
+ "latency_s": 4.18969988822937,
+ "failures": []
+}

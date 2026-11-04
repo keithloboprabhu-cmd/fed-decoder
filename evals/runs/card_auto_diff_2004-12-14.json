@@ -1,0 +1,143 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 2.25,
+   "target_high": 2.25,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised its target interest rate by 25 basis points to 2-1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/4 percent.",
+    "explanation": "The Fed increased the federal funds rate target to 2-1/4 percent from the previous 2 percent level."
+   },
+   {
+    "quote": "Output appears to be growing at a moderate pace despite the earlier rise in energy prices, and labor market conditions continue to improve gradually.",
+    "explanation": "The language shifted to note that energy price increases happened earlier, and job market recovery is continuing gradually."
+   },
+   {
+    "quote": "In a related action, the Board of Governors unanimously approved a 25 basis point increase in the discount rate to 3-1/4 percent.",
+    "explanation": "The discount rate charged to banks was raised by 25 basis points to 3-1/4 percent."
+   },
+   {
+    "quote": "In taking this action, the Board approved the requests submitted by the Boards of Directors of the Federal Reserve Banks of Boston, New York, Philadelphia, Cleveland, Richmond, Atlanta, Chicago, St. Louis, Minneapolis, Kansas City, Dallas, and San Francisco.",
+    "explanation": "All twelve regional Federal Reserve Bank boards requested the discount rate change."
+   },
+   {
+    "quote": "In addition, the Committee unanimously decided to expedite the release of its minutes.",
+    "explanation": "The Fed announced it will release meeting minutes three weeks after policy decisions rather than waiting longer."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee believes that, even after this action, the stance of monetary policy remains accommodative and, coupled with robust underlying growth in productivity, is providing ongoing support to economic activity.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "With underlying inflation expected to be relatively low, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 13.02% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.14% and moved -2 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.81% would fall by about $3.82 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.4%, and employers added an average of 188k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.6% over the past year (November 2004); core PCE inflation, the Fed's preferred gauge, was 2.1%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.4%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 3.8% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +1 bp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed expects to continue removing policy accommodation at a measured pace. Future decisions will depend on how economic conditions and inflation prospects evolve.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 2-1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.02% as of 2004-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.81% week of 2004-12-02"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.14% on 2004-12-14"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.4% in November 2004"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 188k as of November 2004"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.6% year over year, November 2004"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.1% year over year, November 2004"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "3.8% annualized, quarter starting 2004-07-01"
+   }
+  ],
+  "meeting_date": "2004-12-14",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 2.25,
+   "target_high": 2.25,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised its target interest rate by 25 basis points to 2-1/4 percent."
+  },
+  "latency_s": 4.03
+ },
+ "latency_s": 4.0295798778533936,
+ "failures": []
+}

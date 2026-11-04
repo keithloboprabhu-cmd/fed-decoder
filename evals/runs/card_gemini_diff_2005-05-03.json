@@ -1,0 +1,143 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.0,
+   "target_high": 3.0,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Fed raised the benchmark federal funds rate by 25 basis points to 3 percent."
+  },
+  "changes": [
+   {
+    "quote": "Recent data suggest that the solid pace of spending growth has slowed somewhat, partly in response to the earlier increases in energy prices.",
+    "explanation": "The Fed acknowledged that consumer spending has cooled slightly because of higher energy costs."
+   },
+   {
+    "quote": "Labor market conditions, however, apparently continue to improve gradually.",
+    "explanation": "Despite moderate spending growth, the Fed highlighted that job market progress remains steady."
+   },
+   {
+    "quote": "Pressures on inflation have picked up in recent months and pricing power is more evident.",
+    "explanation": "Policymakers emphasized rising inflation pressures and corporate pricing power, pointing to the need for continued rate increases."
+   },
+   {
+    "quote": "The rise in energy prices, however, has not notably fed through to core consumer prices.",
+    "explanation": "Removing this sentence signals that the Fed is growing more cautious about energy costs spilling into broader inflation."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "Pressures on inflation have picked up in recent months and pricing power is more evident.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Longer-term inflation expectations remain well contained.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 12.51% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.21% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.8% would not change."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.2%, and employers added an average of 175k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.2% over the past year (March 2005); core PCE inflation, the Fed's preferred gauge, was 2.3%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.2%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 4.5% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +4 bp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that policy accommodation will continue to be removed at a measured pace. This means investors should expect further modest rate hikes at coming meetings unless inflation or economic growth shifts significantly.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.51%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.8%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.21%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.2%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "175k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.2%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.3%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "4.5%"
+   }
+  ],
+  "meeting_date": "2005-05-03",
+  "provider": "gemini",
+  "model": "gemini-3.6-flash",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.0,
+   "target_high": 3.0,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Fed raised the benchmark federal funds rate by 25 basis points to 3 percent."
+  },
+  "latency_s": 16.34
+ },
+ "latency_s": 17.877694606781006,
+ "failures": []
+}

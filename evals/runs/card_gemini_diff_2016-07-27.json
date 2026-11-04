@@ -1,0 +1,159 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.25,
+   "target_high": 0.5,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Esther L. George"
+   ],
+   "summary": "The Federal Reserve kept interest rates unchanged but noted that the job market has strengthened and risks to the economy have decreased."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market strengthened and that economic activity has been expanding at a moderate rate.",
+    "explanation": "The Fed upgraded its assessment of the job market from 'slowed' to 'strengthened' following a rebound in hiring."
+   },
+   {
+    "quote": "Job gains were strong in June following weak growth in May.",
+    "explanation": "Officials noted that the weak hiring seen in the previous month was a temporary dip."
+   },
+   {
+    "quote": "Household spending has been growing strongly but business fixed investment has been soft.",
+    "explanation": "Strong consumer spending is supporting the economy while business investment remains weak."
+   },
+   {
+    "quote": "Near-term risks to the economic outlook have diminished.",
+    "explanation": "This new phrase suggests the Fed is less worried about global shocks and more confident in the US recovery."
+   },
+   {
+    "quote": "Market-based measures of inflation compensation remain low; most survey-based measures of longer-term inflation expectations are little changed, on balance, in recent months.",
+    "explanation": "The Fed is still watching for signs that inflation will move back toward its target."
+   }
+  ],
+  "tone_score": 0.5,
+  "tone_quotes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in June indicates that the labor market strengthened and that economic activity has been expanding at a moderate rate.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Near-term risks to the economic outlook have diminished.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Inflation has continued to run below the Committee's 2 percent longer-run objective, partly reflecting earlier declines in energy prices and in prices of non-energy imports.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Credit card rates should not move on this decision, where a $5,000 balance at about 12.31% APR costs about $51.29 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate, and the payment on a new $300,000 30-year loan at 3.42% would fall by about $8.31 a month if the 1.52% yield move passed through."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are since the Fed held interest rates steady."
+   },
+   {
+    "topic": "Workers",
+    "text": "The unemployment rate was 4.9%, and employers added an average of 162k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Core PCE inflation, the Fed's preferred gauge, was 1.6%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 1.3% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.14% on the day."
+   }
+  ],
+  "whats_next": "The Committee expects that economic conditions will evolve in a manner that will warrant only gradual increases in the federal funds rate. By stating that near-term risks have diminished, the statement signals that the Fed is preparing for a potential rate hike in the coming months.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "Against this backdrop, the Committee decided to maintain the target range for the federal funds rate at 1/4 to 1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.31%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.52%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.42%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.9%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "162k"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.6%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "1.3%"
+   },
+   {
+    "source": "DGS2",
+    "detail": "-2 bp"
+   },
+   {
+    "source": "DTWEXB",
+    "detail": "0.14%"
+   }
+  ],
+  "meeting_date": "2016-07-27",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.25,
+   "target_high": 0.5,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Esther L. George"
+   ],
+   "summary": "The Federal Reserve kept interest rates unchanged but noted that the job market has strengthened and risks to the economy have decreased."
+  },
+  "latency_s": 40.52
+ },
+ "latency_s": 61.32211446762085,
+ "failures": []
+}

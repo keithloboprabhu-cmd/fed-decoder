@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 3.75,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Mark W. Olson"
+   ],
+   "summary": "The Federal Reserve raised interest rates by a quarter point to 3.75 percent, signaling that it will continue to tighten policy despite the economic disruption caused by Hurricane Katrina."
+  },
+  "changes": [
+   {
+    "quote": "Output appeared poised to continue growing at a good pace before the tragic toll of Hurricane Katrina.",
+    "explanation": "The Fed acknowledges that the economy was strong before the hurricane hit the Gulf region."
+   },
+   {
+    "quote": "The widespread devastation in the Gulf region, the associated dislocation of economic activity, and the boost to energy prices imply that spending, production, and employment will be set back in the near term.",
+    "explanation": "The central bank expects a temporary slowdown in growth and jobs due to the storm's impact on infrastructure and energy."
+   },
+   {
+    "quote": "While these unfortunate developments have increased uncertainty about near-term economic performance, it is the Committee's view that they do not pose a more persistent threat.",
+    "explanation": "Officials believe the hurricane will not cause a long-term economic downturn, justifying continued rate hikes."
+   },
+   {
+    "quote": "Higher energy and other costs have the potential to add to inflation pressures.",
+    "explanation": "The Fed is worried that rising fuel prices could lead to broader price increases across the economy."
+   },
+   {
+    "quote": "Nonetheless, the Committee will respond to changes in economic prospects as needed to fulfill its obligation to maintain price stability.",
+    "explanation": "The Fed is emphasizing that it will prioritize fighting inflation even as it monitors the hurricane recovery."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "Higher energy and other costs have the potential to add to inflation pressures.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "While these unfortunate developments have increased uncertainty about near-term economic performance, it is the Committee's view that they do not pose a more persistent threat.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 12.77% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, which was 4.26% and moved +1 bp on the day."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Employers added an average of 271k jobs a month over the prior 3 months, though the Fed expects a near-term setback."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.6% over the past year, while core PCE inflation was 2.2% against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +7 bp on the day."
+   }
+  ],
+  "whats_next": "The Fed expects to continue removing policy accommodation at a measured pace. This signals that more quarter-point rate hikes are likely at upcoming meetings.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-3/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.77%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.26%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.71%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "271k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.6%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.2%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.9%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2%"
+   }
+  ],
+  "meeting_date": "2005-09-20",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v1-no-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 3.75,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Mark W. Olson"
+   ],
+   "summary": "The Federal Reserve raised interest rates by a quarter point to 3.75 percent, signaling that it will continue to tighten policy despite the economic disruption caused by Hurricane Katrina."
+  },
+  "latency_s": 10.37
+ },
+ "latency_s": 10.372031927108765,
+ "failures": []
+}

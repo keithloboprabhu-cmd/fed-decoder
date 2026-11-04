@@ -1,0 +1,14 @@
+{
+ "ok": false,
+ "failures": [
+  [
+   "gemini",
+   "GuardrailError"
+  ],
+  [
+   "gemini",
+   "GuardrailError"
+  ]
+ ],
+ "latency_s": 37.153347969055176
+}

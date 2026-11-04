@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its target range for the benchmark interest rate at 0 to 1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in April suggests that the pace of economic contraction is slowing.",
+    "explanation": "The Fed noted that while the economy is still shrinking, the downturn is losing speed."
+   },
+   {
+    "quote": "Conditions in financial markets have generally improved in recent months.",
+    "explanation": "Policymakers acknowledged that private credit and financial markets are showing modest recovery."
+   },
+   {
+    "quote": "The prices of energy and other commodities have risen of late.",
+    "explanation": "The Fed highlighted recent upward movement in commodity costs."
+   },
+   {
+    "quote": "However, substantial resource slack is likely to dampen cost pressures, and the Committee expects that inflation will remain subdued for some time.",
+    "explanation": "Despite rising energy costs, weak overall economic demand is expected to keep inflation low."
+   },
+   {
+    "quote": "The Federal Reserve is monitoring the size and composition of its balance sheet and will make adjustments to its credit and liquidity programs as warranted.",
+    "explanation": "The central bank signaled it will flexibly adjust its emergency credit facilities as economic conditions evolve."
+   }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "However, substantial resource slack is likely to dampen cost pressures, and the Committee expects that inflation will remain subdued for some time.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "Information received since the Federal Open Market Committee met in April suggests that the pace of economic contraction is slowing.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 12.97% APR costs about $54.04 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; with the 10-year yield at 3.72% moving +7 bp on the day, the payment on a new $300,000 30-year loan at 5.59% would rise by about $13.26 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 9.4%, and employers added an average of -617k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was -1% over the past year (May 2009); core PCE inflation, the Fed's preferred gauge, was 0.8%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 9.4%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a -4.5% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +5 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.29% on the day."
+   }
+  ],
+  "whats_next": "The Fed signals that interest rates will remain near zero for an extended period. It will also continue executing its massive purchases of Treasury and agency debt to support credit flow.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent and continues to anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.97%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.59%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.72%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "9.4%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "-617k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "-1%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "0.8%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-4.5%"
+   }
+  ],
+  "meeting_date": "2009-06-24",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its target range for the benchmark interest rate at 0 to 1/4 percent."
+  },
+  "latency_s": 16.12
+ },
+ "latency_s": 16.125535488128662,
+ "failures": []
+}

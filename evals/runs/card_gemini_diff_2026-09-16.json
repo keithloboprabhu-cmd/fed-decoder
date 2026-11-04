@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 4.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Fed raised interest rates by a quarter point to combat high inflation."
+  },
+  "changes": [
+   {
+    "quote": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
+    "explanation": "The Fed is resuming rate hikes to ensure inflation continues to fall toward its target."
+   },
+   {
+    "quote": "While uncertainty remains elevated owing, in part, to geopolitical developments, domestic spending has been resilient.",
+    "explanation": "Officials are noting that despite global risks, American consumers are still spending enough to keep the economy moving."
+   },
+   {
+    "quote": "Inflation remains elevated.",
+    "explanation": "The Fed removed specific mentions of supply shocks to signal that inflation is now a broader problem."
+   },
+   {
+    "quote": "Today's policy action will support a timelier return to the Committee's 2 percent goal.",
+    "explanation": "This new sentence explains that the rate hike is intended to speed up the process of lowering inflation."
+   },
+   {
+    "quote": "Productivity growth is strong, and capital investment is robust.",
+    "explanation": "The Fed upgraded its description of business investment to robust, suggesting the economy is handling higher rates well."
+   }
+  ],
+  "tone_score": 1.5,
+  "tone_quotes": [
+   {
+    "quote": "Inflation remains elevated.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Today's policy action will support a timelier return to the Committee's 2 percent goal.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee will deliver price stability.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 20.94% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate, and a 1 bp move in the 10-year yield would raise the monthly payment on a $300,000 loan at 6.71% by about $1.99."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.1%, and employers added an average of 51k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Core PCE inflation, the Fed's preferred gauge, was 3%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.2% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The S&P 500 moved -0.45% on the day of the announcement."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.03% on the day."
+   }
+  ],
+  "whats_next": "The Fed is signaling a more aggressive stance to bring inflation back to its 2 percent target. Future meetings will likely focus on whether today's hike is enough to ensure a timely return to price stability.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "20.94%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.71%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "5.01%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.1%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "51k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.7%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "3%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.2%"
+   }
+  ],
+  "meeting_date": "2026-09-16",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 4.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Fed raised interest rates by a quarter point to combat high inflation."
+  },
+  "latency_s": 38.69
+ },
+ "latency_s": 38.83410620689392,
+ "failures": []
+}

@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 3.75,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Mark W. Olson"
+   ],
+   "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to 3-3/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-3/4 percent.",
+    "explanation": "The Fed increased its benchmark interest rate by 0.25 percentage points to 3-3/4 percent."
+   },
+   {
+    "quote": "Output appeared poised to continue growing at a good pace before the tragic toll of Hurricane Katrina.",
+    "explanation": "The Fed noted that economic growth was solid until Hurricane Katrina caused widespread disruption."
+   },
+   {
+    "quote": "Higher energy and other costs have the potential to add to inflation pressures.",
+    "explanation": "The Fed added that rising energy costs might create upward pressure on inflation."
+   },
+   {
+    "quote": "However, core inflation has been relatively low in recent months and longer-term inflation expectations remain contained.",
+    "explanation": "The Fed adjusted its assessment to note that core inflation has remained relatively low recently."
+   },
+   {
+    "quote": "Voting against was Mark W. Olson, who preferred no change in the federal funds rate target at this meeting.",
+    "explanation": "One committee member dissented, preferring to leave the interest rate target unchanged."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "Higher energy and other costs have the potential to add to inflation pressures.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "With underlying inflation expected to be contained, the Committee believes that policy accommodation can be removed at a pace that is likely to be measured.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 12.77% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.26% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.71% would rise by about $1.90 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.9%, and employers added an average of 271k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.6% over the past year (August 2005); core PCE inflation, the Fed's preferred gauge, was 2.2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +7 bp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed intends to continue removing monetary policy accommodation at a measured pace. At the same time, it indicates that policymakers will respond to changes in economic prospects as needed.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to raise its target for the federal funds rate by 25 basis points to 3-3/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.77%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.71%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.26%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.9%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "271k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.6%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.2%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2%"
+   }
+  ],
+  "meeting_date": "2005-09-20",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 3.75,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Mark W. Olson"
+   ],
+   "summary": "The Federal Reserve raised the federal funds rate by 25 basis points to 3-3/4 percent."
+  },
+  "latency_s": 3.74
+ },
+ "latency_s": 3.7483596801757812,
+ "failures": []
+}

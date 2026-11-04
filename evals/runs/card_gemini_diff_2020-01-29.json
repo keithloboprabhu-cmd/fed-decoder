@@ -1,0 +1,135 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.5,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept interest rates unchanged at 1-1/2 to 1-3/4 percent, citing a strong labor market and moderate economic growth."
+  },
+  "changes": [
+   {
+    "quote": "Although household spending has been rising at a moderate pace, business fixed investment and exports remain weak.",
+    "explanation": "The Fed noted that consumer spending growth has slowed from a strong pace to a moderate one."
+   },
+   {
+    "quote": "The Committee judges that the current stance of monetary policy is appropriate to support sustained expansion of economic activity, strong labor market conditions, and inflation returning to the Committee's symmetric 2 percent objective.",
+    "explanation": "The Fed updated its language to show that inflation is currently below target and needs to return to 2 percent."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in December indicates that the labor market remains strong and that economic activity has been rising at a moderate rate.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "On a 12-month basis, overall inflation and inflation for items other than food and energy are running below 2 percent.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "Market-based measures of inflation compensation remain low; survey-based measures of longer-term inflation expectations are little changed.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 15.1% APR costs about $62.92 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate, and the 10-year was 1.6% and moved -5 bp on the day, which could lower the payment on a new $300,000 30-year loan at 3.65% by about $8.44 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.6%, and employers added an average of 143k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Core PCE inflation, the Fed's preferred gauge, was 1.5%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.6%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.8% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -3 bp on the day, and the S&P 500 moved -0.09%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.02% on the day."
+   }
+  ],
+  "whats_next": "The Committee will continue to monitor the implications of incoming information for the economic outlook, including global developments and muted inflation pressures. It will assess realized and expected economic conditions relative to its maximum employment and symmetric 2 percent inflation objectives.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee decided to maintain the target range for the federal funds rate at 1-1/2 to 1-3/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "15.1%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.65%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.6%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.6%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "143k"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.5%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.8%"
+   }
+  ],
+  "meeting_date": "2020-01-29",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.5,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept interest rates unchanged at 1-1/2 to 1-3/4 percent, citing a strong labor market and moderate economic growth."
+  },
+  "latency_s": 48.71
+ },
+ "latency_s": 55.59334325790405,
+ "failures": []
+}

@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 0.25,
+   "target_high": 0.5,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised interest rates for the first time in nearly a decade, citing a strengthening labor market and confidence that inflation will return to its target."
+  },
+  "changes": [
+   {
+    "quote": "A range of recent labor market indicators, including ongoing job gains and declining unemployment, shows further improvement and confirms that underutilization of labor resources has diminished appreciably since early this year.",
+    "explanation": "The Fed is acknowledging that the job market is much healthier than it was at the start of the year."
+   },
+   {
+    "quote": "The Committee judges that there has been considerable improvement in labor market conditions this year, and it is reasonably confident that inflation will rise, over the medium term, to its 2 percent objective.",
+    "explanation": "This new sentence explains the justification for the rate hike, showing the Fed's increased confidence in the economy."
+   },
+   {
+    "quote": "Given the economic outlook, and recognizing the time it takes for policy actions to affect future economic outcomes, the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent.",
+    "explanation": "This is the formal announcement of the rate increase, ending the era of near-zero interest rates."
+   },
+   {
+    "quote": "Overall, taking into account domestic and international developments, the Committee sees the risks to the outlook for both economic activity and the labor market as balanced.",
+    "explanation": "The Fed removed the specific mention of monitoring global developments, suggesting they are less worried about international shocks than before."
+   },
+   {
+    "quote": "The Committee expects that economic conditions will evolve in a manner that will warrant only gradual increases in the federal funds rate; the federal funds rate is likely to remain, for some time, below levels that are expected to prevail in the longer run.",
+    "explanation": "The Fed is signaling that future rate hikes will likely be slow and steady rather than aggressive."
+   }
+  ],
+  "tone_score": 1.5,
+  "tone_quotes": [
+   {
+    "quote": "The Committee judges that there has been considerable improvement in labor market conditions this year, and it is reasonably confident that inflation will rise, over the medium term, to its 2 percent objective.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Given the economic outlook, and recognizing the time it takes for policy actions to affect future economic outcomes, the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee expects that economic conditions will evolve in a manner that will warrant only gradual increases in the federal funds rate...",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 12.1% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year was 2.3% and a move there could raise the payment on a $300,000 loan at 3.93% by $3.45 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "The job market shows further improvement with unemployment at 5.1% and an average of 228k jobs added monthly."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Core PCE inflation was 1.2%, which remains below the Fed's 2% objective."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 1.6% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield moved +4 bp on the day of the announcement."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.11% on the day."
+   }
+  ],
+  "whats_next": "The Committee expects that economic conditions will warrant only gradual increases in the federal funds rate. The actual path of the rate will depend on the economic outlook as informed by incoming data.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "the Committee decided to raise the target range for the federal funds rate to 1/4 to 1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.1%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "2.3%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.93%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.1%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "228k"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.2%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "1.6%"
+   }
+  ],
+  "meeting_date": "2015-12-16",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 0.25,
+   "target_high": 0.5,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised interest rates for the first time in nearly a decade, citing a strengthening labor market and confidence that inflation will return to its target."
+  },
+  "latency_s": 21.52
+ },
+ "latency_s": 58.16310167312622,
+ "failures": []
+}

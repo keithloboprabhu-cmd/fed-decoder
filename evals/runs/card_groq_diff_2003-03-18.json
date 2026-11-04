@@ -1,0 +1,143 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.25,
+   "target_high": 1.25,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate unchanged at 1.25%."
+  },
+  "changes": [
+   {
+    "quote": "While incoming economic data since the January meeting have been mixed, recent labor market indicators have proven disappointing.",
+    "explanation": "The Committee notes weaker labor data, signaling that the economy is not as strong as hoped, which supports keeping rates steady."
+   },
+   {
+    "quote": "However, the hesitancy of the economic expansion appears to owe importantly to oil price premiums and other aspects of geopolitical uncertainties.",
+    "explanation": "Geopolitical and oil\u2011price risks are identified as headwinds, explaining why the Fed is cautious about tightening."
+   },
+   {
+    "quote": "The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to economic activity sufficient to engender an improving economic climate over time.",
+    "explanation": "The Fed signals confidence that its current easy policy will help the economy recover once risks fade."
+   },
+   {
+    "quote": "In light of the unusually large uncertainties clouding the geopolitical situation in the short run and their apparent effects on economic decisionmaking, the Committee does not believe it can usefully characterize the current balance of risks with respect to the prospects for its long\u2011run goals of price stability and sustainable economic growth.",
+    "explanation": "The Committee admits it cannot assess the risk balance now, reinforcing a wait\u2011and\u2011see approach."
+   },
+   {
+    "quote": "Rather, the Committee decided to refrain from making that determination until some of those uncertainties abate.",
+    "explanation": "By postponing a risk assessment, the Fed signals it will keep policy unchanged until clarity improves."
+   }
+  ],
+  "tone_score": -1.0,
+  "tone_quotes": [
+   {
+    "quote": "In light of the unusually large uncertainties clouding the geopolitical situation in the short run and their apparent effects on economic decisionmaking, the Committee does not believe it can usefully characterize the current balance of risks with respect to the prospects for its long\u2011run goals of price stability and sustainable economic growth.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "Rather, the Committee decided to refrain from making that determination until some of those uncertainties abate.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Your $5,000 balance at about 13.11% APR still costs roughly $54.62 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10\u2011year Treasury yield, which was 3.91% and rose 9\u202fbp, so a new $300,000 loan at 5.67% would cost about $17.12 more per month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.9% and employers shed an average of 58\u202fk jobs a month over the prior three months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.1% year\u2011over\u2011year, while core PCE inflation was 1.7% against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 0.5% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield moved up 9\u202fbp on the day."
+   }
+  ],
+  "whats_next": "The Committee\u2019s language of uncertainty and its decision to hold rates suggest it will keep a close watch on geopolitical developments before considering any move. Future meetings are likely to focus on whether risks have receded enough to allow a gradual policy adjustment.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.11% APR for a $5,000 balance"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.67% mortgage rate"
+   },
+   {
+    "source": "DGS10",
+    "detail": "10\u2011year Treasury yield 3.91% on 2003\u201103\u201118"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "Unemployment 5.9% in February 2003"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "Average job change -58\u202fk over prior 3 months"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "CPI inflation 3.1% year over year"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "Core PCE inflation 1.7% year over year"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "Real GDP growth 0.5% annualized"
+   }
+  ],
+  "meeting_date": "2003-03-18",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.25,
+   "target_high": 1.25,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate unchanged at 1.25%."
+  },
+  "latency_s": 61.76
+ },
+ "latency_s": 123.90739893913269,
+ "failures": []
+}

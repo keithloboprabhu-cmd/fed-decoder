@@ -1,0 +1,131 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.75,
+   "target_high": 2.0,
+   "votes_for": 8,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept interest rates unchanged but noted that the economy is growing at a strong rate."
+  },
+  "changes": [
+   {
+    "quote": "economic activity has been rising at a strong rate.",
+    "explanation": "The Fed upgraded its description of economic growth from solid to strong, signaling high confidence in the recovery."
+   },
+   {
+    "quote": "Household spending and business fixed investment have grown strongly.",
+    "explanation": "This confirms that both consumers and businesses are contributing to the robust economic expansion."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee expects that further gradual increases in the target range for the federal funds rate will be consistent with sustained expansion of economic activity, strong labor market conditions, and inflation near the Committee's symmetric 2 percent objective over the medium term.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "economic activity has been rising at a strong rate.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 13.63% APR costs about $56.79 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3% and moved +4 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 4.52% would rise by about $7.15 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4%, and employers added an average of 227k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.1% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day, and the S&P 500 moved -0.1%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.14% on the day."
+   }
+  ],
+  "whats_next": "The Fed expects that further gradual increases in interest rates will be necessary. This signals that another rate hike is likely at an upcoming meeting if the economy remains strong.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "the Committee decided to maintain the target range for the federal funds rate at 1-3/4 to 2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.63%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "4.52%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "227k"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.9%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.1%"
+   }
+  ],
+  "meeting_date": "2018-08-01",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v1-no-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.75,
+   "target_high": 2.0,
+   "votes_for": 8,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept interest rates unchanged but noted that the economy is growing at a strong rate."
+  },
+  "latency_s": 9.37
+ },
+ "latency_s": 9.37602424621582,
+ "failures": []
+}

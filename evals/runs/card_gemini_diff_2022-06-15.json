@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 75,
+   "target_low": 1.5,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Esther L. George"
+   ],
+   "summary": "The Federal Reserve raised its benchmark interest rate range by 75 basis points to 1-1/2 to 1-3/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Overall economic activity appears to have picked up after edging down in the first quarter.",
+    "explanation": "The Fed noted that economic growth resumed after declining slightly in early 2022."
+   },
+   {
+    "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+    "explanation": "The central bank added explicit language underscoring its firm commitment to lowering inflation back to its target."
+   },
+   {
+    "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
+    "explanation": "Policymakers accelerated their rate hikes with a larger 75 basis point increase to combat high price pressures."
+   },
+   {
+    "quote": "Voting against this action was Esther L. George, who preferred at this meeting to raise the target range for the federal funds rate by 0.5 percentage point to 1-1/4 percent to 1-1/2 percent.",
+    "explanation": "One committee member dissented because she preferred a smaller half-percentage-point rate increase."
+   }
+  ],
+  "tone_score": 2.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee is highly attentive to inflation risks.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 14.56% APR, a 75 bp increase raises monthly interest by about $3.12."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate; with the 10-year yield at 3.33% moving -16 bp on the day, the payment on a new $300,000 30-year loan at 5.09% would fall by about $29.35 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $45.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.6%, and employers added an average of 366k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 8.5% over the past year, while core PCE inflation was 5.2% against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.6%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a -1% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield moved -25 bp on the day, and the S&P 500 moved 1.46%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.02% on the day."
+   }
+  ],
+  "whats_next": "The Fed explicitly stated that it anticipates ongoing increases in the target rate range will be appropriate at upcoming meetings. It also confirmed it will continue reducing its holdings of Treasury securities and agency debt according to its balance sheet plans.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.56%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.09%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.33%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.6%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "366k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "8.5%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "5.2%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-1%"
+   }
+  ],
+  "meeting_date": "2022-06-15",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 75,
+   "target_low": 1.5,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Esther L. George"
+   ],
+   "summary": "The Federal Reserve raised its benchmark interest rate range by 75 basis points to 1-1/2 to 1-3/4 percent."
+  },
+  "latency_s": 12.44
+ },
+ "latency_s": 12.439650058746338,
+ "failures": []
+}

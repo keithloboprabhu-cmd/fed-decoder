@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Jeffrey M. Lacker"
+   ],
+   "summary": "The Federal Reserve kept interest rates near zero but explicitly signaled that a rate hike could happen at its next meeting."
+  },
+  "changes": [
+   {
+    "quote": "In determining whether it will be appropriate to raise the target range at its next meeting, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
+    "explanation": "The Fed added a specific reference to its next meeting, which strongly suggests it is preparing to raise rates in December."
+   },
+   {
+    "quote": "The pace of job gains slowed and the unemployment rate held steady.",
+    "explanation": "The Committee noted that the rapid pace of hiring seen earlier in the year has cooled slightly."
+   },
+   {
+    "quote": "The Committee continues to see the risks to the outlook for economic activity and the labor market as nearly balanced but is monitoring global economic and financial developments.",
+    "explanation": "The Fed is less concerned about global economic turmoil than it was in previous months, though it is still watching closely."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "In determining whether it will be appropriate to raise the target range at its next meeting, the Committee will assess progress--both realized and expected--toward its objectives of maximum employment and 2 percent inflation.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee anticipates that it will be appropriate to raise the target range for the federal funds rate when it has seen some further improvement in the labor market and is reasonably confident that inflation will move back to its 2 percent objective over the medium term.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 12.04% APR costs about $50.17 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate; the payment on a new $300,000 30-year loan at 3.82% would rise by about $8.56 a month if the 2.1% yield move passes through."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5%, and employers added an average of 189k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "Core PCE inflation, the Fed's preferred gauge, was 1.2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 1.6% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +8 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.23% on the day."
+   }
+  ],
+  "whats_next": "The Committee is now openly considering a rate hike at its next meeting in December. This signals that the era of zero-percent interest rates may be coming to an end if economic data remains solid.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "the current 0 to 1/4 percent target range for the federal funds rate remains appropriate"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.04%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.82%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "2.1%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "189k"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.2%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "1.6%"
+   }
+  ],
+  "meeting_date": "2015-10-28",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v1-no-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Jeffrey M. Lacker"
+   ],
+   "summary": "The Federal Reserve kept interest rates near zero but explicitly signaled that a rate hike could happen at its next meeting."
+  },
+  "latency_s": 16.93
+ },
+ "latency_s": 16.93849492073059,
+ "failures": []
+}
