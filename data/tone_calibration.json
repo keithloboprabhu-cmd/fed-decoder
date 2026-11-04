@@ -1,6 +1,6 @@
 {
-  "slope": 0.6344653812458682,
-  "intercept": 0.37711458991445185,
-  "method": "corpus z-score",
+  "slope": 0.39383511482464295,
+  "intercept": 0.11294299697506059,
+  "method": "least squares vs LLM card scores",
   "n": 227
 }

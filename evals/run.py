@@ -53,7 +53,8 @@ def cached_run(key: str, fn):
     if p.exists():
         return json.loads(p.read_text())
     out = fn()
-    if out is not None:
+    rate_limited = isinstance(out, dict) and out.get("ok") is False and any(e == "RateLimited" for _, e in out.get("failures", []))
+    if out is not None and not rate_limited:  # don't cache quota failures: a rerun should retry them
         p.write_text(json.dumps(out, default=str, indent=1))
     return out
 
