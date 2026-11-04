@@ -45,11 +45,11 @@
   },
   "hand_labels": null,
   "gemini_vs_groq": {
-   "pearson": 0.930778410088755,
-   "spearman": 0.8897377898778847,
-   "n": 12,
-   "mean_abs_diff": 0.625,
-   "within_0.5": 0.5833333333333334
+   "pearson": 0.9304878634368986,
+   "spearman": 0.8899455632734298,
+   "n": 13,
+   "mean_abs_diff": 0.5769230769230769,
+   "within_0.5": 0.6153846153846154
   }
  },
  "consistency": {
@@ -68,48 +68,9 @@
  "grounding": {
   "llm": {
    "n": 227,
-   "number_check_pass": 0.46255506607929514,
+   "number_check_pass": 1.0,
    "quote_check_pass": 1.0,
-   "failures": [
-    {
-     "date": "2005-11-01",
-     "numbers": [
-      "84"
-     ],
-     "quotes": []
-    },
-    {
-     "date": "2005-12-13",
-     "numbers": [
-      "9",
-      "91"
-     ],
-     "quotes": []
-    },
-    {
-     "date": "2006-06-29",
-     "numbers": [
-      "89",
-      "11"
-     ],
-     "quotes": []
-    },
-    {
-     "date": "2006-08-08",
-     "numbers": [
-      "79",
-      "20"
-     ],
-     "quotes": []
-    },
-    {
-     "date": "2006-09-20",
-     "numbers": [
-      "91"
-     ],
-     "quotes": []
-    }
-   ]
+   "failures": []
   },
   "rules": {
    "n": 0,
@@ -118,8 +79,8 @@
    "failures": []
   },
   "judge": {
-   "n": 20,
-   "supported_rate": 0.95
+   "n": 2,
+   "supported_rate": 1.0
   }
  },
  "impact": {
@@ -142,24 +103,24 @@
    "accuracy": 1.0,
    "n_adversarial": 10,
    "adversarial_pass": 1.0,
-   "mean_latency_s": 0.07749938368797302,
+   "mean_latency_s": 0.07211142182350158,
    "share_rules_fallback": 1.0
   },
   "gemini": {
    "n": 30,
-   "accuracy": 0.7666666666666667,
+   "accuracy": 0.9333333333333333,
    "n_adversarial": 10,
    "adversarial_pass": 1.0,
-   "mean_latency_s": 12.145244187116623,
-   "share_rules_fallback": 0.03333333333333333
+   "mean_latency_s": 15.040513092279435,
+   "share_rules_fallback": 0.1
   },
   "groq": {
    "n": 30,
    "accuracy": 1.0,
    "n_adversarial": 10,
    "adversarial_pass": 1.0,
-   "mean_latency_s": 40.54212037920952,
-   "share_rules_fallback": 0.7666666666666667
+   "mean_latency_s": 43.74052156209946,
+   "share_rules_fallback": 1.0
   }
  },
  "providers": {
@@ -174,7 +135,7 @@
     "dissenters": 1.0
    },
    "grounding_pass": 1.0,
-   "mean_latency_s": 0.0010795950889587401,
+   "mean_latency_s": 0.0006102561950683594,
    "share_fell_back": 0.0,
    "n": 20
   },
@@ -188,24 +149,24 @@
     "votes": 1.0,
     "dissenters": 1.0
    },
-   "grounding_pass": 1.0,
+   "grounding_pass": 0.3,
    "mean_latency_s": 6.937702631950378,
    "share_fell_back": 0.0,
    "n": 20
   },
   "groq": {
    "extraction": {
-    "n": 1,
-    "n_with_votes": 1,
+    "n": 3,
+    "n_with_votes": 3,
     "direction": 1.0,
     "change_bps": 1.0,
     "range": 1.0,
     "votes": 1.0,
     "dissenters": 1.0
    },
-   "grounding_pass": 1.0,
-   "mean_latency_s": 38.040445029735565,
-   "share_fell_back": 0.95,
+   "grounding_pass": 0.6666666666666666,
+   "mean_latency_s": 112.24742379188538,
+   "share_fell_back": 0.85,
    "n": 20
   }
  },
@@ -248,23 +209,23 @@
    "before_no_diff": {
     "n_cards": 20,
     "change_quote_precision": 0.86,
-    "validation_pass": 1.0
+    "validation_pass": 0.35
    },
    "after_with_diff": {
     "n_cards": 20,
     "change_quote_precision": 1.0,
-    "validation_pass": 1.0
+    "validation_pass": 0.4
    }
   }
  },
  "usage": {
-  "calls_ok": 505,
+  "calls_ok": 583,
   "by_provider": {
-   "gemini": 438,
-   "groq": 67
+   "gemini": 506,
+   "groq": 77
   },
   "share_fallback": 0.0,
-  "rate_limited_events": 56,
-  "guardrail_failures": 31
+  "rate_limited_events": 134,
+  "guardrail_failures": 39
  }
 }

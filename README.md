@@ -150,7 +150,7 @@ tests/                     unit tests and fake-provider tests for the LLM paths
 ## Eval report
 
 <!-- EVAL-REPORT:START -->
-Generated 2026-11-04 05:39 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
+Generated 2026-11-04 07:37 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
 
 ### 1. Extraction vs ground truth
 
@@ -170,7 +170,7 @@ Vote and dissenter accuracy for the rules extractor is not independent: it uses 
 | Dictionary tone vs next meeting's rate change | Pearson 0.45, Spearman 0.42 (n=226) |
 | LLM card tone vs next meeting's rate change | Pearson 0.59, Spearman 0.58 (n=226) |
 | Agreement with hand labels (30 statements) | pending: fill `evals/hand_labels_tone.csv` |
-| Gemini vs Groq | Pearson 0.93, mean abs diff 0.62, within 0.5: 58.3% (n=12) |
+| Gemini vs Groq | Pearson 0.93, mean abs diff 0.58, within 0.5: 61.5% (n=13) |
 | LLM vs dictionary model | Pearson 0.70, sign agreement 63.4% (n=227) |
 
 ### 3. Consistency (20 statements x 3 runs)
@@ -182,10 +182,10 @@ Vote and dissenter accuracy for the rules extractor is not independent: it uses 
 
 | Cards | n | Number check pass | Quote check pass |
 |---|---|---|---|
-| llm | 227 | 46.3% | 100.0% |
+| llm | 227 | 100.0% | 100.0% |
 | rules | 0 | n/a | n/a |
 
-LLM judge (Groq judging Gemini claims): 95.0% of 20 sampled claims supported; hand-label validation pending (`evals/hand_labels_claims.csv`)
+LLM judge (Groq judging Gemini claims): 100.0% of 2 sampled claims supported; hand-label validation pending (`evals/hand_labels_claims.csv`)
 
 ### 5. Impact math
 
@@ -206,19 +206,19 @@ The model beats the baseline. On meetings where the Fed actually moved, the mode
 
 | Mode | Accuracy | Adversarial pass | Mean latency | Fell back to rules |
 |---|---|---|---|---|
-| rules | 100.0% | 100.0% | 0.08s | n/a |
-| gemini | 76.7% | 100.0% | 12.15s | 3.3% |
-| groq | 100.0% | 100.0% | 40.54s | 76.7% |
+| rules | 100.0% | 100.0% | 0.07s | n/a |
+| gemini | 93.3% | 100.0% | 15.04s | 10.0% |
+| groq | 100.0% | 100.0% | 43.74s | 100.0% |
 
 ### 8. Provider comparison
 
 | Provider | n | Direction | Size | Range | Votes | Grounding pass | Mean latency | Fell back |
 |---|---|---|---|---|---|---|---|---|
-| gemini | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 6.94s | 0.0% |
-| groq | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 38.04s | 95.0% |
+| gemini | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 30.0% | 6.94s | 0.0% |
+| groq | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 66.7% | 112.25s | 85.0% |
 | rules | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.00s | 0.0% |
 
-Logged LLM calls this far: 505 ok ({'gemini': 438, 'groq': 67}), fallback share 0.0%, 56 rate-limit events, 31 guardrail failures.
+Logged LLM calls this far: 583 ok ({'gemini': 506, 'groq': 77}), fallback share 0.0%, 134 rate-limit events, 39 guardrail failures.
 
 
 ### Before / after
@@ -243,8 +243,8 @@ This change made the predictive correlation slightly *worse*: dissenters' stated
 
 | Version | Cards | Change-quote precision | Validation pass |
 |---|---|---|---|
-| before_no_diff | 20 | 86.0% | 100.0% |
-| after_with_diff | 20 | 100.0% | 100.0% |
+| before_no_diff | 20 | 86.0% | 35.0% |
+| after_with_diff | 20 | 100.0% | 40.0% |
 <!-- EVAL-REPORT:END -->
 
 ---

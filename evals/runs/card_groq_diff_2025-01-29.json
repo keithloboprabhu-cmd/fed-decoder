@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 4.25,
+   "target_high": 4.5,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate unchanged at 4.25%\u20114.50%."
+  },
+  "changes": [
+   {
+    "quote": "The unemployment rate has stabilized at a low level in recent months, and labor market conditions remain solid.",
+    "explanation": "Adds a more positive view of the labor market, suggesting less pressure to cut rates."
+   },
+   {
+    "quote": "Inflation remains somewhat elevated.",
+    "explanation": "Shortens the previous sentence, removing mention of progress and emphasizing that price pressures are still a concern."
+   },
+   {
+    "quote": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent.",
+    "explanation": "Replaces a prior rate cut with a hold, indicating a pause in tightening."
+   },
+   {
+    "quote": "Voting for the monetary policy action were Jerome H. Powell, Chair; John C. Williams, Vice Chair; Michael S. Barr; Michelle W. Bowman; Susan M. Collins; Lisa D. Cook; Austan D. Goolsbee; Philip N. Jefferson; Adriana D. Kugler; Alberto G. Musalem; Jeffrey R. Schmid; and Christopher J. Waller.",
+    "explanation": "Updates the list of supporters, showing a broader voting coalition and no dissent."
+   },
+   {
+    "quote": "",
+    "explanation": "Removes the previous dissenting vote, confirming unanimous support for the hold."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "Inflation remains somewhat elevated.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The economic outlook is uncertain, and the Committee is attentive to the risks to both sides of its dual mandate.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move; a $5,000 balance at about 21.76% APR costs about $90.67 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate; the 10-year was 4.55% and a new $300,000 30\u2011year loan at 7.04% would see no payment change."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.1% and employers added an average of 135\u202fk jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.9% over the past year, and core PCE inflation was also 2.9%, above the 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.4% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2\u2011year Treasury yield rose 2\u202fbp and the S&P\u202f500 fell 0.47% on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade\u2011weighted dollar moved up 0.05% on the day."
+   }
+  ],
+  "whats_next": "The Committee signaled that future meetings will focus on whether inflation stays elevated and whether labor market strength persists. It said it will assess incoming data before deciding on any further rate adjustments.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of its goals, the Committee decided to maintain the target range for the federal funds rate at 4-1/4 to 4-1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "21.76% APR"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "7.04% mortgage rate"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.55% 10\u2011year Treasury yield"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.1% unemployment rate"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "135\u202fk average monthly job gains"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.9% CPI inflation"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.9% core PCE inflation"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.4% annualized real GDP growth"
+   }
+  ],
+  "meeting_date": "2025-01-29",
+  "provider": "groq",
+  "model": "openai/gpt-oss-120b",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 4.25,
+   "target_high": 4.5,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Committee kept the federal funds rate unchanged at 4.25%\u20114.50%."
+  },
+  "latency_s": 63.48
+ },
+ "latency_s": 63.48048758506775,
+ "failures": []
+}
