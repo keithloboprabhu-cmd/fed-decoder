@@ -7,39 +7,39 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 6.5%."
+    "summary": "The Federal Reserve kept interest rates at 6.5 percent to see if the economy is slowing down enough to stop inflation."
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee at its meeting today decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate at 6-1/2 percent.",
-      "explanation": "Reworded from the previous statement: “The Federal Open Market Committee voted today to raise its target for the federal funds rate by 50 basis points to 6-1/2 percent.”"
-    },
-    {
       "quote": "Recent data suggest that the expansion of aggregate demand may be moderating toward a pace closer to the rate of growth of the economy's potential to produce.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed sees signs that consumer and business spending is finally slowing down to a more manageable level."
     },
     {
       "quote": "Although core measures of prices are rising slightly faster than a year ago, continuing rapid advances in productivity have been containing costs and holding down underlying price pressures.",
-      "explanation": "New language added in this statement."
+      "explanation": "While some prices are up, workers are becoming more efficient, which helps keep overall costs from spiraling."
     },
     {
       "quote": "Nonetheless, signs that growth in demand is moving to a sustainable pace are still tentative and preliminary, and the utilization of the pool of available workers remains at an unusually high level.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed is not sure the slowdown is permanent yet, especially since the job market is still very tight."
     },
     {
       "quote": "In these circumstances, and against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
-      "explanation": "Reworded from the previous statement: “Against the background of its long-term goals of price stability and sustainable economic growth and of the information already available, the Committee believe…”"
-    },
-    {
-      "quote": "In a related action, the Board of Governors approved a 50 basis point increase in the discount rate to 6 percent.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "Even though they paused, the Fed is still more worried about prices rising too fast than the economy slowing too much."
     }
   ],
-  "tone_score": 1.27,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "In these circumstances, and against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "quote": "the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
       "direction": "hawkish"
+    },
+    {
+      "quote": "the utilization of the pool of available workers remains at an unusually high level.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "Recent data suggest that the expansion of aggregate demand may be moderating toward a pace closer to the rate of growth of the economy's potential to produce.",
+      "direction": "dovish"
     }
   ],
   "for_you": [
@@ -49,7 +49,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 6.11% and moved +1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 8.22% would rise by about $2.11 a month."
+      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate, which was 6.11% and moved +1 bp on the day."
     },
     {
       "topic": "Savers",
@@ -63,7 +63,7 @@
   "for_country": [
     {
       "topic": "Inflation",
-      "text": "CPI inflation was 3.1% over the past year (May 2000); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+      "text": "CPI inflation was 3.1% over the past year, while core PCE inflation was 1.7%."
     },
     {
       "topic": "Jobs",
@@ -78,54 +78,57 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -7 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
-  "confidence": "medium",
+  "whats_next": "The Fed is waiting to see if the recent economic slowdown is real or just a temporary dip. Because they still see inflation as the main risk, they may raise rates again if demand doesn't stay at a sustainable pace.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
-      "detail": "The Federal Open Market Committee at its meeting today decided to maintain the existing stance of monetary policy, keeping its target for the federal funds rate at 6-1/2 percent."
+      "detail": "keeping its target for the federal funds rate at 6-1/2 percent."
     },
     {
       "source": "TERMCBCCALLNS",
-      "detail": "15.55% as of 2000-02-01"
-    },
-    {
-      "source": "MORTGAGE30US",
-      "detail": "8.22% week of 2000-06-16"
+      "detail": "15.55%"
     },
     {
       "source": "DGS10",
-      "detail": "6.11% on 2000-06-28"
+      "detail": "6.11%"
     },
     {
       "source": "UNRATE",
-      "detail": "4% in May 2000"
+      "detail": "4%"
     },
     {
       "source": "PAYEMS",
-      "detail": "3-month average change 328k as of May 2000"
+      "detail": "328k"
     },
     {
       "source": "CPIAUCSL",
-      "detail": "3.1% year over year, May 2000"
+      "detail": "3.1%"
     },
     {
       "source": "PCEPILFE",
-      "detail": "1.7% year over year, May 2000"
+      "detail": "1.7%"
     },
     {
       "source": "GDPC1",
-      "detail": "1.5% annualized, quarter starting 2000-01-01"
+      "detail": "1.5%"
     }
   ],
   "meeting_date": "2000-06-28",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3-flash-preview",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 6.5,
+    "target_high": 6.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve kept interest rates at 6.5 percent to see if the economy is slowing down enough to stop inflation."
+  },
+  "latency_s": 8.28
 }

@@ -7,38 +7,34 @@
     "votes_for": null,
     "votes_against": null,
     "dissenters": [],
-    "summary": "The Fed held its policy rate at 6.5%."
+    "summary": "The Federal Reserve decided to keep the federal funds rate target at 6-1/2 percent."
   },
   "changes": [
     {
       "quote": "Recent data have indicated that the expansion of aggregate demand is moderating toward a pace closer to the rate of growth of the economy's potential to produce.",
-      "explanation": "Reworded from the previous statement: “Recent data suggest that the expansion of aggregate demand may be moderating toward a pace closer to the rate of growth of the economy's potential to produce.”"
+      "explanation": "The Fed now states that demand growth is slowing to a more sustainable pace, shifting from tentative observation to firmer confirmation."
     },
     {
       "quote": "The data also have indicated that more rapid advances in productivity have been raising that potential growth rate as well as containing costs and holding down underlying price pressures.",
-      "explanation": "Reworded from the previous statement: “Although core measures of prices are rising slightly faster than a year ago, continuing rapid advances in productivity have been containing costs and holding do…”"
+      "explanation": "Stronger productivity is credited with helping absorb price pressures and keeping the economy's potential higher."
     },
     {
       "quote": "Nonetheless, the Committee remains concerned about the risk of a continuing gap between the growth of demand and potential supply at a time when the utilization of the pool of available workers remains at an unusually high level.",
-      "explanation": "New language added in this statement."
+      "explanation": "The Fed remains watchful because demand could still outpace supply while the labor market is running very tight."
     },
     {
       "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
-      "explanation": "New language added in this statement."
-    },
-    {
-      "quote": "Nonetheless, signs that growth in demand is moving to a sustainable pace are still tentative and preliminary, and the utilization of the pool of available workers remains at an unusually high level.",
-      "explanation": "Language from the previous statement that was dropped."
-    },
-    {
-      "quote": "In these circumstances, and against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
-      "explanation": "Language from the previous statement that was dropped."
+      "explanation": "The central risk assessment remains tilted toward inflation pressures remaining a concern."
     }
   ],
-  "tone_score": 1.27,
+  "tone_score": 1.0,
   "tone_quotes": [
     {
-      "quote": "Against the background of its long-term goals of price stability and sustainable economic growth and of the information currently available, the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
+      "quote": "Nonetheless, the Committee remains concerned about the risk of a continuing gap between the growth of demand and potential supply at a time when the utilization of the pool of available workers remains at an unusually high level.",
+      "direction": "hawkish"
+    },
+    {
+      "quote": "the Committee believes the risks continue to be weighted mainly toward conditions that may generate heightened inflation pressures in the foreseeable future.",
       "direction": "hawkish"
     }
   ],
@@ -49,7 +45,7 @@
     },
     {
       "topic": "Mortgages",
-      "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 5.78% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 8.04% would fall by about $2.09 a month."
+      "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.78% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 8.04% would fall by about $2.09 a month."
     },
     {
       "topic": "Savers",
@@ -78,8 +74,8 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -1 bp on the day."
     }
   ],
-  "whats_next": "The dictionary tone reading is hawkish (leaning toward higher rates). ",
-  "confidence": "medium",
+  "whats_next": "The statement signals that future meetings will depend on incoming data regarding whether demand cools enough to subdue inflation risks. If productivity growth continues to hold down costs, the Fed may be able to maintain its current stance without further rate hikes.",
+  "confidence": "high",
   "citations": [
     {
       "source": "statement",
@@ -119,13 +115,20 @@
     }
   ],
   "meeting_date": "2000-08-22",
-  "provider": "rules",
-  "model": "rules-v1",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [
-    "Automated summary (rules-based)"
-  ],
+  "validation_notes": [],
   "inputs_version": "v2-with-diff",
-  "llm_decision": null,
-  "latency_s": null
+  "llm_decision": {
+    "direction": "hold",
+    "change_bps": 0,
+    "target_low": 6.5,
+    "target_high": 6.5,
+    "votes_for": null,
+    "votes_against": null,
+    "dissenters": [],
+    "summary": "The Federal Reserve decided to keep the federal funds rate target at 6-1/2 percent."
+  },
+  "latency_s": 3.77
 }
