@@ -148,7 +148,8 @@ def _monthly_changes(p: Profile, bps: int, ten_year_bps: int, when: pd.Timestamp
         annual = impact.savings_impact(p.savings, bps, pt)["annual_change"]
         # savings interest is income: a higher rate is a positive for you, so flip the sign for "cost"
         items.append({"topic": "Savings", "monthly": -round(annual / 12, 2),
-                      "text": (f"High-yield accounts pass on about {pt:.0%} of Fed moves: {_signed(annual)} a year in interest on {_bal(p.savings)}."
+                      "text": (f"High-yield accounts pass on about {pt:.0%} of Fed moves, so on {_bal(p.savings)} you'd earn about "
+                               f"{_usd(annual)} {'more' if annual > 0 else 'less'} a year in interest."
                                if pt else "Regular bank accounts barely change their rates when the Fed moves.")})
     return items
 

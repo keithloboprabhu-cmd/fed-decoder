@@ -1,0 +1,4 @@
+{
+ "supported": true,
+ "reason": "The claim is directly stated in the provided household and economy facts: mortgages track the 10-year Treasury yield, the 10-year was 2.3% and moved +2 bp, and the payment impact on a $300,000 30-year loan at 3.93% is about $3.45 per month."
+}

@@ -2,9 +2,15 @@
 
 Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or paste a statement) and get the decision, a redline against the previous statement, a hawkish-to-dovish tone reading with the quotes behind it, what it means for borrowers, savers and workers, what it means for the economy, and a light, backtested forecast of the next move.
 
-![Fed Decoder: decode page](docs/screenshot.png)
+![Fed Decoder: walking through the September 2024 decision](docs/screenshot.png)
 
 **Live app:** _deploy link goes here once published on Streamlit Community Cloud (see [Deploy](#deploy-free))._
+
+## How it feels to use
+
+Fed Decoder opens with one question: which decision do you want to understand? Type a month, a date or "latest", or paste a statement, and it walks you through that meeting one step at a time: the decision in plain English, what changed in the statement, how the Fed sounded, what it means for you (with an optional, private calculator), what it means for the economy, and what might happen next. Unfamiliar terms can be tapped for a short definition, and every step can be expanded at once for people who want everything.
+
+The design is deliberately quiet: warm ivory and white, charcoal text, forest green for dovish and terracotta for hawkish (always paired with a word, never color alone), Newsreader for headlines, Inter for reading, and IBM Plex Mono only for the figures people compare.
 
 ## What it does
 

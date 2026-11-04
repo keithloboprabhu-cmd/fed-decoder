@@ -1,9 +1,11 @@
-"""HTML/SVG/Plotly building blocks for the Streamlit pages."""
+"""HTML / Plotly building blocks. Presentation only: every number shown is
+passed in from the data and calculation layers."""
 from __future__ import annotations
 
 import difflib
 import html
 import math
+import re
 
 import pandas as pd
 
@@ -13,182 +15,239 @@ from fed_decoder.ui import theme
 
 E = html.escape
 
+# Plain-language definitions, opened by tapping a term (works without hover).
+GLOSSARY = {
+    "federal funds rate": "The interest rate banks charge each other for overnight loans. The Fed sets a target range for it, and most short-term borrowing costs follow it.",
+    "target range": "The band the Fed wants the federal funds rate to stay inside, such as 3.75% to 4%. Since 2008 the Fed has set a range rather than a single number.",
+    "basis points": "Hundredths of a percentage point. 25 basis points is a quarter of a point, so a rate going from 4% to 4.25%.",
+    "hawkish": "Leaning toward higher interest rates, usually because inflation is the bigger worry.",
+    "dovish": "Leaning toward lower interest rates, usually because jobs or growth are the bigger worry.",
+    "dissented": "Voted against the decision. Dissents show the committee was not unanimous and hint at where the debate is going.",
+    "FOMC": "The Federal Open Market Committee: the 12 voting members who set the Fed's interest rate target, meeting eight times a year.",
+    "10-year Treasury": "The interest rate the US government pays to borrow for ten years. Mortgage rates follow it more closely than they follow the Fed.",
+}
 
-def fmt_pct(x: float) -> str:
-    return f"{x:.2f}"
+
+def define(text_html: str, terms: list[str] | None = None) -> str:
+    """Wrap the first occurrence of each glossary term in a tap-to-define element."""
+    for term in terms or list(GLOSSARY):
+        rx = re.compile(r"(?<![\w>])(" + re.escape(term) + r")(?![\w<])", re.I)
+        m = rx.search(text_html)
+        if m:
+            rep = (f'<label class="term"><input type="checkbox" aria-label="What does {E(term)} mean?">'
+                   f'<span class="w">{m.group(1)}</span><span class="d">{E(GLOSSARY[term])}</span></label>')
+            text_html = text_html[: m.start()] + rep + text_html[m.end():]
+    return text_html
 
 
-def fmt_range(lo: float, hi: float) -> str:
+# ---------------------------------------------------------------- formatting
+def pct(x: float) -> str:
+    return f"{x:.2f}%"
+
+
+def fmt_range(lo, hi) -> str:
     if lo is None or hi is None or (isinstance(hi, float) and math.isnan(hi)):
-        return "n/a"
-    return f"{fmt_pct(hi)}%" if lo == hi else f"{fmt_pct(lo)}–{fmt_pct(hi)}%"
+        return "not stated"
+    return pct(hi) if lo == hi else f"{pct(lo)} to {pct(hi)}"
 
 
-def facts_html(decision, meeting_date: str) -> str:
-    bps = decision.change_bps
-    move = "0 bp" if bps == 0 else f"{'+' if bps > 0 else '−'}{abs(bps)} bp"
-    vote = f"{decision.votes_for}–{decision.votes_against}" if decision.votes_for is not None else "not reported"
-    dis = ", ".join(n.split()[-1] if not n.endswith("Jr.") else n.split()[-2].rstrip(",") for n in decision.dissenters) or "none"
-    cells = [
-        ("Decision", decision.direction.capitalize()),
-        ("Change", move),
-        ("Target", fmt_range(decision.target_low, decision.target_high)),
-        ("Vote", vote),
-        ("Dissents", dis),
-    ]
+def points(bps: int) -> str:
+    b = abs(int(bps))
+    return {25: "a quarter point", 50: "half a point", 75: "three quarters of a point", 100: "a full point"}.get(b, f"{b / 100:.2f} points")
+
+
+def headline(direction: str, bps: int) -> str:
+    if direction == "hold":
+        return "The Fed held interest rates steady"
+    verb = "cut" if direction == "cut" else "raised"
+    return f"The Fed {verb} interest rates by {points(bps)}"
+
+
+def vote_sentence(d) -> str:
+    if d.votes_for is None:
+        return ""
+    if not d.votes_against:
+        return "The decision was unanimous."
+    names = ", ".join(d.dissenters[:-1]) + (" and " if len(d.dissenters) > 1 else "") + d.dissenters[-1] if d.dissenters else ""
+    who = f" {names} dissented." if names else ""
+    return f"The vote was {d.votes_for} to {d.votes_against}.{who}"
+
+
+def why_it_matters(direction: str) -> str:
+    if direction == "hold":
+        return ("Rates on credit cards, home equity lines and high-yield savings should stay roughly where they are. "
+                "Mortgage rates follow the 10-year Treasury, so they can still move.")
+    if direction == "cut":
+        return ("Credit card and home equity rates tend to drift down after a cut, and so do savings rates. "
+                "Mortgage rates follow the 10-year Treasury, so they may not move with the Fed.")
+    return ("Credit card and home equity rates tend to rise after a hike, and savings accounts start paying more. "
+            "Mortgage rates follow the 10-year Treasury, so they may not move with the Fed.")
+
+
+# ---------------------------------------------------------------- decision
+def facts_html(d) -> str:
+    move = "No change" if d.change_bps == 0 else f"{'+' if d.change_bps > 0 else '−'}{abs(d.change_bps)} basis points"
+    vote = f"{d.votes_for} to {d.votes_against}" if d.votes_for is not None else "Not reported"
+    cells = [("Change", move, True), ("Target range", fmt_range(d.target_low, d.target_high), True), ("Vote", vote, d.votes_for is not None)]
     return '<div class="facts">' + "".join(
-        f'<div><div class="kicker">{E(k)}</div><div class="v{" mono" if k in ("Change", "Target", "Vote") and v != "not reported" else ""}" style="{"font-size:19px;padding-top:4px" if (k in ("Dissents", "Decision") or v == "not reported") else ""}">{E(v)}</div></div>'
-        for k, v in cells
-    ) + "</div>"
+        f'<div><div class="k">{k}</div><div class="v{" fig" if mono else ""}">{E(v)}</div></div>' for k, v, mono in cells) + "</div>"
 
 
-def _explain_for(sentence_new: str, sentence_old: str, changes) -> str:
+# ---------------------------------------------------------------- redline
+def _explain_for(new_s: str, old_s: str, changes) -> str:
     for c in changes:
         q = c.quote
-        if (sentence_new and (quote_in(q, sentence_new) or quote_in(sentence_new, q))) or (
-            sentence_old and (quote_in(q, sentence_old) or quote_in(sentence_old, q))
-        ):
+        if (new_s and (quote_in(q, new_s) or quote_in(new_s, q))) or (old_s and (quote_in(q, old_s) or quote_in(old_s, q))):
             return c.explanation
     return ""
 
 
-def _wrap(inner: str, tip: str) -> str:
-    if not tip:
-        return inner
-    return f'<span class="chg" tabindex="0">{inner}<span class="tip">{E(tip)}</span></span>'
-
-
-def redline_html(old: str | None, new: str, changes) -> str:
-    """Sentence-aligned redline. Changed sentences carry a hover explanation."""
+def redline_html(old: str | None, new: str, changes) -> tuple[str, list[dict]]:
+    """Sentence-aligned redline with numbered notes listed below the text, so the
+    explanations work on touch screens and with keyboards, not just on hover."""
     if not old:
-        return '<div class="redline">' + "".join(f"<p>{E(p)}</p>" for p in new.split("\n\n")) + "</div>"
-    out_paras = []
-    # Work paragraph-agnostic: align sentences across the whole statement.
+        return '<div class="redline">' + "".join(f"<p>{E(p)}</p>" for p in new.split("\n\n")) + "</div>", []
     a, b = sentences(old), sentences(new)
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     pieces: list[str] = []
+    notes: list[dict] = []
+
+    def note(text: str, inner: str, was: str = "") -> str:
+        if not text:
+            return inner
+        notes.append({"text": text, "was": was})
+        k = len(notes)
+        return f'{inner}<sup id="ref{k}"><a href="#note{k}" aria-label="Note {k}">{k}</a></sup>'
+
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == "equal":
             pieces += [E(s) for s in b[j1:j2]]
             continue
-        olds, news = list(a[i1:i2]), list(b[j1:j2])
-        used = set()
+        olds, news, used = list(a[i1:i2]), list(b[j1:j2]), set()
         for n in news:
             best, br = None, 0.0
             for k, o in enumerate(olds):
-                if k in used:
-                    continue
-                r = difflib.SequenceMatcher(None, o, n).ratio()
-                if r > br:
-                    best, br = k, r
+                if k not in used:
+                    r = difflib.SequenceMatcher(None, o, n).ratio()
+                    if r > br:
+                        best, br = k, r
             if best is not None and br >= 0.5:
                 used.add(best)
-                o = olds[best]
-                inner = "".join(
-                    E(op.text) if op.op == "equal" else f"<del>{E(op.text)}</del>" if op.op == "delete" else f"<ins>{E(op.text)}</ins>"
-                    for op in redline(o, n)
-                )
-                pieces.append(_wrap(inner, _explain_for(n, o, changes)))
+                inner = "".join(E(op.text) if op.op == "equal" else f"<del>{E(op.text)}</del>" if op.op == "delete" else f"<ins>{E(op.text)}</ins>"
+                                for op in redline(olds[best], n))
+                pieces.append(note(_explain_for(n, olds[best], changes), inner))
             else:
-                pieces.append(_wrap(f"<ins>{E(n)}</ins>", _explain_for(n, "", changes)))
+                pieces.append(note(_explain_for(n, "", changes), f"<ins>{E(n)}</ins>"))
         for k, o in enumerate(olds):
             if k not in used:
-                pieces.append(_wrap(f"<del>{E(o)}</del>", _explain_for("", o, changes)))
-    # chunk into readable paragraphs of ~4 sentences
-    for i in range(0, len(pieces), 4):
-        out_paras.append("<p>" + " ".join(pieces[i : i + 4]) + "</p>")
-    return '<div class="redline">' + "".join(out_paras) + "</div>"
+                pieces.append(note(_explain_for("", o, changes), f"<del>{E(o)}</del>"))
+    paras = ["<p>" + " ".join(pieces[i:i + 4]) + "</p>" for i in range(0, len(pieces), 4)]
+    return '<div class="redline">' + "".join(paras) + "</div>", notes
 
 
-def tone_dial_svg(score: float) -> str:
-    """Single needle from dove (-2, left) to hawk (+2, right)."""
+def notes_html(notes: list[dict]) -> str:
+    if not notes:
+        return ""
+    return '<ol class="notes">' + "".join(f'<li id="note{i}">{E(n["text"])}</li>' for i, n in enumerate(notes, 1)) + "</ol>"
+
+
+# ---------------------------------------------------------------- tone
+def tone_words(score: float) -> tuple[str, str]:
+    s = float(score)
+    if s >= 1.25:
+        return "Clearly hawkish", "hawk"
+    if s > 0.3:
+        return "Leaning hawkish", "hawk"
+    if s <= -1.25:
+        return "Clearly dovish", "dove"
+    if s < -0.3:
+        return "Leaning dovish", "dove"
+    return "Balanced", ""
+
+
+def tone_scale_html(score: float) -> str:
     s = max(-2.0, min(2.0, float(score)))
-    cx, cy, r = 160, 150, 120
-    ang = math.pi * (1 - (s + 2) / 4)  # pi (left) .. 0 (right)
-    nx, ny = cx + (r - 14) * math.cos(ang), cy - (r - 14) * math.sin(ang)
-    ticks = []
-    for v in (-2, -1, 0, 1, 2):
-        a = math.pi * (1 - (v + 2) / 4)
-        x1, y1 = cx + r * math.cos(a), cy - r * math.sin(a)
-        x2, y2 = cx + (r - 10) * math.cos(a), cy - (r - 10) * math.sin(a)
-        ticks.append(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{theme.MUTED}" stroke-width="1"/>')
-    label = "Hawkish" if s > 0.3 else "Dovish" if s < -0.3 else "Balanced"
-    return f"""
-<svg viewBox="0 0 320 190" width="100%" style="max-width:360px" role="img" aria-label="Tone {s:+.1f} on a scale from -2 dovish to +2 hawkish">
-  <path d="M {cx - r} {cy} A {r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="{theme.RULE}" stroke-width="10" stroke-linecap="round"/>
-  <path d="M {cx - r} {cy} A {r} {r} 0 0 1 {cx - r * math.cos(math.pi / 4):.1f} {cy - r * math.sin(math.pi / 4):.1f}" fill="none" stroke="{theme.DOVE}" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
-  <path d="M {cx + r * math.cos(math.pi / 4):.1f} {cy - r * math.sin(math.pi / 4):.1f} A {r} {r} 0 0 1 {cx + r} {cy}" fill="none" stroke="{theme.ACCENT}" stroke-opacity=".35" stroke-width="10" stroke-linecap="round"/>
-  {''.join(ticks)}
-  <line x1="{cx}" y1="{cy}" x2="{nx:.1f}" y2="{ny:.1f}" stroke="{theme.INK}" stroke-width="2.5" stroke-linecap="round"/>
-  <circle cx="{cx}" cy="{cy}" r="5" fill="{theme.INK}"/>
-  <text x="{cx - r}" y="{cy + 24}" font-family="Inter, sans-serif" font-size="13" fill="{theme.MUTED}" text-anchor="middle">Dove</text>
-  <text x="{cx + r}" y="{cy + 24}" font-family="Inter, sans-serif" font-size="13" fill="{theme.MUTED}" text-anchor="middle">Hawk</text>
-  <text x="{cx}" y="{cy - 40}" font-family="IBM Plex Mono, monospace" font-size="26" fill="{theme.INK}" text-anchor="middle">{s:+.1f}</text>
-  <text x="{cx}" y="{cy + 26}" font-family="Inter, sans-serif" font-size="14" fill="{theme.INK}" text-anchor="middle">{label}</text>
-</svg>"""
+    left = (s + 2) / 4 * 100
+    word, cls = tone_words(s)
+    shown = f"{s:+.1f}".replace("-", "−")
+    return (f'<div class="scale" role="img" aria-label="Tone {s:+.1f} on a scale from minus 2, dovish, to plus 2, hawkish">'
+            f'<div class="read"><strong class="{cls}">{word}</strong> <span class="muted">· <span class="fig">{shown}</span> on a scale from −2 to +2</span></div>'
+            f'<div class="track"><div class="pin" style="left:{left:.1f}%"></div></div>'
+            '<div class="ends"><span>Dovish: leaning toward lower rates</span><span>Hawkish: leaning toward higher rates</span></div></div>')
 
 
 def quotes_html(tone_quotes) -> str:
-    return "".join(f'<div class="quote {E(q.direction)}">{E(q.quote)}<div class="tag">{E(q.direction)}</div></div>' for q in tone_quotes)
+    out = []
+    for q in tone_quotes:
+        cls = "hawk" if q.direction == "hawkish" else "dove" if q.direction == "dovish" else ""
+        word = {"hawkish": "Pushes toward hawkish", "dovish": "Pushes toward dovish"}.get(q.direction, "Neutral")
+        out.append(f'<div class="quote"><p>“{E(q.quote)}”</p><span class="why"><span class="mark {cls}">{word}</span></span></div>')
+    return "".join(out)
 
 
-def cards_html(items: list[dict]) -> str:
-    """items: {topic, number, text}"""
-    return '<div class="cards">' + "".join(
-        f'<div class="card"><div class="t">{E(i["topic"])}</div><div class="n">{E(i.get("number") or "")}</div><div class="s">{E(i["text"])}</div></div>'
-        for i in items
-    ) + "</div>"
+# ---------------------------------------------------------------- rows (impacts, economy)
+def rows_html(items: list[dict]) -> str:
+    """items: {topic, text, number}"""
+    return '<div class="rows">' + "".join(
+        f'<div class="row"><div class="t">{E(i["topic"])}</div><div class="s">{E(i["text"])}</div><div class="n fig">{E(i.get("number") or "")}</div></div>'
+        for i in items) + "</div>"
 
 
-def prob_bars(p: dict) -> str:
+def odds_html(p: dict) -> str:
+    top = max(p, key=p.get)
     rows = []
-    for k in ("hold", "cut", "hike"):
+    for k, lab in (("hold", "Hold"), ("cut", "Cut"), ("hike", "Raise")):
         v = p[k]
-        rows.append(
-            f'<div style="display:grid;grid-template-columns:56px 1fr 56px;gap:12px;align-items:center;margin:6px 0">'
-            f'<span>{k.capitalize()}</span><div class="bar"><span style="width:{v * 100:.0f}%"></span></div>'
-            f'<span class="mono" style="text-align:right">{v * 100:.0f}%</span></div>'
-        )
-    return "".join(rows)
+        rows.append(f'<div class="o{" top" if k == top else ""}"><span>{lab}</span><div class="bar"><i style="width:{v * 100:.0f}%"></i></div>'
+                    f'<span class="fig" style="text-align:right">{v * 100:.0f}%</span></div>')
+    return '<div class="odds">' + "".join(rows) + "</div>"
 
 
 def footer_html(text: str) -> str:
     return f'<div class="footer">{E(text)}</div>'
 
 
-def timeline_fig(gt: pd.DataFrame, tones: dict[str, float], height: int = 460):
+# ---------------------------------------------------------------- timeline
+def timeline_fig(gt: pd.DataFrame, tones: dict[str, float], height: int = 440, selected: str | None = None):
     import plotly.graph_objects as go
 
     from fed_decoder.data import store
 
-    hi = store.series("DFEDTARU")
-    single = store.series("DFEDTAR")
-    lo = store.series("DFEDTARL")
+    hi, single, lo = store.series("DFEDTARU"), store.series("DFEDTAR"), store.series("DFEDTARL")
     upper = pd.concat([single[single.index < "2008-12-16"], hi]).loc["2000-01-01":]
     lower = pd.concat([single[single.index < "2008-12-16"], lo]).loc["2000-01-01":]
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=lower.index, y=lower.values, mode="lines", line=dict(width=0, shape="hv"), hoverinfo="skip", showlegend=False))
-    fig.add_trace(go.Scatter(x=upper.index, y=upper.values, mode="lines", line=dict(color=theme.INK, width=2, shape="hv"),
-                             fill="tonexty", fillcolor="rgba(28,27,25,0.08)", hoverinfo="skip", name="Target range"))
+    fig.add_trace(go.Scatter(x=upper.index, y=upper.values, mode="lines", line=dict(color=theme.INK, width=1.75, shape="hv"),
+                             fill="tonexty", fillcolor="rgba(37,41,35,0.07)", hoverinfo="skip", showlegend=False))
     d = gt.copy()
-    d["tone"] = d["meeting_date"].dt.strftime("%Y-%m-%d").map(tones)
-    d["label"] = d.apply(lambda r: f"{r['meeting_date']:%b %d, %Y}<br>{r['direction'].capitalize()} {r['change_bps']:+d} bp → {fmt_range(r['target_low'], r['target_high'])}<br>Tone {r['tone']:+.1f}", axis=1)
-    fig.add_trace(
-        go.Scatter(
-            x=d["meeting_date"], y=d["target_high"], mode="markers", name="Meeting (color = tone)",
-            customdata=d["meeting_date"].dt.strftime("%Y-%m-%d"), text=d["label"], hovertemplate="%{text}<extra></extra>",
-            marker=dict(size=10, color=d["tone"], cmin=-2, cmax=2,
-                        colorscale=[[0, theme.DOVE], [0.5, theme.NEUTRAL], [1, theme.ACCENT]],
-                        line=dict(color=theme.PAPER, width=2),
-                        colorbar=dict(title=dict(text="Tone", font=dict(size=13)), tickvals=[-2, 0, 2], ticktext=["Dove −2", "0", "Hawk +2"], thickness=10, len=0.6, outlinewidth=0, tickfont=dict(size=13))),
-        )
-    )
+    d["key"] = d["meeting_date"].dt.strftime("%Y-%m-%d")
+    d["tone"] = d["key"].map(tones).fillna(0.0)
+
+    def label(r):
+        word, _ = tone_words(r["tone"])
+        move = "Held" if r["direction"] == "hold" else f"{'Cut' if r['direction'] == 'cut' else 'Raised'} {abs(r['change_bps'])} bp"
+        return f"<b>{r['meeting_date']:%B %-d, %Y}</b><br>{move} · {fmt_range(r['target_low'], r['target_high'])}<br>Tone: {word.lower()}"
+
+    d["label"] = d.apply(label, axis=1)
+    d["size"] = d["direction"].map({"hold": 7, "cut": 11, "hike": 11})
+    fig.add_trace(go.Scatter(
+        x=d["meeting_date"], y=d["target_high"], mode="markers", customdata=d["key"], text=d["label"], hovertemplate="%{text}<extra></extra>",
+        marker=dict(size=d["size"], color=d["tone"], cmin=-2, cmax=2, colorscale=[[0, theme.GREEN], [0.5, theme.NEUTRAL], [1, theme.TERRA]],
+                    line=dict(color=theme.IVORY, width=1.5), showscale=False),
+        selected=dict(marker=dict(opacity=1)), unselected=dict(marker=dict(opacity=1)),
+        showlegend=False))
+    if selected:
+        s = d[d["key"] == selected]
+        if len(s):
+            fig.add_trace(go.Scatter(x=s["meeting_date"], y=s["target_high"], mode="markers", hoverinfo="skip", showlegend=False,
+                                     marker=dict(size=20, color="rgba(0,0,0,0)", line=dict(color=theme.INK, width=2))))
     fig.update_layout(
-        height=height, margin=dict(l=8, r=8, t=8, b=8), paper_bgcolor=theme.PAPER, plot_bgcolor=theme.PAPER,
-        font=dict(family="Inter, sans-serif", size=14, color=theme.INK), hovermode="closest", showlegend=False,
-        hoverlabel=dict(bgcolor=theme.INK, font=dict(color=theme.PAPER, family="Inter, sans-serif", size=14)),
-        xaxis=dict(showgrid=False, linecolor=theme.RULE, tickfont=dict(size=13)),
-        yaxis=dict(title=dict(text="Fed funds target, %", font=dict(size=13)), gridcolor="#ECE8DE", zeroline=False, tickfont=dict(family="IBM Plex Mono", size=13)),
+        height=height, margin=dict(l=4, r=4, t=8, b=4), paper_bgcolor=theme.IVORY, plot_bgcolor=theme.IVORY,
+        font=dict(family="Inter, sans-serif", size=14, color=theme.INK), hovermode="closest", dragmode=False,
+        hoverlabel=dict(bgcolor=theme.SURFACE, bordercolor=theme.LINE, font=dict(color=theme.INK, family="Inter, sans-serif", size=14)),
+        xaxis=dict(showgrid=False, linecolor=theme.LINE, tickfont=dict(size=13, color=theme.MUTED), fixedrange=True),
+        yaxis=dict(ticksuffix="%", gridcolor="#ECE9E1", zeroline=False, tickfont=dict(size=13, color=theme.MUTED), fixedrange=True, rangemode="tozero"),
         clickmode="event+select",
     )
     return fig

@@ -31,6 +31,13 @@ def _usd(x: float) -> str:
     return f"${abs(x):,.2f}"
 
 
+def _signed_usd(x: float, unit: str) -> str:
+    """Display label for a signed dollar change, e.g. "−$2.08/mo" (same number, typographic minus)."""
+    if abs(x) < 0.005:
+        return "No change"
+    return f"{'−' if x < 0 else '+'}${abs(x):,.2f}/{unit}"
+
+
 def _move(bps: int) -> str:
     return f"{abs(bps)} bp {'cut' if bps < 0 else 'increase'}"
 
@@ -70,7 +77,7 @@ def impacts_for(meeting_date: pd.Timestamp, change_bps: int, ten_year_move_bps: 
                    f"{'lowers' if change_bps < 0 else 'raises'} monthly interest by about {_usd(ci.monthly_change)}.")
         else:
             txt = f"Card rates should not move on this decision; a $5,000 balance at about {_fmt(cc_rate)}% APR costs about {_usd(ci.monthly_before)} a month in interest."
-        for_you.append({"topic": "Borrowers", "text": txt, "number": f"${_fmt(ci.monthly_change)}/mo"})
+        for_you.append({"topic": "Borrowers", "text": txt, "number": _signed_usd(ci.monthly_change, "mo")})
 
     # Mortgages track the 10-year Treasury, not fed funds.
     mort = store.value_asof("MORTGAGE30US", d)
@@ -85,7 +92,7 @@ def impacts_for(meeting_date: pd.Timestamp, change_bps: int, ten_year_move_bps: 
         txt = (f"Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was {_fmt(ten[1])}% and {move_txt}; "
                f"if that move passed through, the payment on a new $300,000 30-year loan at {_fmt(mort[1])}% would "
                + (f"{'fall' if mi.monthly_change < 0 else 'rise'} by about {_usd(mi.monthly_change)} a month." if mi.monthly_change else "not change."))
-        for_you.append({"topic": "Mortgages", "text": txt, "number": f"${_fmt(mi.monthly_change)}/mo"})
+        for_you.append({"topic": "Mortgages", "text": txt, "number": _signed_usd(mi.monthly_change, "mo")})
 
     # Savers
     si = impact.savings_impact(CARD_BALANCE["savings"], change_bps)
@@ -95,7 +102,7 @@ def impacts_for(meeting_date: pd.Timestamp, change_bps: int, ten_year_move_bps: 
                f"{'less' if si['annual_change'] < 0 else 'more'} in interest.")
     else:
         txt = "Savings yields should stay roughly where they are, since the Fed held rates."
-    for_you.append({"topic": "Savers", "text": txt, "number": f"${_fmt(si['annual_change'])}/yr"})
+    for_you.append({"topic": "Savers", "text": txt, "number": _signed_usd(si['annual_change'], "yr")})
 
     # Workers
     ur = store.value_asof("UNRATE", d)
