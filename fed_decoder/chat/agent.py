@@ -37,7 +37,7 @@ ON_TOPIC = re.compile(
     r"\b(fed|fomc|federal reserve|rate|rates|inflation|cpi|pce|unemployment|jobs?|payrolls?|labor|mortgage|loan|credit card|savings?|"
     r"treasury|yield|powell|yellen|bernanke|greenspan|warsh|dissent\w*|vot\w*|statement|hawk\w*|dov\w*|hik\w*|cut\w*|hold|monetary|econom\w*|recession|"
     r"dollar|qe|quantitative|balance sheet|taylor|dot plot|sep|basis points?|bps|bp|borrow\w*|apr|heloc|forecast|next meeting|gdp|growth|prices?|"
-    r"car loan|auto loan|interest|decision|decid\\w*|meeting|tighten\w*|eas\w*|tariff\w*|wages?|employment)\b",
+    r"car loan|auto loan|interest|decision|decid\w*|meeting|tighten\w*|eas\w*|tariff\w*|wages?|employment)\b",
     re.I,
 )
 INJECTION = re.compile(r"(ignore (all |the )?(previous|prior|above) instructions|you are now|system prompt|disregard (your|the) rules|reveal your)", re.I)

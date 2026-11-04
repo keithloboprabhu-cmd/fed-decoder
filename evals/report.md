@@ -1,6 +1,6 @@
 # Fed Decoder eval report
 
-Generated 2026-11-04 00:30 UTC. Keys available: Gemini=no, Groq=no. Cards in `cards/`: {'rules': 227}.
+Generated 2026-11-04 00:31 UTC. Keys available: Gemini=no, Groq=no. Cards in `cards/`: {'rules': 227}.
 
 > **No LLM keys were available for this run.** Every section that needs Gemini or Groq is marked *not run*. Add free-tier keys to `.env`, run `python scripts/build_cards.py` and then `python evals/run.py` to fill them in.
 

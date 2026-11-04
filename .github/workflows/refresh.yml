@@ -1,0 +1,41 @@
+name: Refresh data after FOMC meetings
+
+# FOMC statements are released on Wednesdays at 2pm ET. Run Wednesday night
+# and Thursday morning (UTC), plus on demand. Free on public repos.
+on:
+  schedule:
+    - cron: "17 21 * * 3"
+    - cron: "17 13 * * 4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Fetch new statements and FRED data
+        run: |
+          python scripts/fetch_statements.py
+          python scripts/fetch_fred.py
+          python scripts/build_data.py
+      - name: Build cards for new meetings (free-tier LLM; rules fallback)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+        run: python scripts/build_cards.py --limit 10
+      - name: Commit if anything changed
+        run: |
+          git config user.name "fed-decoder-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data cards
+          if git diff --cached --quiet; then echo "no changes"; else git commit -m "Refresh data and cards"; git push; fi

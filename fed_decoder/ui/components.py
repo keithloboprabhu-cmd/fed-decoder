@@ -37,7 +37,7 @@ def facts_html(decision, meeting_date: str) -> str:
         ("Dissents", dis),
     ]
     return '<div class="facts">' + "".join(
-        f'<div><div class="kicker">{E(k)}</div><div class="v{" mono" if k in ("Change", "Target", "Vote") else ""}" style="{"font-size:19px;padding-top:4px" if k in ("Dissents", "Decision") else ""}">{E(v)}</div></div>'
+        f'<div><div class="kicker">{E(k)}</div><div class="v{" mono" if k in ("Change", "Target", "Vote") and v != "not reported" else ""}" style="{"font-size:19px;padding-top:4px" if (k in ("Dissents", "Decision") or v == "not reported") else ""}">{E(v)}</div></div>'
         for k, v in cells
     ) + "</div>"
 

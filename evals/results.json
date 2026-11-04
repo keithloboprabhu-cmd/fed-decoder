@@ -117,7 +117,7 @@
    "accuracy": 1.0,
    "n_adversarial": 10,
    "adversarial_pass": 1.0,
-   "mean_latency_s": 0.08207720518112183,
+   "mean_latency_s": 0.08311867713928223,
    "share_rules_fallback": 1.0
   }
  },
@@ -133,7 +133,7 @@
     "dissenters": 1.0
    },
    "grounding_pass": 1.0,
-   "mean_latency_s": 0.000985419750213623,
+   "mean_latency_s": 0.0010103106498718262,
    "share_fell_back": 0.0,
    "n": 20
   }

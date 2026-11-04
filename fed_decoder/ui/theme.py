@@ -59,6 +59,7 @@ hr, .rule {{ border: 0; border-top: 1px solid var(--rule); margin: 28px 0 20px; 
 [data-testid="stChatMessage"] {{ background: transparent; border-bottom: 1px solid var(--rule); border-radius: 0; }}
 .stButton button, .stDownloadButton button {{ border-radius: 4px; border: 1px solid var(--rule); background: #FFFEFB; color: var(--ink); font-size: 15px; }}
 .stButton button:hover {{ border-color: var(--ink); color: var(--ink); }}
+[data-testid^="stChatMessageAvatar"] {{ display: none; }}
 #MainMenu, footer {{ visibility: hidden; }}
 @media (max-width: 640px) {{ h1 {{ font-size: 30px !important; }} .block-container {{ padding-left: 16px; padding-right: 16px; }} }}
 </style>
