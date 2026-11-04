@@ -8,9 +8,20 @@ Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or
 
 ## How it feels to use
 
-Fed Decoder opens with one question: which decision do you want to understand? Type a month, a date or "latest", or paste a statement, and it walks you through that meeting one step at a time: the decision in plain English, what changed in the statement, how the Fed sounded, what it means for you (with an optional, private calculator), what it means for the economy, and what might happen next. Unfamiliar terms can be tapped for a short definition, and every step can be expanded at once for people who want everything.
+Fed Decoder opens with one question: which decision do you want to understand? Type a month, a date or "latest", or paste a statement.
 
-The design is deliberately quiet: warm ivory, charcoal text, forest green for dovish and terracotta for hawkish (always paired with a word, never color alone). Newsreader carries the headlines and the Fed's own words; Inter carries everything else; IBM Plex Mono appears only in the money columns. There are almost no boxes: structure comes from type, whitespace, an occasional rule, and a green bar that marks a computed answer. The only bordered shapes are things you can press.
+The meeting page is written for you, not for an economist:
+
+1. **The decision**, in one plain headline, with the target range and vote.
+2. **What it means for you.** One tap on your housing situation gives your own bottom line ("Your costs fall by about $94 a month") using typical amounts; "Edit your situation" lets you add card balances, savings, loans, income and state. Below it: what the *next* move would do to your costs (using the forecast odds), or for past meetings what actually happened next and what it did to you.
+3. **An optional AI note** that explains the decision for someone in your situation. It is opt-in, sees only broad labels such as "rents" or "carries a card balance" plus the computed direction of each effect (never amounts, income or location), and may not introduce numbers.
+4. **The short version**: what happened, the Fed's own words, what it signals.
+5. **Ask about this meeting**, with questions suggested from that meeting (for example why the dissenters dissented). Answers come from tools over the statements and data, with numbers checked; when the free AI allowance is used up, automated answers come straight from the statement.
+6. **Go deeper**, in tabs: the redline with margin notes, the tone, the economy, the forecast, and sources.
+
+Your situation follows you to every meeting and to the Timeline, where each meeting shows what it did to your monthly costs.
+
+The design is deliberately quiet: warm ivory, charcoal text, forest green for dovish and terracotta for hawkish (always paired with a word). Newsreader carries the headlines and the Fed's own words; Inter carries everything else; IBM Plex Mono appears only in the money columns. A green bar marks every computed answer.
 
 ## What it does
 
@@ -19,7 +30,7 @@ The design is deliberately quiet: warm ivory, charcoal text, forest green for do
   - *What changed:* a word-level redline against the previous statement. Deletions are struck, additions highlighted, and hovering a change shows what it means.
   - *Tone:* a dial from dove (−2) to hawk (+2), with the sentences that drive it.
   - *For you:* one sentence and one computed number each for borrowers, mortgages, savers and workers. The mortgage card says that mortgages track the 10-year Treasury, not fed funds.
-  - *Make it about you (optional):* enter your housing situation, balances, savings, income range and state to see what the decision changes for you each month, as a share of income, plus your local unemployment rate. Computed in code only: the answers stay in your browser tab and are never stored, logged or sent to an AI provider. No login. Gender isn't asked because no effect computed here depends on it.
+  - *For you:* your housing situation, balances, savings, income range and state give your own monthly impact, the share of income, your local unemployment rate, and what the next move would mean. Computed in code; the answers stay in your browser tab and are never stored or logged. Amounts, income and state are never sent to an AI; the opt-in AI note sees only broad labels. No login. Gender isn't asked because no effect computed here depends on it.
   - *For the country:* inflation, jobs, growth, markets and the dollar, from FRED.
   - *What's next:* model probabilities for hold, cut or hike, shown next to the backtest against a "no change" baseline.
 - **Ask.** Chat with tools over the corpus and the data: `get_meeting`, `search_statements` (TF-IDF), `diff_statements`, `get_series`, `payment_impact` and `forecast_next`. Every number in an answer is checked against the tool results.

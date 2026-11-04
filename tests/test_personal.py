@@ -45,9 +45,39 @@ def test_share_of_income_and_state():
 def test_personal_data_never_reaches_llm_code():
     """No module that talks to an LLM imports the personal profile."""
     root = Path(__file__).resolve().parent.parent / "fed_decoder"
-    llm_side = list((root / "llm").glob("*.py")) + list((root / "chat").glob("*.py")) + [root / "cards" / "builder.py", root / "cards" / "context.py"]
+    llm_side = list((root / "llm").glob("*.py")) + list((root / "chat").glob("*.py")) + [
+        root / "cards" / "builder.py", root / "cards" / "context.py", root / "cards" / "personal_note.py"]
     for f in llm_side:
         tree = ast.parse(f.read_text())
         names = [a.name for n in ast.walk(tree) if isinstance(n, (ast.Import, ast.ImportFrom)) for a in n.names] + \
                 [n.module or "" for n in ast.walk(tree) if isinstance(n, ast.ImportFrom)]
         assert not any("personal" in x for x in names), f"{f.name} imports personal data"
+
+
+def test_ai_labels_carry_no_amounts_income_or_location():
+    from fed_decoder.analysis.personal import ai_labels
+
+    p = Profile(housing="arm", mortgage_balance=412_345, card_balance=7_777, savings=55_000, income="$100k–$150k", state="NY",
+                car_loan="shopping", car_amount=31_000)
+    labels = ai_labels(p)
+    blob = " ".join(labels)
+    assert not any(ch.isdigit() for ch in blob)
+    assert "New York" not in blob and "NY" not in blob and "$" not in blob
+    assert "has an adjustable-rate mortgage" in labels
+
+
+def test_personal_note_prompt_contains_only_labels(monkeypatch, tmp_path):
+    from fed_decoder.cards import personal_note as pn
+    from fed_decoder.cards.context import build_context
+
+    seen = {}
+
+    def fake_generate(messages, **kw):
+        seen["prompt"] = messages[-1]["content"]
+        return None
+
+    monkeypatch.setattr(pn, "generate", fake_generate)
+    monkeypatch.setattr(pn, "CACHE", tmp_path / "notes.json")
+    pn.personal_note(build_context("2024-09-18"), ["rents their home", "carries a credit card balance", "owes $9,999"])
+    reader = seen["prompt"].split("THE READER:")[1]
+    assert "rents their home" in reader and "9,999" not in reader  # anything with digits or symbols is dropped

@@ -72,7 +72,11 @@ def daily_count() -> int:
     return int(_read_json(COUNTER_PATH, {}).get(date.today().isoformat(), 0))
 
 
-def _bump_daily(n: int = 1) -> None:
+def _bump_daily(n: int = 1, providers: list[str] | None = None) -> None:
+    """Count app traffic against the shared daily budget. Calls that pin a
+    provider (evals, scripts) are not app traffic and don't count."""
+    if providers is not None:
+        return
     config.CACHE_DIR.mkdir(exist_ok=True)
     d = _read_json(COUNTER_PATH, {})
     k = date.today().isoformat()
@@ -123,9 +127,44 @@ def wrap_pasted(q: str) -> str:
 
 
 # ---- rules-based answers --------------------------------------------------
-def rules_answer(q: str) -> ChatAnswer:
+def _meeting_rules_answer(q: str, meeting: str) -> ChatAnswer | None:
+    """Automated answers for common questions about one meeting, from its statement and card."""
+    ql = q.lower()
+    m = T.get_meeting(meeting)
+    if "error" in m:
+        return None
+    calls = [{"name": "get_meeting", "args": {"date": meeting}}]
+    text = m["statement"]
+    label = "Automated answer (rules-based)"
+    if "dissent" in ql or "vote" in ql:
+        sents = [s_ for s_ in re.split(r"(?<=\.)\s+(?=[A-Z])", text) if s_.startswith("Voting against") or " who preferred" in s_ or " who believed" in s_]
+        if sents:
+            return ChatAnswer("From the statement: \u201c" + " ".join(sents)[:700] + "\u201d", "rules", label, calls)
+        return ChatAnswer("Nobody dissented at this meeting; the decision was unanimous." if m.get("votes_against") == 0 else
+                          "This statement doesn't report individual votes.", "rules", label, calls)
+    if re.search(r"\b(change|changed|wording|word|different)\b", ql):
+        from fed_decoder.cards.store import load_card
+
+        card = load_card(meeting)
+        if card and card.changes:
+            return ChatAnswer("The main changes in the wording: " + " ".join(c.explanation for c in card.changes[:3]), "rules", label, calls)
+    if re.search(r"\bwhy\b", ql) and m.get("tone_quotes"):
+        verb = {"hike": "raised rates", "cut": "cut rates", "hold": "held rates steady"}[m["decision"]]
+        return ChatAnswer(f"The Fed {verb}. In the statement's words: \u201c{m['tone_quotes'][0]}\u201d "
+                          + (m.get("whats_next") or ""), "rules", label, calls)
+    return None
+
+
+def rules_answer(q: str, meeting: str | None = None) -> ChatAnswer:
     ql = q.lower()
     calls = []
+    if meeting:
+        try:
+            a = _meeting_rules_answer(q, meeting)
+            if a:
+                return a
+        except Exception as e:
+            log_event(provider="rules", event="failed", error=type(e).__name__)
     try:
         if re.search(r"next meeting|forecast|will the fed|going to (cut|hike|raise)|odds|probab", ql):
             f = T.forecast_next()
@@ -204,27 +243,37 @@ def rules_answer(q: str) -> ChatAnswer:
 
 
 # ---- main entry -----------------------------------------------------------
-def answer(question: str, history: list[dict] | None = None, providers: list[str] | None = None, use_cache: bool = True) -> ChatAnswer:
+def answer(question: str, history: list[dict] | None = None, providers: list[str] | None = None, use_cache: bool = True,
+           meeting: str | None = None, reader: list[str] | None = None) -> ChatAnswer:
+    """`meeting` scopes the question to one FOMC meeting (YYYY-MM-DD). `reader` holds the
+    broad, amount-free profile labels a person opted in to share; never amounts."""
     q = (question or "").strip()[:4000]
     refusal = scope_check(q[:600]) if len(q) <= 600 else (REFUSE_ADVICE if ADVICE.search(q[:600]) else None)
     if refusal:
         return ChatAnswer(refusal, "guard", "Scope check")
     history = (history or [])[-2 * config.CHAT_HISTORY_TURNS :]
+    cache_q = q + (f" @{meeting}" if meeting else "") + (" |" + "|".join(sorted(reader)) if reader else "")
     if use_cache and not history:
-        hit = cache_get(q)
+        hit = cache_get(cache_q)
         if hit:
             hit["cached"] = True
             return ChatAnswer(**hit)
     if near_cap() and providers is None:
-        return rules_answer(q)
+        return rules_answer(q, meeting=meeting)
 
-    messages = [{"role": "system", "content": SYSTEM}] + history + [{"role": "user", "content": wrap_pasted(q)}]
+    system = SYSTEM
+    if meeting:
+        system += f"\nThe person is asking about the FOMC meeting on {meeting}. Call get_meeting with that date first."
+    if reader:
+        system += ("\nAbout the reader (broad categories they chose to share, no amounts): " + "; ".join(reader)
+                   + ". Tailor the explanation to their situation where relevant.")
+    messages = [{"role": "system", "content": system}] + history + [{"role": "user", "content": wrap_pasted(q)}]
     tool_log: list[dict] = []
-    evidence = [q, SYSTEM]
+    evidence = [q, system]
     resp = None
     try:
         for _ in range(MAX_TOOL_ROUNDS):
-            _bump_daily()
+            _bump_daily(providers=providers)
             resp = generate(messages, tools=T.TOOL_SPECS, providers=providers, purpose="chat")
             if resp is None:
                 break
@@ -244,13 +293,13 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
             providers = [resp.provider]
         if resp is not None and resp.tool_calls:
             # ran out of rounds: ask for a final answer without tools
-            _bump_daily()
+            _bump_daily(providers=providers)
             resp = generate(messages + [{"role": "user", "content": "Answer now using the tool results above."}], providers=providers, purpose="chat")
     except Exception as e:
         log_event(provider="chat", event="failed", error=type(e).__name__)
         resp = None
     if resp is None or not (resp.text or "").strip():
-        return rules_answer(q)
+        return rules_answer(q, meeting=meeting)
 
     context = "\n".join(evidence)
 
@@ -273,15 +322,15 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
         final = resp
     except GuardrailError as g:
         log_event(provider=resp.provider, event="guardrail_fail", detail=str(g)[:300], purpose="chat")
-        _bump_daily()
+        _bump_daily(providers=providers)
         retry_msgs = messages + [
             {"role": "assistant", "content": resp.text},
             {"role": "user", "content": f"That answer failed a grounding check ({g}). Rewrite it using only numbers and quotes from the tool results."},
         ]
         final = generate(retry_msgs, providers=[resp.provider], validate=_validate_nonempty, purpose="chat_retry", guardrail_retries=0)
         if final is None or not (final.text or "").strip():
-            return rules_answer(q)
+            return rules_answer(q, meeting=meeting)
     ans = ChatAnswer(final.text.strip(), final.provider, f"Answered by {final.label}", tool_log)
     if not history:
-        cache_put(q, ans)
+        cache_put(cache_q, ans)
     return ans

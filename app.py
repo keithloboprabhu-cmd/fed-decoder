@@ -29,14 +29,6 @@ st.set_page_config(page_title="Fed Decoder", page_icon=None, layout="centered", 
 st.markdown(CSS, unsafe_allow_html=True)
 
 PAGES = ["Decode", "Timeline", "Ask", "About"]
-STEPS = ["decision", "changed", "tone", "you", "economy", "next"]
-NEXT_LABEL = {
-    "changed": "Continue: what changed in the statement",
-    "tone": "Continue: how the Fed sounded",
-    "you": "Continue: what it means for you",
-    "economy": "Continue: what it means for the economy",
-    "next": "Continue: what might happen next",
-}
 ss = st.session_state
 ss.setdefault("nav", "Decode")
 ss.setdefault("nav_v", 0)
@@ -150,6 +142,9 @@ def page_home() -> None:
         elif target:
             open_meeting(target)
             st.rerun()
+    if ss.get("profile"):
+        st.markdown(f'<p class="note" style="margin-top:6px">Explaining for you: {ui.E(personal.describe(ss.profile)).lower().replace("you ", "", 1)}.</p>',
+                    unsafe_allow_html=True)
     st.markdown('<div style="height:20px"></div>', unsafe_allow_html=True)
     c1, c2, _ = st.columns([1, 1.25, 1.2])
     if c1.button(f"The latest meeting, {pd.Timestamp(dates()[-1]):%b %-d}", type="tertiary"):
@@ -183,27 +178,290 @@ def for_you_items(card, ctx) -> list[dict]:
     return items
 
 
-def section_decision(card, ctx) -> None:
+def meeting_header(card, ctx) -> None:
     d = card.decision
     when = "Your pasted statement" if ctx["meeting_date"] == "pasted" else long_date(ctx["meeting_date"])
     st.markdown(f'<div class="step first"><div class="dateline">{when}</div>'
                 f'<h1>{ui.E(ui.headline(d.direction, d.change_bps))}</h1>{ui.facts_html(d)}</div>', unsafe_allow_html=True)
+
+
+def plain_what(d) -> str:
     if d.direction == "hold":
         p1 = f"The FOMC left the federal funds rate where it was, with the target range at {ui.fmt_range(d.target_low, d.target_high)}."
     else:
         p1 = (f"The FOMC {'lowered' if d.direction == 'cut' else 'raised'} the federal funds rate by {abs(d.change_bps)} basis points, "
               f"which moves the target range to {ui.fmt_range(d.target_low, d.target_high)}.")
-    p1 += " " + ui.vote_sentence(d) if ui.vote_sentence(d) else ""
-    body = f"<p>{ui.define(ui.E(p1), ['FOMC', 'federal funds rate', 'basis points', 'target range', 'dissented'])}</p>"
+    vs = ui.vote_sentence(d)
+    return p1 + (" " + vs if vs else "")
+
+
+# ---------------------------------------------------------------- you
+HOUSING_SHORT = {"rent": "I rent", "fixed": "I own, fixed-rate mortgage", "arm": "I own, adjustable-rate mortgage",
+                 "outright": "I own outright", "buying": "I'm buying a home soon"}
+
+
+def when_of(ctx):
+    return pd.Timestamp.today() if ctx["meeting_date"] == "pasted" else ctx["meeting_date"]
+
+
+def ten_move(ctx):
+    return ((ctx["impacts"].get("numbers") or {}).get("mortgage_30y") or {}).get("rate_change_bps")
+
+
+@st.dialog("Your situation", width="large")
+def profile_dialog() -> None:
+    """All personal inputs. Kept only in this browser session; amounts never go to an AI."""
+    p = ss.get("profile") or personal.Profile()
+    st.markdown('<p class="note">Stays in this browser tab. Nothing is saved, and amounts are never sent to an AI. '
+                'Leave anything blank to use a typical amount.</p>', unsafe_allow_html=True)
+    st.markdown('<div class="qa">Where do you live?</div>', unsafe_allow_html=True)
+    with st.container(key="tiles_dlg_housing"):
+        housing = st.radio("Housing", list(HOUSING_SHORT), index=list(HOUSING_SHORT).index(p.housing),
+                           format_func=HOUSING_SHORT.get, label_visibility="collapsed", key="dlg_housing")
+    mort = None
+    if housing in ("arm", "buying"):
+        mort = st.number_input("Mortgage balance" if housing == "arm" else "How much you plan to borrow", min_value=0, step=10_000,
+                               value=int(p.mortgage_balance) or None, placeholder=f"Typical: {personal.TYPICAL['mortgage']:,}", key="dlg_mort")
+    st.markdown('<div class="qa">What else do you have?</div>', unsafe_allow_html=True)
+    with st.container(key="checks_dlg"):
+        c1, c2 = st.columns(2)
+        has_card = c1.checkbox("A credit card balance I carry", value=bool(p.card_balance), key="dlg_has_card")
+        has_heloc = c2.checkbox("A home equity line", value=bool(p.heloc_balance), key="dlg_has_heloc")
+        has_stud = c1.checkbox("A variable-rate private student loan", value=bool(p.private_student_variable), key="dlg_has_stud")
+        shop_car = c2.checkbox("I'm shopping for a car loan", value=p.car_loan == "shopping", key="dlg_car_shop")
+        fixed_car = c1.checkbox("A fixed-rate car loan", value=p.car_loan == "have_fixed", key="dlg_car_fixed")
+        has_sav = c2.checkbox("Savings", value=bool(p.savings), key="dlg_has_sav")
+    amounts = {}
+    cols = st.columns(2)
+    k = 0
+    for flag, key, label, cur, typ in ((has_card, "card", "Card balance", p.card_balance, "card"),
+                                       (has_heloc, "heloc", "Home equity balance", p.heloc_balance, "heloc"),
+                                       (has_stud, "stud", "Student loan balance", p.private_student_variable, "student"),
+                                       (shop_car, "car", "Car loan amount", p.car_amount, "car"),
+                                       (has_sav, "sav", "Savings", p.savings, "savings")):
+        if flag:
+            amounts[key] = cols[k % 2].number_input(label, min_value=0, step=500, value=int(cur) or None,
+                                                    placeholder=f"Typical: {personal.TYPICAL[typ]:,}", key=f"dlg_{key}")
+            k += 1
+    sav_kind = p.savings_kind
+    if has_sav:
+        sav_kind = st.radio("Where are your savings?", list(personal.SAVINGS_KIND), index=list(personal.SAVINGS_KIND).index(p.savings_kind),
+                            format_func=personal.SAVINGS_KIND.get, horizontal=True, key="dlg_sav_kind")
+    with st.expander("Put it in context (optional)"):
+        c1, c2 = st.columns(2)
+        income = c1.selectbox("Household income", list(personal.INCOME), index=list(personal.INCOME).index(p.income), key="dlg_income")
+        states = [None] + list(config.STATES)
+        state = c2.selectbox("State, for local jobs data", states, index=states.index(p.state), key="dlg_state",
+                             format_func=lambda x: "Prefer not to say" if x is None else config.STATES[x])
+    ai = st.toggle("Let AI tailor explanations to my situation", value=ss.get("ai_tailor", False), key="dlg_ai",
+                   help="Shares only broad categories such as “rents” or “carries a card balance” with the AI provider. Never amounts, income or location.")
+    c1, c2 = st.columns([1, 1])
+    if c1.button("Save", type="primary", use_container_width=True):
+        typical = []
+
+        def amt(key, typ):
+            v = amounts.get(key)
+            if v is None:
+                typical.append(typ)
+                return float(personal.TYPICAL[typ])
+            return float(v)
+        mort_v = 0.0
+        if housing in ("arm", "buying"):
+            mort_v = float(mort) if mort else float(personal.TYPICAL["mortgage"])
+            if not mort:
+                typical.append("mortgage")
+        ss.profile = personal.Profile(
+            housing=housing, mortgage_balance=mort_v,
+            card_balance=amt("card", "card") if has_card else 0.0, heloc_balance=amt("heloc", "heloc") if has_heloc else 0.0,
+            private_student_variable=amt("stud", "student") if has_stud else 0.0,
+            car_loan="shopping" if shop_car else "have_fixed" if fixed_car else "none", car_amount=amt("car", "car") if shop_car else 0.0,
+            savings=amt("sav", "savings") if has_sav else 0.0, savings_kind=sav_kind, income=income, state=state)
+        ss.profile_typical = typical
+        ss.ai_tailor = ai
+        st.rerun()
+    if ss.get("profile") and c2.button("Forget my answers", type="tertiary"):
+        for k_ in ("profile", "profile_typical", "ai_tailor"):
+            ss.pop(k_, None)
+        st.rerun()
+
+
+def money(x: float) -> str:
+    return f"${abs(x):,.2f}"
+
+
+def personal_block(card, ctx, is_latest: bool) -> None:
+    d = card.decision
+    prof = ss.get("profile")
+    if prof is None:
+        st.markdown('<div class="you-q"><h2>What does this mean for you?</h2>'
+                    '<p class="muted" style="margin:0 0 14px">Tap the one that fits. You’ll get your own numbers right away; '
+                    'nothing leaves this browser tab.</p></div>', unsafe_allow_html=True)
+        with st.container(key="tiles_quick"):
+            pick = st.radio("Housing", list(HOUSING_SHORT), index=None, format_func=HOUSING_SHORT.get,
+                            label_visibility="collapsed", key=f"quick_{ss.get('nav_v', 0)}")
+        if pick:
+            ss.profile = personal.quick_profile(pick)
+            ss.profile_typical = ["mortgage"] if pick in ("arm", "buying") else []
+            st.rerun()
+        with st.expander("Or see a typical household first"):
+            st.markdown('<p class="note">Example balances: a $5,000 credit card balance, a $300,000 mortgage and $10,000 in savings.</p>'
+                        + ui.rows_html(for_you_items(card, ctx)), unsafe_allow_html=True)
+        return
+
+    r = personal.personal_impact(prof, d.change_bps, ten_move(ctx), when_of(ctx))
+    affected = [i for i in r.items if abs(i.get("monthly", 0)) >= 0.005]
+    if d.change_bps == 0 or not affected:
+        big = "Your monthly costs don’t change"
+        sub = "Nothing you pay or earn that follows the Fed moved with this decision."
+        if prof.housing == "buying" and affected:
+            big = "Your costs follow the 10-year Treasury, not this decision"
+    else:
+        verb = "fall" if r.monthly_total < 0 else "rise"
+        big = f"Your costs {verb} by about {money(r.monthly_total)} a month"
+        names = ", ".join(i["topic"].lower() for i in affected)
+        sub = f"Mostly through your {names}."
+        if r.share_of_income is not None:
+            sub += f" That’s about {abs(r.share_of_income):.2f}% of your monthly income."
+    with st.container(key="you"):
+        c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
+        c1.markdown(f'<div class="who">{ui.E(personal.describe(prof))}</div>', unsafe_allow_html=True)
+        if c2.button("Edit your situation", type="tertiary", key="edit_prof"):
+            profile_dialog()
+        st.markdown(f'<div class="you-big reveal">{ui.E(big)}</div><p class="you-sub">{ui.E(sub)}</p>', unsafe_allow_html=True)
+
+        # AI note: only broad labels, only with opt-in
+        if ss.get("ai_tailor"):
+            from fed_decoder.cards.personal_note import personal_note
+
+            with st.spinner("Tailoring this to you"):
+                note = None if agent.near_cap() else personal_note(ctx, personal.ai_labels(prof), personal.ai_effects(r))
+            if note:
+                who = {"gemini": "Gemini", "groq": "Groq"}.get(note["provider"], note["provider"])
+                st.markdown(f'<div class="ai-note"><p>{ui.E(note["text"])}</p><span class="note">Written by {who} from broad categories only; '
+                            'numbers come from code.</span></div>', unsafe_allow_html=True)
+        else:
+            if st.button("Explain it for my situation with AI", type="tertiary", key="ai_on",
+                         help="Shares only broad categories such as “rents” or “carries a card balance”. Never amounts, income or location."):
+                ss.ai_tailor = True
+                st.rerun()
+
+        # What the next move would mean for this person
+        up = personal.personal_impact(prof, 25, 0, when_of(ctx)).monthly_total
+        down = personal.personal_impact(prof, -25, 0, when_of(ctx)).monthly_total
+        if is_latest:
+            fc = cached_forecast()
+            lines = []
+            if abs(up) >= 0.005 or abs(down) >= 0.005:
+                lines.append(f"If the Fed raises rates a quarter point next time (our model puts that at {fc['p_hike'] * 100:.0f}%), "
+                             f"your costs would rise about {money(up)} a month. If it cuts ({fc['p_cut'] * 100:.0f}%), they’d fall about {money(down)}.")
+            else:
+                lines.append("A quarter-point move either way wouldn’t change your monthly costs much, because what you have isn’t tied to the Fed’s rate.")
+            st.markdown('<div class="next-you"><div class="aside-h">Next meeting</div><p>' + ui.E(" ".join(lines)) + '</p></div>', unsafe_allow_html=True)
+        elif ctx["meeting_date"] != "pasted":
+            all_d = dates()
+            i = all_d.index(ctx["meeting_date"])
+            if i + 1 < len(all_d):
+                nxt = all_d[i + 1]
+                g = meetings().set_index(meetings()["meeting_date"].dt.strftime("%Y-%m-%d")).loc[nxt]
+                nctx = cached_context(nxt)
+                nr = personal.personal_impact(prof, int(g["change_bps"]), ten_move(nctx), nxt)
+                what = ui.headline(g["direction"], int(g["change_bps"]))
+                what = what[0].lower() + what[1:]
+                eff = ("which didn’t change your costs" if abs(nr.monthly_total) < 0.005 else
+                       f"which would have {'lowered' if nr.monthly_total < 0 else 'raised'} your costs about {money(nr.monthly_total)} a month")
+                st.markdown(f'<div class="next-you"><div class="aside-h">What happened next</div><p>On {long_date(nxt)}, {what}, {eff}.</p></div>',
+                            unsafe_allow_html=True)
+
+        with st.expander("See how we worked this out"):
+            st.markdown(personal_breakdown_html(r), unsafe_allow_html=True)
+            typ = ss.get("profile_typical") or []
+            if typ:
+                st.markdown(f'<p class="note">Using typical amounts for: {", ".join(typ)}. Edit your situation to use your own.</p>', unsafe_allow_html=True)
+
+
+def personal_breakdown_html(r) -> str:
+    affected = [i for i in r.items if abs(i.get("monthly", 0)) >= 0.005]
+    unaffected = [i for i in r.items if abs(i.get("monthly", 0)) < 0.005 and i["topic"] != "Jobs where you live"]
+    local = [i for i in r.items if i["topic"] == "Jobs where you live"]
+    html = ""
+    if affected:
+        html += '<div class="bd-h">Changes with this decision</div>' + ui.rows_html(affected)
+    if unaffected:
+        html += '<div class="bd-h">Doesn’t change</div>' + ui.rows_html(unaffected)
+    if local:
+        html += '<div class="bd-h">Where you live</div>' + ui.rows_html(local)
+    html += '<p class="note" style="margin-top:10px">Estimates use national average rates, not your actual loan terms. Not financial advice.</p>'
+    return html
+
+
+# ---------------------------------------------------------------- the short version and asking
+def summary_block(card, ctx) -> None:
+    d = card.decision
+    items = [("What happened", ui.define(ui.E(plain_what(d)), ["FOMC", "federal funds rate", "basis points", "target range", "dissented"]))]
     if card.tone_quotes:
-        body += f'<div class="say">“{ui.E(card.tone_quotes[0].quote)}”</div>'
-    st.markdown(f'<div class="prose">{body}</div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="aside"><div class="aside-h">Why it matters</div><p>{ui.define(ui.E(ui.why_it_matters(d.direction)), ["10-year Treasury"])}</p></div>',
-                unsafe_allow_html=True)
+        items.append(("In the Fed’s words", f'<span class="say-inline">“{ui.E(card.tone_quotes[0].quote)}”</span>'))
+    items.append(("What it signals", ui.E(card.whats_next)))
+    html = '<div class="short"><h3>The short version</h3>' + "".join(
+        f'<div class="short-row"><div class="aside-h">{k}</div><p>{v}</p></div>' for k, v in items) + "</div>"
+    st.markdown(html, unsafe_allow_html=True)
+
+
+def suggested_questions(card, ctx) -> list[str]:
+    d = card.decision
+    qs = []
+    if d.dissenters:
+        names = " and ".join(n.split()[-1] for n in d.dissenters[:2])
+        qs.append(f"Why did {names} dissent?")
+    qs.append({"hold": "Why did the Fed hold rates?", "cut": "Why did the Fed cut rates?", "hike": "Why did the Fed raise rates?"}[d.direction])
+    if card.changes:
+        qs.append("What's the most important change in the wording?")
+    prof = ss.get("profile")
+    if prof and prof.housing in ("buying", "arm"):
+        qs.append("What does this mean for mortgage rates?")
+    elif prof and prof.card_balance:
+        qs.append("Will my credit card rate change?")
+    else:
+        qs.append("Will rates go up or down next?")
+    return qs[:3]
+
+
+def ask_block(card, ctx) -> None:
+    key = ctx["meeting_date"]
+    thread = ss.setdefault("threads", {}).setdefault(key, [])
+    st.markdown('<div class="ask"><h3>Ask about this meeting</h3></div>', unsafe_allow_html=True)
+    if agent.near_cap():
+        st.markdown('<p class="note">The free AI allowance for today is used up, so answers are automated from the statement until tomorrow.</p>',
+                    unsafe_allow_html=True)
+    for q, a, label in thread:
+        st.markdown(f'<div class="qa-q">{ui.E(q)}</div><div class="qa-a">{ui.E(a)}</div><div class="prov">{ui.E(label)}</div>', unsafe_allow_html=True)
+    left = config.SESSION_QUESTION_LIMIT - ss.questions
+    pending = None
+    if not thread and left > 0:
+        with st.container(key="suggest"):
+            for i, q in enumerate(suggested_questions(card, ctx)):
+                if st.button(q, type="tertiary", key=f"sq_{key}_{i}"):
+                    pending = q
+    with st.form(f"ask_{key}", border=False, clear_on_submit=True):
+        c1, c2 = st.columns([5, 1], vertical_alignment="bottom")
+        typed = c1.text_input("Your question", label_visibility="collapsed",
+                              placeholder="Ask anything about this decision" if left > 0 else "Question limit reached for this visit",
+                              disabled=left <= 0)
+        sent = c2.form_submit_button("Ask", type="primary", use_container_width=True, disabled=left <= 0)
+    q = pending or (typed.strip() if sent and typed else None)
+    if q and left > 0:
+        ss.questions += 1
+        reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
+        meeting = None if key == "pasted" else key
+        with st.spinner("Looking it up"):
+            try:
+                ans = agent.answer(q, meeting=meeting, reader=reader)
+            except Exception:
+                ans = agent.rules_answer(q, meeting=meeting)
+        thread.append((q, ans.text, ans.label + (" · from an earlier answer" if ans.cached else "")))
+        st.rerun()
 
 
 def section_changed(card, ctx) -> None:
-    st.markdown('<div class="step"><h2>What changed in the statement</h2></div>', unsafe_allow_html=True)
     if not ctx.get("prev_statement"):
         st.markdown('<p class="muted">This is the first statement in the record, so there is nothing to compare it with.</p>', unsafe_allow_html=True)
         return
@@ -217,7 +475,6 @@ def section_changed(card, ctx) -> None:
 
 
 def section_tone(card, ctx) -> None:
-    st.markdown('<div class="step"><h2>How the Fed sounded</h2></div>', unsafe_allow_html=True)
     st.markdown('<div class="prose"><p>Beyond the decision itself, the wording signals which way the Fed is leaning. '
                 + ui.define("Hawkish", ["hawkish"]) + " language points toward higher rates; " + ui.define("dovish", ["dovish"])
                 + " language points toward lower ones.</p></div>", unsafe_allow_html=True)
@@ -231,106 +488,7 @@ def section_tone(card, ctx) -> None:
                     'predicts the next rate move better.</p>', unsafe_allow_html=True)
 
 
-def personal_calculator(ctx, change_bps: int) -> None:
-    """Optional, one question at a time. Answers live only in this browser session;
-    they are never stored, logged, cached or sent to an AI provider."""
-    with st.container(key="calc"):
-        st.markdown('<h3>Work out your own numbers</h3><p class="note" style="margin:0">Optional. Your answers stay in this browser tab: '
-                    'nothing is saved or sent to an AI, and there’s no login.</p>', unsafe_allow_html=True)
-        st.markdown('<div class="qa">Where do you live?</div>', unsafe_allow_html=True)
-        with st.container(key="tiles_housing"):
-            housing = st.radio("Housing", list(personal.HOUSING), index=None, format_func=personal.HOUSING.get,
-                               label_visibility="collapsed", key="p_housing")
-        if housing is None:
-            return
-        mort = 0.0
-        if housing in ("arm", "buying"):
-            mort = st.number_input("How much is the mortgage?" if housing == "arm" else "How much do you plan to borrow?",
-                                   min_value=0, step=10_000, value=None, placeholder="For example 300000", key="p_mort") or 0.0
-
-        st.markdown('<div class="qa">Do you have any of these?</div><div class="qa-sub">Pick any that apply.</div>', unsafe_allow_html=True)
-        with st.container(key="checks"):
-            c1, c2 = st.columns(2)
-            has_card = c1.checkbox("A credit card balance I carry", key="p_has_card")
-            has_heloc = c2.checkbox("A home equity line", key="p_has_heloc")
-            has_stud = c1.checkbox("A variable-rate private student loan", key="p_has_stud")
-            shopping_car = c2.checkbox("I'm shopping for a car loan", key="p_car_shop")
-            has_car = c1.checkbox("A fixed-rate car loan", key="p_car_fixed")
-        car = "shopping" if shopping_car else "have_fixed" if has_car else "none"
-        amounts = {}
-        cols = st.columns(2)
-        slot = 0
-        for flag, key, label in ((has_card, "card", "Card balance you carry"), (has_heloc, "heloc", "Home equity balance"),
-                                 (has_stud, "stud", "Private student loan balance"), (car == "shopping", "car", "Car loan amount")):
-            if flag:
-                amounts[key] = cols[slot % 2].number_input(label, min_value=0, step=500, value=None, placeholder="Amount in dollars", key=f"p_{key}") or 0.0
-                slot += 1
-
-        st.markdown('<div class="qa">Do you have savings?</div>', unsafe_allow_html=True)
-        with st.container(key="tiles_savings"):
-            sav_kind = st.radio("Savings", ["none", "high_yield", "bank"], index=None, label_visibility="collapsed", key="p_sav_kind",
-                                format_func={"none": "Not really", "high_yield": "Yes, high-yield or money market", "bank": "Yes, a regular bank account"}.get)
-        sav = 0.0
-        if sav_kind in ("high_yield", "bank"):
-            sav = st.number_input("About how much?", min_value=0, step=1_000, value=None, placeholder="Amount in dollars", key="p_sav") or 0.0
-
-        with st.expander("Put it in context (optional)"):
-            c1, c2 = st.columns(2)
-            income = c1.selectbox("Household income", list(personal.INCOME), key="p_income")
-            states = [None] + list(config.STATES)
-            state = c2.selectbox("State, for local jobs data", states, key="p_state",
-                                 format_func=lambda k: "Prefer not to say" if k is None else config.STATES[k])
-
-        prof = personal.Profile(housing=housing, mortgage_balance=float(mort), heloc_balance=float(amounts.get("heloc", 0)),
-                                card_balance=float(amounts.get("card", 0)), car_loan=car, car_amount=float(amounts.get("car", 0)),
-                                private_student_variable=float(amounts.get("stud", 0)), savings=float(sav),
-                                savings_kind=sav_kind if sav_kind in personal.SAVINGS_KIND else "bank", income=income, state=state)
-        ten = ((ctx["impacts"].get("numbers") or {}).get("mortgage_30y") or {}).get("rate_change_bps")
-        when = pd.Timestamp.today() if ctx["meeting_date"] == "pasted" else ctx["meeting_date"]
-        r = personal.personal_impact(prof, change_bps, ten, when)
-        render_personal_result(r, change_bps)
-        if st.button("Clear my answers", type="tertiary"):
-            for k in [k for k in ss.keys() if str(k).startswith("p_")]:
-                del ss[k]
-            st.rerun()
-
-
-def render_personal_result(r, change_bps: int) -> None:
-    affected = [i for i in r.items if abs(i.get("monthly", 0)) >= 0.005]
-    unaffected = [i for i in r.items if abs(i.get("monthly", 0)) < 0.005 and i["topic"] != "Jobs where you live"]
-    local = [i for i in r.items if i["topic"] == "Jobs where you live"]
-    total = r.monthly_total
-    if change_bps == 0 or not affected:
-        big = "No change"
-        expl = "This decision didn’t change anything you pay or earn that follows the Fed."
-    else:
-        big = f"{'−' if total < 0 else '+'}${abs(total):,.2f} a month"
-        expl = f"{'Less' if total < 0 else 'More'} going out each month across the products below"
-        expl += f", about {abs(r.share_of_income):.2f}% of your monthly income." if r.share_of_income is not None else "."
-    html = f'<div class="result reveal"><div class="muted" style="font-size:15px">Your estimated monthly impact</div><div class="big">{ui.E(big)}</div><p style="margin:0">{ui.E(expl)}</p>'
-    if affected:
-        html += "<h4>Changes with this decision</h4>" + ui.rows_html(affected)
-    if unaffected:
-        html += "<h4>Doesn’t change</h4>" + ui.rows_html(unaffected)
-    if local:
-        html += "<h4>Where you live</h4>" + ui.rows_html(local)
-    if r.per_25bp_monthly:
-        html += (f'<p class="note" style="margin-top:14px">Rule of thumb for you: every quarter-point Fed move shifts your monthly costs by about '
-                 f'<span class="tab">${abs(r.per_25bp_monthly):,.2f}</span>.</p>')
-    html += '<p class="note" style="margin-top:6px">Estimates use national average rates, not your actual loan terms. Not financial advice.</p></div>'
-    st.markdown(html, unsafe_allow_html=True)
-
-
-def section_you(card, ctx) -> None:
-    st.markdown('<div class="step"><h2>What it means for you</h2></div>', unsafe_allow_html=True)
-    st.markdown('<div class="prose"><p>For a typical household, using example balances: a $5,000 credit card balance, '
-                'a $300,000 mortgage and $10,000 in savings.</p></div>', unsafe_allow_html=True)
-    st.markdown(ui.rows_html(for_you_items(card, ctx)), unsafe_allow_html=True)
-    personal_calculator(ctx, card.decision.change_bps)
-
-
 def section_economy(card, ctx) -> None:
-    st.markdown('<div class="step"><h2>What it means for the economy</h2></div>', unsafe_allow_html=True)
     st.markdown('<div class="prose"><p>The Fed’s two jobs are stable prices and maximum employment. Here is where things stood, '
                 'using the data that was public at the time.</p></div>', unsafe_allow_html=True)
     rows = []
@@ -341,7 +499,6 @@ def section_economy(card, ctx) -> None:
 
 
 def section_next(card, ctx, is_latest: bool) -> None:
-    st.markdown("<div class=\"step\"><h2>What might happen next</h2></div>", unsafe_allow_html=True)
     st.markdown(f'<div class="prose"><p>{ui.E(card.whats_next)}</p></div>', unsafe_allow_html=True)
     if is_latest:
         f = cached_forecast()
@@ -374,7 +531,7 @@ def section_next(card, ctx, is_latest: bool) -> None:
 
 
 def sources(card, ctx) -> None:
-    with st.expander("Sources and the full statement"):
+    if True:
         st.markdown(f'<p class="note">{ui.E(provider_note(card))}</p>', unsafe_allow_html=True)
         st.markdown('<div class="redline">' + "".join(f"<p>{ui.E(p)}</p>" for p in ctx["statement"].split("\n\n")) + "</div>", unsafe_allow_html=True)
         cites = "".join(f'<li><span class="fig">{ui.E(c.source)}</span>: {ui.E(c.detail)}</li>' for c in card.citations if c.source != "statement")
@@ -383,33 +540,31 @@ def sources(card, ctx) -> None:
 
 
 def decoder(card, ctx, is_latest: bool) -> None:
-    show_all = ss.get("show_all", False)
-    last = len(STEPS) - 1 if show_all else min(ss.step, len(STEPS) - 1)
-    renders = {"decision": lambda: section_decision(card, ctx), "changed": lambda: section_changed(card, ctx),
-               "tone": lambda: section_tone(card, ctx), "you": lambda: section_you(card, ctx),
-               "economy": lambda: section_economy(card, ctx), "next": lambda: section_next(card, ctx, is_latest)}
-    for i, key in enumerate(STEPS[: last + 1]):
-        renders[key]()
-    st.markdown('<div style="height:18px"></div>', unsafe_allow_html=True)
-    if last < len(STEPS) - 1:
-        c1, c2 = st.columns([0.62, 1], vertical_alignment="center", gap="small")
-        if c1.button(NEXT_LABEL[STEPS[last + 1]], type="primary", key=f"cont_{last}", use_container_width=True):
-            ss.step = last + 1
-            st.rerun()
-        if c2.button("or show the whole explanation", type="tertiary"):
-            ss.show_all = True
-            st.rerun()
-    else:
+    meeting_header(card, ctx)
+    personal_block(card, ctx, is_latest)
+    summary_block(card, ctx)
+    ask_block(card, ctx)
+    st.markdown('<div class="deeper-h"><h3>Go deeper</h3></div>', unsafe_allow_html=True)
+    tabs = st.tabs(["What changed", "How the Fed sounded", "The economy", "What’s next", "Sources"])
+    with tabs[0]:
+        section_changed(card, ctx)
+    with tabs[1]:
+        section_tone(card, ctx)
+    with tabs[2]:
+        section_economy(card, ctx)
+    with tabs[3]:
+        section_next(card, ctx, is_latest)
+    with tabs[4]:
         sources(card, ctx)
-        if ctx["meeting_date"] != "pasted":
-            all_d = dates()
-            i = all_d.index(ctx["meeting_date"])
-            with st.container(key="pager"):
-                c1, c2 = st.columns(2)
-                if i > 0 and c1.button(f"← {long_date(all_d[i - 1])}", type="tertiary", key="pg_prev"):
-                    open_meeting(all_d[i - 1]); st.rerun()
-                if i + 1 < len(all_d) and c2.button(f"{long_date(all_d[i + 1])} →", type="tertiary", key="pg_next"):
-                    open_meeting(all_d[i + 1]); st.rerun()
+    if ctx["meeting_date"] != "pasted":
+        all_d = dates()
+        i = all_d.index(ctx["meeting_date"])
+        with st.container(key="pager"):
+            c1, c2 = st.columns(2)
+            if i > 0 and c1.button(f"← {long_date(all_d[i - 1])}", type="tertiary", key="pg_prev"):
+                open_meeting(all_d[i - 1]); st.rerun()
+            if i + 1 < len(all_d) and c2.button(f"{long_date(all_d[i + 1])} →", type="tertiary", key="pg_next"):
+                open_meeting(all_d[i + 1]); st.rerun()
 
 
 def page_decode() -> None:
@@ -466,6 +621,11 @@ def page_timeline() -> None:
                         f'<h2 style="margin-top:4px">{ui.E(ui.headline(g["direction"], int(g["change_bps"])))}</h2>'
                         f'<p style="margin:0">Target range {ui.fmt_range(g["target_low"], g["target_high"])}. '
                         f'Tone: <strong class="{cls}">{word.lower()}</strong>.</p></div>', unsafe_allow_html=True)
+            if ss.get("profile"):
+                pr = personal.personal_impact(ss.profile, int(g["change_bps"]), ten_move(cached_context(pick)), pick)
+                eff = ("It didn’t change your monthly costs." if abs(pr.monthly_total) < 0.005 else
+                       f"For you: about {money(pr.monthly_total)} a month {'less' if pr.monthly_total < 0 else 'more'}.")
+                st.markdown(f'<p style="margin:6px 0 0">{ui.E(eff)}</p>', unsafe_allow_html=True)
             if st.button("Walk through this meeting", type="primary"):
                 go("Decode", pick)
                 st.rerun()
@@ -508,7 +668,8 @@ def page_ask() -> None:
         with st.chat_message("assistant", avatar=None):
             with st.spinner("Looking it up"):
                 try:
-                    ans = agent.answer(q, history=hist)
+                    reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
+                    ans = agent.answer(q, history=hist, reader=reader)
                 except Exception:
                     ans = agent.rules_answer(q)
             st.markdown(ans.text)
@@ -529,7 +690,7 @@ def page_about() -> None:
 <h3 class="gap">How the explanations are written</h3>
 <p>The plain-English explanations are drafted by AI models on free plans (Google Gemini, with Groq as a backup). Before anything is shown, it is checked: every number must appear in the underlying data, and every quote must match the statement word for word. If a check fails, the app shows a simpler automated explanation instead.</p>
 <h3 class="gap">Your privacy</h3>
-<p>There are no accounts. Answers you give in “Work out your own numbers” stay in your browser tab and are never stored or sent to an AI. Questions you type on the Ask page are sent to free AI services, which may use them to improve their models, so please don’t include personal details.</p>
+<p>There are no accounts. What you tell Fed Decoder about your situation stays in your browser tab and is never stored; your dollar amounts, income and state are never sent to an AI. If you turn on “Explain it for my situation with AI”, only broad categories such as “rents” or “carries a card balance” are shared. Questions you type are sent to free AI services, which may use them to improve their models, so please don’t include personal details.</p>
 <h3 class="gap">What it can’t do</h3>
 <p>Fed Decoder is for learning, not financial advice. Personal estimates use national averages, not your actual loan terms. The forecast is a simple statistical model{f": in tests on {bt['n']} past meetings it was right {bt['model_hit_rate'] * 100:.0f}% of the time, against {bt['baseline_hit_rate'] * 100:.0f}% for always guessing “no change”" if bt else ""}.</p>
 </div>''', unsafe_allow_html=True)

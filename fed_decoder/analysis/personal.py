@@ -176,3 +176,66 @@ def personal_impact(p: Profile, change_bps: int, ten_year_move_bps: int | None, 
             out.items.append({"topic": "Jobs where you live", "monthly": 0.0, "number": f"{su[1]:.1f}%",
                               "text": f"Unemployment in {config.STATES[p.state]} was {su[1]:.1f}% in {su[0]:%B %Y}{cmp}. Rate hikes cool hiring with a lag; cuts aim to support it."})
     return out
+
+
+# ---------------------------------------------------------------- quick start & AI-safe labels
+# Typical amounts used when someone hasn't typed their own (always shown as "typical", editable).
+TYPICAL = {"mortgage": 300_000, "card": 5_000, "heloc": 40_000, "car": 30_000, "student": 25_000, "savings": 10_000}
+
+
+def quick_profile(housing: str) -> "Profile":
+    """One tap: the housing answer plus typical amounts where a mortgage is involved."""
+    return Profile(housing=housing, mortgage_balance=float(TYPICAL["mortgage"]) if housing in ("arm", "buying") else 0.0)
+
+
+def describe(p: "Profile") -> str:
+    """Short plain-English summary of the profile for the page ('You rent and carry a card balance')."""
+    bits = [{"rent": "rent", "fixed": "have a fixed-rate mortgage", "arm": "have an adjustable-rate mortgage",
+             "outright": "own your home outright", "buying": "are planning to buy a home"}[p.housing]]
+    if p.card_balance:
+        bits.append("carry a card balance")
+    if p.heloc_balance:
+        bits.append("have a home equity line")
+    if p.car_loan == "shopping":
+        bits.append("are shopping for a car loan")
+    if p.private_student_variable:
+        bits.append("have a variable-rate student loan")
+    if p.savings:
+        bits.append("keep savings in " + ("a high-yield account" if p.savings_kind == "high_yield" else "a regular bank account"))
+    return "You " + (", ".join(bits[:-1]) + " and " + bits[-1] if len(bits) > 1 else bits[0])
+
+
+def ai_labels(p: "Profile") -> list[str]:
+    """The ONLY profile information that may be sent to an AI provider, and only with the
+    person's explicit opt-in: broad categories, no amounts, no income, no location."""
+    labels = [{"rent": "rents their home", "fixed": "has a fixed-rate mortgage", "arm": "has an adjustable-rate mortgage",
+               "outright": "owns their home outright", "buying": "is planning to buy a home"}[p.housing]]
+    if p.card_balance:
+        labels.append("carries a credit card balance")
+    if p.heloc_balance:
+        labels.append("has a home equity line of credit")
+    if p.car_loan == "shopping":
+        labels.append("is shopping for a car loan")
+    elif p.car_loan == "have_fixed":
+        labels.append("has a fixed-rate car loan")
+    if p.private_student_variable:
+        labels.append("has a variable-rate private student loan")
+    if p.savings:
+        labels.append("keeps savings in a high-yield account" if p.savings_kind == "high_yield" else "keeps savings in a regular bank account")
+    return labels
+
+
+def ai_effects(r: "PersonalImpact") -> list[str]:
+    """Direction of each computed effect, in words only (no amounts), so an opted-in AI
+    note can't contradict the calculation. Example: 'adjustable mortgage payment falls'."""
+    out = []
+    for i in r.items:
+        topic = i["topic"].lower()
+        if topic == "jobs where you live":
+            continue
+        m = i.get("monthly", 0.0)
+        if topic == "savings":
+            out.append("savings interest " + ("is unchanged" if abs(m) < 0.005 else "rises" if m < 0 else "falls"))
+        else:
+            out.append(f"{topic} payment " + ("is unchanged" if abs(m) < 0.005 else "rises" if m > 0 else "falls"))
+    return out

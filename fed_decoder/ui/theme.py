@@ -219,6 +219,42 @@ div[class*="st-key-picked"] {{ border-left: 3px solid var(--green); padding: 2px
 /* footer */
 .footer {{ margin-top: 72px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }}
 
+/* ---------- personal briefing ---------- */
+.you-q {{ margin-top: 40px; }}
+div[class*="st-key-you"] {{ margin-top: 34px; padding-left: 24px; border-left: 3px solid var(--green); max-width: 760px; }}
+.who {{ font-size: 15px; color: var(--muted); }}
+div[class*="st-key-you"] [data-testid="stColumn"]:last-child [data-testid="stElementContainer"] {{ margin-left: auto; width: fit-content !important; }}
+.you-big {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 38px; line-height: 1.15; margin: 2px 0 8px; text-wrap: balance; font-variant-numeric: tabular-nums; }}
+.you-sub {{ font-size: 17px !important; color: var(--muted) !important; margin: 0 0 10px !important; }}
+.ai-note {{ margin: 14px 0 6px; max-width: 640px; }}
+.ai-note p {{ font-size: 18px !important; line-height: 1.6 !important; margin: 0 0 4px !important; }}
+.next-you {{ display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; margin: 18px 0 4px; max-width: 700px; }}
+.next-you p {{ margin: 0 !important; font-size: 16px !important; }}
+.bd-h {{ font-size: 14px; font-weight: 600; color: var(--muted); margin: 14px 0 0; }}
+.short {{ margin-top: 56px; max-width: 760px; }}
+.short h3 {{ margin-bottom: 14px !important; }}
+.short-row {{ display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px; padding: 12px 0; }}
+.short-row p {{ margin: 0 !important; font-size: 17px !important; }}
+.say-inline {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 20px; line-height: 1.45; }}
+.ask {{ margin-top: 52px; }}
+.qa-q {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 21px; margin: 18px 0 6px; max-width: 700px; }}
+.qa-a {{ font-size: 17px; line-height: 1.65; max-width: 700px; white-space: pre-wrap; }}
+div[class*="st-key-suggest"] [data-testid="stElementContainer"] {{ margin-bottom: -6px; }}
+div[class*="st-key-ask_"] {{ max-width: 760px; }}
+.stTextInput input {{ background: var(--surface) !important; border-radius: 10px !important; font-size: 17px !important; min-height: 46px; }}
+.deeper-h {{ margin-top: 60px; }}
+/* tabs: plain labels with an underline */
+.stTabs [data-baseweb="tab-list"] {{ gap: 26px; border-bottom: 1px solid var(--line); }}
+.stTabs [data-baseweb="tab"] {{ padding: 10px 0; background: transparent !important; }}
+.stTabs [data-baseweb="tab"] p {{ font-size: 16px !important; font-weight: 500; color: var(--muted) !important; }}
+.stTabs [aria-selected="true"] p {{ color: var(--ink) !important; }}
+.stTabs [data-baseweb="tab-highlight"] {{ background: var(--ink) !important; height: 2px; }}
+.stTabs [data-baseweb="tab-border"] {{ display: none; }}
+.stTabs [data-baseweb="tab-panel"] {{ padding-top: 22px; }}
+/* dialog */
+[data-testid="stDialog"] [role="dialog"] {{ background: var(--ivory) !important; border-radius: 16px; }}
+[data-testid="stDialog"] h2, [data-testid="stDialog"] [data-testid="stHeading"] * {{ font-family: 'Newsreader', Georgia, serif !important; }}
+div[class*="st-key-tiles_dlg"] [data-testid="stRadioGroup"], div[class*="st-key-tiles_quick"] [data-testid="stRadioGroup"] {{ grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }}
 /* ---------- phones ---------- */
 @media (max-width: 860px) {{
   .margin-notes {{ grid-template-columns: 1fr; gap: 4px; }}
@@ -230,7 +266,9 @@ div[class*="st-key-picked"] {{ border-left: 3px solid var(--green); padding: 2px
   .lede {{ font-size: 18px !important; }}
   .step {{ padding-top: 44px; }}
   .say {{ font-size: 20px; }}
-  .aside {{ grid-template-columns: 1fr; gap: 6px; }}
+  .aside, .short-row, .next-you {{ grid-template-columns: 1fr; gap: 4px; }}
+  div[class*="st-key-you"] {{ padding-left: 16px; }}
+  .you-big {{ font-size: 30px; }}
   .row {{ grid-template-columns: 1fr; gap: 2px; padding: 8px 0 14px; }}
   .result .big {{ font-size: 38px; }}
   .stNumberInput {{ max-width: none; }}
