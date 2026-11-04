@@ -599,12 +599,16 @@ def render(r: dict) -> str:
     w("| Mode | Accuracy | Adversarial pass | Mean latency | Fell back to rules |")
     w("|---|---|---|---|---|")
     for k, s in ch.items():
+        if k != "rules" and s["share_rules_fallback"] > 0.5:
+            w(f"| {k} | not measured: {pct(s['share_rules_fallback'])} of answers fell back to rules (free quota exhausted) | | | {pct(s['share_rules_fallback'])} |")
+            continue
         w(f"| {k} | {pct(s['accuracy'])} | {pct(s['adversarial_pass'])} | {s['mean_latency_s']:.2f}s | {'n/a' if k == 'rules' else pct(s['share_rules_fallback'])} |")
-    w("")
+    w("\nAn LLM mode's accuracy includes answers that fell back to rules; a mode is reported only when most answers came from the model.\n")
 
     pc = r["providers"]
     w("## 8. Provider comparison\n")
-    w("| Provider | n | Direction | Size | Range | Votes | Grounding pass | Mean latency | Fell back |")
+    w("Extraction and grounding are scored only on the cards a provider actually produced (\"cards made\").\n")
+    w("| Provider | Cards made / asked | Direction | Size | Range | Votes | Grounding pass | Mean latency | Fell back |")
     w("|---|---|---|---|---|---|---|---|---|")
     for k in ("gemini", "groq", "rules"):
         s = pc.get(k)
@@ -612,10 +616,11 @@ def render(r: dict) -> str:
             w(f"| {k} | not run | | | | | | | |")
             continue
         e = s["extraction"] or {}
-        w(f"| {k} | {s['n']} | {pct(e.get('direction'))} | {pct(e.get('change_bps'))} | {pct(e.get('range'))} | {pct(e.get('votes'))} | {pct(s['grounding_pass'])} | {s['mean_latency_s']:.2f}s | {pct(s['share_fell_back'])} |")
+        made = (e.get("n") if e else 0) if k != "rules" else s["n"]
+        w(f"| {k} | {made} / {s['n']} | {pct(e.get('direction'))} | {pct(e.get('change_bps'))} | {pct(e.get('range'))} | {pct(e.get('votes'))} | {pct(s['grounding_pass'])} | {s['mean_latency_s']:.2f}s | {pct(s['share_fell_back'])} |")
     u = r["usage"]
     if u:
-        w(f"\nLogged LLM calls this far: {u['calls_ok']} ok ({u['by_provider']}), fallback share {pct(u['share_fallback'])}, "
+        w(f"\nLogged LLM calls this far: {u['calls_ok']} ok ({u['by_provider']}), Gemini-to-Groq fallbacks {pct(u['share_fallback'])} (evals pin one provider per call), "
           f"{u['rate_limited_events']} rate-limit events, {u['guardrail_failures']} guardrail failures.\n")
     w("")
 
@@ -655,7 +660,15 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--n-llm", type=int, default=20)
     ap.add_argument("--offline", action="store_true")
+    ap.add_argument("--render-only", action="store_true", help="redraw report.md from results.json; no calls")
     args = ap.parse_args()
+    if args.render_only:
+        r = json.loads((EVAL_DIR / "results.json").read_text())
+        report = render(r)
+        (EVAL_DIR / "report.md").write_text(report)
+        update_readme(report)
+        print(report)
+        return
     off = args.offline
     write_templates()
     r = {

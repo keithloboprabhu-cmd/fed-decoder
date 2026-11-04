@@ -22,7 +22,7 @@ Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or
 
 1. **Mortgages don't follow the Fed on decision day.** On the 75 days since 2000 when the Fed moved rates, the 10-year Treasury moved in the same direction only 41% of the time. Its median move was 4 bp against a median policy move of 25 bp. The 2-year, the most Fed-sensitive market rate, matched the direction 56% of the time. Markets usually price the move in before the meeting, which is why the mortgage card points to the 10-year.
 2. **A small model beats "no change", but only on accuracy.** The walk-forward logistic forecast (Taylor-rule gap, SEP gap, statement tone, momentum) calls the next decision right 77% of the time, against 70% for always predicting "no change". It gets the direction right on 64% of the meetings where the Fed actually moved. A class-balanced version catches more moves (80%) but loses to the baseline overall (65%), so it was dropped.
-3. **Dissents carry signal.** Dictionary tone correlates with the next meeting's rate change (Spearman 0.42). Leaving dissenters' stated preferences out of the tone score, so the dial reflects only the Committee's words, *lowers* that correlation slightly (0.438 to 0.423). An explicit "dissent lean" feature did not improve the forecast either (75% vs 77%), so the extra signal is real but small.
+3. **The LLM reads tone better than the word list, and dissents carry signal too.** Gemini's tone scores predict the next meeting's rate change noticeably better than the dictionary model (Spearman 0.58 vs 0.42 across 226 meetings), and the two agree in sign only 63% of the time. For the dictionary model, leaving dissenters' stated preferences out of the score (so the dial reflects only the Committee's words) slightly *lowers* the correlation (0.438 to 0.423). An explicit "dissent lean" feature did not improve the forecast, though (75% vs 77%), so that extra signal is real but small.
 
 ## How it runs for $0
 
@@ -153,7 +153,7 @@ tests/                     unit tests and fake-provider tests for the LLM paths
 ## Eval report
 
 <!-- EVAL-REPORT:START -->
-Generated 2026-11-04 09:33 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
+Generated 2026-11-04 09:34 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
 
 ### 1. Extraction vs ground truth
 
@@ -211,17 +211,21 @@ The model beats the baseline. On meetings where the Fed actually moved, the mode
 |---|---|---|---|---|
 | rules | 100.0% | 100.0% | 0.07s | n/a |
 | gemini | 93.3% | 100.0% | 15.04s | 10.0% |
-| groq | 100.0% | 100.0% | 39.05s | 100.0% |
+| groq | not measured: 100.0% of answers fell back to rules (free quota exhausted) | | | 100.0% |
+
+An LLM mode's accuracy includes answers that fell back to rules; a mode is reported only when most answers came from the model.
 
 ### 8. Provider comparison
 
-| Provider | n | Direction | Size | Range | Votes | Grounding pass | Mean latency | Fell back |
-|---|---|---|---|---|---|---|---|---|
-| gemini | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 31.00s | 0.0% |
-| groq | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 80.0% | 100.39s | 75.0% |
-| rules | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.00s | 0.0% |
+Extraction and grounding are scored only on the cards a provider actually produced ("cards made").
 
-Logged LLM calls this far: 638 ok ({'gemini': 552, 'groq': 86}), fallback share 0.0%, 221 rate-limit events, 43 guardrail failures.
+| Provider | Cards made / asked | Direction | Size | Range | Votes | Grounding pass | Mean latency | Fell back |
+|---|---|---|---|---|---|---|---|---|
+| gemini | 20 / 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 31.00s | 0.0% |
+| groq | 5 / 20 | 100.0% | 100.0% | 100.0% | 100.0% | 80.0% | 100.39s | 75.0% |
+| rules | 20 / 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.00s | 0.0% |
+
+Logged LLM calls this far: 638 ok ({'gemini': 552, 'groq': 86}), Gemini-to-Groq fallbacks 0.0% (evals pin one provider per call), 221 rate-limit events, 43 guardrail failures.
 
 
 ### Before / after
