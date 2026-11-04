@@ -54,6 +54,7 @@ h1, h2, h3, .display {{ font-family: 'Newsreader', Georgia, serif !important; fo
 h1 {{ font-size: 52px !important; line-height: 1.08 !important; padding: 0 !important; margin: 0 0 16px !important; }}
 h2 {{ font-size: 34px !important; line-height: 1.18 !important; padding: 0 !important; margin: 0 0 12px !important; }}
 h3 {{ font-size: 24px !important; line-height: 1.25 !important; padding: 0 !important; margin: 0 0 10px !important; }}
+[data-testid="stHeaderActionElements"], .stApp h1 > a, .stApp h2 > a, .stApp h3 > a {{ display: none !important; }}
 .stApp h3.gap {{ margin-top: 32px !important; }}
 .lede {{ font-size: 20px !important; line-height: 1.55 !important; color: var(--muted) !important; max-width: 640px; }}
 .muted, .muted * {{ color: var(--muted) !important; }}
