@@ -78,7 +78,7 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -2 bp on the day."
     }
   ],
-  "whats_next": "The statement signals that policymakers are prepared to keep raising interest rates at upcoming meetings to control inflation. An educational forecast model suggests the probability of a hold at the next meeting is 9%, a cut is 0%, and a hike is 91%.",
+  "whats_next": "The statement signals that policymakers are prepared to keep raising interest rates at upcoming meetings to control inflation.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

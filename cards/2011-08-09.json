@@ -90,7 +90,7 @@
       "text": "The broad trade-weighted dollar moved 0.23% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed plans to keep rates exceptionally low at least through mid-2013 to support the recovery. According to educational forecast models, upcoming meetings have a 60% chance of a hold, 38% chance of a cut, and 2% chance of a hike.",
+  "whats_next": "The statement signals that the Fed plans to keep rates exceptionally low at least through mid-2013 to support the recovery.",
   "confidence": "high",
   "citations": [
     {
@@ -134,7 +134,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 75,
+   "target_low": 1.5,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Esther L. George"
+   ],
+   "summary": "The Federal Reserve raised the benchmark interest rate by 75 basis points to a target range of 1-1/2 to 1-3/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Overall economic activity appears to have picked up after edging down in the first quarter.",
+    "explanation": "The Fed noted that the economy is showing renewed momentum following negative growth earlier in the year."
+   },
+   {
+    "quote": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate.",
+    "explanation": "This official change signals that the central bank intends to keep lifting borrowing costs at upcoming gatherings to cool inflation."
+   }
+  ],
+  "tone_score": 1.5,
+  "tone_quotes": [
+   {
+    "quote": "The Committee is highly attentive to inflation risks.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The Committee is strongly committed to returning inflation to its 2 percent objective.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 14.56% APR, a 75 bp increase raises monthly interest by about $3.12."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.33% and moved -16 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.09% would fall by about $29.35 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $45.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.6%, and employers added an average of 366k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 8.5% over the past year (May 2022); core PCE inflation, the Fed's preferred gauge, was 5.2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.6%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a -1% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -25 bp on the day, and the S&P 500 moved 1.46%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.02% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that policymakers expect to keep raising interest rates at upcoming meetings to address ongoing price pressures. According to the educational forecast model, future meetings are heavily anticipated to feature additional rate increases.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In support of these goals, the Committee decided to raise the target range for the federal funds rate to 1-1/2 to 1-3/4 percent and anticipates that ongoing increases in the target range will be appropriate."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.56% as of 2022-02-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.09% week of 2022-06-02"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.33% on 2022-06-15"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.6% in May 2022"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 366k as of May 2022"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "8.5% year over year, May 2022"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "5.2% year over year, May 2022"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "-1% annualized, quarter starting 2022-01-01"
+   }
+  ],
+  "meeting_date": "2022-06-15",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v1-no-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 75,
+   "target_low": 1.5,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Esther L. George"
+   ],
+   "summary": "The Federal Reserve raised the benchmark interest rate by 75 basis points to a target range of 1-1/2 to 1-3/4 percent."
+  },
+  "latency_s": 4.61
+ },
+ "latency_s": 4.610846281051636,
+ "failures": []
+}

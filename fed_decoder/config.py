@@ -58,6 +58,11 @@ GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 # Requests per minute we allow ourselves: kept below the published free caps.
 GEMINI_RPM = int(os.environ.get("GEMINI_RPM", "8"))
 GROQ_RPM = int(os.environ.get("GROQ_RPM", "25"))
+# Groq's free tier also caps tokens per minute (8,000 for gpt-oss-120b, Nov 2026);
+# one decoder card is ~6,000 tokens, so this is usually the binding limit.
+GROQ_TPM = int(os.environ.get("GROQ_TPM", "8000"))
+# Longest wait the router will honour on a 429 before falling back.
+MAX_BACKOFF_S = float(os.environ.get("MAX_BACKOFF_S", "12"))
 # Daily budget we allow the deployed app to spend on live chat (all users).
 # Gemini's free tier allows 20 requests/day per model (checked Nov 2026), so
 # 5 models give ~100/day; a chat answer takes 2-3 calls. Groq adds more.

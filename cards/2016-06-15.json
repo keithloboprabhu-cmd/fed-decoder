@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved -0.19% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate increases will be gradual as the Committee monitors inflation and job growth. For educational purposes, our forecast model gives the next meeting a 95% probability of a hold.",
+  "whats_next": "The statement signals that future rate increases will be gradual as the Committee monitors inflation and job growth.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

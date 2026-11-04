@@ -157,7 +157,7 @@ def build_rules_card(ctx: dict) -> Card:
         tone_quotes=[ToneQuote(quote=q["quote"], direction=q["direction"]) for q in quotes],
         for_you=for_you,
         for_country=for_country,
-        whats_next=f"The dictionary tone reading is {lean}. {ctx['forecast_sentence']}",
+        whats_next=f"The dictionary tone reading is {lean}.",
         confidence="medium" if d["target_high"] is not None else "low",
         citations=[Citation(source="statement", detail=d["policy_sentence"][:300])]
         + [Citation(source=s, detail=v) for s, v in ctx["data_citations"]],

@@ -23,7 +23,7 @@
       "explanation": "Measures of underlying inflation have gotten a bit better over the year."
     },
     {
-      "quote": "Developments in financial markets since the Committee’s last regular meeting have increased the uncertainty surrounding the economic outlook.",
+      "quote": "Developments in financial markets since the Committee\u2019s last regular meeting have increased the uncertainty surrounding the economic outlook.",
       "explanation": "Recent market turmoil has made it harder to predict where the economy is heading."
     },
     {
@@ -34,7 +34,7 @@
   "tone_score": -1.0,
   "tone_quotes": [
     {
-      "quote": "Today’s action is intended to help forestall some of the adverse effects on the broader economy that might otherwise arise from the disruptions in financial markets and to promote moderate growth over time.",
+      "quote": "Today\u2019s action is intended to help forestall some of the adverse effects on the broader economy that might otherwise arise from the disruptions in financial markets and to promote moderate growth over time.",
       "direction": "dovish"
     },
     {
@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved -0.18% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Committee will continue to assess economic developments and act as needed to foster price stability and sustainable economic growth. An educational forecast model estimated the next meeting probabilities as hold 25%, cut 75%, hike 0%.",
+  "whats_next": "The statement signals that the Committee will continue to assess economic developments and act as needed to foster price stability and sustainable economic growth.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

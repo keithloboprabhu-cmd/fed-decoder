@@ -193,8 +193,8 @@ def render_context(ctx: dict) -> str:
         )
     parts.append("HOUSEHOLD AND ECONOMY FACTS (computed in code; use these numbers only):\n" + "\n".join(f"- [{b['topic']}] {b['text']}" for b in ctx["impacts"]["for_you"] + ctx["impacts"]["for_country"]))
     parts.append("DATA CITATIONS:\n" + "\n".join(f"- {s}: {v}" for s, v in ctx["data_citations"]))
-    if ctx.get("forecast_sentence"):
-        parts.append("FORECAST (computed): " + ctx["forecast_sentence"])
+    # The forecast is deliberately not given to the model: it is recomputed
+    # whenever the data refresh, and the page shows it next to the card.
     return "\n\n".join(parts)
 
 

@@ -91,7 +91,7 @@
       "text": "The broad trade-weighted dollar moved 0.27% on the day."
     }
   ],
-  "whats_next": "The statement signals that policymakers will continue to carefully assess incoming data and the evolving economic outlook before making any adjustments. As an educational note, the forecast model gave the next meeting an 89% probability of a hold, a 10% probability of a cut, and a 0% probability of a hike.",
+  "whats_next": "The statement signals that policymakers will continue to carefully assess incoming data and the evolving economic outlook before making any adjustments.",
   "confidence": "high",
   "citations": [
     {
@@ -135,7 +135,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

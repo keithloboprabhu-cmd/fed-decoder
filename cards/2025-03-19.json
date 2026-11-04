@@ -76,7 +76,7 @@
       "text": "The broad trade-weighted dollar moved 0.25% on the day."
     }
   ],
-  "whats_next": "The statement signals that future choices depend entirely on incoming data and evolving risks. Educational forecast models give the next meeting an 84% chance of a hold and a 16% chance of a cut.",
+  "whats_next": "The statement signals that future choices depend entirely on incoming data and evolving risks.",
   "confidence": "high",
   "citations": [
     {
@@ -120,7 +120,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

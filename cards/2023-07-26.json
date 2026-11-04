@@ -78,7 +78,7 @@
       "text": "The broad trade-weighted dollar moved -0.08% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate decisions will depend entirely on incoming data regarding inflation and labor markets. As an educational note, the forecast model gave the next meeting: hold 47%, cut 2%, hike 50%.",
+  "whats_next": "The statement signals that future rate decisions will depend entirely on incoming data regarding inflation and labor markets.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

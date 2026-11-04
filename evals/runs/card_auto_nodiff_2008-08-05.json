@@ -1,0 +1,155 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 2.0,
+   "target_high": 2.0,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Richard W. Fisher"
+   ],
+   "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
+  },
+  "changes": [
+   {
+    "quote": "Economic activity expanded in the second quarter, partly reflecting growth in consumer spending and exports.",
+    "explanation": "The Committee noted that economic activity expanded in the second quarter, supported by consumer spending and exports."
+   },
+   {
+    "quote": "However, labor markets have softened further and financial markets remain under considerable stress.",
+    "explanation": "Labor markets showed further softening while financial markets continued to experience considerable stress."
+   },
+   {
+    "quote": "Tight credit conditions, the ongoing housing contraction, and elevated energy prices are likely to weigh on economic growth over the next few quarters.",
+    "explanation": "Tight credit, housing problems, and high energy prices are expected to weigh on growth in coming quarters."
+   },
+   {
+    "quote": "Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities, and some indicators of inflation expectations have been elevated.",
+    "explanation": "High inflation was driven by earlier energy and commodity price increases, with some inflation expectations remaining elevated."
+   },
+   {
+    "quote": "Voting against was Richard W. Fisher, who preferred an increase in the target for the federal funds rate at this meeting.",
+    "explanation": "Richard W. Fisher dissented, preferring a rate increase instead."
+   }
+  ],
+  "tone_score": 0.5,
+  "tone_quotes": [
+   {
+    "quote": "Inflation has been high, spurred by the earlier increases in the prices of energy and some other commodities, and some indicators of inflation expectations have been elevated.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Although downside risks to growth remain, the upside risks to inflation are also of significant concern to the Committee.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "However, labor markets have softened further and financial markets remain under considerable stress.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 11.88% APR costs about $49.50 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 4.04% and moved +6 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.63% would rise by about $11.92 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.8%, and employers added an average of -181k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 5.5% over the past year (July 2008); core PCE inflation, the Fed's preferred gauge, was 2.2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.8%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.4% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +1 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.31% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Committee is balancing downside risks to growth against upside risks to inflation while monitoring economic and financial developments. An educational forecast model gave the next meeting probabilities as hold 71%, cut 5%, and hike 24%.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate at 2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "11.88% as of 2008-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.63% week of 2008-07-24"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.04% on 2008-08-05"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.8% in July 2008"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change -181k as of July 2008"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "5.5% year over year, July 2008"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.2% year over year, July 2008"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.4% annualized, quarter starting 2008-04-01"
+   }
+  ],
+  "meeting_date": "2008-08-05",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v1-no-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 2.0,
+   "target_high": 2.0,
+   "votes_for": 10,
+   "votes_against": 1,
+   "dissenters": [
+    "Richard W. Fisher"
+   ],
+   "summary": "The Federal Reserve decided to keep its target for the federal funds rate at 2 percent."
+  },
+  "latency_s": 4.46
+ },
+ "latency_s": 36.64027452468872,
+ "failures": []
+}

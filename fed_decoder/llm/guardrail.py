@@ -50,8 +50,11 @@ def _variants(v: float) -> set[float]:
 
 def context_number_set(context: str) -> set[float]:
     s: set[float] = set()
-    for _, v in extract_numbers(context):
+    for tok, v in extract_numbers(context):
         s |= _variants(v)
+        m = re.fullmatch(r"-?(\d+)[-‑ ](\d+)/(\d+)", tok)
+        if m:  # "1-3/4" also grounds "1" and "3/4"
+            s |= _variants(float(m.group(1))) | _variants(int(m.group(2)) / int(m.group(3)))
     return s
 
 
@@ -76,12 +79,24 @@ def _norm_quote(s: str) -> str:
 
 
 def quote_in(quote: str, source: str) -> bool:
-    q = _norm_quote(quote)
+    """Verbatim check. Markdown emphasis is ignored, and a quote shortened with
+    an ellipsis passes if every piece (3+ words) appears in order in the source."""
+    q = _norm_quote(quote.replace("**", "").replace("__", ""))
     if not q:
         return False
-    if q.endswith("..."):
-        q = q[:-3].strip()
-    return q in _norm_quote(source)
+    src = _norm_quote(source.replace("**", ""))
+    pieces = [p.strip(" ,;") for p in re.split(r"\.\.\.|\u2026", q) if p.strip(" ,;")]
+    if len(pieces) <= 1:
+        return (pieces[0] if pieces else q) in src
+    pos = 0
+    for p in pieces:
+        if len(p.split()) < 3:
+            return False
+        i = src.find(p, pos)
+        if i == -1:
+            return False
+        pos = i + len(p)
+    return True
 
 
 def bad_quotes(quotes: list[str], source: str) -> list[str]:

@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved 0.16% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed is moving faster to wrap up its bond purchases in response to high inflation and stronger employment. Educational forecast models suggest an 83% chance of a rate hike at upcoming meetings.",
+  "whats_next": "The statement signals that the Fed is moving faster to wrap up its bond purchases in response to high inflation and stronger employment.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

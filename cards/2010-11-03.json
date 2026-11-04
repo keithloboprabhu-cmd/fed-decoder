@@ -80,7 +80,7 @@
       "text": "The broad trade-weighted dollar moved 0.03% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed will likely maintain low rates and continue its asset purchases for an extended period to support the slow recovery. Educational forecast models give the next meeting a 51% chance of a hold, 49% chance of a cut, and 1% chance of a hike.",
+  "whats_next": "The statement signals that the Fed will likely maintain low rates and continue its asset purchases for an extended period to support the slow recovery.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

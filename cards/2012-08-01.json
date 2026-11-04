@@ -88,7 +88,7 @@
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will likely maintain its exceptionally low interest rate target at least through late 2014. Additionally, an educational forecast model gives a 73% probability that the Fed will hold rates again at its next meeting.",
+  "whats_next": "The statement signals that the Federal Reserve will likely maintain its exceptionally low interest rate target at least through late 2014.",
   "confidence": "high",
   "citations": [
     {
@@ -132,7 +132,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

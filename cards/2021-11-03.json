@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved 0.07% on the day."
     }
   ],
-  "whats_next": "This statement signals that the Fed is taking its first step away from pandemic-era stimulus by slowing bond purchases while keeping interest rates anchored. Educational forecast models suggest a 77% chance of a hold at the next meeting.",
+  "whats_next": "This statement signals that the Fed is taking its first step away from pandemic-era stimulus by slowing bond purchases while keeping interest rates anchored.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

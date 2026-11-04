@@ -1,10 +1,10 @@
 {
  "keys": {
-  "gemini": false,
-  "groq": false
+  "gemini": true,
+  "groq": true
  },
  "cards": {
-  "rules": 227
+  "gemini": 227
  },
  "extraction": {
   "rules": {
@@ -16,86 +16,111 @@
    "votes": 1.0,
    "dissenters": 1.0
   },
-  "llm_cards": null
+  "llm_cards": {
+   "n": 227,
+   "n_with_votes": 202,
+   "direction": 1.0,
+   "change_bps": 1.0,
+   "range": 1.0,
+   "votes": 1.0,
+   "dissenters": 1.0
+  }
  },
  "tone": {
   "dictionary_vs_next_change": {
-   "pearson": 0.4455981827909146,
-   "spearman": 0.42241519432448177,
+   "pearson": 0.45273958052035623,
+   "spearman": 0.42259062242590234,
    "n": 226
   },
   "llm_vs_next_change": {
-   "pearson": null,
-   "spearman": null,
-   "n": 0
+   "pearson": 0.5872689938400756,
+   "spearman": 0.5768563843694702,
+   "n": 226
   },
   "llm_vs_dictionary": {
-   "pearson": null,
-   "spearman": null,
-   "n": 0
+   "pearson": 0.6991863439080285,
+   "spearman": 0.6856758559477307,
+   "n": 227,
+   "sign_agreement": 0.6343612334801763
   },
   "hand_labels": null,
-  "gemini_vs_groq": null
+  "gemini_vs_groq": {
+   "pearson": 0.930778410088755,
+   "spearman": 0.8897377898778847,
+   "n": 12,
+   "mean_abs_diff": 0.625,
+   "within_0.5": 0.5833333333333334
+  }
  },
  "consistency": {
   "dictionary": {
    "n": 20,
    "mean_spread": 0.0
   },
-  "llm": null
+  "llm": {
+   "n": 20,
+   "mean_range": 0.275,
+   "max_range": 1.0,
+   "mean_std": 0.1296362432175337,
+   "share_identical": 0.5
+  }
  },
  "grounding": {
   "llm": {
-   "n": 0,
-   "number_check_pass": null,
-   "quote_check_pass": null,
-   "failures": []
-  },
-  "rules": {
    "n": 227,
-   "number_check_pass": 0.43612334801762115,
+   "number_check_pass": 0.46255506607929514,
    "quote_check_pass": 1.0,
    "failures": [
     {
      "date": "2005-11-01",
      "numbers": [
-      "14",
-      "85"
+      "84"
      ],
      "quotes": []
     },
     {
      "date": "2005-12-13",
      "numbers": [
-      "92"
-     ],
-     "quotes": []
-    },
-    {
-     "date": "2006-03-28",
-     "numbers": [
-      "21"
+      "9",
+      "91"
      ],
      "quotes": []
     },
     {
      "date": "2006-06-29",
      "numbers": [
-      "90"
+      "89",
+      "11"
      ],
      "quotes": []
     },
     {
      "date": "2006-08-08",
      "numbers": [
-      "34",
-      "65"
+      "79",
+      "20"
+     ],
+     "quotes": []
+    },
+    {
+     "date": "2006-09-20",
+     "numbers": [
+      "91"
      ],
      "quotes": []
     }
    ]
   },
-  "judge": null
+  "rules": {
+   "n": 0,
+   "number_check_pass": null,
+   "quote_check_pass": null,
+   "failures": []
+  },
+  "judge": {
+   "n": 20,
+   "supported_rate": 0.95
+  }
  },
  "impact": {
   "n_cases": 400,
@@ -104,7 +129,7 @@
  },
  "forecast": {
   "n": 186,
-  "model_hit_rate": 0.753,
+  "model_hit_rate": 0.769,
   "baseline_hit_rate": 0.699,
   "beats_baseline": true,
   "model_hit_rate_on_moves": 0.643,
@@ -117,8 +142,24 @@
    "accuracy": 1.0,
    "n_adversarial": 10,
    "adversarial_pass": 1.0,
-   "mean_latency_s": 0.07588019371032714,
+   "mean_latency_s": 0.07749938368797302,
    "share_rules_fallback": 1.0
+  },
+  "gemini": {
+   "n": 30,
+   "accuracy": 0.7666666666666667,
+   "n_adversarial": 10,
+   "adversarial_pass": 1.0,
+   "mean_latency_s": 12.145244187116623,
+   "share_rules_fallback": 0.03333333333333333
+  },
+  "groq": {
+   "n": 30,
+   "accuracy": 1.0,
+   "n_adversarial": 10,
+   "adversarial_pass": 1.0,
+   "mean_latency_s": 40.54212037920952,
+   "share_rules_fallback": 0.7666666666666667
   }
  },
  "providers": {
@@ -133,8 +174,38 @@
     "dissenters": 1.0
    },
    "grounding_pass": 1.0,
-   "mean_latency_s": 0.0008323311805725098,
+   "mean_latency_s": 0.0010795950889587401,
    "share_fell_back": 0.0,
+   "n": 20
+  },
+  "gemini": {
+   "extraction": {
+    "n": 20,
+    "n_with_votes": 18,
+    "direction": 1.0,
+    "change_bps": 1.0,
+    "range": 1.0,
+    "votes": 1.0,
+    "dissenters": 1.0
+   },
+   "grounding_pass": 1.0,
+   "mean_latency_s": 6.937702631950378,
+   "share_fell_back": 0.0,
+   "n": 20
+  },
+  "groq": {
+   "extraction": {
+    "n": 1,
+    "n_with_votes": 1,
+    "direction": 1.0,
+    "change_bps": 1.0,
+    "range": 1.0,
+    "votes": 1.0,
+    "dissenters": 1.0
+   },
+   "grounding_pass": 1.0,
+   "mean_latency_s": 38.040445029735565,
+   "share_fell_back": 0.95,
    "n": 20
   }
  },
@@ -173,13 +244,27 @@
     "dissenters": 1.0
    }
   },
-  "card_inputs": null
+  "card_inputs": {
+   "before_no_diff": {
+    "n_cards": 20,
+    "change_quote_precision": 0.86,
+    "validation_pass": 1.0
+   },
+   "after_with_diff": {
+    "n_cards": 20,
+    "change_quote_precision": 1.0,
+    "validation_pass": 1.0
+   }
+  }
  },
  "usage": {
-  "calls_ok": 0,
-  "by_provider": {},
-  "share_fallback": null,
-  "rate_limited_events": 0,
-  "guardrail_failures": 0
+  "calls_ok": 505,
+  "by_provider": {
+   "gemini": 438,
+   "groq": 67
+  },
+  "share_fallback": 0.0,
+  "rate_limited_events": 56,
+  "guardrail_failures": 31
  }
 }

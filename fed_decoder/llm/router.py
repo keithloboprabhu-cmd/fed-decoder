@@ -19,7 +19,7 @@ from fed_decoder.llm.gemini import GeminiProvider
 from fed_decoder.llm.groq_provider import GroqProvider
 
 LOG_PATH = config.CACHE_DIR / "llm_log.jsonl"
-MAX_BACKOFF_S = 12.0
+MAX_BACKOFF_S = config.MAX_BACKOFF_S
 
 _PROVIDERS: dict[str, Provider] = {}
 # Error types from the most recent generate() call, e.g. [("gemini", "RateLimited")].

@@ -22,7 +22,7 @@ Hard rules:
 - changes: up to 5 of the most meaningful changes from CHANGES VS PREVIOUS STATEMENT, each explained in plain English (why it matters). If there is no change list, explain the key sentences instead.
 - for_you: exactly 4 bullets with topics Borrowers, Mortgages, Savers, Workers. One plain sentence each, reusing the matching computed fact and its number. The Mortgages bullet must say mortgages track the 10-year Treasury, not the fed funds rate.
 - for_country: bullets with topics Inflation, Jobs, Growth, Markets, Dollar (only those with facts provided). One sentence each.
-- whats_next: two sentences on what the statement signals about upcoming meetings. You may cite the computed forecast; call it educational.
+- whats_next: two sentences on what the statement itself signals about upcoming meetings. Do not cite forecast probabilities; the page shows the computed forecast separately.
 - citations: cite the statement sentence for the decision and each data series you used (source = series ID).
 - Plain English, short sentences, no emoji, no investment advice."""
 

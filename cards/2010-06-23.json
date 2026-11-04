@@ -80,7 +80,7 @@
       "text": "The broad trade-weighted dollar moved 0.39% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed plans to keep rates exceptionally low for an extended period because the economic recovery remains moderate and resource utilization is low. The educational forecast model assigns a 47% chance to a hold and a 53% chance to a cut at upcoming meetings.",
+  "whats_next": "The statement signals that the Fed plans to keep rates exceptionally low for an extended period because the economic recovery remains moderate and resource utilization is low.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

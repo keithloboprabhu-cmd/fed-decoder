@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 5.5,
+   "target_high": 5.5,
+   "votes_for": null,
+   "votes_against": null,
+   "dissenters": [],
+   "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 5-1/2 percent."
+  },
+  "changes": [
+   {
+    "quote": "Consumer and business confidence has eroded further, exacerbated by rising energy costs that continue to drain consumer purchasing power and press on business profit margins.",
+    "explanation": "The Committee noted that declining confidence and high energy costs are hurting both consumers and businesses."
+   },
+   {
+    "quote": "Partly as a consequence, retail sales and business spending on capital equipment have weakened appreciably.",
+    "explanation": "Weaker confidence and higher costs have translated directly into lower retail sales and reduced business investment."
+   },
+   {
+    "quote": "In response, manufacturing production has been cut back sharply, with new technologies appearing to have accelerated the response of production and demand to potential excesses in the stock of inventories and capital equipment.",
+    "explanation": "Manufacturers quickly scaled back production to deal with excess inventories."
+   },
+   {
+    "quote": "Taken together, and with inflation contained, these circumstances have called for a rapid and forceful response of monetary policy.",
+    "explanation": "Because inflation is contained, the Fed felt justified in lowering interest rates quickly and forcefully."
+   },
+   {
+    "quote": "The longer-term advances in technology and accompanying gains in productivity, however, exhibit few signs of abating and these gains, along with the lower interest rates, should support growth of the economy over time.",
+    "explanation": "Long-term productivity growth and lower interest rates are expected to support economic growth over time."
+   }
+  ],
+  "tone_score": -1.5,
+  "tone_quotes": [
+   {
+    "quote": "Consumer and business confidence has eroded further, exacerbated by rising energy costs that continue to drain consumer purchasing power and press on business profit margins.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "Taken together, and with inflation contained, these circumstances have called for a rapid and forceful response of monetary policy.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 15.98% APR, a 50 bp cut lowers monthly interest by about $2.08."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 5.19% and moved -5 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 7.02% would fall by about $10.07 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $30.00 a year less in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 3.9%, and employers added an average of 126k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.4% over the past year (December 2000); core PCE inflation, the Fed's preferred gauge, was 1.9%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 3.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.4% annualized pace in the latest reported quarter."
+   }
+  ],
+  "whats_next": "The statement signals that the Committee remains focused on economic weakness and is prepared to adjust policy as needed to support growth. Future decisions will depend on incoming data regarding confidence, spending, and production.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee at its meeting today decided to lower its target for the federal funds rate by 50 basis points to 5-1/2 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "15.98% as of 2000-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "7.02% week of 2001-01-19"
+   },
+   {
+    "source": "DGS10",
+    "detail": "5.19% on 2001-01-31"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "3.9% in December 2000"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 126k as of December 2000"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.4% year over year, December 2000"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.9% year over year, December 2000"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.4% annualized, quarter starting 2000-10-01"
+   }
+  ],
+  "meeting_date": "2001-01-31",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "cut",
+   "change_bps": -50,
+   "target_low": 5.5,
+   "target_high": 5.5,
+   "votes_for": null,
+   "votes_against": null,
+   "dissenters": [],
+   "summary": "The Federal Reserve lowered its target for the federal funds rate by 50 basis points to 5-1/2 percent."
+  },
+  "latency_s": 3.46
+ },
+ "latency_s": 3.462681531906128,
+ "failures": []
+}

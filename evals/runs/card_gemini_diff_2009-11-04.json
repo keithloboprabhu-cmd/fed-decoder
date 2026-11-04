@@ -1,0 +1,143 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to hold the federal funds rate at 0 to 1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in September suggests that economic activity has continued to pick up.",
+    "explanation": "The Fed notes that the economy is continuing to improve after previously saying it was picking up following a severe downturn."
+   },
+   {
+    "quote": "Conditions in financial markets were roughly unchanged, on balance, over the intermeeting period.",
+    "explanation": "Financial markets stayed mostly flat since the last meeting, rather than showing further improvement."
+   },
+   {
+    "quote": "Household spending appears to be expanding but remains constrained by ongoing job losses, sluggish income growth, lower housing wealth, and tight credit.",
+    "explanation": "Consumer spending is expanding, though it remains held back by weak labor and credit conditions."
+   },
+   {
+    "quote": "The amount of agency debt purchases, while somewhat less than the previously announced maximum of $200 billion, is consistent with the recent path of purchases and reflects the limited availability of agency debt.",
+    "explanation": "The Fed clarified that agency debt purchases will total about $175 billion due to limited availability in the market."
+   }
+  ],
+  "tone_score": -0.5,
+  "tone_quotes": [
+   {
+    "quote": "Although economic activity is likely to remain weak for a time, the Committee anticipates that policy actions to stabilize financial markets and institutions, fiscal and monetary stimulus, and market forces will support a strengthening of economic growth and a gradual return to higher levels of resource utilization in a context of price stability.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "With substantial resource slack likely to continue to dampen cost pressures and with longer-term inflation expectations stable, the Committee expects that inflation will remain subdued for some time.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 13.71% APR costs about $57.12 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 3.57% and moved +7 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5% would rise by about $12.86 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 9.8%, and employers added an average of -254k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was -1.4% over the past year (September 2009); core PCE inflation, the Fed's preferred gauge, was 0.7%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 9.8%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 1.4% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved -1 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.57% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that interest rates will stay exceptionally low for an extended period. Educational forecast model data indicates the next meeting has a 51% chance of a hold and a 49% chance of a cut.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee will maintain the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.71% as of 2009-08-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5% week of 2009-10-22"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.57% on 2009-11-04"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "9.8% in September 2009"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change -254k as of September 2009"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "-1.4% year over year, September 2009"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "0.7% year over year, September 2009"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "1.4% annualized, quarter starting 2009-07-01"
+   }
+  ],
+  "meeting_date": "2009-11-04",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided to hold the federal funds rate at 0 to 1/4 percent."
+  },
+  "latency_s": 3.92
+ },
+ "latency_s": 32.49221897125244,
+ "failures": []
+}

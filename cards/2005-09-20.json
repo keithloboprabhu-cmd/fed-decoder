@@ -80,7 +80,7 @@
       "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +7 bp on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed intends to continue removing policy accommodation at a measured pace. The educational forecast model assigns an 87 percent probability of a hike at the next meeting.",
+  "whats_next": "The statement signals that the Fed intends to continue removing policy accommodation at a measured pace.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

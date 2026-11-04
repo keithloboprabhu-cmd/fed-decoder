@@ -1,0 +1,145 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.75,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 2,
+   "dissenters": [
+    "Edward M. Gramlich",
+    "Robert D. McTeer, Jr."
+   ],
+   "summary": "The Federal Reserve decided to keep its target for the federal funds rate unchanged at 1 3/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "The information that has become available since the last meeting of the Committee suggests that aggregate demand is growing at a moderate pace.",
+    "explanation": "The Fed added this language to note that overall economic demand is currently growing at a moderate pace."
+   },
+   {
+    "quote": "However, considerable uncertainty persists about the extent and timing of the expected pickup in production and employment owing in part to the emergence of heightened geopolitical risks.",
+    "explanation": "This new addition highlights worries that geopolitical risks might delay improvements in production and jobs."
+   },
+   {
+    "quote": "Consequently, the Committee believes that, for the foreseeable future, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness.",
+    "explanation": "The Fed shifted its wording slightly to emphasize that future economic risks still lean toward potential weakness."
+   },
+   {
+    "quote": "Voting against the action were: Edward M. Gramlich and Robert D. McTeer, Jr.",
+    "explanation": "Two members voted against the decision because they wanted an immediate rate cut."
+   },
+   {
+    "quote": "The softening in the growth of aggregate demand that emerged this spring has been prolonged in large measure by weakness in financial markets and heightened uncertainty related to problems in corporate reporting and governance.",
+    "explanation": "The Fed removed this previous reference to specific corporate reporting issues and financial market weakness."
+   }
+  ],
+  "tone_score": -0.5,
+  "tone_quotes": [
+   {
+    "quote": "Consequently, the Committee believes that, for the foreseeable future, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are weighted mainly toward conditions that may generate economic weakness.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "However, considerable uncertainty persists about the extent and timing of the expected pickup in production and employment owing in part to the emergence of heightened geopolitical risks.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 13.53% APR costs about $56.38 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.69% and moved -1 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.18% would fall by about $1.94 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.7%, and employers added an average of -17k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 1.7% over the past year (August 2002); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.7%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.5% annualized pace in the latest reported quarter."
+   }
+  ],
+  "whats_next": "This statement signals that the Federal Reserve plans to keep rates steady while monitoring ongoing economic risks and geopolitical uncertainty. Future meetings will depend on whether economic growth and employment show signs of a more durable pickup.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1 3/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.53% as of 2002-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.18% week of 2002-09-13"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.69% on 2002-09-24"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.7% in August 2002"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change -17k as of August 2002"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "1.7% year over year, August 2002"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.7% year over year, August 2002"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.5% annualized, quarter starting 2002-04-01"
+   }
+  ],
+  "meeting_date": "2002-09-24",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.75,
+   "target_high": 1.75,
+   "votes_for": 10,
+   "votes_against": 2,
+   "dissenters": [
+    "Edward M. Gramlich",
+    "Robert D. McTeer, Jr."
+   ],
+   "summary": "The Federal Reserve decided to keep its target for the federal funds rate unchanged at 1 3/4 percent."
+  },
+  "latency_s": 3.58
+ },
+ "latency_s": 3.5814342498779297,
+ "failures": []
+}

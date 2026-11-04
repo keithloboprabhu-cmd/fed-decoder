@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved -0.08% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve is growing more concerned about economic uncertainties and low inflation, laying the groundwork for potential future rate cuts. Educational forecast models suggest a 97% chance of a hold and a 3% chance of a hike at the next meeting.",
+  "whats_next": "The statement signals that the Federal Reserve is growing more concerned about economic uncertainties and low inflation, laying the groundwork for potential future rate cuts.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

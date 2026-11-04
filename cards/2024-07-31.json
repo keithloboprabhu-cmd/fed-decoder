@@ -86,7 +86,7 @@
       "text": "The broad trade-weighted dollar moved -0.52% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed is waiting for even more evidence before making any changes. Educational forecast data suggests upcoming meetings have a 92% chance of a hold and a 7% chance of a cut.",
+  "whats_next": "The statement signals that the Fed is waiting for even more evidence before making any changes.",
   "confidence": "high",
   "citations": [
     {
@@ -130,7 +130,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

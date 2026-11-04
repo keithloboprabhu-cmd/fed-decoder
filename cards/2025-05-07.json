@@ -86,7 +86,7 @@
       "text": "The broad trade-weighted dollar moved 0.06% on the day."
     }
   ],
-  "whats_next": "The statement signals that future choices will depend heavily on incoming economic readings and risks. An educational forecast model suggests a 73% chance of a hold and a 27% chance of a cut at the next meeting.",
+  "whats_next": "The statement signals that future choices will depend heavily on incoming economic readings and risks.",
   "confidence": "high",
   "citations": [
     {
@@ -130,7 +130,9 @@
   "provider": "gemini",
   "model": "gemini-flash-lite-latest",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

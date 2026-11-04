@@ -78,7 +78,7 @@
       "text": "The broad trade-weighted dollar moved -0.16% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed will evaluate incoming data meeting by meeting without a fixed timetable for rate hikes. Educational forecast models suggest the next meeting has an 86 percent chance of a hold, a 4 percent chance of a cut, and a 10 percent chance of a hike.",
+  "whats_next": "The statement signals that the Fed will evaluate incoming data meeting by meeting without a fixed timetable for rate hikes.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

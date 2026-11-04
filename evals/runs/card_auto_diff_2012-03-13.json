@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Jeffrey M. Lacker"
+   ],
+   "summary": "The Federal Reserve voted to keep its benchmark interest rate at 0 to 1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Labor market conditions have improved further; the unemployment rate has declined notably in recent months but remains elevated.",
+    "explanation": "The Fed acknowledges that the job market is getting better and unemployment has dropped, even though the rate is still high."
+   },
+   {
+    "quote": "Household spending and business fixed investment have continued to advance.",
+    "explanation": "Consumer spending and business investments are continuing to grow."
+   },
+   {
+    "quote": "Inflation has been subdued in recent months, although prices of crude oil and gasoline have increased lately.",
+    "explanation": "While overall inflation has been calm, rising oil and gas costs are starting to show up."
+   },
+   {
+    "quote": "Strains in global financial markets have eased, though they continue to pose significant downside risks to the economic outlook.",
+    "explanation": "Global financial stress has calmed down a bit, but still remains a risk for the economy."
+   },
+   {
+    "quote": "The recent increase in oil and gasoline prices will push up inflation temporarily, but the Committee anticipates that subsequently inflation will run at or below the rate that it judges most consistent with its dual mandate.",
+    "explanation": "Higher energy prices might cause a temporary jump in inflation before it settles back down to the Fed's target."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "Information received since the Federal Open Market Committee met in January suggests that the economy has been expanding moderately.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "To support a stronger economic recovery and to help ensure that inflation, over time, is at the rate most consistent with its dual mandate, the Committee expects to maintain a highly accommodative stance for monetary policy.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 12.36% APR costs about $51.50 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 2.14% and moved +10 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.9% would rise by about $17.24 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 8.3%, and employers added an average of 273k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.9% over the past year (February 2012); core PCE inflation, the Fed's preferred gauge, was 2%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 8.3%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 4.6% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.14% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed intends to keep interest rates exceptionally low at least through late 2014 to support the recovery. Educational forecast models suggest a 79% chance of a hold at the next meeting.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "In particular, the Committee decided today to keep the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "12.36% as of 2011-11-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.9% week of 2012-03-01"
+   },
+   {
+    "source": "DGS10",
+    "detail": "2.14% on 2012-03-13"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "8.3% in February 2012"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 273k as of February 2012"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.9% year over year, February 2012"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2% year over year, February 2012"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "4.6% annualized, quarter starting 2011-10-01"
+   }
+  ],
+  "meeting_date": "2012-03-13",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 9,
+   "votes_against": 1,
+   "dissenters": [
+    "Jeffrey M. Lacker"
+   ],
+   "summary": "The Federal Reserve voted to keep its benchmark interest rate at 0 to 1/4 percent."
+  },
+  "latency_s": 4.07
+ },
+ "latency_s": 5.138305187225342,
+ "failures": []
+}

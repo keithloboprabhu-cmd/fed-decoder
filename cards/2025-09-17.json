@@ -80,7 +80,7 @@
       "text": "The broad trade-weighted dollar moved 0.02% on the day."
     }
   ],
-  "whats_next": "The statement signals that policymakers will continue reviewing incoming data and economic conditions before making further changes to interest rates. An educational forecast model suggests an 86 percent chance of a cut and a 14 percent chance of a hold at the next meeting.",
+  "whats_next": "The statement signals that policymakers will continue reviewing incoming data and economic conditions before making further changes to interest rates.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

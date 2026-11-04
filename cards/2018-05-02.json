@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved 0.38% on the day."
     }
   ],
-  "whats_next": "The statement signals that future meetings will likely bring further gradual rate increases if the economy continues on its current path. As an educational note, our forecasting model predicts a 62% chance of a hold and a 38% chance of a hike at the next meeting.",
+  "whats_next": "The statement signals that future meetings will likely bring further gradual rate increases if the economy continues on its current path.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

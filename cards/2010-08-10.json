@@ -76,7 +76,7 @@
       "text": "The broad trade-weighted dollar moved 0.59% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed remains ready to provide more support if the recovery continues to falter. An educational forecast model sees a 47% chance of a hold and a 52% chance of a cut at the next meeting.",
+  "whats_next": "The statement signals that the Fed remains ready to provide more support if the recovery continues to falter.",
   "confidence": "high",
   "citations": [
     {
@@ -120,7 +120,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

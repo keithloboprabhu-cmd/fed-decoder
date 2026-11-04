@@ -74,7 +74,7 @@
       "text": "The broad trade-weighted dollar moved -1.03% on the day."
     }
   ],
-  "whats_next": "The statement signals that central banks are ready to cooperate and provide liquidity to stabilize global funding markets as needed. An educational forecast model estimates an 87% chance of a hold at the next meeting.",
+  "whats_next": "The statement signals that central banks are ready to cooperate and provide liquidity to stabilize global funding markets as needed.",
   "confidence": "high",
   "citations": [
     {
@@ -118,7 +118,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

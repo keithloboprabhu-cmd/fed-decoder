@@ -78,7 +78,7 @@
       "text": "The broad trade-weighted dollar moved 0.38% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve plans to maintain its current low interest rates and asset purchases until substantial further progress is made toward maximum employment and price stability. Educational model forecasts for the next meeting indicate a 77% probability of a hold and a 23% probability of a cut.",
+  "whats_next": "The statement signals that the Federal Reserve plans to maintain its current low interest rates and asset purchases until substantial further progress is made toward maximum employment and price stability.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

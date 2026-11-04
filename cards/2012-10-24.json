@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved 0.04% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed will maintain its highly accommodative monetary stance until the labor market improves substantially. Educational forecast model data indicates a 74 percent probability of a hold at the next meeting.",
+  "whats_next": "The statement signals that the Fed will maintain its highly accommodative monetary stance until the labor market improves substantially.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved -0.63% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed intends to keep borrowing costs exceptionally low for an extended period while relying on balance sheet expansion to heal credit markets. Educational forecast models suggest the next meeting has a 52% chance of a hold, a 39% chance of a cut, and a 9% chance of a hike.",
+  "whats_next": "The statement signals that the Fed intends to keep borrowing costs exceptionally low for an extended period while relying on balance sheet expansion to heal credit markets.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

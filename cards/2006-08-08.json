@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved 0.15% on the day."
     }
   ],
-  "whats_next": "The statement signals that future meetings depend on incoming data regarding inflation and economic growth. Educational forecast model data indicates the next meeting holds a 79% probability of a hold, 1% probability of a cut, and 20% probability of a hike.",
+  "whats_next": "The statement signals that future meetings depend on incoming data regarding inflation and economic growth.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

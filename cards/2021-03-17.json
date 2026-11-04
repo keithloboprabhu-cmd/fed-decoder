@@ -70,7 +70,7 @@
       "text": "The broad trade-weighted dollar moved 0.15% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will maintain its current accommodative monetary policy stance until substantial further progress is made toward its goals. Educational forecasting models indicate an 86 percent probability of another hold at the upcoming meeting.",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its current accommodative monetary policy stance until substantial further progress is made toward its goals.",
   "confidence": "high",
   "citations": [
     {
@@ -114,7 +114,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

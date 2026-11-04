@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved -0.49% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate increases will likely be gradual if economic conditions evolve as expected. An educational forecast model estimates a 69% chance of a hold and a 31% chance of a hike at the next meeting.",
+  "whats_next": "The statement signals that future rate increases will likely be gradual if economic conditions evolve as expected.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

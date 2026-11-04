@@ -23,7 +23,7 @@
       "explanation": "The Fed highlighted that cheaper energy prices are giving consumers more purchasing power."
     },
     {
-      "quote": "Inflation has declined further below the Committee’s longer-run objective, largely reflecting declines in energy prices.",
+      "quote": "Inflation has declined further below the Committee\u2019s longer-run objective, largely reflecting declines in energy prices.",
       "explanation": "The Fed acknowledged that falling energy prices have pushed inflation further below its 2 percent goal."
     },
     {
@@ -38,7 +38,7 @@
       "direction": "dovish"
     },
     {
-      "quote": "However, if incoming information indicates faster progress toward the Committee’s employment and inflation objectives than the Committee now expects, then increases in the target range for the federal funds rate are likely to occur sooner than currently anticipated.",
+      "quote": "However, if incoming information indicates faster progress toward the Committee\u2019s employment and inflation objectives than the Committee now expects, then increases in the target range for the federal funds rate are likely to occur sooner than currently anticipated.",
       "direction": "hawkish"
     }
   ],
@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved 0.3% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate hikes depend on incoming economic data regarding employment and inflation. Educational forecast models suggest an 87 percent chance of a hold at the next meeting.",
+  "whats_next": "The statement signals that future rate hikes depend on incoming economic data regarding employment and inflation.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

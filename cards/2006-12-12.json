@@ -76,7 +76,7 @@
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and economic growth. The educational forecast model gives the next meeting a 97 percent chance of a hold.",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and economic growth.",
   "confidence": "high",
   "citations": [
     {
@@ -120,7 +120,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

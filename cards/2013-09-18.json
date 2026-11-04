@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved 0.04% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will continue its bond purchases and low interest rates until it sees further sustained improvement in the job market. Educational forecast models suggest an 81% probability of a hold at upcoming meetings.",
+  "whats_next": "The statement signals that the Federal Reserve will continue its bond purchases and low interest rates until it sees further sustained improvement in the job market.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

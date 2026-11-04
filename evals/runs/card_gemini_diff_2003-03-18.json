@@ -1,0 +1,147 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.25,
+   "target_high": 1.25,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its target for the federal funds rate unchanged at 1-1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "While incoming economic data since the January meeting have been mixed, recent labor market indicators have proven disappointing.",
+    "explanation": "The Committee notes that recent economic data are mixed and job market indicators have disappointed."
+   },
+   {
+    "quote": "However, the hesitancy of the economic expansion appears to owe importantly to oil price premiums and other aspects of geopolitical uncertainties.",
+    "explanation": "Higher oil prices and geopolitical uncertainties are weighing on the economic expansion."
+   },
+   {
+    "quote": "In light of the unusually large uncertainties clouding the geopolitical situation in the short run and their apparent effects on economic decisionmaking, the Committee does not believe it can usefully characterize the current balance of risks with respect to the prospects for its long-run goals of price stability and sustainable economic growth.",
+    "explanation": "Uncertainties are so large that the Fed stopped assessing the balance of risks."
+   },
+   {
+    "quote": "Rather, the Committee decided to refrain from making that determination until some of those uncertainties abate.",
+    "explanation": "The Fed will wait until these uncertainties lift before assessing risks again."
+   },
+   {
+    "quote": "In the current circumstances, heightened surveillance is particularly informative.",
+    "explanation": "The Fed is watching economic conditions especially closely given the environment."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "While incoming economic data since the January meeting have been mixed, recent labor market indicators have proven disappointing.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "However, the hesitancy of the economic expansion appears to owe importantly to oil price premiums and other aspects of geopolitical uncertainties.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "The Committee believes that as those uncertainties lift, as most analysts expect, the accommodative stance of monetary policy, coupled with ongoing growth in productivity, will provide support to economic activity sufficient to engender an improving economic climate over time.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 13.11% APR costs about $54.62 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 3.91% and moved +9 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 5.67% would rise by about $17.12 a month."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.9%, and employers added an average of -58k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.1% over the past year (February 2003); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 0.5% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +9 bp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed will hold off on determining the balance of risks until geopolitical uncertainties clear up. Upcoming meetings will depend heavily on incoming data regarding jobs, oil prices, and the broader economic expansion.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.11% as of 2002-11-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "5.67% week of 2003-03-07"
+   },
+   {
+    "source": "DGS10",
+    "detail": "3.91% on 2003-03-18"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.9% in February 2003"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change -58k as of February 2003"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.1% year over year, February 2003"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.7% year over year, February 2003"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "0.5% annualized, quarter starting 2002-10-01"
+   }
+  ],
+  "meeting_date": "2003-03-18",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.25,
+   "target_high": 1.25,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its target for the federal funds rate unchanged at 1-1/4 percent."
+  },
+  "latency_s": 3.51
+ },
+ "latency_s": 3.5098180770874023,
+ "failures": []
+}

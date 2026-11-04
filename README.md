@@ -150,9 +150,7 @@ tests/                     unit tests and fake-provider tests for the LLM paths
 ## Eval report
 
 <!-- EVAL-REPORT:START -->
-Generated 2026-11-04 00:34 UTC. Keys available: Gemini=no, Groq=no. Cards in `cards/`: {'rules': 227}.
-
-> **No LLM keys were available for this run.** Every section that needs Gemini or Groq is marked *not run*. Add free-tier keys to `.env`, run `python scripts/build_cards.py` and then `python evals/run.py` to fill them in.
+Generated 2026-11-04 05:39 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
 
 ### 1. Extraction vs ground truth
 
@@ -161,7 +159,7 @@ Ground truth: decision and range from FRED target series; votes and dissenters p
 | Extractor | Meetings | Direction | Size (bp) | Target range | Vote count | Dissenters |
 |---|---|---|---|---|---|---|
 | Rules-based (regex) | 227 | 100.0% | 100.0% | 98.7% | 100.0% | 100.0% |
-| LLM cards | 0 | not run | | | | |
+| LLM cards | 227 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% |
 
 Vote and dissenter accuracy for the rules extractor is not independent: it uses the same vote parser that builds the answer key. Range misses are statements that state no target (liquidity or balance-sheet announcements).
 
@@ -170,24 +168,24 @@ Vote and dissenter accuracy for the rules extractor is not independent: it uses 
 | Check | Result |
 |---|---|
 | Dictionary tone vs next meeting's rate change | Pearson 0.45, Spearman 0.42 (n=226) |
-| LLM card tone vs next meeting's rate change | not run |
+| LLM card tone vs next meeting's rate change | Pearson 0.59, Spearman 0.58 (n=226) |
 | Agreement with hand labels (30 statements) | pending: fill `evals/hand_labels_tone.csv` |
-| Gemini vs Groq | not run |
-| LLM vs dictionary model | not run |
+| Gemini vs Groq | Pearson 0.93, mean abs diff 0.62, within 0.5: 58.3% (n=12) |
+| LLM vs dictionary model | Pearson 0.70, sign agreement 63.4% (n=227) |
 
 ### 3. Consistency (20 statements x 3 runs)
 
 - Dictionary model: deterministic, spread 0.00 on 20 statements.
-- LLM: not run
+- LLM: mean range 0.28, max range 1.00, mean std 0.13, identical across runs 50.0% (n=20, temperature 0.7)
 
 ### 4. Grounding
 
 | Cards | n | Number check pass | Quote check pass |
 |---|---|---|---|
-| llm | 0 | n/a | n/a |
-| rules | 227 | 43.6% | 100.0% |
+| llm | 227 | 46.3% | 100.0% |
+| rules | 0 | n/a | n/a |
 
-LLM judge (Groq judging Gemini claims): not run (needs Gemini cards and a Groq key)
+LLM judge (Groq judging Gemini claims): 95.0% of 20 sampled claims supported; hand-label validation pending (`evals/hand_labels_claims.csv`)
 
 ### 5. Impact math
 
@@ -199,7 +197,7 @@ Walk-forward, 2004-09-21 to 2026-09-16, 186 meetings.
 
 | Model | Hit rate |
 |---|---|
-| Logistic (Taylor gap, SEP gap, tone, momentum) | 75.3% |
+| Logistic (Taylor gap, SEP gap, tone, momentum) | 76.9% |
 | Baseline: always "no change" | 69.9% |
 
 The model beats the baseline. On meetings where the Fed actually moved, the model called the direction 64.3% of the time (the baseline gets 0% of those).
@@ -209,16 +207,18 @@ The model beats the baseline. On meetings where the Fed actually moved, the mode
 | Mode | Accuracy | Adversarial pass | Mean latency | Fell back to rules |
 |---|---|---|---|---|
 | rules | 100.0% | 100.0% | 0.08s | n/a |
+| gemini | 76.7% | 100.0% | 12.15s | 3.3% |
+| groq | 100.0% | 100.0% | 40.54s | 76.7% |
 
 ### 8. Provider comparison
 
 | Provider | n | Direction | Size | Range | Votes | Grounding pass | Mean latency | Fell back |
 |---|---|---|---|---|---|---|---|---|
-| gemini | not run | | | | | | | |
-| groq | not run | | | | | | | |
+| gemini | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 6.94s | 0.0% |
+| groq | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 38.04s | 95.0% |
 | rules | 20 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.00s | 0.0% |
 
-Logged LLM calls this far: 0 ok ({}), fallback share n/a, 0 rate-limit events, 0 guardrail failures.
+Logged LLM calls this far: 505 ok ({'gemini': 438, 'groq': 67}), fallback share 0.0%, 56 rate-limit events, 31 guardrail failures.
 
 
 ### Before / after
@@ -241,7 +241,10 @@ This change made the predictive correlation slightly *worse*: dissenters' stated
 
 **LLM cards: add the code-computed diff to the card inputs.**
 
-Not run (needs an LLM key).
+| Version | Cards | Change-quote precision | Validation pass |
+|---|---|---|---|
+| before_no_diff | 20 | 86.0% | 100.0% |
+| after_with_diff | 20 | 100.0% | 100.0% |
 <!-- EVAL-REPORT:END -->
 
 ---

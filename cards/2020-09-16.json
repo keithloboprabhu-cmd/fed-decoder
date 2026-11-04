@@ -85,7 +85,7 @@
       "text": "The broad trade-weighted dollar moved -0.21% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed intends to maintain low rates until maximum employment is reached and inflation rises to 2 percent and is on track to moderately exceed 2 percent. An educational forecast model suggests the next meeting has a 22 percent chance of a hold and a 78 percent chance of a cut.",
+  "whats_next": "The statement signals that the Fed intends to maintain low rates until maximum employment is reached and inflation rises to 2 percent and is on track to moderately exceed 2 percent.",
   "confidence": "high",
   "citations": [
     {
@@ -129,7 +129,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

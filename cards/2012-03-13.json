@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved -0.14% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve intends to keep rates exceptionally low at least through late 2014. As an educational forecast, the model calculates a 79% probability of another hold at the next meeting.",
+  "whats_next": "The statement signals that the Federal Reserve intends to keep rates exceptionally low at least through late 2014.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

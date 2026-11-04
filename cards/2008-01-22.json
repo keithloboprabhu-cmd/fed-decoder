@@ -88,7 +88,7 @@
       "text": "The broad trade-weighted dollar moved -0.1% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed remains highly focused on economic risks and stands ready to take further action as needed. Educational forecasts suggest a 78% probability of a rate cut at the next meeting.",
+  "whats_next": "The statement signals that the Fed remains highly focused on economic risks and stands ready to take further action as needed.",
   "confidence": "high",
   "citations": [
     {
@@ -132,7 +132,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

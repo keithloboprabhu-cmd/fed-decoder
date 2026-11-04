@@ -21,7 +21,7 @@
       "explanation": "The language was updated to note that financial markets remain stressed, dropping mention of easing short-term funding markets."
     },
     {
-      "quote": "Today’s policy action, combined with those taken earlier, should help to promote moderate growth over time and to mitigate the risks to economic activity.",
+      "quote": "Today\u2019s policy action, combined with those taken earlier, should help to promote moderate growth over time and to mitigate the risks to economic activity.",
       "explanation": "A new phrase was added to emphasize that current and past rate cuts are intended to support growth and protect the economy."
     },
     {
@@ -80,7 +80,7 @@
       "text": "The broad trade-weighted dollar moved -0.1% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Committee will continue to monitor financial developments and act in a timely manner as needed to address downside risks to growth. According to educational forecast models, the next meeting has a 61% probability of a hold and a 39% probability of a cut.",
+  "whats_next": "The statement signals that the Committee will continue to monitor financial developments and act in a timely manner as needed to address downside risks to growth.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

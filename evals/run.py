@@ -374,6 +374,23 @@ def eval_chat(offline: bool) -> dict:
     return out
 
 
+# Equivalent wordings for the expected keywords ("lowered" is a cut; 25 bp is 1/4 point).
+_SYNONYMS = {
+    "cut": ["cut", "lower", "reduc", "decreas"],
+    "rais": ["rais", "increas", "hike"],
+    "held": ["held", "hold", "maintain", "kept", "keep", "unchanged", "steady"],
+    "25": ["25", "1/4 percentage", "quarter"],
+    "50": ["50", "1/2 percentage", "half"],
+    "75": ["75", "3/4 percentage"],
+    "100": ["100", "1 percentage point", "full percentage", "one percentage"],
+}
+
+
+def _alternatives(k: str) -> list[str]:
+    k = k.lower().replace(",", "")
+    return _SYNONYMS.get(k, [k])
+
+
 def score_chat(qs: list[dict], rows: list[dict]) -> dict:
     by = {r["id"]: r for r in rows}
     normal = [q for q in qs if "adversarial" not in q]
@@ -381,7 +398,7 @@ def score_chat(qs: list[dict], rows: list[dict]) -> dict:
     correct = 0
     for q in normal:
         t = by[q["id"]]["text"].lower().replace(",", "")
-        correct += all(k.lower().replace(",", "") in t for k in q["expect_all"])
+        correct += all(any(alt in t for alt in _alternatives(k)) for k in q["expect_all"])
     adv_ok = 0
     for q in adv:
         r = by[q["id"]]

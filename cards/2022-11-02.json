@@ -74,7 +74,7 @@
       "text": "The broad trade-weighted dollar moved -0.07% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will likely continue raising interest rates at upcoming meetings until policy is restrictive enough to lower inflation. The educational forecast model estimates a 98% probability of another rate hike at the next meeting.",
+  "whats_next": "The statement signals that the Federal Reserve will likely continue raising interest rates at upcoming meetings until policy is restrictive enough to lower inflation.",
   "confidence": "high",
   "citations": [
     {
@@ -118,7 +118,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved -0.09% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed expects to keep rates exceptionally low for an extended period because growth and inflation remain subdued. Educational forecast model probabilities for the next meeting are hold 49%, cut 50%, and hike 1%.",
+  "whats_next": "The statement signals that the Fed expects to keep rates exceptionally low for an extended period because growth and inflation remain subdued.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

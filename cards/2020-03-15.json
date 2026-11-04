@@ -80,7 +80,7 @@
       "text": "The broad trade-weighted dollar moved 0.41% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will maintain this target range until it is confident that the economy has weathered recent events and is on track to achieve its maximum employment and price stability goals. The forecast model gave the next meeting: hold 36%, cut 13%, hike 52% (educational purpose).",
+  "whats_next": "The statement signals that the Federal Reserve will maintain this target range until it is confident that the economy has weathered recent events and is on track to achieve its maximum employment and price stability goals.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

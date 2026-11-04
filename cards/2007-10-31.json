@@ -36,7 +36,7 @@
   "tone_score": 0.0,
   "tone_quotes": [
     {
-      "quote": "Today’s action, combined with the policy action taken in September, should help forestall some of the adverse effects on the broader economy that might otherwise arise from the disruptions in financial markets and promote moderate growth over time.",
+      "quote": "Today\u2019s action, combined with the policy action taken in September, should help forestall some of the adverse effects on the broader economy that might otherwise arise from the disruptions in financial markets and promote moderate growth over time.",
       "direction": "dovish"
     },
     {
@@ -88,7 +88,7 @@
       "text": "The broad trade-weighted dollar moved -0.21% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will continue to watch incoming economic and financial data closely to decide future moves. Educational forecast models suggest an 88% chance of a hold and a 12% chance of a cut at the next meeting.",
+  "whats_next": "The statement signals that the Federal Reserve will continue to watch incoming economic and financial data closely to decide future moves.",
   "confidence": "high",
   "citations": [
     {
@@ -132,7 +132,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

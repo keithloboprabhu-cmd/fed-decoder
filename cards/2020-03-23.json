@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved 0.95% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will continue aggressive market interventions and open-ended asset purchases until financial strains subside. As an educational note, the forecast model gave the next meeting probability as hold 84%, cut 5%, and hike 11%.",
+  "whats_next": "The statement signals that the Federal Reserve will continue aggressive market interventions and open-ended asset purchases until financial strains subside.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

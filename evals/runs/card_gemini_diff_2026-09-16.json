@@ -1,0 +1,151 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 4.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee approved the following statement for release by a 12 \u2013 0 vote:",
+    "explanation": "The Committee reached a unanimous decision this time, compared to a divided vote at the previous meeting."
+   },
+   {
+    "quote": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
+    "explanation": "The Fed increased borrowing costs by 25 basis points to support its economic goals."
+   },
+   {
+    "quote": "Economic activity is expanding at a solid pace.",
+    "explanation": "The description of economic growth was streamlined while maintaining an overall positive view."
+   },
+   {
+    "quote": "Inflation remains elevated.",
+    "explanation": "A direct acknowledgment that inflation is still above the target level."
+   },
+   {
+    "quote": "Today's policy action will support a timelier return to the Committee's 2 percent goal.",
+    "explanation": "The rate hike is intended to help bring inflation back down to the 2 percent target more quickly."
+   }
+  ],
+  "tone_score": 1.0,
+  "tone_quotes": [
+   {
+    "quote": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Inflation remains elevated.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "Today's policy action will support a timelier return to the Committee's 2 percent goal.",
+    "direction": "hawkish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "On a $5,000 card balance at about 20.94% APR, a 25 bp increase raises monthly interest by about $1.04."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate; the 10-year was 5.01% and moved +1 bp on the day, so the payment on a new $300,000 30-year loan at 6.71% would rise by about $1.99 a month if that passed through."
+   },
+   {
+    "topic": "Savers",
+    "text": "High-yield savings rates usually follow the Fed partly; on $10,000 that means roughly $15.00 a year more in interest."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 4.1%, and employers added an average of 51k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 3.7% over the past year (August 2026); core PCE inflation, the Fed's preferred gauge, was 3%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 4.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 2.2% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +7 bp on the day, and the S&P 500 moved -0.45%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved 0.03% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that future rate adjustments will depend on incoming data regarding inflation and economic resilience. Educational forecast models suggest the next meeting has a hold probability of 59% and a hike probability of 41%.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee decided to raise the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "20.94% as of 2026-05-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.71% week of 2026-09-03"
+   },
+   {
+    "source": "DGS10",
+    "detail": "5.01% on 2026-09-16"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "4.1% in August 2026"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 51k as of August 2026"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "3.7% year over year, August 2026"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "3% year over year, August 2026"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "2.2% annualized, quarter starting 2026-04-01"
+   }
+  ],
+  "meeting_date": "2026-09-16",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hike",
+   "change_bps": 25,
+   "target_low": 3.75,
+   "target_high": 4.0,
+   "votes_for": 12,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve raised the target range for the federal funds rate by 1/4 percentage point to 3-3/4 to 4 percent."
+  },
+  "latency_s": 7.29
+ },
+ "latency_s": 35.79127883911133,
+ "failures": []
+}

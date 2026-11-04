@@ -27,7 +27,7 @@
       "explanation": "The Fed confirmed large-scale purchases of mortgage-backed securities and agency debt to support housing and credit markets."
     },
     {
-      "quote": "As previously announced, the Federal Reserve’s purchases of $300 billion of Treasury securities will be completed by the end of October 2009.",
+      "quote": "As previously announced, the Federal Reserve\u2019s purchases of $300 billion of Treasury securities will be completed by the end of October 2009.",
       "explanation": "The Fed provided a clear end date of October 2009 for its $300 billion Treasury purchase program."
     }
   ],
@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved 0.12% on the day."
     }
   ],
-  "whats_next": "The educational forecast model indicates a 50% chance of a hold and a 50% chance of a cut at upcoming meetings. The Committee continues to indicate that exceptionally low interest rates are likely to be warranted for an extended period.",
+  "whats_next": "The Committee continues to indicate that exceptionally low interest rates are likely to be warranted for an extended period.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

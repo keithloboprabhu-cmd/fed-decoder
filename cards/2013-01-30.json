@@ -80,7 +80,7 @@
       "text": "The broad trade-weighted dollar moved -0.06% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will maintain its ultra-low interest rates and continue buying assets until the labor market improves substantially. According to the educational forecast model, there is an 87 percent chance of a hold at the next meeting, an 11 percent chance of a cut, and a 2 percent chance of a hike.",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its ultra-low interest rates and continue buying assets until the labor market improves substantially.",
   "confidence": "high",
   "citations": [
     {
@@ -124,7 +124,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

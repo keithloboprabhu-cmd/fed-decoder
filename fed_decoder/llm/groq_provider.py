@@ -25,6 +25,32 @@ from fed_decoder.llm.base import (
 _LIMITER = RateLimiter(config.GROQ_RPM)
 
 
+class _TokenBudget:
+    """Sliding 60 s window of estimated tokens, kept under GROQ_TPM."""
+
+    def __init__(self, tpm: int):
+        self.tpm, self.used = tpm, []  # [(t, tokens)]
+
+    def wait(self, tokens: int) -> None:
+        tokens = min(tokens, self.tpm)
+        while True:
+            now = time.time()
+            self.used = [(t, n) for t, n in self.used if now - t < 60]
+            if sum(n for _, n in self.used) + tokens <= self.tpm:
+                self.used.append((now, tokens))
+                return
+            time.sleep(max(0.5, 60 - (now - self.used[0][0]) + 0.1))
+
+
+_TOKENS = _TokenBudget(config.GROQ_TPM)
+
+
+def _estimate_tokens(kw: dict) -> int:
+    """Rough count: ~3.5 characters per token for the prompt, plus room for the reply."""
+    prompt = sum(len(str(m.get("content", ""))) for m in kw["messages"]) + len(json.dumps(kw.get("tools", []))) + len(json.dumps(kw.get("response_format", {})))
+    return int(prompt / 3.5) + 1500
+
+
 def _strictify(schema: dict) -> dict:
     """OpenAI-style strict mode wants additionalProperties=false and every
     property required. Applied recursively, including $defs."""
@@ -93,6 +119,7 @@ class GroqProvider(Provider):
         import groq
 
         _LIMITER.wait()
+        _TOKENS.wait(_estimate_tokens(kw))
         try:
             return self._get_client().chat.completions.create(**kw)
         except groq.RateLimitError as e:
@@ -111,6 +138,8 @@ class GroqProvider(Provider):
         import groq
 
         kw = dict(model=self.model, messages=self._to_messages(messages), temperature=temperature)
+        if "gpt-oss" in self.model:
+            kw["reasoning_effort"] = "low"
         if tools:
             kw["tools"] = [{"type": "function", "function": {"name": t.name, "description": t.description, "parameters": t.parameters}} for t in tools]
             kw["tool_choice"] = "auto"

@@ -88,7 +88,7 @@
       "text": "The broad trade-weighted dollar moved -0.21% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Committee plans to keep interest rates low for a considerable time following the end of its asset purchase program. As an educational note, our forecast model calculates an 88% probability that the Fed will hold rates at the next meeting.",
+  "whats_next": "The statement signals that the Committee plans to keep interest rates low for a considerable time following the end of its asset purchase program.",
   "confidence": "high",
   "citations": [
     {
@@ -132,7 +132,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

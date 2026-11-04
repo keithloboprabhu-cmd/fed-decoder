@@ -88,7 +88,7 @@
       "text": "The broad trade-weighted dollar moved 0.31% on the day."
     }
   ],
-  "whats_next": "The forecast model suggests the next meeting has a 92 percent probability of a hold, with a 5 percent chance of a cut and a 2 percent chance of a hike. These educational projections indicate the Fed is expected to maintain its current stance unless economic data shifts significantly.",
+  "whats_next": "These educational projections indicate the Fed is expected to maintain its current stance unless economic data shifts significantly.",
   "confidence": "high",
   "citations": [
     {
@@ -132,7 +132,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

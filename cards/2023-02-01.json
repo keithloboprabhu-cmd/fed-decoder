@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved -0.3% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate decisions will depend on incoming economic data and the cumulative impact of past hikes. As an educational note, an econometric forecast model assigns the next meeting a 10% probability of a hold, 0% for a cut, and 90% for a hike.",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming economic data and the cumulative impact of past hikes.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

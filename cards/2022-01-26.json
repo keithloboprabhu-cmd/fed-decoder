@@ -82,7 +82,7 @@
       "text": "The broad trade-weighted dollar moved -0.06% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed is preparing to start raising interest rates at upcoming meetings. As an educational note, the forecast model gave the next meeting odds as: hold 15%, cut 0%, hike 85%.",
+  "whats_next": "The statement signals that the Fed is preparing to start raising interest rates at upcoming meetings.",
   "confidence": "high",
   "citations": [
     {
@@ -126,7 +126,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

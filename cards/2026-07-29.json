@@ -15,7 +15,7 @@
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee approved the following statement for release by a 9 – 3 vote:",
+      "quote": "The Federal Open Market Committee approved the following statement for release by a 9 \u2013 3 vote:",
       "explanation": "The vote count changed from a unanimous decision to a split vote with three dissents."
     },
     {
@@ -78,7 +78,7 @@
       "text": "The broad trade-weighted dollar moved 0.14% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve remains watchful of elevated inflation and solid economic activity before adjusting rates. According to educational forecast models, the next meeting currently carries a 94 percent chance of a hold.",
+  "whats_next": "The statement signals that the Federal Reserve remains watchful of elevated inflation and solid economic activity before adjusting rates.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

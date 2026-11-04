@@ -263,8 +263,13 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
         if badq:
             raise GuardrailError(f"quotes not verbatim: {badq[:2]}")
 
+    def _validate_nonempty(r) -> None:
+        if not (r.text or "").strip():
+            raise GuardrailError("empty answer")
+        _validate(r)
+
     try:
-        _validate(resp)
+        _validate_nonempty(resp)
         final = resp
     except GuardrailError as g:
         log_event(provider=resp.provider, event="guardrail_fail", detail=str(g)[:300], purpose="chat")
@@ -273,8 +278,8 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
             {"role": "assistant", "content": resp.text},
             {"role": "user", "content": f"That answer failed a grounding check ({g}). Rewrite it using only numbers and quotes from the tool results."},
         ]
-        final = generate(retry_msgs, providers=[resp.provider], validate=_validate, purpose="chat_retry", guardrail_retries=0)
-        if final is None:
+        final = generate(retry_msgs, providers=[resp.provider], validate=_validate_nonempty, purpose="chat_retry", guardrail_retries=0)
+        if final is None or not (final.text or "").strip():
             return rules_answer(q)
     ans = ChatAnswer(final.text.strip(), final.provider, f"Answered by {final.label}", tool_log)
     if not history:

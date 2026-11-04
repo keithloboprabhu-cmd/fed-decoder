@@ -85,7 +85,7 @@
       "text": "The broad trade-weighted dollar moved 0.02% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Committee will continue to monitor economic and financial developments to decide future actions. Educational forecast models suggest a 66% chance of a hold and a 34% chance of a cut at the next meeting.",
+  "whats_next": "The statement signals that the Committee will continue to monitor economic and financial developments to decide future actions.",
   "confidence": "high",
   "citations": [
     {
@@ -129,7 +129,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

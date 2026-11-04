@@ -88,7 +88,7 @@
       "text": "The broad trade-weighted dollar moved -0.08% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed plans to keep interest rates exceptionally low as long as the unemployment rate stays above 6-1/2 percent and inflation projections remain tame. An educational forecast model suggests an 86 percent chance that the Fed will hold rates steady at the next meeting.",
+  "whats_next": "The statement signals that the Fed plans to keep interest rates exceptionally low as long as the unemployment rate stays above 6-1/2 percent and inflation projections remain tame.",
   "confidence": "high",
   "citations": [
     {
@@ -132,7 +132,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

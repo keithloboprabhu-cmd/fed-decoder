@@ -1,0 +1,139 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its benchmark interest rate unchanged at 0 to 1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "Amid progress on vaccinations and strong policy support, indicators of economic activity and employment have strengthened.",
+    "explanation": "The Fed acknowledged that the economy and job market are improving due to vaccinations and government support."
+   },
+   {
+    "quote": "The sectors most adversely affected by the pandemic remain weak but have shown improvement.",
+    "explanation": "Industries hit hardest by COVID-19 are still struggling, though they are getting better."
+   },
+   {
+    "quote": "Inflation has risen, largely reflecting transitory factors.",
+    "explanation": "The Fed noted that recent price increases are mostly temporary."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "Amid progress on vaccinations and strong policy support, indicators of economic activity and employment have strengthened.",
+    "direction": "hawkish"
+   },
+   {
+    "quote": "The ongoing public health crisis continues to weigh on the economy, and risks to the economic outlook remain.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 14.65% APR costs about $61.04 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury yield, not the fed funds rate. The 10-year was 1.63% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 3.04% would not change."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 6.1%, and employers added an average of 561k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.7% over the past year (March 2021); core PCE inflation, the Fed's preferred gauge, was 2.1%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 6.1%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 6.2% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved 0 bp on the day, and the S&P 500 moved -0.08%."
+   },
+   {
+    "topic": "Dollar",
+    "text": "The broad trade-weighted dollar moved -0.11% on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Fed plans to keep its current support in place until the job market heals further and inflation moves higher. Educational forecast models suggest the next meeting will most likely be a hold.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Committee decided to keep the target range for the federal funds rate at 0 to 1/4 percent"
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "14.65% as of 2020-11-01"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "3.04% week of 2021-04-15"
+   },
+   {
+    "source": "DGS10",
+    "detail": "1.63% on 2021-04-28"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "6.1% in March 2021"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "3-month average change 561k as of March 2021"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.7% year over year, March 2021"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "2.1% year over year, March 2021"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "6.2% annualized, quarter starting 2021-01-01"
+   }
+  ],
+  "meeting_date": "2021-04-28",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 0.0,
+   "target_high": 0.25,
+   "votes_for": 11,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve kept its benchmark interest rate unchanged at 0 to 1/4 percent."
+  },
+  "latency_s": 3.2
+ },
+ "latency_s": 3.20806622505188,
+ "failures": []
+}

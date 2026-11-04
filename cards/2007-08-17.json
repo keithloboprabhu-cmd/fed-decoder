@@ -78,7 +78,7 @@
       "text": "The broad trade-weighted dollar moved -0.62% on the day."
     }
   ],
-  "whats_next": "The statement signals that future meetings will depend heavily on evolving financial market conditions and whether downside economic risks materialize. Educational forecast data suggests upcoming probabilities are split between a hold at 49% and a cut at 48%, with a hike at 3%.",
+  "whats_next": "The statement signals that future meetings will depend heavily on evolving financial market conditions and whether downside economic risks materialize.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

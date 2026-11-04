@@ -85,7 +85,7 @@
       "text": "The broad trade-weighted dollar moved -0.09% on the day."
     }
   ],
-  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and labor market conditions. Educational forecast models suggest a 63% chance of another cut and a 37% chance of a hold at the next meeting.",
+  "whats_next": "The statement signals that future rate decisions will depend on incoming data regarding inflation and labor market conditions.",
   "confidence": "high",
   "citations": [
     {
@@ -129,7 +129,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "cut",

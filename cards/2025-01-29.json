@@ -74,7 +74,7 @@
       "text": "The broad trade-weighted dollar moved 0.05% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Committee will carefully assess incoming data and the evolving outlook before making any future adjustments. As an educational note, the forecast model gave the next meeting: hold 91%, cut 9%, hike 0%.",
+  "whats_next": "The statement signals that the Committee will carefully assess incoming data and the evolving outlook before making any future adjustments.",
   "confidence": "high",
   "citations": [
     {
@@ -118,7 +118,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

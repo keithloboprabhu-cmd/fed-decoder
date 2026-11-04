@@ -70,7 +70,7 @@
       "text": "Real GDP grew at a 3.8% annualized pace in the latest reported quarter."
     }
   ],
-  "whats_next": "The statement signals that the Fed expects to continue raising interest rates at a measured pace. The educational forecast model gives an 82% chance of a hike at the next meeting.",
+  "whats_next": "The statement signals that the Fed expects to continue raising interest rates at a measured pace.",
   "confidence": "high",
   "citations": [
     {
@@ -114,7 +114,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

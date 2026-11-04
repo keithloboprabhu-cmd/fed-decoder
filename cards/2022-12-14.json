@@ -70,7 +70,7 @@
       "text": "The broad trade-weighted dollar moved -0.02% on the day."
     }
   ],
-  "whats_next": "The statement signals that policymakers expect further rate increases will be needed to bring inflation back down to 2 percent. An educational forecast model assigned a 96% probability to a hike at the next meeting.",
+  "whats_next": "The statement signals that policymakers expect further rate increases will be needed to bring inflation back down to 2 percent.",
   "confidence": "high",
   "citations": [
     {
@@ -114,7 +114,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

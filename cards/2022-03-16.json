@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved -0.37% on the day."
     }
   ],
-  "whats_next": "The statement signals that ongoing increases in borrowing costs will be appropriate at future gatherings. The educational forecast model indicates a 100% probability of another rate hike at the next meeting.",
+  "whats_next": "The statement signals that ongoing increases in borrowing costs will be appropriate at future gatherings.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

@@ -14,7 +14,7 @@
   },
   "changes": [
     {
-      "quote": "The Federal Open Market Committee approved the following statement for release by a 10 – 2 vote:",
+      "quote": "The Federal Open Market Committee approved the following statement for release by a 10 \u2013 2 vote:",
       "explanation": "The vote count changed from a unanimous decision to a split vote with two members dissenting."
     },
     {
@@ -85,7 +85,7 @@
       "text": "The broad trade-weighted dollar moved 0.15% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve is pausing to gather more data before deciding on future rate changes. Educational forecasting models suggest a 71% chance of another hold, a 28% chance of a hike, and a 1% chance of a cut at the upcoming meeting.",
+  "whats_next": "The statement signals that the Federal Reserve is pausing to gather more data before deciding on future rate changes.",
   "confidence": "high",
   "citations": [
     {
@@ -129,7 +129,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

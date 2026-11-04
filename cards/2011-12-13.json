@@ -40,7 +40,7 @@
       "direction": "dovish"
     },
     {
-      "quote": "The Committee also anticipates that inflation will settle, over coming quarters, at levels at or below those consistent with the Committee’s dual mandate.",
+      "quote": "The Committee also anticipates that inflation will settle, over coming quarters, at levels at or below those consistent with the Committee\u2019s dual mandate.",
       "direction": "dovish"
     }
   ],
@@ -84,7 +84,7 @@
       "text": "The broad trade-weighted dollar moved 0.23% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Fed intends to keep rates exceptionally low at least through mid-2013. For educational purposes, an educational forecast model gave the next meeting a 74 percent chance of a hold, 24 percent chance of a cut, and 2 percent chance of a hike.",
+  "whats_next": "The statement signals that the Fed intends to keep rates exceptionally low at least through mid-2013.",
   "confidence": "high",
   "citations": [
     {
@@ -128,7 +128,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

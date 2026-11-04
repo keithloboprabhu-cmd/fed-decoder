@@ -78,7 +78,7 @@
       "text": "The broad trade-weighted dollar moved -0.22% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve plans to keep interest rates exceptionally low for an extended period while aggressively expanding its balance sheet to support credit markets. The educational forecast model gives the next meeting probability as hold 21%, cut 79%, and hike 0%.",
+  "whats_next": "The statement signals that the Federal Reserve plans to keep interest rates exceptionally low for an extended period while aggressively expanding its balance sheet to support credit markets.",
   "confidence": "high",
   "citations": [
     {
@@ -122,7 +122,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",

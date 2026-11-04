@@ -1,0 +1,131 @@
+{
+ "ok": true,
+ "card": {
+  "decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.25,
+   "target_high": 1.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+  },
+  "changes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent.",
+    "explanation": "The Fed opted to leave interest rates steady instead of cutting them further as it did at the previous meeting."
+   },
+   {
+    "quote": "The limited number of incoming economic indicators since the November meeting, taken together, are not inconsistent with the economy working its way through its current soft spot.",
+    "explanation": "The Fed replaced its reference to additional monetary easing with an observation that recent economic data suggest the economy is managing its current slowdown."
+   }
+  ],
+  "tone_score": 0.0,
+  "tone_quotes": [
+   {
+    "quote": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent.",
+    "direction": "dovish"
+   },
+   {
+    "quote": "In these circumstances, the Committee believes that, against the background of its long-run goals of price stability and sustainable economic growth and of the information currently available, the risks are balanced with respect to the prospects for both goals for the foreseeable future.",
+    "direction": "dovish"
+   }
+  ],
+  "for_you": [
+   {
+    "topic": "Borrowers",
+    "text": "Card rates should not move on this decision; a $5,000 balance at about 13.36% APR costs about $55.67 a month in interest."
+   },
+   {
+    "topic": "Mortgages",
+    "text": "Mortgages track the 10-year Treasury, not the fed funds rate. The 10-year was 4.06% and moved 0 bp on the day; if that move passed through, the payment on a new $300,000 30-year loan at 6.13% would not change."
+   },
+   {
+    "topic": "Savers",
+    "text": "Savings yields should stay roughly where they are, since the Fed held rates."
+   },
+   {
+    "topic": "Workers",
+    "text": "Unemployment was 5.9%, and employers added an average of 12k jobs a month over the prior 3 months."
+   }
+  ],
+  "for_country": [
+   {
+    "topic": "Inflation",
+    "text": "CPI inflation was 2.3% over the past year (November 2002); core PCE inflation, the Fed's preferred gauge, was 1.7%, against a 2% goal."
+   },
+   {
+    "topic": "Jobs",
+    "text": "The unemployment rate stood at 5.9%."
+   },
+   {
+    "topic": "Growth",
+    "text": "Real GDP grew at a 1.6% annualized pace in the latest reported quarter."
+   },
+   {
+    "topic": "Markets",
+    "text": "The 2-year Treasury yield, the most Fed-sensitive market rate, moved +2 bp on the day."
+   }
+  ],
+  "whats_next": "The statement signals that the Federal Reserve plans to hold rates steady while monitoring incoming economic data to see how the economy handles its current soft spot. Future meetings will depend on whether indicators show the recovery staying on track or requiring further action.",
+  "confidence": "high",
+  "citations": [
+   {
+    "source": "statement",
+    "detail": "The Federal Open Market Committee decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+   },
+   {
+    "source": "TERMCBCCALLNS",
+    "detail": "13.36%"
+   },
+   {
+    "source": "MORTGAGE30US",
+    "detail": "6.13%"
+   },
+   {
+    "source": "DGS10",
+    "detail": "4.06%"
+   },
+   {
+    "source": "UNRATE",
+    "detail": "5.9%"
+   },
+   {
+    "source": "PAYEMS",
+    "detail": "12k"
+   },
+   {
+    "source": "CPIAUCSL",
+    "detail": "2.3%"
+   },
+   {
+    "source": "PCEPILFE",
+    "detail": "1.7%"
+   },
+   {
+    "source": "GDPC1",
+    "detail": "1.6%"
+   }
+  ],
+  "meeting_date": "2002-12-10",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "validated": true,
+  "validation_notes": [],
+  "inputs_version": "v2-with-diff",
+  "llm_decision": {
+   "direction": "hold",
+   "change_bps": 0,
+   "target_low": 1.25,
+   "target_high": 1.25,
+   "votes_for": 10,
+   "votes_against": 0,
+   "dissenters": [],
+   "summary": "The Federal Reserve decided today to keep its target for the federal funds rate unchanged at 1-1/4 percent."
+  },
+  "latency_s": 3.15
+ },
+ "latency_s": 3.1576762199401855,
+ "failures": []
+}

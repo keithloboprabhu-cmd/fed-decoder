@@ -86,7 +86,7 @@
       "text": "The broad trade-weighted dollar moved -0.41% on the day."
     }
   ],
-  "whats_next": "The statement signals that future policy decisions will depend on cumulative tightening and economic data rather than a preset path. An educational forecast model suggests the next meeting has a 27% chance of a hold, a 1% chance of a cut, and a 72% chance of a hike.",
+  "whats_next": "The statement signals that future policy decisions will depend on cumulative tightening and economic data rather than a preset path.",
   "confidence": "high",
   "citations": [
     {
@@ -130,7 +130,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hike",

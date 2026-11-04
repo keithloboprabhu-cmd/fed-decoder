@@ -70,7 +70,7 @@
       "text": "The broad trade-weighted dollar moved -0.09% on the day."
     }
   ],
-  "whats_next": "The statement signals that the Federal Reserve will maintain its current loose monetary policy stance until it is confident the economy has weathered recent events. As an educational note, the forecast model gave the next meeting probabilities as hold 23%, cut 77%, and hike 0%.",
+  "whats_next": "The statement signals that the Federal Reserve will maintain its current loose monetary policy stance until it is confident the economy has weathered recent events.",
   "confidence": "high",
   "citations": [
     {
@@ -114,7 +114,9 @@
   "provider": "gemini",
   "model": "gemini-3.5-flash-lite",
   "validated": true,
-  "validation_notes": [],
+  "validation_notes": [
+    "Forecast probabilities removed from whats_next (the page shows the live computed forecast)."
+  ],
   "inputs_version": "v2-with-diff",
   "llm_decision": {
     "direction": "hold",
