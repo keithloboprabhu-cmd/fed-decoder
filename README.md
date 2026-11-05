@@ -42,24 +42,24 @@ The design is deliberately plain: off-white, ink, and color only where it means 
 
 | Piece | Free service | How we stay inside the limits |
 |---|---|---|
-| LLM, primary | Google Gemini API, Flash models, free tier (AI Studio key, no card) | 8 requests/min limiter, rotation across Flash models on 503 or a spent daily quota, then fall back |
-| LLM, fallback | Groq free tier, `openai/gpt-oss-120b` | Token-per-minute budget under the 8,000 TPM cap |
-| LLM, last resort | Rules-based mode (regex, difflib, dictionary tone, templates) | No API, always available |
+| LLM, primary | Google Gemini API free tier (AI Studio key, no card): Flash models, then Gemma 4 on the same key | Per-model rotation: a model that hits its daily cap is skipped until midnight Pacific, one that hits a per-minute limit or a 503 rests for a minute; 15 s timeout per chat call |
+| LLM, fallback | Groq free tier, `openai/gpt-oss-120b` | Token-per-minute budget under the 8,000 TPM cap; short tool results and a trimmed primer for Groq |
+| No AI available | Decoder cards and Ask say so plainly | Cards fall back to rules-based text; Ask shows "The AI is temporarily unavailable" plus clearly labelled saved archive content |
 | Decoder cards | Pre-generated once by `scripts/build_cards.py` (about 230 calls, resumable) | Viewing a meeting makes zero calls |
-| Chat | Live | Answer cache, 10 questions per session, a global daily counter that switches to cached and rules-based answers at 90% of `DAILY_LLM_BUDGET` (default 80), history kept to the last 4 turns |
-| Data | federalreserve.gov and FRED (public CSV endpoint, no key needed) | Polite scraper (1 s delay, cached HTML) |
+| Ask | Live, tool-using | Answer cache (6 hours for anything time-sensitive), live-tool caches (15 min to 24 h), 15 questions per visit, per-provider daily budgets (`GEMINI_DAILY_BUDGET`, `GROQ_DAILY_BUDGET`) after which it shows "Daily AI limit reached; showing saved answers", last 6 turns kept |
+| Data | federalreserve.gov, FRED, BLS, Treasury yield-curve XML, Fed RSS feeds (no keys needed; optional free FRED and BLS keys) | Polite scraper (1 s delay, cached HTML); every live tool has a timeout and a cache |
 | Refresh | GitHub Actions every 2 hours, watching the Fed's official RSS feed (`/feeds/press_monetary.xml`) | Full update only when a new statement appears (scheduled or emergency); FRED data once a day; at most 10 new cards per run |
 | Hosting | Streamlit Community Cloud | Keys in Streamlit secrets |
 
-Never enable billing on either provider. Model IDs and rate settings live in `fed_decoder/config.py` and can be overridden with environment variables (`GEMINI_MODEL`, `GROQ_MODEL`, `GEMINI_RPM`, `GROQ_RPM`, `DAILY_LLM_BUDGET`). Free-tier limits change, so check them in each console before deploying.
+Never enable billing on either provider. Model IDs and rate settings live in `fed_decoder/config.py` and can be overridden with environment variables (`ASK_GEMINI_MODELS`, `GEMINI_MODEL`, `GROQ_MODEL`, `GEMINI_RPM`, `GROQ_RPM`, `GEMINI_DAILY_BUDGET`, `GROQ_DAILY_BUDGET`). Free-tier limits change, so check them in each console before deploying.
 
-**Privacy.** Gemini's free tier may use inputs to improve Google's models, so the app sends only public text: Fed statements, data, and questions about the Fed. The question box and the paste box both say "Don't enter personal information."
+**Privacy.** Gemini's free tier may use inputs to improve Google's models, so the app sends only public text: Fed statements, data, and questions about the Fed. The Ask bar says "Don't enter personal information."
 
 ## Design rules
 
 - **Numbers come from code.** Rates, dates, votes, payments, forecasts and statistics are computed in Python. The displayed decision always comes from the ground truth. The model's own extraction is stored separately (`llm_decision`) and used only for evals.
-- **Every claim is grounded.** Any number in LLM output that isn't in the context or tool results fails the guardrail (`fed_decoder/llm/guardrail.py`). A failure gets one retry with the error fed back; if the retry also fails, the app shows the rules-based text. Quotes must appear verbatim in the statement.
-- **Graceful degradation.** Gemini, then Groq, then rules. Users never see an error. The About page says which services write the text.
+- **Every claim is grounded.** Any number in LLM output that isn't in the context or tool results fails the guardrail (`fed_decoder/llm/guardrail.py`). A failure gets one retry with the error fed back. If the retry also fails, a decoder card uses rules-based text, and Ask says it couldn't verify an answer rather than show one. Quotes must appear verbatim in the statement.
+- **Never fail silently.** Gemini, then Groq. When neither can answer, the reader is told so, and anything shown instead is labelled as saved content, not an AI answer. `FORCE_PROVIDER_FAIL=gemini,groq` demonstrates it.
 - **Scope.** The chat refuses personal investment advice and off-topic questions. Pasted text is fenced as data, and the system prompt says to ignore instructions inside it.
 
 ## Status of the LLM parts

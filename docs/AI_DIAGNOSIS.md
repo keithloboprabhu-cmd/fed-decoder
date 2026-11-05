@@ -67,3 +67,17 @@ This is the failure people actually see: a canned paragraph that ignores the que
 Conclusions:
 - Search grounding cannot share a call with our function tools on the free tier. `web_search` is its own tool that makes a separate grounded call: Gemma 4 or Gemini with Google Search first, then Groq `gpt-oss-20b` with `browser_search`, then Wikipedia.
 - Web search can be stale (the 120B model above). Leadership, rates and data must come from official-source tools, and search is only for news and background.
+
+## What was fixed
+
+| # | Root cause | Fix |
+|---|---|---|
+| 1 | No date in the prompt | `NOW: <weekday, date, time> Eastern Time` and "your training data is out of date" open every system prompt (`agent.SYSTEM`). |
+| 2 | Silent FAQ fallback | `answer()` returns `status="unavailable" / "limit" / "unverified"` with the exact notice; saved archive content is shown only when it answers the question, under "Saved content, not an AI answer". The generic paragraph no longer matches "what's the fed funds rate…". |
+| 3 | Provider pinned after a tool round | A failed provider gets one retry from a flattened, provider-neutral transcript (which reaches Gemini's other models), then hands the tool results to Groq. Test: `test_handoff_mid_answer_keeps_tool_results`. |
+| 4 | Tiny, swallowed quota | Gemma 4 (`gemma-4-26b-a4b-it`, `gemma-4-31b-it`) added to the chat rotation; daily-cap models skipped, per-minute 429s and 503s rest a model for 60 s; per-provider daily budgets; every failure is visible on the Status page. |
+| 5 | 12 s backoffs | No sleep on a long 429; at most 5 s on a short one; Groq waits at most 8 s for its token window (45 s only as the last option); 15 s timeout per Gemini chat call. |
+| 6 | Missing tools | `fed_leadership` (Board, this year's voters, alternates, rotation), `fomc_calendar`, `fred_search` / `fred_series` (any series), `bls_latest`, `treasury_yields`, `fed_feed`, `web_search`, `fetch_page` (allowlist), `calc`; `get_meeting("latest")`. |
+| 7 | No sources | Every tool result carries `source` and `as_of`; answers show up to 3 source chips; links the model invents are removed; primer answers cite the primer's official pages. |
+| 8 | Keys on Streamlit Cloud | Still to do at deploy time (no deployment exists). The Status page shows "no key" if a key is missing. |
+| 9 | No FRED key | `fred_search` falls back to a built-in catalog of common series; `fred_series` uses the keyless CSV. Add a free `FRED_API_KEY` for full search. |
