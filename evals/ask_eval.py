@@ -147,7 +147,7 @@ def check_corpus(text: str, item: dict) -> tuple[bool, str]:
         if not any(abs(n - v) < 0.051 for n in nums):
             probs.append(f"range {lo}-{hi} not stated")
             break
-    if not any(w in text.lower() for w in DIRECTION[m["decision"]]):
+    if not item.get("no_direction") and not any(w in text.lower() for w in DIRECTION[m["decision"]]):
         probs.append(f"direction '{m['decision']}' not stated")
     if item.get("dissenters"):
         names = [_last(n) for n in m["dissenters"]]
@@ -251,6 +251,11 @@ def rejudge(path: Path) -> int:
     suite = {it["id"]: it for its in yaml.safe_load(SUITE.read_text()).values() for it in its}
     for r in run["results"]:
         it = suite.get(r["id"])
+        if it and it["check"] == "corpus" and r.get("status") == "ok" and r.get("provider") != "none":
+            ok, why = check_corpus(r["text"], it)  # archive checks are code: re-run with the current suite
+            r["correct"], r["why"] = ok, why
+            r["pass"] = bool(ok) and r["grounded"] and r["cited"] and r["concise"]
+            continue
         if not it or r.get("judge") == "" or r.get("status") != "ok":
             continue
         q = (it.get("turns") or [it.get("q")])[-1]

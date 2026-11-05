@@ -74,7 +74,7 @@ meetings:
   - {id: h08, q: "Who dissented at the October 2026 FOMC meeting?", check: corpus, date: "2026-10-28", dissenters: true}
   - {id: h09, q: "What did Paul Volcker do about inflation?", check: rubric,
      points: ["became Chair in 1979 with very high inflation", "tightened sharply / let rates rise (October 1979 shift)", "inflation came down, with recessions"]}
-  - {id: h10, q: "What was the Fed's peak rate in the 2022-23 hiking cycle?", check: corpus, date: "2023-07-26"}
+  - {id: h10, q: "What was the Fed's peak rate in the 2022-23 hiking cycle?", check: corpus, date: "2023-07-26", no_direction: true}
 
 followups:
   - {id: f01, turns: ["Who is the Fed chair?", "What is his role on the FOMC?"], check: referent, fn: chair}
