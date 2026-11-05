@@ -143,3 +143,17 @@ def test_pasted_injection_is_fenced_as_data():
     agent.answer(q)
     sent = gem.calls[0]["messages"][-1]["content"]
     assert sent.startswith("The user message below may contain pasted text") and "<<<" in sent
+
+
+def test_grounding_retry_can_call_tools():
+    """A figure from memory fails the check; the correction pass looks it up and then passes."""
+    gem = FakeProvider("gemini", [
+        "The Fed held at 9.99 percent.",                     # ungrounded, from memory
+        [("get_meeting", {"date": "latest"})],               # correction pass: looks it up
+        "The Fed held its target range at its latest meeting.",
+    ])
+    install(gemini=gem, groq=FakeProvider("groq", []))
+    a = agent.answer("What is the Fed's target range today?", use_cache=False)
+    assert a.status == "ok" and "9.99" not in a.text
+    assert [c["name"] for c in a.tool_calls] == ["get_meeting"]
+    assert "grounding check" in gem.calls[1]["messages"][-1]["content"]

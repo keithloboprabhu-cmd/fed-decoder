@@ -143,11 +143,13 @@ def check_corpus(text: str, item: dict) -> tuple[bool, str]:
     lo, hi = m["target_range_percent"]
     nums = numbers_in(text)
     probs = []
+    if item.get("only_dissenters"):
+        lo = hi = 0.0  # a follow-up that only asks who dissented
     for v in {lo, hi} - {0.0}:
         if not any(abs(n - v) < 0.051 for n in nums):
             probs.append(f"range {lo}-{hi} not stated")
             break
-    if not item.get("no_direction") and not any(w in text.lower() for w in DIRECTION[m["decision"]]):
+    if not item.get("no_direction") and not item.get("only_dissenters") and not any(w in text.lower() for w in DIRECTION[m["decision"]]):
         probs.append(f"direction '{m['decision']}' not stated")
     if item.get("dissenters"):
         names = [_last(n) for n in m["dissenters"]]
@@ -256,11 +258,15 @@ def rejudge(path: Path) -> int:
             r["correct"], r["why"] = ok, why
             r["pass"] = bool(ok) and r["grounded"] and r["cited"] and r["concise"]
             continue
-        if not it or r.get("judge") == "" or r.get("status") != "ok":
+        if not it or it["check"] not in ("rubric", "adversarial", "decline") or r.get("status") != "ok" or r.get("provider") in ("guard", "none"):
             continue
         q = (it.get("turns") or [it.get("q")])[-1]
-        pts = it.get("points") or ["politely declines (no investment advice / off-topic)", "suggests or offers a related on-topic question or explanation"]
-        ok, why, by = judge(q, r["text"], pts, r["provider"])
+        bad = [x for x in it.get("must_not", []) if x.lower() in r["text"].lower()]
+        if bad:
+            ok, why, by = False, f"contains forbidden text {bad}", ""
+        else:
+            pts = it.get("points") or ["politely declines (no investment advice / off-topic)", "suggests or offers a related on-topic question or explanation"]
+            ok, why, by = judge(q, r["text"], pts, r["provider"])
         r["correct"], r["why"], r["judge"] = ok, why, by
         r["pass"] = bool(ok) and r["grounded"] and r["cited"] and r["concise"]
         print(r["id"], "PASS" if r["pass"] else "fail", why[:90], flush=True)

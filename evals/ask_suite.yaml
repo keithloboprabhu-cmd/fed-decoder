@@ -77,10 +77,11 @@ meetings:
   - {id: h10, q: "What was the Fed's peak rate in the 2022-23 hiking cycle?", check: corpus, date: "2023-07-26", no_direction: true}
 
 followups:
-  - {id: f01, turns: ["Who is the Fed chair?", "What is his role on the FOMC?"], check: referent, fn: chair}
+  - {id: f01, turns: ["Who is the Fed chair?", "What is his role on the FOMC?"], check: rubric,
+     points: ["answers about the Fed chair (the person from the first turn), not someone else", "says the chair also chairs/leads the FOMC"]}
   - {id: f02, turns: ["Who is the vice chair of the Fed Board?", "How long is that role's term?"], check: rubric,
      points: ["answers about the Board vice chair role", "4-year term as vice chair (within a 14-year governor term)"]}
-  - {id: f03, turns: ["What did the Fed do at its last meeting?", "Who dissented?"], check: corpus, date: latest, dissenters: true}
+  - {id: f03, turns: ["What did the Fed do at its last meeting?", "Who dissented?"], check: corpus, date: latest, dissenters: true, only_dissenters: true}
   - {id: f04, turns: ["What is the dot plot?", "When is the next one released?"], check: live, fn: next_sep}
   - {id: f05, turns: ["What's the unemployment rate?", "And what was it a year earlier?"], check: rubric,
      points: ["gives a value for about one year earlier", "makes clear which month each figure is for"]}

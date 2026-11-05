@@ -527,6 +527,38 @@ def _run_tools(calls, on_status) -> list[str]:
         return list(ex.map(lambda c: T.run_tool(c.name, dict(c.args or {})), calls))
 
 
+def _tool_loop(messages: list[dict], prov: str, tools, tool_log: list[dict], on_status, rounds: int, purpose: str,
+               providers: list[str] | None, validate=None):
+    """Call `prov` until it answers without tools (at most `rounds` tool rounds, then one call
+    without tools). Appends tool calls and results to `messages` and `tool_log`. Raises when the
+    provider is unavailable so the caller can hand off."""
+    for rnd in range(rounds + 1):
+        final_round = rnd == rounds
+        _bump_daily(prov, providers=providers)
+        r = generate(messages if not final_round else messages + [{"role": "user", "content": "Answer now from the tool results above."}],
+                     tools=None if final_round else tools, providers=[prov], purpose=purpose,
+                     validate=validate if final_round else None, guardrail_retries=0)
+        if r is None:
+            raise RuntimeError(f"{prov} unavailable")
+        if not r.tool_calls:
+            return r
+        msg = {"role": "assistant", "content": r.text or "", "tool_calls": [{"id": c.id, "name": c.name, "args": c.args} for c in r.tool_calls]}
+        if r.provider == "gemini":
+            # Pin the turn to the model that made the call: Gemini 3 needs its own thought
+            # signatures replayed, and another model can't read them.
+            msg["gemini_model"] = r.model
+            if str(r.model).startswith("gemini") and getattr(r, "provider_content", None) is not None:
+                msg["gemini_content"] = r.provider_content
+        messages.append(msg)
+        outs = _run_tools(r.tool_calls, on_status)
+        for c, out in zip(r.tool_calls, outs):
+            tool_log.append({"name": c.name, "args": dict(c.args or {}), "result": out})
+            messages.append({"role": "tool", "tool_call_id": c.id, "name": c.name, "content": out})
+        if on_status:
+            on_status("Writing the answer…")
+    return None
+
+
 def _stat(event: str) -> None:
     d = _read_json(STATS_PATH, {})
     k = date.today().isoformat()
@@ -653,30 +685,7 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
             messages = _flatten(messages, tool_log, 2000 if prov == "groq" else 3000)
         resp = None
         try:
-            for rnd in range(MAX_TOOL_ROUNDS + 1):
-                final_round = rnd == MAX_TOOL_ROUNDS
-                _bump_daily(prov, providers=providers)
-                r = generate(messages if not final_round else messages + [{"role": "user", "content": "Answer now from the tool results above."}],
-                             tools=None if final_round else tools, providers=[prov], purpose="chat_last" if last else "chat")
-                if r is None:
-                    raise RuntimeError(f"{prov} unavailable")
-                if not r.tool_calls:
-                    resp = r
-                    break
-                msg = {"role": "assistant", "content": r.text or "", "tool_calls": [{"id": c.id, "name": c.name, "args": c.args} for c in r.tool_calls]}
-                if r.provider == "gemini":
-                    # Pin the turn to the model that made the call: Gemini 3 needs its own thought
-                    # signatures replayed, and another model can't read them.
-                    msg["gemini_model"] = r.model
-                    if str(r.model).startswith("gemini") and getattr(r, "provider_content", None) is not None:
-                        msg["gemini_content"] = r.provider_content
-                messages.append(msg)
-                outs = _run_tools(r.tool_calls, on_status)
-                for c, out in zip(r.tool_calls, outs):
-                    tool_log.append({"name": c.name, "args": dict(c.args or {}), "result": out})
-                    messages.append({"role": "tool", "tool_call_id": c.id, "name": c.name, "content": out})
-                if on_status:
-                    on_status("Writing the answer…")
+            resp = _tool_loop(messages, prov, tools, tool_log, on_status, MAX_TOOL_ROUNDS, "chat_last" if last else "chat", providers)
         except Exception as e:  # noqa: BLE001 - quota, overload, network: hand off to the next provider
             log_event(provider=prov, event="chat_handoff", error=type(e).__name__, detail=str(e)[:200], round=len(tool_log))
             resp = None
@@ -687,7 +696,8 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
         return _not_ai("unavailable", q, meeting, t0)
 
     # ---- grounding: every number must be in a tool result, the primer, the question or the date
-    evidence = "\n".join([q, now_text(), date.today().isoformat(), primer_for(q, "gemini")]
+    def evidence() -> str:
+        return "\n".join([q, now_text(), date.today().isoformat(), primer_for(q, "gemini")]
                          + [h["content"] for h in history] + [c["result"] for c in tool_log])
 
     def _validate(r) -> None:
@@ -695,11 +705,12 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
         if not body:
             raise GuardrailError("empty answer")
         prose = re.sub(r"\]\([^)]*\)", "]", body)  # URLs aren't claims
-        bad = guardrail.ungrounded_numbers(prose, evidence)
+        ev = evidence()
+        bad = guardrail.ungrounded_numbers(prose, ev)
         if bad:
             raise GuardrailError(f"numbers not in tool results: {bad[:5]}")
         quotes = re.findall(r"[“\"]([^”\"]{20,})[”\"]", prose)
-        badq = guardrail.bad_quotes(quotes, evidence)
+        badq = guardrail.bad_quotes(quotes, ev)
         if badq:
             raise GuardrailError(f"quotes not verbatim: {badq[:2]}")
 
@@ -707,19 +718,30 @@ def answer(question: str, history: list[dict] | None = None, providers: list[str
     try:
         _validate(resp)
     except GuardrailError as g:
+        # One correction pass, with tools: the usual cause is a fact the model "knew" without
+        # looking it up, so let it look it up now.
         log_event(provider=resp.provider, event="guardrail_fail", detail=str(g)[:300], purpose="chat")
-        _bump_daily(resp.provider, providers=providers)
-        retry = (_flatten(messages, tool_log) if resp.provider == "gemini" else messages) + [
+        if on_status:
+            on_status("Double-checking against the sources…")
+        retry = list(messages) + [
             {"role": "assistant", "content": resp.text},
-            {"role": "user", "content": f"That answer failed a grounding check ({g}). Rewrite it using only numbers and quotes from "
-                                        "the tool results and primer; use calc for any arithmetic. Keep the FOLLOWUPS block."}]
-        final = generate(retry, providers=[resp.provider], validate=_validate, purpose="chat_retry", guardrail_retries=0)
+            {"role": "user", "content": f"That answer failed a grounding check ({g}). Every number must come from a tool result or the primer. "
+                                        "Call the tools you need (calc for arithmetic) or drop the unsupported figure, then rewrite the answer. "
+                                        "Keep the FOLLOWUPS block."}]
+        final = None
+        try:
+            cand = _tool_loop(retry, resp.provider, tools, tool_log, on_status, 2, "chat_retry", providers)
+            if cand is not None:
+                _validate(cand)
+                final = cand
+        except Exception as e:  # noqa: BLE001 - GuardrailError again, or the provider went away
+            log_event(provider=resp.provider, event="guardrail_fail", detail=f"retry: {str(e)[:250]}", purpose="chat_retry")
         if final is None:
             _stat("unverified")
             return _not_ai("unverified", q, meeting, t0)
 
     body, followups = split_followups(final.text)
-    body = strip_unsourced_links(body, evidence)
+    body = strip_unsourced_links(body, evidence())
     found = [s_ for c in tool_log for s_ in _sources_from(c["name"], _safe_json(c["result"]))]
     if not found and not re.findall(r"\]\((https?://[^)\s]+)\)", body):
         found = primer_sources(q + " " + body)  # answered from the primer: cite its official pages
