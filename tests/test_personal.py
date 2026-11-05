@@ -81,3 +81,12 @@ def test_personal_note_prompt_contains_only_labels(monkeypatch, tmp_path):
     pn.personal_note(build_context("2024-09-18"), ["rents their home", "carries a credit card balance", "owes $9,999"])
     reader = seen["prompt"].split("THE READER:")[1]
     assert "rents their home" in reader and "9,999" not in reader  # anything with digits or symbols is dropped
+
+
+def test_my_impact_tool_sends_no_amounts_to_the_model():
+    import json
+
+    from fed_decoder.chat.tools import run_tool
+
+    out = json.loads(run_tool("my_impact", {"rate_change_bps": -50}))
+    assert set(out) == {"status", "rate_change_bps"} and out["rate_change_bps"] == -50

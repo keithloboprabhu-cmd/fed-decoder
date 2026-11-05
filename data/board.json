@@ -1,0 +1,41 @@
+{
+ "as_of": "2026-11-05",
+ "source": "https://www.federalreserve.gov/aboutthefed/bios/board/default.htm",
+ "members": [
+  {
+   "name": "Kevin Warsh",
+   "title": "Chairman",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/warsh.htm"
+  },
+  {
+   "name": "Philip N. Jefferson",
+   "title": "Vice Chair",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/jefferson.htm"
+  },
+  {
+   "name": "Michelle W. Bowman",
+   "title": "Vice Chair for Supervision",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/bowman.htm"
+  },
+  {
+   "name": "Michael S. Barr",
+   "title": "Governor",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/barr.htm"
+  },
+  {
+   "name": "Lisa D. Cook",
+   "title": "Governor",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/cook.htm"
+  },
+  {
+   "name": "Jerome H. Powell",
+   "title": "Governor",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/powell.htm"
+  },
+  {
+   "name": "Christopher J. Waller",
+   "title": "Governor",
+   "bio": "https://www.federalreserve.gov/aboutthefed/bios/board/waller.htm"
+  }
+ ]
+}

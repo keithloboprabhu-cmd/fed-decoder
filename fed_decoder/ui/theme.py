@@ -287,6 +287,17 @@ div[class*="st-key-suggest"] [data-testid="stBaseButton-tertiary"] p {{ font-siz
 div[class*="st-key-suggest"] {{ margin-top: -8px; }}
 [data-testid="stColumn"] [data-testid="stBaseButton-tertiary"] {{ justify-content: flex-start; text-align: left; }}
 [data-testid="stColumn"] [data-testid="stBaseButton-tertiary"] p {{ font-size: 14px !important; }}
+/* AI answers as results */
+.res-row {{ display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; font-size: 16px; padding: 6px 0; }}
+.res-date {{ font-weight: 600; min-width: 110px; font-variant-numeric: tabular-nums; }}
+.res-move {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 19px; min-width: 90px; }}
+.res-quote {{ margin: 10px 0; max-width: 680px; }}
+.res-quote p {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 17px !important; margin: 2px 0 0 !important; }}
+.res-people {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 24px; margin: 10px 0; max-width: 720px; }}
+.res-people div {{ display: flex; flex-direction: column; font-size: 16px; }}
+.res-people .muted {{ font-size: 14px; }}
+.res-diff {{ font-size: 17px !important; margin: 0 0 10px !important; }}
+div[class*="st-key-answer_"] .tile {{ margin-top: 10px; }}
 /* ---------- phones ---------- */
 @media (max-width: 860px) {{
   .margin-notes {{ grid-template-columns: 1fr; gap: 4px; }}

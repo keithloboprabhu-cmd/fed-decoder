@@ -158,6 +158,17 @@ def notable_meetings(kind: str = "split", limit: int = 6) -> dict:
             "note": "Ranked from recorded votes since 2000; dissents are the clearest sign a decision was contested."}
 
 
+def fed_leadership() -> dict:
+    """Current Board of Governors with titles (chair, vice chairs), from federalreserve.gov."""
+    from fed_decoder.data.leadership import load_board
+
+    b = load_board()
+    if not b:
+        return {"error": "leadership data not available"}
+    chair = next((m for m in b["members"] if m["title"].lower().startswith("chair")), None)
+    return {"chair": chair["name"] if chair else None, "members": b["members"], "as_of": b["as_of"], "source": b["source"]}
+
+
 TOOLS = {
     "get_meeting": get_meeting,
     "search_statements": search_statements,
@@ -166,9 +177,12 @@ TOOLS = {
     "payment_impact": payment_impact,
     "forecast_next": forecast_next,
     "notable_meetings": notable_meetings,
+    "fed_leadership": fed_leadership,
 }
 
 TOOL_SPECS = [
+    ToolSpec("fed_leadership", "Who leads the Fed now: the chair, vice chairs and governors, from the Federal Reserve's Board page.",
+             {"type": "object", "properties": {}}),
     ToolSpec("notable_meetings", "Most contested meetings since 2000 (kind='split', ranked by number of dissents) or the largest rate moves (kind='big_moves').",
              {"type": "object", "properties": {"kind": {"type": "string", "enum": ["split", "big_moves"]}, "limit": {"type": "integer"}}}),
     ToolSpec("get_meeting", "Decision, target range, votes, dissenters, statement text and decoder card for the FOMC meeting nearest a date.",
@@ -178,7 +192,8 @@ TOOL_SPECS = [
     ToolSpec("diff_statements", "Sentence-level changes between two FOMC statements.",
              {"type": "object", "properties": {"a": {"type": "string", "description": "earlier meeting date"}, "b": {"type": "string", "description": "later meeting date"}}, "required": ["a", "b"]}),
     ToolSpec("get_series", "FRED data series summary. IDs: " + ", ".join(f"{k} ({v})" for k, v in config.FRED_SERIES.items()),
-             {"type": "object", "properties": {"id": {"type": "string"}, "start": {"type": "string", "description": "YYYY-MM-DD"}, "end": {"type": "string", "description": "YYYY-MM-DD"}}, "required": ["id"]}),
+             {"type": "object", "properties": {"id": {"type": "string"}, "start": {"type": "string", "description": "YYYY-MM-DD"},
+                                        "end": {"type": "string", "description": "YYYY-MM-DD; leave out to include the latest data"}}, "required": ["id"]}),
     ToolSpec("payment_impact", "Monthly payment change for a loan if its rate moves. loan_type: mortgage_30y, auto_60m, credit_card, heloc. base_rate_pct defaults to the latest FRED average for that product.",
              {"type": "object", "properties": {"loan_type": {"type": "string"}, "balance": {"type": "number"}, "rate_change_bps": {"type": "integer"}, "base_rate_pct": {"type": "number"}}, "required": ["loan_type", "balance", "rate_change_bps"]}),
     ToolSpec("forecast_next", "Model probabilities (hold/cut/hike) for the next FOMC meeting, with signals and backtest. Educational only.",
@@ -186,7 +201,18 @@ TOOL_SPECS = [
 ]
 
 
+MY_IMPACT_SPEC = ToolSpec(
+    "my_impact",
+    "Show the reader their own monthly cost change for a rate move, computed privately in the app from the situation they entered. "
+    "Use it for 'what if' or 'what does this mean for me' questions. You will NOT see the amounts; they are shown only to the reader.",
+    {"type": "object", "properties": {"rate_change_bps": {"type": "integer", "description": "e.g. -25 for a quarter-point cut, 50 for a half-point hike"}},
+     "required": ["rate_change_bps"]})
+
+
 def run_tool(name: str, args: dict) -> str:
+    if name == "my_impact":
+        # The amounts are rendered by the app for the reader only; nothing personal goes back to the model.
+        return json.dumps({"status": "shown to the reader in the app", "rate_change_bps": args.get("rate_change_bps")})
     fn = TOOLS.get(name)
     if fn is None:
         return json.dumps({"error": f"unknown tool {name}"})

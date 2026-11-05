@@ -174,15 +174,105 @@ def meetings_mentioned(text: str) -> list[str]:
     return found[:3]
 
 
+# ---------------------------------------------------------------- AI answers as working results
+def _meeting_row(d: str, key: str) -> None:
+    g = meetings().set_index(meetings()["meeting_date"].dt.strftime("%Y-%m-%d")).loc[d]
+    gt = store.ground_truth().set_index("meeting_date").loc[pd.Timestamp(d)]
+    vote = "" if pd.isna(gt["votes_for"]) else f" · {int(gt['votes_for'])}–{int(gt['votes_against'])}"
+    c1, c2 = st.columns([4, 1], vertical_alignment="center")
+    c1.markdown(f'<div class="res-row"><span class="res-date">{pd.Timestamp(d):%b %-d, %Y}</span>'
+                f'<span class="res-move">{ui.E(ui.short_move(g["direction"], int(g["change_bps"])))}</span>'
+                f'<span class="muted">{ui.fmt_range(g["target_low"], g["target_high"])}{vote}</span></div>', unsafe_allow_html=True)
+    if c2.button("Open →", type="tertiary", key=key):
+        open_meeting(d)
+        st.rerun()
+
+
+def render_results(calls: list[dict], key: str) -> None:
+    """Show what the AI's tools returned (meetings, payments, charts, odds) instead of more prose."""
+    from fed_decoder.chat import tools as T
+
+    seen = set()
+    for i, c in enumerate(calls or []):
+        name, args = c.get("name"), c.get("args") or {}
+        sig = name + repr(sorted(args.items()))
+        if sig in seen:
+            continue
+        seen.add(sig)
+        k = f"{key}_{i}"
+        try:
+            if name == "get_meeting":
+                d = T.resolve_meeting(str(args.get("date", "")))
+                if d is not None:
+                    _meeting_row(str(d.date()), k)
+            elif name == "notable_meetings":
+                for j, m in enumerate(T.notable_meetings(args.get("kind", "split"), int(args.get("limit", 5)))["meetings"][:5]):
+                    _meeting_row(m["meeting_date"], f"{k}_{j}")
+            elif name == "payment_impact":
+                r = T.payment_impact(**{a: args[a] for a in ("loan_type", "balance", "rate_change_bps", "base_rate_pct") if a in args})
+                if "error" not in r:
+                    label = {"mortgage_30y": "30-year mortgage", "auto_60m": "Car loan", "credit_card": "Credit card", "heloc": "Home equity line"}.get(r["loan_type"], r["loan_type"])
+                    st.markdown(ui.tile(f"{label}, ${r['balance']:,.0f} at {r['base_rate_pct']:.2f}%", ui.signed_money(r["monthly_change"]),
+                                        "", f"${r['monthly_before']:,.2f} → ${r['monthly_after']:,.2f} a month"), unsafe_allow_html=True)
+            elif name == "my_impact" and ss.get("profile"):
+                bps = int(args.get("rate_change_bps", 25))
+                r = personal.personal_impact(ss.profile, bps, 0, pd.Timestamp.today())
+                move = f"{'cut' if bps < 0 else 'hike'} of {abs(bps)} bp"
+                st.markdown(ui.tile(f"You, after a {move}", ui.signed_money(r.monthly_total)), unsafe_allow_html=True)
+                affected = [x for x in r.items if abs(x.get("monthly", 0)) >= 0.005]
+                if affected:
+                    st.markdown(ui.rows_html(affected), unsafe_allow_html=True)
+            elif name == "get_series":
+                r = T.get_series(**{a: args[a] for a in ("id", "start", "end") if a in args})
+                if "error" not in r and r.get("points"):
+                    import plotly.graph_objects as go_
+
+                    from fed_decoder.ui import theme
+
+                    xs = [p["date"] for p in r["points"]]
+                    ys = [p["value"] for p in r["points"]]
+                    fig = go_.Figure(go_.Scatter(x=xs, y=ys, mode="lines", line=dict(color=theme.GREEN, width=2),
+                                                 hovertemplate="%{x}: %{y}<extra></extra>"))
+                    fig.update_layout(height=200, margin=dict(l=4, r=4, t=26, b=4), paper_bgcolor=theme.IVORY, plot_bgcolor=theme.IVORY,
+                                      title=dict(text=r["description"], font=dict(size=14, color=theme.MUTED), x=0),
+                                      xaxis=dict(showgrid=False, tickfont=dict(size=12, color=theme.MUTED)),
+                                      yaxis=dict(gridcolor="#ECE9E1", tickfont=dict(size=12, color=theme.MUTED)), font=dict(family="Inter"))
+                    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False}, key=f"{k}_chart")
+            elif name == "forecast_next":
+                f = cached_forecast()
+                p = {"hold": f["p_hold"], "cut": f["p_cut"], "hike": f["p_hike"]}
+                top = max(p, key=p.get)
+                st.markdown(ui.tile("Next meeting", f"{p[top] * 100:.0f}% {({'hold': 'hold', 'cut': 'cut', 'hike': 'raise'})[top]}", ui.odds_bar(p)),
+                            unsafe_allow_html=True)
+            elif name == "diff_statements":
+                r = T.diff_statements(str(args.get("a", "")), str(args.get("b", "")))
+                if "error" not in r:
+                    html = "".join(f'<p class="res-diff">{"<del>" + ui.E(x["old"]) + "</del> " if x["old"] else ""}'
+                                   f'{"<ins>" + ui.E(x["new"]) + "</ins>" if x["new"] else ""}</p>' for x in r["changes"][:3])
+                    st.markdown(f'<div class="redline">{html}</div>', unsafe_allow_html=True)
+            elif name == "search_statements":
+                for j, hit in enumerate(T.search_statements(str(args.get("query", "")))["results"][:3]):
+                    st.markdown(f'<div class="res-quote"><span class="res-date">{pd.Timestamp(hit["meeting_date"]):%b %-d, %Y}</span>'
+                                f'<p>“{ui.E(hit["text"][:260])}{"…" if len(hit["text"]) > 260 else ""}”</p></div>', unsafe_allow_html=True)
+            elif name == "fed_leadership":
+                r = T.fed_leadership()
+                if "error" not in r:
+                    st.markdown('<div class="res-people">' + "".join(
+                        f'<div><strong>{ui.E(m["name"])}</strong><span class="muted">{ui.E(m["title"])}</span></div>' for m in r["members"])
+                        + "</div>", unsafe_allow_html=True)
+        except Exception:
+            continue
+
+
 def answer_home_question(q: str) -> None:
     ss.questions += 1
     reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
     with st.spinner("Looking it up"):
         try:
-            ans = agent.answer(q, reader=reader)
+            ans = agent.answer(q, reader=reader, has_profile=bool(ss.get("profile")))
         except Exception:
             ans = agent.rules_answer(q)
-    ss.setdefault("home_thread", []).append({"q": q, "a": ans.text, "label": ans.label + (" · from an earlier answer" if ans.cached else "")})
+    ss.setdefault("home_thread", []).append({"q": q, "a": ans.text, "calls": ans.tool_calls})
 
 
 def page_home() -> None:
@@ -233,7 +323,9 @@ def page_home() -> None:
         with st.container(key=f"answer_home_{k}"):
             st.markdown(f'<div class="qa-q">{"<br>".join(ui.E(x) for x in item["q"].split(chr(10)) if x.strip())}</div>', unsafe_allow_html=True)
             st.markdown(item["a"])  # Markdown from the model; HTML is not allowed here
-        for j, d in enumerate(meetings_mentioned(item["a"])):
+            render_results(item.get("calls", []), f"hres_{k}")
+        shown = any(c.get("name") in ("get_meeting", "notable_meetings") for c in item.get("calls", []))
+        for j, d in enumerate(meetings_mentioned(item["a"]) if not shown else []):
             if st.button(f"Open {pd.Timestamp(d):%b %-d, %Y} →", type="tertiary", key=f"goto_{k}_{j}_{d}"):
                 open_meeting(d)
                 st.rerun()
@@ -473,10 +565,12 @@ def suggested_questions(card, ctx) -> list[str]:
 def ask_block(card, ctx) -> None:
     key = ctx["meeting_date"]
     thread = ss.setdefault("threads", {}).setdefault(key, [])
-    for n, (q, a, _label) in enumerate(thread):
+    for n, item in enumerate(thread):
+        q, a, calls = item[0], item[1], (item[3] if len(item) > 3 else [])
         with st.container(key=f"answer_m_{n}"):
             st.markdown(f'<div class="qa-q">{ui.E(q)}</div>', unsafe_allow_html=True)
             st.markdown(a)  # Markdown from the model; HTML is not allowed here
+            render_results([c for c in calls if not (c.get("name") == "get_meeting")], f"mres_{key}_{n}")
     left = config.SESSION_QUESTION_LIMIT - ss.questions
     pending = None
     with st.form(f"ask_{key}", border=False, clear_on_submit=True):
@@ -496,10 +590,10 @@ def ask_block(card, ctx) -> None:
         meeting = None if key == "pasted" else key
         with st.spinner(""):
             try:
-                ans = agent.answer(q, meeting=meeting, reader=reader)
+                ans = agent.answer(q, meeting=meeting, reader=reader, has_profile=bool(ss.get("profile")))
             except Exception:
                 ans = agent.rules_answer(q, meeting=meeting)
-        thread.append((q, ans.text, ans.label))
+        thread.append((q, ans.text, ans.label, ans.tool_calls))
         st.rerun()
 
 

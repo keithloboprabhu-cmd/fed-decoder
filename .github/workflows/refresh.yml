@@ -58,6 +58,7 @@ jobs:
         run: |
           python scripts/fetch_statements.py
           python scripts/fetch_fred.py
+          python scripts/fetch_board.py
           python scripts/build_data.py
 
       - name: Build cards for new meetings (free-tier LLM; rules fallback)
