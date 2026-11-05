@@ -8,6 +8,7 @@ this session and never reach an AI.
 from __future__ import annotations
 
 import re
+import time
 from datetime import date
 
 import pandas as pd
@@ -39,6 +40,8 @@ ss.setdefault("open_card", None)
 ss.setdefault("mine", [])
 ss.setdefault("questions", 0)
 ss.setdefault("stair_n", 0)
+ss.setdefault("chat", [])            # this visit's Ask turns (never stored server-side)
+ss.setdefault("chat_history", [])    # last 6 question/answer pairs sent back as context
 
 
 # ---------------------------------------------------------------- cached data
@@ -171,9 +174,11 @@ def top_bar() -> None:
     with st.container(key="topbar"):
         c1, c2 = st.columns([3, 1], vertical_alignment="center")
         c1.markdown('<div class="brand"><img src="/app/static/logo.png" alt="Fed Decoder" width="174" height="32"></div>', unsafe_allow_html=True)
-        label = "← Back" if ss.page == "about" else "About"
+        label = "← Back" if ss.page in ("about", "status") else "About"
         if c2.button(label, type="tertiary", key="about_btn"):
-            ss.page = "meeting" if ss.page == "about" else "about"
+            if ss.page == "status" and "page" in st.query_params:
+                del st.query_params["page"]
+            ss.page = "meeting" if ss.page in ("about", "status") else "about"
             st.rerun()
 
 
@@ -614,22 +619,118 @@ def render_results(calls: list[dict], key: str) -> None:
                     st.markdown(f'<div class="res-quote"><span class="res-date">{short_date(hit["meeting_date"])}</span>'
                                 f'<p>“{ui.E(hit["text"][:240])}{more}”</p></div>', unsafe_allow_html=True)
             elif name == "fed_leadership":
-                r = T.fed_leadership()
+                r = T.TOOLS["fed_leadership"]()
                 if "error" not in r:
-                    people = "".join(f'<div><strong>{ui.E(m["name"])}</strong><span>{ui.E(m["title"])}</span></div>' for m in r["members"])
+                    people = "".join(f'<div><strong>{ui.E(m["name"])}</strong><span>{ui.E(m["title"])}</span></div>' for m in r["board_of_governors"])
                     st.markdown(f'<div class="res-people">{people}</div>', unsafe_allow_html=True)
+            elif name in ("fred_series", "bls_latest"):
+                r = T.TOOLS[name](**{a: args[a] for a in ("id", "start", "end", "series") if a in args})
+                if "error" not in r and len(r.get("points") or []) > 2:
+                    ys = [p_["value"] for p_ in r["points"]]
+                    st.markdown(f'<div class="tilebox"><div class="lab">{ui.E(r.get("title") or r.get("id"))} · FRED {ui.E(r.get("id", ""))}</div>'
+                                f'{ui.sparkline(ys, 400, 70)}<div class="cap">{r["first"]["date"]}: {r["first"]["value"]} → '
+                                f'{r["latest"]["date"]}: {r["latest"]["value"]}</div></div>', unsafe_allow_html=True)
         except Exception:
             continue
 
 
+STARTERS = ["Who runs the Fed?", "Why did rates change last meeting?", "What does a rate cut do to my credit card?", "What is the dot plot?"]
+
+
+def _progressive(text: str):
+    """Reveal a checked answer a few words at a time. The grounding check runs on the whole
+    answer before anything is shown, so nothing unverified ever appears on screen."""
+    for tok in re.split(r"(\s+)", text):
+        yield tok
+        if tok.strip():
+            time.sleep(0.012)
+
+
+def _run_pending() -> None:
+    """Answer ss.pending inside the panel, with a status line while tools run."""
+    pend = ss.pop("pending")
+    status = st.empty()
+    status.markdown('<div class="ask-status">Thinking…</div>', unsafe_allow_html=True)
+
+    def on_status(msg: str) -> None:
+        status.markdown(f'<div class="ask-status">{ui.E(msg)}</div>', unsafe_allow_html=True)
+
+    try:
+        ans = agent.answer(pend["q"], history=ss.chat_history, meeting=pend.get("meeting"), reader=pend.get("reader"),
+                           has_profile=pend.get("has_profile", False), detail=pend.get("detail", False), on_status=on_status)
+    except Exception:  # the agent never raises, but the UI must not either
+        ans = agent.ChatAnswer(agent.UNAVAILABLE, "none", "", status="unavailable")
+    status.empty()
+    turn = {"q": pend["q"], "shown_q": pend.get("shown_q", pend["q"]), "meeting": pend.get("meeting"), "fresh": True, **ans.to_dict()}
+    ss.chat.append(turn)
+    if ans.status == "ok":
+        ss.chat_history = (ss.chat_history + [{"role": "user", "content": pend["q"]}, {"role": "assistant", "content": ans.text}])[-12:]
+
+
+def _turn(t: dict, i: int, last: bool) -> None:
+    st.markdown(f'<div class="aq">{ui.E(t["shown_q"])}</div>', unsafe_allow_html=True)
+    if t["status"] in ("ok", "declined"):
+        if t.get("fresh") and last:
+            st.write_stream(_progressive(t["text"]))
+            t["fresh"] = False
+        else:
+            st.markdown(t["text"])  # Markdown from the model; HTML is not allowed here
+    else:
+        st.markdown(f'<div class="ask-down">{ui.E(t["text"])}</div>', unsafe_allow_html=True)
+        if t.get("saved"):
+            st.markdown('<div class="lab">Saved content, not an AI answer</div>', unsafe_allow_html=True)
+            st.markdown(t["saved"])
+    if t["status"] == "ok":
+        chips = "".join(f'<a class="src" href="{ui.E(s_["url"])}" target="_blank" rel="noopener">{ui.E(s_.get("title") or "Source")}'
+                        + (f' · {ui.E(str(s_["as_of"]))}' if s_.get("as_of") else "") + "</a>" for s_ in t.get("sources") or [])
+        if chips:
+            st.markdown(f'<div class="srcs">{chips}</div>', unsafe_allow_html=True)
+        n = len(t.get("sources") or [])
+        who = {"gemini": "Gemini", "groq": "Groq"}.get(t["provider"], t["provider"].title())
+        model = t.get("model") or ""
+        who = "Gemma" if model.startswith("gemma") else ("Gemini Flash" if who == "Gemini" else who)
+        live_txt = "Using live data · " if t.get("live") else ""
+        cached = " · saved answer" if t.get("cached") else ""
+        st.markdown(f'<div class="ask-meta">{live_txt}{ui.E(who)} · {n} source{"s" if n != 1 else ""}{cached}</div>', unsafe_allow_html=True)
+        render_results(t.get("tool_calls", []), f"ans{i}")
+    if last and t["status"] == "ok":
+        with st.container(key="followups"):
+            for j, f in enumerate(t.get("followups") or []):
+                if st.button(f, key=f"fu_{i}_{j}"):
+                    _queue(f)
+                    st.rerun(scope="fragment")
+            if not t.get("detail_of") and st.button("More detail", key=f"more_{i}", type="tertiary"):
+                _queue(t["q"], detail=True, shown=t["shown_q"] + " (more detail)")
+                st.rerun(scope="fragment")
+
+
+def _queue(q: str, detail: bool = False, shown: str | None = None) -> bool:
+    if ss.questions >= config.SESSION_QUESTION_LIMIT:
+        ss.chat.append({"q": q, "shown_q": shown or q, "status": "limit", "fresh": False,
+                        "text": "That’s the question limit for this visit (15).", "saved": ""})
+        return False
+    ss.questions += 1
+    viewing = None if ss.meeting == "pasted" else current()
+    meeting = viewing if (viewing and REFERS_TO_MEETING.search(q) and not ss.chat_history) else None
+    reader = personal.ai_labels(ss.profile) if ss.get("profile") and ss.get("ai_tailor") else None
+    ss.pending = {"q": q, "shown_q": shown or q, "meeting": meeting, "reader": reader, "has_profile": bool(ss.get("profile")), "detail": detail}
+    return True
+
+
 @st.dialog("Answer", width="large")
 def answer_panel() -> None:
-    a = ss.get("answer")
-    if not a:
+    if ss.get("pending"):
+        # earlier turns first, so the new answer appears under them
+        for i, t in enumerate(ss.chat):
+            _turn(t, i, False)
+        _run_pending()
+        _turn(ss.chat[-1], len(ss.chat) - 1, True)
         return
-    st.markdown(f'<div class="aq">{ui.E(a["q"])}</div>', unsafe_allow_html=True)
-    st.markdown(a["text"])  # Markdown from the model; HTML is not allowed here
-    render_results(a.get("calls", []), "ans")
+    for i, t in enumerate(ss.chat):
+        _turn(t, i, i == len(ss.chat) - 1)
+    if len(ss.chat) > 1 and st.button("Clear conversation", key="clear_chat", type="tertiary"):
+        ss.chat, ss.chat_history = [], []
+        st.rerun()
 
 
 REFERS_TO_MEETING = re.compile(r"\b(this|that|it|they|the decision|dissent\w*|vote\w*|why|change\w*|wording|statement)\b", re.I)
@@ -642,35 +743,24 @@ def handle_ask(text: str) -> None:
         open_meeting("pasted")
         st.rerun()
     if target is None:
-        ss.answer = {"q": text, "text": extra or "Try a question, or a meeting like “September 2024”.", "calls": []}
+        ss.chat.append({"q": text, "shown_q": text, "status": "declined", "fresh": False,
+                        "text": extra or "Try a question, or a meeting like “September 2024”.", "saved": ""})
         answer_panel()
         return
-    if target != "question":
+    if target != "question" and not ss.chat_history:
         open_meeting(target)
         if not extra:
             st.rerun()
         text = extra
-    if config.SESSION_QUESTION_LIMIT - ss.questions <= 0:
-        ss.answer = {"q": text, "text": "That’s the question limit for this visit.", "calls": []}
-        answer_panel()
-        return
-    ss.questions += 1
-    if target != "question":
-        meeting = target
-    else:
-        viewing = None if ss.meeting == "pasted" else current()
-        meeting = viewing if (viewing and REFERS_TO_MEETING.search(text)) else None
-    reader = personal.ai_labels(ss.profile) if ss.get("profile") and ss.get("ai_tailor") else None
-    with st.spinner(""):
-        try:
-            ans = agent.answer(text, meeting=meeting, reader=reader, has_profile=bool(ss.get("profile")))
-        except Exception:
-            ans = agent.rules_answer(text, meeting=meeting)
-    ss.answer = {"q": text, "text": ans.text, "calls": ans.tool_calls}
+    _queue(text)
+    if target != "question" and ss.get("pending") and not ss.chat_history:
+        ss.pending["meeting"] = target
     answer_panel()
 
 
 def suggested(card) -> list[str]:
+    if not ss.chat:
+        return STARTERS
     if card is None:
         return ["What is the Fed?", "Who is the Fed chair?", "What happened at the last meeting?"]
     d = card.decision
@@ -684,22 +774,26 @@ def suggested(card) -> list[str]:
 
 def ask_bar(card) -> None:
     """Slim bar fixed to the bottom of the viewport. A plain form (not st.chat_input) so the page doesn't
-    auto-scroll to the bottom; suggested questions appear when the bar is focused or hovered."""
+    auto-scroll to the bottom; suggested questions and the privacy note appear when the bar is focused."""
     chips = suggested(card)
     picked = None
     with st.bottom:
         with st.container(key="askchips"):
-            cols = st.columns(len(chips))
+            cols = st.columns(len(chips) + 1)
             for i, q in enumerate(chips):
                 if cols[i].button(q, key=f"chip_{i}"):
                     picked = q
+            cols[-1].markdown('<div class="privacy">Don’t enter personal information.</div>', unsafe_allow_html=True)
         with st.form("askbar", border=False, clear_on_submit=True):
             c1, c2 = st.columns([12, 1], vertical_alignment="bottom", gap="small")
-            typed = c1.text_input("Ask", placeholder="Ask about this meeting…", label_visibility="collapsed")
+            typed = c1.text_input("Ask", placeholder="Ask about the Fed (no personal info)…", label_visibility="collapsed")
             sent = c2.form_submit_button("↑", type="primary", use_container_width=True)
     q = picked or (typed.strip() if sent and typed and typed.strip() else None)
     if q:
         handle_ask(q)
+    elif ss.get("reopen_chat"):
+        ss.reopen_chat = False
+        answer_panel()
 
 
 # ---------------------------------------------------------------- pages
@@ -739,7 +833,65 @@ def about_page() -> None:
                 + '<p class="byline">Built by Keith LoboPrabhu</p>', unsafe_allow_html=True)
 
 
+def status_page() -> None:
+    """Provider health, today's quota use, cache hit rate and recent errors. No user text is logged."""
+    import json as _json
+
+    from fed_decoder.chat import live as _live
+    from fed_decoder.llm import gemini as _gem
+    from fed_decoder.llm import router as _router
+
+    today = pd.Timestamp.now(tz="UTC").strftime("%Y-%m-%d")
+    events = []
+    try:
+        for line in _router.LOG_PATH.read_text().splitlines()[-4000:]:
+            try:
+                e = _json.loads(line)
+            except Exception:
+                continue
+            if str(e.get("ts", "")).startswith(today):
+                events.append(e)
+    except Exception:
+        pass
+    rows = []
+    for prov, key in (("gemini", config.gemini_key()), ("groq", config.groq_key())):
+        mine = [e for e in events if e.get("provider") == prov]
+        ok = sum(e.get("event") == "ok" for e in mine)
+        bad = sum(e.get("event") in ("failed", "chat_handoff") for e in mine)
+        last_ok = max((e["ts"][11:16] for e in mine if e.get("event") == "ok"), default="—")
+        used = agent.daily_counts().get(prov, 0)
+        health = "no key" if not key else ("down" if bad and not ok else "degraded" if bad else "ok")
+        rows.append(f"<tr><td><strong>{prov.title()}</strong></td><td>{health}</td><td class='num'>{ok} ok / {bad} failed</td>"
+                    f"<td class='num'>{used} / {config.DAILY_BUDGET[prov]}</td><td class='num'>{last_ok} UTC</td></tr>")
+    st.markdown('<div class="verdict"><h1>Status</h1></div>'
+                '<table class="status-table"><tr><th>Provider</th><th>Health</th><th>Calls today</th><th>Ask budget used</th><th>Last success</th></tr>'
+                + "".join(rows) + "</table>", unsafe_allow_html=True)
+    ex = _gem.exhausted_today()
+    cooling = [m for m, t in _gem._COOLING.items() if time.time() - t < _gem.COOL_S]
+    st.markdown(f'<p class="mini">Gemini models out of daily quota: {ui.E(", ".join(ex) or "none")}. '
+                f'Resting after a rate limit: {ui.E(", ".join(cooling) or "none")}. '
+                f'Order tried: {ui.E(", ".join(config.ASK_GEMINI_MODELS))}, then Groq {ui.E(config.GROQ_MODEL)}.</p>', unsafe_allow_html=True)
+    stats = agent.ask_stats()
+    hits, misses = stats.get("cache_hit", 0), stats.get("cache_miss", 0)
+    rate = f"{hits / (hits + misses) * 100:.0f}%" if hits + misses else "—"
+    lt = _live.STATS
+    lrate = f"{lt['hits'] / (lt['hits'] + lt['misses']) * 100:.0f}%" if lt["hits"] + lt["misses"] else "—"
+    outcomes = ", ".join(f"{k.replace('_', ' ')} {v}" for k, v in sorted(stats.items()) if k not in ("cache_hit", "cache_miss")) or "none yet"
+    st.markdown(f'<p>Answer cache hit rate today: <span class="num">{rate}</span> ({hits} of {hits + misses}). '
+                f'Live-tool cache (this server): <span class="num">{lrate}</span>. Outcomes today: {ui.E(outcomes)}.</p>', unsafe_allow_html=True)
+    errs = [e for e in events if e.get("event") in ("failed", "rate_limited", "guardrail_fail", "chat_handoff")][-20:][::-1]
+    if errs:
+        body = "".join(f"<tr><td class='num'>{ui.E(e['ts'][11:19])}</td><td>{ui.E(e.get('provider', ''))}</td><td>{ui.E(e.get('event', ''))}</td>"
+                       f"<td>{ui.E((e.get('error') or '') + ' ' + str(e.get('detail') or '')[:140])}</td></tr>" for e in errs)
+        st.markdown('<h3>Last 20 errors today</h3><table class="status-table"><tr><th>Time (UTC)</th><th>Provider</th><th>Event</th><th>Detail</th></tr>'
+                    + body + "</table>", unsafe_allow_html=True)
+    else:
+        st.markdown("<p>No errors today.</p>", unsafe_allow_html=True)
+
+
 # Shareable links: ?m=YYYY-MM-DD opens that meeting; the address follows the reader.
+if st.query_params.get("page") == "status":
+    ss.page = "status"
 qp = st.query_params.get("m")
 if qp and qp != ss.get("_qp") and qp in dates():
     ss._qp = qp
@@ -748,13 +900,17 @@ if qp and qp != ss.get("_qp") and qp in dates():
 top_bar()
 if ss.page == "meeting" and current() == dates()[-1] and ss.meeting != "pasted":
     live_strip()
-stair()
+if ss.page != "status":
+    stair()
 card = None
 if ss.page == "about":
     about_page()
+elif ss.page == "status":
+    status_page()
 else:
     card = meeting_page()
-st.markdown(ui.footer_html("Not financial advice. Data: Federal Reserve, FRED."), unsafe_allow_html=True)
+st.markdown('<div class="foot">Not financial advice. Data: Federal Reserve, FRED.'
+            '<a class="status-link" href="?page=status" target="_self">Status</a></div>', unsafe_allow_html=True)
 if ss.page == "meeting" and ss.meeting not in (None, "pasted"):
     if st.query_params.get("m") != ss.meeting:
         st.query_params["m"] = ss._qp = ss.meeting

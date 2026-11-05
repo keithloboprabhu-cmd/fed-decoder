@@ -28,6 +28,15 @@ _LIMITER = RateLimiter(config.GEMINI_RPM)
 _EXHAUSTED: dict[str, str] = {}
 
 
+# Models that just returned a per-minute 429 or a 503 rest for a minute instead of stopping the turn.
+_COOLING: dict[str, float] = {}
+COOL_S = 60.0
+
+
+def exhausted_today() -> list[str]:
+    return sorted(m for m, d in _EXHAUSTED.items() if d == _today())
+
+
 def _today() -> str:
     return time.strftime("%Y-%m-%d", time.gmtime(time.time() - 8 * 3600))  # quota resets at midnight Pacific
 
@@ -81,7 +90,7 @@ class GeminiProvider(Provider):
                 continue
             if role == "user":
                 contents.append(types.Content(role="user", parts=[types.Part(text=m["content"])]))
-            elif role == "assistant" and m.get("gemini_content") is not None:
+            elif role == "assistant" and m.get("gemini_content") is not None and str(m.get("gemini_model", "")).startswith("gemini"):
                 # Replay Gemini's own content so thought signatures survive (required
                 # by Gemini 3 for multi-turn function calling).
                 contents.append(m["gemini_content"])
@@ -123,8 +132,13 @@ class GeminiProvider(Provider):
         # A conversation that already holds Gemini tool-call content must stay on
         # the model that produced it (thought signatures are model-specific).
         pinned = next((m.get("gemini_model") for m in messages if m.get("gemini_model")), None)
-        models = [pinned] if pinned else [self.model] + [m for m in config.GEMINI_FALLBACK_MODELS if m != self.model]
-        models = [m for m in models if _EXHAUSTED.get(m) != _today()]
+        if pinned:
+            models = [pinned]
+        elif getattr(self, "purpose", "").startswith("chat"):
+            models = list(config.ASK_GEMINI_MODELS)
+        else:
+            models = [self.model] + [m for m in config.GEMINI_FALLBACK_MODELS if m != self.model]
+        models = [m for m in models if _EXHAUSTED.get(m) != _today() and (pinned == m or time.time() - _COOLING.get(m, 0) > COOL_S)]
         if not models:
             raise RateLimited("every Gemini model's free daily quota is used up", None)
         resp, used, last_err = None, None, None
@@ -137,22 +151,28 @@ class GeminiProvider(Provider):
                 break
             except errors.ClientError as e:
                 if e.code == 429 or "RESOURCE_EXHAUSTED" in str(e):
-                    if _is_daily_quota(e) and not pinned:
-                        _EXHAUSTED[model] = _today()  # this model is done for today: try the next
-                        last_err = e
-                        continue
-                    raise RateLimited(str(e), _retry_after(e)) from e
+                    if pinned:
+                        raise RateLimited(str(e), _retry_after(e)) from e
+                    if _is_daily_quota(e):
+                        _EXHAUSTED[model] = _today()  # this model is done for today
+                    else:
+                        _COOLING[model] = time.time()  # per-minute limit: rest it, try the next
+                    last_err = e
+                    continue
                 if e.code == 404:  # model retired for this account: try the next one
                     last_err = e
                     continue
                 raise ProviderUnavailable(str(e)) from e
-            except errors.ServerError as e:  # 503 overload: try the next model
+            except errors.ServerError as e:  # 503 overload: rest this model, try the next
+                _COOLING[model] = time.time()
                 last_err = e
                 continue
             except Exception as e:  # network, timeout
                 last_err = e
                 continue
         if resp is None:
+            if last_err is None:
+                raise RateLimited("every Gemini model is resting after a rate limit; try again in a minute", COOL_S)
             if last_err is not None and _is_daily_quota(last_err):
                 raise RateLimited(f"all Gemini models out of daily quota: {last_err}", None)
             raise ProviderUnavailable(f"all Gemini models failed: {last_err}")

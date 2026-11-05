@@ -15,6 +15,7 @@ def _isolate(tmp_path, monkeypatch):
     monkeypatch.setattr(router, "LOG_PATH", tmp_path / "log.jsonl")
     monkeypatch.setattr(agent, "CACHE_PATH", tmp_path / "cache.json")
     monkeypatch.setattr(agent, "COUNTER_PATH", tmp_path / "count.json")
+    monkeypatch.setattr(agent, "STATS_PATH", tmp_path / "stats.json")
     yield
     router._PROVIDERS.clear()
 
@@ -79,24 +80,60 @@ def test_chat_tool_loop_and_grounding():
     assert b.cached and len(gem.calls) == n
 
 
-def test_chat_ungrounded_answer_falls_back_to_rules():
+def test_chat_ungrounded_answer_is_not_shown():
+    """Two ungrounded answers: say so honestly; the archive's figure is offered as labelled saved content."""
     gem = FakeProvider("gemini", [[("get_meeting", {"date": "2024-09"})], "They cut by 80 basis points.", "Still 80 basis points."])
     install(gemini=gem, groq=FakeProvider("groq", []))
-    a = agent.answer("Why did the Fed cut in September 2024?")
-    assert a.provider == "rules" and "50" in a.text
+    a = agent.answer("What happened at the September 2024 meeting?")
+    assert a.status == "unverified" and a.provider == "none"
+    assert a.text == agent.UNVERIFIED and "80" not in a.text
+    assert "50" in a.saved
 
 
-def test_chat_all_providers_down_uses_rules():
+def test_chat_all_providers_down_is_honest():
     install(gemini=FakeProvider("gemini", [rate_limited(), rate_limited()]), groq=FakeProvider("groq", [rate_limited(), rate_limited()]))
     a = agent.answer("What does a 25 bp hike mean for my $400,000 mortgage?")
-    assert a.provider == "rules" and "10-year Treasury" in a.text
+    assert a.status == "unavailable" and a.text == agent.UNAVAILABLE
+    assert "10-year Treasury" in a.saved  # labelled saved content, never posed as an answer
+
+
+def test_handoff_mid_answer_keeps_tool_results():
+    """Gemini fails after a tool round, then fails again from the flattened transcript (its other
+    models); Groq gets the tool results and finishes the answer."""
+    gem = FakeProvider("gemini", [[("get_meeting", {"date": "latest"})], RuntimeError("503 overloaded"), RuntimeError("429 daily cap")])
+    groq = FakeProvider("groq", ["The Fed held at its latest meeting.\nFOLLOWUPS:\n- Why hold?\n- Who dissented?\n- When is the next meeting?"])
+    install(gemini=gem, groq=groq)
+    a = agent.answer("What did the Fed do at its latest meeting?")
+    assert a.status == "ok" and a.provider == "groq"
+    assert "Tool results gathered so far" in gem.calls[2]["messages"][-1]["content"]  # flattened retry on Gemini first
+    digest = groq.calls[0]["messages"][-1]["content"]
+    assert "Tool results gathered so far" in digest and "get_meeting" in digest
+    assert a.followups == ["Why hold?", "Who dissented?", "When is the next meeting?"]
+    assert a.sources and "federalreserve.gov" in a.sources[0]["url"]
+
+
+def test_prompt_has_todays_date_and_primer():
+    gem = FakeProvider("gemini", ["The Fed is the central bank."])
+    install(gemini=gem, groq=FakeProvider("groq", []))
+    agent.answer("Why does the Fed exist?", use_cache=False)
+    sys_ = gem.calls[0]["messages"][0]["content"]
+    from fed_decoder.chat.live import now_et
+    assert f"{now_et():%B} {now_et().day}, {now_et().year}" in sys_ and "## The mandate" in sys_
+
+
+def test_followup_uses_history():
+    gem = FakeProvider("gemini", ["His term as chair runs four years.\nFOLLOWUPS:\n- a question\n- another one\n- a third one"])
+    install(gemini=gem, groq=FakeProvider("groq", []))
+    hist = [{"role": "user", "content": "Who is the Fed chair?"}, {"role": "assistant", "content": "Kevin Warsh."}]
+    a = agent.answer("When does his term end?", history=hist)
+    assert a.status == "ok" and gem.calls[0]["messages"][1]["content"] == "Who is the Fed chair?"
 
 
 @pytest.mark.parametrize("q", ["Should I buy Tesla stock?", "Write me a poem about cats", "Which ETF should I buy before the meeting?"])
 def test_chat_refuses_out_of_scope(q):
     install(gemini=FakeProvider("gemini", []), groq=FakeProvider("groq", []))
     a = agent.answer(q)
-    assert a.provider == "guard"
+    assert a.provider == "guard" and a.status == "declined" and "Try:" in a.text
 
 
 def test_pasted_injection_is_fenced_as_data():

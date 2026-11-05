@@ -50,13 +50,20 @@ class GuardrailError(Exception):
     pass
 
 
+# A per-minute 429 that clears within this many seconds is worth one wait; anything longer
+# (a daily cap resets hours later) goes straight to the next model or provider.
+SHORT_WAIT_S = 5.0
+
+
 def _call_with_backoff(p: Provider, messages, schema, tools, temperature) -> LLMResponse:
     try:
         return p.generate(messages, schema=schema, tools=tools, temperature=temperature)
     except RateLimited as e:
-        wait = min(e.retry_after or 4.0, MAX_BACKOFF_S)
-        log_event(provider=p.name, event="rate_limited", backoff_s=wait)
-        time.sleep(wait)
+        if e.retry_after is None or e.retry_after > min(SHORT_WAIT_S, MAX_BACKOFF_S if MAX_BACKOFF_S > 0 else SHORT_WAIT_S):
+            log_event(provider=p.name, event="rate_limited", backoff_s=0, retry_after=e.retry_after, detail=str(e)[:200])
+            raise
+        log_event(provider=p.name, event="rate_limited", backoff_s=e.retry_after)
+        time.sleep(e.retry_after)
         return p.generate(messages, schema=schema, tools=tools, temperature=temperature)
 
 
@@ -81,6 +88,10 @@ def generate(
     LAST_FAILURES.clear()
     for i, name in enumerate(order):
         p = get_provider(name)
+        try:
+            p.purpose = purpose  # lets the Gemini provider pick the model list for chat vs cards
+        except Exception:
+            pass
         if not p.available():
             log_event(provider=name, event="skipped_no_key", purpose=purpose)
             continue
@@ -93,11 +104,11 @@ def generate(
                 log_event(provider=name, event="failed", error=type(e).__name__, detail=str(e)[:300], purpose=purpose)
                 break  # next provider
             if validate is None:
-                log_event(provider=name, event="ok", latency_s=round(resp.latency_s, 2), fallback=i > 0, purpose=purpose)
+                log_event(provider=name, event="ok", model=resp.model, latency_s=round(resp.latency_s, 2), fallback=i > 0, purpose=purpose)
                 return resp
             try:
                 validate(resp)
-                log_event(provider=name, event="ok", latency_s=round(resp.latency_s, 2), fallback=i > 0, guardrail_retry=retried_guardrail, purpose=purpose)
+                log_event(provider=name, event="ok", model=resp.model, latency_s=round(resp.latency_s, 2), fallback=i > 0, guardrail_retry=retried_guardrail, purpose=purpose)
                 return resp
             except GuardrailError as g:
                 LAST_FAILURES.append((name, "GuardrailError"))

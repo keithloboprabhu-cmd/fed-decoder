@@ -31,15 +31,21 @@ class _TokenBudget:
     def __init__(self, tpm: int):
         self.tpm, self.used = tpm, []  # [(t, tokens)]
 
-    def wait(self, tokens: int) -> None:
+    def wait(self, tokens: int, max_wait: float | None = None) -> None:
+        """Block until `tokens` fit in the window. With `max_wait`, raise RateLimited instead
+        of sleeping longer than that (so chat moves to another provider rather than stall)."""
         tokens = min(tokens, self.tpm)
+        start = time.time()
         while True:
             now = time.time()
             self.used = [(t, n) for t, n in self.used if now - t < 60]
             if sum(n for _, n in self.used) + tokens <= self.tpm:
                 self.used.append((now, tokens))
                 return
-            time.sleep(max(0.5, 60 - (now - self.used[0][0]) + 0.1))
+            nap = max(0.5, 60 - (now - self.used[0][0]) + 0.1)
+            if max_wait is not None and (now - start) + nap > max_wait:
+                raise RateLimited(f"Groq token budget ({self.tpm}/min) needs {nap:.0f}s to free up", nap)
+            time.sleep(nap)
 
 
 _TOKENS = _TokenBudget(config.GROQ_TPM)
@@ -48,7 +54,7 @@ _TOKENS = _TokenBudget(config.GROQ_TPM)
 def _estimate_tokens(kw: dict) -> int:
     """Rough count: ~3.5 characters per token for the prompt, plus room for the reply."""
     prompt = sum(len(str(m.get("content", ""))) for m in kw["messages"]) + len(json.dumps(kw.get("tools", []))) + len(json.dumps(kw.get("response_format", {})))
-    return int(prompt / 3.5) + 1500
+    return int(prompt / 3.5) + (900 if kw.get("tools") else 1500)
 
 
 def _strictify(schema: dict) -> dict:
@@ -110,7 +116,8 @@ class GroqProvider(Provider):
                     }
                 )
             elif m["role"] == "tool":
-                out.append({"role": "tool", "tool_call_id": m["tool_call_id"], "content": m["content"]})
+                # 8,000 tokens a minute on the free tier: keep each tool result short.
+                out.append({"role": "tool", "tool_call_id": m["tool_call_id"], "content": m["content"][:2500]})
             else:
                 out.append({"role": m["role"], "content": m["content"]})
         return out
@@ -119,7 +126,7 @@ class GroqProvider(Provider):
         import groq
 
         _LIMITER.wait()
-        _TOKENS.wait(_estimate_tokens(kw))
+        _TOKENS.wait(_estimate_tokens(kw), max_wait=(45 if getattr(self, "purpose", "") == "chat_last" else 8) if getattr(self, "purpose", "").startswith("chat") else None)
         try:
             return self._get_client().chat.completions.create(**kw)
         except groq.RateLimitError as e:

@@ -174,6 +174,22 @@ div[class*="st-key-askchips"] button p {{ font-size: 14px !important; }}
 @media (max-width: 760px) {{ [data-testid="stDialog"] [role="dialog"] {{ top: auto !important; height: 82vh !important; max-height: 82vh !important; width: 100vw !important; max-width: 100vw !important;
   border-left: 0; border-top: 1px solid var(--rule); border-radius: 6px 6px 0 0 !important; }} }}
 .aq {{ font-size: 19px; font-weight: 600; margin: 4px 0 10px; }}
+.ask-status {{ font-family: var(--mono); font-size: 13px; color: var(--sub); padding: 6px 0; }}
+@media (prefers-reduced-motion: no-preference) {{ .ask-status {{ animation: pulse 1.2s ease-in-out infinite; }}
+  @keyframes pulse {{ 50% {{ opacity: .45; }} }} }}
+.ask-down {{ border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; font-weight: 600; background: #fff; margin-bottom: 8px; }}
+.srcs {{ display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 4px; }}
+.srcs .src {{ font-size: 13px; border: 1px solid var(--rule); border-radius: 6px; padding: 2px 8px; color: var(--ink) !important; text-decoration: none; background: #fff; }}
+.srcs .src:hover, .srcs .src:focus {{ border-color: var(--ink); }}
+.ask-meta {{ font-size: 13px; color: var(--sub); margin: 2px 0 10px; }}
+.privacy {{ font-size: 13px; color: var(--sub); line-height: 30px; white-space: nowrap; }}
+div[class*="st-key-followups"] button {{ min-height: 30px !important; padding: 2px 10px !important; border-radius: 6px !important; border: 1px solid var(--rule) !important;
+  background: #fff !important; margin: 2px 0 !important; text-align: left !important; }}
+div[class*="st-key-followups"] button p {{ font-size: 14px !important; }}
+div[class*="st-key-followups"] [data-testid="stBaseButton-tertiary"] {{ border: 0 !important; background: transparent !important; padding-left: 0 !important; }}
+div[class*="st-key-followups"] [data-testid="stBaseButton-tertiary"] p {{ text-decoration: underline; }}
+.status-table td, .status-table th {{ font-size: 14px; padding: 4px 10px 4px 0; text-align: left; vertical-align: top; }}
+.foot a.status-link {{ color: var(--faint) !important; text-decoration: none; margin-left: 10px; }}
 .res-row {{ display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; font-size: 15px; padding: 4px 0; }}
 .res-date {{ font-family: var(--mono); font-weight: 500; min-width: 108px; }}
 .res-move {{ font-family: var(--mono); min-width: 80px; }}
