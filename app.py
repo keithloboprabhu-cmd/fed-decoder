@@ -91,14 +91,20 @@ if choice != ss.nav:
 
 
 # ---------------------------------------------------------------- home: start from what the user enters
+QUESTION_START = re.compile(r"^(what|why|how|when|who|which|where|is|are|was|were|does|do|did|can|could|should|will|would|explain|tell|define)\b", re.I)
+
+
 def interpret(text: str) -> tuple[str | None, str | None]:
-    """Turn what someone typed into a meeting date, 'pasted', or an error message."""
+    """Turn what someone typed into a meeting date, 'pasted', 'question', or an error message."""
     t = text.strip()
     if not t:
         return None, None
     all_dates = dates()
     if len(t) > 280 and re.search(r"\b(Committee|federal funds|FOMC)\b", t, re.I):
         return "pasted", None
+    short_date = len(t) <= 30 and (parse_date(t) is not None or re.search(r"\b(latest|last meeting|most recent)\b", t, re.I))
+    if not short_date and ("?" in t or QUESTION_START.match(t) or len(t.split()) > 5):
+        return "question", None
     tl = t.lower()
     if re.search(r"\b(latest|last meeting|most recent|recent|newest|this week|today|now)\b", tl):
         return all_dates[-1], None
@@ -110,7 +116,7 @@ def interpret(text: str) -> tuple[str | None, str | None]:
         t = f"{m.group(1)} {year}"
     when = parse_date(t)
     if when is None:
-        return None, "I couldn't tell which meeting you mean. Try a month and year, such as “September 2024”, or type “latest”."
+        return "question", None  # anything else is treated as a question
     if when < pd.Timestamp("2000-01-01"):
         return None, "Fed Decoder covers meetings from February 2000 onward."
     if when > pd.Timestamp(all_dates[-1]) + pd.Timedelta(days=45):
@@ -119,17 +125,47 @@ def interpret(text: str) -> tuple[str | None, str | None]:
     return (str(d.date()) if d is not None else None), None
 
 
+STARTERS = ["What is the Fed, in plain English?", "Why does the Fed raise interest rates?", "What were the most controversial Fed decisions?"]
+
+
+def meetings_mentioned(text: str) -> list[str]:
+    """Meeting dates an answer mentions, so the reader can jump straight into them."""
+    all_d = set(dates())
+    found = []
+    for m in re.finditer(r"\b(\d{4}-\d{2}-\d{2})\b|\b([A-Z][a-z]+ \d{1,2}, \d{4})\b", text):
+        try:
+            d = str(pd.Timestamp(m.group(1) or m.group(2)).date())
+        except Exception:
+            continue
+        if d in all_d and d not in found:
+            found.append(d)
+    return found[:3]
+
+
+def answer_home_question(q: str) -> None:
+    ss.questions += 1
+    reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
+    with st.spinner("Looking it up"):
+        try:
+            ans = agent.answer(q, reader=reader)
+        except Exception:
+            ans = agent.rules_answer(q)
+    ss.setdefault("home_thread", []).append({"q": q, "a": ans.text, "label": ans.label + (" · from an earlier answer" if ans.cached else "")})
+
+
 def page_home() -> None:
-    st.markdown('<div style="height:7vh"></div>', unsafe_allow_html=True)
-    st.markdown("<h1>Which Fed decision do you want to understand?</h1>", unsafe_allow_html=True)
-    st.markdown('<p class="lede">Type a month, a date or “latest”. You can also paste the text of a Fed statement.</p>', unsafe_allow_html=True)
-    with st.form("ask_meeting", border=False):
-        text = st.text_area("Meeting or statement", label_visibility="collapsed", height=90, max_chars=8000,
-                            placeholder="For example: latest, September 2024, or March 2020")
+    st.markdown('<div style="height:6vh"></div>', unsafe_allow_html=True)
+    st.markdown("<h1>What do you want to know about the Fed?</h1>", unsafe_allow_html=True)
+    st.markdown('<p class="lede">Ask in plain words, or name a meeting such as “latest” or “September 2024”. '
+                'You can also paste a Fed statement.</p>', unsafe_allow_html=True)
+    with st.form("ask_meeting", border=False, clear_on_submit=True):
+        text = st.text_area("Question, meeting or statement", label_visibility="collapsed", height=90, max_chars=8000,
+                            placeholder="For example: What is the Fed?  ·  latest  ·  Why did rates go up in 2022?")
         c1, c2 = st.columns([1, 3], vertical_alignment="center")
-        submitted = c1.form_submit_button("Decode it", type="primary", use_container_width=True)
-        c2.markdown('<div class="note">Don’t enter personal information. Pasted text is treated as data, never as instructions.</div>',
+        submitted = c1.form_submit_button("Go", type="primary", use_container_width=True)
+        c2.markdown('<div class="note">Don’t enter personal information. Questions go to free AI services; pasted text is treated as data.</div>',
                     unsafe_allow_html=True)
+    pending = None
     if submitted:
         target, err = interpret(text)
         if err:
@@ -138,11 +174,35 @@ def page_home() -> None:
             ss.pasted = text
             open_meeting("pasted")
             st.rerun()
+        elif target == "question":
+            pending = text.strip()
         elif target:
             open_meeting(target)
             st.rerun()
+    thread = ss.get("home_thread", [])
+    if not thread and not pending:
+        st.markdown('<p class="muted" style="margin:18px 0 0">New to this? Start here:</p>', unsafe_allow_html=True)
+        with st.container(key="suggest_home"):
+            for i, q in enumerate(STARTERS):
+                if st.button(q, type="tertiary", key=f"starter_{i}"):
+                    pending = q
+    if pending:
+        if config.SESSION_QUESTION_LIMIT - ss.questions <= 0:
+            st.markdown('<p class="muted">You’ve reached the question limit for this visit.</p>', unsafe_allow_html=True)
+        else:
+            answer_home_question(pending)
+            st.rerun()
+    for k, item in enumerate(reversed(thread)):
+        with st.container(key=f"answer_home_{k}"):
+            st.markdown(f'<div class="qa-q">{"<br>".join(ui.E(x) for x in item["q"].split(chr(10)) if x.strip())}</div>', unsafe_allow_html=True)
+            st.markdown(item["a"])  # Markdown from the model; HTML is not allowed here
+            st.markdown(f'<div class="prov">{ui.E(item["label"])}</div>', unsafe_allow_html=True)
+        for j, d in enumerate(meetings_mentioned(item["a"])):
+            if st.button(f"Walk through the {long_date(d)} meeting →", type="tertiary", key=f"goto_{k}_{j}_{d}"):
+                open_meeting(d)
+                st.rerun()
     if ss.get("profile"):
-        st.markdown(f'<p class="note" style="margin-top:6px">Explaining for you: {ui.E(personal.describe(ss.profile)).lower().replace("you ", "", 1)}.</p>',
+        st.markdown(f'<p class="note" style="margin-top:10px">Explaining for you: {ui.E(personal.describe(ss.profile)).lower().replace("you ", "", 1)}.</p>',
                     unsafe_allow_html=True)
     st.markdown('<div style="height:20px"></div>', unsafe_allow_html=True)
     c1, c2, _ = st.columns([1, 1.25, 1.2])
@@ -431,8 +491,11 @@ def ask_block(card, ctx) -> None:
     if agent.near_cap():
         st.markdown('<p class="note">The free AI allowance for today is used up, so answers are automated from the statement until tomorrow.</p>',
                     unsafe_allow_html=True)
-    for q, a, label in thread:
-        st.markdown(f'<div class="qa-q">{ui.E(q)}</div><div class="qa-a">{ui.E(a)}</div><div class="prov">{ui.E(label)}</div>', unsafe_allow_html=True)
+    for n, (q, a, label) in enumerate(thread):
+        with st.container(key=f"answer_m_{n}"):
+            st.markdown(f'<div class="qa-q">{ui.E(q)}</div>', unsafe_allow_html=True)
+            st.markdown(a)  # Markdown from the model; HTML is not allowed here
+            st.markdown(f'<div class="prov">{ui.E(label)}</div>', unsafe_allow_html=True)
     left = config.SESSION_QUESTION_LIMIT - ss.questions
     pending = None
     if not thread and left > 0:

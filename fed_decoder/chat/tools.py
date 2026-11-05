@@ -142,6 +142,22 @@ def forecast_next() -> dict:
     return forecast_mod.forecast_next().to_dict()
 
 
+def notable_meetings(kind: str = "split", limit: int = 6) -> dict:
+    """Meetings ranked from the record. kind: 'split' (most dissents), 'big_moves' (largest rate changes)."""
+    gt = store.ground_truth().copy()
+    gt["n_dissent"] = gt["dissenters"].apply(len)
+    if kind == "big_moves":
+        gt["size"] = gt["change_bps"].abs()
+        top = gt[gt["size"] > 0].sort_values(["size", "meeting_date"], ascending=[False, False]).head(limit)
+    else:
+        top = gt[gt["n_dissent"] > 0].sort_values(["n_dissent", "meeting_date"], ascending=[False, False]).head(limit)
+    rows = [{"meeting_date": str(r.meeting_date.date()), "decision": r.direction, "change_bps": int(r.change_bps),
+             "votes_for": None if pd.isna(r.votes_for) else int(r.votes_for), "votes_against": int(r.n_dissent),
+             "dissenters": list(r.dissenters)} for r in top.itertuples()]
+    return {"kind": kind, "meetings": rows,
+            "note": "Ranked from recorded votes since 2000; dissents are the clearest sign a decision was contested."}
+
+
 TOOLS = {
     "get_meeting": get_meeting,
     "search_statements": search_statements,
@@ -149,9 +165,12 @@ TOOLS = {
     "get_series": get_series,
     "payment_impact": payment_impact,
     "forecast_next": forecast_next,
+    "notable_meetings": notable_meetings,
 }
 
 TOOL_SPECS = [
+    ToolSpec("notable_meetings", "Most contested meetings since 2000 (kind='split', ranked by number of dissents) or the largest rate moves (kind='big_moves').",
+             {"type": "object", "properties": {"kind": {"type": "string", "enum": ["split", "big_moves"]}, "limit": {"type": "integer"}}}),
     ToolSpec("get_meeting", "Decision, target range, votes, dissenters, statement text and decoder card for the FOMC meeting nearest a date.",
              {"type": "object", "properties": {"date": {"type": "string", "description": "YYYY-MM-DD, YYYY-MM, or 'September 2024'"}}, "required": ["date"]}),
     ToolSpec("search_statements", "Keyword search over every FOMC statement since 2000. Returns matching paragraphs with dates.",

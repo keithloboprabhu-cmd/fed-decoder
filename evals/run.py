@@ -548,6 +548,9 @@ def render(r: dict) -> str:
             w(f"| {name} | {s['n']} | {pct(s['direction'])} | {pct(s['change_bps'])} | {pct(s['range'])} | {pct(s['votes'])} | {pct(s['dissenters'])} |")
         else:
             w(f"| {name} | 0 | not run | | | | |")
+    w("\n**Caveat on the LLM row:** the card prompt includes the code-computed decision facts, so this mostly measures whether the model copies "
+      "them faithfully, not whether it can read the statement unaided. When the answer key itself was wrong (a heading parsed as two dissenters "
+      "on 2014-09-17, since fixed), the model copied the error.\n")
     w("\nVote and dissenter accuracy for the rules extractor is not independent: it uses the same vote parser that builds the answer key. "
       "Range misses are statements that state no target (liquidity or balance-sheet announcements).\n")
 

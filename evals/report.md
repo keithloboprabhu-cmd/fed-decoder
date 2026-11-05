@@ -1,6 +1,6 @@
 # Fed Decoder eval report
 
-Generated 2026-11-04 14:33 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
+Generated 2026-11-05 02:32 UTC. Keys available: Gemini=yes, Groq=yes. Cards in `cards/`: {'gemini': 227}.
 
 ## 1. Extraction vs ground truth
 
@@ -9,7 +9,10 @@ Ground truth: decision and range from FRED target series; votes and dissenters p
 | Extractor | Meetings | Direction | Size (bp) | Target range | Vote count | Dissenters |
 |---|---|---|---|---|---|---|
 | Rules-based (regex) | 227 | 100.0% | 100.0% | 98.7% | 100.0% | 100.0% |
-| LLM cards | 227 | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% |
+| LLM cards | 227 | 100.0% | 100.0% | 100.0% | 99.5% | 99.5% |
+
+**Caveat on the LLM row:** the card prompt includes the code-computed decision facts, so this mostly measures whether the model copies them faithfully, not whether it can read the statement unaided. When the answer key itself was wrong (a heading parsed as two dissenters on 2014-09-17, since fixed), the model copied the error.
+
 
 Vote and dissenter accuracy for the rules extractor is not independent: it uses the same vote parser that builds the answer key. Range misses are statements that state no target (liquidity or balance-sheet announcements).
 

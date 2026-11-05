@@ -5,12 +5,10 @@
     "target_low": 0.0,
     "target_high": 0.25,
     "votes_for": 8,
-    "votes_against": 4,
+    "votes_against": 2,
     "dissenters": [
       "Richard W. Fisher",
-      "Charles I. Plosser",
-      "Statement Regarding Purchases",
-      "Agency Mortgage-Backed Securities"
+      "Charles I. Plosser"
     ],
     "summary": "The Federal Reserve kept interest rates steady at 0 to 1/4 percent while reducing its monthly asset purchases."
   },

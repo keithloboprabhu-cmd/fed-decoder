@@ -58,7 +58,10 @@ def _names(text: str) -> list[str]:
         words = cand.replace(",", "").replace(".", "").split()
         if not words or words[0] in _NOT_NAME or words[-1] in _NOT_NAME:
             continue
-        if any(w in {"Federal", "Reserve", "Committee", "Bank"} for w in words):
+        # headings that follow the voting paragraph (e.g. "Statement Regarding Purchases of ... Securities")
+        if any(w in {"Federal", "Reserve", "Committee", "Bank", "Statement", "Regarding", "Purchases", "Securities", "Agency",
+                     "Mortgage-Backed", "Treasury", "Policy", "Principles", "Normalization", "Implementation", "Note",
+                     "Plans", "Reinvestment", "Directive", "Desk", "System", "Open", "Market", "Account"} for w in words):
             continue
         if any(len(w) > 1 and w.isupper() for w in words):  # "DO NOT REMOVE"
             continue
