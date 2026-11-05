@@ -239,6 +239,8 @@ div[class*="st-key-you"] [data-testid="stColumn"]:last-child [data-testid="stEle
 .short-row p {{ margin: 0 !important; font-size: 17px !important; }}
 .say-inline {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 20px; line-height: 1.45; }}
 .ask {{ margin-top: 52px; }}
+div[class*="st-key-live"] {{ margin-top: 18px; padding: 4px 0 4px 18px; border-left: 3px solid var(--terra); max-width: 760px; }}
+.live-t {{ font-size: 17px; }}
 div[class*="st-key-answer_"] {{ margin-top: 26px; max-width: 720px; }}
 div[class*="st-key-answer_"] p, div[class*="st-key-answer_"] li {{ font-size: 17px !important; line-height: 1.65 !important; }}
 div[class*="st-key-answer_"] strong {{ font-weight: 600; }}

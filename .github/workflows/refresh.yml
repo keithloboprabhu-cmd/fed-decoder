@@ -1,15 +1,26 @@
-name: Refresh data after FOMC meetings
+name: Refresh data after FOMC statements
 
-# FOMC statements are released on Wednesdays at 2pm ET. Run Wednesday night
-# and Thursday morning (UTC), plus on demand. Free on public repos.
+# Every 2 hours, check the Fed's official RSS feed for a new FOMC statement
+# (scheduled or emergency). When there is one, run the full update and push;
+# Streamlit Community Cloud redeploys the app from the new commit.
+# Economic data from FRED is refreshed once a day even without a new statement.
+# Free on public repos; a no-change check finishes in well under a minute.
 on:
   schedule:
-    - cron: "17 21 * * 3"
-    - cron: "17 13 * * 4"
+    - cron: "23 */2 * * *"
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Run the full update even if no new statement is found"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -22,20 +33,47 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Fetch new statements and FRED data
+
+      - name: Check the Fed's RSS feed for a new statement
+        id: feed
+        run: python scripts/check_new.py
+
+      - name: Decide what to run
+        id: plan
+        run: |
+          hour=$(date -u +%H)
+          full=false
+          if [ "${{ steps.feed.outputs.new }}" = "true" ] || [ "${{ inputs.force }}" = "true" ]; then full=true; fi
+          # once a day (the 12-14 UTC run) refresh economic data even with no new statement
+          daily=false
+          if [ "$hour" -ge 12 ] && [ "$hour" -lt 14 ]; then daily=true; fi
+          echo "full=$full" >> "$GITHUB_OUTPUT"
+          echo "daily=$daily" >> "$GITHUB_OUTPUT"
+          echo "new statement: ${{ steps.feed.outputs.new }} · full update: $full · daily data refresh: $daily"
+
+      - name: Fetch statements and FRED data
+        if: steps.plan.outputs.full == 'true' || steps.plan.outputs.daily == 'true'
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           python scripts/fetch_statements.py
           python scripts/fetch_fred.py
           python scripts/build_data.py
+
       - name: Build cards for new meetings (free-tier LLM; rules fallback)
+        if: steps.plan.outputs.full == 'true' || steps.plan.outputs.daily == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/build_cards.py --limit 10
-      - name: Commit if anything changed
+
+      - name: Commit and push if anything changed
+        if: steps.plan.outputs.full == 'true' || steps.plan.outputs.daily == 'true'
         run: |
           git config user.name "fed-decoder-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data cards
-          if git diff --cached --quiet; then echo "no changes"; else git commit -m "Refresh data and cards"; git push; fi
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Refresh data and cards"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 5; done
+          exit 1

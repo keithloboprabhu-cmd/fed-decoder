@@ -53,6 +53,38 @@ def cached_forecast() -> dict:
     return forecast_mod.forecast_next().to_dict()
 
 
+@st.cache_data(show_spinner=False, ttl=1800)
+def newer_statement() -> dict | None:
+    """A statement in the Fed's RSS feed that's newer than our data (checked at most every 30 minutes)."""
+    from fed_decoder.data.feed import statement_links
+
+    try:
+        links = statement_links(timeout=8)
+    except Exception:
+        return None
+    latest = pd.Timestamp(dates()[-1]).date()
+    new = [l for l in links if l.meeting_date > latest]
+    return {"date": str(new[0].meeting_date), "url": new[0].url} if new else None
+
+
+def open_live_statement(item: dict) -> None:
+    """Decode a just-released statement on the spot (the scheduled update adds it to the archive later)."""
+    from fed_decoder.data import fomc
+
+    with st.spinner("Fetching the new statement from the Federal Reserve"):
+        try:
+            text = fomc.extract_statement_text(fomc._get(item["url"]))
+        except Exception:
+            text = ""
+    if len(text) < 200:
+        st.markdown('<p class="muted">The Federal Reserve’s site didn’t respond. Try again in a minute.</p>', unsafe_allow_html=True)
+        return
+    ss.pasted = text
+    ss.pasted_label = f"Released {long_date(item['date'])} · just in"
+    open_meeting("pasted")
+    st.rerun()
+
+
 @st.cache_data(show_spinner=False)
 def cached_context(date_str: str) -> dict:
     return build_context(date_str)
@@ -154,6 +186,13 @@ def answer_home_question(q: str) -> None:
 
 
 def page_home() -> None:
+    live = newer_statement()
+    if live:
+        with st.container(key="live"):
+            c1, c2 = st.columns([3, 1], vertical_alignment="center")
+            c1.markdown(f'<div class="live-t"><strong>New:</strong> the Fed released a statement on {long_date(live["date"])}.</div>', unsafe_allow_html=True)
+            if c2.button("Decode it now", type="primary", key="live_go"):
+                open_live_statement(live)
     st.markdown('<div style="height:6vh"></div>', unsafe_allow_html=True)
     st.markdown("<h1>What do you want to know about the Fed?</h1>", unsafe_allow_html=True)
     st.markdown('<p class="lede">Ask in plain words, or name a meeting such as “latest” or “September 2024”. '
@@ -172,6 +211,7 @@ def page_home() -> None:
             st.markdown(f'<p class="muted">{ui.E(err)}</p>', unsafe_allow_html=True)
         elif target == "pasted":
             ss.pasted = text
+            ss.pop("pasted_label", None)
             open_meeting("pasted")
             st.rerun()
         elif target == "question":
@@ -239,7 +279,7 @@ def for_you_items(card, ctx) -> list[dict]:
 
 def meeting_header(card, ctx) -> None:
     d = card.decision
-    when = "Your pasted statement" if ctx["meeting_date"] == "pasted" else long_date(ctx["meeting_date"])
+    when = (ss.get("pasted_label") or "Your pasted statement") if ctx["meeting_date"] == "pasted" else long_date(ctx["meeting_date"])
     st.markdown(f'<div class="step first"><div class="dateline">{when}</div>'
                 f'<h1>{ui.E(ui.headline(d.direction, d.change_bps))}</h1>{ui.facts_html(d)}</div>', unsafe_allow_html=True)
 

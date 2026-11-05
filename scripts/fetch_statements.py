@@ -26,6 +26,12 @@ def main() -> None:
         existing = pd.read_parquet(config.STATEMENTS_PATH)
     have = set(pd.to_datetime(existing["meeting_date"]).dt.date) if len(existing) else set()
     links = fomc.list_statement_links()
+    # The RSS feed lists a statement the moment it's released, sometimes before the calendar page does.
+    from fed_decoder.data.feed import statement_links
+
+    known = {l.meeting_date for l in links}
+    links += [l for l in statement_links() if l.meeting_date not in known]
+    links.sort(key=lambda l: l.meeting_date)
     print(f"found {len(links)} statement links; {len(have)} already stored")
     rows = []
     for link in links:

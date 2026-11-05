@@ -52,7 +52,7 @@ The design is deliberately quiet: warm ivory, charcoal text, forest green for do
 | Decoder cards | Pre-generated once by `scripts/build_cards.py` (about 230 calls, resumable) | Viewing a meeting makes zero calls |
 | Chat | Live | Answer cache, 10 questions per session, a global daily counter that switches to cached and rules-based answers at 90% of `DAILY_LLM_BUDGET` (default 80), history kept to the last 4 turns |
 | Data | federalreserve.gov and FRED (public CSV endpoint, no key needed) | Polite scraper (1 s delay, cached HTML) |
-| Refresh | GitHub Actions, scheduled after each meeting | Incremental fetch; at most 10 new cards per run |
+| Refresh | GitHub Actions every 2 hours, watching the Fed's official RSS feed (`/feeds/press_monetary.xml`) | Full update only when a new statement appears (scheduled or emergency); FRED data once a day; at most 10 new cards per run |
 | Hosting | Streamlit Community Cloud | Keys in Streamlit secrets |
 
 Never enable billing on either provider. Model IDs and rate settings live in `fed_decoder/config.py` and can be overridden with environment variables (`GEMINI_MODEL`, `GROQ_MODEL`, `GEMINI_RPM`, `GROQ_RPM`, `DAILY_LLM_BUDGET`). Free-tier limits change, so check them in each console before deploying.
@@ -97,6 +97,16 @@ python scripts/build_cards.py
 ```
 
 It stops when every provider is out of quota and resumes on the next run.
+
+## Staying current
+
+New meetings arrive on their own:
+
+1. **Every 2 hours** a GitHub Action reads the Fed's official press-release RSS feed. A new FOMC statement (scheduled or emergency) triggers the full update: statement, FRED data, answer key, forecast and an AI-written card. It commits to this branch, and Streamlit Community Cloud redeploys the app.
+2. **Between runs**, the app itself checks the feed every 30 minutes. If a statement is newer than the archive, the home page says so and decodes it on the spot ("just in").
+3. **Once a day** the economic data (inflation, jobs, yields, loan rates) refreshes even without a new statement.
+
+For the Action to write AI cards, add `GEMINI_API_KEY` and `GROQ_API_KEY` under the repo's **Settings → Secrets and variables → Actions** (otherwise it writes rules-based cards). Run it by hand from the **Actions** tab with "Run workflow".
 
 ## Data
 
