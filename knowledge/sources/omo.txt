@@ -1,0 +1,454 @@
+https://www.federalreserve.gov/monetarypolicy/openmarket.htm
+
+Skip to main content
+An official website of the United States Government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+Lock
+Locked padlock icon
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Back to Home
+Board of Governors of the Federal Reserve System
+Stay Connected
+Federal Reserve Facebook Page
+Federal Reserve Instagram Page
+Federal Reserve YouTube Page
+Federal Reserve Flickr Page
+Federal Reserve LinkedIn Page
+Federal Reserve Threads Page
+Federal Reserve X Page
+Federal Reserve Bluesky Page
+Subscribe to RSS
+Subscribe to Email
+Recent Postings
+Calendar
+Publications
+Site Map
+A-Z index
+Careers
+FAQs
+Videos
+Contact
+Toggle Dropdown Menu
+Main Menu Toggle Button
+Sections
+Search Toggle Button
+Home
+Monetary Policy
+Policy Tools
+Policy Tools
+Please enable JavaScript if it is disabled in your browser or access the information through the links provided below.
+Open Market Operations
+Open market operations (OMOs)--the purchase and sale of securities in the open market by a central bank--are a key tool used by the Federal Reserve in the implementation of monetary policy. The short-term objective for open market operations is specified by the
+Federal Open Market Committee
+(FOMC). Before the global financial crisis, the Federal Reserve used OMOs to adjust the supply of reserve balances so as to keep the federal funds rate--the interest rate at which depository institutions lend reserve balances to other depository institutions overnight--around the target established by the FOMC.
+The Federal Reserve's approach to the implementation of monetary policy has evolved considerably since the financial crisis, and particularly so since late 2008 when the FOMC established a near-zero target range for the federal funds rate. From the end of 2008 through October 2014, the Federal Reserve greatly expanded its holding of longer-term securities through open market purchases with the goal of putting downward pressure on longer-term interest rates and thus supporting economic activity and job creation by making financial conditions more accommodative.
+During the policy normalization process that commenced in December 2015, the Federal Reserve first used overnight reverse repurchase agreements (ON RRPs)--a type of OMO--as a supplementary policy tool, as necessary, to help control the federal funds rate and keep it in the target range set by the FOMC.
+In September 2019, the Federal Reserve used term and overnight repurchase agreements (repo) to ensure that the supply of reserves remain ample even during periods of sharp increases in non-reserve liabilities, and to mitigate the risk of money market pressures that could adversely affect policy implementation. The Federal Reserve continued to offer overnight repos and, amid the COVID-related stress around March 2020, term and overnight repos played an important role in ensuring that the supply of reserves remained ample and supporting the smooth functioning of short-term U.S. dollar funding markets.
+Since 2021, Federal Reserve has conducted domestic standing repo (SRP) operations against eligible securities. SRP operations limit upward pressure and help provide a ceiling on rates to support the monetary policy implementation and smooth market functioning.
+For additional information, see:
+http://www.federalreserve.gov/monetarypolicy/bst_openmarketops.htm
+The Federal Reserve Bank of New York publishes a detailed explanation of OMOs each year in its
+Annual Report
+. For a description of open market operations during the 1990s, see the
+article
+in the Federal Reserve Bulletin (102 KB PDF).
+For additional information on how the Federal Reserve will use ON RRPs during the policy normalization process, see:
+http://www.federalreserve.gov/monetarypolicy/overnight-reverse-repurchase-agreements.htm
+FOMC's target federal funds rate or range, change
+(basis points)
+and level
+2026
+|
+2025
+|
+2024
+|
+2023
+|
+2022
+|
+2020
+|
+2019
+|
+2018
+|
+2017
+|
+2016
+|
+2015
+|
+2008
+|
+2007
+|
+2006
+|
+2005
+|
+2004
+|
+2003
+|
+Historical Archive
+2026
+Date
+Increase
+Decrease
+Level (%)
+September 17
+25
+0
+3.75-4.00
+Back to year navigation
+2025
+Date
+Increase
+Decrease
+Level (%)
+December 11
+0
+25
+3.50-3.75
+October 30
+0
+25
+3.75-4.00
+September 18
+0
+25
+4.00-4.25
+Back to year navigation
+2024
+Date
+Increase
+Decrease
+Level (%)
+December 19
+0
+25
+4.25-4.50
+November 8
+0
+25
+4.50-4.75
+September 19
+0
+50
+4.75-5.00
+Back to year navigation
+2023
+Date
+Increase
+Decrease
+Level (%)
+July 27
+25
+0
+5.25-5.50
+May 4
+25
+0
+5.00-5.25
+March 23
+25
+0
+4.75-5.00
+February 2
+25
+0
+4.50-4.75
+Back to year navigation
+2022
+Date
+Increase
+Decrease
+Level (%)
+December 15
+50
+0
+4.25-4.50
+November 3
+75
+0
+3.75-4.00
+September 22
+75
+0
+3.00-3.25
+July 28
+75
+0
+2.25-2.50
+June 16
+75
+0
+1.50-1.75
+May 5
+50
+0
+0.75-1.00
+March 17
+25
+0
+0.25-0.50
+Back to year navigation
+2020
+Date
+Increase
+Decrease
+Level (%)
+March 16
+0
+100
+0-0.25
+March 4
+*
+0
+50
+1.00-1.25
+Back to year navigation
+2019
+Date
+Increase
+Decrease
+Level (%)
+October 31
+0
+25
+1.50-1.75
+September 19
+0
+25
+1.75-2.00
+August 1
+0
+25
+2.00-2.25
+Back to year navigation
+2018
+Date
+Increase
+Decrease
+Level (%)
+December 20
+25
+0
+2.25-2.50
+September 27
+25
+0
+2.00-2.25
+June 14
+25
+0
+1.75-2.00
+March 22
+25
+0
+1.50-1.75
+Back to year navigation
+2017
+Date
+Increase
+Decrease
+Level (%)
+December 14
+25
+0
+1.25-1.50
+June 15
+25
+0
+1.00-1.25
+March 16
+25
+0
+0.75-1.00
+Back to year navigation
+2016
+Date
+Increase
+Decrease
+Level (%)
+December 15
+25
+0
+0.50-0.75
+Back to year navigation
+2015
+Date
+Increase
+Decrease
+Level (%)
+December 17
+25
+0
+0.25-0.50
+Back to year navigation
+2008
+Date
+Increase
+Decrease
+Level (%)
+December 16
+...
+75-100
+0-0.25
+October 29
+...
+50
+1.00
+October 8
+...
+50
+1.50
+April 30
+...
+25
+2.00
+March 18
+...
+75
+2.25
+January 30
+...
+50
+3.00
+January 22
+...
+75
+3.50
+Back to year navigation
+2007
+Date
+Increase
+Decrease
+Level (%)
+December 11
+...
+25
+4.25
+October 31
+...
+25
+4.50
+September 18
+...
+50
+4.75
+Back to year navigation
+2006
+Date
+Increase
+Decrease
+Level (%)
+June 29
+25
+...
+5.25
+May 10
+25
+...
+5.00
+March 28
+25
+...
+4.75
+January 31
+25
+...
+4.50
+Back to year navigation
+2005
+Date
+Increase
+Decrease
+Level (%)
+December 13
+25
+...
+4.25
+November 1
+25
+...
+4.00
+September 20
+25
+...
+3.75
+August 9
+25
+...
+3.50
+June 30
+25
+...
+3.25
+May 3
+25
+...
+3.00
+March 22
+25
+...
+2.75
+February 2
+25
+...
+2.50
+Back to year navigation
+2004
+Date
+Increase
+Decrease
+Level (%)
+December 14
+25
+...
+2.25
+November 10
+25
+...
+2.00
+September 21
+25
+...
+1.75
+August 10
+25
+...
+1.50
+June 30
+25
+...
+1.25
+Back to year navigation
+2003
+Date
+Increase
+Decrease
+Level (%)
+June 25
+...
+25
+1.00
+Back to year navigation
+Basis points: 1/100 percentage point
+Return to Text
+* On July 10, 2024, this date was corrected from March 3, 2020, to March 4, 2020.
+Return to Text
+Back to Top
+Last Update:
+                    September 16, 2026

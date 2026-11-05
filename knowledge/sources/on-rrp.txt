@@ -1,0 +1,67 @@
+https://www.federalreserve.gov/monetarypolicy/overnight-reverse-repurchase-agreements.htm
+
+Skip to main content
+An official website of the United States Government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+Lock
+Locked padlock icon
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Back to Home
+Board of Governors of the Federal Reserve System
+Stay Connected
+Federal Reserve Facebook Page
+Federal Reserve Instagram Page
+Federal Reserve YouTube Page
+Federal Reserve Flickr Page
+Federal Reserve LinkedIn Page
+Federal Reserve Threads Page
+Federal Reserve X Page
+Federal Reserve Bluesky Page
+Subscribe to RSS
+Subscribe to Email
+Recent Postings
+Calendar
+Publications
+Site Map
+A-Z index
+Careers
+FAQs
+Videos
+Contact
+Toggle Dropdown Menu
+Main Menu Toggle Button
+Sections
+Search Toggle Button
+Home
+Monetary Policy
+Policy Tools
+Policy Tools
+Please enable JavaScript if it is disabled in your browser or access the information through the links provided below.
+Overnight Reverse Repurchase Agreement Operations
+The Federal Open Market Committee (FOMC) conducts overnight reverse repurchase agreement (ON RRP) operations as needed as a supplementary policy tool to help control the federal funds rate and keep it in the target range set by the FOMC.
+When the Federal Reserve conducts an ON RRP operation, it sells a security to an eligible counterparty and simultaneously agrees to buy the security back the next day. This transaction does not affect the size of the System Open Market Account (SOMA) portfolio, but there is a reduction in reserve balances on the liability side of the Federal Reserve's balance sheet and a corresponding increase in reverse repo obligations while the trade is outstanding.
+The ON RRP offering rate plays a role for ON RRP counterparties that is similar to the role played by the interest rate on reserves for depository institutions. That is, in general, any counterparty that can participate in ON RRP operations should be unwilling to invest funds overnight with another counterparty at a rate below the ON RRP rate, just as any depository institution eligible to earn interest on reserves should be unwilling to invest funds overnight with another counterparty at a rate below the interest rate on reserves. The Federal Reserve currently conducts ON RRP operations with many counterparties, covering a wide range of entities (the list of ON RRP counterparties is available
+here
+).
+Related Information
+For the current ON RRP offering rate and other operational settings for the policy tools that support the FOMC's target range for the federal funds rate, see the Committee's most recent
+implementation note
+.
+Statement Regarding Overnight Reverse Repurchase Agreements
+Technical FAQs on the Federal Reserve Bank of New York website
+For a primer on the operation of monetary policy during normalization, see FEDS paper:
+Monetary Policy 101: A Primer on the Fed's Changing Approach to Policy Implementation (PDF)
+.
+Back to Top
+Last Update:
+                    May 12, 2026

@@ -1,0 +1,134 @@
+https://www.federalreserve.gov/monetarypolicy/discountrate.htm
+
+Discount Window
+Related Information
+Discount Window Lending
+General overview
+The Federal Reserve's "discount window" plays an important role in supporting the effective implementation of monetary policy and the stability of the banking system. The discount window allows depository institutions and U.S. branches and agencies of foreign banks to borrow from Federal Reserve Banks after executing legal agreements and pledging collateral. By providing ready access to funding, the discount window helps these institutions manage their liquidity risks efficiently and avoid actions that have negative consequences for their customers, such as withdrawing credit during times of market stress. Thus, the discount window supports the smooth flow of credit to households and businesses.
+The Board is responsible for the oversight of discount window operations and provides guidance to Reserve Banks on policy through rules and regulations. The twelve Reserve Banks operate the discount window and work together to ensure consistent and effective operations across the Federal Reserve System.
+The discount window has three programs:
+1. Primary credit:
+The main program for discount window borrowing is known as primary credit.
+An institution can qualify for primary credit if it is in generally sound financial condition.
+Primary credit is a convenient and ready source of liquidity. After an institution is signed up for the discount window and has pledged collateral, the only other information the borrower should expect to supply to their lending Reserve Bank when requesting an advance is the amount and term of the loan requested.
+Funds borrowed under the primary credit program can be used in the same way that funds borrowed from any other liquidity source may be used. For example, if market rates exceed the primary credit rate, banks are encouraged to borrow at the primary credit rate and lend to other entities as they see fit. When institutions use the discount window in this way, they are helping to ensure that the discount window serves as an effective tool of monetary policy implementation.
+Rate: Since March 2020 the primary credit rate has been set at the top of the target range that the FOMC has set for the federal funds rate. The
+rate
+is established by each Reserve Bank's board of directors, subject to the review and determination of the Board of Governors of the Federal Reserve System.
+Minutes of the Board of Governors discount rate meetings
+Term for primary credit loans:
+Primary credit loans are available on an overnight basis or for a period up to 90 days. The interest rate on a term primary credit loan will adjust if the primary credit rate changes during the tenure of the loan. In this scenario, the new rate will apply on and after the effective day of the rate change. Borrowers can prepay all or a portion of these loans at any time.
+Additional detail about term primary credit loans may be found
+here
+.
+2. Secondary credit:
+Secondary credit is available to institutions that are not eligible for primary credit. The discount rate on secondary credit is higher than the rate on primary credit. Additional information is available
+here
+.
+3. Seasonal credit:
+Seasonal credit is available to assist small institutions in managing seasonal swings in their balance sheets. The rate for seasonal credit is an average of selected market rates. Additional information is available
+here
+.
+Rates are established by each Reserve Bank's board of directors, subject to the review and determination of the Board of Governors of the Federal Reserve System.
+Further information on the discount window, including interest rates, is available from the Federal Reserve System's discount window
+web site
+.
+Borrowing from the discount window
+Collateral:
+All discount window loans must be collateralized to the satisfaction of the lending Reserve Bank. Reserve Banks accept a wide range of loans and securities as collateral for discount window advances.
+Pledging:
+Institutions must post collateral to the discount window before borrowing. Collateral pledged to a Reserve Bank also secures any obligations of the pledgor to a Reserve Bank, including intraday credit. More information on intraday credit is available in the Federal Reserve Policy on Payment System Risk, available
+here
+.
+Part of the process for pledging collateral includes working with the Reserve Bank to ensure that the Reserve Bank has a superior legal claim on the collateral pledged. For example, institutions that are members of and pledge collateral to a Federal Home Loan Bank (FHLB) or corporate credit union should be aware that a blanket lien may already be filed against their assets. Institutions should also know which loans are pledged to the FHLB or corporate credit union and take the necessary steps to prevent any potential double pledging of collateral to the lending Reserve Bank.
+Information on the amount of collateral pledged to Reserve Banks and the number of institutions that have pledged collateral is available
+here
+.
+Collateral types:
+The discount window takes a very wide range of assets as collateral.
+Securities:
+Institutions pledge securities to the discount window by moving them to restricted securities accounts held at approved securities depositories, including the Fedwire
+®
+Securities Service (FSS) and the Depository Trust Company (DTC).
+1
+In the absence of unusual concerns about the eligibility or valuation of the security, the pledge is generally effective the same day, subject to the securities depositories' operating hours.
+2
+Institutions should consult directly with the relevant securities depositories for information about operations and hours, as these are subject to change.
+3
+In general, 3:15 p.m. ET is the deadline to pledge securities transferred from another participant within FSS. An institution can generally pledge securities held in its own FSS account until 7:00 p.m. ET.
+Loans:
+The process for pledging loans takes longer than for pledging securities given the additional steps required for the Reserve Banks to obtain a perfected security interest. As a result, institutions that wish to pledge loans as collateral are encouraged to begin the pledging process well in advance of projected borrowing needs.
+A pledging institution may establish a "borrower in custody" (BIC) arrangement with its local Reserve Bank, in which the institution maintains possession of the loans. Loans with imaged or electronic signatures in lieu of "wet ink" signatures are eligible to be pledged as collateral, subject to any guidelines or restrictions the lending Reserve Bank may have in place.
+Institutions are generally expected to provide data on individual pledged loans for the Reserve Bank to determine the fair market and lendable value of the collateral—with the exception of credit card receivables, which are reported in pools. Larger institutions (generally those with $50 billion or more in total consolidated assets), as well as all branches and agencies of foreign banks are generally expected to provide more data elements associated with loan collateral than is required for smaller institutions. For these larger institutions and branches and agencies, the number of required data elements varies by type of loan. Additional information can be found
+here
+.
+Collateral valuation and lendable value:
+In general, the Federal Reserve seeks to value collateral by estimating a fair market value. To arrive at lendable value, margins are applied to the estimated fair market value by collateral type and are based on the historical price volatility and credit risk of each collateral type. These margins are normally re-evaluated annually; the current margins are available
+here
+.
+Securities valuation:
+Securities are valued daily using prices supplied by the Federal Reserve's external vendors.
+Loan valuation:
+Valuation of pledged loans is based on internally managed models and valuation is generally updated at least monthly. The valuation models use as inputs the data elements that pledging institutions are required to report when pledging loan collateral.
+Borrowing process:
+Institutions may request loans over the phone with their Reserve Bank, or by using Discount Window Direct (DWD), a secure online portal for requesting loans and making prepayments if desired.
+4
+For more information on gaining access and using DWD, please see
+Lending Central (Discount Window)
+.
+The lending Reserve Bank will normally credit the borrowing institution's account at the close of the Fedwire Funds Service business day, Monday through Friday, (usually 7:00 p.m. ET) on the day the advance is approved by the Reserve Bank, but Reserve Banks may approve requests for earlier availability of loan proceeds. For institutions that also have access to Federal Reserve intraday credit, loan proceeds are generally not needed until the end of the day. Discount window loans can be prepaid, with no penalty, at the borrower's discretion. This feature may be relevant for institutions if they need the collateral pledged to a Reserve Bank for other uses.
+As noted in the collateral section, moving securities to and from the discount window is dependent on the securities depositories' operating hours.
+5
+Regulatory and supervisory treatment
+The Federal Reserve has made clear that use of the discount window can be incorporated into appropriate liquidity risk management.
+Updated guidance (PDF)
+encourages depository institutions to incorporate the discount window as part of their contingency funding plans.
+Below is more information on how the discount window can be incorporated into certain supervisory expectations and regulatory requirements.
+Liquidity Coverage Ratio Requirement
+A term primary credit loan with a remaining maturity greater than 30 days would be outside of the liquidity coverage ratio (LCR) requirement's 30-day stress time horizon.
+6
+For example, if a bank were to borrow term primary credit for 90 days, immediately upon borrowing, the bank's reserve balances would increase. This increase in reserve balances would increase the numerator of the LCR. At the same time, the loan with a maturity longer than 30 days would not create an outflow in the denominator of the LCR. As a result, the borrowing bank's LCR increases. As the remaining maturity of the loan declines, the bank may choose to pre-pay the loan and request a new loan up to 90 days.
+Additional information can be found here:
+Frequently Asked Questions
+A discount window loan, including a term primary credit loan, with a remaining maturity less than 30 days would fall inside the LCR requirement’s 30-day stress time horizon and would be assigned a run-off rate no higher than 25 percent.
+7
+Securities pledged to the discount window are not considered encumbered for the purpose of the LCR requirement as long as the borrower is able to withdraw the assets without having to repay any portion of an outstanding obligation.
+8
+Disclosure:
+The Federal Reserve releases an update of its balance sheet, via the
+H.4.1 report
+, weekly. It includes primary, secondary, and seasonal lending on an aggregate basis, and does not report bank-specific loans. Discount window lending by individual Reserve Banks is also not reported and has not been reported separately since 2020.
+Two years after the borrowing has occurred the Federal Reserve reports borrowing by each institution, as required by law.
+9
+1. Fedwire is a registered service mark of the Reserve Banks. A list of marks related to financial service providers that are offered to financial institutions by the Reserve Banks is available at
+FRBservices.org
+.
+Return to text
+2. For information about FSS hours, see
+here
+. For information about DTC, see
+here
+.
+Return to text
+3. For more information, see
+here
+.
+Return to text
+4. The rollout of Discount Window Direct is ongoing throughout the Federal Reserve System. Depository institutions should check with their local reserve bank on availability.
+Return to text
+5.
+Pledges of collateral
+maintained with FSS may be made during the general hours of operation: 8:30 a.m. ET – 7:00 p.m. ET (unless extended) for repositioning securities between accounts at same participants; 3:15 p.m. ET is deadline for securities transferred from another participation.
+Return to text
+6. "Liquidity Coverage Ratio: Liquidity Risk Measurement Standards" (79 FR 61440); 12 CFR part 50 (OCC); 12 CFR part 249 (Board); 12 CFR part 329 (FDIC). As announced on March 15, 2020, the Reserve Banks have waived their rights to require repayment on demand for a term primary credit loan with a remaining maturity of more than 30 calendar days, as provided in section 5.1(a) of the Reserve Banks' Operating Circular 10 (
+Lending
+) (OC 10). The Reserve Banks retain all other remedies under OC 10.
+Return to text
+7. See 12 CFR § 50.32(j)(1)(iii) (OCC); 12 CFR § 249.32(j)(1)(iii) (Board); 12 CFR § 329.32(j)(1)(iii) (FDIC). A discount window loan that is secured by level 1 HQLA or level 2A HQLA would be assigned a run-off rate of 0 percent or 15 percent, respectively. 12 CFR § 50.32(j)(1)(i)-(ii) (OCC); 12 CFR § 249.32(j)(1)(i)-(ii) (Board); 12 CFR § 329.32(j)(1)(i)-(ii) (FDIC).
+Return to text
+8. Under the federal banking agencies’ final rule, HQLA that is pledged to a central bank or U.S. GSE to secure borrowing capacity but is not securing existing borrowings or required to support access to payment services may be treated as unencumbered for the purposes of identifying eligible HQLA. See 12 CFR § 50.22(b)(1) and 12 CFR § 50.3 (OCC); 12 CFR § 249.22(b)(1) and 12 CFR § 249.3 (Board); 12 CFR § 329.22(b)(1) and 12 CFR § 329.3 (FDIC).
+Return to text
+9. In accordance with the provisions of the Dodd-Frank Wall Street Reform and Consumer Protection Act (Pub. L. No. 111-203), which amended the Federal Reserve Act, the Federal Reserve publicly discloses certain information about discount window borrowers, loans and collateral about two years after a discount window loan is extended. For more information, see
+here
+.
+Return to text

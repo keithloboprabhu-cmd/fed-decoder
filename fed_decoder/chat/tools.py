@@ -51,8 +51,15 @@ def resolve_meeting(date_str: str) -> pd.Timestamp | None:
     return store.nearest_meeting(d)
 
 
+LATEST = re.compile(r"\b(latest|last|most recent|newest|current|this)\b", re.I)
+
+
+def statement_url(d: pd.Timestamp) -> str:
+    return f"{config.FED_BASE}/newsevents/pressreleases/monetary{d:%Y%m%d}a.htm"
+
+
 def get_meeting(date: str) -> dict:
-    d = resolve_meeting(date)
+    d = store.statements()["meeting_date"].max() if LATEST.search(date or "") and not parse_date(date) else resolve_meeting(date)
     if d is None:
         return {"error": f"could not understand date {date!r}; use YYYY-MM-DD"}
     gt = store.ground_truth()
@@ -70,6 +77,8 @@ def get_meeting(date: str) -> dict:
         "votes_against": None if pd.isna(g["votes_against"]) else int(g["votes_against"]),
         "dissenters": list(g["dissenters"]),
         "statement": text[:3500],
+        "source": statement_url(d),
+        "as_of": str(d.date()),
     }
     if card:
         out["tone_score"] = card.tone_score
@@ -158,16 +167,7 @@ def notable_meetings(kind: str = "split", limit: int = 6) -> dict:
             "note": "Ranked from recorded votes since 2000; dissents are the clearest sign a decision was contested."}
 
 
-def fed_leadership() -> dict:
-    """Current Board of Governors with titles (chair, vice chairs), from federalreserve.gov."""
-    from fed_decoder.data.leadership import load_board
-
-    b = load_board()
-    if not b:
-        return {"error": "leadership data not available"}
-    chair = next((m for m in b["members"] if m["title"].lower().startswith("chair")), None)
-    return {"chair": chair["name"] if chair else None, "members": b["members"], "as_of": b["as_of"], "source": b["source"]}
-
+from fed_decoder.chat import live  # noqa: E402
 
 TOOLS = {
     "get_meeting": get_meeting,
@@ -177,27 +177,48 @@ TOOLS = {
     "payment_impact": payment_impact,
     "forecast_next": forecast_next,
     "notable_meetings": notable_meetings,
-    "fed_leadership": fed_leadership,
+    "fed_leadership": live.fed_leadership,
+    "fomc_calendar": live.fomc_calendar,
+    "fred_search": live.fred_search,
+    "fred_series": live.fred_series,
+    "bls_latest": live.bls_latest,
+    "treasury_yields": live.treasury_yields,
+    "fed_feed": live.fed_feed,
+    "web_search": live.web_search,
+    "fetch_page": live.fetch_page,
+    "calc": live.calc,
 }
 
+_OBJ = lambda props, req=(): {"type": "object", "properties": props, **({"required": list(req)} if req else {})}  # noqa: E731
+_S = {"type": "string"}
+
 TOOL_SPECS = [
-    ToolSpec("fed_leadership", "Who leads the Fed now: the chair, vice chairs and governors, from the Federal Reserve's Board page.",
-             {"type": "object", "properties": {}}),
-    ToolSpec("notable_meetings", "Most contested meetings since 2000 (kind='split', ranked by number of dissents) or the largest rate moves (kind='big_moves').",
-             {"type": "object", "properties": {"kind": {"type": "string", "enum": ["split", "big_moves"]}, "limit": {"type": "integer"}}}),
-    ToolSpec("get_meeting", "Decision, target range, votes, dissenters, statement text and decoder card for the FOMC meeting nearest a date.",
-             {"type": "object", "properties": {"date": {"type": "string", "description": "YYYY-MM-DD, YYYY-MM, or 'September 2024'"}}, "required": ["date"]}),
-    ToolSpec("search_statements", "Keyword search over every FOMC statement since 2000. Returns matching paragraphs with dates.",
-             {"type": "object", "properties": {"query": {"type": "string"}, "year": {"type": "integer", "description": "optional year filter"}}, "required": ["query"]}),
-    ToolSpec("diff_statements", "Sentence-level changes between two FOMC statements.",
-             {"type": "object", "properties": {"a": {"type": "string", "description": "earlier meeting date"}, "b": {"type": "string", "description": "later meeting date"}}, "required": ["a", "b"]}),
-    ToolSpec("get_series", "FRED data series summary. IDs: " + ", ".join(f"{k} ({v})" for k, v in config.FRED_SERIES.items()),
-             {"type": "object", "properties": {"id": {"type": "string"}, "start": {"type": "string", "description": "YYYY-MM-DD"},
-                                        "end": {"type": "string", "description": "YYYY-MM-DD; leave out to include the latest data"}}, "required": ["id"]}),
-    ToolSpec("payment_impact", "Monthly payment change for a loan if its rate moves. loan_type: mortgage_30y, auto_60m, credit_card, heloc. base_rate_pct defaults to the latest FRED average for that product.",
-             {"type": "object", "properties": {"loan_type": {"type": "string"}, "balance": {"type": "number"}, "rate_change_bps": {"type": "integer"}, "base_rate_pct": {"type": "number"}}, "required": ["loan_type", "balance", "rate_change_bps"]}),
-    ToolSpec("forecast_next", "Model probabilities (hold/cut/hike) for the next FOMC meeting, with signals and backtest. Educational only.",
-             {"type": "object", "properties": {}}),
+    ToolSpec("fed_leadership", "LIVE from federalreserve.gov: chair, vice chairs, governors, this year's FOMC voters and alternates, and which banks vote in coming years.", _OBJ({})),
+    ToolSpec("fomc_calendar", "LIVE from federalreserve.gov: recent and upcoming FOMC meeting dates, and which have projections (SEP/dot plot).", _OBJ({})),
+    ToolSpec("get_meeting", "One FOMC decision from the archive: move, target range, votes, dissenters, statement. date: 'latest', YYYY-MM-DD or 'September 2024'.",
+             _OBJ({"date": _S}, ["date"])),
+    ToolSpec("search_statements", "Keyword search over every FOMC statement since 2000.", _OBJ({"query": _S, "year": {"type": "integer"}}, ["query"])),
+    ToolSpec("diff_statements", "Wording changes between two FOMC statements (dates a, b).", _OBJ({"a": _S, "b": _S}, ["a", "b"])),
+    ToolSpec("notable_meetings", "Most contested meetings since 2000 (kind=split) or largest moves (kind=big_moves).",
+             _OBJ({"kind": {"type": "string", "enum": ["split", "big_moves"]}})),
+    ToolSpec("fred_search", "Find FRED series IDs for any economic topic.", _OBJ({"query": _S}, ["query"])),
+    ToolSpec("fred_series", "LIVE FRED data for any series ID: latest value with date, recent history, and year-over-year % for price indexes. "
+             "Fed funds upper/lower bound: DFEDTARU/DFEDTARL. CPI: CPIAUCSL. Unemployment: UNRATE.",
+             _OBJ({"id": _S, "start": {"type": "string", "description": "YYYY-MM-DD (default 3 years ago)"}, "end": _S}, ["id"])),
+    ToolSpec("bls_latest", "LIVE BLS release data: series = cpi, core_cpi, unemployment, payrolls or wages. Includes year-over-year % and monthly job change.",
+             _OBJ({"series": _S}, ["series"])),
+    ToolSpec("treasury_yields", "LIVE Treasury par yield curve (1-month to 30-year) for a date (default latest).", _OBJ({"on": {"type": "string", "description": "YYYY-MM-DD"}})),
+    ToolSpec("fed_feed", "LIVE Fed RSS: latest press releases (kind=monetary), speeches, or testimony.",
+             _OBJ({"kind": {"type": "string", "enum": ["monetary", "speeches", "testimony", "all"]}})),
+    ToolSpec("web_search", "Web search for news, history and anything the other tools don't cover. Can be stale: never use it for leadership, rates or data.",
+             _OBJ({"query": _S}, ["query"])),
+    ToolSpec("fetch_page", "Read an official page in full (federalreserve.gov, regional Feds, BLS, BEA, Treasury, CBO, Congress.gov, major outlets).",
+             _OBJ({"url": _S}, ["url"])),
+    ToolSpec("calc", "Arithmetic. Use for EVERY calculation (differences, percents, conversions); never do math yourself.", _OBJ({"expr": _S}, ["expr"])),
+    ToolSpec("payment_impact", "Monthly payment change for a loan if its rate moves. loan_type: mortgage_30y, auto_60m, credit_card, heloc.",
+             _OBJ({"loan_type": _S, "balance": {"type": "number"}, "rate_change_bps": {"type": "integer"}, "base_rate_pct": {"type": "number"}},
+                  ["loan_type", "balance", "rate_change_bps"])),
+    ToolSpec("forecast_next", "Model odds (hold/cut/hike) for the next FOMC meeting, with backtest. Educational, a forecast not a fact.", _OBJ({})),
 ]
 
 

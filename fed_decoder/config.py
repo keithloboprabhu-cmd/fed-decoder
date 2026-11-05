@@ -54,6 +54,14 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 GEMINI_FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-3.6-flash,gemini-3-flash-preview,gemini-3.5-flash-lite,gemini-flash-lite-latest").split(",") if m]
 GEMINI_TIMEOUT_S = int(os.environ.get("GEMINI_TIMEOUT_S", "60"))
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
+# Ask: Gemma 4 runs on the same free Gemini API key with its own (larger) quota and supports
+# function calling; it backs up the Flash models when their 20-requests-per-day cap is hit.
+ASK_GEMINI_MODELS = [m for m in os.environ.get("ASK_GEMINI_MODELS", "gemini-3.5-flash,gemini-3.6-flash,gemini-3-flash-preview,gemma-4-26b-a4b-it,gemma-4-31b-it,gemini-3.5-flash-lite,gemini-3.1-flash-lite").split(",") if m]
+# Google Search grounding can't share a call with function tools on the free tier, so web_search
+# makes its own grounded call. gemma-4-26b-a4b-it supported it when the Flash models were capped (Nov 2026).
+SEARCH_MODELS = [m for m in os.environ.get("SEARCH_MODELS", "gemma-4-26b-a4b-it,gemini-3.5-flash,gemini-3.1-flash-lite").split(",") if m]
+# gpt-oss-20b's browser_search found the current chair; the 120b returned a stale name (Nov 2026 test).
+GROQ_SEARCH_MODEL = os.environ.get("GROQ_SEARCH_MODEL", "openai/gpt-oss-20b")
 
 # Requests per minute we allow ourselves: kept below the published free caps.
 GEMINI_RPM = int(os.environ.get("GEMINI_RPM", "8"))
@@ -67,8 +75,8 @@ MAX_BACKOFF_S = float(os.environ.get("MAX_BACKOFF_S", "12"))
 # Gemini's free tier allows 20 requests/day per model (checked Nov 2026), so
 # 5 models give ~100/day; a chat answer takes 2-3 calls. Groq adds more.
 DAILY_LLM_BUDGET = int(os.environ.get("DAILY_LLM_BUDGET", "80"))
-SESSION_QUESTION_LIMIT = 10
-CHAT_HISTORY_TURNS = 4
+SESSION_QUESTION_LIMIT = 15
+CHAT_HISTORY_TURNS = 6
 
 
 def gemini_key() -> str | None:

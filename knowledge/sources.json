@@ -1,0 +1,158 @@
+{
+ "who-we-are": {
+  "url": "https://www.federalreserve.gov/aboutthefed/fedexplained/who-we-are.htm",
+  "sha": "0cec38c2676ccfa5",
+  "chars": 11679,
+  "fetched": "2026-11-05"
+ },
+ "fed-act": {
+  "url": "https://www.federalreservehistory.org/essays/federal-reserve-act-signed",
+  "sha": "647342eac4222580",
+  "chars": 8037,
+  "fetched": "2026-11-05"
+ },
+ "purpose-faq": {
+  "url": "https://www.federalreserve.gov/faqs/about_12594.htm",
+  "sha": "456e7facced46b6a",
+  "chars": 1726,
+  "fetched": "2026-11-05"
+ },
+ "goals-faq": {
+  "url": "https://www.federalreserve.gov/faqs/what-economic-goals-does-federal-reserve-seek-to-achieve-through-monetary-policy.htm",
+  "sha": "3095b04a1edb9b38",
+  "chars": 1352,
+  "fetched": "2026-11-05"
+ },
+ "two-percent-faq": {
+  "url": "https://www.federalreserve.gov/faqs/economy_14400.htm",
+  "sha": "194ce1aa43f00734",
+  "chars": 950,
+  "fetched": "2026-11-05"
+ },
+ "legal-framework-faq": {
+  "url": "https://www.federalreserve.gov/faqs/basic-framework-determines-conduct-monetary-policy.htm",
+  "sha": "fee7be90e63b0555",
+  "chars": 1150,
+  "fetched": "2026-11-05"
+ },
+ "independence-faq": {
+  "url": "https://www.federalreserve.gov/faqs/about_12799.htm",
+  "sha": "4ec08efed610f6ba",
+  "chars": 1804,
+  "fetched": "2026-11-05"
+ },
+ "fomc-faq": {
+  "url": "https://www.federalreserve.gov/faqs/about_12844.htm",
+  "sha": "8002190d6c8e06b2",
+  "chars": 2388,
+  "fetched": "2026-11-05"
+ },
+ "bank-president-faq": {
+  "url": "https://www.federalreserve.gov/faqs/how-is-a-federal-reserve-bank-president-selected.htm",
+  "sha": "98a1e86c736a1bd6",
+  "chars": 2140,
+  "fetched": "2026-11-05"
+ },
+ "how-policy-works": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/monetary-policy-what-are-its-goals-how-does-it-work.htm",
+  "sha": "a7dc061f9e14a3c5",
+  "chars": 15965,
+  "fetched": "2026-11-05"
+ },
+ "policy-tools": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/policytools.htm",
+  "sha": "4c98fb9400d09ac9",
+  "chars": 1653,
+  "fetched": "2026-11-05"
+ },
+ "iorb": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/reserve-balances.htm",
+  "sha": "dcd33c3f290cdbc7",
+  "chars": 3158,
+  "fetched": "2026-11-05"
+ },
+ "on-rrp": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/overnight-reverse-repurchase-agreements.htm",
+  "sha": "6ea2d731bebc861b",
+  "chars": 3110,
+  "fetched": "2026-11-05"
+ },
+ "omo": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/openmarket.htm",
+  "sha": "d99523c115cd23cb",
+  "chars": 6891,
+  "fetched": "2026-11-05"
+ },
+ "discount-window": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/discountrate.htm",
+  "sha": "d19b1f89ecdb831d",
+  "chars": 14036,
+  "fetched": "2026-11-05"
+ },
+ "balance-sheet": {
+  "url": "https://www.federalreserve.gov/monetarypolicy/bst.htm",
+  "sha": "492fe2fbb7028fd2",
+  "chars": 5001,
+  "fetched": "2026-11-05"
+ },
+ "rates-matter-faq": {
+  "url": "https://www.federalreserve.gov/faqs/why-do-interest-rates-matter.htm",
+  "sha": "90412aa0c17066ee",
+  "chars": 1198,
+  "fetched": "2026-11-05"
+ },
+ "prime-rate-faq": {
+  "url": "https://www.federalreserve.gov/faqs/credit_12846.htm",
+  "sha": "4576f812e171141f",
+  "chars": 804,
+  "fetched": "2026-11-05"
+ },
+ "sep-faq": {
+  "url": "https://www.federalreserve.gov/faqs/summary-economic-projections-sep.htm",
+  "sha": "b26f8f053b034b4d",
+  "chars": 896,
+  "fetched": "2026-11-05"
+ },
+ "minutes-faq": {
+  "url": "https://www.federalreserve.gov/faqs/minutes-federal-open-market-committee-fomc.htm",
+  "sha": "cfe75619d557828c",
+  "chars": 1668,
+  "fetched": "2026-11-05"
+ },
+ "longer-run-goals-faq": {
+  "url": "https://www.federalreserve.gov/faqs/statement-on-longer-run-goals-monetary-policy-strategy-FOMC.htm",
+  "sha": "824015b77eb65d7f",
+  "chars": 1239,
+  "fetched": "2026-11-05"
+ },
+ "great-inflation": {
+  "url": "https://www.federalreservehistory.org/essays/great-inflation",
+  "sha": "1930e99453f9b4f9",
+  "chars": 22567,
+  "fetched": "2026-11-05"
+ },
+ "great-recession": {
+  "url": "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath",
+  "sha": "6e1c1a9511894a0c",
+  "chars": 15273,
+  "fetched": "2026-11-05"
+ },
+ "statement-2020-03-15": {
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm",
+  "sha": "d699b9078c1fc411",
+  "chars": 4728,
+  "fetched": "2026-11-05"
+ },
+ "statement-2022-03-16": {
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20220316a.htm",
+  "sha": "cf1adf84763234a4",
+  "chars": 2395,
+  "fetched": "2026-11-05"
+ },
+ "statement-2023-07-26": {
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20230726a.htm",
+  "sha": "cc1d9d42c45bb619",
+  "chars": 2432,
+  "fetched": "2026-11-05"
+ }
+}

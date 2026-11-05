@@ -1,0 +1,103 @@
+https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath
+
+×
+Close
+The Great Recession and Its Aftermath
+2007-
+The 2007-09 economic crisis was deep and protracted enough to become known as "the Great Recession" and was followed by what was, by some measures, a long but unusually slow recovery.
+Job seekers line up to apply for positions at an American Apparel store April 2, 2009, in New York City.  (Photo: Mario Tama/Getty Images News/Getty Images)
+by John Weinberg
+The period known as the
+Great Moderation
+came to an end when the decade-long expansion in US housing market activity peaked in 2006 and residential construction began declining. In 2007, losses on mortgage-related financial assets began to cause strains in global financial markets, and in December 2007 the US economy entered a recession. That year
+several large financial firms experienced financial distress
+, and many financial markets experienced significant turbulence. In response, the Federal Reserve provided liquidity and support through a
+range of programs
+motivated by a desire to improve the functioning of financial markets and institutions, and thereby limit the harm to the US economy.
+1
+Nonetheless, in the fall of 2008, the economic contraction worsened, ultimately becoming deep enough and protracted enough to acquire the label "the
+Great Recession
+." While the US economy bottomed out in the middle of 2009, the recovery in the years immediately following was by some measures unusually slow. The Federal Reserve has provided unprecedented monetary accommodation in response to the severity of the contraction and the gradual pace of the ensuing recovery. In addition, the financial crisis led to a range of major reforms in banking and financial regulation,
+congressional legislation
+that significantly affected the Federal Reserve.
+Rise and Fall of the Housing Market
+The recession and crisis followed an extended period of expansion in US housing construction, home prices, and housing credit. This expansion began in the 1990s and continued unabated through the 2001 recession, accelerating in the mid-2000s. Average home prices in the United States more than doubled between 1998 and 2006, the sharpest increase recorded in US history, and even larger gains were recorded in some regions. Home ownership in this period rose from 64 percent in 1994 to 69 percent in 2005, and residential investment grew from about 4.5 percent of US gross domestic product to about 6.5 percent over the same period. Roughly 40 percent of net private sector job creation between 2001 and 2005 was accounted for by employment in housing-related sectors.
+The expansion in the housing sector was accompanied by an expansion in home mortgage borrowing by US households. Mortgage debt of US households rose from 61 percent of GDP in 1998 to 97 percent in 2006. A number of factors appear to have contributed to the growth in home mortgage debt. In the period after the 2001 recession, the Federal Open Market Committee (FOMC) maintained a low federal funds rate, and some observers have suggested that by keeping interest rates low for a "prolonged period" and by only increasing them at a "measured pace" after 2004, the Federal Reserve contributed to the expansion in housing market activity (Taylor 2007). However, other analysts have suggested that such factors can only account for a small portion of the increase in housing activity (Bernanke 2010). Moreover, the historically low level of interest rates may have been due, in part, to large accumulations of savings in some emerging market economies, which acted to depress interest rates globally (Bernanke 2005). Others point to the growth of the market for mortgage-backed securities as contributing to the increase in borrowing. Historically, it was difficult for borrowers to obtain mortgages if they were perceived as a poor credit risk, perhaps because of a below-average credit history or the inability to provide a large down payment. But during the early and mid-2000s, high-risk, or "subprime," mortgages were offered by lenders who repackaged these loans into securities. The result was a large
+expansion in access to housing credit
+, helping to fuel the subsequent increase in demand that bid up home prices nationwide.
+Effects on the Financial Sector
+After home prices peaked in the beginning of 2007, according to the Federal Housing Finance Agency House Price Index, the extent to which prices might eventually fall became a significant question for the pricing of mortgage-related securities because large declines in home prices were viewed as likely to lead to an increase in mortgage defaults and higher losses to holders of such securities. Large, nationwide declines in home prices had been relatively rare in the US historical data, but the run-up in home prices also had been unprecedented in its scale and scope. Ultimately, home prices fell by over a fifth on average across the nation from the first quarter of 2007 to the second quarter of 2011. This decline in home prices helped to spark the financial crisis of 2007-08, as financial market participants faced considerable uncertainty about the incidence of losses on mortgage-related assets. In August 2007, pressures emerged in certain financial markets, particularly the market for asset-backed commercial paper, as money market investors became wary of exposures to subprime mortgages (Covitz, Liang, and Suarez 2009). In the spring of 2008, the investment bank Bear Stearns was acquired by JPMorgan Chase with the assistance of the Federal Reserve. In September, Lehman Brothers filed for bankruptcy, and the next day the
+Federal Reserve provided support to AIG
+, a large insurance and financial services company. Citigroup and Bank of America sought support from the Federal Reserve, the Treasury, and the Federal Deposit Insurance Corporation.
+The Fed's support to specific financial institutions was not the only expansion of central bank credit in response to the crisis. The Fed also introduced a number of
+new lending programs
+that provided liquidity to support a range of financial institutions and markets. These included a credit facility for "primary dealers," the broker-dealers that serve as counterparties for the Fed's open market operations, as well as lending programs designed to provide liquidity to money market mutual funds and the commercial paper market. Also introduced, in cooperation with the US Department of the Treasury, was the Term Asset-Backed Securities Loan Facility (TALF), which was designed to ease credit conditions for households and businesses by extending credit to US holders of high-quality asset-backed securities.
+About 350 members of the Association of Community Organizations for Reform Now gather for a rally in front of the U.S. Capitol March 11, 2008, to raise awareness of home foreclosure crisis and encourage Congress to help LMI families stay in their homes. (Photo by Chip Somodevilla/Getty Images)
+Initially, the expansion of Federal Reserve credit was financed by reducing the Federal Reserve's holdings of Treasury securities, in order to avoid an increase in bank reserves that would drive the federal funds rate below its target as banks sought to lend out their excess reserves. But in October 2008, the Federal Reserve gained the authority to pay banks interest on their excess reserves. This gave banks an incentive to hold onto their reserves rather than lending them out, thus mitigating the need for the Federal Reserve to offset its expanded lending with reductions in other assets.
+2
+Effects on the Broader Economy
+The housing sector led not only the financial crisis, but also the downturn in broader economic activity. Residential investment peaked in 2006, as did employment in residential construction. The overall economy peaked in December 2007, the month the National Bureau of Economic Research recognizes as the beginning of the recession. The decline in overall economic activity was modest at first, but it steepened sharply in the fall of 2008 as stresses in financial markets reached their climax. From peak to trough, US gross domestic product fell by 4.3 percent, making this the deepest recession since World War II. It was also the longest, lasting eighteen months. The unemployment rate more than doubled, from less than 5 percent to 10 percent.
+In response to weakening economic conditions, the FOMC lowered its target for the federal funds rate from 4.5 percent at the end of 2007 to 2 percent at the beginning of September 2008. As the financial crisis and the economic contraction intensified in the fall of 2008, the FOMC accelerated its interest rate cuts, taking the rate to its effective floor—a target range of 0 to 25 basis points—by the end of the year. In November 2008, the Federal Reserve also initiated the first in a series of large-scale asset purchase (LSAP) programs, buying mortgage-backed securities and longer-term Treasury securities. These purchases were intended to put downward pressure on long-term interest rates and improve financial conditions more broadly, thereby supporting economic activity (Bernanke 2012).
+The recession ended in June 2009, but economic weakness persisted. Economic growth was only moderate—averaging about 2 percent in the first four years of the recovery—and the unemployment rate, particularly the rate of long-term unemployment, remained at historically elevated levels. In the face of this prolonged weakness, the Federal Reserve maintained an exceptionally low level for the federal funds rate target and sought new ways to provide additional monetary accommodation. These included additional LSAP programs, known more popularly as quantitative easing, or QE. The FOMC also began communicating its intentions for future policy settings more explicitly in its public statements, particularly the circumstances under which exceptionally low interest rates were likely to be appropriate. For example, in December 2012, the committee stated that it anticipates that exceptionally low interest rates would likely remain appropriate at least as long as the unemployment rate was above a threshold value of 6.5 percent and inflation was expected to be no more than a half percentage point above the committee's 2 percent longer-run goal. This strategy, known as "forward guidance," was intended to convince the public that rates would stay low at least until certain economic conditions were met, thereby putting downward pressure on longer-term interest rates.
+Effects on Financial Regulation
+When the financial market turmoil had subsided, attention naturally turned to reforms to the financial sector and its supervision and regulation, motivated by a desire to avoid similar events in the future. A number of measures have been proposed or put in place to reduce the risk of financial distress. For traditional banks, there are significant increases in the amount of required capital overall, with larger increases for so-called "systemically important" institutions (Bank for International Settlements 2011a; 2011b). Liquidity standards will for the first time formally limit the amount of banks' maturity transformation (Bank for International Settlements 2013). Regular stress testing will help both banks and regulators understand risks and will force banks to use earnings to build capital instead of paying dividends as conditions deteriorate (Board of Governors 2011).
+The
+Dodd-Frank Act of 2010
+also created new provisions for the treatment of large financial institutions. For example, the Financial Stability Oversight Council has the authority to designate nontraditional credit intermediaries "Systemically Important Financial Institutions" (SIFIs), which subjects them to the oversight of the Federal Reserve. The act also created the Orderly Liquidation Authority (OLA), which allows the Federal Deposit Insurance Corporation to wind down certain institutions when the firm's failure is expected to pose a great risk to the financial system. Another provision of the act requires large financial institutions to create "living wills," which are detailed plans laying out how the institution could be resolved under US bankruptcy code without jeopardizing the rest of the financial system or requiring government support.
+Like the
+Great Depression
+of the 1930s and the
+Great Inflation
+of the 1970s, the financial crisis of 2008 and the ensuing recession are vital areas of study for economists and policymakers. While it may be many years before the causes and consequences of these events are fully understood, the effort to untangle them is an important opportunity for the Federal Reserve and other agencies to learn lessons that can inform future policy.
+Endnotes
+1
+Many of these actions were taken under Section 13(3) of the Federal Reserve Act, which at that time authorized lending to individuals, partnerships, and corporations in "unusual and exigent" circumstances and subject to other restrictions. After the amendments to Section 13(3) made by the Dodd-Frank Wall Street Reform and Consumer Protection Act of 2010, Federal Reserve lending under Section 13(3) is permitted only to participants in a program or facility with "broad based eligibility," with prior approval of the secretary of the treasury, and when several other conditions are met.
+2
+For more on interest on reserves, see Ennis and Wolman (2010).
+Bibliography
+Bank for International Settlements. "
+Basel III: A global regulatory framework for more resilient banks and banking system
+." Revised June 2011a.
+Bank for International Settlements. "
+Global systemically important banks: Assessment methodology and the additional loss absorbency requirement
+." July 2011b.
+Bernanke, Ben, "The Global Saving Glut and the U.S. Current Account Deficit," Speech given at the Sandridge Lecture, Virginia Association of Economists, Richmond, Va., March 10, 2005.
+Bernanke, Ben,"Monetary Policy and the Housing Bubble," Speech given at the Annual Meeting of the American Economic Association, Atlanta, Ga., January 3, 2010.
+Bernanke, Ben, "Monetary Policy Since the Onset of the Crisis," Speech given at the Federal Reserve Bank of Kansas City Economic Symposium, Jackson Hole, Wyo., August 31, 2012.
+Covitz, Daniel, Nellie Liang, and Gustavo Suarez. "The Evolution of a Financial Crisis: Collapse of the Asset-Backed Commercial Paper Market."
+Journal of Finance
+68, no. 3 (2013): 815-48.
+Ennis, Huberto, and Alexander Wolman. "Excess Reserves and the New Challenges for Monetary Policy." Federal Reserve Bank of Richmond
+Economic Brief
+no. 10-03 (March 2010).
+Federal Reserve System,
+Capital Plan
+, 76 Fed Reg. 74631 (December 1, 2011) (codified at 12 CFR 225.8).
+Taylor, John,"Housing and Monetary Policy," NBER Working Paper 13682, National Bureau of Economic Research, Cambridge, MA, December 2007.
+Written as of November 22, 2013. See
+disclaimer
+and
+update policy
+.
+Essays in this Time Period
+The Great Recession
+Subprime Mortgage Crisis
+Federal Reserve Credit Programs During the Meltdown
+Support for Specific Institutions
+Dodd-Frank Wall Street Reform and Consumer Protection Act of 2010
+Related People
+Ben S. Bernanke
+Chairman
+Board of Governors
+2006 – 2014
+Timothy F. Geithner
+President
+New York Fed
+2003 – 2008
+Related Links
+FRASER: Text of Dodd Frank Act
+Download PDF
+Share +
+X
+facebook
+email

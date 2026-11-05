@@ -1,0 +1,51 @@
+https://www.federalreserve.gov/monetarypolicy/reserve-balances.htm
+
+Interest on Reserve Balances
+During the week of November 9, the “Build Your Package” feature in the Data Download Program (DDP) will be removed in preparation for the
+eventual retirement of the DDP
+. Users can access data and expanded download options through the Federal Reserve Bank of St. Louis's
+Federal Reserve Economic Data (FRED)
+. Learn more about the
+DDP and FRED partnership
+.
+The Federal Reserve Banks pay interest on reserve balances. The Board of Governors has prescribed rules governing the payment of interest by Federal Reserve Banks in Regulation D (Reserve Requirements of Depository Institutions, 12 CFR Part 204).
+The
+Financial Services Regulatory Relief Act of 2006
+authorized the Federal Reserve Banks to pay interest on balances held by or on behalf of eligible institutions in master accounts at Reserve Banks, subject to regulations of the Board of Governors, effective October 1, 2011. The effective date of this authority was advanced to October 1, 2008, by the
+Emergency Economic Stabilization Act of 2008
+.
+The interest rate on reserve balances (IORB rate) is determined by the Board and is an important tool for the Federal Reserve's conduct of monetary policy. For the current setting of the IORB rate, see the most recent
+implementation note
+issued by the FOMC. This note provides the operational settings for the policy tools that support the FOMC's target range for the federal funds rate.
+The current IORB rate is captured in the table below and in the Board's Data Download Program (
+DDP
+). The table and DDP are generally updated each business day at 4:30 p.m., Eastern Time, with the next business day's rate. They are not updated on federal holidays.
+DDP
+FRED
+XML
+Interest Rates on Reserve Balances for {{forDate}}
+Last Updated: {{lastUpdateDate}} at 4:30 p.m., Eastern Time
+Rates
+(percent)
+Effective
+Date
+Rate on Reserve Balances (IORB rate)
+{{theRate}}
+{{effectiveDate}}
+Related Press Releases
+Federal Reserve Board issues final rule amending Regulation D with regard to interest on reserve balances
+(June 2, 2021)
+Federal Reserve Board invites public comment on proposed amendments to Regulation D and issues final rule amending Regulation D with regard to reserve requirement ratios on transaction accounts
+(December 22, 2020)
+Federal Reserve Board announces approval of final rule amending Regulation D
+(June 18, 2015)
+Federal Reserve Board requests public comment on proposed technical changes to Regulation D
+(April 13, 2015)
+Federal Reserve issues technical note concerning the calculation of interest rates on required reserve balances and excess balances for the maintenance periods ending December 17, 2008
+(December 16, 2008)
+Federal Reserve announces it will alter formulas used to determine interest rates paid to depository institutions on required reserve balances and excess reserve balances
+(November 5, 2008)
+Federal Reserve announces it will alter the formula used to determine the interest rate paid to depository institutions on excess balances
+(October 22, 2008)
+Board announces that it will begin to pay interest on depository institutions' required and excess reserve balances
+(October 6, 2008)

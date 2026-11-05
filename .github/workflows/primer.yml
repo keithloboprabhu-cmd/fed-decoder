@@ -1,0 +1,36 @@
+name: Refresh primer sources
+# Monthly: re-fetch the official pages behind knowledge/primer.md. If any page changed,
+# open a pull request so the matching primer section is re-verified before it ships.
+on:
+  schedule:
+    - cron: "17 14 3 * *"   # 3rd of each month, 14:17 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Fetch sources and check the primer's rules
+        id: fetch
+        run: |
+          python scripts/build_primer.py | tee primer_check.txt
+          echo "changed=$(grep '^changed:' primer_check.txt | cut -d' ' -f2-)" >> "$GITHUB_OUTPUT"
+      - name: Open a pull request when a source changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: primer-refresh
+          add-paths: knowledge/
+          commit-message: "Primer: official source pages changed"
+          title: "Primer: re-verify sections whose official sources changed"
+          body: |
+            The monthly fetch found changes in these official pages: ${{ steps.fetch.outputs.changed }}
+
+            Check the matching sections of `knowledge/primer.md` against the new text in `knowledge/sources/` (the diff shows what changed on the Fed's side), update the primer if needed, and merge. `python scripts/build_primer.py --check` must pass.
