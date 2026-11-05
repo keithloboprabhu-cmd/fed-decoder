@@ -29,6 +29,7 @@ ap.add_argument("--label", default="after")
 ap.add_argument("--only", help="comma-separated question ids")
 ap.add_argument("--no-report", action="store_true")
 ap.add_argument("--pause", type=float, default=3.0, help="seconds between questions (free-tier rate limits)")
+ap.add_argument("--rejudge", help="re-score the judged items of a saved run (no new answers) and rewrite the report")
 ARGS = ap.parse_args()
 
 AGENT_ROOT = Path(ARGS.agent_root).resolve() if ARGS.agent_root else ROOT
@@ -158,6 +159,9 @@ def check_corpus(text: str, item: dict) -> tuple[bool, str]:
 
 # ---------------------------------------------------------------- judge
 JUDGE = """You are grading an answer from a Federal Reserve explainer. Today is {today}.
+The answer was written from live official sources, so current names, roles, dates and figures in it
+may be newer than your training data (for example, the Fed chair changed in 2026). Do NOT mark
+anything wrong because it differs from your memory. Grade ONLY the listed points.
 Question: {q}
 Answer: {a}
 The answer passes only if ALL of these hold:
@@ -241,7 +245,31 @@ def run_item(cat: str, item: dict) -> dict:
     return res
 
 
+def rejudge(path: Path) -> int:
+    """Re-run only the LLM judge on a saved run's rubric, adversarial and decline items."""
+    run = json.loads(path.read_text())
+    suite = {it["id"]: it for its in yaml.safe_load(SUITE.read_text()).values() for it in its}
+    for r in run["results"]:
+        it = suite.get(r["id"])
+        if not it or r.get("judge") == "" or r.get("status") != "ok":
+            continue
+        q = (it.get("turns") or [it.get("q")])[-1]
+        pts = it.get("points") or ["politely declines (no investment advice / off-topic)", "suggests or offers a related on-topic question or explanation"]
+        ok, why, by = judge(q, r["text"], pts, r["provider"])
+        r["correct"], r["why"], r["judge"] = ok, why, by
+        r["pass"] = bool(ok) and r["grounded"] and r["cited"] and r["concise"]
+        print(r["id"], "PASS" if r["pass"] else "fail", why[:90], flush=True)
+    run["summary"] = summarize(run["results"])
+    run["rejudged"] = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M")
+    path.write_text(json.dumps(run, indent=1, ensure_ascii=False))
+    if run.get("label") == "after":
+        write_report(path)
+    return 0
+
+
 def main() -> int:
+    if ARGS.rejudge:
+        return rejudge(Path(ARGS.rejudge))
     suite = yaml.safe_load(SUITE.read_text())
     only = set(ARGS.only.split(",")) if ARGS.only else None
     items = [(cat, it) for cat, its in suite.items() for it in its if not only or it["id"] in only]

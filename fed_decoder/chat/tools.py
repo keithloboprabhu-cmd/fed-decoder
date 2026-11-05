@@ -205,7 +205,7 @@ TOOL_SPECS = [
     ToolSpec("fred_series", "LIVE FRED data for any series ID: latest value with date, recent history, and year-over-year % for price indexes. "
              "Fed funds upper/lower bound: DFEDTARU/DFEDTARL. CPI: CPIAUCSL. Unemployment: UNRATE.",
              _OBJ({"id": _S, "start": {"type": "string", "description": "YYYY-MM-DD (default 3 years ago)"}, "end": _S}, ["id"])),
-    ToolSpec("bls_latest", "LIVE BLS release data: series = cpi, core_cpi, unemployment, payrolls or wages. Includes year-over-year % and monthly job change.",
+    ToolSpec("bls_latest", "LIVE BLS release data: series = cpi, core_cpi, unemployment, payrolls or wages. Includes year-over-year % (yoy_pct), month-over-month % (mom_pct) for prices, and the monthly job change.",
              _OBJ({"series": _S}, ["series"])),
     ToolSpec("treasury_yields", "LIVE Treasury par yield curve (1-month to 30-year) for a date (default latest).", _OBJ({"on": {"type": "string", "description": "YYYY-MM-DD"}})),
     ToolSpec("fed_feed", "LIVE Fed RSS: latest press releases (kind=monetary), speeches, or testimony.",

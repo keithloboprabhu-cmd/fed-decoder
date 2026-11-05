@@ -284,6 +284,8 @@ def fred_series(id: str, start: str | None = None, end: str | None = None) -> di
             out["yoy_pct"] = round((last_v / prior - 1) * 100, 1)
         except StopIteration:
             pass
+        if len(obs) >= 2:
+            out["mom_pct"] = round((last_v / obs[-2][1] - 1) * 100, 1)  # change from the month before
     return out
 
 
@@ -321,6 +323,7 @@ def bls_latest(series: str) -> dict:
             prior = dict(rows).get(f"{int(rows[-1][0][:4]) - 1}{rows[-1][0][4:]}")
             if prior:
                 out["yoy_pct"] = round((rows[-1][1] / prior - 1) * 100, 1)
+            out["mom_pct"] = round((rows[-1][1] / rows[-2][1] - 1) * 100, 1)
         if key == "payrolls" and len(rows) >= 2:
             out["monthly_change_thousands"] = round(rows[-1][1] - rows[-2][1])
         return out
