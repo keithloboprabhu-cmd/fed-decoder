@@ -289,7 +289,7 @@ def verdict(card, ctx) -> None:
             with c4:
                 st.markdown('<div class="fact"><div class="lab">Next</div></div>', unsafe_allow_html=True)
                 with st.container(key="nextchip"):
-                    if st.button(f"{arrow}\u00a0{ui.short_move(nx[1], nx[2])}".replace(" ", "\u00a0") + f" · {pd.Timestamp(nx[0]):%b\u00a0%-d}\u00a0→", key="next_btn",
+                    if st.button(f"{arrow}\u00a0{ui.short_move(nx[1], nx[2])}".replace(" ", "\u00a0") + f", {pd.Timestamp(nx[0]):%b\u00a0%-d}\u00a0→", key="next_btn",
                                  help=f"What the Fed did at the following meeting, {long_date(nx[0])}"):
                         open_meeting(nx[0])
                         st.rerun()
