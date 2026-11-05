@@ -677,18 +677,15 @@ def page_timeline() -> None:
 
 # ---------------------------------------------------------------- ask
 def page_about() -> None:
-    bt = forecast_mod.backtest_summary() if forecast_mod.BACKTEST_PATH.exists() else {}
-    fc = f"The forecast was right {bt['model_hit_rate'] * 100:.0f}% of the time in tests, vs {bt['baseline_hit_rate'] * 100:.0f}% for guessing “no change”." if bt else ""
     rows = [
-        ("What it is", f"Every Fed decision since 2000 ({len(dates())} statements), explained for your situation."),
-        ("The numbers", "From the Federal Reserve and FRED, calculated in code. Never written by AI."),
-        ("The AI", "Gemini (Groq as backup) drafts the explanations. Every number and quote is checked; if a check fails, you get a simpler automated version."),
-        ("Your privacy", "No accounts. Your situation stays in this tab and is never stored. Amounts never go to an AI; the optional AI note sees only labels like “rents”."),
-        ("Limits", "Learning, not financial advice. Estimates use national averages. " + fc),
+        ("Where the data comes from", f"Every Fed decision since 2000 ({len(dates())} statements). Figures come straight from the Federal Reserve "
+                                      "and FRED, calculated in code."),
+        ("The AI", "The Gemini API (Groq as backup) drafts the explanations. Every number and quote is checked."),
+        ("Your privacy", "Nothing you enter is saved. Your situation is used only during your visit, and your amounts never go to an AI."),
     ]
     st.markdown('<div class="step" style="padding-top:28px"><h1>About</h1></div>'
                 + '<div class="short about">' + "".join(f'<div class="short-row"><div class="aside-h">{k}</div><p>{ui.E(v)}</p></div>' for k, v in rows)
-                + "</div>", unsafe_allow_html=True)
+                + '</div><p class="byline">Built by Keith LoboPrabhu</p>', unsafe_allow_html=True)
 
 
 {"Decode": page_decode, "Timeline": page_timeline, "About": page_about}[ss.nav]()
