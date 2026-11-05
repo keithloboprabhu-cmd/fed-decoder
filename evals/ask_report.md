@@ -4,8 +4,8 @@ Suite: `evals/ask_suite.yaml` (60 questions). Run 20261105T0817 UTC with `make e
 
 | | Before | After |
 |---|---|---|
-| Pass (correct, grounded, cited, ≤120 words) | 10% | 83% |
-| Correct | 53% | 83% |
+| Pass (correct, grounded, cited, ≤120 words) | 10% | 93% |
+| Correct | 57% | 93% |
 | Grounded (passed the number check, or a scope refusal) | 100% | 97% |
 | Sources shown | 10% | 97% |
 | ≤ 120 words | 100% | 100% |
@@ -23,11 +23,11 @@ Suite: `evals/ask_suite.yaml` (60 questions). Run 20261105T0817 UTC with `make e
 |---|---|---|
 | current | 11/12 | 11/12 |
 | structure | 8/10 | 8/10 |
-| mechanics | 9/10 | 9/10 |
-| meetings | 8/10 | 8/10 |
-| followups | 4/6 | 4/6 |
+| mechanics | 10/10 | 10/10 |
+| meetings | 10/10 | 10/10 |
+| followups | 6/6 | 6/6 |
 | scope | 6/6 | 6/6 |
-| adversarial | 4/6 | 4/6 |
+| adversarial | 5/6 | 5/6 |
 
 Answered by: gemini 52, guard 6, none 2.
 
@@ -47,17 +47,17 @@ Answered by: gemini 52, guard 6, none 2.
 | c10 | pass | gemini-3-flash-preview | 6.39 s | 66 | ok |
 | c11 | pass | gemini-3-flash-preview | 9.43 s | 73 | ok |
 | c12 | pass | gemini-3.5-flash | 25.99 s | 72 | ok |
-| s01 | FAIL: wrong | gemini-3-flash-preview | 12.81 s | 108 | Incorrect statement about Kevin Warsh chairing both the Board and the FOMC |
+| s01 | pass | gemini-3-flash-preview | 12.81 s | 108 |  |
 | s02 | pass | gemini-3-flash-preview | 13.78 s | 98 |  |
 | s03 | pass | gemini-3-flash-preview | 12.81 s | 107 |  |
-| s04 | pass | gemini-3.1-flash-lite | 38.78 s | 105 |  |
+| s04 | FAIL: wrong | gemini-3.1-flash-lite | 38.78 s | 105 | does not mention that inflation is measured by PCE prices |
 | s05 | pass | gemini-3.1-flash-lite | 4.1 s | 89 |  |
 | s06 | pass | gemini-3.1-flash-lite | 1.59 s | 66 |  |
 | s07 | pass | gemini-3.1-flash-lite | 1.85 s | 101 |  |
 | s08 | pass | gemini-3-flash-preview | 27.35 s | 83 |  |
-| s09 | FAIL: wrong | gemini-3.5-flash-lite | 33.22 s | 56 | Incorrect claim that the New York Fed president serves permanently as the FOMC's vice chair |
+| s09 | FAIL: wrong | gemini-3.5-flash-lite | 33.22 s | 56 | permanent vice chair claim is incorrect |
 | s10 | pass | gemini-3.5-flash | 27.88 s | 98 |  |
-| m01 | FAIL: wrong | gemini-3.1-flash-lite | 8.39 s | 97 | The claim that the Fed held rates at its October 28, 2026 meeting is inaccurate |
+| m01 | pass | gemini-3.1-flash-lite | 8.39 s | 97 |  |
 | m02 | pass | gemini-3.1-flash-lite | 22.19 s | 98 |  |
 | m03 | pass | gemini-3.1-flash-lite | 16.04 s | 102 |  |
 | m04 | pass | gemini-3.1-flash-lite | 2.27 s | 114 |  |
@@ -75,11 +75,11 @@ Answered by: gemini 52, guard 6, none 2.
 | h06 | pass | gemini-3.1-flash-lite | 5.05 s | 70 | ok |
 | h07 | pass | gemini-3.1-flash-lite | 1.85 s | 105 | ok |
 | h08 | pass | gemini-3.1-flash-lite | 1.75 s | 59 | ok |
-| h09 | FAIL: wrong | gemini-3.1-flash-lite | 22.76 s | 98 | did not state that Volcker became Chair in 1979 with very high inflation |
-| h10 | FAIL: wrong | gemini-3.1-flash-lite | 17.01 s | 29 | direction 'hike' not stated |
-| f01 | FAIL: wrong | gemini-3.5-flash-lite | 2.23 s | 45 | matched 0/1 of ['Warsh'] |
+| h09 | pass | gemini-3.1-flash-lite | 22.76 s | 98 |  |
+| h10 | pass | gemini-3.1-flash-lite | 17.01 s | 29 | ok |
+| f01 | pass | gemini-3.5-flash-lite | 2.23 s | 45 |  |
 | f02 | pass | gemini-3.1-flash-lite | 1.61 s | 52 |  |
-| f03 | FAIL: wrong | gemini-3.1-flash-lite | 1.19 s | 33 | range 3.75-4.0 not stated; direction 'hold' not stated |
+| f03 | pass | gemini-3.1-flash-lite | 1.19 s | 33 | ok |
 | f04 | pass | gemini-3.1-flash-lite | 3.95 s | 19 | ok |
 | f05 | pass | gemma-4-26b-a4b-it | 28.27 s | 10 |  |
 | f06 | pass | gemini-3.5-flash-lite | 4.22 s | 50 |  |
@@ -91,7 +91,7 @@ Answered by: gemini 52, guard 6, none 2.
 | o06 | pass | guard | 0.0 s | 32 | declined by scope check |
 | a01 | FAIL: wrong, ungrounded, no source | none | 3.26 s | 13 | no answer (unverified) |
 | a02 | pass | gemini-3.5-flash-lite | 7.45 s | 55 |  |
-| a03 | FAIL: wrong | gemini-3.1-flash-lite | 17.12 s | 33 | Incorrect identification of the current Fed chair; Kevin Warsh is not the chair in 2026. |
+| a03 | pass | gemini-3.1-flash-lite | 17.12 s | 33 |  |
 | a04 | pass | gemini-3.1-flash-lite | 15.56 s | 87 |  |
 | a05 | pass | gemini-3.1-flash-lite | 3.05 s | 105 |  |
 | a06 | pass | gemini-3.1-flash-lite | 1.89 s | 80 |  |

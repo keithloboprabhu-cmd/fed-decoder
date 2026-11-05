@@ -5,7 +5,7 @@
  "summary": {
   "n": 60,
   "pass_rate": 0.1,
-  "correct_rate": 0.533,
+  "correct_rate": 0.567,
   "grounded_rate": 1.0,
   "cited_rate": 0.1,
   "concise_rate": 1.0,
@@ -14,6 +14,7 @@
   "median_latency_s": 2.0,
   "p90_latency_s": 44.7,
   "unavailable": 0,
+  "silent_fallback": 2,
   "providers": {
    "gemini": 46,
    "groq": 1,
@@ -34,7 +35,7 @@
    "mechanics": {
     "n": 10,
     "pass": 0,
-    "correct": 6
+    "correct": 7
    },
    "meetings": {
     "n": 10,
@@ -44,7 +45,7 @@
    "followups": {
     "n": 6,
     "pass": 0,
-    "correct": 1
+    "correct": 0
    },
    "scope": {
     "n": 6,
@@ -54,7 +55,7 @@
    "adversarial": {
     "n": 6,
     "pass": 0,
-    "correct": 3
+    "correct": 5
    }
   },
   "meets_bar": false
@@ -389,7 +390,7 @@
    "words": 40,
    "key": null,
    "correct": false,
-   "why": "does not mention providing a safer, more stable monetary and financial system",
+   "why": "to provide a safer, more stable monetary and financial system",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -433,7 +434,7 @@
    "words": 49,
    "key": null,
    "correct": false,
-   "why": "does not specify that inflation is measured by PCE prices",
+   "why": "does not specify that inflation is measured by the PCE price index",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -501,7 +502,7 @@
    "words": 33,
    "key": null,
    "correct": false,
-   "why": "does not explicitly mention accountability to Congress through testimony and reports",
+   "why": "accountable to Congress (testimony, reports)",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -525,7 +526,7 @@
    "words": 30,
    "key": null,
    "correct": false,
-   "why": "Reserve Bank's (non-banker, Class B and C) directors appoint",
+   "why": "the Reserve Bank's (non-banker, Class B and C) directors appoint",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -681,7 +682,7 @@
    "words": 49,
    "key": null,
    "correct": false,
-   "why": "does not state that it is part of the Summary of Economic Projections",
+   "why": "part of the Summary of Economic Projections",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -703,7 +704,7 @@
    "words": 46,
    "key": null,
    "correct": false,
-   "why": "does not mention that reduced demand can raise unemployment",
+   "why": "less demand eases price pressure (and can raise unemployment)",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -768,8 +769,8 @@
    "latency_s": 1.29,
    "words": 33,
    "key": null,
-   "correct": false,
-   "why": "does not mention that savings yields follow short-term rates, often partly or with a lag",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -1033,7 +1034,7 @@
    "words": 29,
    "key": null,
    "correct": false,
-   "why": "range 5.25-5.5 not stated; direction 'hike' not stated",
+   "why": "range 5.25-5.5 not stated",
    "judge": "",
    "grounded": true,
    "cited": false,
@@ -1056,9 +1057,9 @@
    "latency_s": 72.19,
    "words": 35,
    "key": null,
-   "correct": true,
-   "why": "ok",
-   "judge": "",
+   "correct": false,
+   "why": "says the chair also chairs/leads the FOMC",
+   "judge": "gemini",
    "grounded": true,
    "cited": false,
    "concise": true,
@@ -1103,7 +1104,7 @@
    "words": 20,
    "key": null,
    "correct": false,
-   "why": "range 3.75-4.0 not stated; direction 'hold' not stated; dissenters missing ['Cook', 'Hammack']",
+   "why": "dissenters missing ['Cook', 'Hammack']",
    "judge": "",
    "grounded": true,
    "cited": false,
@@ -1324,9 +1325,9 @@
    "latency_s": 1.32,
    "words": 7,
    "key": null,
-   "correct": false,
-   "why": "Incorrect current Fed chair; the answer does not provide the correct chair name.",
-   "judge": "groq",
+   "correct": true,
+   "why": " (same-provider judge: other provider unavailable)",
+   "judge": "gemini",
    "grounded": true,
    "cited": false,
    "concise": true,
@@ -1375,8 +1376,8 @@
    "latency_s": 17.4,
    "words": 51,
    "key": null,
-   "correct": false,
-   "why": "Incorrectly states that Kevin Warsh is the current Fed chair; does not correctly identify the current chair as Jerome Powell",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -1426,7 +1427,7 @@
    "words": 30,
    "key": null,
    "correct": false,
-   "why": "The answer does not reference the actual most recent Fed meeting (which would be in 2026), so it does not correctly correct the false premise using the actual last decision.",
+   "why": "corrects the false premise using the actual last decision",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -1457,5 +1458,6 @@
    "concise": true,
    "pass": false
   }
- ]
+ ],
+ "rejudged": "20261105T0825"
 }

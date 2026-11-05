@@ -4,8 +4,8 @@
  "agent_root": "/home/user/fed-decoder",
  "summary": {
   "n": 60,
-  "pass_rate": 0.833,
-  "correct_rate": 0.833,
+  "pass_rate": 0.933,
+  "correct_rate": 0.933,
   "grounded_rate": 0.967,
   "cited_rate": 0.967,
   "concise_rate": 1.0,
@@ -33,18 +33,18 @@
    },
    "mechanics": {
     "n": 10,
-    "pass": 9,
-    "correct": 9
+    "pass": 10,
+    "correct": 10
    },
    "meetings": {
     "n": 10,
-    "pass": 8,
-    "correct": 8
+    "pass": 10,
+    "correct": 10
    },
    "followups": {
     "n": 6,
-    "pass": 4,
-    "correct": 4
+    "pass": 6,
+    "correct": 6
    },
    "scope": {
     "n": 6,
@@ -53,8 +53,8 @@
    },
    "adversarial": {
     "n": 6,
-    "pass": 4,
-    "correct": 4
+    "pass": 5,
+    "correct": 5
    }
   },
   "meets_bar": false
@@ -400,13 +400,13 @@
    "latency_s": 12.81,
    "words": 108,
    "key": null,
-   "correct": false,
-   "why": "Incorrect statement about Kevin Warsh chairing both the Board and the FOMC",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "s02",
@@ -494,13 +494,13 @@
    "latency_s": 38.78,
    "words": 105,
    "key": null,
-   "correct": true,
-   "why": "",
+   "correct": false,
+   "why": "does not mention that inflation is measured by PCE prices",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": true
+   "pass": false
   },
   {
    "id": "s05",
@@ -634,7 +634,7 @@
    "words": 56,
    "key": null,
    "correct": false,
-   "why": "Incorrect claim that the New York Fed president serves permanently as the FOMC's vice chair",
+   "why": "permanent vice chair claim is incorrect",
    "judge": "groq",
    "grounded": true,
    "cited": true,
@@ -688,13 +688,13 @@
    "latency_s": 8.39,
    "words": 97,
    "key": null,
-   "correct": false,
-   "why": "The claim that the Fed held rates at its October 28, 2026 meeting is inaccurate",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "m02",
@@ -1161,13 +1161,13 @@
    "latency_s": 22.76,
    "words": 98,
    "key": null,
-   "correct": false,
-   "why": "did not state that Volcker became Chair in 1979 with very high inflation",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "h10",
@@ -1187,13 +1187,13 @@
    "latency_s": 17.01,
    "words": 29,
    "key": null,
-   "correct": false,
-   "why": "direction 'hike' not stated",
+   "correct": true,
+   "why": "ok",
    "judge": "",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "f01",
@@ -1215,13 +1215,13 @@
    "latency_s": 2.23,
    "words": 45,
    "key": null,
-   "correct": false,
-   "why": "matched 0/1 of ['Warsh']",
-   "judge": "",
+   "correct": true,
+   "why": "",
+   "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "f02",
@@ -1263,13 +1263,13 @@
    "latency_s": 1.19,
    "words": 33,
    "key": null,
-   "correct": false,
-   "why": "range 3.75-4.0 not stated; direction 'hold' not stated",
+   "correct": true,
+   "why": "ok",
    "judge": "",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "f04",
@@ -1552,13 +1552,13 @@
    "latency_s": 17.12,
    "words": 33,
    "key": null,
-   "correct": false,
-   "why": "Incorrect identification of the current Fed chair; Kevin Warsh is not the chair in 2026.",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "a04",
@@ -1636,5 +1636,6 @@
    "concise": true,
    "pass": true
   }
- ]
+ ],
+ "rejudged": "20261105T0832"
 }
