@@ -2,26 +2,22 @@
 
 Federal Reserve decisions in plain English. Pick any FOMC meeting since 2000 (or paste a statement) and get the decision, a redline against the previous statement, a hawkish-to-dovish tone reading with the quotes behind it, what it means for borrowers, savers and workers, what it means for the economy, and a light, backtested forecast of the next move.
 
-![Fed Decoder: walking through the September 2024 decision](docs/screenshot.png)
+![Fed Decoder: the rate staircase and the verdict for the July 29, 2026 meeting](docs/screenshot.png)
 
 **Live app:** _deploy link goes here once published on Streamlit Community Cloud (see [Deploy](#deploy-free))._
 
 ## How it feels to use
 
-Fed Decoder opens with one box: what do you want to know about the Fed? Ask in plain words ("What is the Fed?", "What were the most controversial decisions?") and get a grounded answer with links into the meetings it mentions, or name a meeting ("latest", "September 2024") or paste a statement to walk through it.
+One screen, read top to bottom in about five seconds:
 
-The meeting page is written for you, not for an economist:
+1. **The rate staircase.** The Fed's target rate since 2000 as a step chart: hikes are red up-steps, cuts blue down-steps, holds flat gray. Click, drag or use the arrow keys to pick a meeting; presets jump to the 2000s, 2008, 2020, the 2022 hikes, or the last three years (the default).
+2. **The verdict.** An eight-word headline ("Held at 3.50–3.75%. Three wanted a hike."), then three facts: the rate with its move, the vote as dots (dissenters hollow, hover for who wanted what), and the tone on a dovish-to-hawkish stripe with the previous six meetings as faint ticks. For past meetings, a chip jumps to what the Fed did next.
+3. **Four answers**, one sentence and one small picture each, opening one at a time: *Why* (the data the Fed cited), *What changed* (the redline against the last statement), *For you* (pick credit card, savings, car loan, mortgage or job hunting; computed in code, never stored, never sent to an AI), and *What's next* (backtested odds for the next meeting).
+4. **Ask**, a slim bar at the bottom. Suggested questions appear when you focus it, and answers open in a side panel (a bottom sheet on phones), drawn from tools over the statements and data with every number checked.
 
-1. **The decision**, in one plain headline, with the target range and vote.
-2. **What it means for you.** One tap on your housing situation gives your own bottom line ("Your costs fall by about $94 a month") using typical amounts; "Edit your situation" lets you add card balances, savings, loans, income and state. Below it: what the *next* move would do to your costs (using the forecast odds), or for past meetings what actually happened next and what it did to you.
-3. **An optional AI note** that explains the decision for someone in your situation. It is opt-in, sees only broad labels such as "rents" or "carries a card balance" plus the computed direction of each effect (never amounts, income or location), and may not introduce numbers.
-4. **The short version**: what happened, the Fed's own words, what it signals.
-5. **Ask about this meeting**, with questions suggested from that meeting (for example why the dissenters dissented). Answers come from tools over the statements and data, with numbers checked; when the free AI allowance is used up, automated answers come straight from the statement.
-6. **Go deeper**, in tabs: the redline with margin notes, the tone, the economy, the forecast, and sources.
+On the latest meeting a live strip shows the days to the next decision and the latest CPI, unemployment and 10-year yield (tap for a sparkline). Meetings are shareable with `?m=YYYY-MM-DD`.
 
-Your situation follows you to every meeting and to the Timeline, where each meeting shows what it did to your monthly costs.
-
-The design is deliberately quiet: warm ivory, charcoal text, forest green for dovish and terracotta for hawkish (always paired with a word). Newsreader carries the headlines and the Fed's own words; Inter carries everything else; IBM Plex Mono appears only in the money columns. A green bar marks every computed answer.
+The design is deliberately plain: off-white, ink, and color only where it means something (red = hike or hawkish, blue = cut or dovish, always paired with an arrow, a shape or a word). JetBrains Mono for every rate, percent and vote; Inter Tight for words. Jargon gets a dotted underline with a one-line definition. The first 1440×900 screen shows at most 60 words, and a Playwright check in CI enforces it (`tests/e2e/word_budget.js`). See [docs/REDESIGN.md](docs/REDESIGN.md) for before and after.
 
 ## What it does
 
@@ -33,8 +29,8 @@ The design is deliberately quiet: warm ivory, charcoal text, forest green for do
   - *For you:* your housing situation, balances, savings, income range and state give your own monthly impact, the share of income, your local unemployment rate, and what the next move would mean. Computed in code; the answers stay in your browser tab and are never stored or logged. Amounts, income and state are never sent to an AI; the opt-in AI note sees only broad labels. No login. Gender isn't asked because no effect computed here depends on it.
   - *For the country:* inflation, jobs, growth, markets and the dollar, from FRED.
   - *What's next:* model probabilities for hold, cut or hike, shown next to the backtest against a "no change" baseline.
-- **Ask about a meeting.** Each meeting page has its own questions box, answered with tools over the corpus and the data: `get_meeting`, `search_statements` (TF-IDF), `diff_statements`, `get_series`, `payment_impact` and `forecast_next`. Every number in an answer is checked against the tool results.
-- **Timeline.** The fed funds target since 2000, with every meeting as a dot colored by tone. Click a dot to decode that meeting.
+- **Ask about a meeting.** The bottom bar, answered with tools over the corpus and the data: `get_meeting`, `search_statements` (TF-IDF), `diff_statements`, `get_series`, `payment_impact` and `forecast_next`. Every number in an answer is checked against the tool results.
+- **Rate staircase.** The fed funds target since 2000 as a navigable step chart (`fed_decoder/ui/staircase/`, a small hand-written Streamlit component).
 
 ## Three findings
 
@@ -63,7 +59,7 @@ Never enable billing on either provider. Model IDs and rate settings live in `fe
 
 - **Numbers come from code.** Rates, dates, votes, payments, forecasts and statistics are computed in Python. The displayed decision always comes from the ground truth. The model's own extraction is stored separately (`llm_decision`) and used only for evals.
 - **Every claim is grounded.** Any number in LLM output that isn't in the context or tool results fails the guardrail (`fed_decoder/llm/guardrail.py`). A failure gets one retry with the error fed back; if the retry also fails, the app shows the rules-based text. Quotes must appear verbatim in the statement.
-- **Graceful degradation.** Gemini, then Groq, then rules. Users never see an error. A subtle label shows who answered ("Answered by Gemini Flash", "Automated summary (rules-based)").
+- **Graceful degradation.** Gemini, then Groq, then rules. Users never see an error. The About page says which services write the text.
 - **Scope.** The chat refuses personal investment advice and off-topic questions. Pasted text is fenced as data, and the system prompt says to ignore instructions inside it.
 
 ## Status of the LLM parts
@@ -103,7 +99,7 @@ It stops when every provider is out of quota and resumes on the next run.
 New meetings arrive on their own:
 
 1. **Every 2 hours** a GitHub Action reads the Fed's official press-release RSS feed. A new FOMC statement (scheduled or emergency) triggers the full update: statement, FRED data, answer key, forecast and an AI-written card. It commits to this branch, and Streamlit Community Cloud redeploys the app.
-2. **Between runs**, the app itself checks the feed every 30 minutes. If a statement is newer than the archive, the home page says so and decodes it on the spot ("just in").
+2. **Between runs**, the app itself checks the feed every 30 minutes. If a statement is newer than the archive, the live strip says so and decodes it on the spot.
 3. **Once a day** the economic data (inflation, jobs, yields, loan rates) refreshes even without a new statement.
 
 For the Action to write AI cards, add `GEMINI_API_KEY` and `GROQ_API_KEY` under the repo's **Settings → Secrets and variables → Actions** (otherwise it writes rules-based cards). Run it by hand from the **Actions** tab with "Run workflow".
@@ -164,7 +160,7 @@ The app works with no keys at all: every page then runs in rules-based mode.
 ## Layout
 
 ```
-app.py                     Streamlit app (Decode / Timeline / About)
+app.py                     Streamlit app (one meeting screen + About)
 fed_decoder/
   config.py                model names, limits, series IDs
   data/                    scraper, FRED client, ground truth, Parquet access
@@ -172,10 +168,10 @@ fed_decoder/
   llm/                     generate() interface, Gemini + Groq providers, router, guardrails
   cards/                   schema, context builder, LLM builder, rules builder, store
   chat/                    tools and agent (scope, cache, quota, fallback)
-  ui/                      theme and components (redline, tone dial, cards, timeline)
+  ui/                      theme, components (verdict, votes, tone stripe, redline) and the staircase component
 scripts/                   fetch_statements, fetch_fred, build_data, build_cards
 evals/                     run.py, chat questions, hand-label templates, report.md
-tests/                     unit tests and fake-provider tests for the LLM paths
+tests/                     unit tests, fake-provider tests, and the e2e word-budget check
 ```
 
 ## Eval report
