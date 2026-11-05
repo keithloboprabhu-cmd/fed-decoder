@@ -1,0 +1,51 @@
+[
+ {
+  "q": "Who's the current Fed chair?",
+  "provider": "gemini",
+  "label": "Answered by Gemini Flash",
+  "tools": [
+   "fed_leadership"
+  ],
+  "secs": 3.4,
+  "text": "The current Chair of the Federal Reserve is Kevin Warsh, who leads the Board of Governors."
+ },
+ {
+  "q": "What's the difference between the FOMC and the Board of Governors?",
+  "provider": "gemini",
+  "label": "Answered by Gemini Flash",
+  "tools": [],
+  "secs": 0.8,
+  "text": "The Board of Governors is a permanent, seven-member body in Washington that oversees the entire Federal Reserve System. The Federal Open Market Committee (FOMC) is the specific group of twelve members—including all seven governors—that meets eight times a year to decide interest rates and monetary policy."
+ },
+ {
+  "q": "Why does the Fed exist?",
+  "provider": "gemini",
+  "label": "Answered by Gemini Flash",
+  "tools": [],
+  "secs": 0.8,
+  "text": "The Federal Reserve was created by Congress in 1913 to serve as the central bank of the United States. Its main purpose is to manage the nation's monetary policy under a dual mandate to pursue maximum employment and stable prices."
+ },
+ {
+  "q": "What's the fed funds rate right now?",
+  "provider": "gemini",
+  "label": "Answered by Gemini Flash",
+  "tools": [
+   "get_series",
+   "get_series",
+   "get_meeting",
+   "get_meeting"
+  ],
+  "secs": 60.2,
+  "text": "The Federal Reserve set the federal funds rate target range at \"4-1/2 to 4-3/4 percent\" at its November 2024 meeting. The FOMC lowered the rate by 1/4 percentage point to support maximum employment and return inflation to its 2 percent goal."
+ },
+ {
+  "q": "Who votes on the FOMC this year?",
+  "provider": "gemini",
+  "label": "Answered by Gemini Flash",
+  "tools": [
+   "fed_leadership"
+  ],
+  "secs": 1.7,
+  "text": "The FOMC has 12 voting members: the seven members of the Board of Governors, the president of the New York Fed, and four regional bank presidents who serve on a rotating basis."
+ }
+]
