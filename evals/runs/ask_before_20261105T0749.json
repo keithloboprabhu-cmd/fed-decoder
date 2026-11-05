@@ -5,7 +5,7 @@
  "summary": {
   "n": 60,
   "pass_rate": 0.1,
-  "correct_rate": 0.567,
+  "correct_rate": 0.533,
   "grounded_rate": 1.0,
   "cited_rate": 0.1,
   "concise_rate": 1.0,
@@ -30,12 +30,12 @@
    "structure": {
     "n": 10,
     "pass": 0,
-    "correct": 5
+    "correct": 6
    },
    "mechanics": {
     "n": 10,
     "pass": 0,
-    "correct": 7
+    "correct": 4
    },
    "meetings": {
     "n": 10,
@@ -433,8 +433,8 @@
    "latency_s": 0.84,
    "words": 49,
    "key": null,
-   "correct": false,
-   "why": "does not specify that inflation is measured by the PCE price index",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -593,8 +593,8 @@
    "latency_s": 1.64,
    "words": 54,
    "key": null,
-   "correct": true,
-   "why": "",
+   "correct": false,
+   "why": "card rates are tied to the prime rate / move with the fed funds rate",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -659,8 +659,8 @@
    "latency_s": 1.24,
    "words": 44,
    "key": null,
-   "correct": true,
-   "why": "",
+   "correct": false,
+   "why": "it steers the federal funds rate into the target range",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -704,7 +704,7 @@
    "words": 46,
    "key": null,
    "correct": false,
-   "why": "less demand eases price pressure (and can raise unemployment)",
+   "why": "does not mention that reduced demand can raise unemployment",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -769,8 +769,8 @@
    "latency_s": 1.29,
    "words": 33,
    "key": null,
-   "correct": true,
-   "why": "",
+   "correct": false,
+   "why": "they follow short-term rates, often partly or with a lag",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -1326,8 +1326,8 @@
    "words": 7,
    "key": null,
    "correct": true,
-   "why": " (same-provider judge: other provider unavailable)",
-   "judge": "gemini",
+   "why": "",
+   "judge": "groq",
    "grounded": true,
    "cited": false,
    "concise": true,
@@ -1427,7 +1427,7 @@
    "words": 30,
    "key": null,
    "correct": false,
-   "why": "corrects the false premise using the actual last decision",
+   "why": "does not correct the false premise using the actual last decision",
    "judge": "groq",
    "grounded": true,
    "cited": false,
@@ -1459,5 +1459,5 @@
    "pass": false
   }
  ],
- "rejudged": "20261105T0825"
+ "rejudged": "20261105T0847"
 }

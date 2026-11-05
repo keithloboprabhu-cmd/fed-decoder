@@ -4,8 +4,8 @@
  "agent_root": "/home/user/fed-decoder",
  "summary": {
   "n": 60,
-  "pass_rate": 0.933,
-  "correct_rate": 0.933,
+  "pass_rate": 0.967,
+  "correct_rate": 0.967,
   "grounded_rate": 0.967,
   "cited_rate": 0.967,
   "concise_rate": 1.0,
@@ -28,8 +28,8 @@
    },
    "structure": {
     "n": 10,
-    "pass": 8,
-    "correct": 8
+    "pass": 10,
+    "correct": 10
    },
    "mechanics": {
     "n": 10,
@@ -494,13 +494,13 @@
    "latency_s": 38.78,
    "words": 105,
    "key": null,
-   "correct": false,
-   "why": "does not mention that inflation is measured by PCE prices",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "s05",
@@ -633,13 +633,13 @@
    "latency_s": 33.22,
    "words": 56,
    "key": null,
-   "correct": false,
-   "why": "permanent vice chair claim is incorrect",
+   "correct": true,
+   "why": "",
    "judge": "groq",
    "grounded": true,
    "cited": true,
    "concise": true,
-   "pass": false
+   "pass": true
   },
   {
    "id": "s10",
@@ -1637,5 +1637,5 @@
    "pass": true
   }
  ],
- "rejudged": "20261105T0832"
+ "rejudged": "20261105T0849"
 }

@@ -50,14 +50,15 @@ Current facts are checked against ground truth fetched at eval time from the sam
 
 | | Before (old agent) | After |
 |---|---|---|
-| Pass (correct, grounded, sourced, ≤ 120 words) | 10% | **93%** |
-| Correct | 57% | 93% |
+| Pass (correct, grounded, sourced, ≤ 120 words) | 10% | **97%** |
+| Correct | 53% | 97% |
 | Sources shown | 10% | 97% |
 | Current leadership | 4/6 | **6/6** |
 | Current rate | 2/2 | **2/2** |
 | Median latency | 2.0 s | 6.4 s |
+| Silent fallbacks (canned text posing as an answer) | 2 | **0** |
 
-Bar: 100% on leadership and rate (met), ≥ 90% overall (met), median latency under 6 s (**not met: 6.4 s**). The free Flash models allow 20 requests a day each, so after the first ~50 questions of a day, answers come from slower models (Gemma 4, Flash-Lite). The old agent was faster because it mostly answered from memory without tools, which is how it got the chair, the voters and the next meeting date wrong.
+Bar: 100% on leadership and rate (met), ≥ 90% overall (met), median latency under 6 s (**not met: 6.4 s**). The two failures (latest CPI and a prompt-injection question came back "couldn't verify") pass on the final code in a labelled spot re-run in the report. The free Flash models allow 20 requests a day each, so after the first ~50 questions of a day, answers come from slower models (Gemma 4, Flash-Lite). The old agent was faster because it mostly answered from memory without tools, which is how it got the chair, the voters and the next meeting date wrong.
 
 ## What it does
 
@@ -105,7 +106,7 @@ Never enable billing on either provider. Model IDs and rate settings live in `fe
 ## Status of the LLM parts
 
 - **Cards:** all 227 meetings have a validated Gemini-written card. Most come from `gemini-3.5-flash-lite`, which had by far the largest free daily quota; a few come from `gemini-3.5-flash`, `gemini-3.6-flash`, `gemini-3-flash-preview` and `gemini-flash-lite-latest`. Each card records its model. The displayed decision numbers are always the code-computed ones.
-- **Live chat:** verified against the live Gemini API, including multi-turn function calling (Gemini 3 thought signatures are replayed).
+- **Ask:** verified live on Gemini (Flash and Gemma 4, multi-turn function calling with Gemini 3 thought signatures) and Groq; 60-question eval in [`evals/ask_report.md`](evals/ask_report.md). Forcing each provider down (`python evals/failover_check.py`) gives the other provider's answer, and both down gives the "AI is temporarily unavailable" notice with labelled saved content.
 - **Groq:** verified live (strict JSON-schema output and tool calls), but its free tier caps `gpt-oss-120b` at 8,000 tokens per minute and **200,000 tokens per day**, about 30 decoder cards a day. Groq rows in the report are therefore partial; rerun `python evals/run.py` on a later day to fill them in (successful outputs are cached in `evals/runs/`, so nothing is spent twice).
 - **Hand labels pending:** fill `evals/hand_labels_tone.csv` (30 statements) and `evals/hand_labels_claims.csv` (20 claims), then rerun the evals.
 - **In-sample caveat:** the regex extractor and the chat scope check were fixed against the same meetings and questions they are scored on, so their 100% means "no known misses", not a generalization estimate. Rules-based vote and dissenter accuracy is also not independent of the answer key, because both use the same vote parser.
@@ -116,7 +117,7 @@ Never enable billing on either provider. Model IDs and rate settings live in `fe
 |---|---|---|
 | Gemini | 20 requests per day **per model** for the Flash models (Flash-Lite allows far more); 503 "high demand" comes and goes | Tries `gemini-3.5-flash`, then `3.6-flash`, `3-flash-preview`, `3.5-flash-lite`, `flash-lite-latest`; a model out of daily quota is skipped until midnight Pacific |
 | Groq `gpt-oss-120b` | 8,000 tokens/min, 200,000 tokens/day, 1,000 requests/day | Sliding token-per-minute budget, low reasoning effort |
-| Both | | App-wide daily chat budget (`DAILY_LLM_BUDGET`, default 80 calls) before switching to cached and rules-based answers |
+| Both | | Per-provider daily Ask budgets (`GEMINI_DAILY_BUDGET` 400, `GROQ_DAILY_BUDGET` 900 model calls); when both are spent Ask says "Daily AI limit reached; showing saved answers" |
 
 `gemini-2.5-flash` is closed to new API users, so it is no longer the default.
 

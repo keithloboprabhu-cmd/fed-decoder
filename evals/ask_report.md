@@ -1,11 +1,11 @@
 # Ask evaluation
 
-Suite: `evals/ask_suite.yaml` (60 questions). Run 20261105T0817 UTC with `make eval-ask`. Current facts are checked against ground truth fetched at eval time from the same live tools; rubric items are graded by an LLM judge from the other provider. "Before" is the previous agent (commit 8f59111) on the same suite and the same day.
+Suite: `evals/ask_suite.yaml` (60 questions). Run 20261105T0817 UTC with `make eval-ask`. Current facts are checked against ground truth fetched at eval time from the same live tools; rubric items are graded by an LLM judge from the other provider, given today's live reference facts so it can't grade against stale memory. "Before" is the previous agent (commit 8f59111) on the same suite and the same day; both runs were re-judged with the same judge.
 
 | | Before | After |
 |---|---|---|
-| Pass (correct, grounded, cited, ≤120 words) | 10% | 93% |
-| Correct | 57% | 93% |
+| Pass (correct, grounded, cited, ≤120 words) | 10% | 97% |
+| Correct | 53% | 97% |
 | Grounded (passed the number check, or a scope refusal) | 100% | 97% |
 | Sources shown | 10% | 97% |
 | ≤ 120 words | 100% | 100% |
@@ -22,7 +22,7 @@ Suite: `evals/ask_suite.yaml` (60 questions). Run 20261105T0817 UTC with `make e
 | Category | Pass | Correct |
 |---|---|---|
 | current | 11/12 | 11/12 |
-| structure | 8/10 | 8/10 |
+| structure | 10/10 | 10/10 |
 | mechanics | 10/10 | 10/10 |
 | meetings | 10/10 | 10/10 |
 | followups | 6/6 | 6/6 |
@@ -50,12 +50,12 @@ Answered by: gemini 52, guard 6, none 2.
 | s01 | pass | gemini-3-flash-preview | 12.81 s | 108 |  |
 | s02 | pass | gemini-3-flash-preview | 13.78 s | 98 |  |
 | s03 | pass | gemini-3-flash-preview | 12.81 s | 107 |  |
-| s04 | FAIL: wrong | gemini-3.1-flash-lite | 38.78 s | 105 | does not mention that inflation is measured by PCE prices |
+| s04 | pass | gemini-3.1-flash-lite | 38.78 s | 105 |  |
 | s05 | pass | gemini-3.1-flash-lite | 4.1 s | 89 |  |
 | s06 | pass | gemini-3.1-flash-lite | 1.59 s | 66 |  |
 | s07 | pass | gemini-3.1-flash-lite | 1.85 s | 101 |  |
 | s08 | pass | gemini-3-flash-preview | 27.35 s | 83 |  |
-| s09 | FAIL: wrong | gemini-3.5-flash-lite | 33.22 s | 56 | permanent vice chair claim is incorrect |
+| s09 | pass | gemini-3.5-flash-lite | 33.22 s | 56 |  |
 | s10 | pass | gemini-3.5-flash | 27.88 s | 98 |  |
 | m01 | pass | gemini-3.1-flash-lite | 8.39 s | 97 |  |
 | m02 | pass | gemini-3.1-flash-lite | 22.19 s | 98 |  |
@@ -95,3 +95,13 @@ Answered by: gemini 52, guard 6, none 2.
 | a04 | pass | gemini-3.1-flash-lite | 15.56 s | 87 |  |
 | a05 | pass | gemini-3.1-flash-lite | 3.05 s | 105 |  |
 | a06 | pass | gemini-3.1-flash-lite | 1.89 s | 80 |  |
+
+## Spot re-run on the final code
+
+The full run above failed these items on the code as it was. They were fixed afterwards (see `docs/AI_DIAGNOSIS.md`, "After the eval") and re-run alone on the final code. The headline numbers above are NOT updated with these.
+
+| id | Result | Provider | Latency | Tools | Answer (start) |
+|---|---|---|---|---|---|
+| c09 | pass | gemini-3.5-flash-lite | 38.34 s | bls_latest, calc | The Consumer Price Index rose 3.7% over the year ending September 2026, according to data from the Bureau of L |
+| a01 | pass | gemini-3.5-flash-lite | 3.09 s | fed_leadership, get_meeting, bls_latest | The Chair of the Federal Reserve is Kevin Warsh ([Fed](https://www.federalreserve.gov/monetarypolicy/fomc.htm) |
+| a03 | pass | gemini-3.5-flash-lite | 2.36 s | fed_leadership, fed_feed | Jerome Powell is currently serving as a member of the Board of Governors rather than as Fed chair, following K |
