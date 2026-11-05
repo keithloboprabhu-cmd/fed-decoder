@@ -681,7 +681,11 @@ def _turn(t: dict, i: int, last: bool) -> None:
             st.markdown('<div class="lab">Saved content, not an AI answer</div>', unsafe_allow_html=True)
             st.markdown(t["saved"])
     if t["status"] == "ok":
-        chips = "".join(f'<a class="src" href="{ui.E(s_["url"])}" target="_blank" rel="noopener">{ui.E(s_.get("title") or "Source")}'
+        def _ttl(s_):
+            t_ = s_.get("title") or ""
+            return agent._title_for(s_["url"]) if t_ in ("", "Federal Reserve", "FRED") else t_
+
+        chips = "".join(f'<a class="src" href="{ui.E(s_["url"])}" target="_blank" rel="noopener">{ui.E(_ttl(s_))}'
                         + (f' · {ui.E(str(s_["as_of"]))}' if s_.get("as_of") else "") + "</a>" for s_ in t.get("sources") or [])
         if chips:
             st.markdown(f'<div class="srcs">{chips}</div>', unsafe_allow_html=True)

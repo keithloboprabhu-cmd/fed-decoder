@@ -32,6 +32,13 @@ def get_provider(name: str) -> Provider:
     return _PROVIDERS[name]
 
 
+def forced_failures() -> set[str]:
+    """Providers to treat as down, for testing fallbacks: FORCE_PROVIDER_FAIL=gemini or gemini,groq."""
+    import os
+
+    return {x.strip() for x in os.environ.get("FORCE_PROVIDER_FAIL", "").split(",") if x.strip()}
+
+
 def default_order() -> list[str]:
     return ["gemini", "groq"]
 
@@ -94,6 +101,10 @@ def generate(
             pass
         if not p.available():
             log_event(provider=name, event="skipped_no_key", purpose=purpose)
+            continue
+        if name in forced_failures():  # FORCE_PROVIDER_FAIL=gemini,groq: prove the fallbacks work
+            LAST_FAILURES.append((name, "ForcedFailure"))
+            log_event(provider=name, event="failed", error="ForcedFailure", detail="FORCE_PROVIDER_FAIL", purpose=purpose)
             continue
         msgs = list(messages)
         for attempt in range(2):

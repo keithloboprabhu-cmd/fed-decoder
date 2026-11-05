@@ -64,6 +64,15 @@ class GeminiProvider(Provider):
         return bool(self._key)
 
     def _get_client(self):
+        # Chat waits at most CHAT_TIMEOUT_S per model before moving on; card building can wait longer.
+        if getattr(self, "purpose", "").startswith("chat"):
+            if getattr(self, "_chat_client", None) is None:
+                from google import genai
+                from google.genai import types
+
+                self._chat_client = genai.Client(api_key=self._key, http_options=types.HttpOptions(
+                    timeout=int(config.GEMINI_CHAT_TIMEOUT_S * 1000), retry_options=types.HttpRetryOptions(attempts=1)))
+            return self._chat_client
         if self._client is None:
             if not self._key:
                 raise ProviderUnavailable("GEMINI_API_KEY not set")

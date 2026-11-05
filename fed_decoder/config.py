@@ -53,6 +53,7 @@ GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
 # Tried in order when a model answers 503 "high demand" (free-tier overload comes and goes).
 GEMINI_FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACK_MODELS", "gemini-3.6-flash,gemini-3-flash-preview,gemini-3.5-flash-lite,gemini-flash-lite-latest").split(",") if m]
 GEMINI_TIMEOUT_S = int(os.environ.get("GEMINI_TIMEOUT_S", "60"))
+GEMINI_CHAT_TIMEOUT_S = float(os.environ.get("GEMINI_CHAT_TIMEOUT_S", "15"))
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
 # Ask: Gemma 4 runs on the same free Gemini API key with its own (larger) quota and supports
 # function calling; it backs up the Flash models when their 20-requests-per-day cap is hit.
