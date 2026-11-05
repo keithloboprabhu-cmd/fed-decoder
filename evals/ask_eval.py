@@ -293,6 +293,7 @@ def summarize(results: list[dict]) -> dict:
         "median_latency_s": round(statistics.median(lat), 1) if lat else None,
         "p90_latency_s": round(sorted(lat)[int(len(lat) * 0.9) - 1], 1) if len(lat) >= 10 else None,
         "unavailable": sum(r.get("status") == "unavailable" for r in results),
+        "silent_fallback": sum(r.get("provider") == "rules" for r in results),
         "providers": {p: sum(r.get("provider") == p for r in results) for p in sorted({r.get("provider", "") for r in results})},
         "by_category": cats,
     }
@@ -305,7 +306,7 @@ def write_report(after_path: Path) -> None:
     after = json.loads(after_path.read_text())
     befores = sorted(RUNS.glob("ask_before_*.json"))
     before = json.loads(befores[-1].read_text()) if befores else None
-    a, b = after["summary"], (before["summary"] if before else None)
+    a, b = summarize(after["results"]), (summarize(before["results"]) if before else None)
 
     def row(label, key, fmt=lambda v: f"{v * 100:.0f}%"):
         bv = fmt(b[key]) if b and b.get(key) is not None else "—"
@@ -323,13 +324,14 @@ def write_report(after_path: Path) -> None:
         "|---|---|---|",
         row("Pass (correct, grounded, cited, ≤120 words)", "pass_rate"),
         row("Correct", "correct_rate"),
-        row("Grounded (no unverified or silent-fallback answer)", "grounded_rate"),
+        row("Grounded (passed the number check, or a scope refusal)", "grounded_rate"),
         row("Sources shown", "cited_rate"),
         row("≤ 120 words", "concise_rate"),
         f"| Current leadership correct | {b['leadership_correct'] if b else '—'} | {a['leadership_correct']} |",
         f"| Current rate correct | {b['rate_correct'] if b else '—'} | {a['rate_correct']} |",
         f"| Median latency | {str(b['median_latency_s']) + ' s' if b else '—'} | {a['median_latency_s']} s |",
-        f"| \"AI unavailable\" answers | {b['unavailable'] if b else '—'} | {a['unavailable']} |",
+        f"| Silent fallbacks (canned text shown as if it were an answer) | {b.get('silent_fallback', '—') if b else '—'} | {a.get('silent_fallback', 0)} |",
+        f"| Honest \"AI unavailable\" notices | {b['unavailable'] if b else '—'} | {a['unavailable']} |",
         "",
         f"**Bar:** 100% on current leadership and rate, ≥ 90% overall, median latency under 6 s. "
         f"**{'Met' if a['meets_bar'] else 'Not met'}.**",
