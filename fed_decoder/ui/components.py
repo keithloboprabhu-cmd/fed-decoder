@@ -277,3 +277,51 @@ def timeline_fig(gt: pd.DataFrame, tones: dict[str, float], height: int = 440, s
         clickmode="event+select",
     )
     return fig
+
+
+# ---------------------------------------------------------------- at-a-glance tiles
+def short_move(direction: str, bps: int) -> str:
+    if direction == "hold":
+        return "Held"
+    frac = {25: "¼", 50: "½", 75: "¾", 100: "1"}.get(abs(int(bps)), f"{abs(int(bps)) / 100:.2f}")
+    return f"{'Cut' if direction == 'cut' else 'Raised'} {frac} pt"
+
+
+def step_svg(prev_lo, prev_hi, lo, hi) -> str:
+    """Mini step chart: old target range -> new target range."""
+    vals = [v for v in (prev_lo, prev_hi, lo, hi) if v is not None]
+    top, bot = max(vals) + 0.25, max(0.0, min(vals) - 0.25)
+    span = (top - bot) or 1.0
+    y = lambda v: 6 + (top - v) / span * 52  # noqa: E731
+    change = (hi or 0) - (prev_hi or 0)
+    col = theme.TERRA if change > 0 else theme.GREEN if change < 0 else theme.INK
+    return (f'<svg viewBox="0 0 140 64" width="140" height="64" aria-hidden="true">'
+            f'<rect x="0" y="{y(prev_hi):.1f}" width="60" height="{max(8, y(prev_lo) - y(prev_hi)):.1f}" rx="2" fill="{theme.NEUTRAL}" opacity=".55"/>'
+            f'<rect x="80" y="{y(hi):.1f}" width="60" height="{max(8, y(lo) - y(hi)):.1f}" rx="2" fill="{col}" opacity=".9"/>'
+            f'<path d="M60 {y(prev_hi):.1f} H70 V{y(hi):.1f} H80" fill="none" stroke="{theme.FAINT}" stroke-width="1.5"/></svg>')
+
+
+def mini_scale(score: float) -> str:
+    s = max(-2.0, min(2.0, float(score)))
+    _, cls = tone_words(s)
+    return (f'<div class="mscale"><div class="mtrack"><b class="{cls}" style="left:{(s + 2) / 4 * 100:.1f}%"></b></div>'
+            '<div class="mends"><span>Dove</span><span>Hawk</span></div></div>')
+
+
+def odds_bar(p: dict) -> str:
+    segs = [("hold", "Hold", theme.NEUTRAL), ("hike", "Raise", theme.TERRA), ("cut", "Cut", theme.GREEN)]
+    bar = "".join(f'<i style="width:{p[k] * 100:.1f}%;background:{c}"></i>' for k, _, c in segs if p[k] > 0.005)
+    top = max(p, key=p.get)
+    legend = " · ".join(f'{lab} {p[k] * 100:.0f}%' for k, lab, _ in segs if k != top)  # the big number already states the top one
+    return f'<div class="obar">{bar}</div><div class="tcap">{legend}</div>'
+
+
+def tile(label: str, big: str, visual: str = "", caption: str = "", big_cls: str = "") -> str:
+    return (f'<div class="tile"><div class="tlab">{E(label)}</div><div class="tbig {big_cls}">{E(big)}</div>'
+            f'{visual}{f"<div class=tcap>{E(caption)}</div>" if caption else ""}</div>')
+
+
+def signed_money(x: float, unit: str = "/mo") -> str:
+    if abs(x) < 0.005:
+        return "$0" + unit
+    return f"{'−' if x < 0 else '+'}${abs(x):,.0f}{unit}" if abs(x) >= 10 else f"{'−' if x < 0 else '+'}${abs(x):,.2f}{unit}"

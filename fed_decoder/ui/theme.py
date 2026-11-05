@@ -226,8 +226,8 @@ div[class*="st-key-you"] {{ margin-top: 34px; padding-left: 24px; border-left: 3
 div[class*="st-key-you"] [data-testid="stColumn"]:last-child [data-testid="stElementContainer"] {{ margin-left: auto; width: fit-content !important; }}
 .you-big {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 38px; line-height: 1.15; margin: 2px 0 8px; text-wrap: balance; font-variant-numeric: tabular-nums; }}
 .you-sub {{ font-size: 17px !important; color: var(--muted) !important; margin: 0 0 10px !important; }}
-.ai-note {{ margin: 14px 0 6px; max-width: 640px; }}
-.ai-note p {{ font-size: 18px !important; line-height: 1.6 !important; margin: 0 0 4px !important; }}
+.ai-note {{ margin: 22px 0 0; max-width: 680px; padding-left: 16px; border-left: 3px solid var(--green); }}
+.ai-note p {{ font-size: 16px !important; line-height: 1.6 !important; margin: 0 !important; color: var(--ink); }}
 .next-you {{ display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; margin: 18px 0 4px; max-width: 700px; }}
 .next-you p {{ margin: 0 !important; font-size: 16px !important; }}
 .bd-h {{ font-size: 14px; font-weight: 600; color: var(--muted); margin: 14px 0 0; }}
@@ -264,6 +264,28 @@ div[class*="st-key-ask_"] {{ max-width: 760px; }}
 [data-testid="stDialog"] [role="dialog"] {{ background: var(--ivory) !important; border-radius: 16px; }}
 [data-testid="stDialog"] h2, [data-testid="stDialog"] [data-testid="stHeading"] * {{ font-family: 'Newsreader', Georgia, serif !important; }}
 div[class*="st-key-tiles_dlg"] [data-testid="stRadioGroup"], div[class*="st-key-tiles_quick"] [data-testid="stRadioGroup"] {{ grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }}
+/* ---------- meeting at a glance ---------- */
+.mhead {{ padding-top: 26px; }}
+.mhead h1 {{ font-size: 46px !important; margin-bottom: 26px !important; }}
+.tile {{ padding: 4px 0 0; }}
+.tlab {{ font-size: 14px; color: var(--muted); margin-bottom: 4px; }}
+.tbig {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 34px; line-height: 1.1; margin-bottom: 10px; font-variant-numeric: tabular-nums; white-space: nowrap; }}
+.tcap {{ font-size: 14px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }}
+.mscale {{ width: 100%; max-width: 180px; margin-top: 16px; }}
+.mtrack {{ position: relative; height: 2px; background: var(--ink); }}
+.mtrack b {{ position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 3px var(--ivory); }}
+.mtrack b.dove {{ background: var(--green); }} .mtrack b.hawk {{ background: var(--terra); }}
+.mends {{ display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-top: 10px; }}
+.obar {{ display: flex; height: 10px; border-radius: 5px; overflow: hidden; max-width: 200px; margin-top: 14px; gap: 2px; }}
+.obar i {{ display: block; height: 100%; }}
+.gap-l {{ height: 40px; }}
+ol.three {{ max-width: 720px; margin: 0 0 26px; padding-left: 26px; counter-reset: none; }}
+ol.three li {{ font-size: 19px !important; line-height: 1.5 !important; margin-bottom: 12px; padding-left: 6px; }}
+ol.three li::marker {{ font-family: 'Newsreader', Georgia, serif; color: var(--green); font-size: 20px; }}
+div[class*="st-key-suggest"] [data-testid="stBaseButton-tertiary"] p {{ font-size: 15px !important; }}
+div[class*="st-key-suggest"] {{ margin-top: -8px; }}
+[data-testid="stColumn"] [data-testid="stBaseButton-tertiary"] {{ justify-content: flex-start; text-align: left; }}
+[data-testid="stColumn"] [data-testid="stBaseButton-tertiary"] p {{ font-size: 14px !important; }}
 /* ---------- phones ---------- */
 @media (max-width: 860px) {{
   .margin-notes {{ grid-template-columns: 1fr; gap: 4px; }}
@@ -278,6 +300,14 @@ div[class*="st-key-tiles_dlg"] [data-testid="stRadioGroup"], div[class*="st-key-
   .aside, .short-row, .next-you {{ grid-template-columns: 1fr; gap: 4px; }}
   div[class*="st-key-you"] {{ padding-left: 16px; }}
   .you-big {{ font-size: 30px; }}
+  .mhead h1 {{ font-size: 32px !important; margin-bottom: 18px !important; }}
+  /* the four glance tiles sit two by two on phones */
+  [data-testid="stHorizontalBlock"]:has(.tile) {{ flex-wrap: wrap !important; gap: 22px 16px !important; }}
+  [data-testid="stHorizontalBlock"]:has(.tile) > [data-testid="stColumn"] {{ flex: 1 1 calc(50% - 8px) !important; width: calc(50% - 8px) !important; min-width: calc(50% - 8px) !important; }}
+  .tile svg {{ width: 110px; height: 50px; }}
+  .mscale, .obar {{ max-width: 150px; }}
+  .tbig {{ font-size: 28px; }}
+  ol.three li {{ font-size: 17px !important; }}
   .row {{ grid-template-columns: 1fr; gap: 2px; padding: 8px 0 14px; }}
   .result .big {{ font-size: 38px; }}
   .stNumberInput {{ max-width: none; }}

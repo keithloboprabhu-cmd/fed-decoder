@@ -195,15 +195,12 @@ def page_home() -> None:
                 open_live_statement(live)
     st.markdown('<div style="height:6vh"></div>', unsafe_allow_html=True)
     st.markdown("<h1>What do you want to know about the Fed?</h1>", unsafe_allow_html=True)
-    st.markdown('<p class="lede">Ask in plain words, or name a meeting such as “latest” or “September 2024”. '
-                'You can also paste a Fed statement.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="lede">Ask anything, or type a meeting: “latest”, “Sept 2024”.</p>', unsafe_allow_html=True)
     with st.form("ask_meeting", border=False, clear_on_submit=True):
         text = st.text_area("Question, meeting or statement", label_visibility="collapsed", height=90, max_chars=8000,
                             placeholder="For example: What is the Fed?  ·  latest  ·  Why did rates go up in 2022?")
-        c1, c2 = st.columns([1, 3], vertical_alignment="center")
+        c1, _ = st.columns([1, 3])
         submitted = c1.form_submit_button("Go", type="primary", use_container_width=True)
-        c2.markdown('<div class="note">Don’t enter personal information. Questions go to free AI services; pasted text is treated as data.</div>',
-                    unsafe_allow_html=True)
     pending = None
     if submitted:
         target, err = interpret(text)
@@ -221,7 +218,7 @@ def page_home() -> None:
             st.rerun()
     thread = ss.get("home_thread", [])
     if not thread and not pending:
-        st.markdown('<p class="muted" style="margin:18px 0 0">New to this? Start here:</p>', unsafe_allow_html=True)
+        st.markdown('<div style="height:14px"></div>', unsafe_allow_html=True)
         with st.container(key="suggest_home"):
             for i, q in enumerate(STARTERS):
                 if st.button(q, type="tertiary", key=f"starter_{i}"):
@@ -236,67 +233,38 @@ def page_home() -> None:
         with st.container(key=f"answer_home_{k}"):
             st.markdown(f'<div class="qa-q">{"<br>".join(ui.E(x) for x in item["q"].split(chr(10)) if x.strip())}</div>', unsafe_allow_html=True)
             st.markdown(item["a"])  # Markdown from the model; HTML is not allowed here
-            st.markdown(f'<div class="prov">{ui.E(item["label"])}</div>', unsafe_allow_html=True)
         for j, d in enumerate(meetings_mentioned(item["a"])):
-            if st.button(f"Walk through the {long_date(d)} meeting →", type="tertiary", key=f"goto_{k}_{j}_{d}"):
+            if st.button(f"Open {pd.Timestamp(d):%b %-d, %Y} →", type="tertiary", key=f"goto_{k}_{j}_{d}"):
                 open_meeting(d)
                 st.rerun()
-    if ss.get("profile"):
-        st.markdown(f'<p class="note" style="margin-top:10px">Explaining for you: {ui.E(personal.describe(ss.profile)).lower().replace("you ", "", 1)}.</p>',
-                    unsafe_allow_html=True)
     st.markdown('<div style="height:20px"></div>', unsafe_allow_html=True)
     c1, c2, _ = st.columns([1, 1.25, 1.2])
-    if c1.button(f"The latest meeting, {pd.Timestamp(dates()[-1]):%b %-d}", type="tertiary"):
+    if c1.button(f"Latest meeting · {pd.Timestamp(dates()[-1]):%b %-d}", type="tertiary"):
         open_meeting(dates()[-1])
         st.rerun()
-    if c2.button("Browse all meetings since 2000", type="tertiary"):
+    if c2.button("All meetings since 2000", type="tertiary"):
         go("Timeline")
         st.rerun()
 
 
 # ---------------------------------------------------------------- decoder sections
-def provider_note(card) -> str:
-    if card.provider == "rules":
-        return f"{RULES_LABEL}. Numbers are computed from Federal Reserve and FRED data."
-    who = {"gemini": "Gemini", "groq": "Groq"}.get(card.provider, card.provider)
-    return f"Explanation written by {who} and checked against the statement; every number comes from Federal Reserve and FRED data."
-
-
 def for_you_items(card, ctx) -> list[dict]:
     facts = {b["topic"]: b for b in ctx["impacts"]["for_you"]}
     items = []
     for topic, label in (("Borrowers", "Credit cards"), ("Mortgages", "Mortgages"), ("Savers", "Savings"), ("Workers", "Jobs")):
         f = facts.get(topic)
-        if not f:
-            continue
-        llm = next((b.text for b in card.for_you if b.topic.lower() == topic.lower()), None)
-        text = llm if (llm and card.provider != "rules") else f["text"]
-        if topic == "Mortgages" and "10-year" not in text:
-            text = "Mortgages track the 10-year Treasury yield, not the fed funds rate. " + text
-        items.append({"topic": label, "number": f["number"], "text": text})
+        if f:
+            items.append({"topic": label, "number": f["number"], "text": f["text"]})
     return items
-
-
-def meeting_header(card, ctx) -> None:
-    d = card.decision
-    when = (ss.get("pasted_label") or "Your pasted statement") if ctx["meeting_date"] == "pasted" else long_date(ctx["meeting_date"])
-    st.markdown(f'<div class="step first"><div class="dateline">{when}</div>'
-                f'<h1>{ui.E(ui.headline(d.direction, d.change_bps))}</h1>{ui.facts_html(d)}</div>', unsafe_allow_html=True)
 
 
 def plain_what(d) -> str:
     if d.direction == "hold":
-        p1 = f"The FOMC left the federal funds rate where it was, with the target range at {ui.fmt_range(d.target_low, d.target_high)}."
+        p1 = f"Held the target range at {ui.fmt_range(d.target_low, d.target_high)}."
     else:
-        p1 = (f"The FOMC {'lowered' if d.direction == 'cut' else 'raised'} the federal funds rate by {abs(d.change_bps)} basis points, "
-              f"which moves the target range to {ui.fmt_range(d.target_low, d.target_high)}.")
+        p1 = f"{'Cut' if d.direction == 'cut' else 'Raised'} rates {abs(d.change_bps)} basis points, to {ui.fmt_range(d.target_low, d.target_high)}."
     vs = ui.vote_sentence(d)
     return p1 + (" " + vs if vs else "")
-
-
-# ---------------------------------------------------------------- you
-HOUSING_SHORT = {"rent": "I rent", "fixed": "I own, fixed-rate mortgage", "arm": "I own, adjustable-rate mortgage",
-                 "outright": "I own outright", "buying": "I'm buying a home soon"}
 
 
 def when_of(ctx):
@@ -307,12 +275,15 @@ def ten_move(ctx):
     return ((ctx["impacts"].get("numbers") or {}).get("mortgage_30y") or {}).get("rate_change_bps")
 
 
+HOUSING_TINY = {"rent": "Renter", "fixed": "Fixed mortgage", "arm": "Adjustable mortgage", "outright": "Own outright", "buying": "Buying soon"}
+HOUSING_SHORT = {"rent": "I rent", "fixed": "I own, fixed-rate mortgage", "arm": "I own, adjustable-rate mortgage",
+                 "outright": "I own outright", "buying": "I'm buying a home soon"}
+
+
 @st.dialog("Your situation", width="large")
 def profile_dialog() -> None:
     """All personal inputs. Kept only in this browser session; amounts never go to an AI."""
     p = ss.get("profile") or personal.Profile()
-    st.markdown('<p class="note">Stays in this browser tab. Nothing is saved, and amounts are never sent to an AI. '
-                'Leave anything blank to use a typical amount.</p>', unsafe_allow_html=True)
     st.markdown('<div class="qa">Where do you live?</div>', unsafe_allow_html=True)
     with st.container(key="tiles_dlg_housing"):
         housing = st.radio("Housing", list(HOUSING_SHORT), index=list(HOUSING_SHORT).index(p.housing),
@@ -353,7 +324,7 @@ def profile_dialog() -> None:
         state = c2.selectbox("State, for local jobs data", states, index=states.index(p.state), key="dlg_state",
                              format_func=lambda x: "Prefer not to say" if x is None else config.STATES[x])
     ai = st.toggle("Let AI tailor explanations to my situation", value=ss.get("ai_tailor", False), key="dlg_ai",
-                   help="Shares only broad categories such as “rents” or “carries a card balance” with the AI provider. Never amounts, income or location.")
+                   help="Shares only labels like “rents”. Never amounts, income or location.")
     c1, c2 = st.columns([1, 1])
     if c1.button("Save", type="primary", use_container_width=True):
         typical = []
@@ -388,94 +359,177 @@ def money(x: float) -> str:
     return f"${abs(x):,.2f}"
 
 
-def personal_block(card, ctx, is_latest: bool) -> None:
+def prev_range(ctx, d) -> tuple[float, float]:
+    if ctx["meeting_date"] != "pasted":
+        g = store.ground_truth().set_index("meeting_date").loc[pd.Timestamp(ctx["meeting_date"])]
+        return float(g["prev_low"]), float(g["prev_high"])
+    return d.target_low - d.change_bps / 100, d.target_high - d.change_bps / 100
+
+
+def next_meeting(ctx):
+    if ctx["meeting_date"] == "pasted":
+        return None
+    all_d = dates()
+    i = all_d.index(ctx["meeting_date"])
+    if i + 1 >= len(all_d):
+        return None
+    nxt = all_d[i + 1]
+    g = meetings().set_index(meetings()["meeting_date"].dt.strftime("%Y-%m-%d")).loc[nxt]
+    return nxt, g["direction"], int(g["change_bps"])
+
+
+def glance(card, ctx, is_latest: bool) -> None:
+    """The whole meeting in four tiles: the move, you, the tone, what's next."""
     d = card.decision
+    plo, phi = prev_range(ctx, d)
     prof = ss.get("profile")
-    if prof is None:
-        st.markdown('<div class="you-q"><h2>What does this mean for you?</h2>'
-                    '<p class="muted" style="margin:0 0 14px">Tap the one that fits. You’ll get your own numbers right away; '
-                    'nothing leaves this browser tab.</p></div>', unsafe_allow_html=True)
-        with st.container(key="tiles_quick"):
-            pick = st.radio("Housing", list(HOUSING_SHORT), index=None, format_func=HOUSING_SHORT.get,
-                            label_visibility="collapsed", key=f"quick_{ss.get('nav_v', 0)}")
-        if pick:
-            ss.profile = personal.quick_profile(pick)
-            ss.profile_typical = ["mortgage"] if pick in ("arm", "buying") else []
-            st.rerun()
-        with st.expander("Or see a typical household first"):
-            st.markdown('<p class="note">Example balances: a $5,000 credit card balance, a $300,000 mortgage and $10,000 in savings.</p>'
-                        + ui.rows_html(for_you_items(card, ctx)), unsafe_allow_html=True)
-        return
+    nm = next_meeting(ctx)
+    fc = cached_forecast() if is_latest else None
 
-    r = personal.personal_impact(prof, d.change_bps, ten_move(ctx), when_of(ctx))
-    affected = [i for i in r.items if abs(i.get("monthly", 0)) >= 0.005]
-    if d.change_bps == 0 or not affected:
-        big = "Your monthly costs don’t change"
-        sub = "Nothing you pay or earn that follows the Fed moved with this decision."
-        if prof.housing == "buying" and affected:
-            big = "Your costs follow the 10-year Treasury, not this decision"
-    else:
-        verb = "fall" if r.monthly_total < 0 else "rise"
-        big = f"Your costs {verb} by about {money(r.monthly_total)} a month"
-        names = ", ".join(i["topic"].lower() for i in affected)
-        sub = f"Mostly through your {names}."
-        if r.share_of_income is not None:
-            sub += f" That’s about {abs(r.share_of_income):.2f}% of your monthly income."
-    with st.container(key="you"):
-        c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
-        c1.markdown(f'<div class="who">{ui.E(personal.describe(prof))}</div>', unsafe_allow_html=True)
-        if c2.button("Edit your situation", type="tertiary", key="edit_prof"):
-            profile_dialog()
-        st.markdown(f'<div class="you-big reveal">{ui.E(big)}</div><p class="you-sub">{ui.E(sub)}</p>', unsafe_allow_html=True)
-
-        # AI note: only broad labels, only with opt-in
-        if ss.get("ai_tailor"):
-            from fed_decoder.cards.personal_note import personal_note
-
-            with st.spinner("Tailoring this to you"):
-                note = None if agent.near_cap() else personal_note(ctx, personal.ai_labels(prof), personal.ai_effects(r))
-            if note:
-                who = {"gemini": "Gemini", "groq": "Groq"}.get(note["provider"], note["provider"])
-                st.markdown(f'<div class="ai-note"><p>{ui.E(note["text"])}</p><span class="note">Written by {who} from broad categories only; '
-                            'numbers come from code.</span></div>', unsafe_allow_html=True)
-        else:
-            if st.button("Explain it for my situation with AI", type="tertiary", key="ai_on",
-                         help="Shares only broad categories such as “rents” or “carries a card balance”. Never amounts, income or location."):
-                ss.ai_tailor = True
+    c1, c2, c3, c4 = st.columns([1, 1.15, 1, 1], gap="large")
+    with c1:
+        st.markdown(ui.tile("The decision", ui.short_move(d.direction, d.change_bps), ui.step_svg(plo, phi, d.target_low, d.target_high),
+                            ui.fmt_range(d.target_low, d.target_high), "hawk" if d.change_bps > 0 else "dove" if d.change_bps < 0 else ""),
+                    unsafe_allow_html=True)
+    with c2:
+        if prof is None:
+            st.markdown('<div class="tile"><div class="tlab">For you</div><div class="tbig">Your costs?</div></div>', unsafe_allow_html=True)
+            pick = st.selectbox("Your home", list(HOUSING_SHORT), index=None, format_func=HOUSING_SHORT.get,
+                                placeholder="Pick your situation", label_visibility="collapsed", key=f"quick_{ss.get('nav_v', 0)}")
+            if pick:
+                ss.profile = personal.quick_profile(pick)
+                ss.profile_typical = ["mortgage"] if pick in ("arm", "buying") else []
                 st.rerun()
-
-        # What the next move would mean for this person
-        up = personal.personal_impact(prof, 25, 0, when_of(ctx)).monthly_total
-        down = personal.personal_impact(prof, -25, 0, when_of(ctx)).monthly_total
-        if is_latest:
-            fc = cached_forecast()
-            lines = []
-            if abs(up) >= 0.005 or abs(down) >= 0.005:
-                lines.append(f"If the Fed raises rates a quarter point next time (our model puts that at {fc['p_hike'] * 100:.0f}%), "
-                             f"your costs would rise about {money(up)} a month. If it cuts ({fc['p_cut'] * 100:.0f}%), they’d fall about {money(down)}.")
+        else:
+            r = personal.personal_impact(prof, d.change_bps, ten_move(ctx), when_of(ctx))
+            if is_latest:
+                up = personal.personal_impact(prof, 25, 0, when_of(ctx)).monthly_total
+                cap = f"If they raise next: {ui.signed_money(up)}" if abs(up) >= 0.005 else "Not tied to the Fed’s rate"
+            elif nm:
+                nctx = cached_context(nm[0])
+                nr = personal.personal_impact(prof, nm[2], ten_move(nctx), nm[0]).monthly_total
+                cap = f"Next meeting: {ui.signed_money(nr)}"
             else:
-                lines.append("A quarter-point move either way wouldn’t change your monthly costs much, because what you have isn’t tied to the Fed’s rate.")
-            st.markdown('<div class="next-you"><div class="aside-h">Next meeting</div><p>' + ui.E(" ".join(lines)) + '</p></div>', unsafe_allow_html=True)
-        elif ctx["meeting_date"] != "pasted":
-            all_d = dates()
-            i = all_d.index(ctx["meeting_date"])
-            if i + 1 < len(all_d):
-                nxt = all_d[i + 1]
-                g = meetings().set_index(meetings()["meeting_date"].dt.strftime("%Y-%m-%d")).loc[nxt]
-                nctx = cached_context(nxt)
-                nr = personal.personal_impact(prof, int(g["change_bps"]), ten_move(nctx), nxt)
-                what = ui.headline(g["direction"], int(g["change_bps"]))
-                what = what[0].lower() + what[1:]
-                eff = ("which didn’t change your costs" if abs(nr.monthly_total) < 0.005 else
-                       f"which would have {'lowered' if nr.monthly_total < 0 else 'raised'} your costs about {money(nr.monthly_total)} a month")
-                st.markdown(f'<div class="next-you"><div class="aside-h">What happened next</div><p>On {long_date(nxt)}, {what}, {eff}.</p></div>',
-                            unsafe_allow_html=True)
+                cap = ""
+            big = ui.signed_money(r.monthly_total)
+            st.markdown(ui.tile("For you", big, "", cap, "dove" if r.monthly_total < -0.005 else "hawk" if r.monthly_total > 0.005 else ""),
+                        unsafe_allow_html=True)
+            if st.button(HOUSING_TINY[prof.housing] + " · edit", type="tertiary", key="edit_prof"):
+                profile_dialog()
+    with c3:
+        word, cls = ui.tone_words(card.tone_score)
+        st.markdown(ui.tile("Tone", word.replace("Leaning ", "").capitalize(), ui.mini_scale(card.tone_score), "", cls), unsafe_allow_html=True)
+    with c4:
+        if fc:
+            p = {"hold": fc["p_hold"], "cut": fc["p_cut"], "hike": fc["p_hike"]}
+            top = max(p, key=p.get)
+            st.markdown(ui.tile("Next meeting", f"{p[top] * 100:.0f}% {({'hold': 'hold', 'cut': 'cut', 'hike': 'raise'})[top]}", ui.odds_bar(p)),
+                        unsafe_allow_html=True)
+        elif nm:
+            st.markdown(ui.tile("What happened next", ui.short_move(nm[1], nm[2]), "", f"{pd.Timestamp(nm[0]):%b %-d, %Y}",
+                                "hawk" if nm[2] > 0 else "dove" if nm[2] < 0 else ""), unsafe_allow_html=True)
 
-        with st.expander("See how we worked this out"):
-            st.markdown(personal_breakdown_html(r), unsafe_allow_html=True)
-            typ = ss.get("profile_typical") or []
-            if typ:
-                st.markdown(f'<p class="note">Using typical amounts for: {", ".join(typ)}. Edit your situation to use your own.</p>', unsafe_allow_html=True)
+
+def three_things(card, ctx) -> None:
+    d = card.decision
+    things = [plain_what(d)]
+    if card.changes:
+        things.append(card.changes[0].explanation)
+    if card.whats_next:
+        things.append(re.split(r"(?<=\.)\s", card.whats_next.strip())[0])
+    html = '<ol class="three">' + "".join(f"<li>{ui.define(ui.E(t), ['basis points', 'target range', 'dissented'])}</li>" for t in things[:3]) + "</ol>"
+    st.markdown(html, unsafe_allow_html=True)
+
+
+def ai_note(card, ctx) -> None:
+    prof = ss.get("profile")
+    if not prof:
+        return
+    if not ss.get("ai_tailor"):
+        if st.button("Explain this for me", type="tertiary", key="ai_on", help="Shares only labels like “rents”. Never amounts."):
+            ss.ai_tailor = True
+            st.rerun()
+        return
+    from fed_decoder.cards.personal_note import personal_note
+
+    r = personal.personal_impact(prof, card.decision.change_bps, ten_move(ctx), when_of(ctx))
+    with st.spinner(""):
+        note = None if agent.near_cap() else personal_note(ctx, personal.ai_labels(prof), personal.ai_effects(r))
+    if note:
+        two = " ".join(re.split(r"(?<=[.!?])\s+", note["text"].strip())[:2])
+        st.markdown(f'<div class="ai-note reveal"><p>{ui.E(two)}</p></div>', unsafe_allow_html=True)
+
+
+def suggested_questions(card, ctx) -> list[str]:
+    d = card.decision
+    qs = []
+    if d.dissenters:
+        qs.append(f"Why did {' and '.join(n.split()[-1] for n in d.dissenters[:2])} dissent?")
+    qs.append({"hold": "Why hold?", "cut": "Why cut?", "hike": "Why raise?"}[d.direction])
+    qs.append("What does this mean for mortgages?")
+    return qs[:3]
+
+
+def ask_block(card, ctx) -> None:
+    key = ctx["meeting_date"]
+    thread = ss.setdefault("threads", {}).setdefault(key, [])
+    for n, (q, a, _label) in enumerate(thread):
+        with st.container(key=f"answer_m_{n}"):
+            st.markdown(f'<div class="qa-q">{ui.E(q)}</div>', unsafe_allow_html=True)
+            st.markdown(a)  # Markdown from the model; HTML is not allowed here
+    left = config.SESSION_QUESTION_LIMIT - ss.questions
+    pending = None
+    with st.form(f"ask_{key}", border=False, clear_on_submit=True):
+        c1, c2 = st.columns([5, 1], vertical_alignment="bottom")
+        typed = c1.text_input("Ask", label_visibility="collapsed", placeholder="Ask anything about this meeting", disabled=left <= 0)
+        sent = c2.form_submit_button("Ask", type="primary", use_container_width=True, disabled=left <= 0)
+    if not thread and left > 0:
+        with st.container(key="suggest"):
+            cols = st.columns(3)
+            for i, q in enumerate(suggested_questions(card, ctx)):
+                if cols[i].button(q, type="tertiary", key=f"sq_{key}_{i}"):
+                    pending = q
+    q = pending or (typed.strip() if sent and typed else None)
+    if q and left > 0:
+        ss.questions += 1
+        reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
+        meeting = None if key == "pasted" else key
+        with st.spinner(""):
+            try:
+                ans = agent.answer(q, meeting=meeting, reader=reader)
+            except Exception:
+                ans = agent.rules_answer(q, meeting=meeting)
+        thread.append((q, ans.text, ans.label))
+        st.rerun()
+
+
+def section_changed(card, ctx) -> None:
+    if not ctx.get("prev_statement"):
+        st.markdown('<p class="muted">First statement on record.</p>', unsafe_allow_html=True)
+        return
+    pct = round((ctx.get("changed_fraction") or 0) * 100)
+    ref = long_date(ctx["prev_meeting_date"])
+    st.markdown(f'<p class="note">vs. {ref} · {pct}% reworded · <del class="key">removed</del> · <ins class="key">added</ins></p>', unsafe_allow_html=True)
+    red, notes = ui.redline_html(ctx.get("prev_statement"), ctx["statement"], card.changes)
+    st.markdown(f'<div class="margin-notes">{red}{ui.notes_html(notes)}</div>', unsafe_allow_html=True)
+
+
+def section_tone(card, ctx) -> None:
+    st.markdown(ui.tone_scale_html(card.tone_score), unsafe_allow_html=True)
+    if card.tone_quotes:
+        st.markdown(ui.quotes_html(card.tone_quotes[:3]), unsafe_allow_html=True)
+
+
+def section_you(card, ctx) -> None:
+    prof = ss.get("profile")
+    if prof:
+        r = personal.personal_impact(prof, card.decision.change_bps, ten_move(ctx), when_of(ctx))
+        st.markdown(personal_breakdown_html(r), unsafe_allow_html=True)
+        if st.button("Edit your situation", type="tertiary", key="edit_prof_tab"):
+            profile_dialog()
+    else:
+        st.markdown('<p class="note">Typical household: $5,000 card balance, $300,000 mortgage, $10,000 savings.</p>'
+                    + ui.rows_html(for_you_items(card, ctx)), unsafe_allow_html=True)
 
 
 def personal_breakdown_html(r) -> str:
@@ -484,189 +538,71 @@ def personal_breakdown_html(r) -> str:
     local = [i for i in r.items if i["topic"] == "Jobs where you live"]
     html = ""
     if affected:
-        html += '<div class="bd-h">Changes with this decision</div>' + ui.rows_html(affected)
+        html += '<div class="bd-h">Changes</div>' + ui.rows_html(affected)
     if unaffected:
-        html += '<div class="bd-h">Doesn’t change</div>' + ui.rows_html(unaffected)
+        html += '<div class="bd-h">No change</div>' + ui.rows_html(unaffected)
     if local:
         html += '<div class="bd-h">Where you live</div>' + ui.rows_html(local)
-    html += '<p class="note" style="margin-top:10px">Estimates use national average rates, not your actual loan terms. Not financial advice.</p>'
     return html
 
 
-# ---------------------------------------------------------------- the short version and asking
-def summary_block(card, ctx) -> None:
-    d = card.decision
-    items = [("What happened", ui.define(ui.E(plain_what(d)), ["FOMC", "federal funds rate", "basis points", "target range", "dissented"]))]
-    if card.tone_quotes:
-        items.append(("In the Fed’s words", f'<span class="say-inline">“{ui.E(card.tone_quotes[0].quote)}”</span>'))
-    items.append(("What it signals", ui.E(card.whats_next)))
-    html = '<div class="short"><h3>The short version</h3>' + "".join(
-        f'<div class="short-row"><div class="aside-h">{k}</div><p>{v}</p></div>' for k, v in items) + "</div>"
-    st.markdown(html, unsafe_allow_html=True)
-
-
-def suggested_questions(card, ctx) -> list[str]:
-    d = card.decision
-    qs = []
-    if d.dissenters:
-        names = " and ".join(n.split()[-1] for n in d.dissenters[:2])
-        qs.append(f"Why did {names} dissent?")
-    qs.append({"hold": "Why did the Fed hold rates?", "cut": "Why did the Fed cut rates?", "hike": "Why did the Fed raise rates?"}[d.direction])
-    if card.changes:
-        qs.append("What's the most important change in the wording?")
-    prof = ss.get("profile")
-    if prof and prof.housing in ("buying", "arm"):
-        qs.append("What does this mean for mortgage rates?")
-    elif prof and prof.card_balance:
-        qs.append("Will my credit card rate change?")
-    else:
-        qs.append("Will rates go up or down next?")
-    return qs[:3]
-
-
-def ask_block(card, ctx) -> None:
-    key = ctx["meeting_date"]
-    thread = ss.setdefault("threads", {}).setdefault(key, [])
-    st.markdown('<div class="ask"><h3>Ask about this meeting</h3></div>', unsafe_allow_html=True)
-    if agent.near_cap():
-        st.markdown('<p class="note">The free AI allowance for today is used up, so answers are automated from the statement until tomorrow.</p>',
-                    unsafe_allow_html=True)
-    for n, (q, a, label) in enumerate(thread):
-        with st.container(key=f"answer_m_{n}"):
-            st.markdown(f'<div class="qa-q">{ui.E(q)}</div>', unsafe_allow_html=True)
-            st.markdown(a)  # Markdown from the model; HTML is not allowed here
-            st.markdown(f'<div class="prov">{ui.E(label)}</div>', unsafe_allow_html=True)
-    left = config.SESSION_QUESTION_LIMIT - ss.questions
-    pending = None
-    if not thread and left > 0:
-        with st.container(key="suggest"):
-            for i, q in enumerate(suggested_questions(card, ctx)):
-                if st.button(q, type="tertiary", key=f"sq_{key}_{i}"):
-                    pending = q
-    with st.form(f"ask_{key}", border=False, clear_on_submit=True):
-        c1, c2 = st.columns([5, 1], vertical_alignment="bottom")
-        typed = c1.text_input("Your question", label_visibility="collapsed",
-                              placeholder="Ask anything about this decision" if left > 0 else "Question limit reached for this visit",
-                              disabled=left <= 0)
-        sent = c2.form_submit_button("Ask", type="primary", use_container_width=True, disabled=left <= 0)
-    st.markdown('<p class="note" style="margin-top:-6px">Questions go to free AI services, so don’t include personal details.</p>', unsafe_allow_html=True)
-    q = pending or (typed.strip() if sent and typed else None)
-    if q and left > 0:
-        ss.questions += 1
-        reader = personal.ai_labels(ss.profile) if (ss.get("ai_tailor") and ss.get("profile")) else None
-        meeting = None if key == "pasted" else key
-        with st.spinner("Looking it up"):
-            try:
-                ans = agent.answer(q, meeting=meeting, reader=reader)
-            except Exception:
-                ans = agent.rules_answer(q, meeting=meeting)
-        thread.append((q, ans.text, ans.label + (" · from an earlier answer" if ans.cached else "")))
-        st.rerun()
-
-
-def section_changed(card, ctx) -> None:
-    if not ctx.get("prev_statement"):
-        st.markdown('<p class="muted">This is the first statement in the record, so there is nothing to compare it with.</p>', unsafe_allow_html=True)
-        return
-    ref = "the most similar past statement, from " + long_date(ctx["prev_meeting_date"]) if ctx["meeting_date"] == "pasted" else "the previous statement, from " + long_date(ctx["prev_meeting_date"])
-    pct = round((ctx.get("changed_fraction") or 0) * 100)
-    st.markdown(f'<div class="prose"><p>Compared with {ref}, about {pct}% of the wording changed. Fed statements are edited word by word, '
-                'so even small changes are deliberate. <del class="key">Struck</del> words were removed, <ins class="key">shaded</ins> ones added, '
-                'and the numbers point to what each change means.</p></div>', unsafe_allow_html=True)
-    red, notes = ui.redline_html(ctx.get("prev_statement"), ctx["statement"], card.changes)
-    st.markdown(f'<div class="margin-notes">{red}{ui.notes_html(notes)}</div>', unsafe_allow_html=True)
-
-
-def section_tone(card, ctx) -> None:
-    st.markdown('<div class="prose"><p>Beyond the decision itself, the wording signals which way the Fed is leaning. '
-                + ui.define("Hawkish", ["hawkish"]) + " language points toward higher rates; " + ui.define("dovish", ["dovish"])
-                + " language points toward lower ones.</p></div>", unsafe_allow_html=True)
-    st.markdown(ui.tone_scale_html(card.tone_score), unsafe_allow_html=True)
-    if card.tone_quotes:
-        st.markdown(ui.quotes_html(card.tone_quotes[:3]), unsafe_allow_html=True)
-    with st.expander("How the tone score works"):
-        tr = tone_mod.score(ctx["statement"])
-        st.markdown(f'<p class="note">The score comes from the decoder card, which reads the whole statement. As a cross-check, a simple word-list model '
-                    f'scores this statement <span class="fig">{tr.score:+.1f}</span>. The two agree on direction most of the time, and the card score '
-                    'predicts the next rate move better.</p>', unsafe_allow_html=True)
-
-
 def section_economy(card, ctx) -> None:
-    st.markdown('<div class="prose"><p>The Fed’s two jobs are stable prices and maximum employment. Here is where things stood, '
-                'using the data that was public at the time.</p></div>', unsafe_allow_html=True)
-    rows = []
-    for b in ctx["impacts"]["for_country"]:
-        llm = next((x.text for x in card.for_country if x.topic.lower() == b["topic"].lower()), None)
-        rows.append({"topic": b["topic"], "number": b["number"], "text": llm if (llm and card.provider != "rules") else b["text"]})
-    st.markdown(ui.briefing_html(rows), unsafe_allow_html=True)
+    rows = [{"topic": b["topic"], "number": b["number"], "text": b["text"]} for b in ctx["impacts"]["for_country"]]
+    st.markdown(ui.rows_html(rows), unsafe_allow_html=True)
 
 
 def section_next(card, ctx, is_latest: bool) -> None:
-    st.markdown(f'<div class="prose"><p>{ui.E(card.whats_next)}</p></div>', unsafe_allow_html=True)
     if is_latest:
         f = cached_forecast()
         bt = f["backtest"]
-        st.markdown(f'<h3 class="gap">Our model’s odds for the next meeting</h3>'
-                    f'{ui.odds_html({"hold": f["p_hold"], "cut": f["p_cut"], "hike": f["p_hike"]})}', unsafe_allow_html=True)
-        verdict = "better than" if bt.get("beats_baseline") else "no better than"
-        st.markdown(f'<p class="note">Confidence: {f["confidence"]}. Tested on {bt.get("n")} past meetings, the model was right '
-                    f'{bt.get("model_hit_rate", 0) * 100:.0f}% of the time, {verdict} simply guessing “no change” '
-                    f'({bt.get("baseline_hit_rate", 0) * 100:.0f}%). Educational, not financial advice.</p>', unsafe_allow_html=True)
-        with st.expander("What goes into the forecast"):
-            s = f["signals"]
-            sep = f'{s["sep_median"]:.2f}%' if s["sep_median"] is not None else "not available"
-            st.markdown(f'<p class="note">A rule of thumb called the Taylor rule, using inflation and how hot the economy is running, suggests a rate of '
-                        f'<span class="fig">{s["taylor_rate"]:.2f}%</span>, against a current midpoint of <span class="fig">{s["current_mid"]:.3f}%</span>. '
-                        f'Fed officials’ own median projection is {sep}. The model also weighs the tone of recent statements and the last rate move.</p>',
-                        unsafe_allow_html=True)
+        st.markdown(ui.odds_html({"hold": f["p_hold"], "cut": f["p_cut"], "hike": f["p_hike"]}), unsafe_allow_html=True)
+        st.markdown(f'<p class="note">Right {bt.get("model_hit_rate", 0) * 100:.0f}% of the time in backtests '
+                    f'(always guessing “hold”: {bt.get("baseline_hit_rate", 0) * 100:.0f}%).</p>', unsafe_allow_html=True)
     elif ctx.get("forecast") and ctx["meeting_date"] != "pasted":
         fc = ctx["forecast"]
-        st.markdown('<h3 class="gap">What our model expected at the time</h3>'
-                    + ui.odds_html({k: fc[k] / 100 for k in ("hold", "cut", "hike")}), unsafe_allow_html=True)
-        all_d = dates()
-        i = all_d.index(ctx["meeting_date"])
-        if i + 1 < len(all_d):
-            nxt = all_d[i + 1]
-            g = meetings().set_index(meetings()["meeting_date"].dt.strftime("%Y-%m-%d")).loc[nxt]
-            st.markdown(f'<p>What actually happened next: on {long_date(nxt)}, {ui.headline(g["direction"], int(g["change_bps"]))[0].lower()}'
-                        f'{ui.headline(g["direction"], int(g["change_bps"]))[1:]}.</p>', unsafe_allow_html=True)
-        st.markdown('<p class="note">The model only used information available at the time. Educational, not financial advice.</p>', unsafe_allow_html=True)
+        st.markdown('<p class="note">What the model expected at the time</p>' + ui.odds_html({k: fc[k] / 100 for k in ("hold", "cut", "hike")}),
+                    unsafe_allow_html=True)
 
 
 def sources(card, ctx) -> None:
-    if True:
-        st.markdown(f'<p class="note">{ui.E(provider_note(card))}</p>', unsafe_allow_html=True)
-        st.markdown('<div class="redline">' + "".join(f"<p>{ui.E(p)}</p>" for p in ctx["statement"].split("\n\n")) + "</div>", unsafe_allow_html=True)
-        cites = "".join(f'<li><span class="fig">{ui.E(c.source)}</span>: {ui.E(c.detail)}</li>' for c in card.citations if c.source != "statement")
-        if cites:
-            st.markdown(f'<p class="note" style="margin-top:8px">Data used</p><ul class="note">{cites}</ul>', unsafe_allow_html=True)
+    st.markdown('<div class="redline">' + "".join(f"<p>{ui.E(p)}</p>" for p in ctx["statement"].split("\n\n")) + "</div>", unsafe_allow_html=True)
+    cites = "".join(f'<li><span class="fig">{ui.E(c.source)}</span> {ui.E(c.detail)}</li>' for c in card.citations if c.source != "statement")
+    if cites:
+        st.markdown(f'<ul class="note">{cites}</ul>', unsafe_allow_html=True)
 
 
 def decoder(card, ctx, is_latest: bool) -> None:
-    meeting_header(card, ctx)
-    personal_block(card, ctx, is_latest)
-    summary_block(card, ctx)
+    d = card.decision
+    when = (ss.get("pasted_label") or "Pasted statement") if ctx["meeting_date"] == "pasted" else long_date(ctx["meeting_date"])
+    st.markdown(f'<div class="mhead"><div class="dateline">{when}</div><h1>{ui.E(ui.headline(d.direction, d.change_bps))}</h1></div>',
+                unsafe_allow_html=True)
+    glance(card, ctx, is_latest)
+    ai_note(card, ctx)
+    st.markdown('<div class="gap-l"></div>', unsafe_allow_html=True)
+    three_things(card, ctx)
     ask_block(card, ctx)
-    st.markdown('<div class="deeper-h"><h3>Go deeper</h3></div>', unsafe_allow_html=True)
-    tabs = st.tabs(["What changed", "How the Fed sounded", "The economy", "What’s next", "Sources"])
+    st.markdown('<div class="gap-l"></div>', unsafe_allow_html=True)
+    tabs = st.tabs(["For you", "What changed", "Tone", "Economy", "Forecast", "Statement"])
     with tabs[0]:
-        section_changed(card, ctx)
+        section_you(card, ctx)
     with tabs[1]:
-        section_tone(card, ctx)
+        section_changed(card, ctx)
     with tabs[2]:
-        section_economy(card, ctx)
+        section_tone(card, ctx)
     with tabs[3]:
-        section_next(card, ctx, is_latest)
+        section_economy(card, ctx)
     with tabs[4]:
+        section_next(card, ctx, is_latest)
+    with tabs[5]:
         sources(card, ctx)
     if ctx["meeting_date"] != "pasted":
         all_d = dates()
         i = all_d.index(ctx["meeting_date"])
         with st.container(key="pager"):
             c1, c2 = st.columns(2)
-            if i > 0 and c1.button(f"← {long_date(all_d[i - 1])}", type="tertiary", key="pg_prev"):
+            if i > 0 and c1.button(f"← {pd.Timestamp(all_d[i - 1]):%b %-d, %Y}", type="tertiary", key="pg_prev"):
                 open_meeting(all_d[i - 1]); st.rerun()
-            if i + 1 < len(all_d) and c2.button(f"{long_date(all_d[i + 1])} →", type="tertiary", key="pg_next"):
+            if i + 1 < len(all_d) and c2.button(f"{pd.Timestamp(all_d[i + 1]):%b %-d, %Y} →", type="tertiary", key="pg_next"):
                 open_meeting(all_d[i + 1]); st.rerun()
 
 
@@ -674,7 +610,7 @@ def page_decode() -> None:
     if not ss.meeting:
         page_home()
         return
-    if st.button("← Choose another meeting", type="tertiary", key="restart_top"):
+    if st.button("← All meetings", type="tertiary", key="restart_top"):
         open_meeting(None)
         st.rerun()
     if ss.meeting == "pasted":
@@ -701,9 +637,7 @@ def page_decode() -> None:
 # ---------------------------------------------------------------- timeline
 def page_timeline() -> None:
     st.markdown('<div class="step" style="padding-top:28px"><h1>Every Fed decision since 2000</h1></div>', unsafe_allow_html=True)
-    st.markdown('<p class="lede">The line is the Fed’s interest rate target. Each dot is a meeting; the larger dots are rate changes. '
-                f'Color shows the tone of the statement, from <span class="dove">dovish</span> to <span class="hawk">hawkish</span>. '
-                'Tap or click a dot to see that meeting.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="lede">Each dot is a meeting, colored from <span class="dove">dovish</span> to <span class="hawk">hawkish</span>. Click one.</p>', unsafe_allow_html=True)
     fig = ui.timeline_fig(meetings(), tones(), selected=ss.get("tl_pick"))
     ev = st.plotly_chart(fig, use_container_width=True, on_select="rerun", selection_mode="points", key="timeline",
                          config={"displayModeBar": False, "scrollZoom": False})
@@ -729,7 +663,7 @@ def page_timeline() -> None:
                 eff = ("It didn’t change your monthly costs." if abs(pr.monthly_total) < 0.005 else
                        f"For you: about {money(pr.monthly_total)} a month {'less' if pr.monthly_total < 0 else 'more'}.")
                 st.markdown(f'<p style="margin:6px 0 0">{ui.E(eff)}</p>', unsafe_allow_html=True)
-            if st.button("Walk through this meeting", type="primary"):
+            if st.button("Open this meeting", type="primary"):
                 go("Decode", pick)
                 st.rerun()
     with st.expander("See the meetings as a table"):
