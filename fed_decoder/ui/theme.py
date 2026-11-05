@@ -1,329 +1,229 @@
-"""Fed Decoder visual system.
+"""Fed Decoder visual system: "The Staircase".
 
-Warm and restrained. Newsreader carries the headlines and the Fed's own words
-(statement text, quotes); Inter carries everything people read and every
-interface label; figures use Inter's tabular numerals. Plex Mono is reserved
-for the money columns people compare line by line.
+Color carries meaning only: red = hike / hawkish, blue = cut / dovish, gray = hold /
+neutral. Nothing else is colored. Numbers are the stars: every rate, percent and
+vote is set in JetBrains Mono. Words use Inter Tight. Both fonts are self-hosted
+from /app/static/fonts (Streamlit static serving).
 
-Color has jobs, not moods: forest green = dovish / easing / the primary
-action, terracotta = hawkish / removed text. Both always appear with a word.
-
-Containers are rare on purpose. Structure comes from type scale, whitespace,
-an occasional rule, and the left accent bar that marks a computed answer.
-The only bordered shapes are the things you can press.
+Shapes: 1px hairlines, 6px radius maximum, no shadows, 48px between bands.
+Motion: only where it means something (marker glide, card expand), and off when
+the reader asks for reduced motion.
 """
 
-IVORY = "#F8F7F3"     # page
-SURFACE = "#FFFFFF"   # pressable things and the input
-INK = "#252923"
-MUTED = "#686C64"
-FAINT = "#A2A49C"
-LINE = "#E4E1D8"
-GREEN = "#647C68"     # accent; dovish
-GREEN_SOFT = "#E4EAE2"
-TERRA = "#B0654A"     # supporting accent; hawkish
-NEUTRAL = "#C9C5BA"   # midpoint of the tone scale
-DEL_INK = "#8E8A80"
+BG = "#FAFAF7"
+INK = "#141414"
+SUB = "#5C5C58"     # secondary text (passes 4.5:1 on BG)
+FAINT = "#8E8C86"
+RULE = "#E6E4DE"
+HIKE = "#C8402A"    # red: hike / hawkish
+CUT = "#2B5FAF"     # blue: cut / dovish
+HOLD = "#6E6E6A"    # gray: hold / neutral
+HIKE_BG = "#FBEDEA"
+CUT_BG = "#EAF0FA"
 
 CSS = f"""
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {{ --ivory:{IVORY}; --surface:{SURFACE}; --ink:{INK}; --muted:{MUTED}; --faint:{FAINT}; --line:{LINE}; --green:{GREEN}; --green-soft:{GREEN_SOFT}; --terra:{TERRA}; }}
+@font-face {{ font-family: 'Inter Tight'; src: url('/app/static/fonts/InterTight.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }}
+@font-face {{ font-family: 'JetBrains Mono'; src: url('/app/static/fonts/JetBrainsMono.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }}
+:root {{ --bg:{BG}; --ink:{INK}; --sub:{SUB}; --faint:{FAINT}; --rule:{RULE}; --hike:{HIKE}; --cut:{CUT}; --hold:{HOLD};
+  --sans: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif; --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace; }}
 
-/* ---------- page ---------- */
-html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] {{ background: var(--ivory) !important; color: var(--ink); }}
-[data-testid="stHeader"], [data-testid="stToolbar"], [data-testid="stDecoration"], #MainMenu, footer {{ display: none !important; }}
+/* ---------- chrome off, one centered column ---------- */
+html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"], [data-testid="stBottom"] > div {{ background: var(--bg) !important; color: var(--ink); }}
+[data-testid="stHeader"], [data-testid="stToolbar"], [data-testid="stDecoration"], [data-testid="stStatusWidget"], #MainMenu, footer {{ display: none !important; }}
 [data-testid="stHeaderActionElements"], .stApp h1 > a, .stApp h2 > a, .stApp h3 > a {{ display: none !important; }}
-.block-container {{ max-width: 1040px; padding: 28px 32px 72px !important; }}
-.stApp, .stApp div, .stApp span, .stApp p, .stApp li, .stApp label, .stApp input, .stApp textarea, .stApp button, .stApp select, .stApp td, .stApp th, .stApp dt, .stApp dd {{
-  font-family: 'Inter', system-ui, -apple-system, sans-serif; letter-spacing: normal; }}
+.block-container {{ max-width: 1100px !important; padding: 18px 28px 140px !important; }}
+.stApp, .stApp div, .stApp span, .stApp p, .stApp li, .stApp label, .stApp input, .stApp textarea, .stApp button, .stApp td, .stApp th {{
+  font-family: var(--sans); letter-spacing: normal; }}
 [data-testid="stIconMaterial"], .material-symbols-rounded {{ font-family: 'Material Symbols Rounded' !important; }}
-.stApp p, .stApp li {{ font-size: 17px; line-height: 1.65; color: var(--ink); }}
-.stMarkdown p {{ margin-bottom: 0.6em; }}
-a {{ color: var(--green); }}
+.stApp p, .stApp li {{ font-size: 17px; line-height: 1.55; color: var(--ink); }}
+.stMarkdown p {{ margin: 0 0 .5em; }}
+h1, h2, h3 {{ font-family: var(--sans) !important; color: var(--ink) !important; letter-spacing: -0.01em !important; padding: 0 !important; }}
+.stApp .mono, .stApp .num, .stApp .rate, .stApp .chip, .stApp .vcap, .stApp .live, .stApp .live *, .stApp .dateline, .stApp .slegend,
+.stApp .mine .v, .stApp .sig .v, .stApp .res-date, .stApp .res-move, .stApp .tilebox .big, .stApp .tilebox .cap, .stApp .ctitle .tog, .stApp .reason .spk {{
+  font-family: var(--mono) !important; font-variant-numeric: tabular-nums; letter-spacing: 0; }}
+.stApp .vcap small, .stApp .live .pop {{ font-family: var(--sans) !important; }}
+.sub {{ color: var(--sub) !important; }}
+.hike {{ color: var(--hike) !important; }} .cut {{ color: var(--cut) !important; }} .hold {{ color: var(--hold) !important; }}
 @media (prefers-reduced-motion: no-preference) {{
-  .reveal {{ animation: reveal .3s ease-out both; }}
-  @keyframes reveal {{ from {{ opacity: 0; transform: translateY(4px); }} to {{ opacity: 1; transform: none; }} }}
+  .glide {{ animation: glide .3s ease-out both; }}
+  @keyframes glide {{ from {{ opacity: 0; transform: translateY(3px); }} to {{ opacity: 1; transform: none; }} }}
 }}
 
-/* ---------- type ---------- */
-h1, h2, h3, .say, .result .big {{ text-wrap: balance; }}
-h1, h2, h3 {{ font-family: 'Newsreader', Georgia, serif !important; font-weight: 500 !important; color: var(--ink) !important; letter-spacing: normal !important; }}
-.stApp h1 *, .stApp h2 *, .stApp h3 * {{ font-family: inherit !important; }}
-h1 {{ font-size: 54px !important; line-height: 1.06 !important; padding: 0 !important; margin: 0 0 18px !important; max-width: 880px; }}
-h2 {{ font-size: 32px !important; line-height: 1.2 !important; padding: 0 !important; margin: 0 0 12px !important; }}
-h3 {{ font-size: 23px !important; line-height: 1.3 !important; padding: 0 !important; margin: 0 0 8px !important; }}
-.stApp h3.gap {{ margin-top: 36px !important; }}
-.lede {{ font-size: 20px !important; line-height: 1.55 !important; color: var(--muted) !important; max-width: 620px; }}
-.muted, .muted * {{ color: var(--muted) !important; }}
-.note {{ font-size: 14px !important; line-height: 1.55 !important; color: var(--muted) !important; }}
-.fig, .tab {{ font-variant-numeric: tabular-nums; }}
-.fig {{ font-family: 'IBM Plex Mono', ui-monospace, monospace !important; }}
-.dove {{ color: var(--green) !important; }} .hawk {{ color: var(--terra) !important; }}
+/* ---------- top bar ---------- */
+.brand {{ font-family: var(--sans); font-weight: 800; font-size: 19px; letter-spacing: -0.02em; line-height: 40px; }}
+.brand span {{ font-family: var(--mono); font-weight: 500; font-size: 15px; color: var(--sub); margin-left: 6px; }}
+div[class*="st-key-topbar"] [data-testid="stBaseButton-tertiary"] p {{ color: var(--ink) !important; font-size: 15px !important; font-weight: 500; }}
+div[class*="st-key-topbar"] [data-testid="stColumn"]:last-child [data-testid="stElementContainer"] {{ margin-left: auto; width: fit-content !important; }}
 
-/* ---------- top bar: wordmark and a quiet text nav (active = underline, not a chip) ---------- */
-.wordmark {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 25px; font-weight: 600; color: var(--ink); line-height: 44px; }}
-.wordmark span {{ color: var(--green); font-family: inherit !important; }}
-.st-key-nav [data-testid="stElementContainer"] {{ width: 100% !important; }}
-.st-key-nav [data-testid="stRadioGroup"] {{ gap: 26px; justify-content: flex-end; flex-wrap: wrap; }}
-.st-key-nav [data-testid="stRadioOption"] {{ padding: 10px 0 8px; margin: 0; min-height: 44px; cursor: pointer; border-bottom: 2px solid transparent; border-radius: 0; }}
-.st-key-nav [data-testid="stRadioOption"] > div > div:first-child {{ display: none; }}
-.st-key-nav [data-testid="stRadioOption"] p {{ font-size: 16px !important; color: var(--muted) !important; font-weight: 500; }}
-.st-key-nav [data-testid="stRadioOption"]:hover p {{ color: var(--ink) !important; }}
-.st-key-nav [data-testid="stRadioOption"][data-selected="true"] {{ border-bottom-color: var(--ink); }}
-.st-key-nav [data-testid="stRadioOption"][data-selected="true"] p {{ color: var(--ink) !important; }}
-.st-key-nav [data-testid="stRadioOption"]:has(input:focus-visible) {{ outline: 2px solid var(--green); outline-offset: 4px; }}
+/* ---------- live strip ---------- */
+.live {{ display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: center; font-family: var(--mono); font-size: 13px; color: var(--sub);
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 7px 0; margin: 4px 0 6px; }}
+.live .it {{ position: relative; cursor: default; white-space: nowrap; }}
+.live .it b {{ color: var(--ink); font-weight: 500; }}
+.live .it .pop {{ display: none; position: absolute; top: 22px; left: 0; z-index: 30; background: #fff; border: 1px solid var(--rule); border-radius: 6px;
+  padding: 8px 10px; width: 210px; white-space: normal; color: var(--sub); }}
+.live .it:hover .pop, .live .it:focus .pop, .live .it:focus-within .pop {{ display: block; }}
+.live .new {{ color: var(--ink); font-weight: 500; }}
 
-/* ---------- buttons ---------- */
-.stButton button, .stFormSubmitButton button {{ border-radius: 10px; min-height: 46px; padding: 8px 22px; font-size: 16px; font-weight: 500;
-  border: 1px solid var(--line); background: var(--surface); color: var(--ink); box-shadow: none; }}
-.stButton button:hover {{ border-color: var(--ink); color: var(--ink); background: var(--surface); }}
-.stButton button:focus-visible, .stFormSubmitButton button:focus-visible {{ outline: 2px solid var(--green); outline-offset: 2px; }}
-[data-testid^="stBaseButton-primary"] {{ background: var(--green) !important; border-color: var(--green) !important; color: #fff !important; }}
+/* ---------- jargon: dotted underline, one-line definition on hover or tap ---------- */
+.term {{ border-bottom: 1.5px dotted currentColor; cursor: help; position: relative; outline: none; }}
+.term::after {{ content: attr(data-def); display: none; position: absolute; left: 0; top: calc(100% + 6px); z-index: 40; width: max-content; max-width: 260px;
+  background: var(--ink); color: #fff; font-family: var(--sans); font-size: 13px; font-weight: 400; line-height: 1.4; padding: 7px 9px; border-radius: 6px;
+  white-space: normal; letter-spacing: 0; text-transform: none; }}
+.term:hover::after, .term:focus::after {{ display: block; }}
+
+/* ---------- verdict ---------- */
+.verdict {{ margin: 14px 0 0; }}
+.dateline {{ font-family: var(--mono); font-size: 14px; color: var(--sub); margin-bottom: 6px; }}
+.verdict h1 {{ font-size: 50px !important; line-height: 1.04 !important; font-weight: 800 !important; letter-spacing: -0.025em !important; margin: 0 0 14px !important; }}
+.facts3 {{ display: grid; grid-template-columns: 1.25fr 1fr 1.1fr; gap: 36px; align-items: start; }}
+.fact .lab {{ font-size: 13px; color: var(--sub); margin-bottom: 8px; }}
+.rate {{ font-family: var(--mono); font-size: 42px; line-height: 1; font-weight: 500; letter-spacing: -0.02em; white-space: nowrap; }}
+.chip {{ display: inline-block; font-family: var(--mono); font-size: 14px; font-weight: 500; padding: 3px 8px; border-radius: 6px; border: 1px solid var(--rule); margin-top: 12px; }}
+.chip.hike {{ border-color: var(--hike); }} .chip.cut {{ border-color: var(--cut); }}
+.dots {{ display: flex; flex-wrap: wrap; gap: 4px; max-width: 300px; margin-top: 8px; }}
+.dot {{ width: 12px; height: 12px; border-radius: 50%; background: var(--ink); position: relative; outline: none; }}
+.dot.dhike {{ background: transparent; box-shadow: inset 0 0 0 2.5px var(--hike); }}
+.dot.dcut {{ background: transparent; box-shadow: inset 0 0 0 2.5px var(--cut); }}
+.dot.dother {{ background: transparent; box-shadow: inset 0 0 0 2.5px var(--hold); }}
+.dot[data-tip]:hover::after, .dot[data-tip]:focus::after {{ content: attr(data-tip); position: absolute; left: 50%; top: 22px; transform: translateX(-50%); z-index: 40;
+  width: max-content; max-width: 220px; background: var(--ink); color: #fff; font-size: 13px; line-height: 1.35; padding: 6px 8px; border-radius: 6px; }}
+.vcap {{ font-family: var(--mono); font-size: 32px; font-weight: 500; margin-top: 12px; line-height: 1; }}
+.vcap small {{ font-family: var(--sans); font-size: 14px; color: var(--sub); font-weight: 400; margin-left: 8px; }}
+.stripe {{ position: relative; height: 10px; border-radius: 5px; margin: 12px 0 0; max-width: 300px;
+  background: linear-gradient(90deg, var(--cut) 0%, #C9C7C1 50%, var(--hike) 100%); }}
+.stripe i {{ position: absolute; top: -3px; width: 2px; height: 16px; background: var(--ink); opacity: .22; margin-left: -1px; }}
+.stripe b {{ position: absolute; top: -7px; width: 6px; height: 24px; background: var(--ink); border: 2px solid var(--bg); border-radius: 3px; margin-left: -5px; }}
+.stripe-ends {{ display: flex; justify-content: space-between; max-width: 300px; font-size: 13px; color: var(--sub); margin-top: 8px; }}
+.tcap {{ font-size: 20px; font-weight: 600; margin-top: 12px; }}
+div[class*="st-key-nextchip"] [data-testid="stBaseButton-secondary"] {{ border: 1px solid var(--rule) !important; border-radius: 6px !important; background: #fff !important;
+  min-height: 34px !important; padding: 4px 10px !important; }}
+div[class*="st-key-nextchip"] [data-testid="stBaseButton-secondary"] p {{ font-family: var(--mono) !important; font-size: 14px !important; white-space: normal; text-align: left; }}
+div[class*="st-key-nextchip"] [data-testid="stBaseButton-secondary"]:hover {{ border-color: var(--ink) !important; }}
+
+/* ---------- four answers ---------- */
+.band {{ height: 14px; }}
+div[class*="st-key-card_"], div[class*="st-key-cardopen_"] {{ border: 1px solid var(--rule); border-radius: 6px; background: #fff; padding: 12px 18px 10px; }}
+div[class*="st-key-card_"]:hover {{ border-color: #CFCCC4; }}
+div[class*="st-key-cardopen_"] {{ border-color: var(--ink); }}
+div[class*="st-key-cardh_"] {{ position: relative; min-height: 84px; }}
+.ctitle {{ font-size: 13px; color: var(--sub); display: flex; justify-content: space-between; }}
+.ctitle .tog {{ font-family: var(--mono); color: var(--ink); font-size: 16px; line-height: 1; }}
+.csent {{ font-size: 20px; font-weight: 600; line-height: 1.3; margin: 4px 0 8px; letter-spacing: -0.01em; }}
+.csent del {{ color: var(--hike); text-decoration-thickness: 1.5px; font-weight: 500; }}
+.csent ins {{ text-decoration: none; background: {CUT_BG}; color: var(--ink); padding: 0 3px; border-radius: 3px; }}
+div[class*="st-key-hit_"] {{ position: absolute !important; inset: 0; z-index: 5; }}
+div[class*="st-key-hit_"] [data-testid="stElementContainer"], div[class*="st-key-hit_"] .stButton {{ width: 100% !important; height: 100% !important; }}
+div[class*="st-key-hit_"] button {{ width: 100% !important; height: 100% !important; opacity: 0; cursor: pointer; }}
+div[class*="st-key-hit_"] button:focus-visible {{ opacity: 1; background: transparent !important; outline: 2px solid var(--ink); border-radius: 6px; }}
+div[class*="st-key-hit_"] button:focus-visible p {{ visibility: hidden; }}
+.cbody {{ border-top: 1px solid var(--rule); margin-top: 12px; padding-top: 14px; }}
+@media (prefers-reduced-motion: no-preference) {{ .cbody {{ animation: glide .2s ease-out both; }} }}
+.reason {{ display: grid; grid-template-columns: 1fr 130px; gap: 16px; align-items: center; padding: 8px 0; }}
+.reason p {{ font-size: 15px !important; margin: 0 !important; }}
+.reason .spk {{ text-align: right; font-family: var(--mono); font-size: 13px; color: var(--sub); }}
+.chg {{ padding: 8px 0; }}
+.chg p {{ font-size: 15px !important; margin: 0 0 2px !important; }}
+.chg del {{ color: var(--hike); text-decoration-thickness: 1.5px; }}
+.chg ins {{ text-decoration: none; background: {CUT_BG}; padding: 0 2px; border-radius: 3px; }}
+.chg .note {{ font-size: 13px; color: var(--sub); }}
+.mine {{ display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; padding: 8px 0; border-top: 1px solid var(--rule); align-items: baseline; }}
+.mine:first-child {{ border-top: 0; }}
+.mine .k {{ font-size: 15px; }}
+.mine .v {{ font-family: var(--mono); font-size: 16px; font-weight: 500; text-align: right; white-space: nowrap; }}
+.mine .s {{ grid-column: 1 / -1; font-size: 13px; color: var(--sub); }}
+.sbar {{ display: flex; height: 12px; border-radius: 4px; overflow: hidden; gap: 2px; max-width: 320px; }}
+.sbar i {{ display: block; height: 100%; }}
+.slegend {{ font-family: var(--mono); font-size: 13px; color: var(--sub); margin-top: 8px; }}
+.sig {{ display: grid; grid-template-columns: 1fr auto; gap: 6px 14px; font-size: 15px; padding: 4px 0; }}
+.sig .v {{ font-family: var(--mono); }}
+.mini {{ font-size: 13px; color: var(--sub); }}
+div[class*="st-key-mypills"] [data-testid="stButtonGroup"] button {{ border-radius: 6px !important; border-color: var(--rule) !important; min-height: 34px; }}
+div[class*="st-key-mypills"] [data-testid="stButtonGroup"] button[aria-checked="true"], div[class*="st-key-mypills"] [data-testid="stButtonGroup"] button[kind*="Active"] {{
+  border-color: var(--ink) !important; background: var(--ink) !important; color: #fff !important; }}
+div[class*="st-key-mypills"] [data-testid="stButtonGroup"] button[kind*="Active"] p {{ color: #fff !important; }}
+
+/* ---------- ask: fixed slim bar, chips on focus, answers in a side panel ---------- */
+[data-testid="stBottom"] {{ border-top: 1px solid var(--rule); }}
+[data-testid="stBottomBlockContainer"] {{ max-width: 1100px !important; padding: 8px 28px 12px !important; }}
+div[class*="st-key-askbar"] [data-baseweb="input"], [data-testid="stBottom"] [data-baseweb="input"] {{ border-radius: 6px !important; border: 1px solid var(--rule) !important; background: #fff !important; }}
+[data-testid="stBottom"] input {{ font-size: 16px !important; min-height: 44px; background: #fff !important; }}
+[data-testid="stBottom"] [data-baseweb="input"] > div {{ background: #fff !important; }}
+[data-testid="stBottom"] [data-testid="stFormSubmitButton"] button {{ min-height: 46px; border-radius: 6px; }}
+[data-testid="stBottom"] [data-testid="stForm"] {{ border: 0 !important; padding: 0 !important; }}
+div[class*="st-key-facts"] {{ margin-top: 2px; }}
+.csent .mono {{ letter-spacing: -0.04em; }}
+div[class*="st-key-askchips"] {{ display: none; }}
+[data-testid="stBottomBlockContainer"]:focus-within div[class*="st-key-askchips"], [data-testid="stBottomBlockContainer"]:hover div[class*="st-key-askchips"] {{ display: block; }}
+div[class*="st-key-askchips"] [data-testid="stHorizontalBlock"] {{ gap: 8px !important; flex-wrap: wrap; }}
+div[class*="st-key-askchips"] [data-testid="stColumn"] {{ width: auto !important; flex: 0 0 auto !important; min-width: 0 !important; }}
+div[class*="st-key-askchips"] button {{ min-height: 30px !important; padding: 2px 10px !important; border-radius: 6px !important; border: 1px solid var(--rule) !important; background: #fff !important; }}
+div[class*="st-key-askchips"] button p {{ font-size: 14px !important; }}
+[data-testid="stDialog"] [role="dialog"] {{ position: fixed !important; top: 0 !important; right: 0 !important; left: auto !important; bottom: 0 !important; margin: 0 !important;
+  width: min(480px, 100vw) !important; max-width: 480px !important; height: 100vh !important; max-height: 100vh !important; border-radius: 0 !important;
+  border-left: 1px solid var(--rule); background: var(--bg) !important; box-shadow: none !important; overflow-y: auto; transform: none !important; }}
+@media (prefers-reduced-motion: no-preference) {{ [data-testid="stDialog"] [role="dialog"] {{ animation: slidein .2s ease-out both; }}
+  @keyframes slidein {{ from {{ transform: translateX(24px); opacity: 0; }} to {{ transform: none; opacity: 1; }} }} }}
+[data-testid="stDialog"] div, [data-testid="stDialog"] span, [data-testid="stDialog"] p, [data-testid="stDialog"] li, [data-testid="stDialog"] button {{ font-family: var(--sans); }}
+[data-testid="stDialog"] .res-date, [data-testid="stDialog"] .res-move, [data-testid="stDialog"] .mono, [data-testid="stDialog"] .num, [data-testid="stDialog"] .tilebox .big {{ font-family: var(--mono) !important; }}
+[data-testid="stDialog"] [role="dialog"] h2 {{ padding: 22px 0 0 24px !important; }}
+[data-testid="stDialog"] [role="dialog"] h2 p {{ font-size: 13px !important; font-weight: 500 !important; color: var(--sub) !important; text-transform: uppercase; letter-spacing: .08em !important; margin: 0 !important; }}
+@media (max-width: 760px) {{ [data-testid="stDialog"] [role="dialog"] {{ top: auto !important; height: 82vh !important; max-height: 82vh !important; width: 100vw !important; max-width: 100vw !important;
+  border-left: 0; border-top: 1px solid var(--rule); border-radius: 6px 6px 0 0 !important; }} }}
+.aq {{ font-size: 19px; font-weight: 600; margin: 4px 0 10px; }}
+.res-row {{ display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; font-size: 15px; padding: 4px 0; }}
+.res-date {{ font-family: var(--mono); font-weight: 500; min-width: 108px; }}
+.res-move {{ font-family: var(--mono); min-width: 80px; }}
+.res-quote p {{ font-size: 15px !important; margin: 2px 0 8px !important; }}
+.res-people {{ display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; margin: 8px 0; }}
+.res-people div {{ display: flex; flex-direction: column; font-size: 15px; }}
+.res-people span {{ font-size: 13px; color: var(--sub); }}
+.tilebox {{ border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; margin: 8px 0; background: #fff; }}
+.tilebox .lab {{ font-size: 13px; color: var(--sub); }}
+.tilebox .big {{ font-family: var(--mono); font-size: 28px; font-weight: 500; }}
+.tilebox .cap {{ font-family: var(--mono); font-size: 13px; color: var(--sub); }}
+
+/* ---------- buttons, inputs, misc ---------- */
+.stButton button {{ border-radius: 6px; border: 1px solid var(--rule); background: #fff; color: var(--ink); box-shadow: none; min-height: 40px; }}
+.stButton button:hover {{ border-color: var(--ink); color: var(--ink); }}
+[data-testid="stBaseButton-tertiary"] {{ border: 0 !important; background: transparent !important; padding: 4px 0 !important; min-height: 32px; }}
+[data-testid="stBaseButton-tertiary"] p {{ color: var(--ink) !important; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule); }}
+[data-testid="stBaseButton-tertiary"]:hover p {{ text-decoration-color: var(--ink); }}
+[data-testid^="stBaseButton-primary"] {{ background: var(--ink) !important; border-color: var(--ink) !important; }}
 [data-testid^="stBaseButton-primary"] p {{ color: #fff !important; }}
-[data-testid^="stBaseButton-primary"]:hover {{ background: #56695A !important; border-color: #56695A !important; }}
-[data-testid="stBaseButton-tertiary"] {{ border: 0 !important; background: transparent !important; padding: 6px 0 !important; min-height: 40px; }}
-[data-testid="stBaseButton-tertiary"] > div {{ overflow: visible; }}
-[data-testid="stBaseButton-tertiary"] p {{ color: var(--green) !important; font-weight: 500; text-align: left; white-space: normal; overflow: visible; text-overflow: clip; }}
-[data-testid="stBaseButton-tertiary"]:hover p {{ text-decoration: underline; text-underline-offset: 3px; }}
-.st-key-pager [data-testid="stColumn"]:last-child [data-testid="stElementContainer"] {{ margin-left: auto; width: fit-content !important; }}
-.st-key-pager {{ margin-top: 8px; }}
+[data-testid="stExpander"] details {{ border: 0 !important; border-top: 1px solid var(--rule) !important; border-radius: 0 !important; background: transparent !important; }}
+[data-testid="stExpander"] summary {{ padding-left: 0 !important; }}
+[data-testid="stExpander"] summary p {{ font-size: 14px !important; }}
+.redline p {{ font-size: 15px !important; line-height: 1.65 !important; }}
+.redline del {{ color: var(--hike); }} .redline ins {{ text-decoration: none; background: {CUT_BG}; }}
+.about-row {{ display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 14px 0; border-top: 1px solid var(--rule); max-width: 820px; }}
+.about-row h3 {{ font-size: 17px !important; font-weight: 600 !important; margin: 0 !important; }}
+.about-row p {{ margin: 0 !important; }}
+.byline {{ margin-top: 30px !important; font-size: 14px !important; color: var(--sub) !important; }}
+.foot {{ margin-top: 60px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--sub); }}
+iframe[title*="staircase"] {{ display: block; }}
 
-/* ---------- inputs: sized to what they hold ---------- */
-[data-baseweb="select"] > div, .stNumberInput input, .stTextArea textarea, [data-baseweb="input"] {{ background: var(--surface) !important; border-color: var(--line) !important; border-radius: 10px !important; }}
-.stNumberInput {{ max-width: 300px; }}
-.stNumberInput button {{ display: none; }}
-[data-testid="stWidgetLabel"] p {{ font-size: 15px !important; font-weight: 500; color: var(--ink) !important; }}
-.st-key-ask_meeting textarea {{ font-size: 20px !important; line-height: 1.5 !important; padding: 16px 18px !important; }}
-
-/* ---------- choice tiles (calculator): the one place boxes earn their keep, because you press them ---------- */
-div[class*="st-key-tiles"] [data-testid="stElementContainer"] {{ width: 100% !important; }}
-div[class*="st-key-tiles"] [data-testid="stRadioGroup"] {{ display: grid !important; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; width: 100%; max-width: 820px; }}
-div[class*="st-key-tiles"] [data-testid="stRadioOption"] {{ margin: 0; padding: 14px 16px; min-height: 58px; width: 100%; background: var(--surface); border: 1px solid var(--line);
-  border-radius: 10px; cursor: pointer; display: flex; align-items: center; transition: border-color .12s, background .12s; }}
-div[class*="st-key-tiles"] [data-testid="stRadioOption"] > div > div:first-child {{ display: none; }}
-div[class*="st-key-tiles"] [data-testid="stRadioOption"] p {{ font-size: 16px !important; line-height: 1.35 !important; }}
-div[class*="st-key-tiles"] [data-testid="stRadioOption"]:hover {{ border-color: var(--faint); }}
-div[class*="st-key-tiles"] [data-testid="stRadioOption"][data-selected="true"] {{ border-color: var(--green); background: var(--green-soft); }}
-div[class*="st-key-tiles"] [data-testid="stRadioOption"]:has(input:focus-visible) {{ outline: 2px solid var(--green); outline-offset: 2px; }}
-div[class*="st-key-checks"] {{ max-width: 820px; }}
-div[class*="st-key-checks"] [data-testid="stElementContainer"] {{ width: 100% !important; }}
-div[class*="st-key-checks"] [data-testid="stCheckbox"] label {{ padding: 13px 14px; min-height: 52px; width: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; align-items: center; }}
-div[class*="st-key-checks"] [data-testid="stCheckbox"] label:has(input:checked) {{ border-color: var(--green); background: var(--green-soft); }}
-div[class*="st-key-checks"] [data-testid="stCheckbox"] {{ margin-bottom: 8px; }}
-
-/* ---------- decoder narrative ---------- */
-.step {{ padding: 56px 0 6px; }}
-.step.first {{ padding-top: 34px; }}
-.dateline {{ font-size: 15px; color: var(--muted); margin-bottom: 10px; }}
-dl.facts {{ display: flex; flex-wrap: wrap; gap: 10px 48px; margin: 6px 0 26px; }}
-dl.facts dt {{ font-size: 14px; color: var(--muted); font-weight: 400; }}
-dl.facts dd {{ font-size: 21px; font-weight: 500; margin: 2px 0 0; font-variant-numeric: tabular-nums; }}
-.prose {{ max-width: 660px; }}
-.prose p {{ font-size: 18px !important; line-height: 1.7 !important; }}
-.say, .say * {{ font-family: 'Newsreader', Georgia, serif !important; color: var(--ink) !important; }}
-.say {{ max-width: 620px; margin: 22px 0 8px; font-size: 23px; line-height: 1.45; text-indent: -0.42em; }}
-/* "Why it matters": an asymmetric side heading, not a card */
-.aside {{ display: grid; grid-template-columns: 170px minmax(0, 520px); gap: 28px; margin: 34px 0 0; padding-top: 18px; border-top: 1px solid var(--line); max-width: 720px; }}
-.aside-h {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 20px; line-height: 1.4; }}
-.aside p {{ margin: 0 !important; }}
-
-/* glossary: tap, click or press Space on a term to see its meaning (no hover needed) */
-label.term {{ cursor: pointer; }}
-label.term input {{ position: absolute; opacity: 0; width: 1px; height: 1px; }}
-label.term .w {{ border-bottom: 1.5px dotted var(--green); }}
-label.term input:focus-visible + .w {{ outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }}
-label.term input:checked + .w {{ color: var(--green); }}
-label.term .d {{ display: none; }}
-label.term input:checked ~ .d {{ display: block; margin: 8px 0 10px; padding: 2px 0 2px 14px; border-left: 2px solid var(--green); font-size: 15px; line-height: 1.5; color: var(--muted); font-weight: 400; }}
-
-/* redline with margin notes */
-.margin-notes {{ display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 300px); gap: 44px; align-items: start; margin-top: 8px; }}
-.redline p, .redline del, .redline ins, .redline span {{ font-family: 'Newsreader', Georgia, serif !important; }}
-.redline p {{ font-size: 19px !important; line-height: 1.75 !important; margin: 0 0 16px; }}
-.redline del, del.key {{ color: {DEL_INK}; text-decoration: line-through; text-decoration-color: var(--terra); text-decoration-thickness: 1.5px; }}
-.redline ins, ins.key {{ background: var(--green-soft); text-decoration: none; padding: 1px 2px; border-radius: 3px; }}
-.redline sup a {{ font-family: 'Inter', sans-serif !important; font-size: 12px; font-weight: 600; color: var(--green); text-decoration: none; padding: 0 2px; }}
-.redline p.roster, .redline p.roster * {{ font-family: 'Inter', sans-serif !important; }}
-.redline p.roster {{ font-size: 15px !important; line-height: 1.7 !important; color: var(--muted); }}
-ol.notes {{ position: sticky; top: 24px; padding: 0 0 0 20px; margin: 4px 0 0; }}
-ol.notes li {{ font-size: 15px !important; line-height: 1.55 !important; margin-bottom: 14px; padding-left: 2px; color: var(--ink); }}
-ol.notes li::marker {{ color: var(--green); font-weight: 600; font-size: 13px; }}
-
-/* tone: a plain line with five ticks; no gradient */
-.scale {{ max-width: 560px; margin: 26px 0 30px; }}
-.scale .read {{ display: flex; align-items: baseline; gap: 14px; margin-bottom: 16px; }}
-.scale .read > span:first-child {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 28px; }}
-.scale .read .score {{ font-size: 16px; color: var(--muted); font-variant-numeric: tabular-nums; }}
-.scale .track {{ position: relative; height: 2px; background: var(--ink); opacity: .9; }}
-.scale .track i {{ position: absolute; top: -5px; width: 1px; height: 12px; background: var(--ink); }}
-.scale .track i:last-of-type {{ margin-left: -1px; }}
-.scale .pin {{ position: absolute; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 4px var(--ivory); }}
-.scale .pin.dove {{ background: var(--green); }} .scale .pin.hawk {{ background: var(--terra); }}
-.scale .ends {{ display: flex; justify-content: space-between; font-size: 14px; color: var(--muted); margin-top: 12px; }}
-.quotes {{ max-width: 640px; margin: 0 0 22px; }}
-.quotes .qh {{ font-size: 15px; font-weight: 600; margin-bottom: 6px; }}
-.quotes p, .quotes p * {{ font-family: 'Newsreader', Georgia, serif !important; }}
-.quotes p {{ font-size: 19px !important; line-height: 1.55 !important; margin: 0 0 12px; }}
-
-/* money rows: figure first, then what it is; no dividers */
-.rows {{ max-width: 700px; margin: 18px 0 8px; }}
-.row {{ display: grid; grid-template-columns: 136px 1fr; gap: 24px; align-items: baseline; padding: 10px 0 12px; }}
-.row .n {{ font-family: 'IBM Plex Mono', ui-monospace, monospace !important; font-size: 17px; white-space: nowrap; font-variant-numeric: tabular-nums; }}
-.row .t {{ font-weight: 600; font-size: 16px; margin-bottom: 2px; }}
-.row .s {{ font-size: 16px; line-height: 1.55; color: var(--muted); }}
-
-/* economy: a briefing with run-in topics */
-.briefing {{ max-width: 660px; margin-top: 14px; }}
-.briefing p {{ font-size: 17px !important; line-height: 1.7 !important; margin: 0 0 12px !important; }}
-.briefing strong {{ font-weight: 600; }}
-
-/* calculator: an open section introduced by a rule, not a tinted panel */
-div[class*="st-key-calc"] {{ margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line); }}
-.qa {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 22px; margin: 26px 0 8px; }}
-.qa-sub {{ font-size: 15px; color: var(--muted); margin: -4px 0 10px; }}
-.result {{ margin: 34px 0 10px; padding-left: 22px; border-left: 3px solid var(--green); max-width: 720px; }}
-.result .big {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 46px; line-height: 1.1; margin: 4px 0 8px; font-variant-numeric: tabular-nums; }}
-.result h4 {{ font-family: 'Inter', sans-serif !important; font-size: 14px; font-weight: 600; color: var(--muted) !important; margin: 26px 0 0; }}
-.result .rows {{ margin-top: 4px; }}
-
-/* forecast odds */
-.odds {{ max-width: 520px; margin: 16px 0 14px; }}
-.odds .o {{ display: grid; grid-template-columns: 64px 1fr 48px; gap: 14px; align-items: center; margin: 9px 0; font-size: 16px; }}
-.odds .bar {{ height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }}
-.odds .bar > i {{ display: block; height: 100%; border-radius: 4px; background: {NEUTRAL}; }}
-.odds .top .bar > i {{ background: var(--green); }}
-.odds .top span {{ font-weight: 600; }}
-.odds .o > span:last-child {{ font-variant-numeric: tabular-nums; text-align: right; }}
-
-/* timeline: the chosen meeting is marked with the accent bar, like every computed answer */
-div[class*="st-key-picked"] {{ border-left: 3px solid var(--green); padding: 2px 0 6px 22px; margin: 8px 0 18px; }}
-
-/* expanders: a line and a label */
-[data-testid="stExpander"] details {{ border: 0 !important; border-top: 1px solid var(--line) !important; border-radius: 0 !important; background: transparent !important; }}
-[data-testid="stExpander"] summary {{ padding-left: 0 !important; background: transparent !important; outline: none; }}
-[data-testid="stExpander"] summary:focus-visible {{ outline: 2px solid var(--green) !important; outline-offset: 2px; }}
-[data-testid="stExpander"] details, [data-testid="stExpander"] details:hover, [data-testid="stExpander"] details:focus-within {{ box-shadow: none !important; border-color: var(--line) !important; }}
-[data-testid="stExpander"] summary p {{ font-size: 16px !important; font-weight: 500; }}
-[data-testid="stExpander"] summary:hover p {{ color: var(--green) !important; }}
-
-/* chat */
-[data-testid="stChatMessage"] {{ background: transparent !important; padding: 10px 0 !important; }}
-[data-testid^="stChatMessageAvatar"] {{ display: none !important; }}
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) p {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 21px !important; }}
-[data-testid="stChatInput"] > div {{ border-radius: 12px !important; border-color: var(--line) !important; background: var(--surface) !important; }}
-.prov {{ font-size: 13px; color: var(--faint); margin-top: 4px; }}
-
-/* footer */
-.footer {{ margin-top: 72px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }}
-
-/* ---------- personal briefing ---------- */
-.you-q {{ margin-top: 40px; }}
-div[class*="st-key-you"] {{ margin-top: 34px; padding-left: 24px; border-left: 3px solid var(--green); max-width: 760px; }}
-.who {{ font-size: 15px; color: var(--muted); }}
-div[class*="st-key-you"] [data-testid="stColumn"]:last-child [data-testid="stElementContainer"] {{ margin-left: auto; width: fit-content !important; }}
-.you-big {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 38px; line-height: 1.15; margin: 2px 0 8px; text-wrap: balance; font-variant-numeric: tabular-nums; }}
-.you-sub {{ font-size: 17px !important; color: var(--muted) !important; margin: 0 0 10px !important; }}
-.ai-note {{ margin: 22px 0 0; max-width: 680px; padding-left: 16px; border-left: 3px solid var(--green); }}
-.ai-note p {{ font-size: 16px !important; line-height: 1.6 !important; margin: 0 !important; color: var(--ink); }}
-.next-you {{ display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 22px; margin: 18px 0 4px; max-width: 700px; }}
-.next-you p {{ margin: 0 !important; font-size: 16px !important; }}
-.bd-h {{ font-size: 14px; font-weight: 600; color: var(--muted); margin: 14px 0 0; }}
-.short {{ margin-top: 56px; max-width: 760px; }}
-.short.about {{ margin-top: 8px; }}
-.byline {{ margin-top: 36px !important; font-size: 15px !important; color: var(--muted) !important; }}
-.short.about .short-row {{ padding: 14px 0; }}
-.short h3 {{ margin-bottom: 14px !important; }}
-.short-row {{ display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 28px; padding: 12px 0; }}
-.short-row p {{ margin: 0 !important; font-size: 17px !important; }}
-.say-inline {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 20px; line-height: 1.45; }}
-.ask {{ margin-top: 52px; }}
-div[class*="st-key-live"] {{ margin-top: 18px; padding: 4px 0 4px 18px; border-left: 3px solid var(--terra); max-width: 760px; }}
-.live-t {{ font-size: 17px; }}
-div[class*="st-key-answer_"] {{ margin-top: 26px; max-width: 720px; }}
-div[class*="st-key-answer_"] p, div[class*="st-key-answer_"] li {{ font-size: 17px !important; line-height: 1.65 !important; }}
-div[class*="st-key-answer_"] strong {{ font-weight: 600; }}
-.home-a {{ margin-top: 30px; max-width: 720px; }}
-.home-a .qa-q {{ margin-top: 0; }}
-.qa-q {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 21px; margin: 18px 0 6px; max-width: 700px; }}
-.qa-a {{ font-size: 17px; line-height: 1.65; max-width: 700px; white-space: pre-wrap; }}
-div[class*="st-key-suggest"] [data-testid="stElementContainer"] {{ margin-bottom: -6px; }}
-div[class*="st-key-ask_"] {{ max-width: 760px; }}
-.stTextInput input {{ background: var(--surface) !important; border-radius: 10px !important; font-size: 17px !important; min-height: 46px; }}
-.deeper-h {{ margin-top: 60px; }}
-/* tabs: plain labels with an underline */
-.stTabs [data-baseweb="tab-list"] {{ gap: 26px; border-bottom: 1px solid var(--line); }}
-.stTabs [data-baseweb="tab"] {{ padding: 10px 0; background: transparent !important; }}
-.stTabs [data-baseweb="tab"] p {{ font-size: 16px !important; font-weight: 500; color: var(--muted) !important; }}
-.stTabs [aria-selected="true"] p {{ color: var(--ink) !important; }}
-.stTabs [data-baseweb="tab-highlight"] {{ background: var(--ink) !important; height: 2px; }}
-.stTabs [data-baseweb="tab-border"] {{ display: none; }}
-.stTabs [data-baseweb="tab-panel"] {{ padding-top: 22px; }}
-/* dialog */
-[data-testid="stDialog"] [role="dialog"] {{ background: var(--ivory) !important; border-radius: 16px; }}
-[data-testid="stDialog"] h2, [data-testid="stDialog"] [data-testid="stHeading"] * {{ font-family: 'Newsreader', Georgia, serif !important; }}
-div[class*="st-key-tiles_dlg"] [data-testid="stRadioGroup"], div[class*="st-key-tiles_quick"] [data-testid="stRadioGroup"] {{ grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }}
-/* ---------- meeting at a glance ---------- */
-.mhead {{ padding-top: 26px; }}
-.mhead h1 {{ font-size: 46px !important; margin-bottom: 26px !important; }}
-.tile {{ padding: 4px 0 0; }}
-.tlab {{ font-size: 14px; color: var(--muted); margin-bottom: 4px; }}
-.tbig {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 34px; line-height: 1.1; margin-bottom: 10px; font-variant-numeric: tabular-nums; white-space: nowrap; }}
-.tcap {{ font-size: 14px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }}
-.mscale {{ width: 100%; max-width: 180px; margin-top: 16px; }}
-.mtrack {{ position: relative; height: 2px; background: var(--ink); }}
-.mtrack b {{ position: absolute; top: 50%; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 3px var(--ivory); }}
-.mtrack b.dove {{ background: var(--green); }} .mtrack b.hawk {{ background: var(--terra); }}
-.mends {{ display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-top: 10px; }}
-.obar {{ display: flex; height: 10px; border-radius: 5px; overflow: hidden; max-width: 200px; margin-top: 14px; gap: 2px; }}
-.obar i {{ display: block; height: 100%; }}
-.gap-l {{ height: 40px; }}
-ol.three {{ max-width: 720px; margin: 0 0 26px; padding-left: 26px; counter-reset: none; }}
-ol.three li {{ font-size: 19px !important; line-height: 1.5 !important; margin-bottom: 12px; padding-left: 6px; }}
-ol.three li::marker {{ font-family: 'Newsreader', Georgia, serif; color: var(--green); font-size: 20px; }}
-div[class*="st-key-suggest"] [data-testid="stBaseButton-tertiary"] p {{ font-size: 15px !important; }}
-div[class*="st-key-suggest"] {{ margin-top: -8px; }}
-[data-testid="stColumn"] [data-testid="stBaseButton-tertiary"] {{ justify-content: flex-start; text-align: left; }}
-[data-testid="stColumn"] [data-testid="stBaseButton-tertiary"] p {{ font-size: 14px !important; }}
-/* AI answers as results */
-.res-row {{ display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; font-size: 16px; padding: 6px 0; }}
-.res-date {{ font-weight: 600; min-width: 110px; font-variant-numeric: tabular-nums; }}
-.res-move {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 19px; min-width: 90px; }}
-.res-quote {{ margin: 10px 0; max-width: 680px; }}
-.res-quote p {{ font-family: 'Newsreader', Georgia, serif !important; font-size: 17px !important; margin: 2px 0 0 !important; }}
-.res-people {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px 24px; margin: 10px 0; max-width: 720px; }}
-.res-people div {{ display: flex; flex-direction: column; font-size: 16px; }}
-.res-people .muted {{ font-size: 14px; }}
-.res-diff {{ font-size: 17px !important; margin: 0 0 10px !important; }}
-div[class*="st-key-answer_"] .tile {{ margin-top: 10px; }}
 /* ---------- phones ---------- */
-@media (max-width: 860px) {{
-  .margin-notes {{ grid-template-columns: 1fr; gap: 4px; }}
-  ol.notes {{ position: static; }}
-}}
-@media (max-width: 720px) {{
-  .block-container {{ padding: 16px 16px 56px !important; }}
-  h1 {{ font-size: 36px !important; }} h2 {{ font-size: 27px !important; }} h3 {{ font-size: 21px !important; }}
-  .lede {{ font-size: 18px !important; }}
-  .step {{ padding-top: 44px; }}
-  .say {{ font-size: 20px; }}
-  .aside, .short-row, .next-you {{ grid-template-columns: 1fr; gap: 4px; }}
-  div[class*="st-key-you"] {{ padding-left: 16px; }}
-  .you-big {{ font-size: 30px; }}
-  .mhead h1 {{ font-size: 32px !important; margin-bottom: 18px !important; }}
-  /* the four glance tiles sit two by two on phones */
-  [data-testid="stHorizontalBlock"]:has(.tile) {{ flex-wrap: wrap !important; gap: 22px 16px !important; }}
-  [data-testid="stHorizontalBlock"]:has(.tile) > [data-testid="stColumn"] {{ flex: 1 1 calc(50% - 8px) !important; width: calc(50% - 8px) !important; min-width: calc(50% - 8px) !important; }}
-  .tile svg {{ width: 110px; height: 50px; }}
-  .mscale, .obar {{ max-width: 150px; }}
-  .tbig {{ font-size: 28px; }}
-  ol.three li {{ font-size: 17px !important; }}
-  .row {{ grid-template-columns: 1fr; gap: 2px; padding: 8px 0 14px; }}
-  .result .big {{ font-size: 38px; }}
-  .stNumberInput {{ max-width: none; }}
-  .st-key-nav [data-testid="stRadioGroup"] {{ justify-content: flex-start; gap: 22px; }}
+@media (max-width: 760px) {{
+  .block-container {{ padding: 10px 16px 150px !important; }}
+  div[class*="st-key-facts"] [data-testid="stHorizontalBlock"] {{ flex-wrap: wrap !important; gap: 18px 16px !important; }}
+  div[class*="st-key-facts"] [data-testid="stColumn"] {{ flex: 1 1 calc(50% - 8px) !important; min-width: calc(50% - 8px) !important; width: calc(50% - 8px) !important; }}
+  div[class*="st-key-facts"] [data-testid="stColumn"]:first-child, div[class*="st-key-facts"] [data-testid="stColumn"]:last-child {{ flex-basis: 100% !important; min-width: 100% !important; width: 100% !important; }}
+  div[class*="st-key-nextchip"] [data-testid="stBaseButton-secondary"] p {{ white-space: normal; }}
+  div[class*="st-key-topbar"] [data-testid="stHorizontalBlock"], [data-testid="stBottom"] [data-testid="stForm"] [data-testid="stHorizontalBlock"] {{ flex-wrap: nowrap !important; }}
+  div[class*="st-key-topbar"] [data-testid="stColumn"], [data-testid="stBottom"] [data-testid="stForm"] [data-testid="stColumn"] {{ min-width: 0 !important; width: auto !important; }}
+  [data-testid="stBottom"] [data-testid="stForm"] [data-testid="stColumn"]:last-child {{ flex: 0 0 56px !important; }}
+  [data-testid="stBottomBlockContainer"] {{ padding: 8px 12px 10px !important; }}
+  .verdict {{ margin-top: 20px; }}
+  .verdict h1 {{ font-size: 32px !important; margin-bottom: 18px !important; }}
+  .facts3 {{ grid-template-columns: 1fr 1fr; gap: 22px 18px; }}
+  .facts3 .fact.tone {{ grid-column: 1 / -1; }}
+  .rate {{ font-size: 32px; }}
+  .vcap {{ font-size: 24px; }}
+  .dots {{ gap: 5px; }} .dot {{ width: 14px; height: 14px; }}
+  .about-row {{ grid-template-columns: 1fr; gap: 4px; }}
+  .reason {{ grid-template-columns: 1fr; }} .reason .spk {{ text-align: left; }}
 }}
 </style>
 """
