@@ -12,3 +12,22 @@ jobs:
       - run: pip install -r requirements.txt pytest
       - run: python -m pytest -q tests
       - run: python evals/run.py --offline
+  word-budget:
+    # Fails the build if the first 1440×900 viewport shows more than 60 words.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install -r requirements.txt
+      - run: npm install --no-save playwright@1.49.1 && npx playwright install --with-deps chromium
+      - name: Start the app
+        run: |
+          streamlit run app.py --server.port 8501 --server.headless true > streamlit.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://localhost:8501/_stcore/health && break; sleep 2; done
+      - run: node tests/e2e/word_budget.js http://localhost:8501
