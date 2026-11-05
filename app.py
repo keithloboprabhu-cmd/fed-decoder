@@ -126,35 +126,55 @@ if choice != ss.nav:
 QUESTION_START = re.compile(r"^(what|why|how|when|who|which|where|is|are|was|were|does|do|did|can|could|should|will|would|explain|tell|define)\b", re.I)
 
 
-def interpret(text: str) -> tuple[str | None, str | None]:
-    """Turn what someone typed into a meeting date, 'pasted', 'question', or an error message."""
-    t = text.strip()
-    if not t:
-        return None, None
+MONTHS_RX = r"(jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*"
+LATEST_RX = re.compile(r"\b(last|latest|most recent|recent|newest|this week'?s|today'?s|current)\b[^?.]*\b(meeting|decision|statement|fomc|announcement|move)\b"
+                       r"|\b(meeting|decision|statement|fomc)\b[^?.]*\b(last|latest|most recent)\b|^(latest|last|newest)$", re.I)
+GENERIC_RX = re.compile(r"\bwhat (happened|did (the fed|they|the fomc) (do|decide|announce)|was (decided|announced))|\b(tell me about|summar|recap|"
+                        r"overview|explain|break ?down|walk me through|decode)\b|^what('s| is) new", re.I)
+
+
+def meeting_reference(t: str) -> str | None:
+    """The single meeting a piece of text points at, or None. Needs 'latest/last meeting' or a month (a year alone
+    spans several meetings, so 'what happened in 2022' stays a general question)."""
     all_dates = dates()
-    if len(t) > 280 and re.search(r"\b(Committee|federal funds|FOMC)\b", t, re.I):
-        return "pasted", None
-    short_date = len(t) <= 30 and (parse_date(t) is not None or re.search(r"\b(latest|last meeting|most recent)\b", t, re.I))
-    if not short_date and ("?" in t or QUESTION_START.match(t) or len(t.split()) > 5):
-        return "question", None
     tl = t.lower()
-    if re.search(r"\b(latest|last meeting|most recent|recent|newest|this week|today|now)\b", tl):
-        return all_dates[-1], None
     m = re.search(r"\blast (january|february|march|april|may|june|july|august|september|october|november|december)\b", tl)
     if m:
         latest = pd.Timestamp(all_dates[-1])
         month = pd.Timestamp(f"1 {m.group(1)} 2000").month
         year = latest.year if month <= latest.month else latest.year - 1
-        t = f"{m.group(1)} {year}"
-    when = parse_date(t)
-    if when is None:
-        return "question", None  # anything else is treated as a question
-    if when < pd.Timestamp("2000-01-01"):
-        return None, "Fed Decoder covers meetings from February 2000 onward."
-    if when > pd.Timestamp(all_dates[-1]) + pd.Timedelta(days=45):
-        return None, f"There's no statement after {long_date(all_dates[-1])} yet."
-    d = resolve_meeting(t)
-    return (str(d.date()) if d is not None else None), None
+        d = resolve_meeting(f"{m.group(1)} {year}")
+        return str(d.date()) if d is not None else None
+    if LATEST_RX.search(t):
+        return all_dates[-1]
+    if re.search(r"\d{4}-\d{1,2}(-\d{1,2})?", t) or re.search(MONTHS_RX + r"\.?,?\s+(\d{1,2},?\s+)?\d{4}", tl):
+        when = parse_date(t)
+        if when is None or when < pd.Timestamp("2000-01-01") or when > pd.Timestamp(all_dates[-1]) + pd.Timedelta(days=45):
+            return None
+        d = resolve_meeting(t)
+        return str(d.date()) if d is not None else None
+    return None
+
+
+def interpret(text: str) -> tuple[str | None, str | None]:
+    """Route what someone typed: ('pasted', None), ('question', None), (date, None) to open a meeting,
+    (date, question) to open a meeting and answer the question there, or (None, error)."""
+    t = text.strip()
+    if not t:
+        return None, None
+    if len(t) > 280 and re.search(r"\b(Committee|federal funds|FOMC)\b", t, re.I):
+        return "pasted", None
+    ref = meeting_reference(t)
+    if ref:
+        words = len(re.findall(r"\w+", t))
+        if words <= 6 or GENERIC_RX.search(t):
+            return ref, None          # "latest", "September 2024", "what happened at the last meeting"
+        return ref, t                 # a specific question about one meeting: open it and answer there
+    if parse_date(t) is not None and len(t) <= 30 and not re.search(r"[?]|\b(what|why|how)\b", t, re.I):
+        when = parse_date(t)
+        if when < pd.Timestamp("2000-01-01"):
+            return None, "Fed Decoder covers meetings from February 2000 onward."
+    return "question", None
 
 
 STARTERS = ["What is the Fed, in plain English?", "Why does the Fed raise interest rates?", "What were the most controversial Fed decisions?"]
@@ -294,6 +314,10 @@ def page_home() -> None:
     pending = None
     if submitted:
         target, err = interpret(text)
+        if target not in (None, "pasted", "question") and err:
+            ss.setdefault("pending_ask", {})[target] = err  # a question about one meeting: answer it on that meeting's page
+            open_meeting(target)
+            st.rerun()
         if err:
             st.markdown(f'<p class="muted">{ui.E(err)}</p>', unsafe_allow_html=True)
         elif target == "pasted":
@@ -572,7 +596,7 @@ def ask_block(card, ctx) -> None:
             st.markdown(a)  # Markdown from the model; HTML is not allowed here
             render_results([c for c in calls if not (c.get("name") == "get_meeting")], f"mres_{key}_{n}")
     left = config.SESSION_QUESTION_LIMIT - ss.questions
-    pending = None
+    pending = (ss.get("pending_ask") or {}).pop(key, None)
     with st.form(f"ask_{key}", border=False, clear_on_submit=True):
         c1, c2 = st.columns([5, 1], vertical_alignment="bottom")
         typed = c1.text_input("Ask", label_visibility="collapsed", placeholder="Ask anything about this meeting", disabled=left <= 0)

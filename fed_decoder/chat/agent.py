@@ -219,6 +219,14 @@ def rules_answer(q: str, meeting: str | None = None) -> ChatAnswer:
     g = _general_rules_answer(q)
     if g and not meeting:
         return g
+    if not meeting and re.search(r"\b(last|latest|most recent|newest)\b", ql):
+        from fed_decoder.data import store as _st
+
+        latest = str(_st.statements()["meeting_date"].iloc[-1].date())
+        a = _meeting_rules_answer(q, latest)
+        if a:
+            return a
+        q = latest  # fall through to the meeting summary below
     if meeting:
         try:
             a = _meeting_rules_answer(q, meeting)
@@ -293,7 +301,7 @@ def rules_answer(q: str, meeting: str | None = None) -> ChatAnswer:
                 return ChatAnswer(txt, "rules", "Automated answer (rules-based)", calls)
         res = T.search_statements(q)["results"]
         calls.append({"name": "search_statements", "args": {"query": q}})
-        if res:
+        if res and res[0]["score"] >= 0.25:  # only quote a statement when it really matches
             r0 = res[0]
             return ChatAnswer(f"The closest match is the {r0['meeting_date']} statement: “{r0['text'][:400]}”",
                               "rules", "Automated answer (rules-based)", calls)
