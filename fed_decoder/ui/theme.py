@@ -52,6 +52,8 @@ h1, h2, h3 {{ font-family: var(--sans) !important; color: var(--ink) !important;
 
 /* ---------- top bar ---------- */
 .brand {{ font-family: var(--sans); font-weight: 800; font-size: 19px; letter-spacing: -0.02em; line-height: 40px; }}
+.brand img {{ display: block; height: 32px; width: auto; margin: 4px 0; }}
+@media (max-width: 760px) {{ .brand img {{ height: 26px; margin: 7px 0; }} }}
 .brand span {{ font-family: var(--mono); font-weight: 500; font-size: 15px; color: var(--sub); margin-left: 6px; }}
 div[class*="st-key-topbar"] [data-testid="stBaseButton-tertiary"] p {{ color: var(--ink) !important; font-size: 15px !important; font-weight: 500; }}
 div[class*="st-key-topbar"] [data-testid="stColumn"]:last-child [data-testid="stElementContainer"] {{ margin-left: auto; width: fit-content !important; }}

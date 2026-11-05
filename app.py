@@ -29,7 +29,7 @@ from fed_decoder.ui import theme
 from fed_decoder.ui.staircase import staircase
 from fed_decoder.ui.theme import CSS
 
-st.set_page_config(page_title="Fed Decoder", page_icon=None, layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(page_title="Fed Decoder", page_icon="static/icon.png", layout="wide", initial_sidebar_state="collapsed")
 st.markdown(CSS, unsafe_allow_html=True)
 
 ss = st.session_state
@@ -170,7 +170,7 @@ def interpret(text: str) -> tuple[str | None, str | None]:
 def top_bar() -> None:
     with st.container(key="topbar"):
         c1, c2 = st.columns([3, 1], vertical_alignment="center")
-        c1.markdown('<div class="brand">Fed Decoder</div>', unsafe_allow_html=True)
+        c1.markdown('<div class="brand"><img src="/app/static/logo.png" alt="Fed Decoder" width="174" height="32"></div>', unsafe_allow_html=True)
         label = "← Back" if ss.page == "about" else "About"
         if c2.button(label, type="tertiary", key="about_btn"):
             ss.page = "meeting" if ss.page == "about" else "about"
