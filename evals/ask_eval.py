@@ -164,6 +164,8 @@ JUDGE = """You are grading an answer from a Federal Reserve explainer. Today is 
 The answer was written from live official sources, so current names, roles, dates and figures in it
 may be newer than your training data (for example, the Fed chair changed in 2026). Do NOT mark
 anything wrong because it differs from your memory. Grade ONLY the listed points.
+Reference facts fetched from official sources today (trust these over your memory):
+{facts}
 Question: {q}
 Answer: {a}
 The answer passes only if ALL of these hold:
@@ -171,9 +173,28 @@ The answer passes only if ALL of these hold:
 Reply with JSON only: {{"pass": true or false, "failed": ["<points that fail>"]}}"""
 
 
+_FACTS: str | None = None
+
+
+def live_facts() -> str:
+    global _FACTS
+    if _FACTS is None:
+        try:
+            lead = _lead()
+            m = _meeting("latest")
+            nxt = _live.fomc_calendar()["upcoming"][0]["date"]
+            vc = [f"{x['name']} ({x['title']})" for x in lead["board_of_governors"] if "Vice" in x["title"]]
+            _FACTS = (f"- Fed Chair: {lead['chair']}. {', '.join(vc)}. New York Fed president {next((x['name'] for x in lead['fomc_voters_this_year'] if x['affiliation'] == 'New York'), '?')} is FOMC Vice Chair.\n"
+                      f"- Latest FOMC decision: {m['meeting_date']}, {m['decision']}, target range {m['target_range_percent'][0]}-{m['target_range_percent'][1]}%.\n"
+                      f"- Next FOMC meeting: {nxt}.")
+        except Exception as e:  # noqa: BLE001
+            _FACTS = f"(live facts unavailable: {type(e).__name__})"
+    return _FACTS
+
+
 def judge(q: str, a: str, points: list[str], answered_by: str) -> tuple[bool | None, str, str]:
     order = ["groq", "gemini"] if answered_by == "gemini" else ["gemini", "groq"]
-    msg = [{"role": "user", "content": JUDGE.format(today=date.today().isoformat(), q=q, a=a[:2500],
+    msg = [{"role": "user", "content": JUDGE.format(today=date.today().isoformat(), facts=live_facts(), q=q, a=a[:2500],
                                                     points="\n".join(f"- {p}" for p in points))}]
     for prov in order:
         r = generate(msg, providers=[prov], purpose="judge", temperature=0.0)
@@ -231,8 +252,11 @@ def run_item(cat: str, item: dict) -> dict:
             ok, why = False, f"no answer ({status})"
     else:  # rubric, adversarial
         bad = [s for s in item.get("must_not", []) if s.lower() in a.text.lower()]
+        truth_ok, truth_why = check_truth(a.text, TRUTH[item["fn"]]()) if (item.get("fn") and answered) else (True, "")
         if bad:
             ok, why = False, f"contains forbidden text {bad}"
+        elif not truth_ok:
+            ok, why = False, f"live fact missing: {truth_why}"
         elif not answered:
             ok, why = False, f"no answer ({status})"
         else:
@@ -262,8 +286,11 @@ def rejudge(path: Path) -> int:
             continue
         q = (it.get("turns") or [it.get("q")])[-1]
         bad = [x for x in it.get("must_not", []) if x.lower() in r["text"].lower()]
+        truth_ok, truth_why = check_truth(r["text"], TRUTH[it["fn"]]()) if it.get("fn") else (True, "")
         if bad:
             ok, why, by = False, f"contains forbidden text {bad}", ""
+        elif not truth_ok:
+            ok, why, by = False, f"live fact missing: {truth_why}", ""
         else:
             pts = it.get("points") or ["politely declines (no investment advice / off-topic)", "suggests or offers a related on-topic question or explanation"]
             ok, why, by = judge(q, r["text"], pts, r["provider"])
@@ -357,7 +384,8 @@ def write_report(after_path: Path) -> None:
         "",
         f"Suite: `evals/ask_suite.yaml` ({a['n']} questions). Run {after['run_at']} UTC with `make eval-ask`. "
         "Current facts are checked against ground truth fetched at eval time from the same live tools; rubric items are graded by an "
-        "LLM judge from the other provider. \"Before\" is the previous agent (commit 8f59111) on the same suite and the same day.",
+        "LLM judge from the other provider, given today's live reference facts so it can't grade against stale memory. "
+        "\"Before\" is the previous agent (commit 8f59111) on the same suite and the same day; both runs were re-judged with the same judge.",
         "",
         "| | Before | After |",
         "|---|---|---|",
@@ -397,6 +425,16 @@ def write_report(after_path: Path) -> None:
         res = "pass" if r["pass"] else "FAIL: " + ", ".join(flags)
         lines.append(f"| {r['id']} | {res} | {r.get('model') or r.get('provider') or '—'} | {r.get('latency_s')} s | {r.get('words')} | "
                      f"{str(r.get('why', '')).replace('|', '/')[:120]} |")
+    fixes = sorted(RUNS.glob("ask_afterfix_*.json"))
+    if fixes:
+        fx = json.loads(fixes[-1].read_text())
+        lines += ["", "## Spot re-run on the final code", "",
+                  "The full run above failed these items on the code as it was. They were fixed afterwards (see `docs/AI_DIAGNOSIS.md`, "
+                  "\"After the eval\") and re-run alone on the final code. The headline numbers above are NOT updated with these.", "",
+                  "| id | Result | Provider | Latency | Tools | Answer (start) |", "|---|---|---|---|---|---|"]
+        for r in fx["results"]:
+            lines.append(f"| {r['id']} | {'pass' if r['pass'] else 'FAIL'} | {r.get('model') or r.get('provider')} | {r.get('latency_s')} s | "
+                         f"{', '.join(r.get('tools') or []) or '—'} | {str(r.get('text', ''))[:110].replace('|', '/').replace(chr(10), ' ')} |")
     REPORT.write_text("\n".join(lines) + "\n")
     print("wrote", REPORT)
 

@@ -19,6 +19,46 @@ On the latest meeting a live strip shows the days to the next decision and the l
 
 The design is deliberately plain: off-white, ink, and color only where it means something (red = hike or hawkish, blue = cut or dovish, always paired with an arrow, a shape or a word). JetBrains Mono for every rate, percent and vote; Inter Tight for words. Jargon gets a dotted underline with a one-line definition. The first 1440×900 screen shows at most 60 words, and a Playwright check in CI enforces it (`tests/e2e/word_budget.js`). See [docs/REDESIGN.md](docs/REDESIGN.md) for before and after.
 
+## How the AI works
+
+Ask is a small tool-using agent (`fed_decoder/chat/agent.py`), not a search box over saved answers.
+
+1. **Every request** carries today's date and time (Eastern), a note that the model's memory is out of date, and a 1,500-word primer (`knowledge/primer.md`). The primer is written from 26 official Fed pages, snapshotted in `knowledge/sources/`, cites them section by section, and holds no current names or rates. A monthly workflow re-fetches those pages and opens a pull request when one changes.
+2. **The model plans and calls tools**, up to 4 rounds, several at once. Leadership, rates, data and recent events must come from a tool:
+
+   | Tool | Source | Cache |
+   |---|---|---|
+   | `fed_leadership` | federalreserve.gov Board and FOMC pages: chair, vice chairs, governors, this year's voters and alternates, rotation | 12 h |
+   | `fomc_calendar` | federalreserve.gov FOMC calendar | 24 h |
+   | `get_meeting`, `search_statements`, `diff_statements`, `notable_meetings` | the statement archive and decoder cards | — |
+   | `fred_search`, `fred_series` | FRED, any series (full search needs a free `FRED_API_KEY`) | 1 h |
+   | `bls_latest` | BLS API v2 (FRED fallback when BLS's keyless limit runs out) | 1 h |
+   | `treasury_yields` | Treasury daily par yield curve | 1 h |
+   | `fed_feed` | Fed RSS: monetary releases, speeches, testimony | 15 min |
+   | `web_search` | Google Search grounding (Gemma 4 / Gemini), then Groq browser search, then Wikipedia | 1 h |
+   | `fetch_page` | allowlisted official sites and major outlets only | 6 h |
+   | `calc`, `payment_impact`, `forecast_next` | code (the model never does arithmetic) | — |
+
+3. **Providers:** Gemini Flash models, then Gemma 4 on the same free key, then Groq `gpt-oss-120b`. A provider that fails mid-answer hands its tool results to the next one.
+4. **Checks before anything is shown:** every number must appear in a tool result or the primer, and quotes must be verbatim. A failure gets one correction pass that can call tools again. Links the model made up are removed.
+5. **The answer** is at most 120 words (300 with "More detail"), answer-first. Current facts carry "as of" dates and links, with up to 3 source chips, 3 follow-up questions, and "Using live data · model · N sources". The last 6 turns are kept for follow-ups.
+6. **Never silent:** if no AI can answer, the panel says "The AI is temporarily unavailable" (or "Daily AI limit reached; showing saved answers"), and anything shown instead is labelled saved content. A hidden Status page (footer link, `?page=status`) shows provider health, quota use, cache hit rate and the last 20 errors.
+
+### Ask eval (60 questions, `make eval-ask`)
+
+Current facts are checked against ground truth fetched at eval time from the same live tools, meetings against the archive, and rubric items by an LLM judge from the other provider. Full table: [`evals/ask_report.md`](evals/ask_report.md); diagnosis of the old version: [`docs/AI_DIAGNOSIS.md`](docs/AI_DIAGNOSIS.md).
+
+| | Before (old agent) | After |
+|---|---|---|
+| Pass (correct, grounded, sourced, ≤ 120 words) | 10% | **93%** |
+| Correct | 57% | 93% |
+| Sources shown | 10% | 97% |
+| Current leadership | 4/6 | **6/6** |
+| Current rate | 2/2 | **2/2** |
+| Median latency | 2.0 s | 6.4 s |
+
+Bar: 100% on leadership and rate (met), ≥ 90% overall (met), median latency under 6 s (**not met: 6.4 s**). The free Flash models allow 20 requests a day each, so after the first ~50 questions of a day, answers come from slower models (Gemma 4, Flash-Lite). The old agent was faster because it mostly answered from memory without tools, which is how it got the chair, the voters and the next meeting date wrong.
+
 ## What it does
 
 - **Decode a meeting.** 227 statements, February 2000 to October 2026, each with a pre-built decoder card (`cards/`). Viewing a past meeting makes zero API calls.

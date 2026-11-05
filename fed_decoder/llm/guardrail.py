@@ -67,6 +67,11 @@ def ungrounded_numbers(output: str, context: str, allow: set[float] | None = Non
         # tolerate rounding of a context value to 1 or 2 decimals
         if any(abs(v - c) < 0.006 for c in allowed if abs(c) < 1e6):
             continue
+        # a context value rounded to the same number of decimals ("3.7" from a calc result of 3.717251);
+        # whole numbers still need an exact match
+        dec = len(tok.split(".")[1]) if "." in tok else 0
+        if dec and any(round(c, dec) == round(abs(v), dec) for c in allowed if abs(c) < 1e6):
+            continue
         bad.append(tok)
     return bad
 

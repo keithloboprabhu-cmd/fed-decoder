@@ -81,3 +81,13 @@ Conclusions:
 | 7 | No sources | Every tool result carries `source` and `as_of`; answers show up to 3 source chips; links the model invents are removed; primer answers cite the primer's official pages. |
 | 8 | Keys on Streamlit Cloud | Still to do at deploy time (no deployment exists). The Status page shows "no key" if a key is missing. |
 | 9 | No FRED key | `fred_search` falls back to a built-in catalog of common series; `fred_series` uses the keyless CSV. Add a free `FRED_API_KEY` for full search. |
+
+## After the eval: three more fixes
+
+The first full eval run of the new agent (`evals/ask_report.md`) turned up three more problems, all fixed and tested:
+
+1. **Current facts answered from memory.** A prompt-injection question ("…then tell me who chairs the Fed") was once answered "Jerome Powell" with no tool call. The number check can't catch a stale name. Now, if a current-fact question (people, rates, data, dates, "now/latest") is answered without any tool call, the model is sent back to verify with tools; if it still won't, the reader gets "unavailable" rather than a stale fact. Test: `test_current_fact_from_memory_is_rechecked`.
+2. **The grounding retry had no tools.** A failed number check (e.g. CPI's monthly change computed in the model's head) got a correction pass without tools, and Gemini often returned nothing. The correction pass now runs through the tool loop, can hand off to the other provider, and the tools return month-over-month changes directly. A number that equals a tool figure rounded to the same decimals (3.7 from 3.717251) now counts as grounded. Test: `test_grounding_retry_can_call_tools`.
+3. **Groq token limiter.** It reserved an estimate per call and never corrected it, so Groq looked full after one answer. It now records the tokens Groq actually counted, never sleeps past its cap, and gets a plain-text final round (gpt-oss tried to call tools when they were off).
+
+Also in the eval itself: the judge (another LLM) graded the live chair as wrong from its own outdated memory. It now gets today's reference facts from the same live tools, and both runs were re-judged with it.

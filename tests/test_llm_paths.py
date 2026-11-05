@@ -148,12 +148,25 @@ def test_pasted_injection_is_fenced_as_data():
 def test_grounding_retry_can_call_tools():
     """A figure from memory fails the check; the correction pass looks it up and then passes."""
     gem = FakeProvider("gemini", [
-        "The Fed held at 9.99 percent.",                     # ungrounded, from memory
-        [("get_meeting", {"date": "latest"})],               # correction pass: looks it up
-        "The Fed held its target range at its latest meeting.",
+        "The Fed cut to 9.99 percent.",                      # ungrounded, from memory
+        [("get_meeting", {"date": "2024-09-18"})],           # correction pass: looks it up
+        "The Fed cut its target range in September 2024.",
     ])
     install(gemini=gem, groq=FakeProvider("groq", []))
-    a = agent.answer("What is the Fed's target range today?", use_cache=False)
+    a = agent.answer("What range did the Fed set in September 2024?", use_cache=False)
     assert a.status == "ok" and "9.99" not in a.text
     assert [c["name"] for c in a.tool_calls] == ["get_meeting"]
     assert "grounding check" in gem.calls[1]["messages"][-1]["content"]
+
+
+def test_current_fact_from_memory_is_rechecked():
+    """A current-fact question answered without tools gets sent back to check a source."""
+    gem = FakeProvider("gemini", [
+        "The Fed chair is Jerome Powell.",                    # from memory: stale
+        [("fed_leadership", {})],                            # made to check
+        "The Fed chair is the person the Fed's site lists.",
+    ])
+    install(gemini=gem, groq=FakeProvider("groq", []))
+    a = agent.answer("Who chairs the Fed now?", use_cache=False)
+    assert a.status == "ok" and [c["name"] for c in a.tool_calls] == ["fed_leadership"]
+    assert "Powell" not in a.text

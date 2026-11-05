@@ -47,6 +47,13 @@ class _TokenBudget:
                 raise RateLimited(f"Groq token budget ({self.tpm}/min) needs {nap:.0f}s to free up", nap)
             time.sleep(nap)
 
+    def settle(self, estimated: int, actual: int) -> None:
+        """Replace the latest estimate with the tokens Groq actually counted."""
+        for i in range(len(self.used) - 1, -1, -1):
+            if self.used[i][1] == min(estimated, self.tpm):
+                self.used[i] = (self.used[i][0], actual)
+                return
+
 
 _TOKENS = _TokenBudget(config.GROQ_TPM)
 
@@ -126,9 +133,15 @@ class GroqProvider(Provider):
         import groq
 
         _LIMITER.wait()
-        _TOKENS.wait(_estimate_tokens(kw), max_wait=(45 if getattr(self, "purpose", "") == "chat_last" else 8) if getattr(self, "purpose", "").startswith("chat") else None)
+        est = _estimate_tokens(kw)
+        _TOKENS.wait(est, max_wait=(45 if getattr(self, "purpose", "") == "chat_last" else 8) if getattr(self, "purpose", "").startswith("chat") else None)
         try:
-            return self._get_client().chat.completions.create(**kw)
+            resp = self._get_client().chat.completions.create(**kw)
+            try:
+                _TOKENS.settle(est, int(resp.usage.total_tokens))
+            except Exception:
+                pass
+            return resp
         except groq.RateLimitError as e:
             ra = None
             try:
